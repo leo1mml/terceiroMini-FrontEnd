@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, SignUpView {
+class SignUpViewController: UIViewController, SignUpView, UITextFieldDelegate {
 
     var presenter: SignUpPresenter?
     
@@ -25,12 +25,36 @@ class SignUpViewController: UIViewController, SignUpView {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter = SignUpPresenterImpl(signUpView: self)
-        
         repeatPasswordInvalid.isHidden = true
         emailInvalid.isHidden = true
         usernameInvalid.isHidden = true
         
+        presenter = SignUpPresenterImpl(signUpView: self)
+        
+        self.nameField.delegate = self
+        self.emailField.delegate = self
+        self.usernameField.delegate = self
+        self.passwordField.delegate = self
+        self.repeatPasswordField.delegate = self
+        
+    }
+    
+    // Hide keyboard when user touches outside keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        repeatPasswordInvalid.isHidden = true
+        emailInvalid.isHidden = true
+        usernameInvalid.isHidden = true
+        self.view.endEditing(true)
+    }
+    
+    // Press return key
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameField.resignFirstResponder()
+        emailField.resignFirstResponder()
+        usernameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        repeatPasswordField.resignFirstResponder()
+        return (true)
     }
 
     @IBAction func SignUpAction(_ sender: Any) {

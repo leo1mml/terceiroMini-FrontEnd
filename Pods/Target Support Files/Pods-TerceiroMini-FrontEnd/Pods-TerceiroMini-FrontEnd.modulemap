@@ -1,0 +1,6 @@
+framework module Pods_TerceiroMini_FrontEnd {
+  umbrella header "Pods-TerceiroMini-FrontEnd-umbrella.h"
+
+  export *
+  module * { export * }
+}

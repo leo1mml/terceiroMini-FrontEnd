@@ -179,11 +179,9 @@
 		08F06F9B1FBB594A0039EAFE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				8A1CC5A81FBE66F900BC4963 /* Main Screen */,
 				8A5D5CEE1FB0D22C00C24725 /* Main.storyboard */,
 				8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */,
-				8A3EE3BD1FBDF739001DDB81 /* MainScreen.storyboard */,
-				8A1CC5A21FBE5B6900BC4963 /* MainScreenTableView.storyboard */,
-				8A1CC5A41FBE5DD700BC4963 /* TableHeader.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -207,6 +205,16 @@
 				8A1CC59A1FBE3D5100BC4963 /* ChallengeCellPresenter.swift */,
 			);
 			path = ChallengeCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		8A1CC5A81FBE66F900BC4963 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				8A3EE3BD1FBDF739001DDB81 /* MainScreen.storyboard */,
+				8A1CC5A21FBE5B6900BC4963 /* MainScreenTableView.storyboard */,
+				8A1CC5A41FBE5DD700BC4963 /* TableHeader.xib */,
+			);
+			path = "Main Screen";
 			sourceTree = "<group>";
 		};
 		8A3CC9DD1FBE0A3C00C412C2 /* Resources */ = {

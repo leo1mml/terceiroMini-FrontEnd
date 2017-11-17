@@ -15,6 +15,9 @@
 		8A1CC59B1FBE3D5100BC4963 /* ChallengeCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CC59A1FBE3D5100BC4963 /* ChallengeCellPresenter.swift */; };
 		8A1CC59D1FBE3E2A00BC4963 /* ChallengesCollectionViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CC59C1FBE3E2A00BC4963 /* ChallengesCollectionViewProtocols.swift */; };
 		8A1CC5A11FBE3E7E00BC4963 /* ChallengeCollectionViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CC5A01FBE3E7E00BC4963 /* ChallengeCollectionViewPresenter.swift */; };
+		8A1CC5A31FBE5B6900BC4963 /* MainScreenTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A1CC5A21FBE5B6900BC4963 /* MainScreenTableView.storyboard */; };
+		8A1CC5A51FBE5DD700BC4963 /* TableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1CC5A41FBE5DD700BC4963 /* TableHeader.xib */; };
+		8A1CC5A71FBE5F0900BC4963 /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CC5A61FBE5F0900BC4963 /* TableHeader.swift */; };
 		8A3CCA031FBE0A9E00C412C2 /* Montserrat-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3CC9DF1FBE0A8D00C412C2 /* Montserrat-MediumItalic.otf */; };
 		8A3CCA041FBE0A9E00C412C2 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3CC9E01FBE0A8D00C412C2 /* Montserrat-Bold.otf */; };
 		8A3CCA051FBE0A9E00C412C2 /* Montserrat-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3CC9E11FBE0A8E00C412C2 /* Montserrat-ThinItalic.otf */; };
@@ -86,6 +89,9 @@
 		8A1CC59A1FBE3D5100BC4963 /* ChallengeCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCellPresenter.swift; sourceTree = "<group>"; };
 		8A1CC59C1FBE3E2A00BC4963 /* ChallengesCollectionViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesCollectionViewProtocols.swift; sourceTree = "<group>"; };
 		8A1CC5A01FBE3E7E00BC4963 /* ChallengeCollectionViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCollectionViewPresenter.swift; sourceTree = "<group>"; };
+		8A1CC5A21FBE5B6900BC4963 /* MainScreenTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreenTableView.storyboard; sourceTree = "<group>"; };
+		8A1CC5A41FBE5DD700BC4963 /* TableHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableHeader.xib; sourceTree = "<group>"; };
+		8A1CC5A61FBE5F0900BC4963 /* TableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeader.swift; sourceTree = "<group>"; };
 		8A3CC9DF1FBE0A8D00C412C2 /* Montserrat-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.otf"; sourceTree = "<group>"; };
 		8A3CC9E01FBE0A8D00C412C2 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		8A3CC9E11FBE0A8E00C412C2 /* Montserrat-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.otf"; sourceTree = "<group>"; };
@@ -176,6 +182,8 @@
 				8A5D5CEE1FB0D22C00C24725 /* Main.storyboard */,
 				8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */,
 				8A3EE3BD1FBDF739001DDB81 /* MainScreen.storyboard */,
+				8A1CC5A21FBE5B6900BC4963 /* MainScreenTableView.storyboard */,
+				8A1CC5A41FBE5DD700BC4963 /* TableHeader.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -266,8 +274,9 @@
 		8A3CCA2E1FBE253B00C412C2 /* MainScreenTableView */ = {
 			isa = PBXGroup;
 			children = (
-				8A3CCA311FBE259900C412C2 /* Cells */,
 				8A3CCA2F1FBE256D00C412C2 /* MainScreenTableViewController.swift */,
+				8A1CC5A61FBE5F0900BC4963 /* TableHeader.swift */,
+				8A3CCA311FBE259900C412C2 /* Cells */,
 			);
 			path = MainScreenTableView;
 			sourceTree = "<group>";
@@ -438,6 +447,7 @@
 				8A5D5CF21FB0D22C00C24725 /* Assets.xcassets in Resources */,
 				8A3CCA141FBE0A9E00C412C2 /* MontserratAlternates-ExtraBoldItalic.otf in Resources */,
 				8A3CCA061FBE0A9E00C412C2 /* Montserrat-ExtraLightItalic.otf in Resources */,
+				8A1CC5A51FBE5DD700BC4963 /* TableHeader.xib in Resources */,
 				8A3CCA251FBE0A9E00C412C2 /* MontserratAlternates-SemiBoldItalic.otf in Resources */,
 				8A3CCA1F1FBE0A9E00C412C2 /* MontserratAlternates-SemiBold.otf in Resources */,
 				8A3CCA201FBE0A9E00C412C2 /* Montserrat-BlackItalic.otf in Resources */,
@@ -451,6 +461,7 @@
 				8A3CCA131FBE0A9E00C412C2 /* Montserrat-Italic.otf in Resources */,
 				8A3CCA0E1FBE0A9E00C412C2 /* Montserrat-ExtraBoldItalic.otf in Resources */,
 				8A3CCA1D1FBE0A9E00C412C2 /* MontserratAlternates-LightItalic.otf in Resources */,
+				8A1CC5A31FBE5B6900BC4963 /* MainScreenTableView.storyboard in Resources */,
 				8A3CCA091FBE0A9E00C412C2 /* Montserrat-Thin.otf in Resources */,
 				8A3CCA071FBE0A9E00C412C2 /* Montserrat-ExtraLight.otf in Resources */,
 				8A3CCA041FBE0A9E00C412C2 /* Montserrat-Bold.otf in Resources */,
@@ -477,6 +488,7 @@
 				8A3CCA291FBE0DF800C412C2 /* MainScreenViewController.swift in Sources */,
 				08F06F991FBB567A0039EAFE /* LoginPresenter.swift in Sources */,
 				8A1CC59D1FBE3E2A00BC4963 /* ChallengesCollectionViewProtocols.swift in Sources */,
+				8A1CC5A71FBE5F0900BC4963 /* TableHeader.swift in Sources */,
 				8A3CCA341FBE260700C412C2 /* OpenChallengesTableViewCell.swift in Sources */,
 				8A3CCA361FBE267900C412C2 /* OpenChallengesCellProtocols.swift in Sources */,
 				8A1CC5941FBE383300BC4963 /* ChallengesCollectionView.swift in Sources */,

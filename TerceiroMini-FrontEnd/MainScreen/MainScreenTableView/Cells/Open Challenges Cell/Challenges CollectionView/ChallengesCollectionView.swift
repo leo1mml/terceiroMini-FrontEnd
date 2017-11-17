@@ -10,7 +10,7 @@ import UIKit
 
 class ChallengesCollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate, ChallengesCollectionViewView {
     
-    var presenter : ChallengesCollectionViewPresenter
+    var presenter : ChallengesCollectionViewPresenter?
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

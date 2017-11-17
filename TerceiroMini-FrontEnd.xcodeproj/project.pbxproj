@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F961FBB544C0039EAFE /* LoginProtocols.swift */; };
-		08F06F991FBB567A0039EAFE /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F981FBB567A0039EAFE /* LoginPresenter.swift */; };
+		08F06F991FBB567A0039EAFE /* LoginPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F981FBB567A0039EAFE /* LoginPresenterImpl.swift */; };
 		146C9F691FBB60C6001FA3DB /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146C9F681FBB60C6001FA3DB /* SignUp.storyboard */; };
 		146C9F6C1FBB617B001FA3DB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9F6B1FBB617B001FA3DB /* SignUpViewController.swift */; };
 		146C9F6E1FBB61C0001FA3DB /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C9F6D1FBB61C0001FA3DB /* SignUpPresenter.swift */; };
@@ -33,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		08F06F961FBB544C0039EAFE /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
-		08F06F981FBB567A0039EAFE /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		08F06F981FBB567A0039EAFE /* LoginPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterImpl.swift; sourceTree = "<group>"; };
 		146C9F681FBB60C6001FA3DB /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		146C9F6B1FBB617B001FA3DB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		146C9F6D1FBB61C0001FA3DB /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				8A5D5CEC1FB0D22C00C24725 /* LoginViewController.swift */,
-				08F06F981FBB567A0039EAFE /* LoginPresenter.swift */,
+				08F06F981FBB567A0039EAFE /* LoginPresenterImpl.swift */,
 				08F06F961FBB544C0039EAFE /* LoginProtocols.swift */,
 			);
 			path = Login;
@@ -242,7 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08F06F991FBB567A0039EAFE /* LoginPresenter.swift in Sources */,
+				08F06F991FBB567A0039EAFE /* LoginPresenterImpl.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				146C9F6E1FBB61C0001FA3DB /* SignUpPresenter.swift in Sources */,

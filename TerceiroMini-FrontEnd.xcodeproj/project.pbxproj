@@ -75,8 +75,19 @@
 			children = (
 				8A5D5CEE1FB0D22C00C24725 /* Main.storyboard */,
 				8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */,
+				146C9F681FBB60C6001FA3DB /* SignUp.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		146C9F6A1FBB6106001FA3DB /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				146C9F6B1FBB617B001FA3DB /* SignUpViewController.swift */,
+				146C9F6D1FBB61C0001FA3DB /* SignUpPresenter.swift */,
+				146C9F6F1FBB6202001FA3DB /* SignUpProtocols.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		8A5D5CDE1FB0D22C00C24725 = {
@@ -100,6 +111,7 @@
 		8A5D5CE91FB0D22C00C24725 /* TerceiroMini-FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				146C9F6A1FBB6106001FA3DB /* SignUp */,
 				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
 				08F06F9A1FBB58FA0039EAFE /* Login */,
@@ -204,6 +216,7 @@
 				8A5D5CF51FB0D22C00C24725 /* LaunchScreen.storyboard in Resources */,
 				8A5D5CF21FB0D22C00C24725 /* Assets.xcassets in Resources */,
 				8A5D5CF01FB0D22C00C24725 /* Main.storyboard in Resources */,
+				146C9F691FBB60C6001FA3DB /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +237,9 @@
 				08F06F991FBB567A0039EAFE /* LoginPresenterImpl.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
+				146C9F6E1FBB61C0001FA3DB /* SignUpPresenter.swift in Sources */,
+				146C9F6C1FBB617B001FA3DB /* SignUpViewController.swift in Sources */,
+				146C9F701FBB6202001FA3DB /* SignUpProtocols.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

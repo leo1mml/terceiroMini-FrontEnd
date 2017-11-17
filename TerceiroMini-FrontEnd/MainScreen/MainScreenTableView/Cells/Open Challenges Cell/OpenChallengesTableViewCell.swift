@@ -8,7 +8,20 @@
 
 import UIKit
 
-class OpenChallengesTableViewCell: UITableViewCell {
+class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChallengeCell", for: indexPath) as! ChallengeCollectionViewCell
+        cell.numPhotosLabel.text = "44 fotos"
+        cell.themeImage.image = UIImage(named: "pombo")
+        cell.themeLabel.text = "Pombo"
+        
+        return cell
+    }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -120,7 +120,7 @@
 		8A3CC9F81FBE0A9900C412C2 /* Montserrat-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.otf"; sourceTree = "<group>"; };
 		8A3CC9F91FBE0A9A00C412C2 /* MontserratAlternates-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-LightItalic.otf"; sourceTree = "<group>"; };
 		8A3CC9FA1FBE0A9A00C412C2 /* MontserratAlternates-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Regular.otf"; sourceTree = "<group>"; };
-		8A3CC9FB1FBE0A9B00C412C2 /* MontserratAlternates-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-SemiBold.otf"; sourceTree = "<group>"; };
+		8A3CC9FB1FBE0A9B00C412C2 /* MontserratAlternates-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "MontserratAlternates-SemiBold.otf"; sourceTree = "<group>"; };
 		8A3CC9FC1FBE0A9B00C412C2 /* Montserrat-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.otf"; sourceTree = "<group>"; };
 		8A3CC9FD1FBE0A9B00C412C2 /* MontserratAlternates-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Bold.otf"; sourceTree = "<group>"; };
 		8A3CC9FE1FBE0A9C00C412C2 /* MontserratAlternates-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-ExtraBold.otf"; sourceTree = "<group>"; };

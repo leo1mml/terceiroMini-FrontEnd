@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, LoginView {
         super.viewDidLoad()
         print("test")
         
+        presenter = LoginPresenterImpl(loginViewImpl: self)
     }
 
     @IBAction func login(_ sender: UIButton) {
@@ -36,8 +37,7 @@ class LoginViewController: UIViewController, LoginView {
     
     func changeScreen() {
         
-        performSegue(withIdentifier: "", sender: self)
+        
     }
     
 }
-

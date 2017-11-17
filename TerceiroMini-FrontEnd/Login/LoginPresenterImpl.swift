@@ -10,18 +10,22 @@ import Foundation
 
 class LoginPresenterImpl: LoginPresenter {
     
-    var view: LoginView?
+    var view: LoginView
+    
+    init(loginViewImpl view: LoginView) {
+        self.view = view
+    }
     
     func validateCredentials(username: String, password: String) {
         
         if username.isEmpty || password.isEmpty {
-            view?.showMissingFieldsError()
+            view.showMissingFieldsError()
         } else {
             
             if username == "admin" && password == "admin" {
-                view?.changeScreen()
+                view.changeScreen()
             } else {
-                view?.showInvalidCredentialsError()
+                view.showInvalidCredentialsError()
             }
         }
     }

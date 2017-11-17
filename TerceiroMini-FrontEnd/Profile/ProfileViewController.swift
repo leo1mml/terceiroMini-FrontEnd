@@ -11,22 +11,12 @@ import UIKit
 class ProfileViewController: UIViewController, ProfileView, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionProfile: UICollectionView!
-    //    @IBOutlet weak var profileBorderView: UIView!
-    //    @IBOutlet weak var profileImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionProfile.delegate = self
-                
-//        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width/2
-//        self.profileImage.clipsToBounds = true
-//
-//        self.profileBorderView.layer.cornerRadius = self.profileBorderView.frame.size.width/2
-//        self.profileBorderView.clipsToBounds = true
-//
-//        self.profileBorderView.layer.borderWidth = 2
-//        self.profileBorderView.layer.borderColor = UIColor.black.cgColor
+        self.collectionProfile.delegate = self
+        self.collectionProfile.dataSource = self
         
     }
 
@@ -40,7 +30,31 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "profileCell", for: indexPath)
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "profileCell", for: indexPath) as! ProfileCollectionViewCell
     }
 
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    
+        var reusableView: UICollectionReusableView? = nil
+        
+        if kind == UICollectionElementKindSectionHeader {
+            
+            let headerView: HeaderCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "profileHeader", for: indexPath) as! HeaderCollectionReusableView
+            
+            headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2
+            headerView.profileImage.clipsToBounds = true
+            
+            headerView.profileBorderView.layer.cornerRadius = headerView.profileBorderView.frame.size.width/2
+            headerView.profileBorderView.clipsToBounds = true
+            
+            headerView.profileBorderView.layer.borderWidth = 2
+            headerView.profileBorderView.layer.borderColor = UIColor.black.cgColor
+            
+            reusableView = headerView
+        }
+        
+        return reusableView!
+        
+    }
+    
 }

@@ -19,7 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gb7-3B-cua">
                                 <rect key="frame" x="0.0" y="84" width="375" height="583"/>
-                                <color key="backgroundColor" red="1" green="0.06950727541" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="rob-42-8Vw"/>
                                     <constraint firstAttribute="height" constant="583" id="tOY-Yb-vyk"/>
@@ -70,7 +70,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="profileHeader" id="sI3-1o-V9a">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="profileHeader" id="sI3-1o-V9a" customClass="HeaderCollectionReusableView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -152,11 +152,17 @@
                                             </constraints>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.59993284940000002" green="0.60003870729999997" blue="0.59992617370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="a6Q-2l-EtH" firstAttribute="centerX" secondItem="sI3-1o-V9a" secondAttribute="centerX" id="5yD-zz-BHD"/>
                                         <constraint firstItem="a6Q-2l-EtH" firstAttribute="centerY" secondItem="sI3-1o-V9a" secondAttribute="centerY" id="CyX-LQ-TJR"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="profileBorderView" destination="cxV-vw-yQE" id="jBf-n2-Ag6"/>
+                                        <outlet property="profileImage" destination="6yM-6z-GJk" id="hf0-3s-7SC"/>
+                                        <outlet property="profileNameLabel" destination="8Iz-lw-pCe" id="h2B-jw-vhX"/>
+                                        <outlet property="profileTrophyNumberLabel" destination="GeL-QK-RCr" id="Ve4-ld-var"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>

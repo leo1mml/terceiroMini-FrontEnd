@@ -17,6 +17,7 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChallengeCell", for: indexPath) as! ChallengeCollectionViewCell
         cell.numPhotosLabel.text = "44 fotos"
         cell.themeImage.image = UIImage(named: "pombo")
+        cell.layer.cornerRadius = 10
         cell.themeLabel.text = "Pombo"
         
         return cell

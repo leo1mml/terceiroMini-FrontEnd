@@ -74,6 +74,8 @@
 		8A914FA91FC0DD9C006BE97C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914FA81FC0DD9C006BE97C /* GradientView.swift */; };
 		8A914FAE1FC0F49F006BE97C /* LastWinnersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914FAD1FC0F49F006BE97C /* LastWinnersCell.swift */; };
 		8A914FB21FC0F5FE006BE97C /* WinnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914FB11FC0F5FE006BE97C /* WinnerCollectionViewCell.swift */; };
+		8A914FB51FC0F9FF006BE97C /* NextChallengesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914FB41FC0F9FF006BE97C /* NextChallengesCollectionViewCell.swift */; };
+		8A914FB81FC0FA3E006BE97C /* NextChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914FB71FC0FA3E006BE97C /* NextChallengeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +162,8 @@
 		8A914FA81FC0DD9C006BE97C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		8A914FAD1FC0F49F006BE97C /* LastWinnersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastWinnersCell.swift; sourceTree = "<group>"; };
 		8A914FB11FC0F5FE006BE97C /* WinnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerCollectionViewCell.swift; sourceTree = "<group>"; };
+		8A914FB41FC0F9FF006BE97C /* NextChallengesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengesCollectionViewCell.swift; sourceTree = "<group>"; };
+		8A914FB71FC0FA3E006BE97C /* NextChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengeTableViewCell.swift; sourceTree = "<group>"; };
 		95C217CEF3A90F7A56308EBC /* Pods_TerceiroMini_FrontEndTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEndTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8B63BA2069A782D7C6A5BF /* Pods-TerceiroMini-FrontEnd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -331,6 +335,7 @@
 		8A3CCA311FBE259900C412C2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8A914FB31FC0F9D1006BE97C /* Next Challenges Cell */,
 				8A914FAC1FC0F432006BE97C /* Last Winners Cell */,
 				8A3CCA321FBE25AA00C412C2 /* Open Challenges Cell */,
 			);
@@ -423,6 +428,23 @@
 				8A914FB11FC0F5FE006BE97C /* WinnerCollectionViewCell.swift */,
 			);
 			path = "Winner CV Cell";
+			sourceTree = "<group>";
+		};
+		8A914FB31FC0F9D1006BE97C /* Next Challenges Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8A914FB61FC0FA09006BE97C /* Next Challenge CV Cell */,
+				8A914FB71FC0FA3E006BE97C /* NextChallengeTableViewCell.swift */,
+			);
+			path = "Next Challenges Cell";
+			sourceTree = "<group>";
+		};
+		8A914FB61FC0FA09006BE97C /* Next Challenge CV Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8A914FB41FC0F9FF006BE97C /* NextChallengesCollectionViewCell.swift */,
+			);
+			path = "Next Challenge CV Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -685,6 +707,7 @@
 				8A914FAE1FC0F49F006BE97C /* LastWinnersCell.swift in Sources */,
 				8A1CC5A71FBE5F0900BC4963 /* TableHeader.swift in Sources */,
 				8A3CCA341FBE260700C412C2 /* OpenChallengesTableViewCell.swift in Sources */,
+				8A914FB81FC0FA3E006BE97C /* NextChallengeTableViewCell.swift in Sources */,
 				8A3CCA361FBE267900C412C2 /* OpenChallengesCellProtocols.swift in Sources */,
 				8A914FB21FC0F5FE006BE97C /* WinnerCollectionViewCell.swift in Sources */,
 				8A1CC5941FBE383300BC4963 /* ChallengesCollectionView.swift in Sources */,
@@ -694,6 +717,7 @@
 				8A3CCA2D1FBE22F200C412C2 /* MainScreenPresenter.swift in Sources */,
 				8A4FCB3F1FC0CC580067E40F /* UIView+Extension.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,
+				8A914FB51FC0F9FF006BE97C /* NextChallengesCollectionViewCell.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				8A3CCA2B1FBE229D00C412C2 /* MainScreenProtocols.swift in Sources */,
 				8A1CC5A11FBE3E7E00BC4963 /* ChallengeCollectionViewPresenter.swift in Sources */,

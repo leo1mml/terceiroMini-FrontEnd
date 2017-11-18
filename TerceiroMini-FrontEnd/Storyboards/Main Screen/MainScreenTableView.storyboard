@@ -216,7 +216,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H23-HS-l4e">
                                                                         <rect key="frame" x="0.0" y="0.0" width="105" height="99"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8aT-ac-EcZ">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pombo" translatesAutoresizingMaskIntoConstraints="NO" id="8aT-ac-EcZ">
                                                                                 <rect key="frame" x="-0.5" y="0.5" width="105" height="99"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -268,7 +268,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="PRÓXIMOS" id="HLv-Pl-fAw">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="nextChallenges" rowHeight="400" id="Cw6-N8-W3n">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="nextChallenges" rowHeight="400" id="Cw6-N8-W3n" customClass="NextChallengeTableViewCell" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="709.5" width="375" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cw6-N8-W3n" id="MkR-D7-OcX">
@@ -279,13 +279,13 @@
                                                     <rect key="frame" x="16" y="11" width="343" height="378"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i3m-u0-hjh">
-                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="itemSize" width="163" height="154"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="nextChallenge" id="xmc-cT-CUk">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="nextChallenge" id="xmc-cT-CUk" customClass="NextChallengesCollectionViewCell" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="162.5" height="154"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -295,7 +295,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRj-Bv-phO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="162.5" height="154"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="amY-sv-WpP">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pombo" translatesAutoresizingMaskIntoConstraints="NO" id="amY-sv-WpP">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="154"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tema" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-bI-bhh">
@@ -330,6 +330,11 @@
                                                                                     <constraint firstItem="HMG-Fe-yaf" firstAttribute="centerY" secondItem="YTO-3F-O8Y" secondAttribute="centerY" id="o4p-XF-aee"/>
                                                                                     <constraint firstItem="agR-IC-00s" firstAttribute="centerX" secondItem="YTO-3F-O8Y" secondAttribute="centerX" id="tuO-RL-3CK"/>
                                                                                 </constraints>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <integer key="value" value="10"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -353,8 +358,17 @@
                                                                 <constraint firstAttribute="trailing" secondItem="IRj-Bv-phO" secondAttribute="trailing" id="ccT-35-mNg"/>
                                                             </constraints>
                                                             <size key="customSize" width="162.5" height="154"/>
+                                                            <connections>
+                                                                <outlet property="dateLabel" destination="agR-IC-00s" id="Zr9-NZ-CXk"/>
+                                                                <outlet property="themeImage" destination="amY-sv-WpP" id="LgA-2g-Ixf"/>
+                                                                <outlet property="themeLabel" destination="rm5-bI-bhh" id="hzg-yA-fXV"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="Cw6-N8-W3n" id="0X7-gu-wN4"/>
+                                                        <outlet property="delegate" destination="Cw6-N8-W3n" id="7af-ah-8Kt"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>

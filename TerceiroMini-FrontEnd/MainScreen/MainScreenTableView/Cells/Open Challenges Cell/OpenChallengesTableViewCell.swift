@@ -9,6 +9,9 @@
 import UIKit
 
 class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet weak var pageControl : UIPageControl!
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
@@ -19,10 +22,15 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         cell.themeImage.image = UIImage(named: "pombo")
         cell.layer.cornerRadius = 10
         cell.themeLabel.text = "Pombo"
+    
+        
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        pageControl.currentPage = indexPath.row
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

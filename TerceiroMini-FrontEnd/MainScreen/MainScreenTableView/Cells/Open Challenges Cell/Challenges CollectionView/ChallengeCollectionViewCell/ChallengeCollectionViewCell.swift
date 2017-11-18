@@ -14,5 +14,7 @@ class ChallengeCollectionViewCell: UICollectionViewCell, ChallengesCellView {
     
     @IBOutlet weak var numPhotosLabel: UILabel!
     
+    @IBOutlet weak var gradientLayer: UIView!
     
+    @IBOutlet weak var timerLabel: UILabel!
 }

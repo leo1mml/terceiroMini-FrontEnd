@@ -64,12 +64,16 @@
 		8A3CCA361FBE267900C412C2 /* OpenChallengesCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3CCA351FBE267900C412C2 /* OpenChallengesCellProtocols.swift */; };
 		8A3CCA381FBE268F00C412C2 /* OpenChallengesCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3CCA371FBE268F00C412C2 /* OpenChallengesCellPresenter.swift */; };
 		8A3EE3BE1FBDF739001DDB81 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3EE3BD1FBDF739001DDB81 /* MainScreen.storyboard */; };
+		8A4FCB3F1FC0CC580067E40F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4FCB3E1FC0CC580067E40F /* UIView+Extension.swift */; };
 		8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */; };
 		8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEC1FB0D22C00C24725 /* LoginViewController.swift */; };
 		8A5D5CF01FB0D22C00C24725 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEE1FB0D22C00C24725 /* Main.storyboard */; };
 		8A5D5CF21FB0D22C00C24725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D5CF11FB0D22C00C24725 /* Assets.xcassets */; };
 		8A5D5CF51FB0D22C00C24725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */; };
 		8A5D5D001FB0D22C00C24725 /* TerceiroMini_FrontEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CFF1FB0D22C00C24725 /* TerceiroMini_FrontEndTests.swift */; };
+		8A914FA91FC0DD9C006BE97C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914FA81FC0DD9C006BE97C /* GradientView.swift */; };
+		8A914FAE1FC0F49F006BE97C /* LastWinnersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914FAD1FC0F49F006BE97C /* LastWinnersCell.swift */; };
+		8A914FB21FC0F5FE006BE97C /* WinnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914FB11FC0F5FE006BE97C /* WinnerCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +146,7 @@
 		8A3CCA351FBE267900C412C2 /* OpenChallengesCellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChallengesCellProtocols.swift; sourceTree = "<group>"; };
 		8A3CCA371FBE268F00C412C2 /* OpenChallengesCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChallengesCellPresenter.swift; sourceTree = "<group>"; };
 		8A3EE3BD1FBDF739001DDB81 /* MainScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
+		8A4FCB3E1FC0CC580067E40F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8A5D5CE71FB0D22C00C24725 /* TerceiroMini-FrontEnd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TerceiroMini-FrontEnd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A5D5CEC1FB0D22C00C24725 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +157,9 @@
 		8A5D5CFB1FB0D22C00C24725 /* TerceiroMini-FrontEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TerceiroMini-FrontEndTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5D5CFF1FB0D22C00C24725 /* TerceiroMini_FrontEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerceiroMini_FrontEndTests.swift; sourceTree = "<group>"; };
 		8A5D5D011FB0D22C00C24725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A914FA81FC0DD9C006BE97C /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		8A914FAD1FC0F49F006BE97C /* LastWinnersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastWinnersCell.swift; sourceTree = "<group>"; };
+		8A914FB11FC0F5FE006BE97C /* WinnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerCollectionViewCell.swift; sourceTree = "<group>"; };
 		95C217CEF3A90F7A56308EBC /* Pods_TerceiroMini_FrontEndTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEndTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8B63BA2069A782D7C6A5BF /* Pods-TerceiroMini-FrontEnd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -233,6 +241,7 @@
 				8A1CC5961FBE399400BC4963 /* ChallengeCollectionViewCell.swift */,
 				8A1CC5981FBE3CD300BC4963 /* ChallengeCollectionViewCellProtocols.swift */,
 				8A1CC59A1FBE3D5100BC4963 /* ChallengeCellPresenter.swift */,
+				8A914FA81FC0DD9C006BE97C /* GradientView.swift */,
 			);
 			path = ChallengeCollectionViewCell;
 			sourceTree = "<group>";
@@ -322,6 +331,7 @@
 		8A3CCA311FBE259900C412C2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8A914FAC1FC0F432006BE97C /* Last Winners Cell */,
 				8A3CCA321FBE25AA00C412C2 /* Open Challenges Cell */,
 			);
 			path = Cells;
@@ -336,6 +346,14 @@
 				8A3CCA371FBE268F00C412C2 /* OpenChallengesCellPresenter.swift */,
 			);
 			path = "Open Challenges Cell";
+			sourceTree = "<group>";
+		};
+		8A4FCB3D1FC0CC2A0067E40F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8A4FCB3E1FC0CC580067E40F /* UIView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8A5D5CDE1FB0D22C00C24725 = {
@@ -361,6 +379,7 @@
 		8A5D5CE91FB0D22C00C24725 /* TerceiroMini-FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				8A4FCB3D1FC0CC2A0067E40F /* Extensions */,
 				8A3CC9DD1FBE0A3C00C412C2 /* Resources */,
 				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
@@ -379,6 +398,31 @@
 				8A5D5D011FB0D22C00C24725 /* Info.plist */,
 			);
 			path = "TerceiroMini-FrontEndTests";
+			sourceTree = "<group>";
+		};
+		8A914FAC1FC0F432006BE97C /* Last Winners Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8A914FAF1FC0F5B5006BE97C /* Last Winners CollectionView */,
+				8A914FAD1FC0F49F006BE97C /* LastWinnersCell.swift */,
+			);
+			path = "Last Winners Cell";
+			sourceTree = "<group>";
+		};
+		8A914FAF1FC0F5B5006BE97C /* Last Winners CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				8A914FB01FC0F5CA006BE97C /* Winner CV Cell */,
+			);
+			path = "Last Winners CollectionView";
+			sourceTree = "<group>";
+		};
+		8A914FB01FC0F5CA006BE97C /* Winner CV Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8A914FB11FC0F5FE006BE97C /* WinnerCollectionViewCell.swift */,
+			);
+			path = "Winner CV Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -635,16 +679,20 @@
 			files = (
 				8A1CC5991FBE3CD300BC4963 /* ChallengeCollectionViewCellProtocols.swift in Sources */,
 				8A1CC59B1FBE3D5100BC4963 /* ChallengeCellPresenter.swift in Sources */,
+				8A914FA91FC0DD9C006BE97C /* GradientView.swift in Sources */,
 				8A3CCA291FBE0DF800C412C2 /* MainScreenViewController.swift in Sources */,
 				8A1CC59D1FBE3E2A00BC4963 /* ChallengesCollectionViewProtocols.swift in Sources */,
+				8A914FAE1FC0F49F006BE97C /* LastWinnersCell.swift in Sources */,
 				8A1CC5A71FBE5F0900BC4963 /* TableHeader.swift in Sources */,
 				8A3CCA341FBE260700C412C2 /* OpenChallengesTableViewCell.swift in Sources */,
 				8A3CCA361FBE267900C412C2 /* OpenChallengesCellProtocols.swift in Sources */,
+				8A914FB21FC0F5FE006BE97C /* WinnerCollectionViewCell.swift in Sources */,
 				8A1CC5941FBE383300BC4963 /* ChallengesCollectionView.swift in Sources */,
 				08DFE8121FBF5F340065F2DE /* LoginPresenterImpl.swift in Sources */,
 				8A1CC5971FBE399400BC4963 /* ChallengeCollectionViewCell.swift in Sources */,
 				8A3CCA301FBE256D00C412C2 /* MainScreenTableViewController.swift in Sources */,
 				8A3CCA2D1FBE22F200C412C2 /* MainScreenPresenter.swift in Sources */,
+				8A4FCB3F1FC0CC580067E40F /* UIView+Extension.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				8A3CCA2B1FBE229D00C412C2 /* MainScreenProtocols.swift in Sources */,

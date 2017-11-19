@@ -10,6 +10,8 @@ import UIKit
 
 class NextChallengesCollectionViewCell: UICollectionViewCell {
     
+    
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var themeImage: UIImageView!
     
     @IBOutlet weak var dateLabel: UILabel!

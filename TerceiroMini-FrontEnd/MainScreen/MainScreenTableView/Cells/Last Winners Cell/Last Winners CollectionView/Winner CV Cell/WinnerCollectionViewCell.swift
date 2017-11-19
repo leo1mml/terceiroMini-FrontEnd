@@ -12,4 +12,8 @@ class WinnerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImage: UIImageView!
     
+    @IBOutlet weak var profilePhoto: UIImageView!
+    @IBOutlet weak var photoView: UIView!
+    
+    
 }

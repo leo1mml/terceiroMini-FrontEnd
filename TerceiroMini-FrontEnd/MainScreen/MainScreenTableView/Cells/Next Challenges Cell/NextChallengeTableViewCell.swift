@@ -19,8 +19,14 @@ class NextChallengeTableViewCell: UITableViewCell, UICollectionViewDataSource, U
         cell.dateLabel.text = "DATE"
         cell.themeImage.image = UIImage(named: "pombo")
         cell.themeLabel.text = "pombo"
+        styleNextChallengeView(view: cell.containerView)
         
         return cell
+    }
+    
+    func styleNextChallengeView (view: UIView) {
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 10
     }
     
 

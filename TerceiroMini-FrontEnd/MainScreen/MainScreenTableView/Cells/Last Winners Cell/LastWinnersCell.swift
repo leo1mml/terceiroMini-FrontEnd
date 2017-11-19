@@ -16,9 +16,28 @@ class LastWinnersCell: UITableViewCell, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "lastWinner", for: indexPath) as! WinnerCollectionViewCell
         cell.photoImage.image = UIImage(named: "pombo")
+        cell.profilePhoto.image = UIImage(named: "pombo")
         cell.nameLabel.text = "Pombo Master"
-        
+        styleProfilePhotoImage(winnerProfilePhoto: cell.profilePhoto)
+        styleWinnerImage(winnerPhoto: cell.photoImage)
         return cell
+    }
+    
+    
+    func styleWinnerImage(winnerPhoto: UIImageView) {
+        winnerPhoto.layer.masksToBounds = true
+        winnerPhoto.layer.cornerRadius = 10
+        let blurEffect = UIBlurEffect(style: .dark)
+        
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = winnerPhoto.bounds
+        blurEffectView.alpha = 0.4
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        winnerPhoto.addSubview(blurEffectView)
+    }
+    func styleProfilePhotoImage(winnerProfilePhoto: UIImageView) {
+        winnerProfilePhoto.layer.masksToBounds = true
+        winnerProfilePhoto.layer.cornerRadius = winnerProfilePhoto.frame.size.width/2
     }
     
     

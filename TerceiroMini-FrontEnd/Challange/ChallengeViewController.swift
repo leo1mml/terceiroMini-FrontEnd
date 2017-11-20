@@ -18,7 +18,7 @@ class ChallengeViewController: UIViewController {
     
     var state = ChallengeState.open
     
-    let startingGradientColor = UIColor(red:0, green:0, blue:0, alpha:0.7)
+    let startingGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,4 +14,6 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var themeLabel: UILabel!
     
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
 }

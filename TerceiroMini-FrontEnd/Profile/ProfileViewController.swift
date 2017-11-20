@@ -12,6 +12,9 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     
     @IBOutlet weak var collectionProfile: UICollectionView!
     
+    // array de imagens
+    var images = ["pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,11 +29,25 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "profileCell", for: indexPath) as! ProfileCollectionViewCell
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "profileCell", for: indexPath) as! ProfileCollectionViewCell
+        
+        cell.trophyImage.image = UIImage(named: images[indexPath.row])
+        //cell.trophyImage.contentMode = .scaleAspectFill
+        
+        cell.backgroundImage.image = UIImage(named: images[indexPath.row])
+        //cell.backgroundImage.contentMode = .scaleAspectFill
+        
+
+        cell.frame.size.width = 121
+        cell.frame.size.height = 121
+        
+        return cell
+        
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -40,6 +57,9 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         if kind == UICollectionElementKindSectionHeader {
             
             let headerView: HeaderCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "profileHeader", for: indexPath) as! HeaderCollectionReusableView
+            
+            headerView.profileImage.image = UIImage(named: images[1])
+            //headerView.profileImage.contentMode = .scaleAspectFill
             
             headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2
             headerView.profileImage.clipsToBounds = true

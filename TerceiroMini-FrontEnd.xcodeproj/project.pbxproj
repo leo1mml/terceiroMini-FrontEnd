@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F961FBB544C0039EAFE /* LoginProtocols.swift */; };
-		08F06F991FBB567A0039EAFE /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F981FBB567A0039EAFE /* LoginPresenter.swift */; };
+		08F06F991FBB567A0039EAFE /* LoginPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F981FBB567A0039EAFE /* LoginPresenterImpl.swift */; };
 		482DA5D01FBE1C97006490F3 /* Oval 4 Copy 17.png in Resources */ = {isa = PBXBuildFile; fileRef = 48E3618A1FBE19C200B275A7 /* Oval 4 Copy 17.png */; };
+		4848CF411FC34A3300FB73C5 /* ChallengePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4848CF401FC34A3300FB73C5 /* ChallengePresenterImpl.swift */; };
+		4848CF431FC34A4300FB73C5 /* ChallengeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4848CF421FC34A4300FB73C5 /* ChallengeProtocols.swift */; };
 		486D67271FBE1E22009F0BF5 /* Oval 4 Copy 17.png in Resources */ = {isa = PBXBuildFile; fileRef = 48E3618A1FBE19C200B275A7 /* Oval 4 Copy 17.png */; };
 		486D67291FBE2393009F0BF5 /* Rectangle Copy 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 486D67281FBE233C009F0BF5 /* Rectangle Copy 29.png */; };
 		486D672A1FBE2394009F0BF5 /* Rectangle Copy 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 486D67281FBE233C009F0BF5 /* Rectangle Copy 29.png */; };
@@ -35,7 +37,9 @@
 
 /* Begin PBXFileReference section */
 		08F06F961FBB544C0039EAFE /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
-		08F06F981FBB567A0039EAFE /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		08F06F981FBB567A0039EAFE /* LoginPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterImpl.swift; sourceTree = "<group>"; };
+		4848CF401FC34A3300FB73C5 /* ChallengePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePresenterImpl.swift; sourceTree = "<group>"; };
+		4848CF421FC34A4300FB73C5 /* ChallengeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeProtocols.swift; sourceTree = "<group>"; };
 		486D67281FBE233C009F0BF5 /* Rectangle Copy 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rectangle Copy 29.png"; sourceTree = "<group>"; };
 		48C127141FBB680600A85D30 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		48C127191FBB82CB00A85D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Challenge.storyboard; sourceTree = "<group>"; };
@@ -75,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				8A5D5CEC1FB0D22C00C24725 /* LoginViewController.swift */,
-				08F06F981FBB567A0039EAFE /* LoginPresenter.swift */,
+				08F06F981FBB567A0039EAFE /* LoginPresenterImpl.swift */,
 				08F06F961FBB544C0039EAFE /* LoginProtocols.swift */,
 			);
 			path = Login;
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				48C127141FBB680600A85D30 /* ChallengeViewController.swift */,
+				4848CF421FC34A4300FB73C5 /* ChallengeProtocols.swift */,
+				4848CF401FC34A3300FB73C5 /* ChallengePresenterImpl.swift */,
 			);
 			path = Challange;
 			sourceTree = "<group>";
@@ -249,7 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08F06F991FBB567A0039EAFE /* LoginPresenter.swift in Sources */,
+				4848CF431FC34A4300FB73C5 /* ChallengeProtocols.swift in Sources */,
+				4848CF411FC34A3300FB73C5 /* ChallengePresenterImpl.swift in Sources */,
+				08F06F991FBB567A0039EAFE /* LoginPresenterImpl.swift in Sources */,
 				48C127151FBB680600A85D30 /* ChallengeViewController.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,

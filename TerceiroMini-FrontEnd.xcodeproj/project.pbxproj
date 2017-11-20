@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F961FBB544C0039EAFE /* LoginProtocols.swift */; };
 		08F06F991FBB567A0039EAFE /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F981FBB567A0039EAFE /* LoginPresenter.swift */; };
+		482DA5D01FBE1C97006490F3 /* Oval 4 Copy 17.png in Resources */ = {isa = PBXBuildFile; fileRef = 48E3618A1FBE19C200B275A7 /* Oval 4 Copy 17.png */; };
+		486D67271FBE1E22009F0BF5 /* Oval 4 Copy 17.png in Resources */ = {isa = PBXBuildFile; fileRef = 48E3618A1FBE19C200B275A7 /* Oval 4 Copy 17.png */; };
+		486D67291FBE2393009F0BF5 /* Rectangle Copy 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 486D67281FBE233C009F0BF5 /* Rectangle Copy 29.png */; };
+		486D672A1FBE2394009F0BF5 /* Rectangle Copy 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 486D67281FBE233C009F0BF5 /* Rectangle Copy 29.png */; };
+		48C127151FBB680600A85D30 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C127141FBB680600A85D30 /* ChallengeViewController.swift */; };
+		48C127181FBB82CB00A85D30 /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C1271A1FBB82CB00A85D30 /* Challenge.storyboard */; };
 		8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */; };
 		8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEC1FB0D22C00C24725 /* LoginViewController.swift */; };
 		8A5D5CF01FB0D22C00C24725 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEE1FB0D22C00C24725 /* Main.storyboard */; };
@@ -30,6 +36,11 @@
 /* Begin PBXFileReference section */
 		08F06F961FBB544C0039EAFE /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		08F06F981FBB567A0039EAFE /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		486D67281FBE233C009F0BF5 /* Rectangle Copy 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rectangle Copy 29.png"; sourceTree = "<group>"; };
+		48C127141FBB680600A85D30 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		48C127191FBB82CB00A85D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Challenge.storyboard; sourceTree = "<group>"; };
+		48C1271C1FBB82CE00A85D30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Challenge.strings; sourceTree = "<group>"; };
+		48E3618A1FBE19C200B275A7 /* Oval 4 Copy 17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Oval 4 Copy 17.png"; sourceTree = "<group>"; };
 		8A5D5CE71FB0D22C00C24725 /* TerceiroMini-FrontEnd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TerceiroMini-FrontEnd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A5D5CEC1FB0D22C00C24725 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -75,8 +86,17 @@
 			children = (
 				8A5D5CEE1FB0D22C00C24725 /* Main.storyboard */,
 				8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */,
+				48C1271A1FBB82CB00A85D30 /* Challenge.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		48C127131FBB650600A85D30 /* Challange */ = {
+			isa = PBXGroup;
+			children = (
+				48C127141FBB680600A85D30 /* ChallengeViewController.swift */,
+			);
+			path = Challange;
 			sourceTree = "<group>";
 		};
 		8A5D5CDE1FB0D22C00C24725 = {
@@ -103,7 +123,10 @@
 				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
 				08F06F9A1FBB58FA0039EAFE /* Login */,
+				48C127131FBB650600A85D30 /* Challange */,
 				8A5D5CF11FB0D22C00C24725 /* Assets.xcassets */,
+				48E3618A1FBE19C200B275A7 /* Oval 4 Copy 17.png */,
+				486D67281FBE233C009F0BF5 /* Rectangle Copy 29.png */,
 				8A5D5CF61FB0D22C00C24725 /* Info.plist */,
 			);
 			path = "TerceiroMini-FrontEnd";
@@ -202,7 +225,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A5D5CF51FB0D22C00C24725 /* LaunchScreen.storyboard in Resources */,
+				486D67291FBE2393009F0BF5 /* Rectangle Copy 29.png in Resources */,
+				48C127181FBB82CB00A85D30 /* Challenge.storyboard in Resources */,
 				8A5D5CF21FB0D22C00C24725 /* Assets.xcassets in Resources */,
+				482DA5D01FBE1C97006490F3 /* Oval 4 Copy 17.png in Resources */,
 				8A5D5CF01FB0D22C00C24725 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +237,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486D67271FBE1E22009F0BF5 /* Oval 4 Copy 17.png in Resources */,
+				486D672A1FBE2394009F0BF5 /* Rectangle Copy 29.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08F06F991FBB567A0039EAFE /* LoginPresenter.swift in Sources */,
+				48C127151FBB680600A85D30 /* ChallengeViewController.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
@@ -247,6 +276,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		48C1271A1FBB82CB00A85D30 /* Challenge.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48C127191FBB82CB00A85D30 /* Base */,
+				48C1271C1FBB82CE00A85D30 /* en */,
+			);
+			name = Challenge.storyboard;
+			sourceTree = "<group>";
+		};
 		8A5D5CEE1FB0D22C00C24725 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

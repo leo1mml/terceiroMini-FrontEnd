@@ -9,9 +9,12 @@
 import UIKit
 
 class ChallengeCollectionViewCell: UICollectionViewCell, ChallengesCellView {
-    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var themeImage: UIImageView!
     @IBOutlet weak var themeLabel: UILabel!
-    @IBOutlet weak var photosNumber: UILabel!
+    
+    @IBOutlet weak var numPhotosLabel: UILabel!
+    
+    @IBOutlet weak var gradientLayer: UIView!
+    
     @IBOutlet weak var timerLabel: UILabel!
 }

@@ -16,6 +16,12 @@ class ChallengeViewController: UIViewController {
     @IBOutlet weak var ChallengeName: UILabel!
     @IBOutlet weak var mainButton: UIButton!
     
+    //Constraints that change size
+    // - statusLabel
+    @IBOutlet weak var statusLabelTimerConstraint: NSLayoutConstraint!
+    @IBOutlet weak var statusLabelWinnerContraint: NSLayoutConstraint!
+    // - mainButton
+    
     var state = ChallengeState.open
     
     let startingGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
@@ -34,14 +40,26 @@ class ChallengeViewController: UIViewController {
     func resolveState(state : ChallengeState){
         
         switch state {
-        case .open:
-            break
         case .votation:
             break
         case .finished:
+            changeStatusLabelContraint(open: false)
+            //get winner and change main button
             break
         default:
+            changeStatusLabelContraint(open: true)
+            //get timer
             break
+        }
+    }
+    
+    func changeStatusLabelContraint(open: Bool){
+        if(open){
+            statusLabelWinnerContraint.priority = UILayoutPriority(rawValue: 750)
+            statusLabelTimerConstraint.priority = UILayoutPriority(rawValue: 1000)
+        }else{
+            statusLabelWinnerContraint.priority = UILayoutPriority(rawValue: 1000)
+            statusLabelTimerConstraint.priority = UILayoutPriority(rawValue: 750)
         }
     }
     
@@ -52,24 +70,6 @@ class ChallengeViewController: UIViewController {
         
     }
     
-}
-
-extension UIView {
-    
-    func getConstraint(matchingIdentifier identifier: String) -> NSLayoutConstraint? {
-        
-        var constraint: NSLayoutConstraint?
-        
-        constraints.forEach {
-            c in
-            
-            if c.identifier == identifier {
-                 constraint = c
-            }
-        }
-        
-        return constraint
-    }
 }
 
 extension UIImageView{

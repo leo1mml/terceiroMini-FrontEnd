@@ -14,9 +14,10 @@ protocol ChallengeView{
     func showTimer()
     
     
+    
 }
 
 protocol ChallengePresenter{
     func sendPhoto()
-    
+    func getChallengeTimer()
 }

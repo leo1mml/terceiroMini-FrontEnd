@@ -22,13 +22,14 @@ class ChallengeViewController: UIViewController {
     @IBOutlet weak var statusLabelWinnerContraint: NSLayoutConstraint!
     // - mainButton
     
-    var state = ChallengeState.open
+    var state = ChallengeState.finished
     
     let startingGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
+    let middleGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:0.4)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainImage.addChallengeGradientLayer(frame: view.bounds, colors: [startingGradientColor,.clear,.white])
+        mainImage.addChallengeGradientLayer(frame: view.bounds, colors: [startingGradientColor,middleGradientColor,.white])
     }
     
     override func viewWillAppear(_ animated: Bool) {

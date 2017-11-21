@@ -8,14 +8,14 @@
 
 import UIKit
 
-class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var pageControl : UIPageControl!
     @IBOutlet weak var collectionView : UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pageControl.numberOfPages = 10
-        return 10
+        pageControl.numberOfPages = 8
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -31,14 +31,23 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let scrollDidPass = scrollView.contentOffset.x / 355
-        pageControl.currentPage = Int(scrollDidPass)
+        let scrollDidPass = scrollView.contentOffset.x / (collectionView.frame.width * 0.94)
+        pageControl.currentPage = Int(round(scrollDidPass))
+        scrollView.decelerationRate = 0.8
         
     }
 
     override func awakeFromNib() {
-        super.awakeFromNib()        
+        super.awakeFromNib()
         
+        
+        
+//        let layout = collectionView.collectionViewLayout as! ChallengesFlowLayout
+//        layout.invalidateLayout()
+//        let standartItemSize = layout.itemSize.width * CGFloat(layout.standartItemScale)
+//        layout.estimatedItemSize = CGSize(width: standartItemSize, height: standartItemSize)
+//        layout.minimumLineSpacing = 2
+//        layout.minimumInteritemSpacing = 2
     }
     
     

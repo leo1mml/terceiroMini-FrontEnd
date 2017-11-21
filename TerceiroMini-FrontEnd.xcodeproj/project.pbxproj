@@ -76,6 +76,7 @@
 		8A914FB21FC0F5FE006BE97C /* WinnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914FB11FC0F5FE006BE97C /* WinnerCollectionViewCell.swift */; };
 		8A914FB51FC0F9FF006BE97C /* NextChallengesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914FB41FC0F9FF006BE97C /* NextChallengesCollectionViewCell.swift */; };
 		8A914FB81FC0FA3E006BE97C /* NextChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914FB71FC0FA3E006BE97C /* NextChallengeTableViewCell.swift */; };
+		8A914FBC1FC39D7B006BE97C /* ChallengesFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A914FBB1FC39D7B006BE97C /* ChallengesFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,7 @@
 		8A914FB11FC0F5FE006BE97C /* WinnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A914FB41FC0F9FF006BE97C /* NextChallengesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengesCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A914FB71FC0FA3E006BE97C /* NextChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengeTableViewCell.swift; sourceTree = "<group>"; };
+		8A914FBB1FC39D7B006BE97C /* ChallengesFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesFlowLayout.swift; sourceTree = "<group>"; };
 		95C217CEF3A90F7A56308EBC /* Pods_TerceiroMini_FrontEndTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEndTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8B63BA2069A782D7C6A5BF /* Pods-TerceiroMini-FrontEnd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,6 +237,7 @@
 				8A1CC5931FBE383300BC4963 /* ChallengesCollectionView.swift */,
 				8A1CC59C1FBE3E2A00BC4963 /* ChallengesCollectionViewProtocols.swift */,
 				8A1CC5A01FBE3E7E00BC4963 /* ChallengeCollectionViewPresenter.swift */,
+				8A914FBB1FC39D7B006BE97C /* ChallengesFlowLayout.swift */,
 			);
 			path = "Challenges CollectionView";
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				8A1CC5A11FBE3E7E00BC4963 /* ChallengeCollectionViewPresenter.swift in Sources */,
 				8A3CCA381FBE268F00C412C2 /* OpenChallengesCellPresenter.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
+				8A914FBC1FC39D7B006BE97C /* ChallengesFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,7 @@ class NextChallengeTableViewCell: UITableViewCell, UICollectionViewDataSource, U
         return 4
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "nextChallenge", for: indexPath) as! NextChallengesCollectionViewCell
         

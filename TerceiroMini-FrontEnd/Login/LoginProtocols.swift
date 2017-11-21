@@ -1,5 +1,5 @@
 //
-//  Protocols.swift
+//  LoginProtocols.swift
 //  TerceiroMini-FrontEnd
 //
 //  Created by Gabriel Reynoso on 14/11/2017.

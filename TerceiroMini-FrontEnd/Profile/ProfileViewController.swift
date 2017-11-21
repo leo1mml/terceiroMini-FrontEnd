@@ -15,6 +15,9 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     // array de imagens
     var images = ["pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg"]
     
+    // array de temas
+    var temas = ["Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,13 +39,11 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "profileCell", for: indexPath) as! ProfileCollectionViewCell
         
-        cell.trophyImage.image = UIImage(named: images[indexPath.row])
-        //cell.trophyImage.contentMode = .scaleAspectFill
+        cell.themeLabel.text = temas[indexPath.row]
         
         cell.backgroundImage.image = UIImage(named: images[indexPath.row])
-        //cell.backgroundImage.contentMode = .scaleAspectFill
+        cell.backgroundImage.contentMode = .scaleAspectFill
         
-
         cell.frame.size.width = 121
         cell.frame.size.height = 121
         
@@ -59,7 +60,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             let headerView: HeaderCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "profileHeader", for: indexPath) as! HeaderCollectionReusableView
             
             headerView.profileImage.image = UIImage(named: images[1])
-            //headerView.profileImage.contentMode = .scaleAspectFill
+            headerView.profileImage.contentMode = .scaleAspectFill
             
             headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2
             headerView.profileImage.clipsToBounds = true

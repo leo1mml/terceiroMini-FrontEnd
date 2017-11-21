@@ -42,7 +42,7 @@
                                                         <constraint firstAttribute="width" constant="121" id="8r3-ss-oG3"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UwD-HV-ng1">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trophy" translatesAutoresizingMaskIntoConstraints="NO" id="UwD-HV-ng1">
                                                     <rect key="frame" x="5" y="95" width="21" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="21" id="0Km-Yt-bGe"/>
@@ -55,8 +55,8 @@
                                                         <constraint firstAttribute="height" constant="13" id="DkU-dj-i1G"/>
                                                         <constraint firstAttribute="width" constant="90" id="ljw-WT-CSj"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -215,4 +215,7 @@
             <point key="canvasLocation" x="-639.20000000000005" y="55.322338830584712"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Trophy" width="21" height="21"/>
+    </resources>
 </document>

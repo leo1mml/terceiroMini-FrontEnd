@@ -58,14 +58,16 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7D-rR-SD7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7D-rR-SD7" customClass="LeftAlignedIconButton" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                 <rect key="frame" x="71.5" y="228" width="232.5" height="50"/>
                                 <color key="backgroundColor" red="0.14825960993766785" green="0.1723443865776062" blue="0.18905740976333618" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bnn-MA-pfb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="CARLA MACIEL" image="Oval 4 Copy 17.png">
+                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Ana" image="Oval 4 Copy 17.png">
                                     <color key="titleColor" red="1" green="0.98465169682406983" blue="0.96893253567347259" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -73,6 +75,9 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="mainButtonAction:" destination="CnL-K5-WoQ" eventType="touchUpInside" id="RP7-tn-g79"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-9u-oDN">
                                 <rect key="frame" x="0.0" y="301" width="375" height="121"/>
@@ -186,7 +191,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uTc-aZ-i9V" firstAttribute="top" secondItem="SSa-ke-8RB" secondAttribute="top" constant="130" id="04g-sZ-aCT"/>
-                            <constraint firstItem="v7D-rR-SD7" firstAttribute="width" secondItem="qXJ-1y-iEJ" secondAttribute="width" multiplier="0.62" identifier="proportionButtonSuperview" id="0cp-Y8-cGE"/>
                             <constraint firstItem="Bod-yo-Nhh" firstAttribute="width" secondItem="qXJ-1y-iEJ" secondAttribute="width" multiplier="0.35" priority="750" id="1nn-eF-dh2"/>
                             <constraint firstItem="xeq-9u-oDN" firstAttribute="trailing" secondItem="SSa-ke-8RB" secondAttribute="trailing" id="7Ay-AX-MyF"/>
                             <constraint firstItem="xeq-9u-oDN" firstAttribute="top" secondItem="SSa-ke-8RB" secondAttribute="top" constant="281" id="7xp-Ah-Xgz"/>
@@ -200,8 +204,9 @@
                             <constraint firstAttribute="bottom" secondItem="aBy-Pl-cxj" secondAttribute="bottom" id="F8O-lw-fmH"/>
                             <constraint firstItem="sFj-Ff-eVK" firstAttribute="top" secondItem="SSa-ke-8RB" secondAttribute="top" constant="68" id="GZk-sT-3NP"/>
                             <constraint firstItem="uTc-aZ-i9V" firstAttribute="leading" secondItem="SSa-ke-8RB" secondAttribute="leading" constant="30" id="M5e-X6-5Hb"/>
-                            <constraint firstItem="v7D-rR-SD7" firstAttribute="width" secondItem="qXJ-1y-iEJ" secondAttribute="width" multiplier="0.62" id="OxN-d0-GHT"/>
+                            <constraint firstItem="v7D-rR-SD7" firstAttribute="width" relation="lessThanOrEqual" secondItem="qXJ-1y-iEJ" secondAttribute="width" multiplier="0.85" id="PM3-xJ-4Ef"/>
                             <constraint firstItem="v7D-rR-SD7" firstAttribute="centerX" secondItem="qXJ-1y-iEJ" secondAttribute="centerX" id="Qnd-aw-6oD"/>
+                            <constraint firstItem="v7D-rR-SD7" firstAttribute="width" relation="greaterThanOrEqual" secondItem="qXJ-1y-iEJ" secondAttribute="width" multiplier="0.62" id="TSp-Qm-Kox"/>
                             <constraint firstItem="Bod-yo-Nhh" firstAttribute="top" secondItem="SSa-ke-8RB" secondAttribute="top" constant="184" id="e9T-Sz-dZ7"/>
                             <constraint firstItem="2j8-9C-zhg" firstAttribute="leading" secondItem="SSa-ke-8RB" secondAttribute="leading" id="fLQ-AU-hN5"/>
                             <constraint firstItem="Bod-yo-Nhh" firstAttribute="width" secondItem="qXJ-1y-iEJ" secondAttribute="width" multiplier="0.26" identifier="proportionalLabelSuperview" id="gKM-9J-AfU"/>

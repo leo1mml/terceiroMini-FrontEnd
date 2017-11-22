@@ -12,7 +12,8 @@ protocol ChallengeView{
     func changeMainPhoto()
     func changeScreen()
     func showTimer()
-    
+    func getPhoto()
+    func takePhoto()
     
     
 }

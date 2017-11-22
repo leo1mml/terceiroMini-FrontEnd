@@ -8,4 +8,19 @@
 
 import Foundation
 
+class ChallengePresenterImpl: ChallengePresenter{
+    
+    var view : ChallengeView?
+    
+    func sendPhoto() {
+        
+    }
+    
+    func getChallengeTimer() {
+        
+    }
+    
+    
+    
+}
 

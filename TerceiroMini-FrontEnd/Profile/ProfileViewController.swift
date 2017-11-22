@@ -41,6 +41,10 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
         cell.themeLabel.text = temas[indexPath.row]
         
+        let startingGradientColor = UIColor(red: 0.15, green: 0.18, blue: 0.19, alpha: 1)
+        
+        cell.backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [.clear, .clear, startingGradientColor])
+        
         cell.backgroundImage.image = UIImage(named: images[indexPath.row])
         cell.backgroundImage.contentMode = .scaleAspectFill
         
@@ -50,7 +54,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         return cell
         
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     
         var reusableView: UICollectionReusableView? = nil
@@ -79,3 +83,13 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     }
     
 }
+
+extension UIImageView{
+    func addChallengeGradientLayer(frame: CGRect, colors: [UIColor] ){
+        let gradient = CAGradientLayer()
+        gradient.frame = self.frame
+        gradient.colors = colors.map{$0.cgColor}
+        self.layer.addSublayer(gradient)
+    }
+}
+

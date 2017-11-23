@@ -27,7 +27,7 @@
         <scene sceneID="hSN-S4-j18">
             <objects>
                 <tableViewController id="9ef-Nk-dyp" customClass="MainScreenTableViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Dyr-5R-Dve">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="Dyr-5R-Dve">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -42,7 +42,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R2M-OJ-EOT" customClass="ChallengesCollectionView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="370"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="402"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fWi-5B-VEY" customClass="ChallengesFlowLayout" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                                         <size key="itemSize" width="355" height="355"/>
@@ -52,7 +52,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChallengeCell" id="xJg-Xg-8Mx" customClass="ChallengeCollectionViewCell" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="7.5" width="355" height="355"/>
+                                                            <rect key="frame" x="10" y="23.5" width="355" height="355"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="355"/>
@@ -144,7 +144,7 @@
                                                     </connections>
                                                 </collectionView>
                                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="VE7-CK-N7H">
-                                                    <rect key="frame" x="148" y="385" width="79" height="6"/>
+                                                    <rect key="frame" x="148" y="387" width="79" height="6"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="6" id="R9x-Jn-7NR"/>
                                                         <constraint firstAttribute="width" constant="79" id="nyf-3D-3yv"/>
@@ -157,8 +157,9 @@
                                                 <constraint firstItem="R2M-OJ-EOT" firstAttribute="leading" secondItem="DwE-jA-ToI" secondAttribute="leading" id="Skc-Hx-w3e"/>
                                                 <constraint firstItem="VE7-CK-N7H" firstAttribute="centerX" secondItem="DwE-jA-ToI" secondAttribute="centerX" id="UaO-BW-jVj"/>
                                                 <constraint firstAttribute="trailing" secondItem="R2M-OJ-EOT" secondAttribute="trailing" id="azA-rx-4Pf"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="VE7-CK-N7H" secondAttribute="bottom" id="emk-pH-8n0"/>
-                                                <constraint firstItem="VE7-CK-N7H" firstAttribute="top" secondItem="R2M-OJ-EOT" secondAttribute="bottom" constant="15" id="gsb-vT-cz9"/>
+                                                <constraint firstItem="R2M-OJ-EOT" firstAttribute="centerY" secondItem="DwE-jA-ToI" secondAttribute="centerY" id="cwe-nF-bXX"/>
+                                                <constraint firstItem="VE7-CK-N7H" firstAttribute="top" secondItem="R2M-OJ-EOT" secondAttribute="bottom" constant="-15" id="gsb-vT-cz9"/>
+                                                <constraint firstItem="R2M-OJ-EOT" firstAttribute="centerX" secondItem="DwE-jA-ToI" secondAttribute="centerX" id="qzl-Bt-Aw7"/>
                                                 <constraint firstItem="R2M-OJ-EOT" firstAttribute="top" secondItem="DwE-jA-ToI" secondAttribute="top" id="tIo-f4-bj7"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -172,7 +173,7 @@
                             <tableViewSection headerTitle="ÚLTIMOS VENCEDORES" id="3Am-w1-NyR">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LastWinners" rowHeight="140" id="7vP-OZ-Ckh" customClass="LastWinnersCell" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="513.5" width="375" height="140"/>
+                                        <rect key="frame" x="0.0" y="496.5" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7vP-OZ-Ckh" id="Ytu-Lq-yeo">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
@@ -280,7 +281,7 @@
                             <tableViewSection headerTitle="PRÓXIMOS" id="HLv-Pl-fAw">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="nextChallenges" rowHeight="335" id="Cw6-N8-W3n" customClass="NextChallengeTableViewCell" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="709.5" width="375" height="335"/>
+                                        <rect key="frame" x="0.0" y="675.5" width="375" height="335"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cw6-N8-W3n" id="MkR-D7-OcX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="335"/>
@@ -407,6 +408,10 @@
                         </connections>
                     </tableView>
                     <size key="freeformSize" width="375" height="1120"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="sCG-dT-Zsy">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7b-g7-hWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,19 +8,12 @@
 
 import UIKit
 
-class ChallengesFlowLayout: UICollectionViewFlowLayout, UICollectionViewDelegateFlowLayout {
+class ChallengesFlowLayout: UICollectionViewFlowLayout {
     
-    var standartItemScale = 0.83
+    var standartItemScale = 0.87
     
     override func prepare() {
         super.prepare()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -41,7 +34,10 @@ class ChallengesFlowLayout: UICollectionViewFlowLayout, UICollectionViewDelegate
         return true
     }
     
+    
+    
     func changeLayoutAttributes(_ attributes: UICollectionViewLayoutAttributes) {
+//        self.estimatedItemSize = CGSize(width: 400, height: 400)
         let collectionCenter = collectionView!.frame.size.width/2
         let offset = collectionView!.contentOffset.x
         let normalizedCenter = attributes.center.x - offset
@@ -55,22 +51,11 @@ class ChallengesFlowLayout: UICollectionViewFlowLayout, UICollectionViewDelegate
         
         attributes.transform3D = CATransform3DScale(CATransform3DIdentity, scale, scale, 1.0)
         
-        
     }
-    
-//    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
-//        let layoutAttributes = self.layoutAttributesForElements(in: collectionView!.bounds)
-//        let center = (collectionView?.bounds.size.width)!/2
-//        let proposedContentOffsetOrigin = proposedContentOffset.x + center
-//
-//        let closest = layoutAttributes!.sorted { abs($0.center.x - proposedContentOffsetOrigin) < abs($1.center.x - proposedContentOffsetOrigin)
-//            }.first ?? UICollectionViewLayoutAttributes()
-//        let targetContentOffset = CGPoint(x: floor(closest.center.x - center), y: proposedContentOffset.x)
-//        return targetContentOffset
-//    }
     
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint
     {
+        
         if let collectionViewBounds = self.collectionView?.bounds
         {
             let halfWidthOfVC = collectionViewBounds.size.width * 0.5
@@ -105,5 +90,8 @@ class ChallengesFlowLayout: UICollectionViewFlowLayout, UICollectionViewDelegate
         }
         return CGPoint.zero
     }
+    
+    
+    
 
 }

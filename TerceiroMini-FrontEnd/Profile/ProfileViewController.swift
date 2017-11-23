@@ -15,6 +15,9 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     // array de imagens
     var images = ["pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg"]
     
+    // array de temas
+    var temas = ["Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,20 +39,22 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "profileCell", for: indexPath) as! ProfileCollectionViewCell
         
-        cell.trophyImage.image = UIImage(named: images[indexPath.row])
-        //cell.trophyImage.contentMode = .scaleAspectFill
+        cell.themeLabel.text = temas[indexPath.row]
+        
+        let startingGradientColor = UIColor(red: 0.15, green: 0.18, blue: 0.19, alpha: 1)
+        
+        cell.backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [.clear, .clear, startingGradientColor])
         
         cell.backgroundImage.image = UIImage(named: images[indexPath.row])
-        //cell.backgroundImage.contentMode = .scaleAspectFill
+        cell.backgroundImage.contentMode = .scaleAspectFill
         
-
         cell.frame.size.width = 121
         cell.frame.size.height = 121
         
         return cell
         
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     
         var reusableView: UICollectionReusableView? = nil
@@ -59,7 +64,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             let headerView: HeaderCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "profileHeader", for: indexPath) as! HeaderCollectionReusableView
             
             headerView.profileImage.image = UIImage(named: images[1])
-            //headerView.profileImage.contentMode = .scaleAspectFill
+            headerView.profileImage.contentMode = .scaleAspectFill
             
             headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2
             headerView.profileImage.clipsToBounds = true
@@ -78,3 +83,13 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     }
     
 }
+
+extension UIImageView{
+    func addChallengeGradientLayer(frame: CGRect, colors: [UIColor] ){
+        let gradient = CAGradientLayer()
+        gradient.frame = self.frame
+        gradient.colors = colors.map{$0.cgColor}
+        self.layer.addSublayer(gradient)
+    }
+}
+

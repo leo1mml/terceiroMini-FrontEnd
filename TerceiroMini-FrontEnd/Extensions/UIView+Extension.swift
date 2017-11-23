@@ -2,7 +2,7 @@
 //  UIView+Extension.swift
 //  TerceiroMini-FrontEnd
 //
-//  Created by Leonel Menezes on 18/11/2017.
+//  Created by Leonel Menezes on 23/11/2017.
 //  Copyright © 2017 BEPID. All rights reserved.
 //
 
@@ -24,3 +24,4 @@ extension UIView {
     }
     
 }
+

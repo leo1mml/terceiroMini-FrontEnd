@@ -17,6 +17,9 @@
 		486D672A1FBE2394009F0BF5 /* Rectangle Copy 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 486D67281FBE233C009F0BF5 /* Rectangle Copy 29.png */; };
 		48C127151FBB680600A85D30 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C127141FBB680600A85D30 /* ChallengeViewController.swift */; };
 		48C127181FBB82CB00A85D30 /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C1271A1FBB82CB00A85D30 /* Challenge.storyboard */; };
+		48ECA8C41FC757C800B1D239 /* ExtensionChallgeViewController+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECA8C31FC757C800B1D239 /* ExtensionChallgeViewController+Collection.swift */; };
+		48ECA8C61FC759CF00B1D239 /* FeaturedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECA8C51FC759CF00B1D239 /* FeaturedCollectionViewCell.swift */; };
+		48ECA8C81FC759DD00B1D239 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ECA8C71FC759DD00B1D239 /* MainCollectionViewCell.swift */; };
 		8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */; };
 		8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEC1FB0D22C00C24725 /* LoginViewController.swift */; };
 		8A5D5CF01FB0D22C00C24725 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEE1FB0D22C00C24725 /* Main.storyboard */; };
@@ -48,6 +51,9 @@
 		48C127191FBB82CB00A85D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Challenge.storyboard; sourceTree = "<group>"; };
 		48C1271C1FBB82CE00A85D30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Challenge.strings; sourceTree = "<group>"; };
 		48E3618A1FBE19C200B275A7 /* Oval 4 Copy 17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Oval 4 Copy 17.png"; sourceTree = "<group>"; };
+		48ECA8C31FC757C800B1D239 /* ExtensionChallgeViewController+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExtensionChallgeViewController+Collection.swift"; sourceTree = "<group>"; };
+		48ECA8C51FC759CF00B1D239 /* FeaturedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCollectionViewCell.swift; sourceTree = "<group>"; };
+		48ECA8C71FC759DD00B1D239 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		615C4BB92F71C2EC98A1BA4C /* Pods-TerceiroMini-FrontEnd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.debug.xcconfig"; sourceTree = "<group>"; };
 		7AD07D108EC934731DF62EED /* Pods-TerceiroMini-FrontEndTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEndTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEndTests/Pods-TerceiroMini-FrontEndTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8609FA6697231C4296CE03EB /* Pods_TerceiroMini_FrontEndTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEndTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +128,9 @@
 				48C127141FBB680600A85D30 /* ChallengeViewController.swift */,
 				4848CF421FC34A4300FB73C5 /* ChallengeProtocols.swift */,
 				4848CF401FC34A3300FB73C5 /* ChallengePresenterImpl.swift */,
+				48ECA8C31FC757C800B1D239 /* ExtensionChallgeViewController+Collection.swift */,
+				48ECA8C51FC759CF00B1D239 /* FeaturedCollectionViewCell.swift */,
+				48ECA8C71FC759DD00B1D239 /* MainCollectionViewCell.swift */,
 			);
 			path = Challange;
 			sourceTree = "<group>";
@@ -407,6 +416,9 @@
 				08F06F991FBB567A0039EAFE /* LoginPresenterImpl.swift in Sources */,
 				48C127151FBB680600A85D30 /* ChallengeViewController.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,
+				48ECA8C61FC759CF00B1D239 /* FeaturedCollectionViewCell.swift in Sources */,
+				48ECA8C41FC757C800B1D239 /* ExtensionChallgeViewController+Collection.swift in Sources */,
+				48ECA8C81FC759DD00B1D239 /* MainCollectionViewCell.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 			);

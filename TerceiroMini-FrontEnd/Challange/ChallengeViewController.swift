@@ -10,44 +10,16 @@ import UIKit
 
 class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func changeMainPhoto() {
-        
-    }
+    var imageSampleLink = ["http://res.cloudinary.com/clicks/image/upload/v1511463622/a4ez1dbhxfwz9l4lejvt.jpg","http://res.cloudinary.com/clicks/image/upload/v1511464343/i3ngrhvdeza1nmsdyc5c.jpg"]
     
-    func changeScreen() {
-        
-    }
     
-    func showTimer() {
-        
-    }
     
-    func getPhoto() {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary){
-            let imagePicker = UIImagePickerController()
-            
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-    }
-    
-    func takePhoto() {
-        
-        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
-            let imagePicker = UIImagePickerController()
-            
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
-            imagePicker.allowsEditing = true
-            
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        
-    }
     
     var presenter : ChallengePresenter?
+    
+    
+    @IBOutlet weak var mainCollectionView: UICollectionView!
+    @IBOutlet weak var featuredCollectionView: UICollectionView!
     
     @IBOutlet weak var mainImage: UIImageView!
     
@@ -70,6 +42,12 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.mainCollectionView.delegate = self
+        self.featuredCollectionView.delegate = self
+        self.mainCollectionView.delegate = self
+        self.featuredCollectionView.delegate = self
+        
+        
         presenter = ChallengePresenterImpl()
         
         mainImage.addChallengeGradientLayer(frame: view.bounds, colors: [startingGradientColor,middleGradientColor,.white])
@@ -78,6 +56,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     override func viewWillAppear(_ animated: Bool) {
         resolveState(state: state)
+        
         
         
     }
@@ -152,6 +131,47 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         }
     }
     
+    
+    func changeMainPhoto() {
+        
+    }
+    
+    func changeScreen() {
+        
+    }
+    
+    func showTimer() {
+        
+    }
+    
+    func getPhoto() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func takePhoto() {
+        
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.allowsEditing = true
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        
+    
+        
+        
+    }
+    
     enum ChallengeState {
         case open
         case votation
@@ -159,6 +179,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         case participating
         
     }
+    
     
 }
 

@@ -92,7 +92,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="featuredPhotoCell" id="ngw-yp-GTS">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="featuredPhotoCell" id="ngw-yp-GTS" customClass="FeaturedCollectionViewCell" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -133,6 +133,11 @@
                                             <constraint firstAttribute="trailing" secondItem="0lK-yj-mzH" secondAttribute="trailing" constant="5" id="zaa-V7-iaR"/>
                                         </constraints>
                                         <size key="customSize" width="121" height="121"/>
+                                        <connections>
+                                            <outlet property="image" destination="YHV-OP-tUD" id="urJ-uh-HRi"/>
+                                            <outlet property="mainLabel" destination="ifv-MD-IbP" id="WL1-PL-Pa1"/>
+                                            <outlet property="numberOfVotes" destination="0lK-yj-mzH" id="a8c-7G-516"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -146,7 +151,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="X8o-XR-2Ug">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mainPhotoCell" id="X8o-XR-2Ug" customClass="MainCollectionViewCell" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -220,7 +225,9 @@
                     <navigationItem key="navigationItem" id="0en-2n-7Jl"/>
                     <connections>
                         <outlet property="ChallengeName" destination="sFj-Ff-eVK" id="rmL-WP-fXx"/>
+                        <outlet property="featuredCollectionView" destination="xeq-9u-oDN" id="eHR-fX-sND"/>
                         <outlet property="mainButton" destination="v7D-rR-SD7" id="uUN-a5-uDJ"/>
+                        <outlet property="mainCollectionView" destination="aBy-Pl-cxj" id="iJn-jG-QSP"/>
                         <outlet property="mainImage" destination="2j8-9C-zhg" id="XSN-VZ-PSX"/>
                         <outlet property="numberOfPhotos" destination="uTc-aZ-i9V" id="EX3-si-X7I"/>
                         <outlet property="statusLabel" destination="Bod-yo-Nhh" id="Ezj-bF-DiS"/>

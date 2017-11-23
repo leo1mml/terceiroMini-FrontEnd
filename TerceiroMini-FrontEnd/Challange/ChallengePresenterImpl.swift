@@ -24,15 +24,21 @@ class ChallengePresenterImpl: ChallengePresenter{
         let config = CLDConfiguration(cloudName: cloudname, apiKey: apiKey)
         let cloudinary = CLDCloudinary(configuration: config)
         let imageData = UIImageJPEGRepresentation(infoImage, 1.0)
-        let url = cloudinary.createUrl()
-        let imageUrl = url.generate()
-        
-        
+//        let retorno = cloudinary.createUploader().upload(data: imageData!, uploadPreset: uploadPreset)
     
-        let uploader = cloudinary.createUploader()
-        uploader.upload(data: imageData!, uploadPreset: uploadPreset) { (result, error) in
+        let retorno = cloudinary.createUploader().upload(data: imageData!, uploadPreset: uploadPreset, params: nil, progress: nil) {
+            (result, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            //MANDA PARA O BANCO
+            
             print(result)
         }
+        
+        
+        print(retorno)
         
         
     }

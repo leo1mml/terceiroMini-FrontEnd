@@ -23,7 +23,7 @@ class ChallengePresenterImpl: ChallengePresenter{
     func sendPhotoToCloudinary(infoImage: UIImage) {
         let config = CLDConfiguration(cloudName: cloudname, apiKey: apiKey)
         let cloudinary = CLDCloudinary(configuration: config)
-        let imageData = UIImagePNGRepresentation(infoImage)
+        let imageData = UIImageJPEGRepresentation(infoImage, 1.0)
         let url = cloudinary.createUrl()
         let imageUrl = url.generate()
         

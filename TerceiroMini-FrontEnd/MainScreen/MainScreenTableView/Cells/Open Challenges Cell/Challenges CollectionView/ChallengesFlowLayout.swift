@@ -10,7 +10,8 @@ import UIKit
 
 class ChallengesFlowLayout: UICollectionViewFlowLayout {
     
-    var standartItemScale = 0.87
+    var standartItemHeightScale = 0.87
+    var standartItemWidthScale = 0.95
     
     override func prepare() {
         super.prepare()
@@ -47,9 +48,10 @@ class ChallengesFlowLayout: UICollectionViewFlowLayout {
         
         let ratio = (maxDistance - distance)/maxDistance
         
-        let scale = (ratio * CGFloat(1 - self.standartItemScale) + CGFloat(self.standartItemScale))
+        let scaleHeight = (ratio * CGFloat(1 - self.standartItemHeightScale) + CGFloat(self.standartItemHeightScale))
+        let scaleWidth = (ratio * CGFloat(1 - self.standartItemWidthScale) + CGFloat(self.standartItemWidthScale))
         
-        attributes.transform3D = CATransform3DScale(CATransform3DIdentity, scale, scale, 1.0)
+        attributes.transform3D = CATransform3DScale(CATransform3DIdentity, scaleWidth, scaleHeight, 1.0)
         
     }
     
@@ -90,8 +92,4 @@ class ChallengesFlowLayout: UICollectionViewFlowLayout {
         }
         return CGPoint.zero
     }
-    
-    
-    
-
 }

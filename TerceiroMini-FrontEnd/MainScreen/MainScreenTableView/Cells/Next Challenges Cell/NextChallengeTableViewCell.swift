@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NextChallengeTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+class NextChallengeTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
@@ -25,6 +25,10 @@ class NextChallengeTableViewCell: UITableViewCell, UICollectionViewDataSource, U
         return cell
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func styleNextChallengeView (view: UIView) {
         view.layer.masksToBounds = true
         view.layer.cornerRadius = 10
@@ -34,6 +38,13 @@ class NextChallengeTableViewCell: UITableViewCell, UICollectionViewDataSource, U
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
     }
 
 }

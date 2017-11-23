@@ -8,7 +8,8 @@
 
 import UIKit
 
-class LastWinnersCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class LastWinnersCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
@@ -40,14 +41,14 @@ class LastWinnersCell: UITableViewCell, UICollectionViewDelegate, UICollectionVi
         winnerProfilePhoto.layer.cornerRadius = winnerProfilePhoto.frame.size.width/2
     }
     
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    }
     
     
 

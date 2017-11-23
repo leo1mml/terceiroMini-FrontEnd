@@ -474,9 +474,9 @@
 		8A5D5CE91FB0D22C00C24725 /* TerceiroMini-FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
 				8A0E82C01FC7443D00218C80 /* Extensions */,
 				14D1061C1FBE004D00AA9F89 /* Profile */,
-				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
 				08F06F9A1FBB58FA0039EAFE /* Login */,
 				08297AE01FC74B1E00701F9B /* SignUp */,

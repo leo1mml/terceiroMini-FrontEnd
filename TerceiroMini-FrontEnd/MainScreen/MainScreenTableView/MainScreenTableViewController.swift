@@ -22,7 +22,7 @@ class MainScreenTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = TableHeader()
         if(section == 0){
-            header.sectionTitle.text = "ABERTOS"
+            header.sectionTitle.text = ""
             header.seeMoreButton.isHidden = true
         }else if(section == 1) {
             header.sectionTitle.text = "ÚLTIMOS VENCEDORES"

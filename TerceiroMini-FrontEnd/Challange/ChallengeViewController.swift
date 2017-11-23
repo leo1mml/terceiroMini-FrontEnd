@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerControllerDelegate {
+class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func changeMainPhoto() {
         
@@ -26,7 +26,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary){
             let imagePicker = UIImagePickerController()
             
-            imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
@@ -38,7 +38,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
             let imagePicker = UIImagePickerController()
             
-            imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             imagePicker.allowsEditing = true
             
@@ -46,7 +46,6 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         }
         
     }
-    
     
     var presenter : ChallengePresenter?
     
@@ -70,6 +69,9 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter = ChallengePresenterImpl()
+        
         mainImage.addChallengeGradientLayer(frame: view.bounds, colors: [startingGradientColor,middleGradientColor,.white])
         
     }
@@ -127,6 +129,17 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let infoImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            presenter?.sendPhotoToCloudinary(infoImage: infoImage)
+           
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func changeStatusLabelContraint(open: Bool){

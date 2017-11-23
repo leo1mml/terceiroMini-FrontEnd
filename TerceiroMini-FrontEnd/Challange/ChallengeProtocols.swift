@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ChallengeView{
     func changeMainPhoto()
@@ -19,6 +20,6 @@ protocol ChallengeView{
 }
 
 protocol ChallengePresenter{
-    func sendPhoto()
+    func sendPhotoToCloudinary(infoImage: UIImage)
     func getChallengeTimer()
 }

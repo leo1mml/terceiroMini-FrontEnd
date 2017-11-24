@@ -85,6 +85,52 @@ class UserNet {
         }
     }
     
+    func get(byId id: String, completion: @escaping (User?, Error?) -> Void) {
+        let completeDomain = domain + "/\(id)"
+        
+        Alamofire.request(completeDomain).responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error!)
+                return
+            }
+            
+            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
+            let usr = self.buildUser(fromDicitionary: dic)
+            
+            completion(usr, nil)
+        }
+    }
+    
+    func delete(byId id: String, completion: @escaping (Bool) -> Void) {
+        let completeDomain = domain + "/\(id)"
+        
+        Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            
+            guard let code = response.response?.statusCode else {
+                completion(false)
+                return
+            }
+            
+            completion(code == 200)
+        }
+    }
+    
+    func createLogin(username: String, email: String, password: String, completion: @escaping (Bool) -> Void) {
+        let completeDomain = domain + "/login"
+        let login = ["userName": username, "email": email, "password": password]
+        
+        Alamofire.request(completeDomain, method: .post, parameters: login, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            
+            guard let code = response.response?.statusCode else {
+                completion(false)
+                return
+            }
+            
+            completion(code == 200)
+        }
+    }
+    
     func buildUserArray(fromDictionaryArray arr: [[String: Any]]) -> [User] {
         
         return arr.map { dic -> User in
@@ -93,11 +139,17 @@ class UserNet {
         }
     }
     
-    func buildUser(fromDicitionary: [String: Any]) -> User {
-        return User()
+    func buildUser(fromDicitionary d: [String: Any]) -> User {
+        
+        let id = d["_id"] as! String
+        let email = d["email"] as! String
+        let name = d["name"] as! String
+        let username = d["userName"] as! String
+        
+        return User(id: id, email: email, name: name, username: username)
     }
     
-    func buildDictionary(fromUser: User) -> [String: Any] {
-        return [:]
+    func buildDictionary(fromUser u: User) -> [String: Any] {
+        return ["_id": u.id ?? "", "email": u.email, "name": u.name, "userName": u.username]
     }
 }

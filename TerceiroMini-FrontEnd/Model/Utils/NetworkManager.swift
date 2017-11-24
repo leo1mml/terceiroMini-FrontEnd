@@ -45,7 +45,7 @@ class NetworkManager {
     }
     
     func addPhoto(_ photo: Photo, completion: @escaping (Photo?, Error?) -> Void) {
-        PhotoNet.add(photo: photo, completion: competion)
+        PhotoNet.add(photo: photo, completion: completion)
     }
     
     func getPhotos(byToken token: String, completion: @escaping ([Photo]?, Error?) -> Void) {

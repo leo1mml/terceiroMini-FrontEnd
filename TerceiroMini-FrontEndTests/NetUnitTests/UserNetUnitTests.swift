@@ -9,7 +9,7 @@
 import XCTest
 @testable import TerceiroMini_FrontEnd
 
-class NetUnitTests: XCTestCase {
+class UserNetUnitTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -74,5 +74,7 @@ class NetUnitTests: XCTestCase {
         
         wait(for: [exp], timeout: 2)
     }
+    
+    
     
 }

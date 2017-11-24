@@ -81,6 +81,23 @@ class PhotoNet {
         }
     }
     
+    class func get(byId id: String, completion: @escaping (Photo?, Error?) -> Void) {
+        let completeDomain = R.challengesDomain + "/\(id)"
+        
+        Alamofire.request(completeDomain).responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let dic = NetHelper.extractDictionary(fromJson: val, key: "photo")!
+            let photo = buildPhoto(fromDictionary: dic)
+            
+            completion(photo, nil)
+        }
+    }
+    
     class func buildPhotos(fromDictionaryArry a: [[String: Any]]) -> [Photo] {
         
         return a.map { dic -> Photo in

@@ -73,6 +73,7 @@
 		083E55171FC84889004E4EC0 /* UserNetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */; };
 		083E551B1FC84F41004E4EC0 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E551A1FC84F41004E4EC0 /* R.swift */; };
 		0894ED881FC896A500F87C2A /* PhotoNetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0894ED871FC896A500F87C2A /* PhotoNetUnitTests.swift */; };
+		0894ED8B1FC89BA800F87C2A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0894ED8A1FC89BA800F87C2A /* NetworkManager.swift */; };
 		0899E9FF1FC74D0900F148DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899E9FE1FC74D0900F148DC /* User.swift */; };
 		0899EA011FC74D1400F148DC /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899EA001FC74D1400F148DC /* Photo.swift */; };
 		0899EA031FC74D1A00F148DC /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899EA021FC74D1A00F148DC /* Challenge.swift */; };
@@ -177,6 +178,7 @@
 		083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetUnitTests.swift; sourceTree = "<group>"; };
 		083E551A1FC84F41004E4EC0 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		0894ED871FC896A500F87C2A /* PhotoNetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoNetUnitTests.swift; sourceTree = "<group>"; };
+		0894ED8A1FC89BA800F87C2A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0899E9FE1FC74D0900F148DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0899EA001FC74D1400F148DC /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0899EA021FC74D1A00F148DC /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
@@ -417,10 +419,22 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		0894ED891FC89B5900F87C2A /* EntityNet */ = {
+			isa = PBXGroup;
+			children = (
+				0894ED861FC88F3A00F87C2A /* Support */,
+				0899EA061FC74D3100F148DC /* UserNet.swift */,
+				0899EA081FC74D3900F148DC /* PhotoNet.swift */,
+				0899EA0A1FC74D4100F148DC /* ChallengeNet.swift */,
+			);
+			path = EntityNet;
+			sourceTree = "<group>";
+		};
 		0899E9FB1FC74CE400F148DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0899E9FD1FC74CF800F148DC /* Entity */,
+				0894ED891FC89B5900F87C2A /* EntityNet */,
 				0899E9FC1FC74CF100F148DC /* Utils */,
 			);
 			path = Model;
@@ -429,10 +443,7 @@
 		0899E9FC1FC74CF100F148DC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0894ED861FC88F3A00F87C2A /* Support */,
-				0899EA061FC74D3100F148DC /* UserNet.swift */,
-				0899EA081FC74D3900F148DC /* PhotoNet.swift */,
-				0899EA0A1FC74D4100F148DC /* ChallengeNet.swift */,
+				0894ED8A1FC89BA800F87C2A /* NetworkManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -844,6 +855,7 @@
 				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 				0899EA091FC74D3900F148DC /* PhotoNet.swift in Sources */,
+				0894ED8B1FC89BA800F87C2A /* NetworkManager.swift in Sources */,
 				08276F321FC73F8C00A8E605 /* ChallengeCellPresenter.swift in Sources */,
 				8A0E82C21FC744B800218C80 /* UIView+Extension.swift in Sources */,
 				0899EA071FC74D3100F148DC /* UserNet.swift in Sources */,

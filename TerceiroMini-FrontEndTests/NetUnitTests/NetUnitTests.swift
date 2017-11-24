@@ -11,8 +11,6 @@ import XCTest
 
 class NetUnitTests: XCTestCase {
     
-    let userNet = UserNet(domain: "http://photoappchallenge.herokuapp.com")
-    
     override func setUp() {
         super.setUp()
     }
@@ -44,7 +42,7 @@ class NetUnitTests: XCTestCase {
     func testGetAll() {
         let exp = expectation(description: "Get All Users")
         
-        userNet.getAll { (usrs, err) in
+        UserNet.getAll { (usrs, err) in
             
             guard let u = usrs, err == nil  else {
                 return
@@ -63,7 +61,7 @@ class NetUnitTests: XCTestCase {
         
         let exp = expectation(description: "Get User")
         
-        userNet.get(byId: id) { (usr, err) in
+        UserNet.get(byId: id) { (usr, err) in
             
             guard let u = usr else {
                 return

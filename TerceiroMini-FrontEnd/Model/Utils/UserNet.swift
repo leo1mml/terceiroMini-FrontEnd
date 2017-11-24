@@ -11,16 +11,12 @@ import Alamofire
 
 class UserNet {
     
-    let domain: String
+    private init() {}
     
-    init(domain: String) {
-        self.domain = domain + "/users"
-    }
-    
-    func add(user: User, completion: @escaping (User?, String?, Error?) -> Void) {
+    class func add(user: User, completion: @escaping (User?, String?, Error?) -> Void) {
         let userDictionary = buildDictionary(fromUser: user)
         
-        Alamofire.request(domain, method: .post, parameters: userDictionary, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request(R.usersDomain, method: .post, parameters: userDictionary, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             
             guard let val = response.value, let res = response.response, response.error == nil else {
                 completion(nil, nil, response.error!)
@@ -36,9 +32,9 @@ class UserNet {
         }
     }
     
-    func getAll(completion: @escaping ([User]?, Error?) -> Void) {
+    class func getAll(completion: @escaping ([User]?, Error?) -> Void) {
         
-        Alamofire.request(domain).responseJSON { response in
+        Alamofire.request(R.usersDomain).responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
                 completion(nil, response.error!)
@@ -52,8 +48,8 @@ class UserNet {
         }
     }
     
-    func get(byToken t: String, completion: @escaping (User?, Error?) -> Void) {
-        let completeDomain = domain + "/me"
+    class func get(byToken t: String, completion: @escaping (User?, Error?) -> Void) {
+        let completeDomain = R.usersDomain + "/me"
         let header = ["x-auth": t]
         
         Alamofire.request(completeDomain, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { response in
@@ -70,8 +66,8 @@ class UserNet {
         }
     }
     
-    func logout(token: String, completion: @escaping (Bool) -> Void) {
-        let completeDomain = domain + "/me/token"
+    class func logout(token: String, completion: @escaping (Bool) -> Void) {
+        let completeDomain = R.usersDomain + "/me/token"
         let header = ["x-auth": token]
         
         Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { response in
@@ -85,8 +81,8 @@ class UserNet {
         }
     }
     
-    func get(byId id: String, completion: @escaping (User?, Error?) -> Void) {
-        let completeDomain = domain + "/\(id)"
+    class func get(byId id: String, completion: @escaping (User?, Error?) -> Void) {
+        let completeDomain = R.usersDomain + "/\(id)"
         
         Alamofire.request(completeDomain).responseJSON { response in
             
@@ -102,8 +98,8 @@ class UserNet {
         }
     }
     
-    func delete(byId id: String, completion: @escaping (Bool) -> Void) {
-        let completeDomain = domain + "/\(id)"
+    class func delete(byId id: String, completion: @escaping (Bool) -> Void) {
+        let completeDomain = R.usersDomain + "/\(id)"
         
         Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             
@@ -116,8 +112,8 @@ class UserNet {
         }
     }
     
-    func createLogin(username: String, email: String, password: String, completion: @escaping (Bool) -> Void) {
-        let completeDomain = domain + "/login"
+    class func createLogin(username: String, email: String, password: String, completion: @escaping (Bool) -> Void) {
+        let completeDomain = R.usersDomain + "/login"
         let login = ["userName": username, "email": email, "password": password]
         
         Alamofire.request(completeDomain, method: .post, parameters: login, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
@@ -131,7 +127,7 @@ class UserNet {
         }
     }
     
-    func buildUserArray(fromDictionaryArray arr: [[String: Any]]) -> [User] {
+    class func buildUserArray(fromDictionaryArray arr: [[String: Any]]) -> [User] {
         
         return arr.map { dic -> User in
             
@@ -139,7 +135,7 @@ class UserNet {
         }
     }
     
-    func buildUser(fromDicitionary d: [String: Any]) -> User {
+    class func buildUser(fromDicitionary d: [String: Any]) -> User {
         
         let id = d["_id"] as! String
         let email = d["email"] as! String
@@ -149,7 +145,7 @@ class UserNet {
         return User(id: id, email: email, name: name, username: username)
     }
     
-    func buildDictionary(fromUser u: User) -> [String: Any] {
+    class func buildDictionary(fromUser u: User) -> [String: Any] {
         return ["_id": u.id ?? "", "email": u.email, "name": u.name, "userName": u.username]
     }
 }

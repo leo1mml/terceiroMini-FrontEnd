@@ -71,6 +71,7 @@
 		08297B2F1FC74B2E00701F9B /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 08297B0B1FC74B2E00701F9B /* Montserrat-SemiBold.otf */; };
 		0838B5C51FBF7A240051669B /* LoginPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DFE8111FBF5F340065F2DE /* LoginPresenterImpl.swift */; };
 		083E55171FC84889004E4EC0 /* NetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E55161FC84889004E4EC0 /* NetUnitTests.swift */; };
+		083E551B1FC84F41004E4EC0 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E551A1FC84F41004E4EC0 /* R.swift */; };
 		0899E9FF1FC74D0900F148DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899E9FE1FC74D0900F148DC /* User.swift */; };
 		0899EA011FC74D1400F148DC /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899EA001FC74D1400F148DC /* Photo.swift */; };
 		0899EA031FC74D1A00F148DC /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899EA021FC74D1A00F148DC /* Challenge.swift */; };
@@ -173,6 +174,7 @@
 		08297B0A1FC74B2E00701F9B /* MontserratAlternates-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Italic.otf"; sourceTree = "<group>"; };
 		08297B0B1FC74B2E00701F9B /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		083E55161FC84889004E4EC0 /* NetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUnitTests.swift; sourceTree = "<group>"; };
+		083E551A1FC84F41004E4EC0 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		0899E9FE1FC74D0900F148DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0899EA001FC74D1400F148DC /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0899EA021FC74D1A00F148DC /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
@@ -415,10 +417,11 @@
 		0899E9FC1FC74CF100F148DC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0899EA041FC74D2900F148DC /* NetHelper.swift */,
 				0899EA061FC74D3100F148DC /* UserNet.swift */,
 				0899EA081FC74D3900F148DC /* PhotoNet.swift */,
 				0899EA0A1FC74D4100F148DC /* ChallengeNet.swift */,
+				0899EA041FC74D2900F148DC /* NetHelper.swift */,
+				083E551A1FC84F41004E4EC0 /* R.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -809,6 +812,7 @@
 				08276F2F1FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift in Sources */,
 				0899EA031FC74D1A00F148DC /* Challenge.swift in Sources */,
 				08297AE61FC74B1E00701F9B /* SignUpProtocols.swift in Sources */,
+				083E551B1FC84F41004E4EC0 /* R.swift in Sources */,
 				1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */,
 				08276F331FC73F8C00A8E605 /* ChallengeCollectionViewCell.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,

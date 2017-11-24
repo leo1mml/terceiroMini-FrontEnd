@@ -10,4 +10,36 @@ import Foundation
 
 class Challenge {
     
+    let id: String
+    let theme: String
+    let startDate: Date
+    let endDate: Date
+    
+    var isOver: Bool {
+        
+        get {
+            return endDate.compare(Date()) == .orderedAscending
+        }
+    }
+    
+    var hasBegun: Bool {
+        
+        get {
+            return startDate.compare(Date()) == .orderedAscending
+        }
+    }
+    
+    var isHappening: Bool {
+        
+        get {
+            return hasBegun && !isOver
+        }
+    }
+    
+    init(id: String, theme: String, startDate: Date, endDate: Date) {
+        self.id = id
+        self.theme = theme
+        self.startDate = startDate
+        self.endDate = endDate
+    }
 }

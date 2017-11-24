@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="20" y="966.56671664167925"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="3Eh-IP-YJE">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="iQ4-A3-5m2" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="Main" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="iQ4-A3-5m2" customClass="NavigationViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4G-id-png" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="90" y="1748"/>

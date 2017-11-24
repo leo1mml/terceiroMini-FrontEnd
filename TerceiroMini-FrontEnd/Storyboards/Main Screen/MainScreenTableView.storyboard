@@ -26,7 +26,7 @@
         <!--Main Screen Table View Controller-->
         <scene sceneID="hSN-S4-j18">
             <objects>
-                <tableViewController id="9ef-Nk-dyp" customClass="MainScreenTableViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainStoryboard" id="9ef-Nk-dyp" customClass="MainScreenTableViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="Dyr-5R-Dve">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

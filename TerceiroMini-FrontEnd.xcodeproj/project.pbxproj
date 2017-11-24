@@ -37,6 +37,7 @@
 		14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */; };
 		468FDF451F91510C2C20CC31 /* Pods_TerceiroMini_FrontEnd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0370BB7E49561D838ED0AF9C /* Pods_TerceiroMini_FrontEnd.framework */; };
 		50E7A500BAE4020607545DC5 /* Pods_TerceiroMini_FrontEndTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C217CEF3A90F7A56308EBC /* Pods_TerceiroMini_FrontEndTests.framework */; };
+		8A0E43041FC891A400932A05 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E43031FC891A400932A05 /* NavigationViewController.swift */; };
 		8A0E82C21FC744B800218C80 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E82C11FC744B800218C80 /* UIView+Extension.swift */; };
 		8A0E82F81FC74A1B00218C80 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0E82F51FC74A1B00218C80 /* MainScreen.storyboard */; };
 		8A0E82F91FC74A1B00218C80 /* MainScreenTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0E82F61FC74A1B00218C80 /* MainScreenTableView.storyboard */; };
@@ -94,6 +95,7 @@
 		14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		5230918D00620C798B24E204 /* Pods-TerceiroMini-FrontEnd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.release.xcconfig"; sourceTree = "<group>"; };
 		85424399D870196636B4D9AF /* Pods-TerceiroMini-FrontEndTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEndTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEndTests/Pods-TerceiroMini-FrontEndTests.release.xcconfig"; sourceTree = "<group>"; };
+		8A0E43031FC891A400932A05 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		8A0E82C11FC744B800218C80 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8A0E82F51FC74A1B00218C80 /* MainScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
 		8A0E82F61FC74A1B00218C80 /* MainScreenTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreenTableView.storyboard; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				08276F2A1FC73F8C00A8E605 /* MainScreenPresenter.swift */,
 				08276F2B1FC73F8C00A8E605 /* MainScreenProtocols.swift */,
 				08276F2C1FC73F8C00A8E605 /* MainScreenViewController.swift */,
+				8A0E43031FC891A400932A05 /* NavigationViewController.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				08276F381FC73F8C00A8E605 /* LastWinnersCell.swift in Sources */,
 				08276F361FC73F8C00A8E605 /* ChallengeCollectionViewPresenter.swift in Sources */,
 				08276F351FC73F8C00A8E605 /* ChallengesFlowLayout.swift in Sources */,
+				8A0E43041FC891A400932A05 /* NavigationViewController.swift in Sources */,
 				08276F3F1FC73F8C00A8E605 /* MainScreenProtocols.swift in Sources */,
 				08276F341FC73F8C00A8E605 /* GradientView.swift in Sources */,
 				08276F391FC73F8C00A8E605 /* WinnerCollectionViewCell.swift in Sources */,

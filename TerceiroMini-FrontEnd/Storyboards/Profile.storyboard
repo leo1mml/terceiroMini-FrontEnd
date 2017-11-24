@@ -13,13 +13,13 @@
         <!--Profile View Controller-->
         <scene sceneID="Xe5-UC-vlA">
             <objects>
-                <viewController id="JUZ-H1-IjI" customClass="ProfileViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileStoryboard" id="JUZ-H1-IjI" customClass="ProfileViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BPx-NR-vax">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bVg-Um-evj">
-                                <rect key="frame" x="2" y="84" width="371" height="583"/>
+                                <rect key="frame" x="2" y="0.0" width="371" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="eeC-Pg-2Lg">
                                     <size key="itemSize" width="121" height="121"/>
@@ -88,7 +88,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="52d-kP-ObJ">
-                                            <rect key="frame" x="78.5" y="0.0" width="214" height="239"/>
+                                            <rect key="frame" x="78.5" y="15" width="214" height="239"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBf-m6-L0V">
                                                     <rect key="frame" x="48" y="0.0" width="118" height="118"/>
@@ -185,7 +185,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="52d-kP-ObJ" firstAttribute="centerX" secondItem="ZaC-zi-nhA" secondAttribute="centerX" id="UMK-Ce-5Bv"/>
-                                        <constraint firstItem="52d-kP-ObJ" firstAttribute="top" secondItem="ZaC-zi-nhA" secondAttribute="top" id="vBl-Iw-0ec"/>
+                                        <constraint firstItem="52d-kP-ObJ" firstAttribute="top" secondItem="ZaC-zi-nhA" secondAttribute="top" constant="15" id="vBl-Iw-0ec"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="profileBorderView" destination="cBf-m6-L0V" id="P3o-u9-z4r"/>
@@ -200,12 +200,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bVg-Um-evj" firstAttribute="centerX" secondItem="BPx-NR-vax" secondAttribute="centerX" id="HRn-En-Zuj"/>
-                            <constraint firstItem="bVg-Um-evj" firstAttribute="height" secondItem="BPx-NR-vax" secondAttribute="height" multiplier="0.874063" id="Xaw-ya-jKN"/>
+                            <constraint firstItem="bVg-Um-evj" firstAttribute="height" secondItem="BPx-NR-vax" secondAttribute="height" id="Xaw-ya-jKN"/>
                             <constraint firstItem="bVg-Um-evj" firstAttribute="width" secondItem="BPx-NR-vax" secondAttribute="width" multiplier="0.989333" id="gVj-l2-CPw"/>
                             <constraint firstItem="bVg-Um-evj" firstAttribute="bottom" secondItem="wVx-W1-ttd" secondAttribute="bottom" id="hae-Mp-2BF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wVx-W1-ttd"/>
                     </view>
+                    <size key="freeformSize" width="375" height="600"/>
                     <connections>
                         <outlet property="collectionProfile" destination="bVg-Um-evj" id="Sez-x4-TOd"/>
                     </connections>

@@ -38,6 +38,9 @@
 		468FDF451F91510C2C20CC31 /* Pods_TerceiroMini_FrontEnd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0370BB7E49561D838ED0AF9C /* Pods_TerceiroMini_FrontEnd.framework */; };
 		50E7A500BAE4020607545DC5 /* Pods_TerceiroMini_FrontEndTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C217CEF3A90F7A56308EBC /* Pods_TerceiroMini_FrontEndTests.framework */; };
 		8A0E82C21FC744B800218C80 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E82C11FC744B800218C80 /* UIView+Extension.swift */; };
+		8A0E82F81FC74A1B00218C80 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0E82F51FC74A1B00218C80 /* MainScreen.storyboard */; };
+		8A0E82F91FC74A1B00218C80 /* MainScreenTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0E82F61FC74A1B00218C80 /* MainScreenTableView.storyboard */; };
+		8A0E82FA1FC74A1B00218C80 /* TableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0E82F71FC74A1B00218C80 /* TableHeader.xib */; };
 		8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */; };
 		8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEC1FB0D22C00C24725 /* LoginViewController.swift */; };
 		8A5D5CF01FB0D22C00C24725 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEE1FB0D22C00C24725 /* Main.storyboard */; };
@@ -92,6 +95,9 @@
 		5230918D00620C798B24E204 /* Pods-TerceiroMini-FrontEnd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.release.xcconfig"; sourceTree = "<group>"; };
 		85424399D870196636B4D9AF /* Pods-TerceiroMini-FrontEndTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEndTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEndTests/Pods-TerceiroMini-FrontEndTests.release.xcconfig"; sourceTree = "<group>"; };
 		8A0E82C11FC744B800218C80 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		8A0E82F51FC74A1B00218C80 /* MainScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
+		8A0E82F61FC74A1B00218C80 /* MainScreenTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreenTableView.storyboard; sourceTree = "<group>"; };
+		8A0E82F71FC74A1B00218C80 /* TableHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeader.xib; sourceTree = "<group>"; };
 		8A5D5CE71FB0D22C00C24725 /* TerceiroMini-FrontEnd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TerceiroMini-FrontEnd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A5D5CEC1FB0D22C00C24725 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +314,9 @@
 		8A1CC5A81FBE66F900BC4963 /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
+				8A0E82F51FC74A1B00218C80 /* MainScreen.storyboard */,
+				8A0E82F61FC74A1B00218C80 /* MainScreenTableView.storyboard */,
+				8A0E82F71FC74A1B00218C80 /* TableHeader.xib */,
 			);
 			path = "Main Screen";
 			sourceTree = "<group>";
@@ -447,7 +456,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A5D5CF51FB0D22C00C24725 /* LaunchScreen.storyboard in Resources */,
+				8A0E82F81FC74A1B00218C80 /* MainScreen.storyboard in Resources */,
+				8A0E82FA1FC74A1B00218C80 /* TableHeader.xib in Resources */,
 				8A5D5CF21FB0D22C00C24725 /* Assets.xcassets in Resources */,
+				8A0E82F91FC74A1B00218C80 /* MainScreenTableView.storyboard in Resources */,
 				14103C9F1FBE221800726C0B /* Profile.storyboard in Resources */,
 				8A5D5CF01FB0D22C00C24725 /* Main.storyboard in Resources */,
 			);

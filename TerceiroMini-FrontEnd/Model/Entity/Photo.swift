@@ -15,7 +15,7 @@ class Photo {
     let ownerId: String
     let challengeId: String
     
-    init(id: String? = nil, url: String? = nil, ownerId: String, challengeId: String) {
+    init(_ id: String? = nil, _ url: String? = nil, _ ownerId: String, _ challengeId: String) {
         self.id = id
         self.url = url
         self.ownerId = ownerId

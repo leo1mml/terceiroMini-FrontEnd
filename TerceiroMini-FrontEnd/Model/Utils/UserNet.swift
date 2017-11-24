@@ -142,10 +142,14 @@ class UserNet {
         let name = d["name"] as! String
         let username = d["userName"] as! String
         
-        return User(id: id, email: email, name: name, username: username)
+        return User(id, email, name, username)
     }
     
     class func buildDictionary(fromUser u: User) -> [String: Any] {
-        return ["_id": u.id ?? "", "email": u.email, "name": u.name, "userName": u.username]
+        
+        return ["_id": u.id ?? "",
+                "email": u.email,
+                "name": u.name,
+                "userName": u.username]
     }
 }

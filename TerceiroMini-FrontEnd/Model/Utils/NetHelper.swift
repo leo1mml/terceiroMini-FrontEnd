@@ -10,7 +10,9 @@ import Foundation
 
 class NetHelper {
     
-    static func extractDictionaryArray(fromJson json: Any, key: String) -> [[String: Any]]? {
+    private init() {}
+    
+    class func extractDictionaryArray(fromJson json: Any, key: String) -> [[String: Any]]? {
         
         guard let j = json as? [String: Any] else {
             return nil
@@ -19,7 +21,7 @@ class NetHelper {
         return j[key] as? [[String: Any]]
     }
     
-    static func extractDictionary(fromJson json: Any, key: String) -> [String: Any]? {
+    class func extractDictionary(fromJson json: Any, key: String) -> [String: Any]? {
         
         guard let j = json as? [String: Any] else {
             return nil

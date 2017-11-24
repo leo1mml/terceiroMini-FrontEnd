@@ -11,6 +11,8 @@ import Alamofire
 
 class PhotoNet {
     
+    private init() {}
+    
     class func buildPhotos(fromDictionaryArry a: [[String: Any]]) -> [Photo] {
         
         return a.map { dic -> Photo in
@@ -20,10 +22,20 @@ class PhotoNet {
     }
     
     class func buildPhoto(fromDictionary d: [String: Any]) -> Photo {
-        return Photo(url: "", ownerId: "", challengeId: "")
+        
+        let id = d["_id"] as! String
+        let url = d["url"] as! String
+        let ownerId = d["_owner"] as! String
+        let challengeId = d["_challenge"] as! String
+        
+        return Photo(id, url, ownerId, challengeId)
     }
     
     class func buildDictionary(fromPhoto p: Photo) -> [String: Any] {
-        return ["_id": p.id ?? "", "url": p.url!, "_owner": p.ownerId, "_challenge": p.challengeId]
+        
+        return ["_id": p.id ?? "",
+                "url": p.url!,
+                "_owner": p.ownerId,
+                "_challenge": p.challengeId]
     }
 }

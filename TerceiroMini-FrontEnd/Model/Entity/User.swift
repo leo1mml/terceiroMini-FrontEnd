@@ -15,7 +15,7 @@ class User {
     let name: String
     let username: String
     
-    init(id: String? = nil, email: String, name: String, username: String) {
+    init(_ id: String? = nil, _ email: String, _ name: String, _ username: String) {
         self.id = id
         self.email = email
         self.name = name

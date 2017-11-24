@@ -36,7 +36,7 @@ class Challenge {
         }
     }
     
-    init(id: String, theme: String, startDate: Date, endDate: Date) {
+    init(_ id: String, _ theme: String, _ startDate: Date, _ endDate: Date) {
         self.id = id
         self.theme = theme
         self.startDate = startDate

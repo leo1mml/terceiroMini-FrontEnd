@@ -78,6 +78,13 @@
 		14D106221FBE00CC00AA9F89 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */; };
 		14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */; };
 		468FDF451F91510C2C20CC31 /* Pods_TerceiroMini_FrontEnd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0370BB7E49561D838ED0AF9C /* Pods_TerceiroMini_FrontEnd.framework */; };
+		48C882F31FC893FA000A57C2 /* ChallengePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882ED1FC893FA000A57C2 /* ChallengePresenterImpl.swift */; };
+		48C882F41FC893FA000A57C2 /* ChallengeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882EE1FC893FA000A57C2 /* ChallengeProtocols.swift */; };
+		48C882F51FC893FA000A57C2 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882EF1FC893FA000A57C2 /* ChallengeViewController.swift */; };
+		48C882F61FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882F01FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift */; };
+		48C882F71FC893FA000A57C2 /* FeaturedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882F11FC893FA000A57C2 /* FeaturedCollectionViewCell.swift */; };
+		48C882F81FC893FA000A57C2 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882F21FC893FA000A57C2 /* MainCollectionViewCell.swift */; };
+		48C882FA1FC89412000A57C2 /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C882F91FC89412000A57C2 /* Challenge.storyboard */; };
 		50E7A500BAE4020607545DC5 /* Pods_TerceiroMini_FrontEndTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C217CEF3A90F7A56308EBC /* Pods_TerceiroMini_FrontEndTests.framework */; };
 		8A0E82C21FC744B800218C80 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E82C11FC744B800218C80 /* UIView+Extension.swift */; };
 		8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */; };
@@ -172,6 +179,13 @@
 		14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
 		14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		48C882ED1FC893FA000A57C2 /* ChallengePresenterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengePresenterImpl.swift; sourceTree = "<group>"; };
+		48C882EE1FC893FA000A57C2 /* ChallengeProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeProtocols.swift; sourceTree = "<group>"; };
+		48C882EF1FC893FA000A57C2 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		48C882F01FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExtensionChallgeViewController+Collection.swift"; sourceTree = "<group>"; };
+		48C882F11FC893FA000A57C2 /* FeaturedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedCollectionViewCell.swift; sourceTree = "<group>"; };
+		48C882F21FC893FA000A57C2 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		48C882F91FC89412000A57C2 /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 		5230918D00620C798B24E204 /* Pods-TerceiroMini-FrontEnd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.release.xcconfig"; sourceTree = "<group>"; };
 		85424399D870196636B4D9AF /* Pods-TerceiroMini-FrontEndTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEndTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEndTests/Pods-TerceiroMini-FrontEndTests.release.xcconfig"; sourceTree = "<group>"; };
 		8A0E82C11FC744B800218C80 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -392,6 +406,7 @@
 		08F06F9B1FBB594A0039EAFE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				48C882F91FC89412000A57C2 /* Challenge.storyboard */,
 				8A1CC5A81FBE66F900BC4963 /* Main Screen */,
 				8A5D5CEE1FB0D22C00C24725 /* Main.storyboard */,
 				8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */,
@@ -410,6 +425,19 @@
 				1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		48C882EC1FC893FA000A57C2 /* Challange */ = {
+			isa = PBXGroup;
+			children = (
+				48C882ED1FC893FA000A57C2 /* ChallengePresenterImpl.swift */,
+				48C882EE1FC893FA000A57C2 /* ChallengeProtocols.swift */,
+				48C882EF1FC893FA000A57C2 /* ChallengeViewController.swift */,
+				48C882F01FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift */,
+				48C882F11FC893FA000A57C2 /* FeaturedCollectionViewCell.swift */,
+				48C882F21FC893FA000A57C2 /* MainCollectionViewCell.swift */,
+			);
+			path = Challange;
 			sourceTree = "<group>";
 		};
 		56CBEE931D9681D9D2B1899D /* Pods */ = {
@@ -474,6 +502,7 @@
 		8A5D5CE91FB0D22C00C24725 /* TerceiroMini-FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				48C882EC1FC893FA000A57C2 /* Challange */,
 				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
 				8A0E82C01FC7443D00218C80 /* Extensions */,
 				14D1061C1FBE004D00AA9F89 /* Profile */,
@@ -596,6 +625,7 @@
 				08297ADF1FC74AEB00701F9B /* TableHeader.xib in Resources */,
 				08297B161FC74B2E00701F9B /* MontserratAlternates-MediumItalic.otf in Resources */,
 				08297B181FC74B2E00701F9B /* MontserratAlternates-BlackItalic.otf in Resources */,
+				48C882FA1FC89412000A57C2 /* Challenge.storyboard in Resources */,
 				08297B2F1FC74B2E00701F9B /* Montserrat-SemiBold.otf in Resources */,
 				08297B171FC74B2E00701F9B /* Montserrat-ExtraLight.otf in Resources */,
 				08297B251FC74B2E00701F9B /* MontserratAlternates-BoldItalic.otf in Resources */,
@@ -750,15 +780,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C882F61FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift in Sources */,
 				08276F2F1FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift in Sources */,
 				08297AE61FC74B1E00701F9B /* SignUpProtocols.swift in Sources */,
 				1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */,
 				08276F331FC73F8C00A8E605 /* ChallengeCollectionViewCell.swift in Sources */,
+				48C882F31FC893FA000A57C2 /* ChallengePresenterImpl.swift in Sources */,
+				48C882F71FC893FA000A57C2 /* FeaturedCollectionViewCell.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,
 				08276F2E1FC73F8C00A8E605 /* OpenChallengesCellProtocols.swift in Sources */,
 				08276F3B1FC73F8C00A8E605 /* NextChallengesCollectionViewCell.swift in Sources */,
 				08276F3C1FC73F8C00A8E605 /* MainScreenTableViewController.swift in Sources */,
 				08276F381FC73F8C00A8E605 /* LastWinnersCell.swift in Sources */,
+				48C882F51FC893FA000A57C2 /* ChallengeViewController.swift in Sources */,
 				08276F361FC73F8C00A8E605 /* ChallengeCollectionViewPresenter.swift in Sources */,
 				08276F351FC73F8C00A8E605 /* ChallengesFlowLayout.swift in Sources */,
 				08276F3F1FC73F8C00A8E605 /* MainScreenProtocols.swift in Sources */,
@@ -770,12 +804,14 @@
 				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 				08276F321FC73F8C00A8E605 /* ChallengeCellPresenter.swift in Sources */,
+				48C882F41FC893FA000A57C2 /* ChallengeProtocols.swift in Sources */,
 				8A0E82C21FC744B800218C80 /* UIView+Extension.swift in Sources */,
 				14D106201FBE00B000AA9F89 /* ProfilePresenter.swift in Sources */,
 				08276F3A1FC73F8C00A8E605 /* NextChallengeTableViewCell.swift in Sources */,
 				14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */,
 				08276F401FC73F8C00A8E605 /* MainScreenViewController.swift in Sources */,
 				08276F3E1FC73F8C00A8E605 /* MainScreenPresenter.swift in Sources */,
+				48C882F81FC893FA000A57C2 /* MainCollectionViewCell.swift in Sources */,
 				14D106221FBE00CC00AA9F89 /* ProfileProtocols.swift in Sources */,
 				08276F371FC73F8C00A8E605 /* ChallengesCollectionViewProtocols.swift in Sources */,
 				0838B5C51FBF7A240051669B /* LoginPresenterImpl.swift in Sources */,
@@ -937,7 +973,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JC4QT73C9E;
+				DEVELOPMENT_TEAM = 9QUZLTLDFZ;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.bepiducb.TerceiroMini-FrontEnd";
@@ -953,7 +989,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JC4QT73C9E;
+				DEVELOPMENT_TEAM = 9QUZLTLDFZ;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.bepiducb.TerceiroMini-FrontEnd";

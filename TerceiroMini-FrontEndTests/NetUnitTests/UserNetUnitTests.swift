@@ -19,25 +19,24 @@ class UserNetUnitTests: XCTestCase {
         super.tearDown()
     }
     
-//    func testAddUser() {
-//        let usr = User(email: "gabriel@teste.com", name: "Gabriel", username: "folameloma")
-//
-//        let exp = expectation(description: "Add User")
-//
-//        userNet.add(user: usr) { (usr, tkn, err) in
-//
-//            guard let u = usr, let t = tkn else {
-//                return
-//            }
-//
-//            if u.username == "folameloma" {
-//                print("Generated Token: \(t)")
-//                exp.fulfill()
-//            }
-//        }
-//
-//        wait(for: [exp], timeout: 2)
-//    }
+    func testAddUser() {
+        let exp = expectation(description: "Add User")
+        let usr = User(nil, "gabriel@teste.com", "Gabriel", "folameloma")
+
+        UserNet.add(user: usr) { (usr, tkn, err) in
+
+            guard let u = usr, let t = tkn else {
+                return
+            }
+
+            if u.username == "folameloma" {
+                print("Generated Token: \(t)")
+                exp.fulfill()
+            }
+        }
+
+        wait(for: [exp], timeout: 2)
+    }
     
     func testGetAll() {
         let exp = expectation(description: "Get All Users")
@@ -56,10 +55,41 @@ class UserNetUnitTests: XCTestCase {
         wait(for: [exp], timeout: 2)
     }
     
-    func testGetById() {
-        let id = "5a0c92e6515a080014694f80" // leo1mml
+    func testGetByToken() {
+        let exp = expectation(description: "Get User By Token")
+        let token = ""
         
+        UserNet.get(byToken: token) { (usr, err) in
+            
+            guard let u = usr, err == nil else {
+                return
+            }
+            
+            if u.username == "" {
+                exp.fulfill()
+            }
+        }
+        
+        wait(for: [exp], timeout: 2)
+    }
+    
+    func testLogout() {
+        let exp = expectation(description: "Logout")
+        let token = ""
+        
+        UserNet.logout(token: token) { (success) in
+            
+            if success {
+                exp.fulfill()
+            }
+        }
+        
+        wait(for: [exp], timeout: 2)
+    }
+    
+    func testGetById() {
         let exp = expectation(description: "Get User")
+        let id = "5a0c92e6515a080014694f80" // leo1mml
         
         UserNet.get(byId: id) { (usr, err) in
             
@@ -75,6 +105,33 @@ class UserNetUnitTests: XCTestCase {
         wait(for: [exp], timeout: 2)
     }
     
+    func testDeleteById() {
+        let exp = expectation(description: "Delete By Id")
+        let id = ""
+        
+        UserNet.delete(byId: id) { (success) in
+            
+            if success {
+                exp.fulfill()
+            }
+        }
+        
+        wait(for: [exp], timeout: 2)
+    }
     
-    
+    func testCreateLogin() {
+        let exp = expectation(description: "Create Login")
+        let username = "folameloma"
+        let email = "gabriel@teste.com"
+        let password = "12345678"
+        
+        UserNet.createLogin(username: username, email: email, password: password) { (success) in
+            
+            if success {
+                exp.fulfill()
+            }
+        }
+        
+        wait(for: [exp], timeout: 2)
+    }
 }

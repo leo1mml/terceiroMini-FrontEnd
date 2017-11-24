@@ -70,6 +70,7 @@
 		08297B2E1FC74B2E00701F9B /* MontserratAlternates-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 08297B0A1FC74B2E00701F9B /* MontserratAlternates-Italic.otf */; };
 		08297B2F1FC74B2E00701F9B /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 08297B0B1FC74B2E00701F9B /* Montserrat-SemiBold.otf */; };
 		0838B5C51FBF7A240051669B /* LoginPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DFE8111FBF5F340065F2DE /* LoginPresenterImpl.swift */; };
+		083E55171FC84889004E4EC0 /* NetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E55161FC84889004E4EC0 /* NetUnitTests.swift */; };
 		0899E9FF1FC74D0900F148DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899E9FE1FC74D0900F148DC /* User.swift */; };
 		0899EA011FC74D1400F148DC /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899EA001FC74D1400F148DC /* Photo.swift */; };
 		0899EA031FC74D1A00F148DC /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899EA021FC74D1A00F148DC /* Challenge.swift */; };
@@ -171,6 +172,7 @@
 		08297B091FC74B2E00701F9B /* MontserratAlternates-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
 		08297B0A1FC74B2E00701F9B /* MontserratAlternates-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Italic.otf"; sourceTree = "<group>"; };
 		08297B0B1FC74B2E00701F9B /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		083E55161FC84889004E4EC0 /* NetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUnitTests.swift; sourceTree = "<group>"; };
 		0899E9FE1FC74D0900F148DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0899EA001FC74D1400F148DC /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0899EA021FC74D1A00F148DC /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
@@ -384,6 +386,14 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		083E55151FC84865004E4EC0 /* NetUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				083E55161FC84889004E4EC0 /* NetUnitTests.swift */,
+			);
+			path = NetUnitTests;
+			sourceTree = "<group>";
+		};
 		087305921FBF781E00F65B5C /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +546,7 @@
 		8A5D5CFE1FB0D22C00C24725 /* TerceiroMini-FrontEndTests */ = {
 			isa = PBXGroup;
 			children = (
+				083E55151FC84865004E4EC0 /* NetUnitTests */,
 				8A5D5CFF1FB0D22C00C24725 /* TerceiroMini_FrontEndTests.swift */,
 				8A5D5D011FB0D22C00C24725 /* Info.plist */,
 			);
@@ -843,6 +854,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A5D5D001FB0D22C00C24725 /* TerceiroMini_FrontEndTests.swift in Sources */,
+				083E55171FC84889004E4EC0 /* NetUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

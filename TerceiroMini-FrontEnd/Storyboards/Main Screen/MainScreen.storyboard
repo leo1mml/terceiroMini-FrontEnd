@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Main Screen View Controller-->
         <scene sceneID="Tan-j9-Pla">
             <objects>
-                <tableViewController id="Gtz-CT-cZD" sceneMemberID="viewController">
+                <tableViewController id="Gtz-CT-cZD" customClass="MainScreenViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tZ1-Mu-L0y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkj-KO-Cqg">
                                                     <rect key="frame" x="170" y="3" width="35" height="39"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-screen-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ZlA-F9-FdT">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-topbar" translatesAutoresizingMaskIntoConstraints="NO" id="ZlA-F9-FdT">
                                                             <rect key="frame" x="0.0" y="0.0" width="35" height="39"/>
                                                         </imageView>
                                                     </subviews>
@@ -44,18 +44,18 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEk-tb-nvv">
-                                                    <rect key="frame" x="336" y="8" width="19" height="28"/>
+                                                    <rect key="frame" x="331" y="8.5" width="24" height="27"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-icon" translatesAutoresizingMaskIntoConstraints="NO" id="vlh-wv-LV3">
-                                                            <rect key="frame" x="0.0" y="0.0" width="19" height="28"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="27"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="19" id="0Gl-0F-BUf"/>
+                                                        <constraint firstAttribute="width" constant="24" id="0Gl-0F-BUf"/>
                                                         <constraint firstItem="vlh-wv-LV3" firstAttribute="leading" secondItem="CEk-tb-nvv" secondAttribute="leading" id="3mM-yS-Mzy"/>
                                                         <constraint firstAttribute="bottom" secondItem="vlh-wv-LV3" secondAttribute="bottom" id="MtE-P5-5cI"/>
-                                                        <constraint firstAttribute="height" constant="28" id="TDd-of-KbX"/>
+                                                        <constraint firstAttribute="height" constant="27" id="TDd-of-KbX"/>
                                                         <constraint firstAttribute="trailing" secondItem="vlh-wv-LV3" secondAttribute="trailing" id="j1g-nB-XuP"/>
                                                         <constraint firstItem="vlh-wv-LV3" firstAttribute="top" secondItem="CEk-tb-nvv" secondAttribute="top" id="tSD-LD-e7y"/>
                                                     </constraints>
@@ -94,6 +94,9 @@
                             <outlet property="delegate" destination="Gtz-CT-cZD" id="TuM-4r-N4w"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="pageViewTable" destination="tZ1-Mu-L0y" id="gVs-KV-jtf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pep-vy-W8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,14 +121,14 @@
         <!--Navigation View Controller-->
         <scene sceneID="3Eh-IP-YJE">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iQ4-A3-5m2" customClass="NavigationViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageView" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iQ4-A3-5m2" customClass="NavigationViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4G-id-png" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="90" y="1748"/>
         </scene>
     </scenes>
     <resources>
-        <image name="main-screen-icon" width="33" height="33"/>
+        <image name="logo-topbar" width="35" height="38"/>
         <image name="profile-icon" width="27" height="27"/>
     </resources>
 </document>

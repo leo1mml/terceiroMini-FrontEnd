@@ -8,14 +8,16 @@
 
 import UIKit
 
-class MainScreenViewController: UIViewController, MainScreenView {
+class MainScreenViewController: UITableViewController, MainScreenView {
     
-    
+    var pageViewController: UIPageViewController!
     
     var presenter : MainScreenPresenter?
 
+    @IBOutlet var pageViewTable: UITableView!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+       
 
         // Do any additional setup after loading the view.
     }
@@ -24,6 +26,9 @@ class MainScreenViewController: UIViewController, MainScreenView {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
     
 
     /*

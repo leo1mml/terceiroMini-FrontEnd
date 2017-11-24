@@ -13,24 +13,31 @@ class TerceiroMini_FrontEndTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testGetById() {
+        let userNet = UserNet(domain: "http://photoappchallenge.herokuapp.com")
+        let id = "5a0c92e6515a080014694f80" // leo1mml
+        
+        let exp = expectation(description: "Get User")
+        
+        userNet.get(byId: id) { (usr, err) in
+            
+            guard let u = usr else {
+                print("Oops!")
+                return
+            }
+            
+            if u.username == "leo1mml" {
+                exp.fulfill()
+            }
         }
+        
+        wait(for: [exp], timeout: 2)
     }
     
 }

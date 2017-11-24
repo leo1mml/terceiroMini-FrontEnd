@@ -8,12 +8,20 @@
 
 import Foundation
 
+/**
+ 
+ This class holds the informations about the web service that is being used by the app.
+ */
 class R {
     
     private init() {}
     
+    /// The domain of the application service.
     static let urlDomain = "http://photoappchallenge.herokuapp.com"
+    /// The path to access the users data.
     static let usersDomain = "\(urlDomain)/users"
+    /// The path to access the photos data.
     static let photosDomain = "\(urlDomain)/photos"
+    /// The path to access the challenges data.
     static let challengesDomain = "\(urlDomain)/challenges"
 }

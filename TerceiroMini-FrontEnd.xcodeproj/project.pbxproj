@@ -405,6 +405,15 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		0894ED861FC88F3A00F87C2A /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				0899EA041FC74D2900F148DC /* NetHelper.swift */,
+				083E551A1FC84F41004E4EC0 /* R.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		0899E9FB1FC74CE400F148DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,11 +426,10 @@
 		0899E9FC1FC74CF100F148DC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0894ED861FC88F3A00F87C2A /* Support */,
 				0899EA061FC74D3100F148DC /* UserNet.swift */,
 				0899EA081FC74D3900F148DC /* PhotoNet.swift */,
 				0899EA0A1FC74D4100F148DC /* ChallengeNet.swift */,
-				0899EA041FC74D2900F148DC /* NetHelper.swift */,
-				083E551A1FC84F41004E4EC0 /* R.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";

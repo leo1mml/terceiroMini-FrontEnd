@@ -13,7 +13,17 @@ class UserNet {
     
     private init() {}
     
-    class func add(user: User, completion: @escaping (User?, String?, Error?) -> Void) {
+    /**
+     
+     Adds a new user to the database.
+     
+     - parameter user: The new user.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter usr: The user data that has being saved.
+     - parameter tkn: The server comunication token of the device.
+     - parameter err: The erro that ocurred.
+     */
+    class func add(user: User, completion: @escaping (_ usr: User?,_ tkn: String?,_ err: Error?) -> Void) {
         let userDictionary = buildDictionary(fromUser: user)
         
         Alamofire.request(R.usersDomain, method: .post, parameters: userDictionary, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
@@ -32,7 +42,15 @@ class UserNet {
         }
     }
     
-    class func getAll(completion: @escaping ([User]?, Error?) -> Void) {
+    /**
+     
+     Gets the data of all the users in the database.
+     
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter usrs: The data of the users.
+     - parameter err: The that ocurred.
+     */
+    class func getAll(completion: @escaping (_ usrs: [User]?, _ err: Error?) -> Void) {
         
         Alamofire.request(R.usersDomain).responseJSON { response in
             
@@ -48,9 +66,18 @@ class UserNet {
         }
     }
     
-    class func get(byToken t: String, completion: @escaping (User?, Error?) -> Void) {
+    /**
+     
+     Gets an user by the server comunication token.
+     
+     - parameter token: Server comunication token.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter usr: The user data.
+     - parameter err: The error that ocurred.
+     */
+    class func get(byToken token: String, completion: @escaping (_ usr: User?, _ err: Error?) -> Void) {
         let completeDomain = R.usersDomain + "/me"
-        let header = ["x-auth": t]
+        let header = ["x-auth": token]
         
         Alamofire.request(completeDomain, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { response in
             
@@ -66,7 +93,15 @@ class UserNet {
         }
     }
     
-    class func logout(token: String, completion: @escaping (Bool) -> Void) {
+    /**
+     
+     Kills the comunication between a device and the server by throwing out the token.
+     
+     - parameter token: Server comunication token.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter success: A boolean flag indicating if the task was completed successfully.
+     */
+    class func logout(token: String, completion: @escaping (_ success: Bool) -> Void) {
         let completeDomain = R.usersDomain + "/me/token"
         let header = ["x-auth": token]
         
@@ -81,8 +116,17 @@ class UserNet {
         }
     }
     
-    class func get(byId id: String, completion: @escaping (User?, Error?) -> Void) {
-        let completeDomain = R.usersDomain + "/\(id)"
+    /**
+     
+     Get an user by the id.
+     
+     - parameter id: The user id.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter usr: The user data.
+     - parameter err: The error that ocurred.
+     */
+    class func get(byId id: String, completion: @escaping (_ usr: User?, _ err: Error?) -> Void) {
+        let completeDomain = R.usersDomain + "/id/\(id)"
         
         Alamofire.request(completeDomain).responseJSON { response in
             
@@ -98,8 +142,16 @@ class UserNet {
         }
     }
     
-    class func delete(byId id: String, completion: @escaping (Bool) -> Void) {
-        let completeDomain = R.usersDomain + "/\(id)"
+    /**
+     
+     Deletes an user from the database.
+     
+     - parameter id: The id of the user.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter success: A boolean flag indicating if the task was completed successfully.
+     */
+    class func delete(byId id: String, completion: @escaping (_ success: Bool) -> Void) {
+        let completeDomain = R.usersDomain + "/deleteById/\(id)"
         
         Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             
@@ -112,7 +164,17 @@ class UserNet {
         }
     }
     
-    class func createLogin(username: String, email: String, password: String, completion: @escaping (Bool) -> Void) {
+    /**
+     
+     Creates a new login in the database.
+     
+     - parameter username: The new username.
+     - parameter email: The users email.
+     - parameter password: The users password.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter success: A boolean flag indicating if the task was completed successfully.
+     */
+    class func createLogin(username: String, email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
         let completeDomain = R.usersDomain + "/login"
         let login = ["userName": username, "email": email, "password": password]
         
@@ -127,6 +189,12 @@ class UserNet {
         }
     }
     
+    /**
+     
+     Creates a new array of users from a dictionary array.
+     
+     - parameter arr: A dictionary array.
+     */
     class func buildUserArray(fromDictionaryArray arr: [[String: Any]]) -> [User] {
         
         return arr.map { dic -> User in
@@ -135,16 +203,28 @@ class UserNet {
         }
     }
     
-    class func buildUser(fromDicitionary d: [String: Any]) -> User {
+    /**
+     
+     Creates a new instance of user form a dicitonary.
+     
+     - parameter dic: A dictionary.
+     */
+    class func buildUser(fromDicitionary dic: [String: Any]) -> User {
         
-        let id = d["_id"] as! String
-        let email = d["email"] as! String
-        let name = d["name"] as! String
-        let username = d["userName"] as! String
+        let id = dic["_id"] as! String
+        let email = dic["email"] as! String
+        let name = dic["name"] as! String
+        let username = dic["userName"] as! String
         
         return User(id, email, name, username)
     }
     
+    /**
+     
+     Creates a new dictionary from an user.
+     
+     - parameter u: The user data.
+     */
     class func buildDictionary(fromUser u: User) -> [String: Any] {
         
         return ["_id": u.id ?? "",

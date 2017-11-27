@@ -16,12 +16,12 @@ class R {
     
     private init() {}
     
-    /// The domain of the application service.
+    /// The domain of the application web service.
     static let urlDomain = "http://photoappchallenge.herokuapp.com"
-    /// The path to access the users data.
+    /// The path to access the users data in the web service.
     static let usersDomain = "\(urlDomain)/users"
-    /// The path to access the photos data.
+    /// The path to access the photos data in the web service.
     static let photosDomain = "\(urlDomain)/photos"
-    /// The path to access the challenges data.
+    /// The path to access the challenges data in the web service.
     static let challengesDomain = "\(urlDomain)/challenges"
 }

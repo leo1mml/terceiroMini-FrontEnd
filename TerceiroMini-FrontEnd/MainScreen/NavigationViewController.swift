@@ -18,7 +18,6 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         return [vc1, vc2]
     }()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
@@ -30,7 +29,6 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         // Do any additional setup after loading the view.
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

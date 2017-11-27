@@ -17,6 +17,8 @@ class ChallengeNet {
     
     private init() {}
     
+    // MARK: - Web Service methods
+    
     /**
      
      Gets the data of all the challenges in the database.
@@ -40,6 +42,8 @@ class ChallengeNet {
             completion(clg, nil)
         }
     }
+    
+    // MARK: - Auxiliar methods
     
     /**
      

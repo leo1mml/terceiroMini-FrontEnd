@@ -17,6 +17,8 @@ class PhotoNet {
     
     private init() {}
     
+    // MARK: - Web Service methods
+    
     /**
      
      Adds a new photo to the database.
@@ -170,6 +172,8 @@ class PhotoNet {
             completion(photo, nil)
         }
     }
+    
+    // MARK: - Auxiliar methods
     
     /**
      

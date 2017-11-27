@@ -17,6 +17,8 @@ class UserNet {
     
     private init() {}
     
+    // MARK: - Web Service methods
+    
     /**
      
      Adds a new user to the database.
@@ -192,6 +194,8 @@ class UserNet {
             completion(code == 200)
         }
     }
+    
+    // MARK: - Auxiliar methods
     
     /**
      

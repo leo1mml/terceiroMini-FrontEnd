@@ -175,11 +175,11 @@ class PhotoNet {
      
      Creates a new array of photos from an array of dictionaries.
      
-     - parameter a: A dictionary array.
+     - parameter arr: A dictionary array.
      */
-    private class func buildPhotos(fromDictionaryArry a: [[String: Any]]) -> [Photo] {
+    private class func buildPhotos(fromDictionaryArry arr: [[String: Any]]) -> [Photo] {
         
-        return a.map { dic -> Photo in
+        return arr.map { dic -> Photo in
         
             return buildPhoto(fromDictionary: dic)
         }
@@ -189,14 +189,14 @@ class PhotoNet {
      
      Creates a new instance of a photo from a dictionary.
      
-     - parameter d: A dictionary.
+     - parameter dic: A dictionary.
      */
-    private class func buildPhoto(fromDictionary d: [String: Any]) -> Photo {
+    private class func buildPhoto(fromDictionary dic: [String: Any]) -> Photo {
         
-        let id = d["_id"] as! String
-        let url = d["url"] as! String
-        let ownerId = d["_owner"] as! String
-        let challengeId = d["_challenge"] as! String
+        let id = dic["_id"] as! String
+        let url = dic["url"] as! String
+        let ownerId = dic["_owner"] as! String
+        let challengeId = dic["_challenge"] as! String
         
         return Photo(id, url, ownerId, challengeId)
     }
@@ -205,13 +205,13 @@ class PhotoNet {
      
      Creates a new dictionary from the photo data.
      
-     - parameter p: The photo data.
+     - parameter photo: The photo data.
      */
-    private class func buildDictionary(fromPhoto p: Photo) -> [String: Any] {
+    private class func buildDictionary(fromPhoto photo: Photo) -> [String: Any] {
         
-        return ["_id": p.id ?? "",
-                "url": p.url!,
-                "_owner": p.ownerId,
-                "_challenge": p.challengeId]
+        return ["_id": photo.id ?? "",
+                "url": photo.url!,
+                "_owner": photo.ownerId,
+                "_challenge": photo.challengeId]
     }
 }

@@ -23,11 +23,11 @@ class UserNet {
      
      - parameter user: The new user.
      - parameter completion: A block of code to be executed once the task is complete.
-     - parameter usr: The user data that has being saved.
-     - parameter tkn: The server comunication token of the device.
-     - parameter err: The erro that ocurred.
+     - parameter u: The user data that has being saved.
+     - parameter t: The server comunication token of the device.
+     - parameter e: The erro that ocurred.
      */
-    class func add(user: User, completion: @escaping (_ usr: User?,_ tkn: String?,_ err: Error?) -> Void) {
+    class func add(user: User, completion: @escaping (_ u: User?,_ t: String?,_ e: Error?) -> Void) {
         let userDictionary = buildDictionary(fromUser: user)
         
         Alamofire.request(R.usersDomain, method: .post, parameters: userDictionary, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
@@ -51,10 +51,10 @@ class UserNet {
      Gets the data of all the users in the database.
      
      - parameter completion: A block of code to be executed once the task is complete.
-     - parameter usrs: The data of the users.
-     - parameter err: The that ocurred.
+     - parameter u: The users retrieved by the task.
+     - parameter e: The that ocurred.
      */
-    class func getAll(completion: @escaping (_ usrs: [User]?, _ err: Error?) -> Void) {
+    class func getAll(completion: @escaping (_ u: [User]?, _ e: Error?) -> Void) {
         
         Alamofire.request(R.usersDomain).responseJSON { response in
             
@@ -76,10 +76,10 @@ class UserNet {
      
      - parameter token: Server comunication token.
      - parameter completion: A block of code to be executed once the task is complete.
-     - parameter usr: The user data.
-     - parameter err: The error that ocurred.
+     - parameter u: The user retrieved by the task.
+     - parameter e: The error that ocurred.
      */
-    class func get(byToken token: String, completion: @escaping (_ usr: User?, _ err: Error?) -> Void) {
+    class func get(byToken token: String, completion: @escaping (_ u: User?, _ e: Error?) -> Void) {
         let completeDomain = R.usersDomain + "/me"
         let header = ["x-auth": token]
         
@@ -103,9 +103,9 @@ class UserNet {
      
      - parameter token: Server comunication token.
      - parameter completion: A block of code to be executed once the task is complete.
-     - parameter success: A boolean flag indicating if the task was completed successfully.
+     - parameter s: A boolean flag indicating if the task was completed successfully.
      */
-    class func logout(token: String, completion: @escaping (_ success: Bool) -> Void) {
+    class func logout(token: String, completion: @escaping (_ s: Bool) -> Void) {
         let completeDomain = R.usersDomain + "/me/token"
         let header = ["x-auth": token]
         
@@ -126,10 +126,10 @@ class UserNet {
      
      - parameter id: The user id.
      - parameter completion: A block of code to be executed once the task is complete.
-     - parameter usr: The user data.
-     - parameter err: The error that ocurred.
+     - parameter u: The user retrieved by the task.
+     - parameter e: The error that ocurred.
      */
-    class func get(byId id: String, completion: @escaping (_ usr: User?, _ err: Error?) -> Void) {
+    class func get(byId id: String, completion: @escaping (_ u: User?, _ e: Error?) -> Void) {
         let completeDomain = R.usersDomain + "/id/\(id)"
         
         Alamofire.request(completeDomain).responseJSON { response in
@@ -152,9 +152,9 @@ class UserNet {
      
      - parameter id: The id of the user.
      - parameter completion: A block of code to be executed once the task is complete.
-     - parameter success: A boolean flag indicating if the task was completed successfully.
+     - parameter s: A boolean flag indicating if the task was completed successfully.
      */
-    class func delete(byId id: String, completion: @escaping (_ success: Bool) -> Void) {
+    class func delete(byId id: String, completion: @escaping (_ s: Bool) -> Void) {
         let completeDomain = R.usersDomain + "/deleteById/\(id)"
         
         Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
@@ -176,9 +176,9 @@ class UserNet {
      - parameter email: The users email.
      - parameter password: The users password.
      - parameter completion: A block of code to be executed once the task is complete.
-     - parameter success: A boolean flag indicating if the task was completed successfully.
+     - parameter s: A boolean flag indicating if the task was completed successfully.
      */
-    class func createLogin(username: String, email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
+    class func createLogin(username: String, email: String, password: String, completion: @escaping (_ s: Bool) -> Void) {
         let completeDomain = R.usersDomain + "/login"
         let login = ["userName": username, "email": email, "password": password]
         

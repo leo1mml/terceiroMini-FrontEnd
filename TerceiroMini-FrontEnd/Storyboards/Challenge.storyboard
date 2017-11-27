@@ -141,11 +141,11 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aBy-Pl-cxj">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aBy-Pl-cxj">
                                 <rect key="frame" x="0.0" y="448" width="375" height="219"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="Rid-YR-g0g">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="kOZ-bZ-cbl">
+                                    <size key="itemSize" width="121" height="121"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -178,17 +178,35 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyX-iP-q7a" customClass="LeftAlignedIconButton" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
+                                                    <rect key="frame" x="5" y="95" width="58" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="ug1-aH-TTZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <state key="normal" title="carla.maciel">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="IyX-iP-q7a" firstAttribute="leading" secondItem="X8o-XR-2Ug" secondAttribute="leading" constant="5" id="00A-uL-8Zo"/>
                                             <constraint firstAttribute="trailing" secondItem="Ydz-8h-Aah" secondAttribute="trailing" constant="5" id="4Yv-DN-xbA"/>
                                             <constraint firstItem="x8n-pf-UnC" firstAttribute="width" secondItem="X8o-XR-2Ug" secondAttribute="width" multiplier="0.4" id="8IB-xa-cJk"/>
+                                            <constraint firstAttribute="bottom" secondItem="IyX-iP-q7a" secondAttribute="bottom" constant="5" id="Pje-I7-9Nj"/>
                                             <constraint firstItem="x8n-pf-UnC" firstAttribute="leading" secondItem="X8o-XR-2Ug" secondAttribute="leading" constant="5" id="cFH-wI-IiI"/>
                                             <constraint firstItem="Ydz-8h-Aah" firstAttribute="top" secondItem="X8o-XR-2Ug" secondAttribute="top" constant="5" id="hSw-VI-aRi"/>
                                             <constraint firstItem="Ydz-8h-Aah" firstAttribute="leading" secondItem="x8n-pf-UnC" secondAttribute="trailing" constant="5" id="k93-bv-YyH"/>
                                             <constraint firstItem="x8n-pf-UnC" firstAttribute="top" secondItem="X8o-XR-2Ug" secondAttribute="top" constant="5" id="vnq-tD-Bf8"/>
                                         </constraints>
                                         <size key="customSize" width="121" height="121"/>
+                                        <connections>
+                                            <outlet property="numberOfVotes" destination="Ydz-8h-Aah" id="Uhc-uH-BTm"/>
+                                            <outlet property="photo" destination="W0m-8e-k1y" id="RSm-Qp-VU3"/>
+                                            <outlet property="statusLabel" destination="x8n-pf-UnC" id="Ent-Ti-eC7"/>
+                                            <outlet property="userLabel" destination="IyX-iP-q7a" id="RXJ-Eu-IHI"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

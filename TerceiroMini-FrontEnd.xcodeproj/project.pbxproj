@@ -72,6 +72,12 @@
 		083982C31FC8B75800E45D10 /* MainScreenTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0E82F61FC74A1B00218C80 /* MainScreenTableView.storyboard */; };
 		083E55171FC84889004E4EC0 /* UserNetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */; };
 		083E551B1FC84F41004E4EC0 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E551A1FC84F41004E4EC0 /* R.swift */; };
+		086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */; };
+		086D279A1FCC844B00D9F547 /* LoginPresentationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */; };
+		086D279C1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D279B1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift */; };
+		086D27A41FCC9B5300D9F547 /* presentation-login-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 086D27A31FCC9B5300D9F547 /* presentation-login-logo.png */; };
+		086D27A61FCC9C7E00D9F547 /* presentation-login-exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 086D27A51FCC9C7D00D9F547 /* presentation-login-exit.png */; };
+		086D27A81FCC9D6600D9F547 /* presentation-login-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 086D27A71FCC9D6600D9F547 /* presentation-login-background.png */; };
 		0894ED881FC896A500F87C2A /* PhotoNetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0894ED871FC896A500F87C2A /* PhotoNetUnitTests.swift */; };
 		0894ED8B1FC89BA800F87C2A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0894ED8A1FC89BA800F87C2A /* NetworkManager.swift */; };
 		0899E9FF1FC74D0900F148DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899E9FE1FC74D0900F148DC /* User.swift */; };
@@ -178,6 +184,12 @@
 		08297B0B1FC74B2E00701F9B /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetUnitTests.swift; sourceTree = "<group>"; };
 		083E551A1FC84F41004E4EC0 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationViewController.swift; sourceTree = "<group>"; };
+		086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationProtocols.swift; sourceTree = "<group>"; };
+		086D279B1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationPresenterImpl.swift; sourceTree = "<group>"; };
+		086D27A31FCC9B5300D9F547 /* presentation-login-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presentation-login-logo.png"; sourceTree = "<group>"; };
+		086D27A51FCC9C7D00D9F547 /* presentation-login-exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presentation-login-exit.png"; sourceTree = "<group>"; };
+		086D27A71FCC9D6600D9F547 /* presentation-login-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "presentation-login-background.png"; path = "../../../../presentation-login-background.png"; sourceTree = "<group>"; };
 		0894ED871FC896A500F87C2A /* PhotoNetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoNetUnitTests.swift; sourceTree = "<group>"; };
 		0894ED8A1FC89BA800F87C2A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0899E9FE1FC74D0900F148DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -407,6 +419,36 @@
 			path = NetUnitTests;
 			sourceTree = "<group>";
 		};
+		086D27961FCC83D700D9F547 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */,
+				086D279B1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift */,
+				086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		086D279F1FCC99E300D9F547 /* temp */ = {
+			isa = PBXGroup;
+			children = (
+				086D27A71FCC9D6600D9F547 /* presentation-login-background.png */,
+				086D27A51FCC9C7D00D9F547 /* presentation-login-exit.png */,
+				086D27A31FCC9B5300D9F547 /* presentation-login-logo.png */,
+			);
+			path = temp;
+			sourceTree = "<group>";
+		};
+		086D27A21FCC9A0900D9F547 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8A5D5CEC1FB0D22C00C24725 /* LoginViewController.swift */,
+				08DFE8111FBF5F340065F2DE /* LoginPresenterImpl.swift */,
+				08F06F961FBB544C0039EAFE /* LoginProtocols.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		087305921FBF781E00F65B5C /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,14 +509,13 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		08F06F9A1FBB58FA0039EAFE /* Login */ = {
+		08F06F9A1FBB58FA0039EAFE /* Login Flow */ = {
 			isa = PBXGroup;
 			children = (
-				8A5D5CEC1FB0D22C00C24725 /* LoginViewController.swift */,
-				08DFE8111FBF5F340065F2DE /* LoginPresenterImpl.swift */,
-				08F06F961FBB544C0039EAFE /* LoginProtocols.swift */,
+				086D27961FCC83D700D9F547 /* Presentation */,
+				086D27A21FCC9A0900D9F547 /* Login */,
 			);
-			path = Login;
+			path = "Login Flow";
 			sourceTree = "<group>";
 		};
 		08F06F9B1FBB594A0039EAFE /* Storyboards */ = {
@@ -566,11 +607,12 @@
 				8A0E82C01FC7443D00218C80 /* Extensions */,
 				14D1061C1FBE004D00AA9F89 /* Profile */,
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
-				08F06F9A1FBB58FA0039EAFE /* Login */,
+				08F06F9A1FBB58FA0039EAFE /* Login Flow */,
 				08297AE01FC74B1E00701F9B /* SignUp */,
 				08276F0E1FC73F8C00A8E605 /* MainScreen */,
 				0899E9FB1FC74CE400F148DC /* Model */,
 				08297AE71FC74B2E00701F9B /* fonts */,
+				086D279F1FCC99E300D9F547 /* temp */,
 				8A5D5CF11FB0D22C00C24725 /* Assets.xcassets */,
 				8A5D5CF61FB0D22C00C24725 /* Info.plist */,
 			);
@@ -691,6 +733,7 @@
 				08297B1A1FC74B2E00701F9B /* MontserratAlternates-ExtraLightItalic.otf in Resources */,
 				8A5D5CF21FB0D22C00C24725 /* Assets.xcassets in Resources */,
 				08297B211FC74B2E00701F9B /* Montserrat-Italic.otf in Resources */,
+				086D27A41FCC9B5300D9F547 /* presentation-login-logo.png in Resources */,
 				08297B141FC74B2E00701F9B /* Montserrat-ThinItalic.otf in Resources */,
 				08297B2D1FC74B2E00701F9B /* MontserratAlternates-ExtraBoldItalic.otf in Resources */,
 				08297B191FC74B2E00701F9B /* MontserratAlternates-Bold.otf in Resources */,
@@ -717,7 +760,9 @@
 				08297B1F1FC74B2E00701F9B /* Montserrat-SemiBoldItalic.otf in Resources */,
 				083982C31FC8B75800E45D10 /* MainScreenTableView.storyboard in Resources */,
 				08297B0E1FC74B2E00701F9B /* Montserrat-BlackItalic.otf in Resources */,
+				086D27A61FCC9C7E00D9F547 /* presentation-login-exit.png in Resources */,
 				08297B0D1FC74B2E00701F9B /* Montserrat-Bold.otf in Resources */,
+				086D27A81FCC9D6600D9F547 /* presentation-login-background.png in Resources */,
 				083982C21FC8B75400E45D10 /* MainScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -850,6 +895,7 @@
 				08276F2E1FC73F8C00A8E605 /* OpenChallengesCellProtocols.swift in Sources */,
 				08276F3B1FC73F8C00A8E605 /* NextChallengesCollectionViewCell.swift in Sources */,
 				08276F3C1FC73F8C00A8E605 /* MainScreenTableViewController.swift in Sources */,
+				086D279A1FCC844B00D9F547 /* LoginPresentationProtocols.swift in Sources */,
 				08276F381FC73F8C00A8E605 /* LastWinnersCell.swift in Sources */,
 				08276F361FC73F8C00A8E605 /* ChallengeCollectionViewPresenter.swift in Sources */,
 				08276F351FC73F8C00A8E605 /* ChallengesFlowLayout.swift in Sources */,
@@ -859,11 +905,13 @@
 				08276F391FC73F8C00A8E605 /* WinnerCollectionViewCell.swift in Sources */,
 				0899EA011FC74D1400F148DC /* Photo.swift in Sources */,
 				14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */,
+				086D279C1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift in Sources */,
 				0899EA051FC74D2900F148DC /* NetHelper.swift in Sources */,
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
+				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,
 				0899EA091FC74D3900F148DC /* PhotoNet.swift in Sources */,
 				0894ED8B1FC89BA800F87C2A /* NetworkManager.swift in Sources */,
 				08276F321FC73F8C00A8E605 /* ChallengeCellPresenter.swift in Sources */,

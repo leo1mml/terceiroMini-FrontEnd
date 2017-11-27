@@ -8,19 +8,34 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.otf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Login Presentation View Controller-->
         <scene sceneID="ExE-a1-edq">
             <objects>
-                <viewController id="SIc-PL-Cc8" sceneMemberID="viewController">
+                <viewController id="SIc-PL-Cc8" customClass="LoginPresentationViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d7s-mr-7pf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="presentationBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="E3X-f9-Gjh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="presentationBackgroundImage" image="presentation-login-background.png" translatesAutoresizingMaskIntoConstraints="NO" id="E3X-f9-Gjh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="398"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="398" id="DWm-MV-1Hp"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="appLogo" image="presentation-login-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ycf-RB-5lW">
+                                <rect key="frame" x="16" y="20" width="54" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="G1g-dR-qZE"/>
+                                    <constraint firstAttribute="width" constant="54" id="TpW-lL-KdX"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="presententionExitButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vd-KB-07d">
@@ -29,7 +44,10 @@
                                     <constraint firstAttribute="height" constant="30" id="KKb-zc-rPn"/>
                                     <constraint firstAttribute="width" constant="30" id="TJN-3R-JWV"/>
                                 </constraints>
-                                <state key="normal" title="Exit"/>
+                                <state key="normal" image="presentation-login-exit.png"/>
+                                <connections>
+                                    <action selector="exitAction:" destination="SIc-PL-Cc8" eventType="touchUpInside" id="29R-g7-qdn"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NlT-pd-9mE">
                                 <rect key="frame" x="20" y="288" width="335" height="80"/>
@@ -39,13 +57,13 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Arw-9b-O0J"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="instructionLabel" text="para concluir a ação, faça seu login" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z12-1d-iWB">
                                         <rect key="frame" x="0.0" y="40" width="335" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -69,7 +87,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="y9B-tf-MwD"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                         <state key="normal" title="ENTRAR COM EMAIL">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -77,7 +95,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="signInFacebook" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-rY-qM2">
                                                         <rect key="frame" x="0.0" y="59" width="335" height="50"/>
                                                         <color key="backgroundColor" red="0.22537201642990112" green="0.34264656901359558" blue="0.60412263870239258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                         <state key="normal" title="ENTRAR COM FACEBOOK">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -92,10 +110,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="ZF5-8o-KBo"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                                 <state key="normal" title="Não tem conta? Crie uma aqui.">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="createAccountAction:" destination="SIc-PL-Cc8" eventType="touchUpInside" id="jl0-1I-GaA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -104,32 +125,25 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="Ny9-ND-PxI"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
                                         <color key="textColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ycf-RB-5lW">
-                                <rect key="frame" x="16" y="20" width="54" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="G1g-dR-qZE"/>
-                                    <constraint firstAttribute="width" constant="54" id="TpW-lL-KdX"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Q2V-JP-7Nh" firstAttribute="top" secondItem="E3X-f9-Gjh" secondAttribute="bottom" constant="30" id="0Zc-iX-KZa"/>
                             <constraint firstItem="x4r-8h-Wdq" firstAttribute="trailing" secondItem="Q2V-JP-7Nh" secondAttribute="trailing" constant="20" id="5RF-5Y-pFt"/>
-                            <constraint firstItem="7vd-KB-07d" firstAttribute="top" secondItem="x4r-8h-Wdq" secondAttribute="top" id="68P-Ym-kuX"/>
+                            <constraint firstItem="7vd-KB-07d" firstAttribute="top" secondItem="d7s-mr-7pf" secondAttribute="top" constant="20" id="68P-Ym-kuX"/>
                             <constraint firstItem="NlT-pd-9mE" firstAttribute="leading" secondItem="x4r-8h-Wdq" secondAttribute="leading" constant="20" id="98l-zj-PVZ"/>
                             <constraint firstItem="E3X-f9-Gjh" firstAttribute="leading" secondItem="x4r-8h-Wdq" secondAttribute="leading" id="FgZ-qy-Kdd"/>
                             <constraint firstItem="E3X-f9-Gjh" firstAttribute="trailing" secondItem="x4r-8h-Wdq" secondAttribute="trailing" id="Il4-CU-Q6m"/>
                             <constraint firstItem="Ycf-RB-5lW" firstAttribute="leading" secondItem="x4r-8h-Wdq" secondAttribute="leading" constant="16" id="K4F-fn-4PI"/>
                             <constraint firstItem="Q2V-JP-7Nh" firstAttribute="leading" secondItem="x4r-8h-Wdq" secondAttribute="leading" constant="20" id="R89-YW-ICg"/>
                             <constraint firstItem="x4r-8h-Wdq" firstAttribute="trailing" secondItem="7vd-KB-07d" secondAttribute="trailing" constant="16" id="Trj-WU-MLe"/>
-                            <constraint firstItem="Ycf-RB-5lW" firstAttribute="top" secondItem="x4r-8h-Wdq" secondAttribute="top" id="fKW-Ef-nCY"/>
+                            <constraint firstItem="Ycf-RB-5lW" firstAttribute="top" secondItem="d7s-mr-7pf" secondAttribute="top" constant="20" id="fKW-Ef-nCY"/>
                             <constraint firstItem="NlT-pd-9mE" firstAttribute="bottom" secondItem="E3X-f9-Gjh" secondAttribute="bottom" constant="-30" id="hZd-kf-84M"/>
                             <constraint firstItem="x4r-8h-Wdq" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Q2V-JP-7Nh" secondAttribute="bottom" constant="30" id="neM-FV-UKG"/>
                             <constraint firstItem="x4r-8h-Wdq" firstAttribute="trailing" secondItem="NlT-pd-9mE" secondAttribute="trailing" constant="20" id="qai-DO-Mcl"/>
@@ -137,7 +151,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x4r-8h-Wdq"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="radiusForButtons">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="agreementWarningLabel" destination="MdM-jT-lin" id="zcb-HC-sUZ"/>
+                        <outlet property="backgroundImageView" destination="E3X-f9-Gjh" id="2we-6E-6QE"/>
+                        <outlet property="emailLoginButton" destination="Ra6-5I-GUr" id="4sC-Cv-pa0"/>
+                        <outlet property="facebookLoginButton" destination="z3c-rY-qM2" id="w31-it-BfA"/>
+                        <outlet property="instructionTextLabel" destination="z12-1d-iWB" id="lBT-YJ-rxi"/>
+                        <outlet property="welcomeTextLabel" destination="7v6-DM-MWE" id="19j-jt-kbD"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="presentationToLogin" id="wQs-6b-w0v"/>
                         <segue destination="Ogn-Qa-6zC" kind="show" identifier="presentationToRegister" id="Xrf-ov-Gtq"/>
                     </connections>
@@ -329,6 +354,11 @@
             <point key="canvasLocation" x="325.60000000000002" y="853.22338830584715"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="presentation-login-background.png" width="375" height="398"/>
+        <image name="presentation-login-exit.png" width="15" height="15"/>
+        <image name="presentation-login-logo.png" width="53" height="59"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Xrf-ov-Gtq"/>
     </inferredMetricsTieBreakers>

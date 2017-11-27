@@ -25,7 +25,7 @@ class LoginPresentationPresenterImpl: LoginPresentationPresenter {
     }
     
     func facebookLoginButtonClicked() {
-        
+            
     }
     
     func createAccountButtonClicked() {

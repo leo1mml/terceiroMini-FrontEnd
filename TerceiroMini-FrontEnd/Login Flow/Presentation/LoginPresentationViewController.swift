@@ -13,11 +13,15 @@ private let segueToRegister = "presentationToRegister"
 
 class LoginPresentationViewController: UIViewController, LoginPresentationView {
 
+    // MARK: - Attributes
+    
     var presenter: LoginPresentationPresenter?
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     
@@ -28,6 +32,8 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
     @IBOutlet weak var facebookLoginButton: UIButton!
     
     @IBOutlet weak var agreementWarningLabel: UILabel!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +52,8 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
         setupTexts()
     }
     
+    // MARK: - View settings
+    
     private func setupTexts() {
         welcomeTextLabel.text = "Seja bem-vindo!"
         instructionTextLabel.text = "para concluir a ação,\nfaça seu login"
@@ -59,6 +67,8 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
         emailLoginButton.layer.cornerRadius = radius
         facebookLoginButton.layer.cornerRadius = radius
     }
+    
+    // MARK: - Actions
     
     @IBAction func exitAction(_ sender: UIButton) {
         presenter?.exitButtonClicked()
@@ -75,6 +85,8 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
     @IBAction func createAccountAction(_ sender: UIButton) {
         presenter?.createAccountButtonClicked()
     }
+    
+    // MARK: - View implementation
     
     func exitLoginPresentation() {
         dismiss(animated: true, completion: nil)

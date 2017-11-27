@@ -9,6 +9,10 @@
 import Foundation
 import Alamofire
 
+/**
+ 
+ This class manages the web service/app user data flow. It must be used without instanciating the class.
+ */
 class UserNet {
     
     private init() {}
@@ -195,7 +199,7 @@ class UserNet {
      
      - parameter arr: A dictionary array.
      */
-    class func buildUserArray(fromDictionaryArray arr: [[String: Any]]) -> [User] {
+    private class func buildUserArray(fromDictionaryArray arr: [[String: Any]]) -> [User] {
         
         return arr.map { dic -> User in
             
@@ -209,7 +213,7 @@ class UserNet {
      
      - parameter dic: A dictionary.
      */
-    class func buildUser(fromDicitionary dic: [String: Any]) -> User {
+    private class func buildUser(fromDicitionary dic: [String: Any]) -> User {
         
         let id = dic["_id"] as! String
         let email = dic["email"] as! String
@@ -225,7 +229,7 @@ class UserNet {
      
      - parameter u: The user data.
      */
-    class func buildDictionary(fromUser u: User) -> [String: Any] {
+    private class func buildDictionary(fromUser u: User) -> [String: Any] {
         
         return ["_id": u.id ?? "",
                 "email": u.email,

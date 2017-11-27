@@ -8,19 +8,30 @@
 
 import UIKit
 
-class NavigationViewController: UIPageViewController, UIPageViewControllerDataSource {
+protocol NavigationAnimationsDelegate {
+    func swipeMainToProfile()
+    func swipeProfileToMain()
+    func swipeProfileToConfig()
+    func swipeConfigToProfile()
+}
+
+class NavigationViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     lazy var viewControllerList:[UIViewController] = {
         let sb = UIStoryboard(name: "MainScreen", bundle: nil)
         let vc1 = sb.instantiateViewController(withIdentifier: "MainStoryboard")
+        vc1.restorationIdentifier = "MainScreen"
         let vc2 = sb.instantiateViewController(withIdentifier: "ProfileStoryboard")
         
         return [vc1, vc2]
     }()
     
+    var delegateAnimations : NavigationAnimationsDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
+        self.delegate = self
         
         if let firstViewController = viewControllerList.first {
             self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
@@ -33,6 +44,8 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -59,6 +72,18 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         
         return viewControllerList[nextIndex]
     }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        print("\(String(describing: pageViewController.restorationIdentifier))")
+        if(pageViewController.restorationIdentifier == "MainScreen"){
+            delegateAnimations?.swipeMainToProfile()
+        }else {
+            
+            delegateAnimations?.swipeProfileToMain()
+        }
+    }
+    
+    
 
     /*
     // MARK: - Navigation

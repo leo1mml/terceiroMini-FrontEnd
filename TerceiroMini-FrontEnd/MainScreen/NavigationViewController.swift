@@ -13,9 +13,11 @@ protocol NavigationAnimationsDelegate {
     func swipeProfileToMain()
     func swipeProfileToConfig()
     func swipeConfigToProfile()
+    func moveAndScaleItems(with contentOffset: CGPoint)
+    func setFirstOffset(firstOffsetX: CGFloat)
 }
 
-class NavigationViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class NavigationViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate {
     
     lazy var viewControllerList:[UIViewController] = {
         let sb = UIStoryboard(name: "MainScreen", bundle: nil)
@@ -25,6 +27,7 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         
         return [vc1, vc2]
     }()
+    var pageViewScroll : UIScrollView?
     
     var delegateAnimations : NavigationAnimationsDelegate?
     
@@ -36,6 +39,14 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         if let firstViewController = viewControllerList.first {
             self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
+        for v in self.view.subviews{
+            if (v is UIScrollView){
+                //                if v.isKindOfClass(UIScrollView){
+                (v as! UIScrollView).delegate = self
+                self.pageViewScroll = v as? UIScrollView
+            }
+        }
+        delegateAnimations?.setFirstOffset(firstOffsetX: (pageViewScroll?.contentOffset.x)!)
 
         // Do any additional setup after loading the view.
     }
@@ -74,16 +85,25 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        print("\(String(describing: pageViewController.restorationIdentifier))")
-        if(pageViewController.restorationIdentifier == "MainScreen"){
+//        print("\(String(describing: pendingViewControllers[0].restorationIdentifier))")
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if(!completed){
+            return
+        }
+        if(previousViewControllers[0] == self.viewControllerList[0]){
             delegateAnimations?.swipeMainToProfile()
-        }else {
-            
+        } else if (previousViewControllers[0]) == self.viewControllerList[1]{
             delegateAnimations?.swipeProfileToMain()
         }
     }
     
     
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        delegateAnimations?.moveAndScaleItems(with: scrollView.contentOffset)
+    }
 
     /*
     // MARK: - Navigation

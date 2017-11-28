@@ -92,52 +92,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="featuredPhotoCell" id="ngw-yp-GTS" customClass="FeaturedCollectionViewCell" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="featuredPhotoCell" id="ngw-yp-GTS" customClass="FeaturedFavoriteClickCollectionViewCell" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle Copy 29.png" translatesAutoresizingMaskIntoConstraints="NO" id="YHV-OP-tUD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meu voto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifv-MD-IbP">
-                                                    <rect key="frame" x="18.5" y="49" width="85" height="24"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="Prf-E8-qf1"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.29800295829772949" green="0.29806005954742432" blue="0.29799938201904297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="799" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lK-yj-mzH">
-                                                    <rect key="frame" x="5" y="5" width="111" height="12"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="0lK-yj-mzH" firstAttribute="top" secondItem="ngw-yp-GTS" secondAttribute="top" constant="5" id="Kwa-CD-kL8"/>
-                                            <constraint firstItem="0lK-yj-mzH" firstAttribute="leading" secondItem="ngw-yp-GTS" secondAttribute="leading" constant="5" id="Qb9-F8-Eds"/>
-                                            <constraint firstAttribute="bottom" secondItem="YHV-OP-tUD" secondAttribute="bottom" id="XTK-Dw-0vN"/>
-                                            <constraint firstAttribute="trailing" secondItem="YHV-OP-tUD" secondAttribute="trailing" id="Yn9-Tu-INK"/>
-                                            <constraint firstItem="YHV-OP-tUD" firstAttribute="top" secondItem="ngw-yp-GTS" secondAttribute="top" id="Z3x-Vr-ISV"/>
-                                            <constraint firstItem="ifv-MD-IbP" firstAttribute="centerX" secondItem="ngw-yp-GTS" secondAttribute="centerX" id="axL-u8-Wh8"/>
-                                            <constraint firstItem="YHV-OP-tUD" firstAttribute="leading" secondItem="ngw-yp-GTS" secondAttribute="leading" id="kNb-6V-KZf"/>
-                                            <constraint firstItem="ifv-MD-IbP" firstAttribute="centerY" secondItem="ngw-yp-GTS" secondAttribute="centerY" id="kkR-zu-e7h"/>
-                                            <constraint firstItem="ifv-MD-IbP" firstAttribute="width" secondItem="ngw-yp-GTS" secondAttribute="width" multiplier="0.7" id="wok-0C-x3C"/>
-                                            <constraint firstAttribute="trailing" secondItem="0lK-yj-mzH" secondAttribute="trailing" constant="5" id="zaa-V7-iaR"/>
-                                        </constraints>
                                         <size key="customSize" width="121" height="121"/>
-                                        <connections>
-                                            <outlet property="image" destination="YHV-OP-tUD" id="urJ-uh-HRi"/>
-                                            <outlet property="mainLabel" destination="ifv-MD-IbP" id="WL1-PL-Pa1"/>
-                                            <outlet property="numberOfVotes" destination="0lK-yj-mzH" id="a8c-7G-516"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -157,56 +119,8 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle Copy 29.png" translatesAutoresizingMaskIntoConstraints="NO" id="W0m-8e-k1y">
-                                                    <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOVA!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8n-pf-UnC">
-                                                    <rect key="frame" x="5" y="5" width="48.5" height="21"/>
-                                                    <color key="backgroundColor" red="0.14825960993766785" green="0.1723443865776062" blue="0.18905740976333618" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Yaw-7g-7u9"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                    <color key="textColor" red="0.97626000642776489" green="0.98046904802322388" blue="0.98032146692276001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="799" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydz-8h-Aah">
-                                                    <rect key="frame" x="58.5" y="5" width="57.5" height="12"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyX-iP-q7a" customClass="LeftAlignedIconButton" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                                    <rect key="frame" x="5" y="95" width="58" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="ug1-aH-TTZ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <state key="normal" title="carla.maciel">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="IyX-iP-q7a" firstAttribute="leading" secondItem="X8o-XR-2Ug" secondAttribute="leading" constant="5" id="00A-uL-8Zo"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ydz-8h-Aah" secondAttribute="trailing" constant="5" id="4Yv-DN-xbA"/>
-                                            <constraint firstItem="x8n-pf-UnC" firstAttribute="width" secondItem="X8o-XR-2Ug" secondAttribute="width" multiplier="0.4" id="8IB-xa-cJk"/>
-                                            <constraint firstAttribute="bottom" secondItem="IyX-iP-q7a" secondAttribute="bottom" constant="5" id="Pje-I7-9Nj"/>
-                                            <constraint firstItem="x8n-pf-UnC" firstAttribute="leading" secondItem="X8o-XR-2Ug" secondAttribute="leading" constant="5" id="cFH-wI-IiI"/>
-                                            <constraint firstItem="Ydz-8h-Aah" firstAttribute="top" secondItem="X8o-XR-2Ug" secondAttribute="top" constant="5" id="hSw-VI-aRi"/>
-                                            <constraint firstItem="Ydz-8h-Aah" firstAttribute="leading" secondItem="x8n-pf-UnC" secondAttribute="trailing" constant="5" id="k93-bv-YyH"/>
-                                            <constraint firstItem="x8n-pf-UnC" firstAttribute="top" secondItem="X8o-XR-2Ug" secondAttribute="top" constant="5" id="vnq-tD-Bf8"/>
-                                        </constraints>
                                         <size key="customSize" width="121" height="121"/>
-                                        <connections>
-                                            <outlet property="numberOfVotes" destination="Ydz-8h-Aah" id="Uhc-uH-BTm"/>
-                                            <outlet property="photo" destination="W0m-8e-k1y" id="RSm-Qp-VU3"/>
-                                            <outlet property="statusLabel" destination="x8n-pf-UnC" id="Ent-Ti-eC7"/>
-                                            <outlet property="userLabel" destination="IyX-iP-q7a" id="RXJ-Eu-IHI"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

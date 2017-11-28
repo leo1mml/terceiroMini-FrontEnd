@@ -10,10 +10,11 @@ import UIKit
 
 class MainCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var numberOfVotes: UILabel!
-    @IBOutlet weak var userLabel: LeftAlignedIconButton!
+    @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var usernamePhoto: UIImageView!
     
     
     

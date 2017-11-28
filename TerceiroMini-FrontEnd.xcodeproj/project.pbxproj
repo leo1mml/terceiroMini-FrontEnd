@@ -78,11 +78,13 @@
 		14D106221FBE00CC00AA9F89 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */; };
 		14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */; };
 		468FDF451F91510C2C20CC31 /* Pods_TerceiroMini_FrontEnd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0370BB7E49561D838ED0AF9C /* Pods_TerceiroMini_FrontEnd.framework */; };
+		489F1B8E1FCC9C0200717C26 /* FeaturedMyClickCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 489F1B8C1FCC9C0200717C26 /* FeaturedMyClickCollectionViewCell.xib */; };
+		489F1B9A1FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489F1B991FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift */; };
 		48C882F31FC893FA000A57C2 /* ChallengePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882ED1FC893FA000A57C2 /* ChallengePresenterImpl.swift */; };
 		48C882F41FC893FA000A57C2 /* ChallengeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882EE1FC893FA000A57C2 /* ChallengeProtocols.swift */; };
 		48C882F51FC893FA000A57C2 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882EF1FC893FA000A57C2 /* ChallengeViewController.swift */; };
 		48C882F61FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882F01FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift */; };
-		48C882F71FC893FA000A57C2 /* FeaturedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882F11FC893FA000A57C2 /* FeaturedCollectionViewCell.swift */; };
+		48C882F71FC893FA000A57C2 /* FeaturedFavoriteClickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882F11FC893FA000A57C2 /* FeaturedFavoriteClickCollectionViewCell.swift */; };
 		48C882F81FC893FA000A57C2 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882F21FC893FA000A57C2 /* MainCollectionViewCell.swift */; };
 		48C882FA1FC89412000A57C2 /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C882F91FC89412000A57C2 /* Challenge.storyboard */; };
 		50E7A500BAE4020607545DC5 /* Pods_TerceiroMini_FrontEndTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C217CEF3A90F7A56308EBC /* Pods_TerceiroMini_FrontEndTests.framework */; };
@@ -179,11 +181,18 @@
 		14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
 		14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		489F1B8C1FCC9C0200717C26 /* FeaturedMyClickCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedMyClickCollectionViewCell.xib; sourceTree = "<group>"; };
+		489F1B951FCCA64100717C26 /* checkPreto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkPreto@2x.png"; sourceTree = "<group>"; };
+		489F1B961FCCA64100717C26 /* checkPreto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkPreto.png; sourceTree = "<group>"; };
+		489F1B971FCCA64200717C26 /* checkPreto@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkPreto@3x.png"; sourceTree = "<group>"; };
+		489F1B981FCD7E3D00717C26 /* FeaturedFavoriteClickCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedFavoriteClickCollectionViewCell.xib; sourceTree = "<group>"; };
+		489F1B991FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedMyClickCollectionViewCell.swift; sourceTree = "<group>"; };
+		489F1B9D1FCDC7F200717C26 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainCollectionViewCell.xib; path = "/Users/pedrooliveira/Documents/mini3/terceiroMini-FrontEnd/TerceiroMini-FrontEnd/Challange/MainCollectionViewCell.xib"; sourceTree = "<absolute>"; };
 		48C882ED1FC893FA000A57C2 /* ChallengePresenterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengePresenterImpl.swift; sourceTree = "<group>"; };
 		48C882EE1FC893FA000A57C2 /* ChallengeProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeProtocols.swift; sourceTree = "<group>"; };
 		48C882EF1FC893FA000A57C2 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		48C882F01FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExtensionChallgeViewController+Collection.swift"; sourceTree = "<group>"; };
-		48C882F11FC893FA000A57C2 /* FeaturedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedCollectionViewCell.swift; sourceTree = "<group>"; };
+		48C882F11FC893FA000A57C2 /* FeaturedFavoriteClickCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedFavoriteClickCollectionViewCell.swift; sourceTree = "<group>"; };
 		48C882F21FC893FA000A57C2 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		48C882F91FC89412000A57C2 /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 		5230918D00620C798B24E204 /* Pods-TerceiroMini-FrontEnd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.release.xcconfig"; sourceTree = "<group>"; };
@@ -434,8 +443,12 @@
 				48C882EE1FC893FA000A57C2 /* ChallengeProtocols.swift */,
 				48C882EF1FC893FA000A57C2 /* ChallengeViewController.swift */,
 				48C882F01FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift */,
-				48C882F11FC893FA000A57C2 /* FeaturedCollectionViewCell.swift */,
+				48C882F11FC893FA000A57C2 /* FeaturedFavoriteClickCollectionViewCell.swift */,
+				489F1B981FCD7E3D00717C26 /* FeaturedFavoriteClickCollectionViewCell.xib */,
+				489F1B991FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift */,
+				489F1B8C1FCC9C0200717C26 /* FeaturedMyClickCollectionViewCell.xib */,
 				48C882F21FC893FA000A57C2 /* MainCollectionViewCell.swift */,
+				489F1B9D1FCDC7F200717C26 /* MainCollectionViewCell.xib */,
 			);
 			path = Challange;
 			sourceTree = "<group>";
@@ -512,6 +525,9 @@
 				08276F0E1FC73F8C00A8E605 /* MainScreen */,
 				08297AE71FC74B2E00701F9B /* fonts */,
 				8A5D5CF11FB0D22C00C24725 /* Assets.xcassets */,
+				489F1B961FCCA64100717C26 /* checkPreto.png */,
+				489F1B951FCCA64100717C26 /* checkPreto@2x.png */,
+				489F1B971FCCA64200717C26 /* checkPreto@3x.png */,
 				8A5D5CF61FB0D22C00C24725 /* Info.plist */,
 			);
 			path = "TerceiroMini-FrontEnd";
@@ -644,6 +660,7 @@
 				08297B291FC74B2E00701F9B /* MontserratAlternates-ExtraLight.otf in Resources */,
 				08297B101FC74B2E00701F9B /* MontserratAlternates-LightItalic.otf in Resources */,
 				08297B111FC74B2E00701F9B /* MontserratAlternates-Medium.otf in Resources */,
+				489F1B8E1FCC9C0200717C26 /* FeaturedMyClickCollectionViewCell.xib in Resources */,
 				08297B281FC74B2E00701F9B /* MontserratAlternates-Light.otf in Resources */,
 				8A5D5CF01FB0D22C00C24725 /* Main.storyboard in Resources */,
 				08297B201FC74B2E00701F9B /* Montserrat-ExtraBoldItalic.otf in Resources */,
@@ -786,7 +803,7 @@
 				1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */,
 				08276F331FC73F8C00A8E605 /* ChallengeCollectionViewCell.swift in Sources */,
 				48C882F31FC893FA000A57C2 /* ChallengePresenterImpl.swift in Sources */,
-				48C882F71FC893FA000A57C2 /* FeaturedCollectionViewCell.swift in Sources */,
+				48C882F71FC893FA000A57C2 /* FeaturedFavoriteClickCollectionViewCell.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,
 				08276F2E1FC73F8C00A8E605 /* OpenChallengesCellProtocols.swift in Sources */,
 				08276F3B1FC73F8C00A8E605 /* NextChallengesCollectionViewCell.swift in Sources */,
@@ -817,6 +834,7 @@
 				0838B5C51FBF7A240051669B /* LoginPresenterImpl.swift in Sources */,
 				08276F311FC73F8C00A8E605 /* ChallengeCollectionViewCellProtocols.swift in Sources */,
 				08276F2D1FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift in Sources */,
+				489F1B9A1FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift in Sources */,
 				08297AE51FC74B1E00701F9B /* SignUpPresenter.swift in Sources */,
 				08276F3D1FC73F8C00A8E605 /* TableHeader.swift in Sources */,
 			);

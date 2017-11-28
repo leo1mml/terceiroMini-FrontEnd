@@ -23,17 +23,17 @@ extension ChallengeViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.featuredCollectionView{
-            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "featuredPhotoCell", for: indexPath) as! FeaturedCollectionViewCell
+            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "featuredPhotoCell", for: indexPath) as! FeaturedFavoriteClickCollectionViewCell
                 let imageURL = URL(string: imageSampleLink[indexPath.row])
                     
-                getImageFromUrl(imageURL: imageURL!, newImage: cellA.image!)
+                getImageFromUrl(imageURL: imageURL!, newImage: cellA.cellImage)
      
             
             return cellA
         }else{
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "mainPhotoCell", for: indexPath) as! MainCollectionViewCell
             let imageURL = URL(string: imageSampleLink.first!)
-            getImageFromUrl(imageURL: imageURL, newImage: cellB.photo!)
+            getImageFromUrl(imageURL: imageURL, newImage: cellB.cellImage!)
             return cellB
         }
     }

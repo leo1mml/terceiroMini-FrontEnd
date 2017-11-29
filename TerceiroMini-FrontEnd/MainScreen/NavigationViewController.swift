@@ -137,7 +137,7 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         
         setViewControllers([previousViewController], direction: .reverse, animated: true) { (finished) in
             if(finished){
-                self.delegateAnimations?.swipeProfileToMain()
+                 self.delegateAnimations?.swipeProfileToMain()
             }
         }
         

@@ -92,6 +92,15 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     func resizeItemForLess(view: UIView, offsetScroll: CGPoint) {
         
     }
+    @IBAction func goToMainScreen(_ sender: Any) {
+        self.pageViewController.goToPreviousPage()
+    }
+    
+    @IBAction func goToProfile(_ sender: Any) {
+        print(self.centerIcon.center.x)
+        self.pageViewController.goToNextPage()
+    }
+    
     
     
     

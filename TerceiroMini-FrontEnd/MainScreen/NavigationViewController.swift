@@ -60,8 +60,6 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
     }
     
     
-    
-    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let vcIndex = viewControllerList.index(of: viewController) else {return nil}
         
@@ -111,6 +109,44 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         delegateAnimations?.moveAndScaleItems(with: scrollView.contentOffset)
     }
 
+    func goToNextPage(){
+        
+        guard let currentViewController = self.viewControllers?.first else { return }
+        
+        guard let nextViewController = dataSource?.pageViewController(self, viewControllerAfter: currentViewController) else {return}
+        
+        setViewControllers([nextViewController], direction: .forward, animated: true) { (finished) in
+            if(finished){
+                self.delegateAnimations?.swipeMainToProfile()
+            }
+        }
+        
+//        //setViewControllers([nextViewController], direction: .forward, animated: true, completion: (){
+//            delegateAnimations?.swipeMainToProfile()
+        
+    }
+    
+    
+    func goToPreviousPage(){
+        
+        guard let currentViewController = self.viewControllers?.first else { return }
+        
+        guard let previousViewController = dataSource?.pageViewController(self, viewControllerBefore: currentViewController) else {
+            return
+        }
+        
+        setViewControllers([previousViewController], direction: .reverse, animated: true) { (finished) in
+            if(finished){
+                self.delegateAnimations?.swipeProfileToMain()
+            }
+        }
+        
+        
+        
+        
+        
+        
+    }
     /*
     // MARK: - Navigation
 

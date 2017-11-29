@@ -109,6 +109,7 @@
                             <outlet property="delegate" destination="Gtz-CT-cZD" id="TuM-4r-N4w"/>
                         </connections>
                     </tableView>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="centerIcon" destination="nkj-KO-Cqg" id="viO-QP-obZ"/>
                         <outlet property="leftIcon" destination="rwq-vW-bbR" id="L07-C4-JDs"/>
@@ -128,7 +129,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="MainStoryboard" storyboardName="MainScreenTableView" id="duT-Oe-7Y0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8O-KO-WLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-74" y="2099"/>
+            <point key="canvasLocation" x="1200" y="700"/>
         </scene>
         <!--Profile-->
         <scene sceneID="buk-16-rSA">
@@ -136,15 +137,17 @@
                 <viewControllerPlaceholder storyboardIdentifier="ProfileStoryboard" storyboardName="Profile" id="h3W-tC-6X4" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZ6-1w-6sh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="2099"/>
+            <point key="canvasLocation" x="912" y="700"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="3Eh-IP-YJE">
             <objects>
-                <pageViewController storyboardIdentifier="PageView" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iQ4-A3-5m2" customClass="NavigationViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageView" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iQ4-A3-5m2" customClass="NavigationViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
+                    <size key="freeformSize" width="375" height="667"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4G-id-png" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="1755"/>
+            <point key="canvasLocation" x="1154" y="1096"/>
         </scene>
     </scenes>
     <resources>

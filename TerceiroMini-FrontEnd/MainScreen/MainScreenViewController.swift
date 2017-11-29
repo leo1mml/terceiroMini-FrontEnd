@@ -25,6 +25,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     override func viewDidLoad() {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "PageView") {
             self.pageViewController = vc as! NavigationViewController
+            self.pageViewContainer.frame = pageViewController.view.frame
             self.pageViewContainer.addSubview(vc.view)
             self.pageViewController.delegateAnimations = self
         }
@@ -41,27 +42,22 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     // MARK: - Animations methods
     
     func swipeMainToProfile() {
-//        UIView.animate(withDuration: 0.4) {
-//            self.logoImage.center = self.leftIcon.center
-//            self.logoImage.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-//        }
+        UIView.animate(withDuration: 0.4) {
+            self.logoImage.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            self.profileImage.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+            self.profileImage.center = self.centerIcon.center
+        }
     }
     
     func swipeProfileToMain() {
-//        UIView.animate(withDuration: 0.4) {
-//            self.logoImage.transform = CGAffineTransform(scaleX: 1, y: 1)
-//            self.logoImage.center = self.centerIcon.center
-//        }
+        UIView.animate(withDuration: 0.4) {
+            self.logoImage.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.logoImage.center = self.centerIcon.center
+            self.profileImage.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
         
     }
     
-    func swipeProfileToConfig() {
-        
-    }
-    
-    func swipeConfigToProfile() {
-        
-    }
     func setFirstOffset(firstOffsetX: CGFloat) {
         self.lastOffsetX = firstOffsetX
     }
@@ -70,10 +66,10 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         if(contentOffset.x == 0.0){
             return
         }
-        print("LAST OFFSET \(lastOffsetX)")
-        print("CURRENT OFFSET \(contentOffset.x)")
+        
+        
         let differenceOffsetX = abs(lastOffsetX - contentOffset.x)
-        print("DIFERENCE \(differenceOffsetX)")
+        
         
         if(differenceOffsetX < 370){
             if(lastOffsetX > contentOffset.x){
@@ -86,7 +82,10 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
             }
             
         }
+        
         self.lastOffsetX = contentOffset.x
+        
+        
         
     }
     

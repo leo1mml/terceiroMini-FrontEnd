@@ -11,8 +11,6 @@ import UIKit
 protocol NavigationAnimationsDelegate {
     func swipeMainToProfile()
     func swipeProfileToMain()
-    func swipeProfileToConfig()
-    func swipeConfigToProfile()
     func moveAndScaleItems(with contentOffset: CGPoint)
     func setFirstOffset(firstOffsetX: CGFloat)
 }
@@ -24,10 +22,15 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         let vc1 = sb.instantiateViewController(withIdentifier: "MainStoryboard")
         vc1.restorationIdentifier = "MainScreen"
         let vc2 = sb.instantiateViewController(withIdentifier: "ProfileStoryboard")
+        vc2.restorationIdentifier = "Profile"
         
         return [vc1, vc2]
     }()
     var pageViewScroll : UIScrollView?
+    
+    var vcIndex : Int = 0
+    var nextVCIdentifier : String = ""
+    var previousVCIdentifier : String = ""
     
     var delegateAnimations : NavigationAnimationsDelegate?
     
@@ -85,16 +88,19 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-//        print("\(String(describing: pendingViewControllers[0].restorationIdentifier))")
+        self.nextVCIdentifier = pendingViewControllers[0].restorationIdentifier!
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if(!completed){
             return
         }
-        if(previousViewControllers[0] == self.viewControllerList[0]){
+        //self.currentPageIndex = self.lastPendingViewControllerIndex
+        self.previousVCIdentifier = previousViewControllers[0].restorationIdentifier!
+        
+        if(self.previousVCIdentifier == "MainScreen" && self.nextVCIdentifier == "Profile"){
             delegateAnimations?.swipeMainToProfile()
-        } else if (previousViewControllers[0]) == self.viewControllerList[1]{
+        } else if(self.previousVCIdentifier == "Profile" && self.nextVCIdentifier == "MainScreen"){
             delegateAnimations?.swipeProfileToMain()
         }
     }

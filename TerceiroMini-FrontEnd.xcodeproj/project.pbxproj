@@ -82,6 +82,9 @@
 		086D27B71FCCA5A800D9F547 /* presentation-login-exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 086D27B41FCCA5A800D9F547 /* presentation-login-exit.png */; };
 		086D27B81FCCA5A800D9F547 /* presentation-login-exit@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 086D27B51FCCA5A800D9F547 /* presentation-login-exit@3x.png */; };
 		086D27BA1FCCA62D00D9F547 /* presentation-login-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 086D27B91FCCA62D00D9F547 /* presentation-login-background.png */; };
+		088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088083BD1FD1BF76008C9B00 /* DateHelper.swift */; };
+		088083C11FD1C23B008C9B00 /* DateHelperUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088083C01FD1C23B008C9B00 /* DateHelperUnitTests.swift */; };
+		088083C31FD1C75D008C9B00 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088083C21FD1C75D008C9B00 /* Validator.swift */; };
 		0894ED881FC896A500F87C2A /* PhotoNetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0894ED871FC896A500F87C2A /* PhotoNetUnitTests.swift */; };
 		0894ED8B1FC89BA800F87C2A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0894ED8A1FC89BA800F87C2A /* NetworkManager.swift */; };
 		0899E9FF1FC74D0900F148DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899E9FE1FC74D0900F148DC /* User.swift */; };
@@ -199,6 +202,9 @@
 		086D27B41FCCA5A800D9F547 /* presentation-login-exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presentation-login-exit.png"; sourceTree = "<group>"; };
 		086D27B51FCCA5A800D9F547 /* presentation-login-exit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presentation-login-exit@3x.png"; sourceTree = "<group>"; };
 		086D27B91FCCA62D00D9F547 /* presentation-login-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presentation-login-background.png"; sourceTree = "<group>"; };
+		088083BD1FD1BF76008C9B00 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		088083C01FD1C23B008C9B00 /* DateHelperUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelperUnitTests.swift; sourceTree = "<group>"; };
+		088083C21FD1C75D008C9B00 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		0894ED871FC896A500F87C2A /* PhotoNetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoNetUnitTests.swift; sourceTree = "<group>"; };
 		0894ED8A1FC89BA800F87C2A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0899E9FE1FC74D0900F148DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -475,6 +481,14 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		088083BF1FD1C21A008C9B00 /* UtilsUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				088083C01FD1C23B008C9B00 /* DateHelperUnitTests.swift */,
+			);
+			path = UtilsUnitTests;
+			sourceTree = "<group>";
+		};
 		0894ED861FC88F3A00F87C2A /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +523,8 @@
 			isa = PBXGroup;
 			children = (
 				0894ED8A1FC89BA800F87C2A /* NetworkManager.swift */,
+				088083BD1FD1BF76008C9B00 /* DateHelper.swift */,
+				088083C21FD1C75D008C9B00 /* Validator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -637,6 +653,7 @@
 		8A5D5CFE1FB0D22C00C24725 /* TerceiroMini-FrontEndTests */ = {
 			isa = PBXGroup;
 			children = (
+				088083BF1FD1C21A008C9B00 /* UtilsUnitTests */,
 				083E55151FC84865004E4EC0 /* NetUnitTests */,
 				8A5D5CFF1FB0D22C00C24725 /* TerceiroMini_FrontEndTests.swift */,
 				8A5D5D011FB0D22C00C24725 /* Info.plist */,
@@ -920,6 +937,7 @@
 				08276F351FC73F8C00A8E605 /* ChallengesFlowLayout.swift in Sources */,
 				8A0E43041FC891A400932A05 /* NavigationViewController.swift in Sources */,
 				08276F3F1FC73F8C00A8E605 /* MainScreenProtocols.swift in Sources */,
+				088083C31FD1C75D008C9B00 /* Validator.swift in Sources */,
 				08276F341FC73F8C00A8E605 /* GradientView.swift in Sources */,
 				08276F391FC73F8C00A8E605 /* WinnerCollectionViewCell.swift in Sources */,
 				0899EA011FC74D1400F148DC /* Photo.swift in Sources */,
@@ -927,6 +945,7 @@
 				14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */,
 				086D279C1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift in Sources */,
 				0899EA051FC74D2900F148DC /* NetHelper.swift in Sources */,
+				088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */,
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
@@ -959,6 +978,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A5D5D001FB0D22C00C24725 /* TerceiroMini_FrontEndTests.swift in Sources */,
+				088083C11FD1C23B008C9B00 /* DateHelperUnitTests.swift in Sources */,
 				083E55171FC84889004E4EC0 /* UserNetUnitTests.swift in Sources */,
 				0894ED881FC896A500F87C2A /* PhotoNetUnitTests.swift in Sources */,
 			);

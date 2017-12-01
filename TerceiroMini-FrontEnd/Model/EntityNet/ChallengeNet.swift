@@ -69,9 +69,13 @@ class ChallengeNet {
         
         let id = dic["_id"] as! String
         let theme = dic["theme"] as! String
-        let startDate = dic["startDate"] as! String
-        let endDate = dic["endDate"] as! String
         let imageUrl = dic["imageUrl"] as! String
+        
+        let startDateString = dic["startDate"] as! String
+        let endDateString = dic["endDate"] as! String
+        
+        let startDate = DateHelper.shared.getDate(fromString: startDateString)!
+        let endDate = DateHelper.shared.getDate(fromString: endDateString)!
         
         return Challenge(id, theme, startDate, endDate, imageUrl)
     }

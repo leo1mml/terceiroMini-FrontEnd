@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ChallengeClosedViewController: UIViewController {
-
+class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
+    
+    var presenter: ChallengeClosedPresenter?
+    
     @IBOutlet weak var escolherClickButton: CustomButtonClick!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var photoCount: UILabel!
@@ -20,12 +22,12 @@ class ChallengeClosedViewController: UIViewController {
     var imageIndex = 0
     var details = false
     
-    
     let colorGradient = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.presenter = ChallengeClosedPresenterImpl(challengeClosedView: self)
         
         //hiding itens
         reportButton.isHidden = true
@@ -33,10 +35,6 @@ class ChallengeClosedViewController: UIViewController {
         closeButton.isHidden = true
         escolherClickButton.isHidden = true
         
-        
-        
-        
-
         escolherClickButton.layer.cornerRadius = 25
         escolherClickButton.clipsToBounds = true
         updatePhotoCount()
@@ -56,11 +54,11 @@ class ChallengeClosedViewController: UIViewController {
     }
     
     @IBAction func escolherClickAction(_ sender: Any) {
- 
+        presenter?.chooseClick(index: imageIndex)
     }
     
     @IBAction func showReport(_ sender: Any) {
-        showReport()
+        presenter?.showReport()
     }
     
     
@@ -123,8 +121,11 @@ class ChallengeClosedViewController: UIViewController {
         
     }
     
-    func showReport(){
-
+    func showCurrentClick() {
+        
+    }
+    
+    func showAlert(){
         
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.view.tintColor = UIColor.black

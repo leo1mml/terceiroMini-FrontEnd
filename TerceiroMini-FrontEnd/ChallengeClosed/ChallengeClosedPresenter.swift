@@ -10,5 +10,18 @@ import Foundation
 
 class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
     
+    var view: ChallengeClosedView?
+    
+    init(challengeClosedView: ChallengeClosedView) {
+        self.view = challengeClosedView
+    }
+    
+    func showReport() {
+        view?.showAlert()
+    }
+    
+    func chooseClick(index: Int) {
+        
+    }
 
 }

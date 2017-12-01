@@ -9,9 +9,11 @@
 import Foundation
 
 protocol ChallengeClosedView {
-    
+    func showCurrentClick()
+    func showAlert()
 }
 
 protocol ChallengeClosedPresenter {
-    
+    func showReport()
+    func chooseClick(index: Int)
 }

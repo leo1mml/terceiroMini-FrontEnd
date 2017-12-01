@@ -16,14 +16,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
-    @IBOutlet weak var featuredCollectionView: UICollectionView!
-    
-    @IBOutlet weak var mainImage: UIImageView!
-    
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var numberOfPhotos: UILabel!
-    @IBOutlet weak var ChallengeName: UILabel!
-    @IBOutlet weak var mainButton: UIButton!
+
     
     //Constraints that change size
     // - statusLabel
@@ -33,21 +26,27 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     var state = ChallengeState.open
     
-    let startingGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
-    let middleGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:0.4)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.mainCollectionView.delegate = self
-        self.featuredCollectionView.delegate = self
-        self.mainCollectionView.dataSource = self
-        self.featuredCollectionView.dataSource = self
         
+       
+
+
+        self.mainCollectionView.delegate = self
+        //self.featuredCollectionView.delegate = self
+        self.mainCollectionView.dataSource = self
+        //self.featuredCollectionView.dataSource = self
+        
+        //initializing nibs
+        self.mainCollectionView.register(UINib(nibName:MainCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
+//        self.mainCollectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "mainPhotoCell")
         
         presenter = ChallengePresenterImpl()
         
-        mainImage.addChallengeGradientLayer(frame: view.bounds, colors: [startingGradientColor,middleGradientColor,.white])
+//        mainImage.addChallengeGradientLayer(frame: view.bounds, colors: [startingGradientColor,middleGradientColor,.white])
         
     }
     
@@ -120,11 +119,11 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     func changeStatusLabelContraint(open: Bool){
         if(open){
-            statusLabelWinnerContraint.priority = UILayoutPriority(rawValue: 750)
-            statusLabelTimerConstraint.priority = UILayoutPriority(rawValue: 1000)
+           // statusLabelWinnerContraint.priority = UILayoutPriority(rawValue: 750)
+           // statusLabelTimerConstraint.priority = UILayoutPriority(rawValue: 1000)
         }else{
-            statusLabelWinnerContraint.priority = UILayoutPriority(rawValue: 1000)
-            statusLabelTimerConstraint.priority = UILayoutPriority(rawValue: 750)
+           // statusLabelWinnerContraint.priority = UILayoutPriority(rawValue: 1000)
+           // statusLabelTimerConstraint.priority = UILayoutPriority(rawValue: 750)
         }
     }
     

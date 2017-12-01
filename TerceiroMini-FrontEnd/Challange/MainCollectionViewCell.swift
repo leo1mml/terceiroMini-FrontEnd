@@ -9,12 +9,13 @@
 import UIKit
 
 class MainCollectionViewCell: UICollectionViewCell {
+    static let identifier = "MainCollectionViewCell"
     
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var numberOfVotes: UILabel!
-    @IBOutlet var usernameLabel: UILabel!
-    @IBOutlet var usernamePhoto: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var usernamePhoto: UIImageView!
     
     
     

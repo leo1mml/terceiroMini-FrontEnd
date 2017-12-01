@@ -34,7 +34,7 @@ class ChallengePresenterImpl: ChallengePresenter{
             
             //MANDA PARA O BANCO
             
-            print(result)
+            //print(result)
         }
         
         

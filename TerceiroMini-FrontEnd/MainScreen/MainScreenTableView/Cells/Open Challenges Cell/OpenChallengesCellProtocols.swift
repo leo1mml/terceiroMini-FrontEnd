@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+protocol OpenChallengesCellView {
+    func reloadCollectionView(challenges: [Challenge])
+}
+
+protocol OpenChallengesCellPresenter {
+    func fetchChallenges()
+}

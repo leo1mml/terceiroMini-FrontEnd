@@ -1,15 +1,15 @@
 //
-//  TerceiroMini_FrontEndTests.swift
+//  PhotoNetUnitTests.swift
 //  TerceiroMini-FrontEndTests
 //
-//  Created by Leonel Menezes on 06/11/17.
+//  Created by Gabriel Reynoso on 24/11/2017.
 //  Copyright © 2017 BEPID. All rights reserved.
 //
 
 import XCTest
 @testable import TerceiroMini_FrontEnd
 
-class TerceiroMini_FrontEndTests: XCTestCase {
+class PhotoNetUnitTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -18,4 +18,6 @@ class TerceiroMini_FrontEndTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
+    
+    
 }

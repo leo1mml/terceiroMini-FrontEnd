@@ -23,11 +23,9 @@ class UserNetUnitTests: XCTestCase {
         let exp = expectation(description: "Add User")
         let usr = User(nil, "gabriel@teste.com", "Gabriel", "folameloma")
 
-        UserNet.add(user: usr) { (usr, tkn, err) in
+        UserNet.add(user: usr, password: "vaquinha123") { (usr, tkn, err) in
 
-            guard let u = usr, let t = tkn else {
-                return
-            }
+            guard let u = usr, let t = tkn else { return }
 
             if u.username == "folameloma" {
                 print("Generated Token: \(t)")
@@ -35,6 +33,20 @@ class UserNetUnitTests: XCTestCase {
             }
         }
 
+        wait(for: [exp], timeout: 2)
+    }
+    
+    func testUserAlreadyExistsError() {
+        let exp = expectation(description: "User Already Exists")
+        let usr = User(nil, "gabriel@teste.com", "Gabriel", "folameloma")
+        
+        UserNet.add(user: usr, password: "vaquinha123") { (usr, tkn, err) in
+            
+            guard let _ = err else { return }
+            
+            exp.fulfill()
+        }
+        
         wait(for: [exp], timeout: 2)
     }
     
@@ -89,7 +101,7 @@ class UserNetUnitTests: XCTestCase {
     
     func testGetById() {
         let exp = expectation(description: "Get User")
-        let id = "5a0c92e6515a080014694f80" // leo1mml
+        let id = "5a21a323391838001482d1f4" // folameloma
         
         UserNet.get(byId: id) { (usr, err) in
             
@@ -97,7 +109,7 @@ class UserNetUnitTests: XCTestCase {
                 return
             }
             
-            if u.username == "leo1mml" {
+            if u.username == "folameloma" {
                 exp.fulfill()
             }
         }

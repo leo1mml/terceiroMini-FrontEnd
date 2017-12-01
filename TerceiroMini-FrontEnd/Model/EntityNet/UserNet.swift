@@ -182,9 +182,9 @@ class UserNet {
      - parameter completion: A block of code to be executed once the task is complete.
      - parameter s: A boolean flag indicating if the task was completed successfully.
      */
-    class func createLogin(username: String, email: String, password: String, completion: @escaping (_ s: Bool) -> Void) {
+    class func createLogin(username: String?, email: String, password: String, completion: @escaping (_ s: Bool) -> Void) {
         let completeDomain = R.usersDomain + "/login"
-        let login = ["userName": username, "email": email, "password": password]
+        let login = ["userName": username ?? "", "email": email, "password": password]
         
         Alamofire.request(completeDomain, method: .post, parameters: login, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             

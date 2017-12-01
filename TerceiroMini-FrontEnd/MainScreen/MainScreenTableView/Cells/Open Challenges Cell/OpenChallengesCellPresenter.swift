@@ -7,3 +7,26 @@
 //
 
 import Foundation
+import UIKit
+
+
+class OpenChallengesCellPresenterImp: OpenChallengesCellPresenter {
+    
+    
+    var view : OpenChallengesCellView?
+    
+    var challenges = [Challenge]()
+    
+    init(openChallengesCellView : OpenChallengesCellView) {
+        self.view = openChallengesCellView
+    }
+    
+    
+    func fetchChallenges(){
+        ChallengeNet.getAll { (challenges, err) in
+            if let challenges = challenges{
+                self.view?.reloadCollectionView(challenges: challenges)
+            }
+        }
+    }
+}

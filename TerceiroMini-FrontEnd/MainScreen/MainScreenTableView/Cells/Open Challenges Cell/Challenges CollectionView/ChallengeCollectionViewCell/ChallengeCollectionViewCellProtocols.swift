@@ -9,9 +9,11 @@
 import Foundation
 
 protocol ChallengesCellView {
-    
+    func setupChallengeImage()
 }
 
 protocol ChallengesCellPresenter{
+    
+    func fetchImage(url: String)
     
 }

@@ -8,11 +8,13 @@
 
 import UIKit
 
-class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, OpenChallengesCellView{
     
+    var presenter : OpenChallengesCellPresenter?
     
     @IBOutlet weak var pageControl : UIPageControl!
     @IBOutlet weak var collectionView : UICollectionView!
+    var challenges : [Challenge]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +23,8 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
+        self.presenter = OpenChallengesCellPresenterImp(openChallengesCellView: self)
+        presenter?.fetchChallenges()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -30,7 +34,7 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         pageControl.numberOfPages = 8
-        return 8
+        return self.challenges?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -38,7 +42,7 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         cell.numPhotosLabel.text = "44 fotos"
         cell.themeImage.image = UIImage(named: "pombo")
         cell.layer.cornerRadius = 10
-        cell.themeLabel.text = "Pombo"
+        cell.challenge = challenges?[indexPath.row]
     
         
         
@@ -53,6 +57,10 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     }
 
     
+    func reloadCollectionView(challenges: [Challenge]) {
+        self.challenges = challenges
+        self.collectionView.reloadData()
+    }
     
     
 

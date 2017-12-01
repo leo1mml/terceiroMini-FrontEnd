@@ -69,9 +69,18 @@ class ChallengeNet {
         
         let id = dic["_id"] as! String
         let theme = dic["theme"] as! String
-        let startDate = dic["startDate"] as! Date
-        let endDate = dic["endDate"] as! Date
+        let startDate = dic["startDate"] as! String
+        let endDate = dic["endDate"] as! String
+        let imageUrl = dic["imageUrl"] as! String
         
-        return Challenge(id, theme, startDate, endDate)
+        return Challenge(id, theme, startDate, endDate, imageUrl)
+    }
+    
+    class func fetchImage(completion: @escaping (_ image : UIImage) -> (), with url: String){
+        Alamofire.request(url).responseData { (data) in
+            guard let data = data.data else { return }
+            completion(UIImage(data: data)!)
+            
+        }
     }
 }

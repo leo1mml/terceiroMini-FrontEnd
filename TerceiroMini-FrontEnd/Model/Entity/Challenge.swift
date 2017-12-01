@@ -7,39 +7,43 @@
 //
 
 import Foundation
+import UIKit
 
 class Challenge {
     
     let id: String
     let theme: String
-    let startDate: Date
-    let endDate: Date
+    let startDate: String
+    let endDate: String
+    let imageUrl: String
+    var image: UIImage?
     
-    var isOver: Bool {
-        
-        get {
-            return endDate.compare(Date()) == .orderedAscending
-        }
-    }
+//    var isOver: Bool {
+//
+//        get {
+//            return endDate.compare(Date()) == .orderedAscending
+//        }
+//    }
+//
+//    var hasBegun: Bool {
+//
+//        get {
+//            return startDate.compare(Date()) == .orderedAscending
+//        }
+//    }
+//
+//    var isHappening: Bool {
+//
+//        get {
+//            return hasBegun && !isOver
+//        }
+//    }
     
-    var hasBegun: Bool {
-        
-        get {
-            return startDate.compare(Date()) == .orderedAscending
-        }
-    }
-    
-    var isHappening: Bool {
-        
-        get {
-            return hasBegun && !isOver
-        }
-    }
-    
-    init(_ id: String, _ theme: String, _ startDate: Date, _ endDate: Date) {
+    init(_ id: String, _ theme: String, _ startDate: String, _ endDate: String, _ imageUrl: String) {
         self.id = id
         self.theme = theme
         self.startDate = startDate
         self.endDate = endDate
+        self.imageUrl = imageUrl
     }
 }

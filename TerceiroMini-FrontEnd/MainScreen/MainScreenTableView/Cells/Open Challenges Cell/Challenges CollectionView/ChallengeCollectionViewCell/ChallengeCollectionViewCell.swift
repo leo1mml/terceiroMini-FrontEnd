@@ -33,10 +33,11 @@ class ChallengeCollectionViewCell: UICollectionViewCell, ChallengesCellView {
         if let image = imageCache.object(forKey: NSString(string: (challenge?.imageUrl)!)) {
             self.themeImage.image = image
         } else {
-            ChallengeNet.fetchImage(completion: { (image) in
+            UIImage.fetch(with: self.challenge!.imageUrl) { (image) in
+                
                 self.themeImage.image = image
                 self.imageCache.setObject(image, forKey: NSString(string: (self.challenge?.imageUrl)!))
-            }, with: (self.challenge?.imageUrl)!)
+            }
         }
         
     }

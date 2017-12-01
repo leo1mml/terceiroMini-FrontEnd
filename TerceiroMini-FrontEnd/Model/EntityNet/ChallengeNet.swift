@@ -76,11 +76,5 @@ class ChallengeNet {
         return Challenge(id, theme, startDate, endDate, imageUrl)
     }
     
-    class func fetchImage(completion: @escaping (_ image : UIImage) -> (), with url: String){
-        Alamofire.request(url).responseData { (data) in
-            guard let data = data.data else { return }
-            completion(UIImage(data: data)!)
-            
-        }
-    }
+    
 }

@@ -30,7 +30,7 @@ class NetworkManager {
         UserNet.get(byId: id, completion: completion)
     }
     
-    class func createLogin(email: String, username: String, password: String, completion: @escaping (Bool) -> Void) {
+    class func createLogin(email: String, username: String?, password: String, completion: @escaping (Bool) -> Void) {
         UserNet.createLogin(username: username, email: email, password: password, completion: completion)
     }
     

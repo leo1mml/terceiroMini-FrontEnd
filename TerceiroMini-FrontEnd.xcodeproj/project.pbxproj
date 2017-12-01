@@ -103,6 +103,8 @@
 		14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */; };
 		489F1B8E1FCC9C0200717C26 /* FeaturedMyClickCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 489F1B8C1FCC9C0200717C26 /* FeaturedMyClickCollectionViewCell.xib */; };
 		489F1B9A1FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489F1B991FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift */; };
+		48A7C4CF1FD1E00B00EB5C1A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7C4CE1FD1E00B00EB5C1A /* UIImage+Extension.swift */; };
+		48A7C4D11FD1E02A00EB5C1A /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7C4D01FD1E02A00EB5C1A /* NavigationViewController.swift */; };
 		48C882F31FC893FA000A57C2 /* ChallengePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882ED1FC893FA000A57C2 /* ChallengePresenterImpl.swift */; };
 		48C882F41FC893FA000A57C2 /* ChallengeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882EE1FC893FA000A57C2 /* ChallengeProtocols.swift */; };
 		48C882F51FC893FA000A57C2 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882EF1FC893FA000A57C2 /* ChallengeViewController.swift */; };
@@ -125,7 +127,7 @@
 		8A5D5CF21FB0D22C00C24725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D5CF11FB0D22C00C24725 /* Assets.xcassets */; };
 		8A5D5CF51FB0D22C00C24725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */; };
 		8A5D5D001FB0D22C00C24725 /* TerceiroMini_FrontEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CFF1FB0D22C00C24725 /* TerceiroMini_FrontEndTests.swift */; };
-		8AD759241FD1CAE000002D56 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD759231FD1CAE000002D56 /* UIImage+Extension.swift */; };
+		8AD759241FD1CAE000002D56 /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +242,8 @@
 		489F1B981FCD7E3D00717C26 /* FeaturedFavoriteClickCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedFavoriteClickCollectionViewCell.xib; sourceTree = "<group>"; };
 		489F1B991FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedMyClickCollectionViewCell.swift; sourceTree = "<group>"; };
 		489F1B9D1FCDC7F200717C26 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainCollectionViewCell.xib; path = "/Users/pedrooliveira/Documents/mini3/terceiroMini-FrontEnd/TerceiroMini-FrontEnd/Challange/MainCollectionViewCell.xib"; sourceTree = "<absolute>"; };
+		48A7C4CE1FD1E00B00EB5C1A /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		48A7C4D01FD1E02A00EB5C1A /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		48C882ED1FC893FA000A57C2 /* ChallengePresenterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengePresenterImpl.swift; sourceTree = "<group>"; };
 		48C882EE1FC893FA000A57C2 /* ChallengeProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeProtocols.swift; sourceTree = "<group>"; };
 		48C882EF1FC893FA000A57C2 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
@@ -298,7 +302,7 @@
 				08276F2A1FC73F8C00A8E605 /* MainScreenPresenter.swift */,
 				08276F2B1FC73F8C00A8E605 /* MainScreenProtocols.swift */,
 				08276F2C1FC73F8C00A8E605 /* MainScreenViewController.swift */,
-				8A0E43031FC891A400932A05 /* NavigationViewController.swift */,
+				48A7C4D01FD1E02A00EB5C1A /* NavigationViewController.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -455,6 +459,8 @@
 		083E55151FC84865004E4EC0 /* NetUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */,
+				0894ED871FC896A500F87C2A /* PhotoNetUnitTests.swift */,
 			);
 			path = NetUnitTests;
 			sourceTree = "<group>";
@@ -496,8 +502,6 @@
 		087305921FBF781E00F65B5C /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				CE8B63BA2069A782D7C6A5BF /* Pods-TerceiroMini-FrontEnd.debug.xcconfig */,
-				0384BFA4DFA5F4218CA894AD /* Pods-TerceiroMini-FrontEnd.release.xcconfig */,
 				08297ADA1FC74AEB00701F9B /* MainScreen.storyboard */,
 				08297ADC1FC74AEB00701F9B /* TableHeader.xib */,
 				08297ADB1FC74AEB00701F9B /* MainScreenTableView.storyboard */,
@@ -619,7 +623,7 @@
 			isa = PBXGroup;
 			children = (
 				8A0E82C11FC744B800218C80 /* UIView+Extension.swift */,
-				8AD759231FD1CAE000002D56 /* UIImage+Extension.swift */,
+				48A7C4CE1FD1E00B00EB5C1A /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -994,13 +998,12 @@
 				48C882F51FC893FA000A57C2 /* ChallengeViewController.swift in Sources */,
 				08276F361FC73F8C00A8E605 /* ChallengeCollectionViewPresenter.swift in Sources */,
 				08276F351FC73F8C00A8E605 /* ChallengesFlowLayout.swift in Sources */,
-				8A0E43041FC891A400932A05 /* NavigationViewController.swift in Sources */,
 				08276F3F1FC73F8C00A8E605 /* MainScreenProtocols.swift in Sources */,
 				088083C31FD1C75D008C9B00 /* Validator.swift in Sources */,
 				08276F341FC73F8C00A8E605 /* GradientView.swift in Sources */,
 				08276F391FC73F8C00A8E605 /* WinnerCollectionViewCell.swift in Sources */,
 				0899EA011FC74D1400F148DC /* Photo.swift in Sources */,
-				8AD759241FD1CAE000002D56 /* UIImage+Extension.swift in Sources */,
+				8AD759241FD1CAE000002D56 /* (null) in Sources */,
 				14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */,
 				086D279C1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift in Sources */,
 				0899EA051FC74D2900F148DC /* NetHelper.swift in Sources */,
@@ -1023,6 +1026,7 @@
 				08276F401FC73F8C00A8E605 /* MainScreenViewController.swift in Sources */,
 				08276F3E1FC73F8C00A8E605 /* MainScreenPresenter.swift in Sources */,
 				48C882F81FC893FA000A57C2 /* MainCollectionViewCell.swift in Sources */,
+				48A7C4D11FD1E02A00EB5C1A /* NavigationViewController.swift in Sources */,
 				14D106221FBE00CC00AA9F89 /* ProfileProtocols.swift in Sources */,
 				08276F371FC73F8C00A8E605 /* ChallengesCollectionViewProtocols.swift in Sources */,
 				48EAFFEE1FCF1EF6007018AC /* HeaderChallengeCollectionReusableView.swift in Sources */,
@@ -1031,6 +1035,7 @@
 				08276F2D1FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift in Sources */,
 				489F1B9A1FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift in Sources */,
 				08297AE51FC74B1E00701F9B /* SignUpPresenter.swift in Sources */,
+				48A7C4CF1FD1E00B00EB5C1A /* UIImage+Extension.swift in Sources */,
 				08276F3D1FC73F8C00A8E605 /* TableHeader.swift in Sources */,
 				0899EA0B1FC74D4100F148DC /* ChallengeNet.swift in Sources */,
 			);

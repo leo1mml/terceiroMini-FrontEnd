@@ -31,10 +31,10 @@ class PhotoNet {
     class func add(photo: Photo, completion: @escaping (_ p: Photo?,_ e: Error?) -> Void) {
         let dic = buildDictionary(fromPhoto: photo)
         
-        Alamofire.request(R.photosDomain, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request(R.photosDomain, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
-                completion(nil, response.error!)
+                completion(nil, response.error)
                 return
             }
             
@@ -55,7 +55,7 @@ class PhotoNet {
      */
     class func getAll(completion: @escaping (_ p: [Photo]?, _ e: Error?) -> Void) {
         
-        Alamofire.request(R.photosDomain).responseJSON { response in
+        Alamofire.request(R.photosDomain).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
                 completion(nil, response.error)
@@ -81,7 +81,7 @@ class PhotoNet {
         let completeDomain = R.challengesDomain + "/me"
         let header = ["x-auth" : token]
         
-        Alamofire.request(completeDomain, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { response in
+        Alamofire.request(completeDomain, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
                 completion(nil, response.error)
@@ -107,7 +107,7 @@ class PhotoNet {
     class func get(byChallengeId id: String, completion: @escaping (_ p: [Photo]?, _ e: Error?) -> Void) {
         let completeDomain = R.challengesDomain + "/challenge/\(id)"
         
-        Alamofire.request(completeDomain).responseJSON { response in
+        Alamofire.request(completeDomain).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
                 completion(nil, response.error)
@@ -133,7 +133,7 @@ class PhotoNet {
     class func get(byId id: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
         let completeDomain = R.challengesDomain + "/getById/\(id)"
         
-        Alamofire.request(completeDomain).responseJSON { response in
+        Alamofire.request(completeDomain).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
                 completion(nil, response.error)
@@ -159,7 +159,7 @@ class PhotoNet {
     class func delete(byId id: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
         let completeDomain = R.challengesDomain + "/deleteById/\(id)"
         
-        Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
                 completion(nil, response.error)

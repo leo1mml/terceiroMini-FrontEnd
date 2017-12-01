@@ -29,10 +29,10 @@ class ChallengeNet {
      */
     class func getAll(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {
         
-        Alamofire.request(R.challengesDomain).responseJSON { response in
+        Alamofire.request(R.challengesDomain).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
-                completion(nil, response.error!)
+                completion(nil, response.error)
                 return
             }
             

@@ -32,10 +32,11 @@ class UserNet {
     class func add(user: User, completion: @escaping (_ u: User?,_ t: String?,_ e: Error?) -> Void) {
         let userDictionary = buildDictionary(fromUser: user)
         
-        Alamofire.request(R.usersDomain, method: .post, parameters: userDictionary, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request(R.usersDomain, method: .post, parameters: userDictionary, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             
             guard let val = response.value, let res = response.response, response.error == nil else {
-                completion(nil, nil, response.error!)
+                
+                completion(nil, nil, response.error)
                 return
             }
             
@@ -58,10 +59,10 @@ class UserNet {
      */
     class func getAll(completion: @escaping (_ u: [User]?, _ e: Error?) -> Void) {
         
-        Alamofire.request(R.usersDomain).responseJSON { response in
+        Alamofire.request(R.usersDomain).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
-                completion(nil, response.error!)
+                completion(nil, response.error)
                 return
             }
             
@@ -85,10 +86,10 @@ class UserNet {
         let completeDomain = R.usersDomain + "/me"
         let header = ["x-auth": token]
         
-        Alamofire.request(completeDomain, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { response in
+        Alamofire.request(completeDomain, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
-                completion(nil, response.error!)
+                completion(nil, response.error)
                 return
             }
             
@@ -111,7 +112,7 @@ class UserNet {
         let completeDomain = R.usersDomain + "/me/token"
         let header = ["x-auth": token]
         
-        Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { response in
+        Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { response in
             
             guard let code = response.response?.statusCode else {
                 completion(false)
@@ -134,10 +135,10 @@ class UserNet {
     class func get(byId id: String, completion: @escaping (_ u: User?, _ e: Error?) -> Void) {
         let completeDomain = R.usersDomain + "/id/\(id)"
         
-        Alamofire.request(completeDomain).responseJSON { response in
+        Alamofire.request(completeDomain).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
-                completion(nil, response.error!)
+                completion(nil, response.error)
                 return
             }
             
@@ -159,7 +160,7 @@ class UserNet {
     class func delete(byId id: String, completion: @escaping (_ s: Bool) -> Void) {
         let completeDomain = R.usersDomain + "/deleteById/\(id)"
         
-        Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             
             guard let code = response.response?.statusCode else {
                 completion(false)
@@ -184,7 +185,7 @@ class UserNet {
         let completeDomain = R.usersDomain + "/login"
         let login = ["userName": username, "email": email, "password": password]
         
-        Alamofire.request(completeDomain, method: .post, parameters: login, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request(completeDomain, method: .post, parameters: login, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             
             guard let code = response.response?.statusCode else {
                 completion(false)

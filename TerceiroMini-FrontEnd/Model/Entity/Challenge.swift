@@ -16,7 +16,6 @@ class Challenge {
     let startDate: String
     let endDate: String
     let imageUrl: String
-    var image: UIImage?
     
 //    var isOver: Bool {
 //

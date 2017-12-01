@@ -18,7 +18,7 @@ class ChallengeCollectionViewCell: UICollectionViewCell, ChallengesCellView {
     
     @IBOutlet weak var timerLabel: UILabel!
     
-    let imageCache = NSCache<NSString, UIImage>()
+    var imageCache = NSCache<NSString, UIImage>()
     
     var presenter : ChallengesCellPresenter?
     
@@ -30,12 +30,12 @@ class ChallengeCollectionViewCell: UICollectionViewCell, ChallengesCellView {
     }
     
     func setupChallengeImage() {
-        if let image = challenge?.image {
+        if let image = imageCache.object(forKey: NSString(string: (challenge?.imageUrl)!)) {
             self.themeImage.image = image
         } else {
             ChallengeNet.fetchImage(completion: { (image) in
-                self.challenge?.image = image
                 self.themeImage.image = image
+                self.imageCache.setObject(image, forKey: NSString(string: (self.challenge?.imageUrl)!))
             }, with: (self.challenge?.imageUrl)!)
         }
         

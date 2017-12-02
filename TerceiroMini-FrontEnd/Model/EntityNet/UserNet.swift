@@ -29,21 +29,22 @@ class UserNet {
      - parameter t: The server comunication token of the device.
      - parameter e: The erro that ocurred.
      */
-    class func add(user: User, completion: @escaping (_ u: User?,_ t: String?,_ e: Error?) -> Void) {
-        let userDictionary = buildDictionary(fromUser: user)
+    class func add(user: User, password: String, completion: @escaping (_ u: User?,_ t: String?,_ e: Error?) -> Void) {
+        var dic = buildDictionary(fromUser: user)
+        dic["password"] = password
         
-        Alamofire.request(R.usersDomain, method: .post, parameters: userDictionary, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
+        Alamofire.request(R.usersDomain, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             
-            guard let val = response.value, let res = response.response, response.error == nil else {
+            guard let dic = NetHelper.extractDictionary(fromJson: response.value!, key: "user") else {
                 
-                completion(nil, nil, response.error)
+                let err = Validator.obtainError(fromJson: response.value!)
+                
+                completion(nil, nil, err)
                 return
             }
             
-            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
-            
             let user = self.buildUser(fromDicitionary: dic)
-            let token = res.allHeaderFields["x-auth"] as? String
+            let token = response.response!.allHeaderFields["x-auth"] as? String
             
             completion(user, token, nil)
         }
@@ -181,9 +182,9 @@ class UserNet {
      - parameter completion: A block of code to be executed once the task is complete.
      - parameter s: A boolean flag indicating if the task was completed successfully.
      */
-    class func createLogin(username: String, email: String, password: String, completion: @escaping (_ s: Bool) -> Void) {
+    class func createLogin(username: String?, email: String, password: String, completion: @escaping (_ s: Bool) -> Void) {
         let completeDomain = R.usersDomain + "/login"
-        let login = ["userName": username, "email": email, "password": password]
+        let login = ["userName": username ?? "", "email": email, "password": password]
         
         Alamofire.request(completeDomain, method: .post, parameters: login, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             

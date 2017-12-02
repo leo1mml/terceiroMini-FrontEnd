@@ -40,7 +40,7 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChallengeCell", for: indexPath) as! ChallengeCollectionViewCell
         cell.numPhotosLabel.text = "44 fotos"
-        cell.themeImage.image = UIImage(named: "pombo")
+        cell.themeImage.image = nil
         cell.layer.cornerRadius = 10
         cell.challenge = challenges?[indexPath.row]
     
@@ -58,8 +58,11 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
 
     
     func reloadCollectionView(challenges: [Challenge]) {
-        self.challenges = challenges
-        self.collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.challenges = challenges
+            self.collectionView.reloadData()
+        }
+        
     }
     
     

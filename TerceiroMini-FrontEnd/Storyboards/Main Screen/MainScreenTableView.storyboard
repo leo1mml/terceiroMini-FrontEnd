@@ -205,7 +205,7 @@
                                                                         <rect key="frame" x="-0.5" y="0.0" width="105" height="121"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uf-Ox-lnJ">
-                                                                                <rect key="frame" x="21.5" y="105" width="62" height="16"/>
+                                                                                <rect key="frame" x="22" y="105" width="62" height="16"/>
                                                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -310,14 +310,14 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRj-Bv-phO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="162.5" height="154"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pombo" translatesAutoresizingMaskIntoConstraints="NO" id="amY-sv-WpP">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="amY-sv-WpP">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="154"/>
                                                                             </imageView>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCY-t5-DeF" customClass="GradientView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="-0.5" width="162.5" height="154.5"/>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tema" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-bI-bhh">
-                                                                                <rect key="frame" x="60" y="66" width="43.5" height="21"/>
+                                                                                <rect key="frame" x="60.5" y="66" width="43.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
                                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>

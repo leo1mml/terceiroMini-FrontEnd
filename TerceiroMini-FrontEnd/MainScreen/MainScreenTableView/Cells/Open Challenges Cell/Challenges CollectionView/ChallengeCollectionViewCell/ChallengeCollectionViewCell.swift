@@ -33,11 +33,13 @@ class ChallengeCollectionViewCell: UICollectionViewCell, ChallengesCellView {
         if let image = imageCache.object(forKey: NSString(string: (challenge?.imageUrl)!)) {
             self.themeImage.image = image
         } else {
-            UIImage.fetch(with: self.challenge!.imageUrl) { (image) in
-                
-                self.themeImage.image = image
-                self.imageCache.setObject(image, forKey: NSString(string: (self.challenge?.imageUrl)!))
-            }
+            DispatchQueue.main.async(execute: {
+                UIImage.fetch(with: self.challenge!.imageUrl) { (image) in
+                    
+                    self.themeImage.image = image
+                    self.imageCache.setObject(image, forKey: NSString(string: (self.challenge?.imageUrl)!))
+                }
+            })
         }
         
     }

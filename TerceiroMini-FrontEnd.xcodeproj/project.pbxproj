@@ -97,7 +97,6 @@
 		08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F961FBB544C0039EAFE /* LoginProtocols.swift */; };
 		14103C9F1FBE221800726C0B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14103C9E1FBE221800726C0B /* Profile.storyboard */; };
 		1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */; };
-		148AE5981FD1A79F005108E7 /* ChallengeClosedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE5961FD1A79F005108E7 /* ChallengeClosedViewController.swift */; };
 		148AE59B1FD1A81B005108E7 /* ChallengeClosed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148AE59A1FD1A81B005108E7 /* ChallengeClosed.storyboard */; };
 		148AE59D1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */; };
 		148AE5A11FD1ACA1005108E7 /* ChallengeClosedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */; };
@@ -381,14 +380,14 @@
 			path = "Next Challenge CV Cell";
 			sourceTree = "<group>";
 		};
-		08297AE01FC74B1E00701F9B /* SignUp */ = {
+		08297AE01FC74B1E00701F9B /* Register */ = {
 			isa = PBXGroup;
 			children = (
 				08297AE11FC74B1E00701F9B /* SignUpViewController.swift */,
 				08297AE21FC74B1E00701F9B /* SignUpPresenter.swift */,
 				08297AE31FC74B1E00701F9B /* SignUpProtocols.swift */,
 			);
-			path = SignUp;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		08297AE71FC74B2E00701F9B /* fonts */ = {
@@ -552,6 +551,7 @@
 			children = (
 				086D27961FCC83D700D9F547 /* Presentation */,
 				086D27A21FCC9A0900D9F547 /* Login */,
+				08297AE01FC74B1E00701F9B /* Register */,
 			);
 			path = "Login Flow";
 			sourceTree = "<group>";
@@ -653,14 +653,13 @@
 		8A5D5CE91FB0D22C00C24725 /* TerceiroMini-FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
-				148AE5951FD1A5BB005108E7 /* ChallengeClosed */,
 				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
 				8A0E82C01FC7443D00218C80 /* Extensions */,
-				14D1061C1FBE004D00AA9F89 /* Profile */,
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
-				08F06F9A1FBB58FA0039EAFE /* Login Flow */,
-				08297AE01FC74B1E00701F9B /* SignUp */,
 				08276F0E1FC73F8C00A8E605 /* MainScreen */,
+				148AE5951FD1A5BB005108E7 /* ChallengeClosed */,
+				14D1061C1FBE004D00AA9F89 /* Profile */,
+				08F06F9A1FBB58FA0039EAFE /* Login Flow */,
 				0899E9FB1FC74CE400F148DC /* Model */,
 				08297AE71FC74B2E00701F9B /* fonts */,
 				086D279F1FCC99E300D9F547 /* temp */,

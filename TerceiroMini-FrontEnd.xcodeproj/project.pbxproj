@@ -72,6 +72,7 @@
 		083982C31FC8B75800E45D10 /* MainScreenTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0E82F61FC74A1B00218C80 /* MainScreenTableView.storyboard */; };
 		083E55171FC84889004E4EC0 /* UserNetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */; };
 		083E551B1FC84F41004E4EC0 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E551A1FC84F41004E4EC0 /* R.swift */; };
+		08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */; };
 		086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */; };
 		086D279A1FCC844B00D9F547 /* LoginPresentationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */; };
 		086D279C1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D279B1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift */; };
@@ -192,6 +193,7 @@
 		08297B0B1FC74B2E00701F9B /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetUnitTests.swift; sourceTree = "<group>"; };
 		083E551A1FC84F41004E4EC0 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineTextField.swift; sourceTree = "<group>"; };
 		086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationViewController.swift; sourceTree = "<group>"; };
 		086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationProtocols.swift; sourceTree = "<group>"; };
 		086D279B1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationPresenterImpl.swift; sourceTree = "<group>"; };
@@ -435,6 +437,14 @@
 			path = NetUnitTests;
 			sourceTree = "<group>";
 		};
+		08407C3E1FD254DF00B7A003 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		086D27961FCC83D700D9F547 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,6 +552,7 @@
 		08F06F9A1FBB58FA0039EAFE /* Login Flow */ = {
 			isa = PBXGroup;
 			children = (
+				08407C3E1FD254DF00B7A003 /* Support */,
 				086D27961FCC83D700D9F547 /* Presentation */,
 				086D27A21FCC9A0900D9F547 /* Login */,
 			);
@@ -948,6 +959,7 @@
 				088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */,
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
+				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,
 				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,

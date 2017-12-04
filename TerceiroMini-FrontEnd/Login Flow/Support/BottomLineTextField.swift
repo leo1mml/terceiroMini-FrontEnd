@@ -18,20 +18,6 @@ class BottomLineTextField: UITextField, UITextFieldDelegate {
     
     var bottomLine: CALayer!
     
-    @IBInspectable var bottomLineBorderWidth: CGFloat = 1.0 {
-        
-        didSet {
-            bottomLine.borderWidth = bottomLineBorderWidth
-        }
-    }
-    
-    @IBInspectable var bottomLineColor: UIColor = .black {
-        
-        didSet {
-            bottomLine.borderColor = bottomLineColor.cgColor
-        }
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

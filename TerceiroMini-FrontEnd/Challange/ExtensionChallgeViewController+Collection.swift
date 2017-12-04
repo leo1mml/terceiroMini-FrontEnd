@@ -8,12 +8,9 @@
 
 import Foundation
 import UIKit
-extension ChallengeViewController {
-    
-    
-    
-    
-    
+
+
+extension ChallengeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //if collectionView == self.featuredCollectionView{
@@ -26,25 +23,26 @@ extension ChallengeViewController {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if collectionView == self.featuredCollectionView{
-//            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "featuredPhotoCell", for: indexPath) as! FeaturedFavoriteClickCollectionViewCell
-//                let imageURL = URL(string: imageSampleLink[indexPath.row])
-//
-//                getImageFromUrl(imageURL: imageURL!, newImage: cellA.cellImage)
-//
-//
-//            return cellA
-//        }else{
-           // let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "mainPhotoCell", for: indexPath) as! MainCollectionViewCell
-           // let imageURL = URL(string: imageSampleLink.first!)
-        //    cellB.numberOfVotes.text = "333"
-           // getImageFromUrl(imageURL: imageURL, newImage: cellB.cellImage!)
-          //  return cellB
-//        }
+        
+        
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as! MainCollectionViewCell
+        cell.cellImage.layer.cornerRadius =  (cell.cellImage.frame.size.width / 10)/2
         
+        switch state {
+   
+        case .finished:
+            cell.numberOfVotes.isHidden = false
+            cell.statusLabel.isHidden = false
+            cell.usernameLabel.isHidden = false
+            cell.usernamePhoto.isHidden = false
+            cell.clicksLogo.isHidden = false
+            break
+        default:
+            break
+        }
     //    cell.cellImage.image = UIImage(named: "imagem1")
           cell.numberOfVotes.text = "111"
           //cell.statusLabel.text = "vencedor"
@@ -59,7 +57,14 @@ extension ChallengeViewController {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderIdentifier", for: indexPath) as! HeaderChallengeCollectionReusableView
+        header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderIdentifier", for: indexPath) as! HeaderChallengeCollectionReusableView
+        
+        header.delegate = self
+        header.dataSource = self
+        
+        header.addGradientToChallengeMainImage()
+    
+        
         return header
     }
     

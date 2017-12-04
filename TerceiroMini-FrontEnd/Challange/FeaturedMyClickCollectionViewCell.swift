@@ -9,6 +9,7 @@
 import UIKit
 
 class FeaturedMyClickCollectionViewCell: UICollectionViewCell {
+    static let identifier = "FeaturedMyClickCollectionViewCell"
     
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var clicks: UILabel!

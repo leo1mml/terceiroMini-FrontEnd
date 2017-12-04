@@ -12,8 +12,11 @@ import Cloudinary
 class ChallengePresenterImpl: ChallengePresenter{
     
     
+    init(challengeView view: ChallengeView) {
+        self.view = view
+    }
     
-    var view : ChallengeView?
+    var view : ChallengeView
     
     let cloudname = "clicks"
     let apiKey = "535385847914562"
@@ -47,15 +50,10 @@ class ChallengePresenterImpl: ChallengePresenter{
         
     }
     
-//    func configureCloudinary(){
-//        let params = CLDUploadRequestParams()
-//        let trans = CLDTransformation().setCrop("limit").setTags("samples").setWidth(3000).setHeight(2000)
-//        params.setTransformation([trans])
-//        cloudinary.createUploader().upload(url: "sample.jpg",  params: params)
-//            .response({ (resultRes, errorRes) in
-//                print(resultRes)
-//            })
-//    }
+    func mainButtonClicked() {
+        view.showPhotoMenu()
+    }
+    
     
 }
 

@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var imageSampleLink = ["http://res.cloudinary.com/clicks/image/upload/v1511463622/a4ez1dbhxfwz9l4lejvt.jpg","http://res.cloudinary.com/clicks/image/upload/v1511464343/i3ngrhvdeza1nmsdyc5c.jpg"]
 
     var presenter : ChallengePresenter?
-    
+    var header: HeaderChallengeCollectionReusableView!
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
 
@@ -24,51 +24,46 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     @IBOutlet weak var statusLabelWinnerContraint: NSLayoutConstraint!
     // - mainButton
     
-    var state = ChallengeState.open
+    var state = ChallengeState.votation
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-       
-
 
         self.mainCollectionView.delegate = self
-        //self.featuredCollectionView.delegate = self
         self.mainCollectionView.dataSource = self
-        //self.featuredCollectionView.dataSource = self
+        
         
         //initializing nibs
         self.mainCollectionView.register(UINib(nibName:MainCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
-//        self.mainCollectionView.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "mainPhotoCell")
+
         
-        presenter = ChallengePresenterImpl()
-        
-//        mainImage.addChallengeGradientLayer(frame: view.bounds, colors: [startingGradientColor,middleGradientColor,.white])
-        
+        presenter = ChallengePresenterImpl(challengeView: self)
+
+        resolveState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        resolveState(state: state)
-        
-        
+        super.viewWillAppear(animated)
         
     }
     
-    func resolveState(state : ChallengeState){
+    func resolveState(){
         
         switch state {
         case .votation:
             //mudar label para periodo de votacao
+            //atualizar tempo pegando do banco
+            
+            print("entrei")
+            
+            
             break
         case .finished:
-            changeStatusLabelContraint(open: false)
             //get winner and change main button
             break
         default:
-            changeStatusLabelContraint(open: true)
             //get timer
             break
         }
@@ -90,7 +85,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         }
     }
     
-    func showPhotoMenu (){
+    func showPhotoMenu(){
         
         let alert = UIAlertController(title: "Escolha uma opção", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Câmera", style: .default, handler: { _ in
@@ -111,22 +106,12 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         
         if let infoImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             presenter?.sendPhotoToCloudinary(infoImage: infoImage)
+            //change status to participating
            
         }
         
         picker.dismiss(animated: true, completion: nil)
     }
-    
-    func changeStatusLabelContraint(open: Bool){
-        if(open){
-           // statusLabelWinnerContraint.priority = UILayoutPriority(rawValue: 750)
-           // statusLabelTimerConstraint.priority = UILayoutPriority(rawValue: 1000)
-        }else{
-           // statusLabelWinnerContraint.priority = UILayoutPriority(rawValue: 1000)
-           // statusLabelTimerConstraint.priority = UILayoutPriority(rawValue: 750)
-        }
-    }
-    
     
     func changeMainPhoto() {
         
@@ -167,16 +152,13 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         
         
     }
-    
-    enum ChallengeState {
-        case open
-        case votation
-        case finished
-        case participating
-        
-    }
-    
-    
+}
+
+enum ChallengeState {
+    case open
+    case votation
+    case finished
+    case participating
 }
 
 extension UIImageView{

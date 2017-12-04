@@ -11,6 +11,7 @@ import UIKit
 class MainCollectionViewCell: UICollectionViewCell {
     static let identifier = "MainCollectionViewCell"
     
+    @IBOutlet weak var clicksLogo: UIImageView!
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var numberOfVotes: UILabel!

@@ -9,6 +9,6 @@
 import UIKit
 
 class FeaturedFavoriteClickCollectionViewCell: UICollectionViewCell {
-    
+    static let identifier = "FeaturedFavoriteClickCollectionViewCell"
     @IBOutlet var cellImage: UIImageView!
 }

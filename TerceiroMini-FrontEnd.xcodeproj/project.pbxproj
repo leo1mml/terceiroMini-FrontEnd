@@ -105,6 +105,7 @@
 		489F1B9A1FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489F1B991FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift */; };
 		48A7C4CF1FD1E00B00EB5C1A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7C4CE1FD1E00B00EB5C1A /* UIImage+Extension.swift */; };
 		48A7C4D11FD1E02A00EB5C1A /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7C4D01FD1E02A00EB5C1A /* NavigationViewController.swift */; };
+		48A7C4D31FD1EC3400EB5C1A /* ChallengeViewController+ChallengeHeaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7C4D21FD1EC3400EB5C1A /* ChallengeViewController+ChallengeHeaderDelegate.swift */; };
 		48C882F31FC893FA000A57C2 /* ChallengePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882ED1FC893FA000A57C2 /* ChallengePresenterImpl.swift */; };
 		48C882F41FC893FA000A57C2 /* ChallengeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882EE1FC893FA000A57C2 /* ChallengeProtocols.swift */; };
 		48C882F51FC893FA000A57C2 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C882EF1FC893FA000A57C2 /* ChallengeViewController.swift */; };
@@ -244,6 +245,7 @@
 		489F1B9D1FCDC7F200717C26 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainCollectionViewCell.xib; path = "/Users/pedrooliveira/Documents/mini3/terceiroMini-FrontEnd/TerceiroMini-FrontEnd/Challange/MainCollectionViewCell.xib"; sourceTree = "<absolute>"; };
 		48A7C4CE1FD1E00B00EB5C1A /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		48A7C4D01FD1E02A00EB5C1A /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		48A7C4D21FD1EC3400EB5C1A /* ChallengeViewController+ChallengeHeaderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChallengeViewController+ChallengeHeaderDelegate.swift"; sourceTree = "<group>"; };
 		48C882ED1FC893FA000A57C2 /* ChallengePresenterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengePresenterImpl.swift; sourceTree = "<group>"; };
 		48C882EE1FC893FA000A57C2 /* ChallengeProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeProtocols.swift; sourceTree = "<group>"; };
 		48C882EF1FC893FA000A57C2 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
@@ -615,6 +617,7 @@
 				489F1B9D1FCDC7F200717C26 /* MainCollectionViewCell.xib */,
 				48EAFFED1FCF1EF6007018AC /* HeaderChallengeCollectionReusableView.swift */,
 				48EAFFEF1FCF2F21007018AC /* imagem1.png */,
+				48A7C4D21FD1EC3400EB5C1A /* ChallengeViewController+ChallengeHeaderDelegate.swift */,
 			);
 			path = Challange;
 			sourceTree = "<group>";
@@ -1006,6 +1009,7 @@
 				8AD759241FD1CAE000002D56 /* (null) in Sources */,
 				14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */,
 				086D279C1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift in Sources */,
+				48A7C4D31FD1EC3400EB5C1A /* ChallengeViewController+ChallengeHeaderDelegate.swift in Sources */,
 				0899EA051FC74D2900F148DC /* NetHelper.swift in Sources */,
 				088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */,
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,

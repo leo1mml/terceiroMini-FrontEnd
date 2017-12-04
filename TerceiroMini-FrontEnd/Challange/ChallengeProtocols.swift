@@ -15,11 +15,11 @@ protocol ChallengeView{
     func showTimer()
     func getPhoto()
     func takePhoto()
-    
-    
+    func showPhotoMenu()
 }
 
 protocol ChallengePresenter{
     func sendPhotoToCloudinary(infoImage: UIImage)
     func getChallengeTimer()
+    func mainButtonClicked()
 }

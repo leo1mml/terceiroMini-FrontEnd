@@ -20,6 +20,10 @@ class LoginPresenterImpl: LoginPresenter {
         
     }
     
+    func goBack() {
+        view.goBack()
+    }
+    
     func forgotPassword() {
         
     }
@@ -27,5 +31,4 @@ class LoginPresenterImpl: LoginPresenter {
     func createAccount() {
         view.goToRegister()
     }
-    
 }

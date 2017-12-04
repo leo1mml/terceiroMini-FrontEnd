@@ -10,15 +10,19 @@ import UIKit
 
 private let segueToRegister = "loginToRegister"
 
-class LoginViewController: UIViewController, LoginView {
+class LoginViewController: StatusBarHiddenViewController, LoginView {
 
     // MARK: - Outlets
+    
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     @IBOutlet weak var welcomeMessageLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    
+    @IBOutlet weak var agreementLabel: UILabel!
     
     // MARK: - Attributes
     
@@ -33,6 +37,8 @@ class LoginViewController: UIViewController, LoginView {
         
         let outTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(outTap)
+        
+        setupTexts()
     }
     
     // MARK: - Actions
@@ -40,6 +46,10 @@ class LoginViewController: UIViewController, LoginView {
     @IBAction func login(_ sender: UIButton) {
         
         presenter?.validateCredentials(username: usernameField.text!, password: passwordField.text!)
+    }
+    
+    @IBAction func goBackAction(_ sender: UIButton) {
+        presenter?.goBack()
     }
     
     @IBAction func forgotPasswordAction(_ sender: UIButton) {
@@ -64,6 +74,10 @@ class LoginViewController: UIViewController, LoginView {
         performSegue(withIdentifier: segueToRegister, sender: self)
     }
     
+    func goBack() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Auxiliar
     
     @objc func dismissKeyboard() {
@@ -71,4 +85,9 @@ class LoginViewController: UIViewController, LoginView {
         passwordField.endEditing(false)
     }
     
+    private func setupTexts() {
+        welcomeMessageLabel.text = "Seja bem-vindo!"
+        instructionLabel.text = "para concluir a ação,\nfaça seu login"
+        agreementLabel.text = "Ao entrar no aplicativo, você concorda com os nossos termos de serviço e políticas de privacidade."
+    }
 }

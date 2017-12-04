@@ -77,6 +77,8 @@
 		0867DD401FD5C04B003AAE8D /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0867DD3D1FD5C04A003AAE8D /* back-button.png */; };
 		0867DD411FD5C04B003AAE8D /* back-button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0867DD3E1FD5C04B003AAE8D /* back-button@3x.png */; };
 		0867DD431FD5C12A003AAE8D /* login-background-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0867DD421FD5C12A003AAE8D /* login-background-photo.png */; };
+		0867DD451FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */; };
+		0867DD471FD5C6C4003AAE8D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */; };
 		086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */; };
 		086D279A1FCC844B00D9F547 /* LoginPresentationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */; };
 		086D279C1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D279B1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift */; };
@@ -202,6 +204,8 @@
 		0867DD3D1FD5C04A003AAE8D /* back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button.png"; sourceTree = "<group>"; };
 		0867DD3E1FD5C04B003AAE8D /* back-button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button@3x.png"; sourceTree = "<group>"; };
 		0867DD421FD5C12A003AAE8D /* login-background-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-background-photo.png"; sourceTree = "<group>"; };
+		0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusBarHiddenViewController.swift; path = Support/StatusBarHiddenViewController.swift; sourceTree = "<group>"; };
+		0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationViewController.swift; sourceTree = "<group>"; };
 		086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationProtocols.swift; sourceTree = "<group>"; };
 		086D279B1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationPresenterImpl.swift; sourceTree = "<group>"; };
@@ -449,6 +453,7 @@
 			isa = PBXGroup;
 			children = (
 				08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */,
+				0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -591,6 +596,7 @@
 				08407C3E1FD254DF00B7A003 /* Support */,
 				086D27961FCC83D700D9F547 /* Presentation */,
 				086D27A21FCC9A0900D9F547 /* Login */,
+				0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */,
 			);
 			path = "Login Flow";
 			sourceTree = "<group>";
@@ -974,6 +980,7 @@
 			files = (
 				08276F2F1FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift in Sources */,
 				0899EA031FC74D1A00F148DC /* Challenge.swift in Sources */,
+				0867DD451FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift in Sources */,
 				08297AE61FC74B1E00701F9B /* SignUpProtocols.swift in Sources */,
 				083E551B1FC84F41004E4EC0 /* R.swift in Sources */,
 				1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */,
@@ -1022,6 +1029,7 @@
 				08297AE51FC74B1E00701F9B /* SignUpPresenter.swift in Sources */,
 				08276F3D1FC73F8C00A8E605 /* TableHeader.swift in Sources */,
 				0899EA0B1FC74D4100F148DC /* ChallengeNet.swift in Sources */,
+				0867DD471FD5C6C4003AAE8D /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -81,7 +81,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="oL3-q7-nDo">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="109"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="signInEmail" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra6-5I-GUr">
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="signInEmail" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra6-5I-GUr" customClass="RoundedButton" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                                         <color key="backgroundColor" red="0.15219730138778687" green="0.17634564638137817" blue="0.18891513347625732" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -92,7 +92,7 @@
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="signInFacebook" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-rY-qM2">
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="signInFacebook" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-rY-qM2" customClass="RoundedButton" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="59" width="335" height="50"/>
                                                         <color key="backgroundColor" red="0.22537201642990112" green="0.34264656901359558" blue="0.60412263870239258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
@@ -193,6 +193,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" image="back-button.png"/>
+                                <connections>
+                                    <action selector="goBackAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RP2-jr-s3A"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1pT-Gh-aUM">
                                 <rect key="frame" x="0.0" y="191" width="0.0" height="80"/>
@@ -254,7 +257,7 @@
                                                     <constraint firstAttribute="height" constant="124" id="Qok-Bw-hdB"/>
                                                 </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJq-oL-fZK">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJq-oL-fZK" customClass="RoundedButton" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="144" width="0.0" height="50"/>
                                                 <color key="backgroundColor" red="0.15219730140000001" green="0.1763456464" blue="0.1889151335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -333,6 +336,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="agreementLabel" destination="h4C-Ov-71G" id="bhb-CE-flF"/>
+                        <outlet property="backgroundImageView" destination="1HN-t6-ISn" id="B5f-lo-6cE"/>
                         <outlet property="instructionLabel" destination="V0D-EZ-MwH" id="Zaa-Vu-3JA"/>
                         <outlet property="passwordField" destination="FYW-BU-XAy" id="1Vb-l0-vpD"/>
                         <outlet property="usernameField" destination="o8Q-qm-jbH" id="2YL-cZ-Ikq"/>

@@ -225,8 +225,9 @@ class UserNet {
         let email = dic["email"] as! String
         let name = dic["name"] as! String
         let username = dic["userName"] as! String
+        let profileImageUrl = dic["profileImageUrl"] as! String
         
-        return User(id, email, name, username)
+        return User(id, email, name, username, profileImageUrl)
     }
     
     /**
@@ -240,6 +241,7 @@ class UserNet {
         return ["_id": u.id ?? "",
                 "email": u.email,
                 "name": u.name,
-                "userName": u.username]
+                "userName": u.username,
+                "profileImageUrl:": u.profilePhotoUrl ?? ""]
     }
 }

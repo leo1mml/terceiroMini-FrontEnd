@@ -21,10 +21,13 @@ class ChallengeCollectionViewCell: UICollectionViewCell, ChallengesCellView {
     var imageCache = NSCache<NSString, UIImage>()
     
     var presenter : ChallengesCellPresenter?
+    var timerDate = Timer()
     
     var challenge : Challenge? {
         didSet {
             self.themeLabel.text = challenge?.theme
+            self.numPhotosLabel.text = "\(challenge?.numPhotos ?? 9999) fotos"
+            Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
             setupChallengeImage()
         }
     }
@@ -42,6 +45,11 @@ class ChallengeCollectionViewCell: UICollectionViewCell, ChallengesCellView {
             })
         }
         
+    }
+    
+    @objc func updateTimer() {
+            let dateInterval = self.challenge?.endDate.timeIntervalSince(Date())
+        self.timerLabel.text = "\(String(describing: dateInterval!.format()!))"
     }
     
     override func awakeFromNib() {

@@ -25,6 +25,7 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         layout.minimumInteritemSpacing = 0
         self.presenter = OpenChallengesCellPresenterImp(openChallengesCellView: self)
         presenter?.fetchChallenges()
+        self.collectionView.becomeFirstResponder()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

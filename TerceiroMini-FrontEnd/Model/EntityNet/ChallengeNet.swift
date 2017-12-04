@@ -77,7 +77,9 @@ class ChallengeNet {
         let startDate = DateHelper.shared.getDate(fromString: startDateString)!
         let endDate = DateHelper.shared.getDate(fromString: endDateString)!
         
-        return Challenge(id, theme, startDate, endDate, imageUrl)
+        let numPhotos = dic["numPhotos"] as! Int
+        
+        return Challenge(id, theme, startDate, endDate, imageUrl, numPhotos)
     }
     
     

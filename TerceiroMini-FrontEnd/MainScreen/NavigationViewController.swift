@@ -50,9 +50,21 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
             }
         }
         delegateAnimations?.setFirstOffset(firstOffsetX: (pageViewScroll?.contentOffset.x)!)
-
+        
         // Do any additional setup after loading the view.
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(true)
+//        let mainVC = viewControllerList[0] as! MainScreenTableViewController
+//        mainVC.becomeFirstResponder()
+//    }
+//    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        let mainVC = viewControllerList[0] as! MainScreenTableViewController
+//        mainVC.becomeFirstResponder()
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -140,12 +152,6 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
                  self.delegateAnimations?.swipeProfileToMain()
             }
         }
-        
-        
-        
-        
-        
-        
     }
     /*
     // MARK: - Navigation

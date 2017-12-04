@@ -23,10 +23,10 @@ class OpenChallengesCellPresenterImp: OpenChallengesCellPresenter {
     
     
     func fetchChallenges(){
-        ChallengeNet.getAll { (challenges, err) in
+        NetworkManager.getAllChallenges(completion: { (challenges, err) in
             if let challenges = challenges{
                 self.view?.reloadCollectionView(challenges: challenges)
             }
-        }
+        })
     }
 }

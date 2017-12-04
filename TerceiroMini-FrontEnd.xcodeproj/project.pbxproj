@@ -204,7 +204,7 @@
 		0867DD3D1FD5C04A003AAE8D /* back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button.png"; sourceTree = "<group>"; };
 		0867DD3E1FD5C04B003AAE8D /* back-button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button@3x.png"; sourceTree = "<group>"; };
 		0867DD421FD5C12A003AAE8D /* login-background-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-background-photo.png"; sourceTree = "<group>"; };
-		0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusBarHiddenViewController.swift; path = Support/StatusBarHiddenViewController.swift; sourceTree = "<group>"; };
+		0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarHiddenViewController.swift; sourceTree = "<group>"; };
 		0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationViewController.swift; sourceTree = "<group>"; };
 		086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationProtocols.swift; sourceTree = "<group>"; };
@@ -454,6 +454,7 @@
 			children = (
 				08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */,
 				0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */,
+				0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -596,7 +597,6 @@
 				08407C3E1FD254DF00B7A003 /* Support */,
 				086D27961FCC83D700D9F547 /* Presentation */,
 				086D27A21FCC9A0900D9F547 /* Login */,
-				0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */,
 			);
 			path = "Login Flow";
 			sourceTree = "<group>";

@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol EditingListener {
+    
+    func didBeginEditing(_ sender: BottomLineTextField)
+    func didEndEditing(_ sender: BottomLineTextField)
+}
+
 class BottomLineTextField: UITextField, UITextFieldDelegate {
 
     static let firstResponderColor: UIColor = .black
@@ -15,6 +21,8 @@ class BottomLineTextField: UITextField, UITextFieldDelegate {
     
     static let firstResponderBorder: CGFloat = 2.0
     static let nonFisrtResponderBorder: CGFloat = 1.0
+    
+    var listenter: EditingListener?
     
     var bottomLine: CALayer!
     var placeholderLbl: UILabel!
@@ -72,6 +80,7 @@ class BottomLineTextField: UITextField, UITextFieldDelegate {
         bottomLine.borderWidth = BottomLineTextField.nonFisrtResponderBorder
         
         movePlaceholder(y: 0)
+        listenter?.didEndEditing(self)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -79,6 +88,7 @@ class BottomLineTextField: UITextField, UITextFieldDelegate {
         bottomLine.borderWidth = BottomLineTextField.firstResponderBorder
         
         movePlaceholder(y: -25)
+        listenter?.didBeginEditing(self)
     }
     
     func movePlaceholder(y: CGFloat) {

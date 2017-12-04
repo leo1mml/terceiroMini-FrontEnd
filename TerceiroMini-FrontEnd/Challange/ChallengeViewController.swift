@@ -25,12 +25,21 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     // - mainButton
     
     var state = ChallengeState.votation
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
+        let statusBarColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
+        statusBarView.backgroundColor = statusBarColor
+        view.addSubview(statusBarView)
+        
+        
         self.mainCollectionView.delegate = self
         self.mainCollectionView.dataSource = self
         

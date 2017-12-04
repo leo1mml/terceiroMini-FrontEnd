@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aBy-Pl-cxj">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aBy-Pl-cxj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="kOZ-bZ-cbl">
@@ -100,6 +100,17 @@
                                             </collectionViewFlowLayout>
                                             <cells/>
                                         </collectionView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7lx-OI-3ds">
+                                            <rect key="frame" x="28" y="23" width="24" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="7Gz-Ht-S9w"/>
+                                                <constraint firstAttribute="width" constant="24" id="Wnf-nC-wDF"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o8M-9X-1dA">
+                                            <rect key="frame" x="331" y="40" width="24" height="4"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="xeq-9u-oDN" secondAttribute="trailing" constant="61" id="89W-wc-oVY"/>
@@ -118,6 +129,8 @@
                                         <constraint firstItem="sFj-Ff-eVK" firstAttribute="leading" secondItem="5b2-Zy-hfm" secondAttribute="leadingMargin" constant="29.5" id="bFd-RN-pM3"/>
                                         <constraint firstItem="2j8-9C-zhg" firstAttribute="leading" secondItem="5b2-Zy-hfm" secondAttribute="leading" id="iEU-1x-m1z"/>
                                         <constraint firstAttribute="bottom" secondItem="2j8-9C-zhg" secondAttribute="bottom" constant="59" id="qYQ-Yg-d2j"/>
+                                        <constraint firstItem="7lx-OI-3ds" firstAttribute="top" secondItem="5b2-Zy-hfm" secondAttribute="topMargin" constant="15" id="ujg-Xo-LF1"/>
+                                        <constraint firstItem="7lx-OI-3ds" firstAttribute="leading" secondItem="5b2-Zy-hfm" secondAttribute="leadingMargin" constant="20" id="xZQ-Gd-67t"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="challengeLabel" destination="sFj-Ff-eVK" id="1EQ-o7-JRH"/>

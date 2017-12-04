@@ -10,7 +10,27 @@ import UIKit
 
 class BottomLineTextField: UITextField, UITextFieldDelegate {
 
+    static let firstResponderColor: UIColor = .black
+    static let nonFirstResponderColor: UIColor = .lightGray
+    
+    static let firstResponderBorder: CGFloat = 2.0
+    static let nonFisrtResponderBorder: CGFloat = 1.0
+    
     var bottomLine: CALayer!
+    
+    @IBInspectable var bottomLineBorderWidth: CGFloat = 1.0 {
+        
+        didSet {
+            bottomLine.borderWidth = bottomLineBorderWidth
+        }
+    }
+    
+    @IBInspectable var bottomLineColor: UIColor = .black {
+        
+        didSet {
+            bottomLine.borderColor = bottomLineColor.cgColor
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,23 +53,23 @@ class BottomLineTextField: UITextField, UITextFieldDelegate {
     func createBottomLine() -> CALayer {
         
         let size = CGSize(width: frame.width, height: 1)
-        let point = CGPoint(x: bounds.minX, y: bounds.maxY)
+        let point = CGPoint(x: 0, y: frame.maxY - BottomLineTextField.firstResponderBorder)
         
         let layer = CALayer()
         layer.frame = CGRect(origin: point, size: size)
-        layer.borderColor = UIColor.lightGray.cgColor
-        layer.borderWidth = 2.0
+        layer.borderColor = BottomLineTextField.nonFirstResponderColor.cgColor
+        layer.borderWidth = BottomLineTextField.nonFisrtResponderBorder
         
         return layer
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        bottomLine.borderColor = UIColor.lightGray.cgColor
-        bottomLine.borderWidth = 1.0
+        bottomLine.borderColor = BottomLineTextField.nonFirstResponderColor.cgColor
+        bottomLine.borderWidth = BottomLineTextField.nonFisrtResponderBorder
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        bottomLine.borderColor = UIColor.black.cgColor
-        bottomLine.borderWidth = 2.0
+        bottomLine.borderColor = BottomLineTextField.firstResponderColor.cgColor
+        bottomLine.borderWidth = BottomLineTextField.firstResponderBorder
     }
 }

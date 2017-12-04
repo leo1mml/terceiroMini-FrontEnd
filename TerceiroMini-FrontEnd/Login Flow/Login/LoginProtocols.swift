@@ -12,10 +12,12 @@ protocol LoginView {
     
     func showMissingFieldsError()
     func showInvalidCredentialsError()
-    func changeScreen()
+    func goToRegister()
 }
 
 protocol LoginPresenter {
     
     func validateCredentials(username: String, password: String)
+    func forgotPassword()
+    func createAccount()
 }

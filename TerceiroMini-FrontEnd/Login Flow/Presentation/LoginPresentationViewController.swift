@@ -99,5 +99,4 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
     func goToRegister() {
         performSegue(withIdentifier: segueToRegister, sender: self)
     }
-    
 }

@@ -84,7 +84,7 @@
 		086D27BA1FCCA62D00D9F547 /* presentation-login-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 086D27B91FCCA62D00D9F547 /* presentation-login-background.png */; };
 		088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088083BD1FD1BF76008C9B00 /* DateHelper.swift */; };
 		088083C11FD1C23B008C9B00 /* DateHelperUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088083C01FD1C23B008C9B00 /* DateHelperUnitTests.swift */; };
-		088083C31FD1C75D008C9B00 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088083C21FD1C75D008C9B00 /* Validator.swift */; };
+		088083C31FD1C75D008C9B00 /* UserNet+Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088083C21FD1C75D008C9B00 /* UserNet+Validator.swift */; };
 		0894ED881FC896A500F87C2A /* PhotoNetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0894ED871FC896A500F87C2A /* PhotoNetUnitTests.swift */; };
 		0894ED8B1FC89BA800F87C2A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0894ED8A1FC89BA800F87C2A /* NetworkManager.swift */; };
 		0899E9FF1FC74D0900F148DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899E9FE1FC74D0900F148DC /* User.swift */; };
@@ -97,6 +97,9 @@
 		08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F961FBB544C0039EAFE /* LoginProtocols.swift */; };
 		14103C9F1FBE221800726C0B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14103C9E1FBE221800726C0B /* Profile.storyboard */; };
 		1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */; };
+		148AE59B1FD1A81B005108E7 /* ChallengeClosed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148AE59A1FD1A81B005108E7 /* ChallengeClosed.storyboard */; };
+		148AE59D1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */; };
+		148AE5A11FD1ACA1005108E7 /* ChallengeClosedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */; };
 		14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */; };
 		14D106201FBE00B000AA9F89 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */; };
 		14D106221FBE00CC00AA9F89 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */; };
@@ -218,7 +221,7 @@
 		086D27B91FCCA62D00D9F547 /* presentation-login-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "presentation-login-background.png"; sourceTree = "<group>"; };
 		088083BD1FD1BF76008C9B00 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		088083C01FD1C23B008C9B00 /* DateHelperUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelperUnitTests.swift; sourceTree = "<group>"; };
-		088083C21FD1C75D008C9B00 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		088083C21FD1C75D008C9B00 /* UserNet+Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserNet+Validator.swift"; sourceTree = "<group>"; };
 		0894ED871FC896A500F87C2A /* PhotoNetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoNetUnitTests.swift; sourceTree = "<group>"; };
 		0894ED8A1FC89BA800F87C2A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0899E9FE1FC74D0900F148DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -232,6 +235,10 @@
 		08F06F961FBB544C0039EAFE /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		14103C9E1FBE221800726C0B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		148AE5961FD1A79F005108E7 /* ChallengeClosedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedViewController.swift; sourceTree = "<group>"; };
+		148AE59A1FD1A81B005108E7 /* ChallengeClosed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengeClosed.storyboard; sourceTree = "<group>"; };
+		148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedProtocols.swift; sourceTree = "<group>"; };
+		148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedPresenter.swift; sourceTree = "<group>"; };
 		14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
@@ -405,14 +412,14 @@
 			path = "Next Challenge CV Cell";
 			sourceTree = "<group>";
 		};
-		08297AE01FC74B1E00701F9B /* SignUp */ = {
+		08297AE01FC74B1E00701F9B /* Register */ = {
 			isa = PBXGroup;
 			children = (
 				08297AE11FC74B1E00701F9B /* SignUpViewController.swift */,
 				08297AE21FC74B1E00701F9B /* SignUpPresenter.swift */,
 				08297AE31FC74B1E00701F9B /* SignUpProtocols.swift */,
 			);
-			path = SignUp;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		08297AE71FC74B2E00701F9B /* fonts */ = {
@@ -554,7 +561,7 @@
 			children = (
 				0894ED8A1FC89BA800F87C2A /* NetworkManager.swift */,
 				088083BD1FD1BF76008C9B00 /* DateHelper.swift */,
-				088083C21FD1C75D008C9B00 /* Validator.swift */,
+				088083C21FD1C75D008C9B00 /* UserNet+Validator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -574,6 +581,7 @@
 			children = (
 				086D27961FCC83D700D9F547 /* Presentation */,
 				086D27A21FCC9A0900D9F547 /* Login */,
+				08297AE01FC74B1E00701F9B /* Register */,
 			);
 			path = "Login Flow";
 			sourceTree = "<group>";
@@ -588,6 +596,16 @@
 				14103C9E1FBE221800726C0B /* Profile.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		148AE5951FD1A5BB005108E7 /* ChallengeClosed */ = {
+			isa = PBXGroup;
+			children = (
+				148AE5961FD1A79F005108E7 /* ChallengeClosedViewController.swift */,
+				148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */,
+				148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */,
+			);
+			path = ChallengeClosed;
 			sourceTree = "<group>";
 		};
 		14D1061C1FBE004D00AA9F89 /* Profile */ = {
@@ -668,11 +686,11 @@
 				48C882EC1FC893FA000A57C2 /* Challange */,
 				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
 				8A0E82C01FC7443D00218C80 /* Extensions */,
-				14D1061C1FBE004D00AA9F89 /* Profile */,
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
-				08F06F9A1FBB58FA0039EAFE /* Login Flow */,
-				08297AE01FC74B1E00701F9B /* SignUp */,
 				08276F0E1FC73F8C00A8E605 /* MainScreen */,
+				148AE5951FD1A5BB005108E7 /* ChallengeClosed */,
+				14D1061C1FBE004D00AA9F89 /* Profile */,
+				08F06F9A1FBB58FA0039EAFE /* Login Flow */,
 				0899E9FB1FC74CE400F148DC /* Model */,
 				08297AE71FC74B2E00701F9B /* fonts */,
 				086D279F1FCC99E300D9F547 /* temp */,
@@ -807,6 +825,7 @@
 			files = (
 				08297B221FC74B2E00701F9B /* MontserratAlternates-SemiBold.otf in Resources */,
 				08297B2E1FC74B2E00701F9B /* MontserratAlternates-Italic.otf in Resources */,
+				148AE59B1FD1A81B005108E7 /* ChallengeClosed.storyboard in Resources */,
 				08297B241FC74B2E00701F9B /* MontserratAlternates-ExtraBold.otf in Resources */,
 				08297B271FC74B2E00701F9B /* Montserrat-ExtraLightItalic.otf in Resources */,
 				086D27B61FCCA5A800D9F547 /* presentation-login-exit@2x.png in Resources */,
@@ -1002,7 +1021,7 @@
 				08276F361FC73F8C00A8E605 /* ChallengeCollectionViewPresenter.swift in Sources */,
 				08276F351FC73F8C00A8E605 /* ChallengesFlowLayout.swift in Sources */,
 				08276F3F1FC73F8C00A8E605 /* MainScreenProtocols.swift in Sources */,
-				088083C31FD1C75D008C9B00 /* Validator.swift in Sources */,
+				088083C31FD1C75D008C9B00 /* UserNet+Validator.swift in Sources */,
 				08276F341FC73F8C00A8E605 /* GradientView.swift in Sources */,
 				08276F391FC73F8C00A8E605 /* WinnerCollectionViewCell.swift in Sources */,
 				0899EA011FC74D1400F148DC /* Photo.swift in Sources */,
@@ -1018,6 +1037,7 @@
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,
 				0899EA091FC74D3900F148DC /* PhotoNet.swift in Sources */,
+				148AE5A11FD1ACA1005108E7 /* ChallengeClosedPresenter.swift in Sources */,
 				0894ED8B1FC89BA800F87C2A /* NetworkManager.swift in Sources */,
 				08276F321FC73F8C00A8E605 /* ChallengeCellPresenter.swift in Sources */,
 				48C882F41FC893FA000A57C2 /* ChallengeProtocols.swift in Sources */,
@@ -1036,6 +1056,7 @@
 				48EAFFEE1FCF1EF6007018AC /* HeaderChallengeCollectionReusableView.swift in Sources */,
 				0838B5C51FBF7A240051669B /* LoginPresenterImpl.swift in Sources */,
 				08276F311FC73F8C00A8E605 /* ChallengeCollectionViewCellProtocols.swift in Sources */,
+				148AE59D1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift in Sources */,
 				08276F2D1FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift in Sources */,
 				489F1B9A1FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift in Sources */,
 				08297AE51FC74B1E00701F9B /* SignUpPresenter.swift in Sources */,

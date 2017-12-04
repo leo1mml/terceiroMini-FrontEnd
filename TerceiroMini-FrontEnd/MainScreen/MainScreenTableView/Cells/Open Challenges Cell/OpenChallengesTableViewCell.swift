@@ -43,9 +43,6 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         cell.themeImage.image = nil
         cell.layer.cornerRadius = 10
         cell.challenge = challenges?[indexPath.row]
-    
-        
-        
         return cell
     }
     

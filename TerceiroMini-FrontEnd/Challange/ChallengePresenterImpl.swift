@@ -12,6 +12,8 @@ import Cloudinary
 class ChallengePresenterImpl: ChallengePresenter{
     
     
+    
+    
     init(challengeView view: ChallengeView) {
         self.view = view
     }
@@ -43,6 +45,23 @@ class ChallengePresenterImpl: ChallengePresenter{
         
         print(retorno)
         
+        
+    }
+    
+    
+    func getChallengeHeader() {
+        
+        let id = "5a2164324ab66300147b416f"
+        NetworkManager.getChallenge(completion: { (challenge, error) in
+            
+            if((error) != nil){
+                print("deu erro")
+                //colocar mensagem de nao existe
+            }
+            self.view.setHeader(theme: (challenge?.theme)!, endDate: (challenge?.endDate)!, mainImageURL: (challenge?.imageUrl)!)
+
+            
+        }, id)
         
     }
     

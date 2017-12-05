@@ -16,10 +16,12 @@ protocol ChallengeView{
     func getPhoto()
     func takePhoto()
     func showPhotoMenu()
+    func setHeader(theme: String, endDate: Date, mainImageURL: String)
 }
 
 protocol ChallengePresenter{
     func sendPhotoToCloudinary(infoImage: UIImage)
     func getChallengeTimer()
     func mainButtonClicked()
+    func getChallengeHeader()
 }

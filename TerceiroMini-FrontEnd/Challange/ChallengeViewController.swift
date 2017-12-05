@@ -10,6 +10,8 @@ import UIKit
 
 class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    
+    
     var challengeImages : [String]!
 
     var presenter : ChallengePresenter?
@@ -56,7 +58,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+            presenter?.getChallengeHeader()
     }
     
     func resolveState(){
@@ -158,6 +160,23 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    
+    
+    
+    func setHeader(theme: String, endDate: Date, mainImageURL: String) {
+        header.challengeLabel.text = theme
+        UIImage.fetch(with: mainImageURL) { (image) in
+            self.header.mainImage.image = image
+        }
+        let now = Date()
+        header.statusLabel.text = "\(now.timeIntervalSince(endDate))"
+        
+        
+    }
+    
+    
+    
+    
     
     func initDarkStatusBar(){
         let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)

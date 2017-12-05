@@ -32,7 +32,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="511"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagem1.png" translatesAutoresizingMaskIntoConstraints="NO" id="2j8-9C-zhg">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagem1.png" translatesAutoresizingMaskIntoConstraints="NO" id="2j8-9C-zhg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="452"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escritório" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFj-Ff-eVK">
@@ -74,7 +74,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                             <inset key="imageEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Ana" image="Oval 4 Copy 17.png">
+                                            <state key="normal" title="Ana">
                                                 <color key="titleColor" red="1" green="0.98465169682406983" blue="0.96893253567347259" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
@@ -163,7 +163,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Oval 4 Copy 17.png" width="40" height="40"/>
         <image name="imagem1.png" width="375" height="400"/>
     </resources>
 </document>

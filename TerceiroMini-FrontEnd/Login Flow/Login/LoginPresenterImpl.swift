@@ -18,16 +18,17 @@ class LoginPresenterImpl: LoginPresenter {
     
     func validateCredentials(username: String, password: String) {
         
-        if username.isEmpty || password.isEmpty {
-            view.showMissingFieldsError()
-        } else {
-            
-            if username == "admin" && password == "admin" {
-                view.changeScreen()
-            } else {
-                view.showInvalidCredentialsError()
-            }
-        }
     }
     
+    func goBack() {
+        view.goBack()
+    }
+    
+    func forgotPassword() {
+        
+    }
+    
+    func createAccount() {
+        view.goToRegister()
+    }
 }

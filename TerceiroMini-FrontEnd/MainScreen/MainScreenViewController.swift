@@ -23,17 +23,24 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     @IBOutlet weak var pageViewContainer: UIView!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         if let vc = storyboard?.instantiateViewController(withIdentifier: "PageView") {
             self.pageViewController = vc as! NavigationViewController
             self.pageViewContainer.frame = pageViewController.view.frame
             self.pageViewContainer.addSubview(vc.view)
             self.pageViewController.delegateAnimations = self
         }
-        
-
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.profileImage.tintColor = .gray
+    }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,6 +53,8 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
             self.logoImage.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
             self.profileImage.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             self.profileImage.center = self.centerIcon.center
+            self.profileImage.tintColor = .black
+            self.logoImage.tintColor = .gray
         }
     }
     
@@ -54,6 +63,8 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
             self.logoImage.transform = CGAffineTransform(scaleX: 1, y: 1)
             self.logoImage.center = self.centerIcon.center
             self.profileImage.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.profileImage.tintColor = .gray
+            self.logoImage.tintColor = .black
         }
         
     }

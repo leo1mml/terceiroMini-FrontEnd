@@ -67,6 +67,31 @@ class ChallengeNet {
             completion(clg, nil)
         }
     }
+    
+    /**
+     
+     Gets the data of the incoming challenges in the database.
+     
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter c: The challenges retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    
+    class func getIncomingChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {
+        
+        Alamofire.request(R.challengesDomain + "/lastChallenges").validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "challengesPast")!
+            let clg = buildChallenges(fromDictionaryArray: arr)
+            
+            completion(clg, nil)
+        }
+    }
     /**
      
      Gets the data of the open challenges in the database.

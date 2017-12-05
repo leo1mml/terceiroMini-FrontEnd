@@ -54,17 +54,9 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         // Do any additional setup after loading the view.
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(true)
-//        let mainVC = viewControllerList[0] as! MainScreenTableViewController
-//        mainVC.becomeFirstResponder()
-//    }
-//    
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        let mainVC = viewControllerList[0] as! MainScreenTableViewController
-//        mainVC.becomeFirstResponder()
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

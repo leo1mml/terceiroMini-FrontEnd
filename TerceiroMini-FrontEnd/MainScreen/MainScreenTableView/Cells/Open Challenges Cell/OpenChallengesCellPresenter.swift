@@ -23,10 +23,13 @@ class OpenChallengesCellPresenterImp: OpenChallengesCellPresenter {
     
     
     func fetchChallenges(){
-        NetworkManager.getOpenChallenges(completion: { (challenges, err) in
-            if let challenges = challenges{
-                self.view?.reloadCollectionView(with: challenges)
-            }
-        })
+        DispatchQueue.main.async {
+            NetworkManager.getOpenChallenges(completion: { (challenges, err) in
+                if let challenges = challenges{
+                    self.view?.reloadCollectionView(with: challenges)
+                }
+            })
+        }
+        
     }
 }

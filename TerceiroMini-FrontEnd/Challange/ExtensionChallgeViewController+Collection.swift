@@ -44,7 +44,7 @@ extension ChallengeViewController: UICollectionViewDataSource, UICollectionViewD
             break
         }
     //    cell.cellImage.image = UIImage(named: "imagem1")
-          cell.numberOfVotes.text = "111"
+    //      cell.numberOfVotes.text = "111"
           //cell.statusLabel.text = "vencedor"
 //        cell.usernameLabel.text = "aaa.aaa"
       //  cell.usernamePhoto.image = UIImage(named: "imagem1")

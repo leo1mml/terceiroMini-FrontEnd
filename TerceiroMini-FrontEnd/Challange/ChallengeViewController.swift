@@ -10,7 +10,7 @@ import UIKit
 
 class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var imageSampleLink = ["http://res.cloudinary.com/clicks/image/upload/v1511463622/a4ez1dbhxfwz9l4lejvt.jpg","http://res.cloudinary.com/clicks/image/upload/v1511464343/i3ngrhvdeza1nmsdyc5c.jpg"]
+    var challengeImages : [String]!
 
     var presenter : ChallengePresenter?
     var header: HeaderChallengeCollectionReusableView!
@@ -18,13 +18,12 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     @IBOutlet weak var mainCollectionView: UICollectionView!
 
     
-    //Constraints that change size
-    // - statusLabel
-    @IBOutlet weak var statusLabelTimerConstraint: NSLayoutConstraint!
-    @IBOutlet weak var statusLabelWinnerContraint: NSLayoutConstraint!
+
     // - mainButton
     
     var state = ChallengeState.votation
+    
+    //status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -33,11 +32,12 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //init status bar
+            initDarkStatusBar()
         
-        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
-        let statusBarColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
-        statusBarView.backgroundColor = statusBarColor
-        view.addSubview(statusBarView)
+        
+        
+        
         
         
         self.mainCollectionView.delegate = self
@@ -55,6 +55,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         
     }
     
@@ -156,11 +157,15 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
             
             self.present(imagePicker, animated: true, completion: nil)
         }
-        
-    
-        
-        
     }
+    
+    func initDarkStatusBar(){
+        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
+        let statusBarColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
+        statusBarView.backgroundColor = statusBarColor
+        view.addSubview(statusBarView)
+    }
+    
 }
 
 enum ChallengeState {

@@ -124,6 +124,8 @@
 		8A5D5CF51FB0D22C00C24725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */; };
 		8A5D5D001FB0D22C00C24725 /* TerceiroMini_FrontEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CFF1FB0D22C00C24725 /* TerceiroMini_FrontEndTests.swift */; };
 		8AD759241FD1CAE000002D56 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD759231FD1CAE000002D56 /* UIImage+Extension.swift */; };
+		8ADF7C9E1FD742F40023BCEF /* NextChallengesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF7C9D1FD742F40023BCEF /* NextChallengesProtocols.swift */; };
+		8ADF7CA01FD743060023BCEF /* NextChallengesCellPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF7C9F1FD743060023BCEF /* NextChallengesCellPresenterImp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,6 +268,8 @@
 		8A5D5CFF1FB0D22C00C24725 /* TerceiroMini_FrontEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerceiroMini_FrontEndTests.swift; sourceTree = "<group>"; };
 		8A5D5D011FB0D22C00C24725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AD759231FD1CAE000002D56 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		8ADF7C9D1FD742F40023BCEF /* NextChallengesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengesProtocols.swift; sourceTree = "<group>"; };
+		8ADF7C9F1FD743060023BCEF /* NextChallengesCellPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengesCellPresenterImp.swift; sourceTree = "<group>"; };
 		95C217CEF3A90F7A56308EBC /* Pods_TerceiroMini_FrontEndTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEndTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB83728EA262BADC3CBAF788 /* Pods-TerceiroMini-FrontEndTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEndTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEndTests/Pods-TerceiroMini-FrontEndTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE8B63BA2069A782D7C6A5BF /* Pods-TerceiroMini-FrontEnd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.debug.xcconfig"; sourceTree = "<group>"; };
@@ -388,6 +392,8 @@
 			isa = PBXGroup;
 			children = (
 				08276F251FC73F8C00A8E605 /* NextChallengeTableViewCell.swift */,
+				8ADF7C9D1FD742F40023BCEF /* NextChallengesProtocols.swift */,
+				8ADF7C9F1FD743060023BCEF /* NextChallengesCellPresenterImp.swift */,
 				08276F261FC73F8C00A8E605 /* Next Challenge CV Cell */,
 			);
 			path = "Next Challenges Cell";
@@ -1037,6 +1043,7 @@
 				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,
 				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
+				8ADF7CA01FD743060023BCEF /* NextChallengesCellPresenterImp.swift in Sources */,
 				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,
 				0899EA091FC74D3900F148DC /* PhotoNet.swift in Sources */,
 				148AE5A11FD1ACA1005108E7 /* ChallengeClosedPresenter.swift in Sources */,
@@ -1049,6 +1056,7 @@
 				08276F3A1FC73F8C00A8E605 /* NextChallengeTableViewCell.swift in Sources */,
 				8A543E051FD5C96D002392A3 /* TimeInterval+Extension.swift in Sources */,
 				14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */,
+				8ADF7C9E1FD742F40023BCEF /* NextChallengesProtocols.swift in Sources */,
 				0899E9FF1FC74D0900F148DC /* User.swift in Sources */,
 				08276F401FC73F8C00A8E605 /* MainScreenViewController.swift in Sources */,
 				08276F3E1FC73F8C00A8E605 /* MainScreenPresenter.swift in Sources */,

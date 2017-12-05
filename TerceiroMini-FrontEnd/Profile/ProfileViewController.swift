@@ -9,11 +9,13 @@
 import UIKit
 
 class ProfileViewController: UIViewController, ProfileView, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    var presenter: ProfilePresenter?
     
     @IBOutlet weak var collectionProfile: UICollectionView!
     
     // array de imagens
-    var images = ["pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg","pombo.jpg"]
+    var images: [UIImage]!
     
     // array de temas
     var temas = ["Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo", "Pombo"]
@@ -21,17 +23,31 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        presenter = ProfilePresenterImpl(profileView: self)
+        
+        presenter?.loadImages()
+        
         self.collectionProfile.delegate = self
         self.collectionProfile.dataSource = self
         
     }
+    
+    func erroLoadImages() {
+        let alert = UIAlertView()
+        alert.title = "Erro"
+        alert.message = "Error loading images"
+        alert.addButton(withTitle: "OK")
+        alert.show()
+    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func receiveImages(images: [UIImage]) {
+        self.images = images
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if images == nil {
+            return 0
+        }
         return images.count
     }
     
@@ -45,7 +61,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
         cell.backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [.clear, .clear, startingGradientColor])
         
-        cell.backgroundImage.image = UIImage(named: images[indexPath.row])
+        cell.backgroundImage.image = images[indexPath.row]
         cell.backgroundImage.contentMode = .scaleAspectFill
         
         cell.frame.size.width = 121
@@ -63,7 +79,8 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             
             let headerView: HeaderCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "profileHeader", for: indexPath) as! HeaderCollectionReusableView
             
-            headerView.profileImage.image = UIImage(named: images[1])
+            // valor temporario
+            headerView.profileImage.image = UIImage(named: "pombo")
             headerView.profileImage.contentMode = .scaleAspectFill
             
             headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2

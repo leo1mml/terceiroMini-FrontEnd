@@ -75,6 +75,30 @@ class UserNet {
     }
     
     /**
+     Gets the data of all the users in the database.
+     
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter lastWinners: The users retrieved by the task.
+     - parameter error: The error that may occur.
+     */
+    
+    class func getLastWinners(completion: @escaping (_ lastWinners: [User]?, _ error: Error?) -> Void) {
+        let completeDomain = R.usersDomain + "/getLastWinners"
+        Alamofire.request(completeDomain).validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "users")!
+            let ret = self.buildUserArray(fromDictionaryArray: arr)
+            
+            completion(ret, nil)
+        }
+    }
+    
+    /**
      
      Gets an user by the server comunication token.
      
@@ -225,8 +249,9 @@ class UserNet {
         let email = dic["email"] as! String
         let name = dic["name"] as! String
         let username = dic["userName"] as! String
+        let profileImageUrl = dic["profilePhoto"] as? String ?? nil
         
-        return User(id, email, name, username)
+        return User(id, email, name, username, profileImageUrl)
     }
     
     /**
@@ -240,6 +265,7 @@ class UserNet {
         return ["_id": u.id ?? "",
                 "email": u.email,
                 "name": u.name,
-                "userName": u.username]
+                "userName": u.username,
+                "profileImageUrl:": u.profilePhotoUrl ?? ""]
     }
 }

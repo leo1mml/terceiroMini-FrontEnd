@@ -116,6 +116,7 @@
                                                                     </view>
                                                                 </subviews>
                                                             </view>
+                                                            <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="zkY-vC-jfD" firstAttribute="leading" secondItem="xJg-Xg-8Mx" secondAttribute="leading" id="0RH-Vk-IO0"/>
                                                                 <constraint firstAttribute="bottomMargin" secondItem="t3D-Qx-RM3" secondAttribute="bottom" constant="20" id="Egr-Xw-aEv"/>
@@ -205,7 +206,7 @@
                                                                         <rect key="frame" x="-0.5" y="0.0" width="105" height="121"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uf-Ox-lnJ">
-                                                                                <rect key="frame" x="21.5" y="105" width="62" height="16"/>
+                                                                                <rect key="frame" x="22" y="105" width="62" height="16"/>
                                                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -278,6 +279,9 @@
                                                 <constraint firstItem="mXz-k5-JWe" firstAttribute="leading" secondItem="Ytu-Lq-yeo" secondAttribute="leading" id="zrK-v4-p7B"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lastWinnersCollectionView" destination="mXz-k5-JWe" id="QEI-VJ-yuu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -310,7 +314,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRj-Bv-phO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="162.5" height="154"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pombo" translatesAutoresizingMaskIntoConstraints="NO" id="amY-sv-WpP">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="amY-sv-WpP">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="154"/>
                                                                             </imageView>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCY-t5-DeF" customClass="GradientView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">

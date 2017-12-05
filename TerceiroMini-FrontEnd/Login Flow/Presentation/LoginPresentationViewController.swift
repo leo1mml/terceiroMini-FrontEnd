@@ -11,15 +11,11 @@ import UIKit
 private let segueToLogin = "presentationToLogin"
 private let segueToRegister = "presentationToRegister"
 
-class LoginPresentationViewController: UIViewController, LoginPresentationView {
+class LoginPresentationViewController: StatusBarHiddenViewController, LoginPresentationView {
 
     // MARK: - Attributes
     
     var presenter: LoginPresentationPresenter?
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
     
     // MARK: - Outlets
     
@@ -42,8 +38,6 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
         
         emailLoginButton.addTarget(self, action: #selector(emailLoginAction), for: .touchUpInside)
         facebookLoginButton.addTarget(self, action: #selector(facebookLoginAction), for: .touchUpInside)
-        
-        setupButtonRadius()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,14 +52,6 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
         welcomeTextLabel.text = "Seja bem-vindo!"
         instructionTextLabel.text = "para concluir a ação,\nfaça seu login"
         agreementWarningLabel.text = "Ao entrar no aplicativo, você concorda com os nossos termos de serviço e políticas de privacidade."
-    }
-    
-    private func setupButtonRadius() {
-        
-        let radius = emailLoginButton.frame.height / 2
-        
-        emailLoginButton.layer.cornerRadius = radius
-        facebookLoginButton.layer.cornerRadius = radius
     }
     
     // MARK: - Actions
@@ -99,5 +85,4 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
     func goToRegister() {
         performSegue(withIdentifier: segueToRegister, sender: self)
     }
-    
 }

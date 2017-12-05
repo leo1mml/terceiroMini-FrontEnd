@@ -43,6 +43,31 @@ class ChallengeNet {
         }
     }
     
+    /**
+     
+     Gets the challenge by the idChallenge in the database.
+     
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter c: The challenge retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    class func getChallenge(completion: @escaping (_ c: Challenge?, _ e: Error?) -> Void, _ id: String) {
+        let completeDomain = R.challengesDomain + "/getById/" + id
+        
+        Alamofire.request(completeDomain).validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let arr = NetHelper.extractDictionary(fromJson: val, key: "challenge")!
+            let clg = buildChallenge(fromDictionary: arr)
+            
+            completion(clg, nil)
+        }
+    }
+    
     // MARK: - Auxiliar methods
     
     /**

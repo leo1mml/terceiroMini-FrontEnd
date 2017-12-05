@@ -9,7 +9,7 @@
 import Foundation
 
 protocol OpenChallengesCellView {
-    func reloadCollectionView(challenges: [Challenge])
+    func reloadCollectionView(with challenges: [Challenge])
 }
 
 protocol OpenChallengesCellPresenter {

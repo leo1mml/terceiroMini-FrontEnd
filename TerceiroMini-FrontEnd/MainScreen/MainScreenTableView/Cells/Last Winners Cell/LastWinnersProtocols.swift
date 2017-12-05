@@ -12,9 +12,11 @@ import UIKit
 protocol LastWinnersView {
     func styleWinnerImage(winnerPhoto: UIImageView)
     func styleProfilePhotoImage(winnerProfilePhoto: UIImageView)
-    
+    func appendNewUser(user: User)
+    func appendChallenges(challenges: [Challenge])
 }
 
 protocol LastWinnersPresenter {
-    
+    func fetchLastChallenges()
+    func fetchWinnerFor(challenges: [Challenge])
 }

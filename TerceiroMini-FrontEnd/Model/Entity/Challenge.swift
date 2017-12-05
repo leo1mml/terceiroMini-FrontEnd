@@ -16,6 +16,7 @@ class Challenge {
     let endDate: Date
     let imageUrl: String
     let numPhotos: Int
+    var winner: String?
     
     var isOver: Bool {
 
@@ -38,12 +39,13 @@ class Challenge {
         }
     }
     
-    init(_ id: String, _ theme: String, _ startDate: Date, _ endDate: Date, _ imageUrl: String, _ numPhotos: Int) {
+    init(_ id: String, _ theme: String, _ startDate: Date, _ endDate: Date, _ imageUrl: String, _ numPhotos: Int, _ winner: String?) {
         self.id = id
         self.theme = theme
         self.startDate = startDate
         self.endDate = endDate
         self.imageUrl = imageUrl
         self.numPhotos = numPhotos
+        self.winner = winner
     }
 }

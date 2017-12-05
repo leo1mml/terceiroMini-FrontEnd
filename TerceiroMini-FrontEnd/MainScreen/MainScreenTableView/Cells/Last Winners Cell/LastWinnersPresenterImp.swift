@@ -16,4 +16,27 @@ class LastWinnersPresenterImp: LastWinnersPresenter {
         self.view = view
     }
     
+    func fetchLastChallenges() {
+        NetworkManager.getLastChallenges { (challenges, err) in
+            if(err == nil){
+                self.view?.appendChallenges(challenges: challenges!)
+//                self.view?.reloadCollectionView(with: challenges!)
+            }
+        }
+    }
+    
+    func fetchWinnerFor(challenges: [Challenge]) {
+        for challenge in challenges {
+            NetworkManager.getUser(byId: challenge.winner!, completion: { (winner, err) in
+                if let user = winner {
+                    self.view?.appendNewUser(user: user)
+                }
+            })
+        }
+    }
+    
+    
+    
+    
+    
 }

@@ -23,9 +23,9 @@ class OpenChallengesCellPresenterImp: OpenChallengesCellPresenter {
     
     
     func fetchChallenges(){
-        NetworkManager.getAllChallenges(completion: { (challenges, err) in
+        NetworkManager.getOpenChallenges(completion: { (challenges, err) in
             if let challenges = challenges{
-                self.view?.reloadCollectionView(challenges: challenges)
+                self.view?.reloadCollectionView(with: challenges)
             }
         })
     }

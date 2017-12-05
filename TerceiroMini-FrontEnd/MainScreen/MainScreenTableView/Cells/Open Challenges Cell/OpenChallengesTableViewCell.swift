@@ -55,12 +55,11 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     }
 
     
-    func reloadCollectionView(challenges: [Challenge]) {
+    func reloadCollectionView(with challenges: [Challenge]) {
         DispatchQueue.main.async {
             self.challenges = challenges
             self.collectionView.reloadData()
         }
-        
     }
     
     

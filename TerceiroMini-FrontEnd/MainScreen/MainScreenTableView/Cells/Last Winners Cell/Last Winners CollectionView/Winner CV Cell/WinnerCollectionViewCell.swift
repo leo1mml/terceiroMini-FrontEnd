@@ -17,13 +17,12 @@ class WinnerCollectionViewCell: UICollectionViewCell {
     
     var challenge : Challenge? {
         didSet {
-            self.nameLabel.text = challenge?.theme
             setupChallengeImage()
         }
     }
     var user : User? {
         didSet {
-            self.nameLabel.text = user?.name
+            self.nameLabel.text = user?.name ?? user?.email
             setupUserImage()
         }
     }
@@ -50,7 +49,7 @@ class WinnerCollectionViewCell: UICollectionViewCell {
             DispatchQueue.main.async(execute: {
                 if let photoUrl = self.user?.profilePhotoUrl {
                     UIImage.fetch(with: photoUrl) { (image) in
-                        self.photoImage.image = image
+                        self.profilePhoto.image = image
                         self.imageCache.setObject(image, forKey: NSString(string: (self.challenge?.imageUrl)!))
                     }
                 }

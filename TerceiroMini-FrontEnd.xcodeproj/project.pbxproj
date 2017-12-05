@@ -72,6 +72,13 @@
 		083982C31FC8B75800E45D10 /* MainScreenTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A0E82F61FC74A1B00218C80 /* MainScreenTableView.storyboard */; };
 		083E55171FC84889004E4EC0 /* UserNetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */; };
 		083E551B1FC84F41004E4EC0 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E551A1FC84F41004E4EC0 /* R.swift */; };
+		08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */; };
+		0867DD3F1FD5C04B003AAE8D /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0867DD3C1FD5C04A003AAE8D /* back-button@2x.png */; };
+		0867DD401FD5C04B003AAE8D /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0867DD3D1FD5C04A003AAE8D /* back-button.png */; };
+		0867DD411FD5C04B003AAE8D /* back-button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0867DD3E1FD5C04B003AAE8D /* back-button@3x.png */; };
+		0867DD431FD5C12A003AAE8D /* login-background-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0867DD421FD5C12A003AAE8D /* login-background-photo.png */; };
+		0867DD451FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */; };
+		0867DD471FD5C6C4003AAE8D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */; };
 		086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */; };
 		086D279A1FCC844B00D9F547 /* LoginPresentationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */; };
 		086D279C1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D279B1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift */; };
@@ -97,6 +104,8 @@
 		08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F961FBB544C0039EAFE /* LoginProtocols.swift */; };
 		14103C9F1FBE221800726C0B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14103C9E1FBE221800726C0B /* Profile.storyboard */; };
 		1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */; };
+		148AE59D1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */; };
+		148AE5A11FD1ACA1005108E7 /* ChallengeClosedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */; };
 		14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */; };
 		14D106201FBE00B000AA9F89 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */; };
 		14D106221FBE00CC00AA9F89 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */; };
@@ -195,6 +204,13 @@
 		08297B0B1FC74B2E00701F9B /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetUnitTests.swift; sourceTree = "<group>"; };
 		083E551A1FC84F41004E4EC0 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineTextField.swift; sourceTree = "<group>"; };
+		0867DD3C1FD5C04A003AAE8D /* back-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button@2x.png"; sourceTree = "<group>"; };
+		0867DD3D1FD5C04A003AAE8D /* back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button.png"; sourceTree = "<group>"; };
+		0867DD3E1FD5C04B003AAE8D /* back-button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button@3x.png"; sourceTree = "<group>"; };
+		0867DD421FD5C12A003AAE8D /* login-background-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-background-photo.png"; sourceTree = "<group>"; };
+		0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarHiddenViewController.swift; sourceTree = "<group>"; };
+		0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationViewController.swift; sourceTree = "<group>"; };
 		086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationProtocols.swift; sourceTree = "<group>"; };
 		086D279B1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationPresenterImpl.swift; sourceTree = "<group>"; };
@@ -221,6 +237,10 @@
 		08F06F961FBB544C0039EAFE /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		14103C9E1FBE221800726C0B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		148AE5961FD1A79F005108E7 /* ChallengeClosedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedViewController.swift; sourceTree = "<group>"; };
+		148AE59A1FD1A81B005108E7 /* ChallengeClosed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengeClosed.storyboard; sourceTree = "<group>"; };
+		148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedProtocols.swift; sourceTree = "<group>"; };
+		148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedPresenter.swift; sourceTree = "<group>"; };
 		14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
@@ -381,14 +401,14 @@
 			path = "Next Challenge CV Cell";
 			sourceTree = "<group>";
 		};
-		08297AE01FC74B1E00701F9B /* SignUp */ = {
+		08297AE01FC74B1E00701F9B /* Register */ = {
 			isa = PBXGroup;
 			children = (
 				08297AE11FC74B1E00701F9B /* SignUpViewController.swift */,
 				08297AE21FC74B1E00701F9B /* SignUpPresenter.swift */,
 				08297AE31FC74B1E00701F9B /* SignUpProtocols.swift */,
 			);
-			path = SignUp;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		08297AE71FC74B2E00701F9B /* fonts */ = {
@@ -443,6 +463,49 @@
 			path = NetUnitTests;
 			sourceTree = "<group>";
 		};
+		08407C3E1FD254DF00B7A003 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */,
+				0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */,
+				0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		084F74571FD581730071C94A /* LoginFlow */ = {
+			isa = PBXGroup;
+			children = (
+				8A5D5CEE1FB0D22C00C24725 /* Main.storyboard */,
+			);
+			path = LoginFlow;
+			sourceTree = "<group>";
+		};
+		0867DD3A1FD5AE0E003AAE8D /* login-presentation */ = {
+			isa = PBXGroup;
+			children = (
+				086D27B91FCCA62D00D9F547 /* presentation-login-background.png */,
+				086D27B11FCCA4A700D9F547 /* presentation-login-logo.png */,
+				086D27AB1FCCA48200D9F547 /* presentation-login-logo@2x.png */,
+				086D27AC1FCCA48200D9F547 /* presentation-login-logo@3x.png */,
+				086D27B41FCCA5A800D9F547 /* presentation-login-exit.png */,
+				086D27B31FCCA5A700D9F547 /* presentation-login-exit@2x.png */,
+				086D27B51FCCA5A800D9F547 /* presentation-login-exit@3x.png */,
+			);
+			path = "login-presentation";
+			sourceTree = "<group>";
+		};
+		0867DD3B1FD5AE2D003AAE8D /* login */ = {
+			isa = PBXGroup;
+			children = (
+				0867DD3D1FD5C04A003AAE8D /* back-button.png */,
+				0867DD3C1FD5C04A003AAE8D /* back-button@2x.png */,
+				0867DD3E1FD5C04B003AAE8D /* back-button@3x.png */,
+				0867DD421FD5C12A003AAE8D /* login-background-photo.png */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
 		086D27961FCC83D700D9F547 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,13 +519,8 @@
 		086D279F1FCC99E300D9F547 /* temp */ = {
 			isa = PBXGroup;
 			children = (
-				086D27B91FCCA62D00D9F547 /* presentation-login-background.png */,
-				086D27B11FCCA4A700D9F547 /* presentation-login-logo.png */,
-				086D27AB1FCCA48200D9F547 /* presentation-login-logo@2x.png */,
-				086D27AC1FCCA48200D9F547 /* presentation-login-logo@3x.png */,
-				086D27B41FCCA5A800D9F547 /* presentation-login-exit.png */,
-				086D27B31FCCA5A700D9F547 /* presentation-login-exit@2x.png */,
-				086D27B51FCCA5A800D9F547 /* presentation-login-exit@3x.png */,
+				0867DD3B1FD5AE2D003AAE8D /* login */,
+				0867DD3A1FD5AE0E003AAE8D /* login-presentation */,
 			);
 			path = temp;
 			sourceTree = "<group>";
@@ -485,6 +543,7 @@
 				08297ADA1FC74AEB00701F9B /* MainScreen.storyboard */,
 				08297ADC1FC74AEB00701F9B /* TableHeader.xib */,
 				08297ADB1FC74AEB00701F9B /* MainScreenTableView.storyboard */,
+				148AE59A1FD1A81B005108E7 /* ChallengeClosed.storyboard */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -550,8 +609,10 @@
 		08F06F9A1FBB58FA0039EAFE /* Login Flow */ = {
 			isa = PBXGroup;
 			children = (
+				08407C3E1FD254DF00B7A003 /* Support */,
 				086D27961FCC83D700D9F547 /* Presentation */,
 				086D27A21FCC9A0900D9F547 /* Login */,
+				08297AE01FC74B1E00701F9B /* Register */,
 			);
 			path = "Login Flow";
 			sourceTree = "<group>";
@@ -559,12 +620,22 @@
 		08F06F9B1FBB594A0039EAFE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				084F74571FD581730071C94A /* LoginFlow */,
 				8A1CC5A81FBE66F900BC4963 /* Main Screen */,
-				8A5D5CEE1FB0D22C00C24725 /* Main.storyboard */,
 				8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */,
 				14103C9E1FBE221800726C0B /* Profile.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		148AE5951FD1A5BB005108E7 /* ChallengeClosed */ = {
+			isa = PBXGroup;
+			children = (
+				148AE5961FD1A79F005108E7 /* ChallengeClosedViewController.swift */,
+				148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */,
+				148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */,
+			);
+			path = ChallengeClosed;
 			sourceTree = "<group>";
 		};
 		14D1061C1FBE004D00AA9F89 /* Profile */ = {
@@ -645,11 +716,11 @@
 			children = (
 				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
 				8A0E82C01FC7443D00218C80 /* Extensions */,
-				14D1061C1FBE004D00AA9F89 /* Profile */,
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
-				08F06F9A1FBB58FA0039EAFE /* Login Flow */,
-				08297AE01FC74B1E00701F9B /* SignUp */,
 				08276F0E1FC73F8C00A8E605 /* MainScreen */,
+				148AE5951FD1A5BB005108E7 /* ChallengeClosed */,
+				14D1061C1FBE004D00AA9F89 /* Profile */,
+				08F06F9A1FBB58FA0039EAFE /* Login Flow */,
 				0899E9FB1FC74CE400F148DC /* Model */,
 				08297AE71FC74B2E00701F9B /* fonts */,
 				086D279F1FCC99E300D9F547 /* temp */,
@@ -766,6 +837,7 @@
 				086D27B61FCCA5A800D9F547 /* presentation-login-exit@2x.png in Resources */,
 				8A5D5CF51FB0D22C00C24725 /* LaunchScreen.storyboard in Resources */,
 				08297B151FC74B2E00701F9B /* Montserrat-Thin.otf in Resources */,
+				0867DD3F1FD5C04B003AAE8D /* back-button@2x.png in Resources */,
 				08297B161FC74B2E00701F9B /* MontserratAlternates-MediumItalic.otf in Resources */,
 				083982C11FC8B70E00E45D10 /* TableHeader.xib in Resources */,
 				08297B181FC74B2E00701F9B /* MontserratAlternates-BlackItalic.otf in Resources */,
@@ -786,6 +858,7 @@
 				08297B0C1FC74B2E00701F9B /* Montserrat-MediumItalic.otf in Resources */,
 				14103C9F1FBE221800726C0B /* Profile.storyboard in Resources */,
 				08297B1D1FC74B2E00701F9B /* Montserrat-Medium.otf in Resources */,
+				0867DD431FD5C12A003AAE8D /* login-background-photo.png in Resources */,
 				086D27AE1FCCA48300D9F547 /* presentation-login-logo@2x.png in Resources */,
 				08297B291FC74B2E00701F9B /* MontserratAlternates-ExtraLight.otf in Resources */,
 				08297B101FC74B2E00701F9B /* MontserratAlternates-LightItalic.otf in Resources */,
@@ -802,7 +875,9 @@
 				08297B261FC74B2E00701F9B /* Montserrat-ExtraBold.otf in Resources */,
 				086D27BA1FCCA62D00D9F547 /* presentation-login-background.png in Resources */,
 				08297B121FC74B2E00701F9B /* Montserrat-BoldItalic.otf in Resources */,
+				0867DD401FD5C04B003AAE8D /* back-button.png in Resources */,
 				08297B231FC74B2E00701F9B /* Montserrat-Regular.otf in Resources */,
+				0867DD411FD5C04B003AAE8D /* back-button@3x.png in Resources */,
 				08297B2C1FC74B2E00701F9B /* Montserrat-Black.otf in Resources */,
 				08297B1F1FC74B2E00701F9B /* Montserrat-SemiBoldItalic.otf in Resources */,
 				083982C31FC8B75800E45D10 /* MainScreenTableView.storyboard in Resources */,
@@ -932,6 +1007,7 @@
 			files = (
 				08276F2F1FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift in Sources */,
 				0899EA031FC74D1A00F148DC /* Challenge.swift in Sources */,
+				0867DD451FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift in Sources */,
 				08297AE61FC74B1E00701F9B /* SignUpProtocols.swift in Sources */,
 				083E551B1FC84F41004E4EC0 /* R.swift in Sources */,
 				1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */,
@@ -958,10 +1034,12 @@
 				088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */,
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
+				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,
 				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,
 				0899EA091FC74D3900F148DC /* PhotoNet.swift in Sources */,
+				148AE5A11FD1ACA1005108E7 /* ChallengeClosedPresenter.swift in Sources */,
 				0894ED8B1FC89BA800F87C2A /* NetworkManager.swift in Sources */,
 				08276F321FC73F8C00A8E605 /* ChallengeCellPresenter.swift in Sources */,
 				8A0E82C21FC744B800218C80 /* UIView+Extension.swift in Sources */,
@@ -978,10 +1056,12 @@
 				08276F371FC73F8C00A8E605 /* ChallengesCollectionViewProtocols.swift in Sources */,
 				0838B5C51FBF7A240051669B /* LoginPresenterImpl.swift in Sources */,
 				08276F311FC73F8C00A8E605 /* ChallengeCollectionViewCellProtocols.swift in Sources */,
+				148AE59D1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift in Sources */,
 				08276F2D1FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift in Sources */,
 				08297AE51FC74B1E00701F9B /* SignUpPresenter.swift in Sources */,
 				08276F3D1FC73F8C00A8E605 /* TableHeader.swift in Sources */,
 				0899EA0B1FC74D4100F148DC /* ChallengeNet.swift in Sources */,
+				0867DD471FD5C6C4003AAE8D /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1139,7 +1219,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JC4QT73C9E;
+				DEVELOPMENT_TEAM = JP3F8DJU56;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.bepiducb.TerceiroMini-FrontEnd";
@@ -1155,7 +1235,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JC4QT73C9E;
+				DEVELOPMENT_TEAM = JP3F8DJU56;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.bepiducb.TerceiroMini-FrontEnd";

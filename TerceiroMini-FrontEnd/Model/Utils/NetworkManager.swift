@@ -81,5 +81,9 @@ class NetworkManager {
     class func getLastChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {
         ChallengeNet.getLastChallenges(completion: completion)
     }
+    
+    class func getChallengeById(id: String, completion: @escaping (_ c: Challenge?, _ e: Error?) -> Void) {
+        ChallengeNet.getById(id: id, completion: completion)
+    }
 
 }

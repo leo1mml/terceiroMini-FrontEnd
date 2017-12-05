@@ -53,6 +53,10 @@ class ProfilePresenterImpl: ProfilePresenter {
                     images.append(image)
                 })
                 
+                NetworkManager.getChallenge(completion: { (challenge, err) in
+                    
+                }, photo.challengeId)
+                
             }
             
             self.view?.receiveImages(images: images)

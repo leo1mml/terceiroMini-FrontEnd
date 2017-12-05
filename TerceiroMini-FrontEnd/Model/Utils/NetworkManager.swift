@@ -69,5 +69,9 @@ class NetworkManager {
     class func getAllChallenges(completion: @escaping ([Challenge]?, Error?) -> Void) {
         ChallengeNet.getAll(completion: completion)
     }
+    
+    class func getChallenge(completion: @escaping (Challenge?, Error?) -> Void, _ id: String){
+        ChallengeNet.getChallenge(completion: completion, id)
+    }
 
 }

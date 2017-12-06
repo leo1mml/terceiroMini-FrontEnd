@@ -6,8 +6,8 @@ target 'TerceiroMini-FrontEnd' do
   use_frameworks!
 
   # Pods for TerceiroMini-FrontEnd
-   pod 'Alamofire', '~> 4.5'
    pod 'Cloudinary', '~> 2.0'
+   pod 'Alamofire', '~> 4.5'
 
   target 'TerceiroMini-FrontEndTests' do
     inherit! :search_paths

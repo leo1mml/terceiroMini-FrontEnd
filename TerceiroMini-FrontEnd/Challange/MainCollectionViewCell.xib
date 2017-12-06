@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainCollectionViewCell" id="vCM-bF-g4I" customClass="MainCollectionViewCell" customModule="TerceiroMini_FrontEnd">
+            <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UfZ-6j-Wnf">
+                        <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOVA!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTx-2H-K5Q">
+                        <rect key="frame" x="5" y="5" width="48.5" height="21"/>
+                        <color key="backgroundColor" red="0.14825960990000001" green="0.17234438660000001" blue="0.18905740979999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Wb4-gF-s9D"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <color key="textColor" red="0.97626000639999999" green="0.98046904800000001" blue="0.98032146689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="799" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaB-lP-gN1" userLabel="clicks">
+                        <rect key="frame" x="97" y="5" width="19" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="miniClicksBranco" translatesAutoresizingMaskIntoConstraints="NO" id="LzG-q7-SrT">
+                        <rect key="frame" x="84" y="6" width="11" height="11"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="11" id="Eac-f6-12A"/>
+                            <constraint firstAttribute="height" constant="11" id="rDG-KU-PMN"/>
+                        </constraints>
+                    </imageView>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagem1.png" translatesAutoresizingMaskIntoConstraints="NO" id="4tl-nx-fTZ">
+                        <rect key="frame" x="5" y="95" width="21" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="2ZM-kz-qW9"/>
+                            <constraint firstAttribute="width" constant="21" id="sJB-ze-9NM"/>
+                        </constraints>
+                    </imageView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="carla.maciel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncl-rz-4AT">
+                        <rect key="frame" x="30" y="99" width="58" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="4tl-nx-fTZ" secondAttribute="bottom" constant="5" id="4H6-jX-CFm"/>
+                <constraint firstItem="hTx-2H-K5Q" firstAttribute="leading" secondItem="vCM-bF-g4I" secondAttribute="leading" constant="5" id="GaN-cs-kG6"/>
+                <constraint firstItem="4tl-nx-fTZ" firstAttribute="leading" secondItem="vCM-bF-g4I" secondAttribute="leading" constant="5" id="Qi8-Cd-Jtg"/>
+                <constraint firstAttribute="bottom" secondItem="ncl-rz-4AT" secondAttribute="bottom" constant="10" id="Y0c-xg-1kk"/>
+                <constraint firstItem="hTx-2H-K5Q" firstAttribute="top" secondItem="vCM-bF-g4I" secondAttribute="top" constant="5" id="a6k-Ft-SWm"/>
+                <constraint firstItem="ncl-rz-4AT" firstAttribute="leading" secondItem="4tl-nx-fTZ" secondAttribute="trailing" constant="4" id="cBO-W9-9h1"/>
+                <constraint firstItem="UaB-lP-gN1" firstAttribute="top" secondItem="vCM-bF-g4I" secondAttribute="top" constant="5" id="cFs-l5-tIN"/>
+                <constraint firstItem="hTx-2H-K5Q" firstAttribute="width" secondItem="vCM-bF-g4I" secondAttribute="width" multiplier="0.4" id="dRT-D3-DyE"/>
+                <constraint firstItem="UaB-lP-gN1" firstAttribute="leading" secondItem="LzG-q7-SrT" secondAttribute="trailing" constant="2" id="hlE-Yg-6ng"/>
+                <constraint firstItem="LzG-q7-SrT" firstAttribute="top" secondItem="vCM-bF-g4I" secondAttribute="top" constant="6" id="p2Z-6u-t87"/>
+                <constraint firstAttribute="trailing" secondItem="UaB-lP-gN1" secondAttribute="trailing" constant="5" id="zm0-eX-US3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="sZJ-lI-Wdj"/>
+            <size key="customSize" width="121" height="121"/>
+            <connections>
+                <outlet property="cellImage" destination="UfZ-6j-Wnf" id="ii7-bY-NT6"/>
+                <outlet property="clicksLogo" destination="LzG-q7-SrT" id="BAk-Wl-X9x"/>
+                <outlet property="numberOfVotes" destination="UaB-lP-gN1" id="Pv6-nJ-jWN"/>
+                <outlet property="statusLabel" destination="hTx-2H-K5Q" id="YV7-07-MgY"/>
+                <outlet property="usernameLabel" destination="ncl-rz-4AT" id="zlj-mF-pHM"/>
+                <outlet property="usernamePhoto" destination="4tl-nx-fTZ" id="Z3l-Ie-ROx"/>
+            </connections>
+            <point key="canvasLocation" x="42.5" y="139.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="imagem1.png" width="375" height="400"/>
+        <image name="miniClicksBranco" width="12" height="13"/>
+    </resources>
+</document>

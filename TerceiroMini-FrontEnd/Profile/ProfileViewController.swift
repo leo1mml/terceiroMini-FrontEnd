@@ -101,13 +101,3 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     }
     
 }
-
-extension UIImageView{
-    func addChallengeGradientLayer(frame: CGRect, colors: [UIColor] ){
-        let gradient = CAGradientLayer()
-        gradient.frame = self.frame
-        gradient.colors = colors.map{$0.cgColor}
-        self.layer.addSublayer(gradient)
-    }
-}
-

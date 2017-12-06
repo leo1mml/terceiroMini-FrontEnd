@@ -53,7 +53,7 @@ class ChallengeNet {
      */
     class func getById(id: String, completion: @escaping (_ c: Challenge?, _ e: Error?) -> Void) {
         
-        Alamofire.request(R.challengesDomain + "/getById/:"+id).validate().responseJSON { response in
+        Alamofire.request(R.challengesDomain + "/getById/"+id).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
                 completion(nil, response.error)

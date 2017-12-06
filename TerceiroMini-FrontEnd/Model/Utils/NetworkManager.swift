@@ -85,5 +85,8 @@ class NetworkManager {
     class func getComingSoonChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {
         ChallengeNet.getComingSoonChallenges(completion: completion)
     }
+    class func getChallengeById(id: String, completion: @escaping (_ c: Challenge?, _ e: Error?) -> Void) {
+        ChallengeNet.getById(id: id, completion: completion)
+    }
 
 }

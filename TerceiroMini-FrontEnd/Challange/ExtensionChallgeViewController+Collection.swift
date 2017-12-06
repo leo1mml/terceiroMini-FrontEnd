@@ -13,11 +13,8 @@ import UIKit
 extension ChallengeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //if collectionView == self.featuredCollectionView{
-         //   return imageSampleLink.count
-        //}else{
-            return 50
-       // }
+        
+            return 0
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -43,8 +40,9 @@ extension ChallengeViewController: UICollectionViewDataSource, UICollectionViewD
         default:
             break
         }
-    //    cell.cellImage.image = UIImage(named: "imagem1")
-    //      cell.numberOfVotes.text = "111"
+        
+        let url = URL(string: challengePhotos[indexPath.row].url!)
+        getImageFromUrl(imageURL: url, newImage: cell.cellImage)
           //cell.statusLabel.text = "vencedor"
 //        cell.usernameLabel.text = "aaa.aaa"
       //  cell.usernamePhoto.image = UIImage(named: "imagem1")

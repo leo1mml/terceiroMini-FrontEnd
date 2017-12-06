@@ -12,10 +12,16 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     
     
-    var challengeImages : [String]!
-
+    
+    
+    
+    
+    //var challengeImages : [String]!
+    var challengePhotos : [Photo]!
     var presenter : ChallengePresenter?
     var header: HeaderChallengeCollectionReusableView!
+    var challengeID : String?
+    
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
 
@@ -24,6 +30,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     // - mainButton
     
     var state = ChallengeState.votation
+    var endDate : Date?
     
     //status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -52,13 +59,14 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         
         presenter = ChallengePresenterImpl(challengeView: self)
 
-        resolveState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-            presenter?.getChallengeHeader()
+        challengeID = "5a2163e44ab66300147b416d"
+        presenter?.getChallengeHeader(challengeID: challengeID!)
+        presenter?.getChallengeImages(challengeID: challengeID!)
     }
     
     func resolveState(){
@@ -117,7 +125,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let infoImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            presenter?.sendPhotoToCloudinary(infoImage: infoImage)
+            presenter?.sendPhotoToCloudinary(infoImage: infoImage, challengeID: challengeID!)
             //change status to participating
            
         }
@@ -145,6 +153,8 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
+            
+            
         }
     }
     
@@ -163,19 +173,29 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     
     
-    func setHeader(theme: String, endDate: Date, mainImageURL: String) {
+    func setHeader(theme: String, endDate: Date, mainImageURL: String,numPhotos: Int) {
         header.challengeLabel.text = theme
         UIImage.fetch(with: mainImageURL) { (image) in
             self.header.mainImage.image = image
         }
-        let now = Date()
-        header.statusLabel.text = "\(now.timeIntervalSince(endDate))"
-        
+        self.header.numberOfPhotos.text = "\(numPhotos) fotos"
+        self.endDate = endDate
+        timerUpdate()
         
     }
     
+    func timerUpdate(){
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setTimerLabelText), userInfo: nil, repeats: true)
+    }
     
+    @objc func setTimerLabelText(){
+        let now = Date()
+        header.statusLabel.text = self.endDate?.timeIntervalSince(now).format() ?? "erro"
+    }
     
+    func setChallengeState(state: ChallengeState) {
+        self.state = state
+    }
     
     
     func initDarkStatusBar(){
@@ -185,6 +205,10 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         view.addSubview(statusBarView)
     }
     
+    func setChallengePhotos(photos: [Photo]) {
+        self.challengePhotos = photos
+    }
+    
 }
 
 enum ChallengeState {
@@ -192,15 +216,6 @@ enum ChallengeState {
     case votation
     case finished
     case participating
-}
-
-extension UIImageView{
-    func addChallengeGradientLayer(frame: CGRect, colors: [UIColor] ){
-        let gradient = CAGradientLayer()
-        gradient.frame = self.frame
-        gradient.colors = colors.map{$0.cgColor}
-        self.layer.addSublayer(gradient)
-    }
 }
 
 @IBDesignable

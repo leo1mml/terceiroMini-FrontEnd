@@ -15,13 +15,17 @@ protocol ChallengeView{
     func showTimer()
     func getPhoto()
     func takePhoto()
+    func setChallengeState(state: ChallengeState)
     func showPhotoMenu()
-    func setHeader(theme: String, endDate: Date, mainImageURL: String)
+    func setHeader(theme: String, endDate: Date, mainImageURL: String, numPhotos: Int)
+    func setChallengePhotos(photos: [Photo])
 }
 
 protocol ChallengePresenter{
-    func sendPhotoToCloudinary(infoImage: UIImage)
-    func getChallengeTimer()
+    func sendPhotoToCloudinary(infoImage: UIImage, challengeID: String)
     func mainButtonClicked()
-    func getChallengeHeader()
+    func getChallengeHeader(challengeID: String)
+    func getChallengeState(challenge: Challenge)
+    func getChallengeImages(challengeID: String)
+    
 }

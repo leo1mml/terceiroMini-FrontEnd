@@ -11,8 +11,7 @@ import UIKit
 
 protocol ProfileView {
     
-    func receiveImages(images: [UIImage])
-    func erroLoadImages()
+    func receiveDatas(profileUserHolder: ProfileUserHolder)
     
 }
 

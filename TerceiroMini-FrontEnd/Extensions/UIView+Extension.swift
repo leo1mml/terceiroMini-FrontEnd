@@ -16,11 +16,22 @@ extension UIView {
         gradientLayer.frame = bounds
         gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
         gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.55)
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.1)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.9999)
         
         layer.insertSublayer(gradientLayer, at: 0)
         
+    }
+    
+    func setCustomGradient(colorOne: UIColor, colorTwo: UIColor, locationX: Float, locationY: Float, startPoint: CGPoint, endPoint: CGPoint){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
+        gradientLayer.locations = [locationX as NSNumber, locationY as NSNumber]
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
+        
+        layer.insertSublayer(gradientLayer, at: 0)
     }
     
     

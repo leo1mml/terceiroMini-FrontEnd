@@ -30,6 +30,10 @@ class NetworkManager {
         UserNet.get(byId: id, completion: completion)
     }
     
+    class func getLastWinners(completion: @escaping (_ lastWinners: [User]?, _ error: Error?) -> Void) {
+        UserNet.getLastWinners(completion: completion)
+    }
+    
     class func createLogin(email: String, username: String?, password: String, completion: @escaping (Bool) -> Void) {
         UserNet.createLogin(username: username, email: email, password: password, completion: completion)
     }
@@ -68,6 +72,21 @@ class NetworkManager {
     
     class func getAllChallenges(completion: @escaping ([Challenge]?, Error?) -> Void) {
         ChallengeNet.getAll(completion: completion)
+    }
+    
+    class func getOpenChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {
+        ChallengeNet.getOpenChallenges(completion: completion)
+    }
+    
+    class func getLastChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {
+        ChallengeNet.getLastChallenges(completion: completion)
+    }
+    
+    class func getComingSoonChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {
+        ChallengeNet.getComingSoonChallenges(completion: completion)
+    }
+    class func getChallengeById(id: String, completion: @escaping (_ c: Challenge?, _ e: Error?) -> Void) {
+        ChallengeNet.getById(id: id, completion: completion)
     }
 
 }

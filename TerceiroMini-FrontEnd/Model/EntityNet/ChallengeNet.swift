@@ -43,6 +43,104 @@ class ChallengeNet {
         }
     }
     
+    /**
+     
+     Gets the data challenge by id in the database.
+     
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter c: The challenges retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    class func getById(id: String, completion: @escaping (_ c: Challenge?, _ e: Error?) -> Void) {
+        
+        Alamofire.request(R.challengesDomain + "/getById/:"+id).validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let arr = NetHelper.extractDictionary(fromJson: val, key: "challenge")!
+            let clg = buildChallenge(fromDictionary: arr)
+            
+            completion(clg, nil)
+        }
+    }
+    
+    /**
+     
+     Gets the data of all the challenges in the database.
+     
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter c: The challenges retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    
+    class func getLastChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {
+        
+        Alamofire.request(R.challengesDomain + "/lastChallenges").validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "challengesPast")!
+            let clg = buildChallenges(fromDictionaryArray: arr)
+            
+            completion(clg, nil)
+        }
+    }
+    
+    /**
+     
+     Gets the data of the incoming challenges in the database.
+     
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter c: The challenges retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    
+    class func getComingSoonChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {
+        
+        Alamofire.request(R.challengesDomain + "/comingSoonChallenges").validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "fourChallenges")!
+            let clg = buildChallenges(fromDictionaryArray: arr)
+            
+            completion(clg, nil)
+        }
+    }
+    /**
+     
+     Gets the data of the open challenges in the database.
+     
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter c: The challenges retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    
+    class func getOpenChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {
+        
+        Alamofire.request(R.challengesDomain + "/openChallenges").validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "challenges")!
+            let clg = buildChallenges(fromDictionaryArray: arr)
+            
+            completion(clg, nil)
+        }
+    }
+    
     // MARK: - Auxiliar methods
     
     /**
@@ -77,7 +175,10 @@ class ChallengeNet {
         let startDate = DateHelper.shared.getDate(fromString: startDateString)!
         let endDate = DateHelper.shared.getDate(fromString: endDateString)!
         
-        return Challenge(id, theme, startDate, endDate, imageUrl)
+        let numPhotos = dic["numPhotos"] as! Int
+        let winner = dic["_winner"] as? String ?? nil
+        
+        return Challenge(id, theme, startDate, endDate, imageUrl, numPhotos, winner)
     }
     
     

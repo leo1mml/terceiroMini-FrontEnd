@@ -8,17 +8,33 @@
 
 import UIKit
 
-class LastWinnersCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class LastWinnersCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, LastWinnersView {
+
+    var presenter : LastWinnersPresenter?
+    
+    @IBOutlet weak var lastWinnersCollectionView : UICollectionView!
+    
+    var challenges : [Challenge]?
+    var users : [User]?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.presenter = LastWinnersPresenterImp(self)
+        presenter?.fetchLastChallenges()
+        // Initialization code
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return challenges?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "lastWinner", for: indexPath) as! WinnerCollectionViewCell
-        cell.photoImage.image = UIImage(named: "pombo")
-        cell.profilePhoto.image = UIImage(named: "pombo")
-        cell.nameLabel.text = "Pombo Master"
+        cell.photoImage.image = nil
+        cell.profilePhoto.image = nil
+        cell.nameLabel.text = ""
+        cell.challenge = challenges?[indexPath.row]
+        cell.user = users?[indexPath.row]
         styleProfilePhotoImage(winnerProfilePhoto: cell.profilePhoto)
         styleWinnerImage(winnerPhoto: cell.photoImage)
         return cell
@@ -41,15 +57,26 @@ class LastWinnersCell: UITableViewCell, UICollectionViewDelegate, UICollectionVi
         winnerProfilePhoto.layer.cornerRadius = winnerProfilePhoto.frame.size.width/2
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
+    func appendNewUser(user: User) {
+        if(self.users == nil){
+            self.users = [User]()
+        }
+        DispatchQueue.main.async {
+            self.users?.append(user)
+            self.lastWinnersCollectionView.reloadData()
+        }
+        
+    }
     
-
+    func appendChallenges(challenges: [Challenge]) {
+        DispatchQueue.main.async {
+            self.challenges = challenges
+            self.presenter?.fetchWinnerFor(challenges: challenges)
+        }
+    }
 }

@@ -101,6 +101,7 @@
 		0899EA071FC74D3100F148DC /* UserNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899EA061FC74D3100F148DC /* UserNet.swift */; };
 		0899EA091FC74D3900F148DC /* PhotoNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899EA081FC74D3900F148DC /* PhotoNet.swift */; };
 		0899EA0B1FC74D4100F148DC /* ChallengeNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0899EA0A1FC74D4100F148DC /* ChallengeNet.swift */; };
+		08EC31E71FD866EB00B9C2D3 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08EC31E61FD866EB00B9C2D3 /* MainCollectionViewCell.xib */; };
 		08EF52821FD6D42700722A2F /* register-backgrond-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EF52811FD6D42700722A2F /* register-backgrond-photo.png */; };
 		08EF52851FD6D54B00722A2F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF52841FD6D54B00722A2F /* RegisterViewController.swift */; };
 		08EF52871FD6D73F00722A2F /* RegisterPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF52861FD6D73F00722A2F /* RegisterPresenterImpl.swift */; };
@@ -253,6 +254,7 @@
 		0899EA081FC74D3900F148DC /* PhotoNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoNet.swift; sourceTree = "<group>"; };
 		0899EA0A1FC74D4100F148DC /* ChallengeNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeNet.swift; sourceTree = "<group>"; };
 		08DFE8111FBF5F340065F2DE /* LoginPresenterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenterImpl.swift; sourceTree = "<group>"; };
+		08EC31E61FD866EB00B9C2D3 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
 		08EF52811FD6D42700722A2F /* register-backgrond-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register-backgrond-photo.png"; sourceTree = "<group>"; };
 		08EF52841FD6D54B00722A2F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		08EF52861FD6D73F00722A2F /* RegisterPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenterImpl.swift; sourceTree = "<group>"; };
@@ -726,9 +728,9 @@
 				48C882F11FC893FA000A57C2 /* FeaturedFavoriteClickCollectionViewCell.swift */,
 				489F1B981FCD7E3D00717C26 /* FeaturedFavoriteClickCollectionViewCell.xib */,
 				489F1B991FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift */,
+				08EC31E61FD866EB00B9C2D3 /* MainCollectionViewCell.xib */,
 				489F1B8C1FCC9C0200717C26 /* FeaturedMyClickCollectionViewCell.xib */,
 				48C882F21FC893FA000A57C2 /* MainCollectionViewCell.swift */,
-				08EC31E41FD864BD00B9C2D3 /* MainCollectionViewCell.xib */,
 				48EAFFED1FCF1EF6007018AC /* HeaderChallengeCollectionReusableView.swift */,
 				48EAFFEF1FCF2F21007018AC /* imagem1.png */,
 				48A7C4D21FD1EC3400EB5C1A /* ChallengeViewController+ChallengeHeaderDelegate.swift */,
@@ -961,7 +963,7 @@
 				08EF52821FD6D42700722A2F /* register-backgrond-photo.png in Resources */,
 				08297B2A1FC74B2E00701F9B /* MontserratAlternates-Regular.otf in Resources */,
 				086D27B21FCCA4A700D9F547 /* presentation-login-logo.png in Resources */,
-				08EC31E51FD864BD00B9C2D3 /* MainCollectionViewCell.xib in Resources */,
+				08EC31E71FD866EB00B9C2D3 /* MainCollectionViewCell.xib in Resources */,
 				08297B2B1FC74B2E00701F9B /* MontserratAlternates-ThinItalic.otf in Resources */,
 				08297B1E1FC74B2E00701F9B /* MontserratAlternates-SemiBoldItalic.otf in Resources */,
 				08297B261FC74B2E00701F9B /* Montserrat-ExtraBold.otf in Resources */,

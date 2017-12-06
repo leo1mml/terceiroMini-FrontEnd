@@ -105,7 +105,7 @@ class PhotoNet {
      - parameter e: The error that ocurred.
      */
     class func get(byChallengeId id: String, completion: @escaping (_ p: [Photo]?, _ e: Error?) -> Void) {
-        let completeDomain = R.challengesDomain + "/challenge/\(id)"
+        let completeDomain = R.photosDomain + "/challenge/\(id)"
         
         Alamofire.request(completeDomain).validate().responseJSON { response in
             

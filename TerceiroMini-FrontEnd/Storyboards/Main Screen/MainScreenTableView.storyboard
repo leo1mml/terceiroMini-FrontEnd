@@ -206,7 +206,7 @@
                                                                         <rect key="frame" x="-0.5" y="0.0" width="105" height="121"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uf-Ox-lnJ">
-                                                                                <rect key="frame" x="22" y="105" width="62" height="16"/>
+                                                                                <rect key="frame" x="22.5" y="105" width="62" height="16"/>
                                                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -321,7 +321,7 @@
                                                                                 <rect key="frame" x="0.0" y="-0.5" width="162.5" height="154.5"/>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tema" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-bI-bhh">
-                                                                                <rect key="frame" x="60.5" y="66" width="43.5" height="21"/>
+                                                                                <rect key="frame" x="60" y="66" width="43.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
                                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -404,6 +404,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="T1y-4E-5e9" secondAttribute="bottom" id="oZR-rn-cL9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nextChallengesCollectionView" destination="T1y-4E-5e9" id="zCS-Tr-xym"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

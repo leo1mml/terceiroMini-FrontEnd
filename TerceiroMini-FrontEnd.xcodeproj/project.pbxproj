@@ -421,6 +421,8 @@
 			isa = PBXGroup;
 			children = (
 				08276F251FC73F8C00A8E605 /* NextChallengeTableViewCell.swift */,
+				8ADF7C9D1FD742F40023BCEF /* NextChallengesProtocols.swift */,
+				8ADF7C9F1FD743060023BCEF /* NextChallengesCellPresenterImp.swift */,
 				08276F261FC73F8C00A8E605 /* Next Challenge CV Cell */,
 			);
 			path = "Next Challenges Cell";
@@ -1104,6 +1106,7 @@
 				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,
 				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
+				8ADF7CA01FD743060023BCEF /* NextChallengesCellPresenterImp.swift in Sources */,
 				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,
 				0899EA091FC74D3900F148DC /* PhotoNet.swift in Sources */,
 				148AE5A11FD1ACA1005108E7 /* ChallengeClosedPresenter.swift in Sources */,
@@ -1116,6 +1119,7 @@
 				14D106201FBE00B000AA9F89 /* ProfilePresenter.swift in Sources */,
 				08276F3A1FC73F8C00A8E605 /* NextChallengeTableViewCell.swift in Sources */,
 				14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */,
+				8ADF7C9E1FD742F40023BCEF /* NextChallengesProtocols.swift in Sources */,
 				0899E9FF1FC74D0900F148DC /* User.swift in Sources */,
 				08276F401FC73F8C00A8E605 /* MainScreenViewController.swift in Sources */,
 				48620F1E1FD72B1900A45E3E /* LastWinnersPresenterImp.swift in Sources */,

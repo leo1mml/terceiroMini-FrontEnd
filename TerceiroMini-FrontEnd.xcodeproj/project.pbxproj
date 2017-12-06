@@ -110,6 +110,8 @@
 		14D106201FBE00B000AA9F89 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */; };
 		14D106221FBE00CC00AA9F89 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */; };
 		14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */; };
+		481B81D01FD8632E000955E8 /* NextChallengesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B81CF1FD8632E000955E8 /* NextChallengesProtocols.swift */; };
+		481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B81D11FD8633F000955E8 /* NextChallengesCellPresenterImp.swift */; };
 		48620F1D1FD72AE600A45E3E /* TimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48620F1C1FD72AE600A45E3E /* TimeInterval+Extension.swift */; };
 		48620F1E1FD72B1900A45E3E /* LastWinnersPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A543E0A1FD5ED7D002392A3 /* LastWinnersPresenterImp.swift */; };
 		48620F221FD815F000A45E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48620F201FD815F000A45E3E /* Main.storyboard */; };
@@ -260,6 +262,8 @@
 		14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
 		14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		481B81CF1FD8632E000955E8 /* NextChallengesProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NextChallengesProtocols.swift; path = "TerceiroMini-FrontEnd/MainScreen/MainScreenTableView/Cells/Next Challenges Cell/NextChallengesProtocols.swift"; sourceTree = SOURCE_ROOT; };
+		481B81D11FD8633F000955E8 /* NextChallengesCellPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NextChallengesCellPresenterImp.swift; path = "TerceiroMini-FrontEnd/MainScreen/MainScreenTableView/Cells/Next Challenges Cell/NextChallengesCellPresenterImp.swift"; sourceTree = SOURCE_ROOT; };
 		48620F1C1FD72AE600A45E3E /* TimeInterval+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extension.swift"; sourceTree = "<group>"; };
 		48620F211FD815F000A45E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48620F231FD85CBA00A45E3E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -421,8 +425,6 @@
 			isa = PBXGroup;
 			children = (
 				08276F251FC73F8C00A8E605 /* NextChallengeTableViewCell.swift */,
-				8ADF7C9D1FD742F40023BCEF /* NextChallengesProtocols.swift */,
-				8ADF7C9F1FD743060023BCEF /* NextChallengesCellPresenterImp.swift */,
 				08276F261FC73F8C00A8E605 /* Next Challenge CV Cell */,
 			);
 			path = "Next Challenges Cell";
@@ -431,7 +433,9 @@
 		08276F261FC73F8C00A8E605 /* Next Challenge CV Cell */ = {
 			isa = PBXGroup;
 			children = (
+				481B81D11FD8633F000955E8 /* NextChallengesCellPresenterImp.swift */,
 				08276F271FC73F8C00A8E605 /* NextChallengesCollectionViewCell.swift */,
+				481B81CF1FD8632E000955E8 /* NextChallengesProtocols.swift */,
 			);
 			path = "Next Challenge CV Cell";
 			sourceTree = "<group>";
@@ -1077,6 +1081,7 @@
 				08297AE61FC74B1E00701F9B /* SignUpProtocols.swift in Sources */,
 				083E551B1FC84F41004E4EC0 /* R.swift in Sources */,
 				1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */,
+				481B81D01FD8632E000955E8 /* NextChallengesProtocols.swift in Sources */,
 				08276F331FC73F8C00A8E605 /* ChallengeCollectionViewCell.swift in Sources */,
 				48C882F31FC893FA000A57C2 /* ChallengePresenterImpl.swift in Sources */,
 				48C882F71FC893FA000A57C2 /* FeaturedFavoriteClickCollectionViewCell.swift in Sources */,
@@ -1103,10 +1108,10 @@
 				088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */,
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
+				481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */,
 				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,
 				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
-				8ADF7CA01FD743060023BCEF /* NextChallengesCellPresenterImp.swift in Sources */,
 				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,
 				0899EA091FC74D3900F148DC /* PhotoNet.swift in Sources */,
 				148AE5A11FD1ACA1005108E7 /* ChallengeClosedPresenter.swift in Sources */,
@@ -1119,7 +1124,6 @@
 				14D106201FBE00B000AA9F89 /* ProfilePresenter.swift in Sources */,
 				08276F3A1FC73F8C00A8E605 /* NextChallengeTableViewCell.swift in Sources */,
 				14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */,
-				8ADF7C9E1FD742F40023BCEF /* NextChallengesProtocols.swift in Sources */,
 				0899E9FF1FC74D0900F148DC /* User.swift in Sources */,
 				08276F401FC73F8C00A8E605 /* MainScreenViewController.swift in Sources */,
 				48620F1E1FD72B1900A45E3E /* LastWinnersPresenterImp.swift in Sources */,

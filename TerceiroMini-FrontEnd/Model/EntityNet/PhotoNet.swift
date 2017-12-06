@@ -78,7 +78,7 @@ class PhotoNet {
      - parameter e: The error that ocurred.
      */
     class func get(byToken token: String, completion: @escaping (_ p: [Photo]?, _ e: Error?) -> Void) {
-        let completeDomain = R.challengesDomain + "/me"
+        let completeDomain = R.photosDomain + "/me"
         let header = ["x-auth" : token]
         
         Alamofire.request(completeDomain, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { response in

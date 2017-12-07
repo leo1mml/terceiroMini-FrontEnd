@@ -42,8 +42,7 @@ class MainScreenTableViewController: UITableViewController {
     }
     
     @objc func goToAllPastChallenges() {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SeeAllPastChallengesVC") else {return}
-        self.present(vc, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "goToSeeAll", sender: self)
     }
     
 

@@ -69,10 +69,12 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
         switch state {
         case .votation?:
             mainButton.setTitle("PERÍODO DE VOTAÇÃO", for: .normal)
+            mainButton.isEnabled = false
             statusLabel.text = "22h 11m 12s"
             
         case .finished?:
             //set winner name
+            
             break
         case .open?:
             mainButton.setTitle("PARTICIPAR", for: .normal)
@@ -84,6 +86,7 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
     }
     
     func addGradientToChallengeMainImage(){
+        mainImage.layer.sublayers = nil
         mainImage.addChallengeGradientLayer(frame: mainImage.bounds, colors: [startingGradientColor, middleGradientColor,endGradientColor,.white])
     }
     

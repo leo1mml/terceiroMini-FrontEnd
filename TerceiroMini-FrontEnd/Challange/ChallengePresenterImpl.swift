@@ -12,15 +12,7 @@ import Cloudinary
 class ChallengePresenterImpl: ChallengePresenter{
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     init(challengeView view: ChallengeView) {
@@ -40,24 +32,26 @@ class ChallengePresenterImpl: ChallengePresenter{
         let imageData = UIImageJPEGRepresentation(infoImage, 1.0)
         //        let retorno = cloudinary.createUploader().upload(data: imageData!, uploadPreset: uploadPreset)
         
+        //view.startWating(msg: "Wait for yout photo to upload!")
+        
         let retorno = cloudinary.createUploader().upload(data: imageData!, uploadPreset: uploadPreset, params: nil, progress: nil) {
             (result, error) in
             if (error != nil) {
                 print("deu merda ao subir a foto para o cloudinary")
             }
-            let ownerID = "5a21a303391838001482d1f2"
+            let ownerID = "5a26fcfd47075500141f9250"
             
             let photo = Photo(nil,result?.url,ownerID,challengeID)
             NetworkManager.addPhoto(photo, completion: { (photo, error) in
+                
                 if (error != nil){
                     print("deu merda na hora enviar a foto pro banco")
                 }
                 
+                self.getChallengeImages(challengeID: challengeID)
+                
             })
-            //MANDA PARA O BANCO
-            // var photo = Photo(nil,result?.url,UserDefaults.standard (ISSO É O TOKEN) )
-            // NetworkManager.addPhoto( , completion: )
-            //print(result)
+            
         }
         
         
@@ -75,8 +69,12 @@ class ChallengePresenterImpl: ChallengePresenter{
             if((error) != nil){
                 print("Challenge não encontrado")
             }
+            DispatchQueue.main.async {
+                self.view.setHeader(theme: (challenge?.theme)!, endDate: (challenge?.endDate)!, mainImageURL: (challenge?.imageUrl)!, numPhotos: (challenge?.numPhotos)! )
+                self.setChallengeState(challenge: challenge!)
+                
+            }
             
-            self.view.setHeader(theme: (challenge?.theme)!, endDate: (challenge?.endDate)!, mainImageURL: (challenge?.imageUrl)!, numPhotos: (challenge?.numPhotos)! )
             
         })
         
@@ -94,24 +92,48 @@ class ChallengePresenterImpl: ChallengePresenter{
             }
             
             self.view.setChallengePhotos(photos: photos!)
+            DispatchQueue.main.async {
+                self.view.showCollectionPhotos()
+            }
         }
         
     }
     
-    func getChallengeState(challenge: Challenge) {
+    func setChallengeState(challenge: Challenge) {
         
         if challenge.isHappening{
             view.setChallengeState(state: ChallengeState.open)
         }else{
             view.setChallengeState(state: ChallengeState.finished)
+            let winner = getChallengeWinner(challengeID: challenge.id)
+            view.showChallengeWinner(winner: winner)
         }
         
     }
     
+    func getChallengeState(challenge: Challenge) -> ChallengeState{
+        if challenge.isOver{
+            return ChallengeState.finished
+        }else{
+            return ChallengeState.open
+        }
+        
+    }
+    func getChallengeWinner(challengeID: String) -> User{
+        //pegar challenge winner
+        
+        return User("aaa", "", "","", "")
+    }
     
-    
+    //MAIN BUTTON HANDLE CLICK
     func mainButtonClicked() {
+       
         view.showPhotoMenu()
+    }
+    
+    func presentProfile(challengeID: String) {
+        //let user = getChallengeWinner(challengeID: challengeID)
+        //IR PARA TELA
     }
     
     

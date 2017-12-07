@@ -10,14 +10,11 @@ import UIKit
 
 class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
-    
-    
-    
+
     
     
     //var challengeImages : [String]!
-    var challengePhotos : [Photo]!
+    var challengePhotos : [Photo]?
     var presenter : ChallengePresenter?
     var header: HeaderChallengeCollectionReusableView!
     var challengeID : String?
@@ -71,39 +68,10 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     func resolveState(){
         
-        switch state {
-        case .votation:
-            //mudar label para periodo de votacao
-            //atualizar tempo pegando do banco
-            
-            print("entrei")
-            
-            
-            break
-        case .finished:
-            //get winner and change main button
-            break
-        default:
-            //get timer
-            break
-        }
+        
     }
  
-    @IBAction func mainButtonAction(_ sender: LeftAlignedIconButton) {
-        
-        switch state {
-        case .finished:
-            //levar para o perfil do vencedor
-            break
-        case .participating:
-            //colocar label
-            break
-        default:
-            
-            showPhotoMenu()
-            break
-        }
-    }
+
     
     func showPhotoMenu(){
         
@@ -195,6 +163,23 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     func setChallengeState(state: ChallengeState) {
         self.state = state
+        
+        switch state {
+        case .votation:
+            //mudar label para periodo de votacao
+            //atualizar tempo pegando do banco
+            
+            print("entrei")
+            
+            
+            break
+        case .finished:
+            //get winner and change main button
+            break
+        default:
+            //get timer
+            break
+        }
     }
     
     
@@ -205,9 +190,19 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         view.addSubview(statusBarView)
     }
     
+    
     func setChallengePhotos(photos: [Photo]) {
         self.challengePhotos = photos
     }
+    
+    func showCollectionPhotos() {
+        self.mainCollectionView.reloadData()
+    }
+    
+    func showChallengeWinner(winner: User) {
+        
+    }
+    
     
 }
 

@@ -33,7 +33,7 @@ class UserNet {
         var dic = buildDictionary(fromUser: user)
         dic["password"] = password
         
-        Alamofire.request(R.usersDomain, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request(R.usersDomain, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             
             guard let dic = NetHelper.extractDictionary(fromJson: response.value!, key: "user") else {
                 

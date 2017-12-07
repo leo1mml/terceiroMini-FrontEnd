@@ -18,13 +18,15 @@ class LoginPresenterImpl: LoginPresenter {
     
     func validateCredentials(email: String, password: String) {
         
-        NetworkManager.createLogin(email: email, username: nil, password: password) { success in
+        NetworkManager.createLogin(email: email, username: nil, password: password) { usr, tkn, err in
             
-            if success {
-                
-            } else {
+            guard err == nil else {
                 self.view.showInvalidCredentialsError()
+                return
             }
+            
+            UserDefaults.standard.set(tkn, forKey: "token")
+            self.view.goToApp()
         }
     }
     

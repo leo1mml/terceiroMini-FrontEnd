@@ -66,6 +66,12 @@ extension ChallengeViewController: UICollectionViewDataSource, UICollectionViewD
         return header
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoID = self.challengePhotos![indexPath.row].id
+        
+         //let photo = self.challengePhotos[indexPath.row]
+        
+    }
     
     
     func getImageFromUrl(imageURL: URL!, newImage: UIImageView ){

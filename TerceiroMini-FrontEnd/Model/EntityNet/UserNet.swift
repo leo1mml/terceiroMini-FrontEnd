@@ -35,13 +35,12 @@ class UserNet {
         
         Alamofire.request(R.usersDomain, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             
-            guard let dic = NetHelper.extractDictionary(fromJson: response.value!, key: "user") else {
-                
-                let err = Validator.obtainError(fromJson: response.value!)
-                
-                completion(nil, nil, err)
+            guard let val = response.value, response.error == nil else {
+                completion(nil, nil, response.error!)
                 return
             }
+            
+            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
             
             let user = self.buildUser(fromDicitionary: dic)
             let token = response.response!.allHeaderFields["x-auth"] as? String

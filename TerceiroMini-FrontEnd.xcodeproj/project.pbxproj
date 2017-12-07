@@ -27,9 +27,6 @@
 		08276F3E1FC73F8C00A8E605 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08276F2A1FC73F8C00A8E605 /* MainScreenPresenter.swift */; };
 		08276F3F1FC73F8C00A8E605 /* MainScreenProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08276F2B1FC73F8C00A8E605 /* MainScreenProtocols.swift */; };
 		08276F401FC73F8C00A8E605 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08276F2C1FC73F8C00A8E605 /* MainScreenViewController.swift */; };
-		08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08297AE11FC74B1E00701F9B /* SignUpViewController.swift */; };
-		08297AE51FC74B1E00701F9B /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08297AE21FC74B1E00701F9B /* SignUpPresenter.swift */; };
-		08297AE61FC74B1E00701F9B /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08297AE31FC74B1E00701F9B /* SignUpProtocols.swift */; };
 		08297B0C1FC74B2E00701F9B /* Montserrat-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 08297AE81FC74B2E00701F9B /* Montserrat-MediumItalic.otf */; };
 		08297B0D1FC74B2E00701F9B /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 08297AE91FC74B2E00701F9B /* Montserrat-Bold.otf */; };
 		08297B0E1FC74B2E00701F9B /* Montserrat-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 08297AEA1FC74B2E00701F9B /* Montserrat-BlackItalic.otf */; };
@@ -183,9 +180,6 @@
 		08297ADA1FC74AEB00701F9B /* MainScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
 		08297ADB1FC74AEB00701F9B /* MainScreenTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreenTableView.storyboard; sourceTree = "<group>"; };
 		08297ADC1FC74AEB00701F9B /* TableHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeader.xib; sourceTree = "<group>"; };
-		08297AE11FC74B1E00701F9B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		08297AE21FC74B1E00701F9B /* SignUpPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
-		08297AE31FC74B1E00701F9B /* SignUpProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpProtocols.swift; sourceTree = "<group>"; };
 		08297AE81FC74B2E00701F9B /* Montserrat-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.otf"; sourceTree = "<group>"; };
 		08297AE91FC74B2E00701F9B /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		08297AEA1FC74B2E00701F9B /* Montserrat-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.otf"; sourceTree = "<group>"; };
@@ -447,16 +441,6 @@
 			path = "Next Challenge CV Cell";
 			sourceTree = "<group>";
 		};
-		08297AE01FC74B1E00701F9B /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				08297AE11FC74B1E00701F9B /* SignUpViewController.swift */,
-				08297AE21FC74B1E00701F9B /* SignUpPresenter.swift */,
-				08297AE31FC74B1E00701F9B /* SignUpProtocols.swift */,
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
 		08297AE71FC74B2E00701F9B /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,7 +655,6 @@
 				08407C3E1FD254DF00B7A003 /* Support */,
 				086D27961FCC83D700D9F547 /* Presentation */,
 				086D27A21FCC9A0900D9F547 /* Login */,
-				08297AE01FC74B1E00701F9B /* Register */,
 			);
 			path = "Login Flow";
 			sourceTree = "<group>";
@@ -1106,7 +1089,6 @@
 				08276F2F1FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift in Sources */,
 				0899EA031FC74D1A00F148DC /* Challenge.swift in Sources */,
 				0867DD451FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift in Sources */,
-				08297AE61FC74B1E00701F9B /* SignUpProtocols.swift in Sources */,
 				083E551B1FC84F41004E4EC0 /* R.swift in Sources */,
 				1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */,
 				481B81D01FD8632E000955E8 /* NextChallengesProtocols.swift in Sources */,
@@ -1139,7 +1121,6 @@
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */,
 				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,
-				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,
 				0899EA091FC74D3900F148DC /* PhotoNet.swift in Sources */,
@@ -1168,7 +1149,6 @@
 				148AE59D1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift in Sources */,
 				08276F2D1FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift in Sources */,
 				489F1B9A1FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift in Sources */,
-				08297AE51FC74B1E00701F9B /* SignUpPresenter.swift in Sources */,
 				48A7C4CF1FD1E00B00EB5C1A /* UIImage+Extension.swift in Sources */,
 				08276F3D1FC73F8C00A8E605 /* TableHeader.swift in Sources */,
 				08EF52851FD6D54B00722A2F /* RegisterViewController.swift in Sources */,

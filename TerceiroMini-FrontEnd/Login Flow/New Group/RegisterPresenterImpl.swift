@@ -20,4 +20,25 @@ class RegisterPresenterImpl: RegisterPresenter {
         view.goBack()
     }
     
+    func addUser(name: String, email: String, password: String, confirm: String) {
+        
+        guard password == confirm else {
+            view.showNonMatchingPasswordError()
+            return
+        }
+        
+        let user = User(nil, email, name, "", nil)
+        
+        NetworkManager.addUser(user, password: password) { usr, tkn, err in
+            
+            guard err == nil else {
+                self.view.showUpdateError()
+                return
+            }
+            
+            UserDefaults.standard.set(tkn, forKey: "token")
+            self.view.goToApp()
+        }
+    }
+    
 }

@@ -78,8 +78,8 @@ class NetworkManager {
         ChallengeNet.getOpenChallenges(completion: completion)
     }
     
-    class func getLastChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {
-        ChallengeNet.getLastChallenges(completion: completion)
+    class func getLastChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void, numOfItems: Int) {
+        ChallengeNet.getLastChallenges(completion: completion, numOfItems: numOfItems)
     }
     
     class func getComingSoonChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {

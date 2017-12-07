@@ -53,9 +53,12 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         
         // Do any additional setup after loading the view.
     }
-    
+    override var canBecomeFirstResponder: Bool {
+        return false
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        self.pageViewScroll?.resignFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,6 +93,7 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        self.resignFirstResponder()
         self.nextVCIdentifier = pendingViewControllers[0].restorationIdentifier!
     }
     

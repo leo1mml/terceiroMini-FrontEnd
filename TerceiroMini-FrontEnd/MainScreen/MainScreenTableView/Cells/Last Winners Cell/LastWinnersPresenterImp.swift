@@ -17,12 +17,13 @@ class LastWinnersPresenterImp: LastWinnersPresenter {
     }
     
     func fetchLastChallenges() {
-        NetworkManager.getLastChallenges { (challenges, err) in
+        
+        NetworkManager.getLastChallenges(completion: { (challenges, err) in
             if(err == nil){
                 self.view?.appendChallenges(challenges: challenges!)
-//                self.view?.reloadCollectionView(with: challenges!)
+                //                self.view?.reloadCollectionView(with: challenges!)
             }
-        }
+        }, numOfItems: 3)
     }
     
     func fetchWinnerFor(challenges: [Challenge]) {

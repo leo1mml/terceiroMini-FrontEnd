@@ -30,6 +30,7 @@ class MainScreenTableViewController: UITableViewController {
         }else if(section == 1) {
             header.sectionTitle.text = "ÚLTIMOS VENCEDORES"
             header.seeMoreButton.isHidden = false
+            header.seeMoreButton.addTarget(self, action: #selector(goToAllPastChallenges), for: .touchUpInside)
             header.seeMoreButton.setTitle("Ver todos", for: .normal)
         }else if(section == 2) {
             header.sectionTitle.text = "PRÓXIMOS"
@@ -39,6 +40,12 @@ class MainScreenTableViewController: UITableViewController {
         
         return header
     }
+    
+    @objc func goToAllPastChallenges() {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SeeAllPastChallengesVC") else {return}
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 
     // MARK: - Table view data source
 

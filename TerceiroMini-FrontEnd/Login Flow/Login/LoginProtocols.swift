@@ -14,11 +14,12 @@ protocol LoginView {
     func showInvalidCredentialsError()
     func goToRegister()
     func goBack()
+    func goToApp()
 }
 
 protocol LoginPresenter {
     
-    func validateCredentials(username: String, password: String)
+    func validateCredentials(email: String, password: String)
     func goBack()
     func forgotPassword()
     func createAccount()

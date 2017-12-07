@@ -16,8 +16,16 @@ class LoginPresenterImpl: LoginPresenter {
         self.view = view
     }
     
-    func validateCredentials(username: String, password: String) {
+    func validateCredentials(email: String, password: String) {
         
+        NetworkManager.createLogin(email: email, username: nil, password: password) { success in
+            
+            if success {
+                
+            } else {
+                self.view.showInvalidCredentialsError()
+            }
+        }
     }
     
     func goBack() {

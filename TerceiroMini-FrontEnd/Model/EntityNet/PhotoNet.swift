@@ -78,7 +78,7 @@ class PhotoNet {
      - parameter e: The error that ocurred.
      */
     class func get(byToken token: String, completion: @escaping (_ p: [Photo]?, _ e: Error?) -> Void) {
-        let completeDomain = R.challengesDomain + "/me"
+        let completeDomain = R.photosDomain + "/me"
         let header = ["x-auth" : token]
         
         Alamofire.request(completeDomain, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { response in
@@ -131,7 +131,7 @@ class PhotoNet {
      - parameter e: The error that ocurred.
      */
     class func get(byId id: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
-        let completeDomain = R.challengesDomain + "/getById/\(id)"
+        let completeDomain = R.photosDomain + "/getById/\(id)"
         
         Alamofire.request(completeDomain).validate().responseJSON { response in
             
@@ -157,7 +157,7 @@ class PhotoNet {
      - parameter e: The error that ocurred.
      */
     class func delete(byId id: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
-        let completeDomain = R.challengesDomain + "/deleteById/\(id)"
+        let completeDomain = R.photosDomain + "/deleteById/\(id)"
         
         Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             

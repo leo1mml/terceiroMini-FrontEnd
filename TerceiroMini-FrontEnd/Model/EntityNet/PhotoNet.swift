@@ -97,6 +97,31 @@ class PhotoNet {
     
     /**
      
+     Get the data of all the photos of an user from the user id.
+     
+     - parameter token: The user id.
+     - parameter p: The photos retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    class func get(byUserId id: String, completion: @escaping (_ p: [Photo]?, _ e: Error?) -> Void) {
+        let completeDomain = R.photosDomain + "/getPhotosByUserId/\(id)"
+        
+        Alamofire.request(completeDomain).validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "photos")!
+            let photos = buildPhotos(fromDictionaryArry: arr)
+            
+            completion(photos, nil)
+        }
+    }
+    
+    /**
+     
      Gets the data of all the photos of a challenge from its id.
      
      - parameter id: The challenge id.

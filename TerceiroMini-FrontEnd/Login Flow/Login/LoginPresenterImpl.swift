@@ -16,8 +16,18 @@ class LoginPresenterImpl: LoginPresenter {
         self.view = view
     }
     
-    func validateCredentials(username: String, password: String) {
+    func validateCredentials(email: String, password: String) {
         
+        NetworkManager.createLogin(email: email, username: nil, password: password) { usr, tkn, err in
+            
+            guard err == nil else {
+                self.view.showInvalidCredentialsError()
+                return
+            }
+            
+            UserDefaults.standard.set(tkn, forKey: "token")
+            self.view.goToApp()
+        }
     }
     
     func goBack() {

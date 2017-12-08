@@ -34,6 +34,28 @@ extension UIView {
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    func makeBorderAnimate(){
+        
+        let shapeLayer = CAShapeLayer()
+        
+        layer.addSublayer(shapeLayer)
+        
+        let path = UIBezierPath(ovalIn: bounds)
+        shapeLayer.strokeStart = 0.10
+        shapeLayer.strokeEnd = 0.90
+        shapeLayer.path = path.cgPath
+        shapeLayer.lineWidth = 3
+        shapeLayer.strokeColor = UIColor.black.cgColor
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        
+        let a = CABasicAnimation(keyPath: "strokeEnd")
+        a.fromValue = 0.10
+        a.toValue = 0.90
+        a.duration = 3
+        shapeLayer.add(a, forKey: nil)
+        
+    }
+    
     
     
 }

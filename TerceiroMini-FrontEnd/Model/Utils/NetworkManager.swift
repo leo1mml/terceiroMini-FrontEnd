@@ -34,7 +34,7 @@ class NetworkManager {
         UserNet.getLastWinners(completion: completion)
     }
     
-    class func createLogin(email: String, username: String?, password: String, completion: @escaping (Bool) -> Void) {
+    class func createLogin(email: String, username: String?, password: String, completion: @escaping (_ u: User?, _ t: String?, _ e: Error?) -> Void) {
         UserNet.createLogin(username: username, email: email, password: password, completion: completion)
     }
     
@@ -64,8 +64,20 @@ class NetworkManager {
         PhotoNet.get(byId: id, completion: completion)
     }
     
+    class func getPhotos(byOwnerId id: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
+        PhotoNet.get(byOwnerId: id, completion: completion)
+    }
+    
     class func deletePhoto(byId id: String, completion: @escaping (Photo?, Error?) -> Void) {
         PhotoNet.delete(byId: id, completion: completion)
+    }
+    
+    class func voteOnPhoto(byId id: String, token: String, completion: @escaping (_ s: Bool) -> Void) {
+        PhotoNet.vote(byId: id, token: token, completion: completion)
+    }
+    
+    class func unvotePhoto(byId id: String, token: String, completion: @escaping (_ s: Bool) -> Void) {
+        PhotoNet.unvote(byId: id, token: token, completion: completion)
     }
     
     // MARK: - Challenge methods

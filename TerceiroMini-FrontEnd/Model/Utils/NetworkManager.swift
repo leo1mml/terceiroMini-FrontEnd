@@ -76,6 +76,10 @@ class NetworkManager {
         PhotoNet.unvote(byId: id, token: token, completion: completion)
     }
     
+    class func getUserPhotos(byUserId id: String, completion: @escaping ([Photo]?, Error?) -> Void) {
+        PhotoNet.get(byUserId: id, completion: completion)
+    }
+    
     // MARK: - Challenge methods
     
     class func getAllChallenges(completion: @escaping ([Challenge]?, Error?) -> Void) {

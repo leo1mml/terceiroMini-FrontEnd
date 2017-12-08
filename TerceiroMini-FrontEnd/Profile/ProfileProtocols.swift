@@ -17,6 +17,6 @@ protocol ProfileView {
 
 protocol ProfilePresenter {
     
-    func loadData()
+    func loadData(id: String)
     
 }

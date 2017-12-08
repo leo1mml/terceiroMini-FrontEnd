@@ -33,67 +33,56 @@ class ProfilePresenterImpl: ProfilePresenter {
         }
     }
     
-    func loadData() {
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YTI2ZmNmZDQ3MDc1NTAwMTQxZjkyNTAiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTEyNTA0NTczfQ.0nSNkA6tOIxloWyfnFSQh6G0dIzkRPTJssLCvWp7gDk"
-        var currentUser: User!
-        var currentPhotos: [Photo]?
-        var profileCellHolders = [ProfileCellHolder]()
-        var photoUserProfile: UIImage?
+    func loadData(id: String) {
         
-        NetworkManager.getUser(byToken: token) { (user, error) in
+        var cells = [ProfileCellHolder]()
+        var profileHolder = ProfileUserHolder(image: UIImage(), name: "", username: "", amountPhotos: 0, cellHolders: cells)
+        
+        NetworkManager.getUser(byId: id) { (user, error) in
             
             guard error == nil else {
                 
                 return
             }
             
-            currentUser = user!
+            // Usuario
             
-            UIImage.fetch(with: currentUser.profilePhotoUrl!, completion: { (image) in
-                photoUserProfile = image
-            })
-            
-            NetworkManager.getPhotos(byToken: token) { (photos, err) in
+            UIImage.fetch(with: (user?.profilePhotoUrl)!) { (image) in
+                // ImagemPerfil
                 
-                guard err == nil else {
+                NetworkManager.getUserPhotos(byUserId: id) { (photos, error) in
                     
-                    return
-                }
-                
-                currentPhotos = photos
-                
-                for photo in currentPhotos! {
+                    guard error == nil else {
+                        
+                        return
+                    }
                     
-                    var currentImage: UIImage!
-                    var theme: String!
+                    // fotos do usuario
                     
-                    UIImage.fetch(with: photo.url!, completion: { (image) in
-                        currentImage = image
-                    })
-                    
-                    NetworkManager.getChallengeById(id: photo.challengeId, completion: { (challenge, error) in
-                        guard error == nil else {
-                            theme = challenge?.theme
-                            // erro
-                            return
+                    // passo fotos para images
+                    for photo in photos! {
+                        
+                        NetworkManager.getChallengeById(id: id) { (challenge, error) in
+                            
+                            guard error == nil else {
+                                
+                                return
+                            }
+                            
+                            // Challenge
+                            
+                            // montagem da cell
+                            UIImage.fetch(with: photo.url!, completion: { (image) in
+                                let profileCell = ProfileCellHolder(image: image, theme: (challenge?.theme)!, isWinner: challenge?.winner == photo.url)
+                                cells.append(profileCell)
+                            })
                         }
-                        
-                        var profileCellHolder = ProfileCellHolder(image: currentImage, theme: theme, isWinner: false)
-                        
-                        if let winner = challenge?.winner {
-                            profileCellHolder.isWinner = photo.ownerId == winner
-                        }
-                        
-                        profileCellHolders.append(profileCellHolder)
-                        
-                    })
+                    }
+
                 }
-                
-                let profileHolder = ProfileUserHolder(image: photoUserProfile!, name: (currentUser.name), username: (currentUser.username), amountPhotos: (currentPhotos?.count)!, cellHolders: profileCellHolders)
-                
+                profileHolder = ProfileUserHolder(image: image, name: (user?.name)!, username: (user?.username)!, amountPhotos: cells.count, cellHolders: cells)
                 self.view?.receiveDatas(profileUserHolder: profileHolder)
             }
-            
         }
     }
 }

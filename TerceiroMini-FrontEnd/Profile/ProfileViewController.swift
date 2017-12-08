@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         super.viewDidLoad()
         
         presenter = ProfilePresenterImpl(profileView: self)
-        presenter?.loadData()
+        presenter?.loadData(id: "5a21a303391838001482d1f2")
         
         amountTrophy = 0
         
@@ -84,16 +84,12 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             
             headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2
             headerView.profileImage.clipsToBounds = true
-            
-            headerView.profileBorderView.layer.cornerRadius = headerView.profileBorderView.frame.size.width/2
-            headerView.profileBorderView.clipsToBounds = true
-            
-            headerView.profileBorderView.layer.borderWidth = 2
-            headerView.profileBorderView.layer.borderColor = UIColor.black.cgColor
-            
+
+            headerView.profileBorderView.makeBorderAnimate()
+
             headerView.profileNameLabel.text = holder?.name
             headerView.profileUserName.text = holder?.username
-            headerView.profileTrophyNumberLabel.text = "\(amountTrophy)"
+            headerView.profileTrophyNumberLabel.text = "\(amountTrophy!)"
             headerView.profilePhotoNumberLabel.text = "\(holder?.cellHolders.count ?? 0)"
             
             reusableView = headerView

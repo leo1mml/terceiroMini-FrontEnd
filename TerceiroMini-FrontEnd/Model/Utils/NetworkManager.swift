@@ -34,7 +34,7 @@ class NetworkManager {
         UserNet.getLastWinners(completion: completion)
     }
     
-    class func createLogin(email: String, username: String?, password: String, completion: @escaping (Bool) -> Void) {
+    class func createLogin(email: String, username: String?, password: String, completion: @escaping (_ u: User?, _ t: String?, _ e: Error?) -> Void) {
         UserNet.createLogin(username: username, email: email, password: password, completion: completion)
     }
     

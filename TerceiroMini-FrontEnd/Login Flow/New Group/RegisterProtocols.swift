@@ -11,9 +11,13 @@ import Foundation
 protocol RegisterPresenter {
     
     func goBack()
+    func addUser(name: String, email: String, password: String, confirm: String)
 }
 
 protocol RegisterView {
     
     func goBack()
+    func goToApp()
+    func showUpdateError()
+    func showNonMatchingPasswordError()
 }

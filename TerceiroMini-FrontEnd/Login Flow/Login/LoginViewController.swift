@@ -49,7 +49,7 @@ class LoginViewController: StatusBarHiddenViewController, LoginView, EditingList
 
     @IBAction func login(_ sender: UIButton) {
         
-        presenter?.validateCredentials(username: usernameField.text!, password: passwordField.text!)
+        presenter?.validateCredentials(email: usernameField.text!, password: passwordField.text!)
     }
     
     @IBAction func goBackAction(_ sender: UIButton) {
@@ -80,6 +80,10 @@ class LoginViewController: StatusBarHiddenViewController, LoginView, EditingList
     
     func goBack() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func goToApp() {
+        
     }
     
     // MARK: - EditingListener implementation

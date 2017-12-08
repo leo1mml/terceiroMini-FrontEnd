@@ -156,7 +156,7 @@ class PhotoNet {
      - parameter e: The error that ocurred.
      */
     class func get(byId id: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
-        let completeDomain = R.challengesDomain + "/getById/\(id)"
+        let completeDomain = R.photosDomain + "/getById/\(id)"
         
         Alamofire.request(completeDomain).validate().responseJSON { response in
             
@@ -182,7 +182,7 @@ class PhotoNet {
      - parameter e: The error that ocurred.
      */
     class func delete(byId id: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
-        let completeDomain = R.challengesDomain + "/deleteById/\(id)"
+        let completeDomain = R.photosDomain + "/deleteById/\(id)"
         
         Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             

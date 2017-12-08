@@ -35,11 +35,23 @@ class RegisterViewController: StatusBarHiddenViewController, RegisterView {
     }
     
     @IBAction func register(_ sender: UIButton) {
-        
+        presenter?.addUser(name: nameField.text!, email: emailField.text!, password: passwordField.text!, confirm: confirmField.text!)
     }
     
     func goBack() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func goToApp() {
+        
+    }
+    
+    func showUpdateError() {
+        
+    }
+    
+    func showNonMatchingPasswordError() {
+        
     }
     
     @objc func dismissKeyboard() {

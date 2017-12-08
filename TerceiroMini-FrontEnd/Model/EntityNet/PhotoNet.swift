@@ -211,15 +211,7 @@ class PhotoNet {
         let domain = R.photosDomain + "/vote/\(id)"
         let header = ["x-auth": token]
         
-        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { response in
-            
-            guard let val = response.value, response.error == nil else {
-                completion(false)
-                return
-            }
-            
-            completion(true)
-        }
+        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { completion($0.error == nil) }
     }
     
     /**
@@ -235,15 +227,7 @@ class PhotoNet {
         let domain = R.photosDomain + "/unvote/\(id)"
         let header = ["x-auth": token]
         
-        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { response in
-            
-            guard let val = response.value, response.error == nil else {
-                completion(false)
-                return
-            }
-            
-            completion(true)
-        }
+        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { completion($0.error == nil) }
     }
     
     // MARK: - Auxiliar methods

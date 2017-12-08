@@ -11,7 +11,7 @@ import UIKit
 private let segueToLogin = "presentationToLogin"
 private let segueToRegister = "presentationToRegister"
 
-class LoginPresentationViewController: StatusBarHiddenViewController, LoginPresentationView {
+class LoginPresentationViewController: HiddenStatusBarViewController, LoginPresentationView {
 
     // MARK: - Attributes
     

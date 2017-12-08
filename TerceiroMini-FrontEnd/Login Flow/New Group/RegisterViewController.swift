@@ -8,9 +8,12 @@
 
 import UIKit
 
-class RegisterViewController: StatusBarHiddenViewController, RegisterView {
+class RegisterViewController: HiddenStatusBarViewController, RegisterView {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var instructionLabel: UILabel!
     
     @IBOutlet weak var nameField: BottomLineTextField!
     @IBOutlet weak var emailField: BottomLineTextField!
@@ -28,6 +31,8 @@ class RegisterViewController: StatusBarHiddenViewController, RegisterView {
         
         let outTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(outTap)
+        
+        setupTexts()
     }
 
     @IBAction func goBackAction(_ sender: UIButton) {
@@ -60,6 +65,13 @@ class RegisterViewController: StatusBarHiddenViewController, RegisterView {
         emailField.endEditing(false)
         passwordField.endEditing(false)
         confirmField.endEditing(false)
+    }
+    
+    func setupTexts() {
+        
+        titleLabel.text = "Cadastro"
+        instructionLabel.text = "preencha com seus dados\npara realizar o cadastro"
+        agreementLabel.text = "Ao entrar no aplicativo, você concorda com nossos temos de serviço e políticas de privacidade."
     }
     
 }

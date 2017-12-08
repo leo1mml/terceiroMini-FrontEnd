@@ -10,7 +10,7 @@ import UIKit
 
 private let segueToRegister = "loginToRegister"
 
-class LoginViewController: StatusBarHiddenViewController, LoginView, EditingListener {
+class LoginViewController: HiddenStatusBarViewController, LoginView, EditingListener {
 
     // MARK: - Outlets
     

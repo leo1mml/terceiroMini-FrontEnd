@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StatusBarHiddenViewController: UIViewController {
+class HiddenStatusBarViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true

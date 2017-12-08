@@ -58,8 +58,6 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         cell.frame.size.width = 121
         cell.frame.size.height = 121
         
-        if holder == nil {return cell}
-        
         if (cells[indexPath.row].isWinner) {
             cell.trophyImage.isHidden = false
         } else {

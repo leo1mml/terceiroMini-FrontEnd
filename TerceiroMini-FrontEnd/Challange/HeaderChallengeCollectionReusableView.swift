@@ -32,7 +32,6 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
     let startingGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
     let middleGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:0.6)
     let endGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:0.4)
-    
     var delegate: ChallengeHeaderDelegate?
     var dataSource: ChallengeHeaderDataSource? {
         

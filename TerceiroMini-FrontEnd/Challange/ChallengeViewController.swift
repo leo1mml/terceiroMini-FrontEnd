@@ -20,6 +20,8 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     var challengeID : String?
     //passing data to other view
     var data: ([Photo], Int)?
+    @IBOutlet weak var clicksLogoImage: UIImageView!
+    @IBOutlet weak var noImagesWarningLabel: UILabel!
     
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
@@ -66,6 +68,9 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         challengeID = "5a2163e44ab66300147b416d"
         presenter?.getChallengeHeader(challengeID: challengeID!)
         presenter?.getChallengeImages(challengeID: challengeID!)
+        
+        
+        
     }
     
     func resolveState(){
@@ -219,6 +224,14 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     func showChallengeWinner(winner: User) {
         
+    }
+    
+    func showFeaturedCollectionView(){
+        self.header.featuredCollectionView.isHidden = false
+    }
+    func showNoImagesWarning(){
+            self.noImagesWarningLabel.isHidden = false
+            self.clicksLogoImage.isHidden = false
     }
     
     

@@ -13,13 +13,6 @@ class ChallengePresenterImpl: ChallengePresenter{
     
     
     
-   
-    
-    
-    
-
-    
-    
     init(challengeView view: ChallengeView) {
         self.view = view
     }
@@ -68,7 +61,7 @@ class ChallengePresenterImpl: ChallengePresenter{
     
     func getChallengeHeader(challengeID: String) {
         
-        
+       
         NetworkManager.getChallengeById(id: challengeID, completion: { (challenge, error) in
             
             if((error) != nil){
@@ -76,6 +69,12 @@ class ChallengePresenterImpl: ChallengePresenter{
             }
             DispatchQueue.main.async {
                 self.view.setHeader(theme: (challenge?.theme)!, endDate: (challenge?.endDate)!, mainImageURL: (challenge?.imageUrl)!, numPhotos: (challenge?.numPhotos)! )
+                if(challenge?.numPhotos != 0){
+                    self.view.showFeaturedCollectionView()
+                    
+                }else{
+                    self.view.showNoImagesWarning()
+                }
                 self.setChallengeState(challenge: challenge!)
                 
             }

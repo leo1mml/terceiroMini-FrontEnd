@@ -22,6 +22,8 @@ protocol ChallengeView{
     func setChallengePhotos(photos: [Photo])
     func showCollectionPhotos()
     func goToExpandoPhotoView(parameter: ([Photo], Int))
+    func showFeaturedCollectionView()
+    func showNoImagesWarning()
 }
 
 protocol ChallengePresenter{

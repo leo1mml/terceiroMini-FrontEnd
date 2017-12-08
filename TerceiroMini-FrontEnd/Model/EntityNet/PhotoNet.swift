@@ -149,32 +149,6 @@ class PhotoNet {
     
     /**
      
-     Gets all the photos of an user.
-     
-     - parameter id: The id of the owner of the photo.
-     - parameter completion: A block of code to be executed once the task is complete.
-     - parameter p: The photo retrieved by the task.
-     - parameter e: The error that ocurred.
-     */
-    class func get(byOwnerId id: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
-        let domain = R.photosDomain + "/getPhotosByUserId/\(id)"
-        
-        Alamofire.request(domain).validate().responseJSON { response in
-            
-            guard let val = response.value, response.error == nil else {
-                completion(nil, response.error)
-                return
-            }
-            
-            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "photos")
-            let pht = buildPhotos(fromDictionaryArry: arr)
-            
-            completion(pht, nil)
-        }
-    }
-    
-    /**
-     
      Deletes a photo by its id.
      
      - parameter id: The photo id.

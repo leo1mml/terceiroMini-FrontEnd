@@ -20,4 +20,6 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var profileTrophyNumberLabel: UILabel!
     
+    @IBOutlet weak var profilePhotoNumberLabel: UILabel!
+    
 }

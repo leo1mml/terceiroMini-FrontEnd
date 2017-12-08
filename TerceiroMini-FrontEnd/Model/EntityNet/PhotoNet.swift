@@ -97,6 +97,31 @@ class PhotoNet {
     
     /**
      
+     Get the data of all the photos of an user from the user id.
+     
+     - parameter token: The user id.
+     - parameter p: The photos retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    class func get(byUserId id: String, completion: @escaping (_ p: [Photo]?, _ e: Error?) -> Void) {
+        let completeDomain = R.photosDomain + "/getPhotosByUserId/\(id)"
+        
+        Alamofire.request(completeDomain).validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "photos")!
+            let photos = buildPhotos(fromDictionaryArry: arr)
+            
+            completion(photos, nil)
+        }
+    }
+    
+    /**
+     
      Gets the data of all the photos of a challenge from its id.
      
      - parameter id: The challenge id.
@@ -149,32 +174,6 @@ class PhotoNet {
     
     /**
      
-     Gets all the photos of an user.
-     
-     - parameter id: The id of the owner of the photo.
-     - parameter completion: A block of code to be executed once the task is complete.
-     - parameter p: The photo retrieved by the task.
-     - parameter e: The error that ocurred.
-     */
-    class func get(byOwnerId id: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
-        let domain = R.photosDomain + "/getPhotosByUserId/\(id)"
-        
-        Alamofire.request(domain).validate().responseJSON { response in
-            
-            guard let val = response.value, response.error == nil else {
-                completion(nil, response.error)
-                return
-            }
-            
-            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "photos")
-            let pht = buildPhotos(fromDictionaryArry: arr)
-            
-            completion(pht, nil)
-        }
-    }
-    
-    /**
-     
      Deletes a photo by its id.
      
      - parameter id: The photo id.
@@ -212,15 +211,7 @@ class PhotoNet {
         let domain = R.photosDomain + "/vote/\(id)"
         let header = ["x-auth": token]
         
-        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { response in
-            
-            guard let val = response.value, response.error == nil else {
-                completion(false)
-                return
-            }
-            
-            completion(true)
-        }
+        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { completion($0.error == nil) }
     }
     
     /**
@@ -236,15 +227,7 @@ class PhotoNet {
         let domain = R.photosDomain + "/unvote/\(id)"
         let header = ["x-auth": token]
         
-        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { response in
-            
-            guard let val = response.value, response.error == nil else {
-                completion(false)
-                return
-            }
-            
-            completion(true)
-        }
+        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { completion($0.error == nil) }
     }
     
     // MARK: - Auxiliar methods

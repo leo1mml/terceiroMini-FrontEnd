@@ -64,10 +64,6 @@ class NetworkManager {
         PhotoNet.get(byId: id, completion: completion)
     }
     
-    class func getPhotos(byOwnerId id: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
-        PhotoNet.get(byOwnerId: id, completion: completion)
-    }
-    
     class func deletePhoto(byId id: String, completion: @escaping (Photo?, Error?) -> Void) {
         PhotoNet.delete(byId: id, completion: completion)
     }

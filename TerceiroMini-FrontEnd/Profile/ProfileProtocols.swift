@@ -11,13 +11,11 @@ import UIKit
 
 protocol ProfileView {
     
-    func receiveImages(images: [UIImage])
-    func erroLoadImages()
-    
+    func receiveDatas(profileUserHolder: ProfileUserHolder)
+    func receiveCells(cells: [ProfileCellHolder])
 }
 
 protocol ProfilePresenter {
     
-    func loadImages()
-    
+    func loadData(id: String)
 }

@@ -18,9 +18,10 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var reportButton: UIButton!
     
-    var images = ["pombo","pombo","pombo","pombo","pombo","pombo","pombo"]
+    var images = [""]
     var imageIndex = 0
     var details = false
+    var data: ([Photo], Int)?
     
     let colorGradient = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
     
@@ -28,6 +29,14 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         super.viewDidLoad()
         
         self.presenter = ChallengeClosedPresenterImpl(challengeClosedView: self)
+        
+        var imagesList = [String]()
+        for url in (data?.0)!{
+            imagesList.append(url.url!)
+        }
+        
+        self.images = imagesList
+        self.imageIndex = (data?.1)!
         
         //hiding itens
         reportButton.isHidden = true
@@ -39,6 +48,22 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         escolherClickButton.clipsToBounds = true
         updatePhotoCount()
         
+        showExpandImages()
+        
+        
+        
+        
+        
+
+    }
+    
+    func showExpandImages(){
+        
+        backgroundImage.image = UIImage(named: images[imageIndex])
+        UIImage.fetch(with: images[imageIndex], completion: { (image) in
+            self.backgroundImage.image = image
+        })
+        
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
@@ -49,9 +74,8 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.view.addGestureRecognizer(tap)
-        
-
     }
+  
     
     @IBAction func escolherClickAction(_ sender: Any) {
         presenter?.chooseClick(index: imageIndex)
@@ -72,6 +96,9 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
             if (imageIndex > 0){
                 imageIndex -= 1
                 backgroundImage.image = UIImage(named: images[imageIndex])
+                UIImage.fetch(with: images[imageIndex], completion: { (image) in
+                    self.backgroundImage.image = image
+                })
                 
                 if(details){
                     showOrHideDetails()
@@ -80,11 +107,13 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
             
             
             
-        }
-        else if gesture.direction == UISwipeGestureRecognizerDirection.left {
+        } else if gesture.direction == UISwipeGestureRecognizerDirection.left {
             if (imageIndex < images.count-1){
                 imageIndex += 1
                 backgroundImage.image = UIImage(named: images[imageIndex])
+                UIImage.fetch(with: images[imageIndex], completion: { (image) in
+                    self.backgroundImage.image = image
+                })
                 
             }
             
@@ -146,7 +175,10 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         photoCount.text = "\(imageIndex+1)/\(images.count)"
     }
 
-
+    @IBAction func closeButtonAction(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 @IBDesignable

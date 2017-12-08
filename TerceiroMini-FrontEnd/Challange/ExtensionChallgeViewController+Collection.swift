@@ -67,8 +67,9 @@ extension ChallengeViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photoID = self.challengePhotos![indexPath.row].id
-        
+        //let photoID = self.challengePhotos![indexPath.row].id
+        data = (self.challengePhotos, indexPath.row) as? ([Photo], Int)
+        self.goToExpandoPhotoView(parameter: data!)
          //let photo = self.challengePhotos[indexPath.row]
         
     }

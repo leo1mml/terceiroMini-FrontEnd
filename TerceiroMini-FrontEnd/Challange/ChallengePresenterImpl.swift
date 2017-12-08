@@ -12,6 +12,11 @@ import Cloudinary
 class ChallengePresenterImpl: ChallengePresenter{
     
     
+    
+   
+    
+    
+    
 
     
     
@@ -136,6 +141,9 @@ class ChallengePresenterImpl: ChallengePresenter{
         //IR PARA TELA
     }
     
+    func expandPhoto(photos: [String]) {
+        //view.goToExpandoPhotoView(parameter: <#T##([String], Int)#>)
+    }
     
 }
 

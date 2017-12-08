@@ -21,6 +21,7 @@ protocol ChallengeView{
     func setHeader(theme: String, endDate: Date, mainImageURL: String, numPhotos: Int)
     func setChallengePhotos(photos: [Photo])
     func showCollectionPhotos()
+    func goToExpandoPhotoView(parameter: ([Photo], Int))
 }
 
 protocol ChallengePresenter{
@@ -28,6 +29,8 @@ protocol ChallengePresenter{
     func mainButtonClicked()
     func getChallengeHeader(challengeID: String)
     func getChallengeImages(challengeID: String)
-    func presentProfile(challengeID: String) 
+    func presentProfile(challengeID: String)
+    func expandPhoto(photos:[String])
+    
     
 }

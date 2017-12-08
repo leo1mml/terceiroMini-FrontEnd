@@ -18,6 +18,8 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     var presenter : ChallengePresenter?
     var header: HeaderChallengeCollectionReusableView!
     var challengeID : String?
+    //passing data to other view
+    var data: ([Photo], Int)?
     
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
@@ -68,10 +70,26 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     func resolveState(){
         
-        
+        performSegue(withIdentifier: "profileSegue", sender: self)
     }
  
 
+    
+    func goToExpandoPhotoView(parameter: ([Photo], Int)) {
+        
+        data = parameter
+        performSegue(withIdentifier: "expandPhotoSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "expandPhotoSegue"{
+            
+            if let dest = segue.destination as? ChallengeClosedViewController{
+                dest.data = data
+            }
+            
+        }
+    }
     
     func showPhotoMenu(){
         
@@ -205,6 +223,8 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     
 }
+
+
 
 enum ChallengeState {
     case open

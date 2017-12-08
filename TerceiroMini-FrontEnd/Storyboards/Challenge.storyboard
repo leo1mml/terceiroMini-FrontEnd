@@ -155,11 +155,29 @@
                     <navigationItem key="navigationItem" id="0en-2n-7Jl"/>
                     <connections>
                         <outlet property="mainCollectionView" destination="aBy-Pl-cxj" id="pGd-Ec-nL4"/>
+                        <segue destination="CaJ-Jg-CHa" kind="show" identifier="profileSegue" id="lcf-df-aEt"/>
+                        <segue destination="BX3-Ej-pJl" kind="show" identifier="expandPhotoSegue" id="sJo-lF-U85"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYv-Dk-i9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="109.59999999999999" y="53.523238380809602"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="Pwb-Hr-I7C">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="CaJ-Jg-CHa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q4U-s4-2G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="40"/>
+        </scene>
+        <!--ChallengeClosed-->
+        <scene sceneID="ykd-TS-vMg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChallengeClosed" id="BX3-Ej-pJl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GNM-qJ-Pxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="105"/>
         </scene>
     </scenes>
     <resources>

@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return (holder.amountPhotos)
+        return (cells.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

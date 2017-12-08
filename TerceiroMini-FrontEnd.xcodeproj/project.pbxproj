@@ -135,6 +135,7 @@
 		8A964BCF1FDB0C99003C9FFD /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCC1FDB0C98003C9FFD /* HeaderCollectionReusableView.xib */; };
 		8A964BD01FDB0C99003C9FFD /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCD1FDB0C99003C9FFD /* Challenge.storyboard */; };
 		8A964BD11FDB0C99003C9FFD /* ChallengeClosed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCE1FDB0C99003C9FFD /* ChallengeClosed.storyboard */; };
+		8A964BD51FDB253A003C9FFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BD31FDB253A003C9FFD /* Main.storyboard */; };
 		8A9760661FD87BA800904EC6 /* SeeAllPastChallenges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A9760651FD87BA800904EC6 /* SeeAllPastChallenges.storyboard */; };
 		8A9760691FD87BFF00904EC6 /* SeeAllPastChallengesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9760681FD87BFF00904EC6 /* SeeAllPastChallengesVC.swift */; };
 		8A97606B1FD88FD800904EC6 /* SeeAllPastChallengesPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97606A1FD88FD800904EC6 /* SeeAllPastChallengesPresenterImp.swift */; };
@@ -297,6 +298,7 @@
 		8A964BCC1FDB0C98003C9FFD /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderCollectionReusableView.xib; path = "TerceiroMini-FrontEnd/Storyboards/HeaderCollectionReusableView.xib"; sourceTree = SOURCE_ROOT; };
 		8A964BCD1FDB0C99003C9FFD /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Challenge.storyboard; path = "TerceiroMini-FrontEnd/Storyboards/Challenge.storyboard"; sourceTree = SOURCE_ROOT; };
 		8A964BCE1FDB0C99003C9FFD /* ChallengeClosed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ChallengeClosed.storyboard; path = "TerceiroMini-FrontEnd/Storyboards/ChallengeClosed.storyboard"; sourceTree = SOURCE_ROOT; };
+		8A964BD41FDB253A003C9FFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A9760651FD87BA800904EC6 /* SeeAllPastChallenges.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SeeAllPastChallenges.storyboard; sourceTree = "<group>"; };
 		8A9760681FD87BFF00904EC6 /* SeeAllPastChallengesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllPastChallengesVC.swift; sourceTree = "<group>"; };
 		8A97606A1FD88FD800904EC6 /* SeeAllPastChallengesPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllPastChallengesPresenterImp.swift; sourceTree = "<group>"; };
@@ -632,6 +634,7 @@
 				8A9760641FD87B8F00904EC6 /* SeeAllPastChallenges */,
 				8A1CC5A81FBE66F900BC4963 /* Main Screen */,
 				8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */,
+				8A964BD21FDB253A003C9FFD /* LoginFlow */,
 				8A964BCD1FDB0C99003C9FFD /* Challenge.storyboard */,
 				8A964BCE1FDB0C99003C9FFD /* ChallengeClosed.storyboard */,
 				14103C9E1FBE221800726C0B /* Profile.storyboard */,
@@ -785,6 +788,14 @@
 			path = "TerceiroMini-FrontEndTests";
 			sourceTree = "<group>";
 		};
+		8A964BD21FDB253A003C9FFD /* LoginFlow */ = {
+			isa = PBXGroup;
+			children = (
+				8A964BD31FDB253A003C9FFD /* Main.storyboard */,
+			);
+			path = LoginFlow;
+			sourceTree = "<group>";
+		};
 		8A9760641FD87B8F00904EC6 /* SeeAllPastChallenges */ = {
 			isa = PBXGroup;
 			children = (
@@ -893,12 +904,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				08297B221FC74B2E00701F9B /* MontserratAlternates-SemiBold.otf in Resources */,
+				8A964BD51FDB253A003C9FFD /* Main.storyboard in Resources */,
 				08297B2E1FC74B2E00701F9B /* MontserratAlternates-Italic.otf in Resources */,
 				48D526D71FD5E31900D04DCE /* FeaturedMyClickCollectionViewCell.xib in Resources */,
 				08297B241FC74B2E00701F9B /* MontserratAlternates-ExtraBold.otf in Resources */,
 				48D526D61FD5E26900D04DCE /* FeaturedFavoriteClickCollectionViewCell.xib in Resources */,
 				08297B271FC74B2E00701F9B /* Montserrat-ExtraLightItalic.otf in Resources */,
-				086D27B61FCCA5A800D9F547 /* presentation-login-exit@2x.png in Resources */,
 				08297B151FC74B2E00701F9B /* Montserrat-Thin.otf in Resources */,
 				08297B161FC74B2E00701F9B /* MontserratAlternates-MediumItalic.otf in Resources */,
 				083982C11FC8B70E00E45D10 /* TableHeader.xib in Resources */,
@@ -910,7 +921,6 @@
 				8A5D5CF21FB0D22C00C24725 /* Assets.xcassets in Resources */,
 				08297B211FC74B2E00701F9B /* Montserrat-Italic.otf in Resources */,
 				08297B141FC74B2E00701F9B /* Montserrat-ThinItalic.otf in Resources */,
-				086D27B81FCCA5A800D9F547 /* presentation-login-exit@3x.png in Resources */,
 				8A9760661FD87BA800904EC6 /* SeeAllPastChallenges.storyboard in Resources */,
 				08297B2D1FC74B2E00701F9B /* MontserratAlternates-ExtraBoldItalic.otf in Resources */,
 				08297B191FC74B2E00701F9B /* MontserratAlternates-Bold.otf in Resources */,
@@ -1186,6 +1196,14 @@
 				8A5D5CF41FB0D22C00C24725 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8A964BD31FDB253A003C9FFD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A964BD41FDB253A003C9FFD /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

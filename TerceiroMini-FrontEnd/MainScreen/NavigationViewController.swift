@@ -21,10 +21,15 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         let sb = UIStoryboard(name: "MainScreen", bundle: nil)
         let vc1 = sb.instantiateViewController(withIdentifier: "MainStoryboard")
         vc1.restorationIdentifier = "MainScreen"
-        let vc2 = sb.instantiateViewController(withIdentifier: "ProfileStoryboard")
-        vc2.restorationIdentifier = "Profile"
-        
-        return [vc1, vc2]
+        var vc2 : UIViewController?
+        if let _ = UserDefaults.standard.string(forKey: "token"){
+            vc2 = sb.instantiateViewController(withIdentifier: "ProfileStoryboard")
+            vc2?.restorationIdentifier = "Profile"
+        }else {
+            vc2 = sb.instantiateViewController(withIdentifier: "Main")
+            vc2?.restorationIdentifier = "Main"
+        }
+        return [vc1, vc2!]
     }()
     var pageViewScroll : UIScrollView?
     
@@ -104,9 +109,9 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         //self.currentPageIndex = self.lastPendingViewControllerIndex
         self.previousVCIdentifier = previousViewControllers[0].restorationIdentifier!
         
-        if(self.previousVCIdentifier == "MainScreen" && self.nextVCIdentifier == "Profile"){
+        if(self.previousVCIdentifier == "MainScreen" && self.nextVCIdentifier == "Profile" || self.nextVCIdentifier == "Main"){
             delegateAnimations?.swipeMainToProfile()
-        } else if(self.previousVCIdentifier == "Profile" && self.nextVCIdentifier == "MainScreen"){
+        } else if(self.previousVCIdentifier == "Main" || self.previousVCIdentifier == "Profile" && self.nextVCIdentifier == "MainScreen"){
             delegateAnimations?.swipeProfileToMain()
         }
     }

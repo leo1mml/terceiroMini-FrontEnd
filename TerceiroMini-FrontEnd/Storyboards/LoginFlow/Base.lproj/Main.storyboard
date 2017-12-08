@@ -20,7 +20,7 @@
         <!--Login Presentation View Controller-->
         <scene sceneID="ExE-a1-edq">
             <objects>
-                <viewController id="SIc-PL-Cc8" customClass="LoginPresentationViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Main" storyboardIdentifier="Main" id="SIc-PL-Cc8" customClass="LoginPresentationViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d7s-mr-7pf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,7 +186,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W6-Ew-aol">
-                                <rect key="frame" x="0.0" y="20" width="30" height="30"/>
+                                <rect key="frame" x="20" y="20" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6CP-i7-Nof"/>
                                     <constraint firstAttribute="width" constant="30" id="ANl-q8-1de"/>
@@ -501,6 +501,6 @@
         <image name="register-backgrond-photo" width="375" height="182"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SNq-hT-Yfm"/>
+        <segue reference="Xrf-ov-Gtq"/>
     </inferredMetricsTieBreakers>
 </document>

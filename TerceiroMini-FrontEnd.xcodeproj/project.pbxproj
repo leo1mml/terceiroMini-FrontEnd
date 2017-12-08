@@ -96,6 +96,8 @@
 		1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */; };
 		148AE59D1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */; };
 		148AE5A11FD1ACA1005108E7 /* ChallengeClosedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */; };
+		14C537FE1FD8575200154004 /* ProfileUserHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C537FD1FD8575200154004 /* ProfileUserHolder.swift */; };
+		14C538031FD85B6700154004 /* ProfileCellHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C538021FD85B6700154004 /* ProfileCellHolder.swift */; };
 		14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */; };
 		14D106201FBE00B000AA9F89 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */; };
 		14D106221FBE00CC00AA9F89 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */; };
@@ -236,6 +238,8 @@
 		148AE59A1FD1A81B005108E7 /* ChallengeClosed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengeClosed.storyboard; sourceTree = "<group>"; };
 		148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedProtocols.swift; sourceTree = "<group>"; };
 		148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedPresenter.swift; sourceTree = "<group>"; };
+		14C537FD1FD8575200154004 /* ProfileUserHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserHolder.swift; sourceTree = "<group>"; };
+		14C538021FD85B6700154004 /* ProfileCellHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellHolder.swift; sourceTree = "<group>"; };
 		14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
@@ -614,9 +618,19 @@
 			path = ChallengeClosed;
 			sourceTree = "<group>";
 		};
+		14C537FF1FD857F200154004 /* Holder */ = {
+			isa = PBXGroup;
+			children = (
+				14C537FD1FD8575200154004 /* ProfileUserHolder.swift */,
+				14C538021FD85B6700154004 /* ProfileCellHolder.swift */,
+			);
+			path = Holder;
+			sourceTree = "<group>";
+		};
 		14D1061C1FBE004D00AA9F89 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				14C537FF1FD857F200154004 /* Holder */,
 				14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */,
 				14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */,
 				14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */,
@@ -1032,6 +1046,7 @@
 				0899EA011FC74D1400F148DC /* Photo.swift in Sources */,
 				8AD759241FD1CAE000002D56 /* (null) in Sources */,
 				14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */,
+				14C538031FD85B6700154004 /* ProfileCellHolder.swift in Sources */,
 				086D279C1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift in Sources */,
 				48A7C4D31FD1EC3400EB5C1A /* ChallengeViewController+ChallengeHeaderDelegate.swift in Sources */,
 				0899EA051FC74D2900F148DC /* NetHelper.swift in Sources */,
@@ -1051,6 +1066,7 @@
 				8A0E82C21FC744B800218C80 /* UIView+Extension.swift in Sources */,
 				0899EA071FC74D3100F148DC /* UserNet.swift in Sources */,
 				8A543E091FD5EC0A002392A3 /* LastWinnersProtocols.swift in Sources */,
+				14C537FE1FD8575200154004 /* ProfileUserHolder.swift in Sources */,
 				14D106201FBE00B000AA9F89 /* ProfilePresenter.swift in Sources */,
 				08276F3A1FC73F8C00A8E605 /* NextChallengeTableViewCell.swift in Sources */,
 				14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */,
@@ -1240,7 +1256,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JP3F8DJU56;
+				DEVELOPMENT_TEAM = J8J2K4KEX2;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.bepiducb.TerceiroMini-FrontEnd";
@@ -1256,7 +1272,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JP3F8DJU56;
+				DEVELOPMENT_TEAM = J8J2K4KEX2;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.bepiducb.TerceiroMini-FrontEnd";

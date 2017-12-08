@@ -97,6 +97,31 @@ class PhotoNet {
     
     /**
      
+     Get the data of all the photos of an user from the user id.
+     
+     - parameter token: The user id.
+     - parameter p: The photos retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    class func get(byUserId id: String, completion: @escaping (_ p: [Photo]?, _ e: Error?) -> Void) {
+        let completeDomain = R.photosDomain + "/getPhotosByUserId/\(id)"
+        
+        Alamofire.request(completeDomain).validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "photos")!
+            let photos = buildPhotos(fromDictionaryArry: arr)
+            
+            completion(photos, nil)
+        }
+    }
+    
+    /**
+     
      Gets the data of all the photos of a challenge from its id.
      
      - parameter id: The challenge id.
@@ -171,6 +196,38 @@ class PhotoNet {
             
             completion(photo, nil)
         }
+    }
+    
+    /**
+     
+     Registers a new vote for a photo.
+     
+     - parameter id: The id of the photo that you want to vote in.
+     - parameter token: The server authentication token.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter s: A boolean flag indicating if the task was completed successfully.
+     */
+    class func vote(byId id: String, token: String, completion: @escaping (_ s: Bool) -> Void) {
+        let domain = R.photosDomain + "/vote/\(id)"
+        let header = ["x-auth": token]
+        
+        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { completion($0.error == nil) }
+    }
+    
+    /**
+     
+     Unvotes a photo that is already voted.
+     
+     - parameter id: The id of the photo that you want to unvote.
+     - parameter token: The server authentication token.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter s: A boolean flag indicating if the task was completed successfully.
+     */
+    class func unvote(byId id: String, token: String, completion: @escaping (_ s: Bool) -> Void) {
+        let domain = R.photosDomain + "/unvote/\(id)"
+        let header = ["x-auth": token]
+        
+        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { completion($0.error == nil) }
     }
     
     // MARK: - Auxiliar methods

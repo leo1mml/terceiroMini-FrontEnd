@@ -68,6 +68,14 @@ class NetworkManager {
         PhotoNet.delete(byId: id, completion: completion)
     }
     
+    class func voteOnPhoto(byId id: String, token: String, completion: @escaping (_ s: Bool) -> Void) {
+        PhotoNet.vote(byId: id, token: token, completion: completion)
+    }
+    
+    class func unvotePhoto(byId id: String, token: String, completion: @escaping (_ s: Bool) -> Void) {
+        PhotoNet.unvote(byId: id, token: token, completion: completion)
+    }
+    
     // MARK: - Challenge methods
     
     class func getAllChallenges(completion: @escaping ([Challenge]?, Error?) -> Void) {

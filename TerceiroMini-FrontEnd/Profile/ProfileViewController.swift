@@ -11,8 +11,8 @@ import UIKit
 class ProfileViewController: UIViewController, ProfileView, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var presenter: ProfilePresenter?
-    var holder: ProfileUserHolder?
-    var amountTrophy: Int!
+    var holder = ProfileUserHolder(image: UIImage(), name: "", username: "", amountPhotos: 0, amountTrophy: 0)
+    var cells = [ProfileCellHolder]()
     
     @IBOutlet weak var collectionProfile: UICollectionView!
 
@@ -21,8 +21,6 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
         presenter = ProfilePresenterImpl(profileView: self)
         presenter?.loadData(id: "5a21a303391838001482d1f2")
-        
-        amountTrophy = 0
         
         self.collectionProfile.delegate = self
         self.collectionProfile.dataSource = self
@@ -33,25 +31,28 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         holder = profileUserHolder
         collectionProfile.reloadData()
     }
+    
+    func receiveCells(cells: [ProfileCellHolder]) {
+        self.cells = cells
+        collectionProfile.reloadData()
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if holder == nil {
-            return 0
-        }
-        return holder?.cellHolders.count ?? 0
+
+        return (holder.amountPhotos)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "profileCell", for: indexPath) as! ProfileCollectionViewCell
         
-        cell.themeLabel.text = holder?.cellHolders[indexPath.row].theme
+        cell.themeLabel.text = cells[indexPath.row].theme
         
         let startingGradientColor = UIColor(red: 0.15, green: 0.18, blue: 0.19, alpha: 1)
         
         cell.backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [.clear, .clear, startingGradientColor])
         
-        cell.backgroundImage.image = holder?.cellHolders[indexPath.row].image
+        cell.backgroundImage.image = cells[indexPath.row].image
         cell.backgroundImage.contentMode = .scaleAspectFill
         
         cell.frame.size.width = 121
@@ -59,11 +60,10 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
         if holder == nil {return cell}
         
-        if holder!.cellHolders[indexPath.row].isWinner {
+        if (cells[indexPath.row].isWinner) {
             cell.trophyImage.isHidden = false
         } else {
             cell.trophyImage.isHidden = true
-            amountTrophy = amountTrophy + 1
         }
 
         return cell
@@ -79,7 +79,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             let headerView: HeaderCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "profileHeader", for: indexPath) as! HeaderCollectionReusableView
             
             // valor temporario
-            headerView.profileImage.image = holder?.image
+            headerView.profileImage.image = holder.image
             headerView.profileImage.contentMode = .scaleAspectFill
             
             headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2
@@ -87,10 +87,10 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
 
             headerView.profileBorderView.makeBorderAnimate()
 
-            headerView.profileNameLabel.text = holder?.name
-            headerView.profileUserName.text = holder?.username
-            headerView.profileTrophyNumberLabel.text = "\(amountTrophy!)"
-            headerView.profilePhotoNumberLabel.text = "\(holder?.cellHolders.count ?? 0)"
+            headerView.profileNameLabel.text = holder.name
+            headerView.profileUserName.text = holder.username
+            headerView.profileTrophyNumberLabel.text = "\(holder.amountTrophy)"
+            headerView.profilePhotoNumberLabel.text = "\(holder.amountPhotos)"
             
             reusableView = headerView
         }

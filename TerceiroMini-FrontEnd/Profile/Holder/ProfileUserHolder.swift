@@ -14,5 +14,5 @@ struct ProfileUserHolder {
     var name: String
     var username: String
     var amountPhotos: Int
-    var cellHolders: [ProfileCellHolder]
+    var amountTrophy: Int
 }

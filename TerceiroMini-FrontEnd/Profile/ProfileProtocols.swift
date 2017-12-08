@@ -12,11 +12,10 @@ import UIKit
 protocol ProfileView {
     
     func receiveDatas(profileUserHolder: ProfileUserHolder)
-    
+    func receiveCells(cells: [ProfileCellHolder])
 }
 
 protocol ProfilePresenter {
     
     func loadData(id: String)
-    
 }

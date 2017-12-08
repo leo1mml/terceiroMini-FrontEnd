@@ -34,9 +34,50 @@ class ProfilePresenterImpl: ProfilePresenter {
     }
     
     func loadData(id: String) {
-        
         var cells = [ProfileCellHolder]()
-        var profileHolder = ProfileUserHolder(image: UIImage(), name: "", username: "", amountPhotos: 0, cellHolders: cells)
+        var amountPhotos = 0
+        var amountTrophy = 0
+        
+        NetworkManager.getUserPhotos(byUserId: id) { (photos, error) in
+            
+            guard error == nil else {
+                
+                return
+            }
+            
+            // fotos do usuario
+            
+            // passo fotos para images
+            for photo in photos! {
+                amountPhotos += 1
+                NetworkManager.getChallengeById(id: id) { (challenge, error) in
+                    
+                    guard error == nil else {
+                        
+                        return
+                    }
+                    
+                    // Challenge
+                    if challenge?.winner == photo.url {
+                        amountTrophy += 1
+                    }
+                    
+                    // montagem da cell
+                    UIImage.fetch(with: photo.url!, completion: { (image) in
+                        let profileCell = ProfileCellHolder(image: image, theme: (challenge?.theme)!, isWinner: challenge?.winner == photo.url)
+                        cells.append(profileCell)
+                    })
+                }
+            }
+            
+            self.loadHeader(id: id, amountPhotos: amountPhotos, amountTrophy: amountTrophy)
+            self.view?.receiveCells(cells: cells)
+        }
+    }
+    
+    func loadHeader(id: String, amountPhotos: Int, amountTrophy: Int) {
+
+        var profileHolder = ProfileUserHolder(image: UIImage(), name: "", username: "", amountPhotos: 0, amountTrophy: 0)
         
         NetworkManager.getUser(byId: id) { (user, error) in
             
@@ -47,40 +88,19 @@ class ProfilePresenterImpl: ProfilePresenter {
             
             // Usuario
             
-            UIImage.fetch(with: (user?.profilePhotoUrl)!) { (image) in
-                // ImagemPerfil
+            if user?.profilePhotoUrl != nil {
                 
-                NetworkManager.getUserPhotos(byUserId: id) { (photos, error) in
+                UIImage.fetch(with: (user?.profilePhotoUrl)!) { (image) in
+                    // ImagemPerfil
                     
-                    guard error == nil else {
-                        
-                        return
-                    }
-                    
-                    // fotos do usuario
-                    
-                    // passo fotos para images
-                    for photo in photos! {
-                        
-                        NetworkManager.getChallengeById(id: id) { (challenge, error) in
-                            
-                            guard error == nil else {
-                                
-                                return
-                            }
-                            
-                            // Challenge
-                            
-                            // montagem da cell
-                            UIImage.fetch(with: photo.url!, completion: { (image) in
-                                let profileCell = ProfileCellHolder(image: image, theme: (challenge?.theme)!, isWinner: challenge?.winner == photo.url)
-                                cells.append(profileCell)
-                            })
-                        }
-                    }
-
+                    profileHolder = ProfileUserHolder(image: image, name: (user?.name)!, username: (user?.username)!, amountPhotos: amountPhotos, amountTrophy: amountTrophy)
+                    self.view?.receiveDatas(profileUserHolder: profileHolder)
                 }
-                profileHolder = ProfileUserHolder(image: image, name: (user?.name)!, username: (user?.username)!, amountPhotos: cells.count, cellHolders: cells)
+                
+            } else {
+                
+                let image = UIImage()
+                profileHolder = ProfileUserHolder(image: image, name: (user?.name)!, username: (user?.username)!, amountPhotos: amountPhotos, amountTrophy: amountTrophy)
                 self.view?.receiveDatas(profileUserHolder: profileHolder)
             }
         }

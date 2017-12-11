@@ -10,6 +10,8 @@ import UIKit
 
 class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     
+    
+    
     var presenter: ChallengeClosedPresenter?
     
     @IBOutlet weak var escolherClickButton: CustomButtonClick!
@@ -64,6 +66,8 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
             self.backgroundImage.image = image
         })
         
+        
+        
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
@@ -78,7 +82,9 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
   
     
     @IBAction func escolherClickAction(_ sender: Any) {
-        presenter?.chooseClick(index: imageIndex)
+        presenter?.chooseClick(photo: (self.data?.0[imageIndex])!)
+        
+        
     }
     
     @IBAction func showReport(_ sender: Any) {
@@ -89,6 +95,17 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     @objc func handleTap(){
         
         showOrHideDetails()
+    }
+    
+    func checkIfChosenClick() {
+        
+    }
+    
+    func enableMyClickChosebuttonLabel(){
+        self.closeButton.setTitle("Meu Click", for: .disabled)
+    }
+    func enableChoseClickButton(){
+        self.closeButton.setTitle("Escolher Click", for: .normal)
     }
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {

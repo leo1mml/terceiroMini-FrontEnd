@@ -11,9 +11,13 @@ import Foundation
 protocol ChallengeClosedView {
     func showCurrentClick()
     func showAlert()
+    func enableMyClickChosebuttonLabel()
+    func enableChoseClickButton()
 }
 
 protocol ChallengeClosedPresenter {
     func showReport()
-    func chooseClick(index: Int)
+    func chooseClick(photo: Photo)
+    func checkIfChosenClick()
+
 }

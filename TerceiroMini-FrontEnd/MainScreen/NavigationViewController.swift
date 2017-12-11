@@ -15,7 +15,11 @@ protocol NavigationAnimationsDelegate {
     func setFirstOffset(firstOffsetX: CGFloat)
 }
 
-class NavigationViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate {
+class NavigationViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, LoginCallerPortocol {
+    
+    var isMainScreen: Bool {
+        return true
+    }
     
     lazy var viewControllerList:[UIViewController] = {
         let sb = UIStoryboard(name: "MainScreen", bundle: nil)
@@ -28,6 +32,8 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         }else {
             vc2 = sb.instantiateViewController(withIdentifier: "Main")
             vc2?.restorationIdentifier = "Main"
+            (vc2 as! LoginPresentationViewController).caller = self
+            
         }
         return [vc1, vc2!]
     }()

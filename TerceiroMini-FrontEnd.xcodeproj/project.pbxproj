@@ -107,7 +107,6 @@
 		14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */; };
 		481B81D01FD8632E000955E8 /* NextChallengesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B81CF1FD8632E000955E8 /* NextChallengesProtocols.swift */; };
 		481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B81D11FD8633F000955E8 /* NextChallengesCellPresenterImp.swift */; };
-		4832D44B1FD9B60700EE18DC /* ChallengeClosed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4832D44A1FD9B60700EE18DC /* ChallengeClosed.storyboard */; };
 		4832D44C1FD9BECF00EE18DC /* ChallengeClosedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE5961FD1A79F005108E7 /* ChallengeClosedViewController.swift */; };
 		48620F1D1FD72AE600A45E3E /* TimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48620F1C1FD72AE600A45E3E /* TimeInterval+Extension.swift */; };
 		48620F1E1FD72B1900A45E3E /* LastWinnersPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A543E0A1FD5ED7D002392A3 /* LastWinnersPresenterImp.swift */; };
@@ -139,11 +138,11 @@
 		8A964BCF1FDB0C99003C9FFD /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCC1FDB0C98003C9FFD /* HeaderCollectionReusableView.xib */; };
 		8A964BD01FDB0C99003C9FFD /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCD1FDB0C99003C9FFD /* Challenge.storyboard */; };
 		8A964BD11FDB0C99003C9FFD /* ChallengeClosed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCE1FDB0C99003C9FFD /* ChallengeClosed.storyboard */; };
-		8A964BD51FDB253A003C9FFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BD31FDB253A003C9FFD /* Main.storyboard */; };
 		8A9760661FD87BA800904EC6 /* SeeAllPastChallenges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A9760651FD87BA800904EC6 /* SeeAllPastChallenges.storyboard */; };
 		8A9760691FD87BFF00904EC6 /* SeeAllPastChallengesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9760681FD87BFF00904EC6 /* SeeAllPastChallengesVC.swift */; };
 		8A97606B1FD88FD800904EC6 /* SeeAllPastChallengesPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97606A1FD88FD800904EC6 /* SeeAllPastChallengesPresenterImp.swift */; };
 		8A97606D1FD88FE500904EC6 /* SeeAllPastChallengesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97606C1FD88FE500904EC6 /* SeeAllPastChallengesProtocols.swift */; };
+		8AD61C691FDF12AB0042B86F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BD31FDB253A003C9FFD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -576,6 +575,7 @@
 				5730117CFD20786C5CD20BF7 /* Pods-TerceiroMini-FrontEnd.debug.xcconfig */,
 				863C924FDEF0591733214EA3 /* Pods-TerceiroMini-FrontEnd.release.xcconfig */,
 				7BFDDF59178DD45CFEF82E7E /* Pods-TerceiroMini-FrontEndTests.release.xcconfig */,
+				4832D44A1FD9B60700EE18DC /* ChallengeClosed.storyboard */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -937,7 +937,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08297B221FC74B2E00701F9B /* MontserratAlternates-SemiBold.otf in Resources */,
-				8A964BD51FDB253A003C9FFD /* Main.storyboard in Resources */,
+				8AD61C691FDF12AB0042B86F /* Main.storyboard in Resources */,
 				08297B2E1FC74B2E00701F9B /* MontserratAlternates-Italic.otf in Resources */,
 				48D526D71FD5E31900D04DCE /* FeaturedMyClickCollectionViewCell.xib in Resources */,
 				08297B241FC74B2E00701F9B /* MontserratAlternates-ExtraBold.otf in Resources */,
@@ -968,7 +968,6 @@
 				08297B111FC74B2E00701F9B /* MontserratAlternates-Medium.otf in Resources */,
 				08297B281FC74B2E00701F9B /* MontserratAlternates-Light.otf in Resources */,
 				08297B201FC74B2E00701F9B /* Montserrat-ExtraBoldItalic.otf in Resources */,
-				4832D44B1FD9B60700EE18DC /* ChallengeClosed.storyboard in Resources */,
 				08297B1C1FC74B2E00701F9B /* Montserrat-LightItalic.otf in Resources */,
 				08297B1B1FC74B2E00701F9B /* MontserratAlternates-Thin.otf in Resources */,
 				08297B2A1FC74B2E00701F9B /* MontserratAlternates-Regular.otf in Resources */,

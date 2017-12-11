@@ -104,6 +104,8 @@
 		14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */; };
 		481B81D01FD8632E000955E8 /* NextChallengesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B81CF1FD8632E000955E8 /* NextChallengesProtocols.swift */; };
 		481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B81D11FD8633F000955E8 /* NextChallengesCellPresenterImp.swift */; };
+		4832D44B1FD9B60700EE18DC /* ChallengeClosed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4832D44A1FD9B60700EE18DC /* ChallengeClosed.storyboard */; };
+		4832D44C1FD9BECF00EE18DC /* ChallengeClosedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE5961FD1A79F005108E7 /* ChallengeClosedViewController.swift */; };
 		48620F1D1FD72AE600A45E3E /* TimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48620F1C1FD72AE600A45E3E /* TimeInterval+Extension.swift */; };
 		48620F1E1FD72B1900A45E3E /* LastWinnersPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A543E0A1FD5ED7D002392A3 /* LastWinnersPresenterImp.swift */; };
 		48620F221FD815F000A45E3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48620F201FD815F000A45E3E /* Main.storyboard */; };
@@ -246,6 +248,7 @@
 		14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		481B81CF1FD8632E000955E8 /* NextChallengesProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NextChallengesProtocols.swift; path = "TerceiroMini-FrontEnd/MainScreen/MainScreenTableView/Cells/Next Challenges Cell/NextChallengesProtocols.swift"; sourceTree = SOURCE_ROOT; };
 		481B81D11FD8633F000955E8 /* NextChallengesCellPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NextChallengesCellPresenterImp.swift; path = "TerceiroMini-FrontEnd/MainScreen/MainScreenTableView/Cells/Next Challenges Cell/NextChallengesCellPresenterImp.swift"; sourceTree = SOURCE_ROOT; };
+		4832D44A1FD9B60700EE18DC /* ChallengeClosed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengeClosed.storyboard; sourceTree = "<group>"; };
 		48620F1C1FD72AE600A45E3E /* TimeInterval+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extension.swift"; sourceTree = "<group>"; };
 		48620F211FD815F000A45E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48620F231FD85CBA00A45E3E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -599,6 +602,7 @@
 		08F06F9B1FBB594A0039EAFE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				4832D44A1FD9B60700EE18DC /* ChallengeClosed.storyboard */,
 				48C882F91FC89412000A57C2 /* Challenge.storyboard */,
 				48620F1F1FD815F000A45E3E /* LoginFlow */,
 				8A1CC5A81FBE66F900BC4963 /* Main Screen */,
@@ -880,6 +884,7 @@
 				08297B111FC74B2E00701F9B /* MontserratAlternates-Medium.otf in Resources */,
 				08297B281FC74B2E00701F9B /* MontserratAlternates-Light.otf in Resources */,
 				08297B201FC74B2E00701F9B /* Montserrat-ExtraBoldItalic.otf in Resources */,
+				4832D44B1FD9B60700EE18DC /* ChallengeClosed.storyboard in Resources */,
 				08297B1C1FC74B2E00701F9B /* Montserrat-LightItalic.otf in Resources */,
 				08297B1B1FC74B2E00701F9B /* MontserratAlternates-Thin.otf in Resources */,
 				08297B2A1FC74B2E00701F9B /* MontserratAlternates-Regular.otf in Resources */,
@@ -1056,6 +1061,8 @@
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */,
 				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,
+				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
+				4832D44C1FD9BECF00EE18DC /* ChallengeClosedViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,
 				0899EA091FC74D3900F148DC /* PhotoNet.swift in Sources */,
@@ -1256,7 +1263,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JP3F8DJU56;
+				DEVELOPMENT_TEAM = 9QUZLTLDFZ;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1273,7 +1280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JP3F8DJU56;
+				DEVELOPMENT_TEAM = 9QUZLTLDFZ;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

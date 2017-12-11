@@ -9,6 +9,9 @@
 import UIKit
 
 extension ChallengeViewController: ChallengeHeaderDelegate, ChallengeHeaderDataSource {
+   
+   
+    
     func getChallengeName() -> String {
         return String()
     }
@@ -32,6 +35,15 @@ extension ChallengeViewController: ChallengeHeaderDelegate, ChallengeHeaderDataS
     
     
     func mainButtonClicked() {
-        presenter?.mainButtonClicked()
+        if state == ChallengeState.open{
+            //se nao
+            self.showPhotoMenu()
+            //presenter?.mainButtonClicked()
+        }else{
+            //presenter vai para o perfil do cara
+            presenter?.presentProfile(challengeID: challengeID!)
+        }
+        
+        
     }
 }

@@ -23,16 +23,18 @@ extension UIView {
         
     }
     
-    func setCustomGradient(colorOne: UIColor, colorTwo: UIColor, locationX: Float, locationY: Float, startPoint: CGPoint, endPoint: CGPoint){
+    func setCustomGradient(colors: [UIColor], locationX: Float, locationY: Float, startPoint: CGPoint, endPoint: CGPoint){
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
-        gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
+        gradientLayer.colors = colors.map{$0.cgColor}
         gradientLayer.locations = [locationX as NSNumber, locationY as NSNumber]
         gradientLayer.startPoint = startPoint
         gradientLayer.endPoint = endPoint
         
         layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    
     
     func makeBorderAnimate(){
         

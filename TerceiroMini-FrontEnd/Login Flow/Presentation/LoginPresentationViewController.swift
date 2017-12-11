@@ -30,7 +30,7 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
     
     // MARK: - Outlets
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: BackgroundImageView!
     @IBOutlet weak var backgroundImageHeight: NSLayoutConstraint!
     
     @IBOutlet weak var logoImageView: UIImageView!
@@ -81,6 +81,11 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
             
             exitButton.isHidden = true
             logoImageView.isHidden = true
+            
+            let newGradient = backgroundImageView.buildGradient(colors: [.white, .clear], locationX: 0, locationY: 0.21, startPoint: CGPoint(x: 0.5, y: 0), endPoint: CGPoint(x: 0.5, y: 1))
+            
+            backgroundImageView.changeGradient(named: "top", by: newGradient)
+            backgroundImageView.set(heightSize: 327)
         }
     }
     

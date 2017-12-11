@@ -8,7 +8,11 @@
 
 import UIKit
 
+private let heightConstraint = "heightConstraint"
+
 class BackgroundImageView: UIImageView {
+    
+    private var gradients: [String: CAGradientLayer]!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,16 +41,61 @@ class BackgroundImageView: UIImageView {
         var startPoint = CGPoint(x: 0, y: 0)
         var endPoint = CGPoint(x: 1, y: 1)
         
-        self.setCustomGradient(colors: [Colors.gradientBlack, .clear], locationX: 0, locationY: 0.35, startPoint: startPoint, endPoint: endPoint)
+        let gradientTop = buildGradient(colors: [Colors.gradientBlack, .clear], locationX: 0, locationY: 0.35, startPoint: startPoint, endPoint: endPoint)
         
         // Gradient #2
         
         startPoint = CGPoint(x: 0.5, y: 1)
         endPoint = CGPoint(x: 0.5, y: 0)
         
-        self.setCustomGradient(colors: [Colors.gradientBlack, .clear], locationX: 0, locationY: 0.6, startPoint: startPoint, endPoint: endPoint)
+        let gradientBottom = buildGradient(colors: [Colors.gradientBlack, .clear], locationX: 0, locationY: 0.6, startPoint: startPoint, endPoint: endPoint)
+        
+        gradients = ["top": gradientTop, "bottom": gradientBottom]
+        
+        layer.addSublayer(gradientTop)
+        layer.addSublayer(gradientBottom)
     }
     
+    func set(heightSize: CGFloat) {
+        
+        let c = constraints.filter { return $0.identifier == heightConstraint }
+        
+        guard c.count == 1 else {
+            return
+        }
+        
+        let height = c.first!
+        height.constant = heightSize
+        
+        layoutIfNeeded()
+        
+        gradients.forEach { $1.frame = bounds }
+        layer.layoutSublayers()
+    }
     
+    func changeGradient(named key: String, by newGradient: CAGradientLayer) {
+        
+        guard let oldGradient = gradients[key] else {
+            return
+        }
+        
+        oldGradient.removeFromSuperlayer()
+        
+        gradients[key] = newGradient
+        layer.addSublayer(newGradient)
+    }
+    
+    func buildGradient(colors: [UIColor], locationX: Float, locationY: Float, startPoint: CGPoint, endPoint: CGPoint) -> CAGradientLayer {
+        
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.frame = bounds
+        gradientLayer.colors = colors.map{$0.cgColor}
+        gradientLayer.locations = [locationX as NSNumber, locationY as NSNumber]
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
+        
+        return gradientLayer
+    }
 
 }

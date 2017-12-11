@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="398"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="398" id="DWm-MV-1Hp"/>
+                                    <constraint firstAttribute="height" constant="398" identifier="heightConstraint" id="DWm-MV-1Hp"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="appLogo" image="presentation-login-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ycf-RB-5lW">
@@ -157,7 +157,7 @@
                     <connections>
                         <outlet property="agreementWarningLabel" destination="MdM-jT-lin" id="zcb-HC-sUZ"/>
                         <outlet property="backgroundImageHeight" destination="DWm-MV-1Hp" id="6hT-hK-yk0"/>
-                        <outlet property="backgroundImageView" destination="E3X-f9-Gjh" id="2we-6E-6QE"/>
+                        <outlet property="backgroundImageView" destination="E3X-f9-Gjh" id="6el-e0-REv"/>
                         <outlet property="emailLoginButton" destination="Ra6-5I-GUr" id="4sC-Cv-pa0"/>
                         <outlet property="exitButton" destination="7vd-KB-07d" id="G9V-kZ-a9b"/>
                         <outlet property="facebookLoginButton" destination="z3c-rY-qM2" id="w31-it-BfA"/>
@@ -183,7 +183,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-background-photo" translatesAutoresizingMaskIntoConstraints="NO" id="1HN-t6-ISn" customClass="BackgroundImageView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="291"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="291" id="ALk-Zm-5nA"/>
+                                    <constraint firstAttribute="height" constant="291" identifier="heightConstraint" id="ALk-Zm-5nA"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W6-Ew-aol">
@@ -359,7 +359,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register-backgrond-photo" translatesAutoresizingMaskIntoConstraints="NO" id="oMF-Zt-yFi" customClass="BackgroundImageView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="182" id="dRQ-jX-9H8"/>
+                                    <constraint firstAttribute="height" constant="182" identifier="heightConstraint" id="dRQ-jX-9H8"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ims-Oh-vtV">
@@ -501,6 +501,6 @@
         <image name="register-backgrond-photo" width="375" height="182"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xrf-ov-Gtq"/>
+        <segue reference="SNq-hT-Yfm"/>
     </inferredMetricsTieBreakers>
 </document>

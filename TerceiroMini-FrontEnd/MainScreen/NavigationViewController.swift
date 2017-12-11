@@ -26,9 +26,14 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         let vc1 = sb.instantiateViewController(withIdentifier: "MainStoryboard")
         vc1.restorationIdentifier = "MainScreen"
         var vc2 : UIViewController?
-        if let _ = UserDefaults.standard.string(forKey: "token"){
+        if let token = UserDefaults.standard.string(forKey: "token"){
             vc2 = sb.instantiateViewController(withIdentifier: "ProfileStoryboard")
             vc2?.restorationIdentifier = "Profile"
+            NetworkManager.getUser(byToken: token, completion: { (me, err) in
+                if(err == nil){
+                    (vc2 as! ProfileViewController).user = me
+                }
+            })
         }else {
             vc2 = sb.instantiateViewController(withIdentifier: "Main")
             vc2?.restorationIdentifier = "Main"

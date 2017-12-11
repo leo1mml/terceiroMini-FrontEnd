@@ -24,8 +24,8 @@ class BottomLineTextField: UITextField, UITextFieldDelegate {
     
     var listenter: EditingListener?
     
-    var bottomLine: CALayer!
-    var placeholderLbl: UILabel!
+    private var bottomLine: CALayer!
+    private var placeholderLbl: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

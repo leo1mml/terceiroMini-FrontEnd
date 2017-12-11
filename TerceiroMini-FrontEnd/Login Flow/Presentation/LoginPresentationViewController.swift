@@ -11,15 +11,30 @@ import UIKit
 private let segueToLogin = "presentationToLogin"
 private let segueToRegister = "presentationToRegister"
 
-class LoginPresentationViewController: StatusBarHiddenViewController, LoginPresentationView {
+protocol LoginCallerPortocol {
+    
+    var isMainScreen: Bool { get }
+}
+
+extension LoginCallerPortocol {
+    
+    var isMainScreen: Bool { return false }
+}
+
+class LoginPresentationViewController: LoginFlowViewController, LoginPresentationView {
 
     // MARK: - Attributes
     
     var presenter: LoginPresentationPresenter?
+    var caller: LoginCallerPortocol?
     
     // MARK: - Outlets
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: BackgroundImageView!
+    @IBOutlet weak var backgroundImageHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var exitButton: UIButton!
     
     @IBOutlet weak var welcomeTextLabel: UILabel!
     @IBOutlet weak var instructionTextLabel: UILabel!
@@ -36,6 +51,7 @@ class LoginPresentationViewController: StatusBarHiddenViewController, LoginPrese
         
         presenter = LoginPresentationPresenterImpl(loginPresentationViewImpl: self)
         
+        exitButton.addTarget(self, action: #selector(exitAction), for: .touchUpInside)
         emailLoginButton.addTarget(self, action: #selector(emailLoginAction), for: .touchUpInside)
         facebookLoginButton.addTarget(self, action: #selector(facebookLoginAction), for: .touchUpInside)
     }
@@ -43,6 +59,7 @@ class LoginPresentationViewController: StatusBarHiddenViewController, LoginPrese
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        loadHeader()
         setupTexts()
     }
     
@@ -51,12 +68,30 @@ class LoginPresentationViewController: StatusBarHiddenViewController, LoginPrese
     private func setupTexts() {
         welcomeTextLabel.text = "Seja bem-vindo!"
         instructionTextLabel.text = "para concluir a ação,\nfaça seu login"
-        agreementWarningLabel.text = "Ao entrar no aplicativo, você concorda com os nossos termos de serviço e políticas de privacidade."
+        agreementWarningLabel.text = "Ao entrar no aplicativo, você concorda com os nossos\ntermos de serviço e políticas de privacidade."
+    }
+    
+    private func loadHeader() {
+        
+        guard let caller = self.caller else {
+            return
+        }
+        
+        if caller.isMainScreen {
+            
+            exitButton.isHidden = true
+            logoImageView.isHidden = true
+            
+            let newGradient = backgroundImageView.buildGradient(colors: [.white, .clear], locationX: 0, locationY: 0.21, startPoint: CGPoint(x: 0.5, y: 0), endPoint: CGPoint(x: 0.5, y: 1))
+            
+            backgroundImageView.changeGradient(named: "top", by: newGradient)
+            backgroundImageView.set(heightSize: 327)
+        }
     }
     
     // MARK: - Actions
     
-    @IBAction func exitAction(_ sender: UIButton) {
+    @objc func exitAction() {
         presenter?.exitButtonClicked()
     }
     

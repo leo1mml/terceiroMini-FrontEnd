@@ -14,7 +14,7 @@ extension ChallengeViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-            return 0
+        return self.challengePhotos?.count ?? 0
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -38,15 +38,15 @@ extension ChallengeViewController: UICollectionViewDataSource, UICollectionViewD
             cell.clicksLogo.isHidden = false
             break
         default:
+            
             break
         }
         
-        let url = URL(string: challengePhotos[indexPath.row].url!)
+        let url = URL(string: (challengePhotos?[indexPath.row].url!)!)
         getImageFromUrl(imageURL: url, newImage: cell.cellImage)
           //cell.statusLabel.text = "vencedor"
 //        cell.usernameLabel.text = "aaa.aaa"
       //  cell.usernamePhoto.image = UIImage(named: "imagem1")
-        
         
         return cell
         
@@ -66,6 +66,15 @@ extension ChallengeViewController: UICollectionViewDataSource, UICollectionViewD
         return header
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //let photoID = self.challengePhotos![indexPath.row].id
+        data = (self.challengePhotos, indexPath.row) as? ([Photo], Int)
+        self.goToExpandoPhotoView(parameter: data!)
+         //let photo = self.challengePhotos[indexPath.row]
+        
+    }
+    
+    
     func getImageFromUrl(imageURL: URL!, newImage: UIImageView ){
 
         
@@ -79,6 +88,7 @@ extension ChallengeViewController: UICollectionViewDataSource, UICollectionViewD
                     if imageData != nil {
                         imageFromURL = UIImage(data: imageData! as Data)!
                         newImage.image = imageFromURL
+                        //self.mainCollectionView.reloadData()
                     }
                 }
             }

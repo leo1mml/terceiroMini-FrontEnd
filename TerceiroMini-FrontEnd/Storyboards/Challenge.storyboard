@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+        <array key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Challenge View Controller-->
         <scene sceneID="XkC-Fk-IZW">
@@ -23,38 +31,38 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="kOZ-bZ-cbl">
                                     <size key="itemSize" width="121" height="121"/>
-                                    <size key="headerReferenceSize" width="50" height="511"/>
+                                    <size key="headerReferenceSize" width="50" height="487"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="1" minY="0.0" maxX="1" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HeaderIdentifier" id="5b2-Zy-hfm" customClass="HeaderChallengeCollectionReusableView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="511"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagem1.png" translatesAutoresizingMaskIntoConstraints="NO" id="2j8-9C-zhg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="452"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="428"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escritório" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFj-Ff-eVK">
-                                            <rect key="frame" x="37.5" y="76" width="167.5" height="117"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                            <rect key="frame" x="37.5" y="76" width="177.5" height="105"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="42"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="39 fotos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTc-aZ-i9V">
-                                            <rect key="frame" x="28" y="205" width="57.5" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="28" y="193" width="55" height="17.5"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vencedora" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bod-yo-Nhh">
-                                            <rect key="frame" x="141.5" y="264" width="92" height="24"/>
+                                            <rect key="frame" x="141.5" y="252" width="92" height="24"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="LsV-X3-yTz"/>
                                                 <constraint firstAttribute="width" constant="92" id="O3n-U6-LJK"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
@@ -65,7 +73,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7D-rR-SD7" customClass="LeftAlignedIconButton" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                            <rect key="frame" x="70" y="298" width="235" height="50"/>
+                                            <rect key="frame" x="70" y="286" width="235" height="50"/>
                                             <color key="backgroundColor" red="0.14825960993766785" green="0.1723443865776062" blue="0.18905740976333618" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="235" id="iLo-se-sQq"/>
@@ -86,8 +94,8 @@
                                                 <action selector="mainButtonAction:" destination="5b2-Zy-hfm" eventType="touchUpInside" id="xOH-2S-xKW"/>
                                             </connections>
                                         </button>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-9u-oDN">
-                                            <rect key="frame" x="61" y="364" width="253" height="121"/>
+                                        <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-9u-oDN">
+                                            <rect key="frame" x="61" y="340" width="253" height="121"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="121" id="Pyk-Ir-5lt"/>
@@ -142,27 +150,68 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="miniClicksCinza" translatesAutoresizingMaskIntoConstraints="NO" id="b6v-Et-2lg">
+                                <rect key="frame" x="171" y="459" width="33" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="RgL-xX-xYk"/>
+                                    <constraint firstAttribute="width" constant="33" id="f3Y-Ad-abo"/>
+                                </constraints>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ainda não há clicks neste tema, seja o primeiro a enviar!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caR-af-pL9">
+                                <rect key="frame" x="67" y="515" width="242" height="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.85480856895446777" green="0.85495573282241821" blue="0.85479927062988281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SSa-ke-8RB" firstAttribute="bottom" secondItem="aBy-Pl-cxj" secondAttribute="bottom" id="03e-iG-V1Y"/>
                             <constraint firstItem="aBy-Pl-cxj" firstAttribute="trailing" secondItem="SSa-ke-8RB" secondAttribute="trailing" id="4zQ-tr-98o"/>
+                            <constraint firstItem="b6v-Et-2lg" firstAttribute="top" secondItem="SSa-ke-8RB" secondAttribute="top" constant="439" id="73w-wI-A0h"/>
                             <constraint firstItem="aBy-Pl-cxj" firstAttribute="leading" secondItem="SSa-ke-8RB" secondAttribute="leading" id="7DO-3P-h5y"/>
+                            <constraint firstItem="caR-af-pL9" firstAttribute="top" secondItem="b6v-Et-2lg" secondAttribute="baseline" constant="20" id="Gmp-iU-4th"/>
+                            <constraint firstItem="b6v-Et-2lg" firstAttribute="leading" secondItem="SSa-ke-8RB" secondAttribute="leading" constant="171" id="RcI-1G-enN"/>
                             <constraint firstItem="aBy-Pl-cxj" firstAttribute="top" secondItem="qXJ-1y-iEJ" secondAttribute="top" id="WIA-W9-k1Y"/>
+                            <constraint firstItem="SSa-ke-8RB" firstAttribute="trailing" secondItem="caR-af-pL9" secondAttribute="trailing" constant="66" id="anI-eZ-Pkj"/>
+                            <constraint firstItem="b6v-Et-2lg" firstAttribute="centerX" secondItem="qXJ-1y-iEJ" secondAttribute="centerX" id="onc-Pq-0L2"/>
+                            <constraint firstItem="SSa-ke-8RB" firstAttribute="trailing" secondItem="b6v-Et-2lg" secondAttribute="trailing" constant="171" id="veO-5r-0xi"/>
+                            <constraint firstItem="caR-af-pL9" firstAttribute="leading" secondItem="SSa-ke-8RB" secondAttribute="leading" constant="67" id="xSN-cg-tbg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SSa-ke-8RB"/>
                     </view>
                     <navigationItem key="navigationItem" id="0en-2n-7Jl"/>
                     <connections>
+                        <outlet property="clicksLogoImage" destination="b6v-Et-2lg" id="Nra-TV-QkR"/>
                         <outlet property="mainCollectionView" destination="aBy-Pl-cxj" id="pGd-Ec-nL4"/>
+                        <outlet property="noImagesWarningLabel" destination="caR-af-pL9" id="yOL-2M-Qxd"/>
+                        <segue destination="CaJ-Jg-CHa" kind="show" identifier="profileSegue" id="lcf-df-aEt"/>
+                        <segue destination="BX3-Ej-pJl" kind="show" identifier="expandPhotoSegue" id="sJo-lF-U85"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYv-Dk-i9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="109.59999999999999" y="53.523238380809602"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="Pwb-Hr-I7C">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="CaJ-Jg-CHa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q4U-s4-2G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="40"/>
+        </scene>
+        <!--ChallengeClosed-->
+        <scene sceneID="ykd-TS-vMg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChallengeClosed" id="BX3-Ej-pJl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GNM-qJ-Pxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="105"/>
+        </scene>
     </scenes>
     <resources>
         <image name="imagem1.png" width="375" height="400"/>
+        <image name="miniClicksCinza" width="35" height="38"/>
     </resources>
 </document>

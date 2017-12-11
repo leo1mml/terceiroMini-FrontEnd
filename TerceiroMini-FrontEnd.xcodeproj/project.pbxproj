@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081C1FD81FDEF68800CCEE1A /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C1FD71FDEF68800CCEE1A /* BackgroundImageView.swift */; };
+		081C1FDB1FDEF99300CCEE1A /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C1FDA1FDEF99300CCEE1A /* General.swift */; };
 		08276F2D1FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08276F121FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift */; };
 		08276F2E1FC73F8C00A8E605 /* OpenChallengesCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08276F131FC73F8C00A8E605 /* OpenChallengesCellProtocols.swift */; };
 		08276F2F1FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08276F141FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift */; };
@@ -70,7 +72,7 @@
 		083E55171FC84889004E4EC0 /* UserNetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */; };
 		083E551B1FC84F41004E4EC0 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E551A1FC84F41004E4EC0 /* R.swift */; };
 		08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */; };
-		0867DD451FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */; };
+		0867DD451FD5C5A2003AAE8D /* LoginFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867DD441FD5C5A2003AAE8D /* LoginFlowViewController.swift */; };
 		0867DD471FD5C6C4003AAE8D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */; };
 		086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */; };
 		086D279A1FCC844B00D9F547 /* LoginPresentationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */; };
@@ -105,6 +107,8 @@
 		14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */; };
 		481B81D01FD8632E000955E8 /* NextChallengesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B81CF1FD8632E000955E8 /* NextChallengesProtocols.swift */; };
 		481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B81D11FD8633F000955E8 /* NextChallengesCellPresenterImp.swift */; };
+		4832D44B1FD9B60700EE18DC /* ChallengeClosed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4832D44A1FD9B60700EE18DC /* ChallengeClosed.storyboard */; };
+		4832D44C1FD9BECF00EE18DC /* ChallengeClosedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE5961FD1A79F005108E7 /* ChallengeClosedViewController.swift */; };
 		48620F1D1FD72AE600A45E3E /* TimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48620F1C1FD72AE600A45E3E /* TimeInterval+Extension.swift */; };
 		48620F1E1FD72B1900A45E3E /* LastWinnersPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A543E0A1FD5ED7D002392A3 /* LastWinnersPresenterImp.swift */; };
 		48620F241FD85CBA00A45E3E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48620F231FD85CBA00A45E3E /* UIImageView+Extension.swift */; };
@@ -153,6 +157,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		081C1FD71FDEF68800CCEE1A /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
+		081C1FDA1FDEF99300CCEE1A /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		08276F121FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChallengesTableViewCell.swift; sourceTree = "<group>"; };
 		08276F131FC73F8C00A8E605 /* OpenChallengesCellProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChallengesCellProtocols.swift; sourceTree = "<group>"; };
 		08276F141FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChallengesCellPresenter.swift; sourceTree = "<group>"; };
@@ -215,7 +221,7 @@
 		083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetUnitTests.swift; sourceTree = "<group>"; };
 		083E551A1FC84F41004E4EC0 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineTextField.swift; sourceTree = "<group>"; };
-		0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarHiddenViewController.swift; sourceTree = "<group>"; };
+		0867DD441FD5C5A2003AAE8D /* LoginFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowViewController.swift; sourceTree = "<group>"; };
 		0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationViewController.swift; sourceTree = "<group>"; };
 		086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationProtocols.swift; sourceTree = "<group>"; };
@@ -253,6 +259,7 @@
 		34A6A1E98CB4CDBE0E50EE16 /* Pods-TerceiroMini-FrontEndTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEndTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEndTests/Pods-TerceiroMini-FrontEndTests.debug.xcconfig"; sourceTree = "<group>"; };
 		481B81CF1FD8632E000955E8 /* NextChallengesProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NextChallengesProtocols.swift; path = "TerceiroMini-FrontEnd/MainScreen/MainScreenTableView/Cells/Next Challenges Cell/NextChallengesProtocols.swift"; sourceTree = SOURCE_ROOT; };
 		481B81D11FD8633F000955E8 /* NextChallengesCellPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NextChallengesCellPresenterImp.swift; path = "TerceiroMini-FrontEnd/MainScreen/MainScreenTableView/Cells/Next Challenges Cell/NextChallengesCellPresenterImp.swift"; sourceTree = SOURCE_ROOT; };
+		4832D44A1FD9B60700EE18DC /* ChallengeClosed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengeClosed.storyboard; sourceTree = "<group>"; };
 		48620F1C1FD72AE600A45E3E /* TimeInterval+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extension.swift"; sourceTree = "<group>"; };
 		48620F211FD815F000A45E3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48620F231FD85CBA00A45E3E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -332,6 +339,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		081C1FD91FDEF98000CCEE1A /* General */ = {
+			isa = PBXGroup;
+			children = (
+				081C1FDA1FDEF99300CCEE1A /* General.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		08276F0E1FC73F8C00A8E605 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,11 +514,28 @@
 		08407C3E1FD254DF00B7A003 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */,
-				0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */,
-				0867DD441FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift */,
+				0841F3F31FDEAFF600BDFB63 /* Control */,
+				0841F3F21FDEAFE100BDFB63 /* UI */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		0841F3F21FDEAFE100BDFB63 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */,
+				08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */,
+				081C1FD71FDEF68800CCEE1A /* BackgroundImageView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0841F3F31FDEAFF600BDFB63 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				0867DD441FD5C5A2003AAE8D /* LoginFlowViewController.swift */,
+			);
+			path = Control;
 			sourceTree = "<group>";
 		};
 		086D27961FCC83D700D9F547 /* Presentation */ = {
@@ -761,6 +793,7 @@
 			isa = PBXGroup;
 			children = (
 				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
+				081C1FD91FDEF98000CCEE1A /* General */,
 				8A0E82C01FC7443D00218C80 /* Extensions */,
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
 				8A9760671FD87BCB00904EC6 /* SeeAllPastChallengesVC */,
@@ -935,6 +968,7 @@
 				08297B111FC74B2E00701F9B /* MontserratAlternates-Medium.otf in Resources */,
 				08297B281FC74B2E00701F9B /* MontserratAlternates-Light.otf in Resources */,
 				08297B201FC74B2E00701F9B /* Montserrat-ExtraBoldItalic.otf in Resources */,
+				4832D44B1FD9B60700EE18DC /* ChallengeClosed.storyboard in Resources */,
 				08297B1C1FC74B2E00701F9B /* Montserrat-LightItalic.otf in Resources */,
 				08297B1B1FC74B2E00701F9B /* MontserratAlternates-Thin.otf in Resources */,
 				08297B2A1FC74B2E00701F9B /* MontserratAlternates-Regular.otf in Resources */,
@@ -1078,7 +1112,7 @@
 				48C882F61FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift in Sources */,
 				08276F2F1FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift in Sources */,
 				0899EA031FC74D1A00F148DC /* Challenge.swift in Sources */,
-				0867DD451FD5C5A2003AAE8D /* StatusBarHiddenViewController.swift in Sources */,
+				0867DD451FD5C5A2003AAE8D /* LoginFlowViewController.swift in Sources */,
 				083E551B1FC84F41004E4EC0 /* R.swift in Sources */,
 				1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */,
 				481B81D01FD8632E000955E8 /* NextChallengesProtocols.swift in Sources */,
@@ -1113,6 +1147,7 @@
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */,
 				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,
+				4832D44C1FD9BECF00EE18DC /* ChallengeClosedViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 				8A97606B1FD88FD800904EC6 /* SeeAllPastChallengesPresenterImp.swift in Sources */,
 				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,
@@ -1145,9 +1180,11 @@
 				489F1B9A1FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift in Sources */,
 				48A7C4CF1FD1E00B00EB5C1A /* UIImage+Extension.swift in Sources */,
 				08276F3D1FC73F8C00A8E605 /* TableHeader.swift in Sources */,
+				081C1FDB1FDEF99300CCEE1A /* General.swift in Sources */,
 				08EF52851FD6D54B00722A2F /* RegisterViewController.swift in Sources */,
 				0899EA0B1FC74D4100F148DC /* ChallengeNet.swift in Sources */,
 				48620F241FD85CBA00A45E3E /* UIImageView+Extension.swift in Sources */,
+				081C1FD81FDEF68800CCEE1A /* BackgroundImageView.swift in Sources */,
 				0867DD471FD5C6C4003AAE8D /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1324,6 +1361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JC4QT73C9E;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.bepiducb.TerceiroMini-FrontEnd";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1340,6 +1378,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JC4QT73C9E;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.bepiducb.TerceiroMini-FrontEnd";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -10,11 +10,11 @@ import UIKit
 
 private let segueToRegister = "loginToRegister"
 
-class LoginViewController: StatusBarHiddenViewController, LoginView, EditingListener {
+class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
 
     // MARK: - Outlets
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: BackgroundImageView!
     @IBOutlet weak var backgrounImageHeight: NSLayoutConstraint!
     
     @IBOutlet weak var welcomeMessageLabel: UILabel!
@@ -84,16 +84,21 @@ class LoginViewController: StatusBarHiddenViewController, LoginView, EditingList
     
     func goToApp() {
         
+        dismissInChain(animated: true) {
+            
+            // load main-screen
+        }
     }
     
     // MARK: - EditingListener implementation
     
     func didBeginEditing(_ sender: BottomLineTextField) {
-        setBackgroundImageSize(191)
+        
+        backgroundImageView.set(heightSize: 191, animated: true)
     }
     
     func didEndEditing(_ sender: BottomLineTextField) {
-        setBackgroundImageSize(291)
+        backgroundImageView.set(heightSize: 291, animated: true)
     }
     
     // MARK: - Auxiliar
@@ -106,16 +111,6 @@ class LoginViewController: StatusBarHiddenViewController, LoginView, EditingList
     private func setupTexts() {
         welcomeMessageLabel.text = "Seja bem-vindo!"
         instructionLabel.text = "para concluir a ação,\nfaça seu login"
-        agreementLabel.text = "Ao entrar no aplicativo, você concorda com os nossos termos de serviço e políticas de privacidade."
-    }
-    
-    private func setBackgroundImageSize(_ constant: CGFloat) {
-        
-        backgrounImageHeight.constant = constant
-        
-        UIView.animate(withDuration: 0.3) {
-            
-            self.view.layoutIfNeeded()
-        }
+        agreementLabel.text = "Ao entrar no aplicativo, você concorda com os nossos\ntermos de serviço e políticas de privacidade."
     }
 }

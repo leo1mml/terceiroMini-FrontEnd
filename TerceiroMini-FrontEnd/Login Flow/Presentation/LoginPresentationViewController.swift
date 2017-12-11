@@ -21,7 +21,7 @@ extension LoginCallerPortocol {
     var isMainScreen: Bool { return false }
 }
 
-class LoginPresentationViewController: HiddenStatusBarViewController, LoginPresentationView {
+class LoginPresentationViewController: LoginFlowViewController, LoginPresentationView {
 
     // MARK: - Attributes
     

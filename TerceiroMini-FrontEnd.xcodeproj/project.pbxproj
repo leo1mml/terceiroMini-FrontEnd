@@ -70,7 +70,7 @@
 		083E55171FC84889004E4EC0 /* UserNetUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */; };
 		083E551B1FC84F41004E4EC0 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E551A1FC84F41004E4EC0 /* R.swift */; };
 		08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */; };
-		0867DD451FD5C5A2003AAE8D /* HiddenStatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867DD441FD5C5A2003AAE8D /* HiddenStatusBarViewController.swift */; };
+		0867DD451FD5C5A2003AAE8D /* LoginFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867DD441FD5C5A2003AAE8D /* LoginFlowViewController.swift */; };
 		0867DD471FD5C6C4003AAE8D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */; };
 		086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */; };
 		086D279A1FCC844B00D9F547 /* LoginPresentationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */; };
@@ -209,7 +209,7 @@
 		083E55161FC84889004E4EC0 /* UserNetUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetUnitTests.swift; sourceTree = "<group>"; };
 		083E551A1FC84F41004E4EC0 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineTextField.swift; sourceTree = "<group>"; };
-		0867DD441FD5C5A2003AAE8D /* HiddenStatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenStatusBarViewController.swift; sourceTree = "<group>"; };
+		0867DD441FD5C5A2003AAE8D /* LoginFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowViewController.swift; sourceTree = "<group>"; };
 		0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		086D27971FCC841600D9F547 /* LoginPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationViewController.swift; sourceTree = "<group>"; };
 		086D27991FCC844B00D9F547 /* LoginPresentationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationProtocols.swift; sourceTree = "<group>"; };
@@ -476,11 +476,27 @@
 		08407C3E1FD254DF00B7A003 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */,
-				0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */,
-				0867DD441FD5C5A2003AAE8D /* HiddenStatusBarViewController.swift */,
+				0841F3F31FDEAFF600BDFB63 /* Control */,
+				0841F3F21FDEAFE100BDFB63 /* UI */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		0841F3F21FDEAFE100BDFB63 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */,
+				08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0841F3F31FDEAFF600BDFB63 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				0867DD441FD5C5A2003AAE8D /* LoginFlowViewController.swift */,
+			);
+			path = Control;
 			sourceTree = "<group>";
 		};
 		086D27961FCC83D700D9F547 /* Presentation */ = {
@@ -1022,7 +1038,7 @@
 				48C882F61FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift in Sources */,
 				08276F2F1FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift in Sources */,
 				0899EA031FC74D1A00F148DC /* Challenge.swift in Sources */,
-				0867DD451FD5C5A2003AAE8D /* HiddenStatusBarViewController.swift in Sources */,
+				0867DD451FD5C5A2003AAE8D /* LoginFlowViewController.swift in Sources */,
 				083E551B1FC84F41004E4EC0 /* R.swift in Sources */,
 				1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */,
 				481B81D01FD8632E000955E8 /* NextChallengesProtocols.swift in Sources */,

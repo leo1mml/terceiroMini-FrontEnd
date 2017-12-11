@@ -10,7 +10,7 @@ import UIKit
 
 private let segueToRegister = "loginToRegister"
 
-class LoginViewController: HiddenStatusBarViewController, LoginView, EditingListener {
+class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
 
     // MARK: - Outlets
     
@@ -84,6 +84,10 @@ class LoginViewController: HiddenStatusBarViewController, LoginView, EditingList
     
     func goToApp() {
         
+        dismissInChain(animated: true) {
+            
+            // load main-screen
+        }
     }
     
     // MARK: - EditingListener implementation

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: HiddenStatusBarViewController, RegisterView {
+class RegisterViewController: LoginFlowViewController, RegisterView {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     
@@ -49,6 +49,10 @@ class RegisterViewController: HiddenStatusBarViewController, RegisterView {
     
     func goToApp() {
         
+        dismissInChain(animated: true) {
+            
+            // load main-screen
+        }
     }
     
     func showUpdateError() {
@@ -73,5 +77,4 @@ class RegisterViewController: HiddenStatusBarViewController, RegisterView {
         instructionLabel.text = "preencha com seus dados\npara realizar o cadastro"
         agreementLabel.text = "Ao entrar no aplicativo, você concorda com nossos temos de serviço e políticas de privacidade."
     }
-    
 }

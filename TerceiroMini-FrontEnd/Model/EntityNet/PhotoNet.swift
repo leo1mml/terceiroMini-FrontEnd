@@ -44,6 +44,7 @@ class PhotoNet {
             completion(photo, nil)
         }
     }
+   
     
     /**
      
@@ -197,6 +198,39 @@ class PhotoNet {
             completion(photo, nil)
         }
     }
+    
+    
+    /**
+
+     Gets the data of all the photos of a challenge from challenge id and user token.
+     
+     - parameter id: The user id and token.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter p: The photos retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    class func getMyClick(byChallengeId id: String, token: String, completion: @escaping (_ p: [Photo]?, _ e: Error?) -> Void) {
+        
+         //GET MY CLICK ID
+        let completeDomain = R.photosDomain + "/getMyClick/\(id)"
+        let header = ["x-auth": token]
+        
+        Alamofire.request(completeDomain, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { (response) in
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "photos")!
+            let photos = buildPhotos(fromDictionaryArry: arr)
+            
+            completion(photos, nil)
+        }
+        
+
+    }
+    
+    
     
     /**
      

@@ -11,15 +11,30 @@ import UIKit
 private let segueToLogin = "presentationToLogin"
 private let segueToRegister = "presentationToRegister"
 
+protocol LoginCallerPortocol {
+    
+    var isMainScreen: Bool { get }
+}
+
+extension LoginCallerPortocol {
+    
+    var isMainScreen: Bool { return false }
+}
+
 class LoginPresentationViewController: HiddenStatusBarViewController, LoginPresentationView {
 
     // MARK: - Attributes
     
     var presenter: LoginPresentationPresenter?
+    var caller: LoginCallerPortocol?
     
     // MARK: - Outlets
     
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundImageHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var exitButton: UIButton!
     
     @IBOutlet weak var welcomeTextLabel: UILabel!
     @IBOutlet weak var instructionTextLabel: UILabel!
@@ -43,6 +58,7 @@ class LoginPresentationViewController: HiddenStatusBarViewController, LoginPrese
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        loadHeader()
         setupTexts()
     }
     
@@ -52,6 +68,19 @@ class LoginPresentationViewController: HiddenStatusBarViewController, LoginPrese
         welcomeTextLabel.text = "Seja bem-vindo!"
         instructionTextLabel.text = "para concluir a ação,\nfaça seu login"
         agreementWarningLabel.text = "Ao entrar no aplicativo, você concorda com os nossos termos de serviço e políticas de privacidade."
+    }
+    
+    private func loadHeader() {
+        
+        guard let caller = self.caller else {
+            return
+        }
+        
+        if caller.isMainScreen {
+            
+            exitButton.isHidden = true
+            logoImageView.isHidden = true
+        }
     }
     
     // MARK: - Actions

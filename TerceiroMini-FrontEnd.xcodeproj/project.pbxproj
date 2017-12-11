@@ -1061,7 +1061,6 @@
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */,
 				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,
-				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
 				4832D44C1FD9BECF00EE18DC /* ChallengeClosedViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081C1FD81FDEF68800CCEE1A /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C1FD71FDEF68800CCEE1A /* BackgroundImageView.swift */; };
+		081C1FDB1FDEF99300CCEE1A /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C1FDA1FDEF99300CCEE1A /* General.swift */; };
 		08276F2D1FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08276F121FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift */; };
 		08276F2E1FC73F8C00A8E605 /* OpenChallengesCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08276F131FC73F8C00A8E605 /* OpenChallengesCellProtocols.swift */; };
 		08276F2F1FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08276F141FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift */; };
@@ -149,6 +151,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		081C1FD71FDEF68800CCEE1A /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
+		081C1FDA1FDEF99300CCEE1A /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		08276F121FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChallengesTableViewCell.swift; sourceTree = "<group>"; };
 		08276F131FC73F8C00A8E605 /* OpenChallengesCellProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChallengesCellProtocols.swift; sourceTree = "<group>"; };
 		08276F141FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChallengesCellPresenter.swift; sourceTree = "<group>"; };
@@ -312,6 +316,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		081C1FD91FDEF98000CCEE1A /* General */ = {
+			isa = PBXGroup;
+			children = (
+				081C1FDA1FDEF99300CCEE1A /* General.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		08276F0E1FC73F8C00A8E605 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +502,7 @@
 			children = (
 				0867DD461FD5C6C4003AAE8D /* RoundedButton.swift */,
 				08407C3F1FD2551600B7A003 /* BottomLineTextField.swift */,
+				081C1FD71FDEF68800CCEE1A /* BackgroundImageView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -734,6 +747,7 @@
 			isa = PBXGroup;
 			children = (
 				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
+				081C1FD91FDEF98000CCEE1A /* General */,
 				8A0E82C01FC7443D00218C80 /* Extensions */,
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
 				08276F0E1FC73F8C00A8E605 /* MainScreen */,
@@ -1077,7 +1091,6 @@
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */,
 				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,
-				08297AE41FC74B1E00701F9B /* SignUpViewController.swift in Sources */,
 				4832D44C1FD9BECF00EE18DC /* ChallengeClosedViewController.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,
@@ -1110,9 +1123,11 @@
 				489F1B9A1FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift in Sources */,
 				48A7C4CF1FD1E00B00EB5C1A /* UIImage+Extension.swift in Sources */,
 				08276F3D1FC73F8C00A8E605 /* TableHeader.swift in Sources */,
+				081C1FDB1FDEF99300CCEE1A /* General.swift in Sources */,
 				08EF52851FD6D54B00722A2F /* RegisterViewController.swift in Sources */,
 				0899EA0B1FC74D4100F148DC /* ChallengeNet.swift in Sources */,
 				48620F241FD85CBA00A45E3E /* UIImageView+Extension.swift in Sources */,
+				081C1FD81FDEF68800CCEE1A /* BackgroundImageView.swift in Sources */,
 				0867DD471FD5C6C4003AAE8D /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

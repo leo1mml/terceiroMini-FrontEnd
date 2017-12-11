@@ -27,8 +27,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="presentationBackgroundImage" image="presentation-login-background" translatesAutoresizingMaskIntoConstraints="NO" id="E3X-f9-Gjh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="presentationBackgroundImage" image="presentation-login-background" translatesAutoresizingMaskIntoConstraints="NO" id="E3X-f9-Gjh" customClass="BackgroundImageView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="398"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="398" id="DWm-MV-1Hp"/>
                                 </constraints>
@@ -179,7 +180,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-background-photo" translatesAutoresizingMaskIntoConstraints="NO" id="1HN-t6-ISn">
+                            <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-background-photo" translatesAutoresizingMaskIntoConstraints="NO" id="1HN-t6-ISn" customClass="BackgroundImageView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="291"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="291" id="ALk-Zm-5nA"/>
@@ -333,6 +334,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="agreementLabel" destination="pqZ-oP-ggc" id="iUt-Ga-nlB"/>
                         <outlet property="backgrounImageHeight" destination="ALk-Zm-5nA" id="egp-N4-kNK"/>
                         <outlet property="backgroundImageView" destination="1HN-t6-ISn" id="B5f-lo-6cE"/>
                         <outlet property="instructionLabel" destination="V0D-EZ-MwH" id="Zaa-Vu-3JA"/>
@@ -354,7 +356,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register-backgrond-photo" translatesAutoresizingMaskIntoConstraints="NO" id="oMF-Zt-yFi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register-backgrond-photo" translatesAutoresizingMaskIntoConstraints="NO" id="oMF-Zt-yFi" customClass="BackgroundImageView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="182"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="182" id="dRQ-jX-9H8"/>
@@ -499,6 +501,6 @@
         <image name="register-backgrond-photo" width="375" height="182"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SNq-hT-Yfm"/>
+        <segue reference="Xrf-ov-Gtq"/>
     </inferredMetricsTieBreakers>
 </document>

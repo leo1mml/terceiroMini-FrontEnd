@@ -51,6 +51,7 @@ class LoginPresentationViewController: HiddenStatusBarViewController, LoginPrese
         
         presenter = LoginPresentationPresenterImpl(loginPresentationViewImpl: self)
         
+        exitButton.addTarget(self, action: #selector(exitAction), for: .touchUpInside)
         emailLoginButton.addTarget(self, action: #selector(emailLoginAction), for: .touchUpInside)
         facebookLoginButton.addTarget(self, action: #selector(facebookLoginAction), for: .touchUpInside)
     }
@@ -85,7 +86,7 @@ class LoginPresentationViewController: HiddenStatusBarViewController, LoginPrese
     
     // MARK: - Actions
     
-    @IBAction func exitAction(_ sender: UIButton) {
+    @objc func exitAction() {
         presenter?.exitButtonClicked()
     }
     

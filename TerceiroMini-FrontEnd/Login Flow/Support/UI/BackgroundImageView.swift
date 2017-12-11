@@ -56,7 +56,7 @@ class BackgroundImageView: UIImageView {
         layer.addSublayer(gradientBottom)
     }
     
-    func set(heightSize: CGFloat) {
+    func set(heightSize: CGFloat, animated: Bool = false) {
         
         let c = constraints.filter { return $0.identifier == heightConstraint }
         
@@ -66,11 +66,22 @@ class BackgroundImageView: UIImageView {
         
         let height = c.first!
         height.constant = heightSize
+        gradients.forEach { $1.frame = CGRect(origin: frame.origin, size: CGSize(width: frame.width, height: heightSize)) }
         
-        layoutIfNeeded()
+        guard animated else {
+            layoutIfNeeded()
+            layer.layoutSublayers()
+            return
+        }
         
-        gradients.forEach { $1.frame = bounds }
-        layer.layoutSublayers()
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.layer.layoutSublayers()
+        }
+        
     }
     
     func changeGradient(named key: String, by newGradient: CAGradientLayer) {

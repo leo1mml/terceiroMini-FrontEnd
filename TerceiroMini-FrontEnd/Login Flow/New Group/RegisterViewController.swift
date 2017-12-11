@@ -75,6 +75,6 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
         
         titleLabel.text = "Cadastro"
         instructionLabel.text = "preencha com seus dados\npara realizar o cadastro"
-        agreementLabel.text = "Ao entrar no aplicativo, você concorda com nossos temos de serviço e políticas de privacidade."
+        agreementLabel.text = "Ao entrar no aplicativo, você concorda com nossos\ntemos de serviço e políticas de privacidade."
     }
 }

@@ -68,7 +68,7 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
     private func setupTexts() {
         welcomeTextLabel.text = "Seja bem-vindo!"
         instructionTextLabel.text = "para concluir a ação,\nfaça seu login"
-        agreementWarningLabel.text = "Ao entrar no aplicativo, você concorda com os nossos termos de serviço e políticas de privacidade."
+        agreementWarningLabel.text = "Ao entrar no aplicativo, você concorda com os nossos\ntermos de serviço e políticas de privacidade."
     }
     
     private func loadHeader() {

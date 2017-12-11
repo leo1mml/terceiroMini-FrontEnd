@@ -336,7 +336,7 @@
                     <connections>
                         <outlet property="agreementLabel" destination="pqZ-oP-ggc" id="iUt-Ga-nlB"/>
                         <outlet property="backgrounImageHeight" destination="ALk-Zm-5nA" id="egp-N4-kNK"/>
-                        <outlet property="backgroundImageView" destination="1HN-t6-ISn" id="B5f-lo-6cE"/>
+                        <outlet property="backgroundImageView" destination="1HN-t6-ISn" id="Ygg-9B-To4"/>
                         <outlet property="instructionLabel" destination="V0D-EZ-MwH" id="Zaa-Vu-3JA"/>
                         <outlet property="passwordField" destination="FYW-BU-XAy" id="1Vb-l0-vpD"/>
                         <outlet property="usernameField" destination="o8Q-qm-jbH" id="2YL-cZ-Ikq"/>

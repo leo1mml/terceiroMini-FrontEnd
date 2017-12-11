@@ -15,4 +15,5 @@ extension UIImageView{
         gradient.colors = colors.map{$0.cgColor}
         self.layer.addSublayer(gradient)
     }
+    
 }

@@ -92,7 +92,7 @@ class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
         
         dismissInChain(animated: true) {
             
-            // load main-screen
+            self.present(self.caller!.nextScreen, animated: true)
         }
     }
     

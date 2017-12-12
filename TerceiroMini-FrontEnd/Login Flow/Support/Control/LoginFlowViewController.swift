@@ -8,9 +8,25 @@
 
 import UIKit
 
+protocol LoginCallerPortocol {
+    
+    var isMainScreen: Bool { get }
+    var nextScreen: UIViewController? { get }
+}
+
+extension LoginCallerPortocol {
+    
+    var isMainScreen: Bool { return false }
+    
+    var nextScreen: UIViewController {
+        return UIViewController()
+    }
+}
+
 class LoginFlowViewController: UIViewController {
 
     var previousPage: LoginFlowViewController?
+    var caller: LoginCallerPortocol?
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -29,14 +45,16 @@ class LoginFlowViewController: UIViewController {
     
     func dismissInChain(animated: Bool, completion: @escaping () -> Void) {
         
-        guard let previousPage = self.previousPage else {
-            completion()
-            return
-        }
+        let previousPage = self.previousPage
         
         dismiss(animated: animated) {
             
-            previousPage.dismissInChain(animated: animated, completion: completion)
+            guard let pp = previousPage else {
+                completion()
+                return
+            }
+            
+            pp.dismissInChain(animated: animated, completion: completion)
         }
     }
 }

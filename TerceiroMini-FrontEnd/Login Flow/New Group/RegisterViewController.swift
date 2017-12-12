@@ -57,9 +57,9 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
     
     func goToApp() {
         
-        dismissInChain(animated: true) {
+        dismissInChain(animated: false) {
             
-            // load main-screen
+            self.present(self.caller!.nextScreen, animated: true)
         }
     }
     

@@ -11,22 +11,11 @@ import UIKit
 private let segueToLogin = "presentationToLogin"
 private let segueToRegister = "presentationToRegister"
 
-protocol LoginCallerPortocol {
-    
-    var isMainScreen: Bool { get }
-}
-
-extension LoginCallerPortocol {
-    
-    var isMainScreen: Bool { return false }
-}
-
 class LoginPresentationViewController: LoginFlowViewController, LoginPresentationView {
 
     // MARK: - Attributes
     
     var presenter: LoginPresentationPresenter?
-    var caller: LoginCallerPortocol?
     
     // MARK: - Outlets
     

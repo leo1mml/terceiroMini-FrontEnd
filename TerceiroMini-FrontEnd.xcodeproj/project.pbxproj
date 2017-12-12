@@ -147,6 +147,9 @@
 		8ACC2BD51FE0445900786B52 /* ConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2BD41FE0445900786B52 /* ConfigurationTableViewController.swift */; };
 		8ACC2BD71FE0511000786B52 /* ConfigurationHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BD61FE0511000786B52 /* ConfigurationHeader.xib */; };
 		8ACC2BD91FE051AD00786B52 /* ConfigHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2BD81FE051AD00786B52 /* ConfigHeader.swift */; };
+		8ACC2BDB1FE07FC300786B52 /* ConfigurationFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BDA1FE07FC300786B52 /* ConfigurationFooter.xib */; };
+		8ACC2BDD1FE0801C00786B52 /* ConfigFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2BDC1FE0801C00786B52 /* ConfigFooter.swift */; };
+		8ACC2BE01FE0845D00786B52 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BDF1FE0845D00786B52 /* EditProfile.storyboard */; };
 		8AD61C691FDF12AB0042B86F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BD31FDB253A003C9FFD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -319,6 +322,9 @@
 		8ACC2BD41FE0445900786B52 /* ConfigurationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTableViewController.swift; sourceTree = "<group>"; };
 		8ACC2BD61FE0511000786B52 /* ConfigurationHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationHeader.xib; sourceTree = "<group>"; };
 		8ACC2BD81FE051AD00786B52 /* ConfigHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigHeader.swift; sourceTree = "<group>"; };
+		8ACC2BDA1FE07FC300786B52 /* ConfigurationFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationFooter.xib; sourceTree = "<group>"; };
+		8ACC2BDC1FE0801C00786B52 /* ConfigFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigFooter.swift; sourceTree = "<group>"; };
+		8ACC2BDF1FE0845D00786B52 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		8AD759231FD1CAE000002D56 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		8ADF7C9F1FD743060023BCEF /* NextChallengesCellPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengesCellPresenterImp.swift; sourceTree = "<group>"; };
 		8FF8FB14ED07E9EB07A965E5 /* Pods_TerceiroMini_FrontEndTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEndTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -673,6 +679,7 @@
 		08F06F9B1FBB594A0039EAFE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				8ACC2BDE1FE0842800786B52 /* EditProfile */,
 				8ACC2BCD1FDF7A3500786B52 /* Configuration Screen */,
 				8A9760641FD87B8F00904EC6 /* SeeAllPastChallenges */,
 				8A1CC5A81FBE66F900BC4963 /* Main Screen */,
@@ -864,6 +871,7 @@
 			children = (
 				8ACC2BCE1FDF7A5700786B52 /* Configuration.storyboard */,
 				8ACC2BD61FE0511000786B52 /* ConfigurationHeader.xib */,
+				8ACC2BDA1FE07FC300786B52 /* ConfigurationFooter.xib */,
 			);
 			path = "Configuration Screen";
 			sourceTree = "<group>";
@@ -882,8 +890,17 @@
 			children = (
 				8ACC2BD41FE0445900786B52 /* ConfigurationTableViewController.swift */,
 				8ACC2BD81FE051AD00786B52 /* ConfigHeader.swift */,
+				8ACC2BDC1FE0801C00786B52 /* ConfigFooter.swift */,
 			);
 			path = "Configuration Table View";
+			sourceTree = "<group>";
+		};
+		8ACC2BDE1FE0842800786B52 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				8ACC2BDF1FE0845D00786B52 /* EditProfile.storyboard */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1010,12 +1027,14 @@
 				08297B201FC74B2E00701F9B /* Montserrat-ExtraBoldItalic.otf in Resources */,
 				08297B1C1FC74B2E00701F9B /* Montserrat-LightItalic.otf in Resources */,
 				08297B1B1FC74B2E00701F9B /* MontserratAlternates-Thin.otf in Resources */,
+				8ACC2BDB1FE07FC300786B52 /* ConfigurationFooter.xib in Resources */,
 				08297B2A1FC74B2E00701F9B /* MontserratAlternates-Regular.otf in Resources */,
 				08EC31E71FD866EB00B9C2D3 /* MainCollectionViewCell.xib in Resources */,
 				08297B2B1FC74B2E00701F9B /* MontserratAlternates-ThinItalic.otf in Resources */,
 				08297B1E1FC74B2E00701F9B /* MontserratAlternates-SemiBoldItalic.otf in Resources */,
 				08297B261FC74B2E00701F9B /* Montserrat-ExtraBold.otf in Resources */,
 				08297B121FC74B2E00701F9B /* Montserrat-BoldItalic.otf in Resources */,
+				8ACC2BE01FE0845D00786B52 /* EditProfile.storyboard in Resources */,
 				08297B231FC74B2E00701F9B /* Montserrat-Regular.otf in Resources */,
 				08297B2C1FC74B2E00701F9B /* Montserrat-Black.otf in Resources */,
 				8A964BD11FDB0C99003C9FFD /* ChallengeClosed.storyboard in Resources */,
@@ -1158,6 +1177,7 @@
 				481B81D01FD8632E000955E8 /* NextChallengesProtocols.swift in Sources */,
 				08276F331FC73F8C00A8E605 /* ChallengeCollectionViewCell.swift in Sources */,
 				48C882F31FC893FA000A57C2 /* ChallengePresenterImpl.swift in Sources */,
+				8ACC2BDD1FE0801C00786B52 /* ConfigFooter.swift in Sources */,
 				48C882F71FC893FA000A57C2 /* FeaturedFavoriteClickCollectionViewCell.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,
 				08276F2E1FC73F8C00A8E605 /* OpenChallengesCellProtocols.swift in Sources */,

@@ -44,5 +44,13 @@ class ConfigurationTableViewController: UITableViewController {
         return header
     }
     
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = ConfigFooter()
+        if(section == 2){
+            footer.backgroundColor = .white
+        }
+        return footer
+    }
+    
 
 }

@@ -11,18 +11,6 @@ import Cloudinary
 
 class ChallengePresenterImpl: ChallengePresenter{
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     init(challengeView view: ChallengeView) {
         self.view = view
     }

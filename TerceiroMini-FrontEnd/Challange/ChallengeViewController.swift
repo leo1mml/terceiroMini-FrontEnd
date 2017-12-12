@@ -10,12 +10,7 @@ import UIKit
 
 class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
-    
-    
-    
-    
-    
+
     //var challengeImages : [String]!
     var challengePhotos : [Photo]!
     var presenter : ChallengePresenter?
@@ -25,7 +20,6 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
 
-    
 
     // - mainButton
     
@@ -43,11 +37,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
 
         //init status bar
             initDarkStatusBar()
-        
-        
-        
-        
-        
+
         
         self.mainCollectionView.delegate = self
         self.mainCollectionView.dataSource = self
@@ -56,7 +46,6 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         //initializing nibs
         self.mainCollectionView.register(UINib(nibName:MainCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
 
-        
         presenter = ChallengePresenterImpl(challengeView: self)
 
     }

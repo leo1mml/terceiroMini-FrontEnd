@@ -13,17 +13,22 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     var presenter: ProfilePresenter?
     var holder = ProfileUserHolder(image: UIImage(), name: "", username: "", amountPhotos: 0, amountTrophy: 0)
     var cells = [ProfileCellHolder]()
+    var user : User? {
+        didSet {
+            presenter?.loadData(id: (user?.id)!)
+        }
+    }
     
     @IBOutlet weak var collectionProfile: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         presenter = ProfilePresenterImpl(profileView: self)
-        presenter?.loadData(id: "5a21a303391838001482d1f2")
-        
         self.collectionProfile.delegate = self
         self.collectionProfile.dataSource = self
+        if((self.user) != nil){
+            presenter?.loadData(id: (self.user?.id)!)
+        }
         
     }
     

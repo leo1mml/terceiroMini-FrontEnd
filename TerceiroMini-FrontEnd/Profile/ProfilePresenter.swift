@@ -50,7 +50,7 @@ class ProfilePresenterImpl: ProfilePresenter {
             // passo fotos para images
             for photo in photos! {
                 amountPhotos += 1
-                NetworkManager.getChallengeById(id: id) { (challenge, error) in
+                NetworkManager.getChallengeById(id: photo.challengeId) { (challenge, error) in
                     
                     guard error == nil else {
                         
@@ -58,7 +58,7 @@ class ProfilePresenterImpl: ProfilePresenter {
                     }
                     
                     // Challenge
-                    if challenge?.winner == photo.url {
+                    if challenge?.winner == photo.ownerId {
                         amountTrophy += 1
                     }
                     
@@ -66,12 +66,13 @@ class ProfilePresenterImpl: ProfilePresenter {
                     UIImage.fetch(with: photo.url!, completion: { (image) in
                         let profileCell = ProfileCellHolder(image: image, theme: (challenge?.theme)!, isWinner: challenge?.winner == photo.url)
                         cells.append(profileCell)
+                        self.view?.receiveCells(cells: cells)
+                        self.loadHeader(id: id, amountPhotos: amountPhotos, amountTrophy: amountTrophy)
                     })
                 }
             }
             
-            self.loadHeader(id: id, amountPhotos: amountPhotos, amountTrophy: amountTrophy)
-            self.view?.receiveCells(cells: cells)
+            
         }
     }
     

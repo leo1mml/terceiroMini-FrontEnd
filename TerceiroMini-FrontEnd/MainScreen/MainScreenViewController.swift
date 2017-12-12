@@ -8,7 +8,12 @@
 
 import UIKit
 
-class MainScreenViewController: UITableViewController, MainScreenView, NavigationAnimationsDelegate{
+protocol NavigateInAppProtocol {
+    func goToSeeAll()
+    func goToConfig()
+}
+
+class MainScreenViewController: UITableViewController, MainScreenView, NavigationAnimationsDelegate, NavigateInAppProtocol{
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var logoImage: UIImageView!
@@ -24,12 +29,16 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "PageView") {
-            self.pageViewController = vc as! NavigationViewController
-            self.pageViewContainer.frame = pageViewController.view.frame
-            self.pageViewContainer.addSubview(vc.view)
-            self.pageViewController.delegateAnimations = self
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "PageView") else {
+            return
         }
+        self.pageViewController = vc as! NavigationViewController
+        self.pageViewContainer.frame = pageViewController.view.frame
+        self.pageViewContainer.addSubview(vc.view)
+        self.pageViewController.delegateAnimations = self
+        let mainScreen = self.pageViewController.viewControllerList[0] as! MainScreenTableViewController
+        mainScreen.delegateNavigateInApp = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -112,7 +121,15 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.pageViewController.goToNextPage()
     }
     
+    func goToSeeAll() {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SeeAllPastChallenges"){
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
+    func goToConfig() {
+        
+    }
     
     
 

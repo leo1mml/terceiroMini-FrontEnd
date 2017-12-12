@@ -109,17 +109,21 @@
                                             </collectionViewFlowLayout>
                                             <cells/>
                                         </collectionView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7lx-OI-3ds">
-                                            <rect key="frame" x="28" y="23" width="24" height="15"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="15" id="7Gz-Ht-S9w"/>
-                                                <constraint firstAttribute="width" constant="24" id="Wnf-nC-wDF"/>
-                                            </constraints>
-                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o8M-9X-1dA">
                                             <rect key="frame" x="331" y="40" width="24" height="4"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNI-ZU-MxI">
+                                            <rect key="frame" x="28" y="23" width="24" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="F4t-gF-uEU"/>
+                                                <constraint firstAttribute="width" constant="24" id="cYW-AV-9m3"/>
+                                            </constraints>
+                                            <state key="normal" image="back-button"/>
+                                            <connections>
+                                                <action selector="backButton:" destination="CnL-K5-WoQ" eventType="touchUpInside" id="lBY-jK-apt"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="xeq-9u-oDN" secondAttribute="trailing" constant="61" id="89W-wc-oVY"/>
@@ -130,16 +134,16 @@
                                         <constraint firstItem="uTc-aZ-i9V" firstAttribute="top" secondItem="sFj-Ff-eVK" secondAttribute="bottom" constant="12" id="EtV-CK-ryQ"/>
                                         <constraint firstAttribute="trailing" secondItem="2j8-9C-zhg" secondAttribute="trailing" id="Lso-PU-YPz"/>
                                         <constraint firstItem="xeq-9u-oDN" firstAttribute="leading" secondItem="5b2-Zy-hfm" secondAttribute="leading" constant="61" id="O8e-Am-7qu"/>
+                                        <constraint firstItem="nNI-ZU-MxI" firstAttribute="top" secondItem="5b2-Zy-hfm" secondAttribute="topMargin" constant="15" id="P7v-lr-CTJ"/>
                                         <constraint firstItem="uTc-aZ-i9V" firstAttribute="leading" secondItem="5b2-Zy-hfm" secondAttribute="leadingMargin" constant="20" id="QZz-dP-Kb4"/>
                                         <constraint firstAttribute="bottom" secondItem="xeq-9u-oDN" secondAttribute="bottom" constant="26" id="UPt-YQ-Ywy"/>
                                         <constraint firstItem="v7D-rR-SD7" firstAttribute="centerY" secondItem="2j8-9C-zhg" secondAttribute="centerY" constant="97" id="XaJ-at-aWn"/>
                                         <constraint firstItem="v7D-rR-SD7" firstAttribute="top" secondItem="Bod-yo-Nhh" secondAttribute="bottom" constant="10" id="XnM-QY-Dc7"/>
                                         <constraint firstItem="2j8-9C-zhg" firstAttribute="top" secondItem="5b2-Zy-hfm" secondAttribute="top" id="Z1D-ng-bk3"/>
                                         <constraint firstItem="sFj-Ff-eVK" firstAttribute="leading" secondItem="5b2-Zy-hfm" secondAttribute="leadingMargin" constant="29.5" id="bFd-RN-pM3"/>
+                                        <constraint firstItem="nNI-ZU-MxI" firstAttribute="leading" secondItem="5b2-Zy-hfm" secondAttribute="leadingMargin" constant="20" id="fIo-YW-fr8"/>
                                         <constraint firstItem="2j8-9C-zhg" firstAttribute="leading" secondItem="5b2-Zy-hfm" secondAttribute="leading" id="iEU-1x-m1z"/>
                                         <constraint firstAttribute="bottom" secondItem="2j8-9C-zhg" secondAttribute="bottom" constant="59" id="qYQ-Yg-d2j"/>
-                                        <constraint firstItem="7lx-OI-3ds" firstAttribute="top" secondItem="5b2-Zy-hfm" secondAttribute="topMargin" constant="15" id="ujg-Xo-LF1"/>
-                                        <constraint firstItem="7lx-OI-3ds" firstAttribute="leading" secondItem="5b2-Zy-hfm" secondAttribute="leadingMargin" constant="20" id="xZQ-Gd-67t"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="challengeLabel" destination="sFj-Ff-eVK" id="1EQ-o7-JRH"/>
@@ -212,6 +216,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back-button" width="24" height="15"/>
         <image name="imagem1.png" width="375" height="400"/>
         <image name="miniClicksCinza" width="35" height="38"/>
     </resources>

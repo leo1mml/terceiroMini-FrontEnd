@@ -631,10 +631,10 @@
 		08F06F9B1FBB594A0039EAFE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				4832D44A1FD9B60700EE18DC /* ChallengeClosed.storyboard */,
-				48C882F91FC89412000A57C2 /* Challenge.storyboard */,
 				48620F1F1FD815F000A45E3E /* LoginFlow */,
 				8A1CC5A81FBE66F900BC4963 /* Main Screen */,
+				4832D44A1FD9B60700EE18DC /* ChallengeClosed.storyboard */,
+				48C882F91FC89412000A57C2 /* Challenge.storyboard */,
 				8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */,
 				14103C9E1FBE221800726C0B /* Profile.storyboard */,
 			);

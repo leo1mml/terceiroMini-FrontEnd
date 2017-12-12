@@ -23,6 +23,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     @IBOutlet weak var centerIcon: UIView!
     var pageViewController: NavigationViewController!
     var presenter : MainScreenPresenter?
+    var viewControllerList : [UIViewController]?
     
     var lastOffsetX : CGFloat = 0.0
 
@@ -36,6 +37,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.pageViewController = vc as! NavigationViewController
         self.pageViewContainer.frame = pageViewController.view.frame
         self.pageViewContainer.addSubview(vc.view)
+        self.viewControllerList = self.pageViewController.viewControllerList
         self.pageViewController.delegateAnimations = self
         let mainScreen = self.pageViewController.viewControllerList[0] as! MainScreenTableViewController
         mainScreen.delegateNavigateInApp = self
@@ -49,7 +51,10 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.profileImage.tintColor = .gray
+        if(self.pageViewController.nextVCIdentifier == ""){
+            self.profileImage.tintColor = .gray
+        }
+        
     }
 
     override func viewDidLayoutSubviews() {
@@ -129,14 +134,16 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     }
     
     @IBAction func goToConfig(_ sender: Any) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "Opcoes") {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     func goToSeeAll() {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SeeAllPastChallenges"){
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
-    
+
 
     /*
     // MARK: - Navigation

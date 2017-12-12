@@ -13,7 +13,7 @@
         <scene sceneID="Tan-j9-Pla">
             <objects>
                 <tableViewController storyboardIdentifier="MainScreen" id="Gtz-CT-cZD" customClass="MainScreenViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tZ1-Mu-L0y">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tZ1-Mu-L0y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,6 +44,7 @@
                                                 </imageView>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-icon" translatesAutoresizingMaskIntoConstraints="NO" id="xJ0-Js-UsS">
                                                     <rect key="frame" x="20" y="10" width="24" height="24"/>
+                                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="ONW-eG-vg5"/>
                                                         <constraint firstAttribute="width" constant="24" id="mrc-KE-xIX"/>
@@ -143,6 +144,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pep-vy-W8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="359.19999999999999" y="966.56671664167925"/>
+        </scene>
+        <!--Opcoes-->
+        <scene sceneID="kjN-hE-IxA">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Opcoes" storyboardName="Configuration" referencedIdentifier="Opcoes" id="hGD-5i-KGP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAx-bG-13t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010" y="520"/>
         </scene>
         <!--MainScreenTableView-->
         <scene sceneID="5OY-gA-kvi">

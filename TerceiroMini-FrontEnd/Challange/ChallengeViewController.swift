@@ -26,7 +26,6 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
 
-    
 
     // - mainButton
     
@@ -53,7 +52,6 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         //initializing nibs
         self.mainCollectionView.register(UINib(nibName:MainCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
 
-        
         presenter = ChallengePresenterImpl(challengeView: self)
 
     }

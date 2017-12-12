@@ -84,7 +84,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="presentationAcceptanceLabel" text="Ao entrar no aplicativo, você concorda com nossos termos de serviço e políticas de privacidade." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdM-jT-lin">
-                                <rect key="frame" x="20" y="619" width="319" height="28"/>
+                                <rect key="frame" x="20" y="603" width="319" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="Ny9-ND-PxI"/>
                                 </constraints>
@@ -162,10 +162,10 @@
                             <constraint firstItem="X0A-V3-EcB" firstAttribute="leading" secondItem="E3X-f9-Gjh" secondAttribute="leading" id="LuP-fd-MFe"/>
                             <constraint firstItem="x4r-8h-Wdq" firstAttribute="trailing" secondItem="7vd-KB-07d" secondAttribute="trailing" id="Trj-WU-MLe"/>
                             <constraint firstItem="X0A-V3-EcB" firstAttribute="bottom" secondItem="E3X-f9-Gjh" secondAttribute="bottom" id="YiJ-Qp-A4c"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="MdM-jT-lin" secondAttribute="bottom" constant="20" id="a9Q-WS-nHA"/>
+                            <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="MdM-jT-lin" secondAttribute="bottom" constant="30" id="a9Q-WS-nHA"/>
                             <constraint firstItem="vCG-xz-N5s" firstAttribute="top" secondItem="E3X-f9-Gjh" secondAttribute="bottom" constant="20" id="eus-LO-kiI"/>
                             <constraint firstItem="Ycf-RB-5lW" firstAttribute="top" secondItem="d7s-mr-7pf" secondAttribute="top" constant="20" id="fKW-Ef-nCY"/>
-                            <constraint firstItem="vCG-xz-N5s" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="MdM-jT-lin" secondAttribute="top" constant="20" id="hMa-eB-wL5"/>
+                            <constraint firstItem="vCG-xz-N5s" firstAttribute="bottom" secondItem="MdM-jT-lin" secondAttribute="top" constant="-40" id="hMa-eB-wL5"/>
                             <constraint firstItem="NlT-pd-9mE" firstAttribute="bottom" secondItem="E3X-f9-Gjh" secondAttribute="bottom" constant="-30" id="hZd-kf-84M"/>
                             <constraint firstItem="x4r-8h-Wdq" firstAttribute="trailing" secondItem="NlT-pd-9mE" secondAttribute="trailing" constant="20" id="qai-DO-Mcl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MdM-jT-lin" secondAttribute="trailing" constant="20" id="rh0-rw-HyI"/>
@@ -253,8 +253,8 @@
                                     <constraint firstAttribute="height" constant="80" id="1CH-7C-AFb"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2qw-LT-SdT">
-                                <rect key="frame" x="20" y="311" width="335" height="262"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2qw-LT-SdT">
+                                <rect key="frame" x="20" y="331" width="335" height="251"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YVx-MM-6xM">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="194"/>
@@ -262,7 +262,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LiB-Lz-djP">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="124"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="o8Q-qm-jbH" customClass="BottomLineTextField" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="o8Q-qm-jbH" customClass="BottomLineTextField" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="52"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="6Jz-Az-ycO"/>
@@ -311,13 +311,13 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TzZ-Db-ROl">
-                                        <rect key="frame" x="0.0" y="204" width="335" height="58"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TzZ-Db-ROl">
+                                        <rect key="frame" x="0.0" y="209" width="335" height="42"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-D8-PhU">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="16"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="XWH-dh-kah"/>
+                                                    <constraint firstAttribute="height" constant="16" id="XWH-dh-kah"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                                 <state key="normal" title="Esqueceu sua senha?">
@@ -328,7 +328,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6g-lL-LCB">
-                                                <rect key="frame" x="0.0" y="30" width="335" height="28"/>
+                                                <rect key="frame" x="0.0" y="26" width="335" height="16"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                                 <state key="normal" title="Não tem conta? Crie uma aqui.">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -342,7 +342,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="presentationAcceptanceLabel" text="Ao entrar no aplicativo, você concorda com nossos termos de serviço e políticas de privacidade." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqZ-oP-ggc">
-                                <rect key="frame" x="20" y="619" width="335" height="28"/>
+                                <rect key="frame" x="20" y="609" width="335" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="fxw-DE-6Dv"/>
                                 </constraints>
@@ -354,9 +354,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1pT-Gh-aUM" secondAttribute="trailing" constant="20" id="9QN-yJ-pnA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pqZ-oP-ggc" secondAttribute="bottom" constant="20" id="AEl-VY-uj1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pqZ-oP-ggc" secondAttribute="bottom" constant="30" id="AEl-VY-uj1"/>
                             <constraint firstItem="1pT-Gh-aUM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AMz-ec-jl7"/>
-                            <constraint firstItem="2qw-LT-SdT" firstAttribute="top" secondItem="1HN-t6-ISn" secondAttribute="bottom" constant="20" id="AaK-k6-8pW"/>
+                            <constraint firstItem="2qw-LT-SdT" firstAttribute="top" secondItem="1HN-t6-ISn" secondAttribute="bottom" constant="40" id="AaK-k6-8pW"/>
                             <constraint firstItem="1HN-t6-ISn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bbx-Rd-bny"/>
                             <constraint firstItem="1HN-t6-ISn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fpv-E2-w5T"/>
                             <constraint firstItem="6W6-Ew-aol" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GBb-wY-8ak"/>
@@ -501,7 +501,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ao entrar no aplicativo, você concorda com nossos termos de serviço e políticas de privacidade." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7w4-Dx-6uz">
-                                <rect key="frame" x="20" y="614" width="335" height="33"/>
+                                <rect key="frame" x="20" y="604" width="335" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="ZAC-gv-UVT"/>
                                 </constraints>
@@ -528,7 +528,7 @@
                             <constraint firstItem="7w4-Dx-6uz" firstAttribute="leading" secondItem="BV9-Fl-IKT" secondAttribute="leading" constant="20" id="l3s-wY-S29"/>
                             <constraint firstItem="oMF-Zt-yFi" firstAttribute="top" secondItem="jKQ-sl-H2X" secondAttribute="top" id="qma-wa-75z"/>
                             <constraint firstItem="eot-Ag-Q5e" firstAttribute="trailing" secondItem="oMF-Zt-yFi" secondAttribute="trailing" id="sSt-fD-SgA"/>
-                            <constraint firstItem="BV9-Fl-IKT" firstAttribute="bottom" secondItem="7w4-Dx-6uz" secondAttribute="bottom" constant="20" id="tZD-9x-AV9"/>
+                            <constraint firstItem="BV9-Fl-IKT" firstAttribute="bottom" secondItem="7w4-Dx-6uz" secondAttribute="bottom" constant="30" id="tZD-9x-AV9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BV9-Fl-IKT"/>
                     </view>
@@ -558,6 +558,6 @@
         <image name="register-backgrond-photo" width="375" height="182"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xrf-ov-Gtq"/>
+        <segue reference="SNq-hT-Yfm"/>
     </inferredMetricsTieBreakers>
 </document>

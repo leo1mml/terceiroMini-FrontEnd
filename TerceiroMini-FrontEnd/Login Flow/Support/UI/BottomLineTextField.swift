@@ -65,13 +65,11 @@ class BottomLineTextField: UITextField, UITextFieldDelegate {
     private func createBottomLine() -> CALayer {
         
         let size = CGSize(width: frame.size.width, height: 1)
-        let point = CGPoint(x: 0, y: frame.size.height - BottomLineTextField.firstResponderBorder)
+        let point = CGPoint(x: 0, y: frame.size.height - 10.0)
         
         let layer = CALayer()
         layer.frame = CGRect(origin: point, size: size)
         layer.backgroundColor = defaultLineColor.cgColor
-//        layer.borderColor = Colors.darkGray.cgColor
-//        layer.borderWidth = BottomLineTextField.nonFisrtResponderBorder
         
         return layer
     }

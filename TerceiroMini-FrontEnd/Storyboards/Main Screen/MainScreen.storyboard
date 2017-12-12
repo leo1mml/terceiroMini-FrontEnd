@@ -76,9 +76,17 @@
                                                         <constraint firstAttribute="width" constant="35" id="Urz-hB-azH"/>
                                                     </constraints>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="config-icon" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-0S-Lfi" userLabel="Config Image">
+                                                    <rect key="frame" x="505" y="8" width="28" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="Zdu-0u-WCL"/>
+                                                        <constraint firstAttribute="width" constant="28" id="adn-Uj-7PW"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ZlA-F9-FdT" firstAttribute="centerX" secondItem="A1K-Rz-MtQ" secondAttribute="centerX" id="0bj-4R-A7c"/>
+                                                <constraint firstItem="VDD-0S-Lfi" firstAttribute="leading" secondItem="CEk-tb-nvv" secondAttribute="trailing" constant="150" id="5gD-0p-BMr"/>
                                                 <constraint firstItem="CEk-tb-nvv" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="B96-e4-P1h"/>
                                                 <constraint firstItem="vlh-wv-LV3" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="EeX-xZ-pqb"/>
                                                 <constraint firstItem="nkj-KO-Cqg" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="HF5-bA-ZHC"/>
@@ -86,6 +94,7 @@
                                                 <constraint firstItem="xJ0-Js-UsS" firstAttribute="leading" secondItem="A1K-Rz-MtQ" secondAttribute="leading" constant="20" id="ZUH-hC-BHx"/>
                                                 <constraint firstItem="ZlA-F9-FdT" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="Zuq-dq-rMO"/>
                                                 <constraint firstItem="nkj-KO-Cqg" firstAttribute="centerX" secondItem="A1K-Rz-MtQ" secondAttribute="centerX" id="hcL-S7-O1h"/>
+                                                <constraint firstItem="VDD-0S-Lfi" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="jqf-Ac-mTv"/>
                                                 <constraint firstAttribute="trailing" secondItem="CEk-tb-nvv" secondAttribute="trailing" constant="20" id="l48-c7-et6"/>
                                                 <constraint firstAttribute="trailing" secondItem="vlh-wv-LV3" secondAttribute="trailing" constant="20" id="mtC-l2-N1K"/>
                                                 <constraint firstItem="xJ0-Js-UsS" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="nVs-yZ-rVm"/>
@@ -119,6 +128,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="centerIcon" destination="nkj-KO-Cqg" id="viO-QP-obZ"/>
+                        <outlet property="configImage" destination="VDD-0S-Lfi" id="Hdd-qy-yej"/>
                         <outlet property="leftIcon" destination="rwq-vW-bbR" id="L07-C4-JDs"/>
                         <outlet property="logoImage" destination="ZlA-F9-FdT" id="psJ-mt-x7N"/>
                         <outlet property="pageViewContainer" destination="fcq-iN-o2O" id="1Y0-O8-iK2"/>
@@ -189,10 +199,11 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B47-Rh-YCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="622"/>
+            <point key="canvasLocation" x="1323" y="520"/>
         </scene>
     </scenes>
     <resources>
+        <image name="config-icon" width="28" height="28"/>
         <image name="logo-topbar" width="35" height="38"/>
         <image name="profile-icon" width="27" height="27"/>
         <image name="profile-icon-topbar" width="29" height="33"/>

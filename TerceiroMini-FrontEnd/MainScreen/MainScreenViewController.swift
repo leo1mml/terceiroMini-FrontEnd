@@ -15,6 +15,7 @@ protocol NavigateInAppProtocol {
 
 class MainScreenViewController: UITableViewController, MainScreenView, NavigationAnimationsDelegate, NavigateInAppProtocol{
     
+    @IBOutlet weak var configImage: UIImageView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var rightIcon: UIView!
@@ -64,6 +65,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
             self.profileImage.center = self.centerIcon.center
             self.profileImage.tintColor = .black
             self.logoImage.tintColor = .gray
+            self.configImage.center = self.rightIcon.center
         }
     }
     
@@ -93,12 +95,13 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         
         if(differenceOffsetX < 370){
             if(lastOffsetX > contentOffset.x){
-                self.logoImage.center.x = (self.logoImage.center.x + differenceOffsetX * 0.4)
-                self.profileImage.center.x = (self.profileImage.center.x + differenceOffsetX * 0.4)
+                self.logoImage.center.x = (self.logoImage.center.x + differenceOffsetX * 0.42)
+                self.profileImage.center.x = (self.profileImage.center.x + differenceOffsetX * 0.42)
+                self.configImage.center.x = (self.configImage.center.x + differenceOffsetX * 0.42)
             }else if (lastOffsetX < contentOffset.x) {
-                
-                self.logoImage.center.x = (self.logoImage.center.x - differenceOffsetX * 0.4)
-                self.profileImage.center.x = (self.profileImage.center.x - differenceOffsetX * 0.4)
+                self.logoImage.center.x = (self.logoImage.center.x - differenceOffsetX * 0.42)
+                self.profileImage.center.x = (self.profileImage.center.x - differenceOffsetX * 0.42)
+                self.configImage.center.x = (self.configImage.center.x - differenceOffsetX * 0.42)
             }
             
         }

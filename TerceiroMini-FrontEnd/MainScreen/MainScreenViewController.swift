@@ -10,6 +10,7 @@ import UIKit
 
 protocol NavigateInAppProtocol {
     func goToSeeAll()
+    func instanceProfile()
 }
 
 class MainScreenViewController: UITableViewController, MainScreenView, NavigationAnimationsDelegate, NavigateInAppProtocol{
@@ -142,6 +143,11 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SeeAllPastChallenges"){
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func instanceProfile() {
+        self.pageViewController.viewControllerList[1] = (self.storyboard?.instantiateViewController(withIdentifier: "Profile"))!
+        self.pageViewController.reloadInputViews()
     }
 
 

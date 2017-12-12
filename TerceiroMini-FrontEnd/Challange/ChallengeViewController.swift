@@ -46,10 +46,6 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
             initDarkStatusBar()
         
         
-        
-        
-        
-        
         self.mainCollectionView.delegate = self
         self.mainCollectionView.dataSource = self
         
@@ -124,6 +120,9 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         picker.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func backButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     func changeMainPhoto() {
         
     }

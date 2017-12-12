@@ -268,7 +268,13 @@ class PhotoNet {
         let domain = R.photosDomain + "/unvote/\(id)"
         let header = ["x-auth": token]
         
-        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { completion($0.error == nil) }
+        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().response { (response) in
+            if(response.error != nil){
+                completion(false)
+                return
+            }
+            completion(true)
+        }
     }
     
     // MARK: - Auxiliar methods

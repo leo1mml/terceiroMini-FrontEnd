@@ -66,7 +66,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
             self.backgroundImage.image = image
         })
         
-        
+        presenter?.checkIfChosenClick(currentPhoto: (self.data?.0[imageIndex])!)
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeLeft.direction = .left
@@ -96,10 +96,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         
         showOrHideDetails()
     }
-    
-    func checkIfChosenClick() {
-        
-    }
+
     
     func enableMyClickChosebuttonLabel(){
         self.closeButton.setTitle("Meu Click", for: .disabled)

@@ -18,6 +18,6 @@ protocol ChallengeClosedView {
 protocol ChallengeClosedPresenter {
     func showReport()
     func chooseClick(photo: Photo)
-    func checkIfChosenClick()
+    func checkIfChosenClick(currentPhoto: Photo) 
 
 }

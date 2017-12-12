@@ -37,12 +37,24 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
             }
     }
     
-    func checkIfChosenClick() {
+    func checkIfChosenClick(currentPhoto: Photo) {
         
         //se for o click dele
-        //self.view?.enableMyClickChosebuttonLabel()
-        //se não for
-        //self.view?.enableChoseClickButton()
+       
+        if let token = UserDefaults.standard.string(forKey: "token"){
+            NetworkManager.getMyClick(byChallengeId: currentPhoto.challengeId, token: token, completion: { (photos, error) in
+                if photos != nil{
+                    if(currentPhoto.id == photos?.first?.id){
+                        self.view?.enableMyClickChosebuttonLabel()
+                    }else{
+                        self.view?.enableChoseClickButton()
+                    }
+                    
+                }else{
+                    self.view?.enableChoseClickButton()
+                }
+            })
+        }
     }
 
 }

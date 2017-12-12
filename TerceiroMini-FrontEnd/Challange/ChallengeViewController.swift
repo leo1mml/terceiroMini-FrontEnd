@@ -29,7 +29,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
 
     // - mainButton
     
-    var state = ChallengeState.votation
+    var state = ChallengeState.finished
     var endDate : Date?
     
     //status bar

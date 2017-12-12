@@ -79,7 +79,8 @@ class NetworkManager {
     class func getUserPhotos(byUserId id: String, completion: @escaping ([Photo]?, Error?) -> Void) {
         PhotoNet.get(byUserId: id, completion: completion)
     }
-    class func getMyClick(byChallengeId id: String, token: String, completion: @escaping (_ p: [Photo]?, _ e: Error?) -> Void){
+    
+    class func getMyClick(byChallengeId id: String, token: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
         PhotoNet.getMyClick(byChallengeId: id, token: token, completion: completion)
     }
     

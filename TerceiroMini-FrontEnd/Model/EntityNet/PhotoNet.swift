@@ -247,7 +247,7 @@ class PhotoNet {
         let header = ["x-auth": token]
         
         Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON {(response) in
-            if(response.error == nil){
+            if(response.error != nil){
                 completion(false)
                 return
             }

@@ -76,25 +76,29 @@
                                                         <constraint firstAttribute="width" constant="35" id="Urz-hB-azH"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="config-icon" translatesAutoresizingMaskIntoConstraints="NO" id="VDD-0S-Lfi" userLabel="Config Image">
-                                                    <rect key="frame" x="505" y="8" width="28" height="28"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWy-iB-u0U">
+                                                    <rect key="frame" x="495" y="8" width="28" height="28"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="28" id="Zdu-0u-WCL"/>
-                                                        <constraint firstAttribute="width" constant="28" id="adn-Uj-7PW"/>
+                                                        <constraint firstAttribute="width" constant="28" id="DAu-Ql-qSd"/>
+                                                        <constraint firstAttribute="height" constant="28" id="WHr-IV-caP"/>
                                                     </constraints>
-                                                </imageView>
+                                                    <state key="normal" backgroundImage="config-icon"/>
+                                                    <connections>
+                                                        <action selector="goToConfig:" destination="Gtz-CT-cZD" eventType="touchUpInside" id="gfF-xU-hy7"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ZlA-F9-FdT" firstAttribute="centerX" secondItem="A1K-Rz-MtQ" secondAttribute="centerX" id="0bj-4R-A7c"/>
-                                                <constraint firstItem="VDD-0S-Lfi" firstAttribute="leading" secondItem="CEk-tb-nvv" secondAttribute="trailing" constant="150" id="5gD-0p-BMr"/>
                                                 <constraint firstItem="CEk-tb-nvv" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="B96-e4-P1h"/>
                                                 <constraint firstItem="vlh-wv-LV3" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="EeX-xZ-pqb"/>
                                                 <constraint firstItem="nkj-KO-Cqg" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="HF5-bA-ZHC"/>
                                                 <constraint firstItem="rwq-vW-bbR" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="MOm-B1-eLw"/>
+                                                <constraint firstItem="BWy-iB-u0U" firstAttribute="leading" secondItem="CEk-tb-nvv" secondAttribute="trailing" constant="140" id="RDr-OV-AmG"/>
                                                 <constraint firstItem="xJ0-Js-UsS" firstAttribute="leading" secondItem="A1K-Rz-MtQ" secondAttribute="leading" constant="20" id="ZUH-hC-BHx"/>
                                                 <constraint firstItem="ZlA-F9-FdT" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="Zuq-dq-rMO"/>
+                                                <constraint firstItem="BWy-iB-u0U" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="fAH-C8-iUQ"/>
                                                 <constraint firstItem="nkj-KO-Cqg" firstAttribute="centerX" secondItem="A1K-Rz-MtQ" secondAttribute="centerX" id="hcL-S7-O1h"/>
-                                                <constraint firstItem="VDD-0S-Lfi" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="jqf-Ac-mTv"/>
                                                 <constraint firstAttribute="trailing" secondItem="CEk-tb-nvv" secondAttribute="trailing" constant="20" id="l48-c7-et6"/>
                                                 <constraint firstAttribute="trailing" secondItem="vlh-wv-LV3" secondAttribute="trailing" constant="20" id="mtC-l2-N1K"/>
                                                 <constraint firstItem="xJ0-Js-UsS" firstAttribute="centerY" secondItem="A1K-Rz-MtQ" secondAttribute="centerY" id="nVs-yZ-rVm"/>
@@ -128,7 +132,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="centerIcon" destination="nkj-KO-Cqg" id="viO-QP-obZ"/>
-                        <outlet property="configImage" destination="VDD-0S-Lfi" id="Hdd-qy-yej"/>
+                        <outlet property="configButton" destination="BWy-iB-u0U" id="ey1-Ao-qeu"/>
                         <outlet property="leftIcon" destination="rwq-vW-bbR" id="L07-C4-JDs"/>
                         <outlet property="logoImage" destination="ZlA-F9-FdT" id="psJ-mt-x7N"/>
                         <outlet property="pageViewContainer" destination="fcq-iN-o2O" id="1Y0-O8-iK2"/>

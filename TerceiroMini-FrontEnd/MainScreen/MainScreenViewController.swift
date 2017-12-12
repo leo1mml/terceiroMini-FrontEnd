@@ -10,12 +10,12 @@ import UIKit
 
 protocol NavigateInAppProtocol {
     func goToSeeAll()
-    func goToConfig()
 }
 
 class MainScreenViewController: UITableViewController, MainScreenView, NavigationAnimationsDelegate, NavigateInAppProtocol{
     
-    @IBOutlet weak var configImage: UIImageView!
+   
+    @IBOutlet weak var configButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var rightIcon: UIView!
@@ -39,6 +39,10 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.pageViewController.delegateAnimations = self
         let mainScreen = self.pageViewController.viewControllerList[0] as! MainScreenTableViewController
         mainScreen.delegateNavigateInApp = self
+        if(self.pageViewController.viewControllerList[1].restorationIdentifier == "Main"){
+            self.configButton.isEnabled = false
+            self.configButton.isHidden = true
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -65,7 +69,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
             self.profileImage.center = self.centerIcon.center
             self.profileImage.tintColor = .black
             self.logoImage.tintColor = .gray
-            self.configImage.center = self.rightIcon.center
+            self.configButton.center = self.rightIcon.center
         }
     }
     
@@ -97,11 +101,11 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
             if(lastOffsetX > contentOffset.x){
                 self.logoImage.center.x = (self.logoImage.center.x + differenceOffsetX * 0.42)
                 self.profileImage.center.x = (self.profileImage.center.x + differenceOffsetX * 0.42)
-                self.configImage.center.x = (self.configImage.center.x + differenceOffsetX * 0.42)
+                self.configButton.center.x = (self.configButton.center.x + differenceOffsetX * 0.42)
             }else if (lastOffsetX < contentOffset.x) {
                 self.logoImage.center.x = (self.logoImage.center.x - differenceOffsetX * 0.42)
                 self.profileImage.center.x = (self.profileImage.center.x - differenceOffsetX * 0.42)
-                self.configImage.center.x = (self.configImage.center.x - differenceOffsetX * 0.42)
+                self.configButton.center.x = (self.configButton.center.x - differenceOffsetX * 0.42)
             }
             
         }
@@ -124,14 +128,12 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.pageViewController.goToNextPage()
     }
     
+    @IBAction func goToConfig(_ sender: Any) {
+    }
     func goToSeeAll() {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SeeAllPastChallenges"){
             self.navigationController?.pushViewController(vc, animated: true)
         }
-    }
-    
-    func goToConfig() {
-        
     }
     
     

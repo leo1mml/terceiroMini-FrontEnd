@@ -420,6 +420,9 @@
                         </connections>
                     </tableView>
                     <size key="freeformSize" width="375" height="1120"/>
+                    <connections>
+                        <outlet property="challengesCell" destination="pLu-0A-7Yi" id="Q4b-kW-Gso"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7b-g7-hWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

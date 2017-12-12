@@ -24,6 +24,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     var imageIndex = 0
     var details = false
     var data: ([Photo], Int)?
+    var myClick = false
     
     let colorGradient = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
     
@@ -82,7 +83,12 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
   
     
     @IBAction func escolherClickAction(_ sender: Any) {
-        presenter?.chooseClick(photo: (self.data?.0[imageIndex])!)
+        if (myClick){
+            presenter?.unvote(photo: (self.data?.0[imageIndex])!)
+        }else{
+            presenter?.vote(photo: (self.data?.0[imageIndex])!)
+        }
+        
         
         
     }
@@ -99,13 +105,17 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
 
     
     func enableMyClickChosebuttonLabel(){
-        self.closeButton.setTitle("Meu Click", for: .disabled)
+        self.escolherClickButton.setTitle("Meu Click", for: .normal)
+        self.myClick = true
+        
     }
     func enableChoseClickButton(){
-        self.closeButton.setTitle("Escolher Click", for: .normal)
+        self.escolherClickButton.setTitle("Escolher Click", for: .normal)
+        self.myClick = false
     }
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+        
         if gesture.direction == UISwipeGestureRecognizerDirection.right {
             if (imageIndex > 0){
                 imageIndex -= 1
@@ -113,7 +123,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
                 UIImage.fetch(with: images[imageIndex], completion: { (image) in
                     self.backgroundImage.image = image
                 })
-                
+                presenter?.checkIfChosenClick(currentPhoto: (self.data?.0[imageIndex])!)
                 if(details){
                     showOrHideDetails()
                 }
@@ -128,7 +138,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
                 UIImage.fetch(with: images[imageIndex], completion: { (image) in
                     self.backgroundImage.image = image
                 })
-                
+                presenter?.checkIfChosenClick(currentPhoto: (self.data?.0[imageIndex])!)
             }
             
             if(details){

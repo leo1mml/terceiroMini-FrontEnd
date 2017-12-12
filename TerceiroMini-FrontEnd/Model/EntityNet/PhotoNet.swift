@@ -220,8 +220,8 @@ class PhotoNet {
                 completion(nil, response.error)
                 return
             }
-            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "photos")!
-            let photos = buildPhotos(fromDictionaryArry: arr)
+            let dic = NetHelper.extractDictionary(fromJson: val, key: "photo")!
+            let photo = buildPhoto(fromDictionary: dic)
             
             completion(photo, nil)
         }

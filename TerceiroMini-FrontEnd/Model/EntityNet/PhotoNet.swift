@@ -209,7 +209,7 @@ class PhotoNet {
      - parameter p: The photos retrieved by the task.
      - parameter e: The error that ocurred.
      */
-    class func getMyClick(byChallengeId id: String, token: String, completion: @escaping (_ p: [Photo]?, _ e: Error?) -> Void) {
+    class func getMyClick(byChallengeId id: String, token: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
         
          //GET MY CLICK ID
         let completeDomain = R.photosDomain + "/getMyClick/\(id)"
@@ -223,7 +223,7 @@ class PhotoNet {
             let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "photos")!
             let photos = buildPhotos(fromDictionaryArry: arr)
             
-            completion(photos, nil)
+            completion(photo, nil)
         }
         
 

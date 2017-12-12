@@ -32,6 +32,7 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
     
     @IBOutlet weak var backgroundImageView: BackgroundImageView!
     @IBOutlet weak var backgroundImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var backgroundImageBottomGradientView: UIView!
     
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var exitButton: UIButton!
@@ -61,6 +62,7 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
         
         loadHeader()
         setupTexts()
+        setupBackgroundImageViewBottomGradient()
     }
     
     // MARK: - View settings
@@ -84,8 +86,7 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
             
             let newGradient = backgroundImageView.buildGradient(colors: [.white, .clear], locationX: 0, locationY: 0.21, startPoint: CGPoint(x: 0.5, y: 0), endPoint: CGPoint(x: 0.5, y: 1))
             
-            backgroundImageView.changeGradient(named: "top", by: newGradient)
-            backgroundImageView.set(heightSize: 327)
+            backgroundImageView.changeTopGradient(by: newGradient)
         }
     }
     
@@ -119,5 +120,10 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
     
     func goToRegister() {
         performSegue(withIdentifier: segueToRegister, sender: self)
+    }
+    
+    private func setupBackgroundImageViewBottomGradient() {
+        
+        backgroundImageBottomGradientView.setUpsideDownDarkGradientBackground(colorOne: Colors.gradientBlack, colorTwo: .clear)
     }
 }

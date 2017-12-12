@@ -20,7 +20,17 @@ extension UIView {
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.9999)
         
         layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    func setUpsideDownDarkGradientBackground(colorOne: UIColor, colorTwo: UIColor) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.9999)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0001)
         
+        layer.insertSublayer(gradientLayer, at: 0)
     }
     
     func makeBorderAnimate(){

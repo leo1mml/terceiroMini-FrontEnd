@@ -14,6 +14,9 @@
         <array key="Montserrat-Bold.otf">
             <string>Montserrat-Bold</string>
         </array>
+        <array key="Montserrat-Medium.otf">
+            <string>Montserrat-Medium</string>
+        </array>
         <array key="Montserrat-Regular.otf">
             <string>Montserrat-Regular</string>
         </array>
@@ -34,6 +37,14 @@
                                     <constraint firstAttribute="height" constant="398" identifier="heightConstraint" id="DWm-MV-1Hp"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0A-V3-EcB">
+                                <rect key="frame" x="0.0" y="235" width="375" height="163"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="163" id="1vF-jd-2Vw"/>
+                                    <constraint firstAttribute="width" constant="375" id="DNP-tO-d2j"/>
+                                </constraints>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="appLogo" image="presentation-login-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ycf-RB-5lW">
                                 <rect key="frame" x="20" y="20" width="54" height="59"/>
                                 <constraints>
@@ -42,10 +53,10 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="presententionExitButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vd-KB-07d">
-                                <rect key="frame" x="325" y="20" width="30" height="30"/>
+                                <rect key="frame" x="305" y="0.0" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="KKb-zc-rPn"/>
-                                    <constraint firstAttribute="width" constant="30" id="TJN-3R-JWV"/>
+                                    <constraint firstAttribute="height" constant="70" id="KKb-zc-rPn"/>
+                                    <constraint firstAttribute="width" constant="70" id="TJN-3R-JWV"/>
                                 </constraints>
                                 <state key="normal" image="presentation-login-exit"/>
                             </button>
@@ -140,14 +151,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vCG-xz-N5s" firstAttribute="leading" secondItem="x4r-8h-Wdq" secondAttribute="leading" constant="20" id="0jV-OF-BHe"/>
-                            <constraint firstItem="7vd-KB-07d" firstAttribute="top" secondItem="d7s-mr-7pf" secondAttribute="top" constant="20" id="68P-Ym-kuX"/>
+                            <constraint firstItem="7vd-KB-07d" firstAttribute="top" secondItem="d7s-mr-7pf" secondAttribute="top" id="68P-Ym-kuX"/>
+                            <constraint firstItem="X0A-V3-EcB" firstAttribute="trailing" secondItem="E3X-f9-Gjh" secondAttribute="trailing" id="74X-ki-R15"/>
                             <constraint firstItem="x4r-8h-Wdq" firstAttribute="trailing" secondItem="vCG-xz-N5s" secondAttribute="trailing" constant="20" id="8fe-nl-lES"/>
                             <constraint firstItem="NlT-pd-9mE" firstAttribute="leading" secondItem="x4r-8h-Wdq" secondAttribute="leading" constant="20" id="98l-zj-PVZ"/>
                             <constraint firstItem="E3X-f9-Gjh" firstAttribute="leading" secondItem="x4r-8h-Wdq" secondAttribute="leading" id="FgZ-qy-Kdd"/>
                             <constraint firstItem="E3X-f9-Gjh" firstAttribute="trailing" secondItem="x4r-8h-Wdq" secondAttribute="trailing" id="Il4-CU-Q6m"/>
                             <constraint firstItem="Ycf-RB-5lW" firstAttribute="leading" secondItem="x4r-8h-Wdq" secondAttribute="leading" constant="20" id="K4F-fn-4PI"/>
                             <constraint firstItem="MdM-jT-lin" firstAttribute="leading" secondItem="x4r-8h-Wdq" secondAttribute="leading" constant="20" id="L6P-OZ-MLW"/>
-                            <constraint firstItem="x4r-8h-Wdq" firstAttribute="trailing" secondItem="7vd-KB-07d" secondAttribute="trailing" constant="20" id="Trj-WU-MLe"/>
+                            <constraint firstItem="X0A-V3-EcB" firstAttribute="leading" secondItem="E3X-f9-Gjh" secondAttribute="leading" id="LuP-fd-MFe"/>
+                            <constraint firstItem="x4r-8h-Wdq" firstAttribute="trailing" secondItem="7vd-KB-07d" secondAttribute="trailing" id="Trj-WU-MLe"/>
+                            <constraint firstItem="X0A-V3-EcB" firstAttribute="bottom" secondItem="E3X-f9-Gjh" secondAttribute="bottom" id="YiJ-Qp-A4c"/>
                             <constraint firstAttribute="bottomMargin" secondItem="MdM-jT-lin" secondAttribute="bottom" constant="20" id="a9Q-WS-nHA"/>
                             <constraint firstItem="vCG-xz-N5s" firstAttribute="top" secondItem="E3X-f9-Gjh" secondAttribute="bottom" constant="20" id="eus-LO-kiI"/>
                             <constraint firstItem="Ycf-RB-5lW" firstAttribute="top" secondItem="d7s-mr-7pf" secondAttribute="top" constant="20" id="fKW-Ef-nCY"/>
@@ -166,6 +180,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="agreementWarningLabel" destination="MdM-jT-lin" id="zcb-HC-sUZ"/>
+                        <outlet property="backgroundImageBottomGradientView" destination="X0A-V3-EcB" id="Eee-4E-cBf"/>
                         <outlet property="backgroundImageHeight" destination="DWm-MV-1Hp" id="6hT-hK-yk0"/>
                         <outlet property="backgroundImageView" destination="E3X-f9-Gjh" id="6el-e0-REv"/>
                         <outlet property="emailLoginButton" destination="Ra6-5I-GUr" id="4sC-Cv-pa0"/>
@@ -196,11 +211,18 @@
                                     <constraint firstAttribute="height" constant="291" identifier="heightConstraint" id="ALk-Zm-5nA"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W6-Ew-aol">
-                                <rect key="frame" x="20" y="20" width="30" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIg-2I-saU">
+                                <rect key="frame" x="0.0" y="128" width="375" height="163"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="6CP-i7-Nof"/>
-                                    <constraint firstAttribute="width" constant="30" id="ANl-q8-1de"/>
+                                    <constraint firstAttribute="height" constant="163" id="4L4-jh-x3R"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W6-Ew-aol">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="6CP-i7-Nof"/>
+                                    <constraint firstAttribute="width" constant="70" id="ANl-q8-1de"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" image="back-button"/>
@@ -246,7 +268,7 @@
                                                             <constraint firstAttribute="height" constant="52" id="6Jz-Az-ycO"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="username"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="bottomLineBorderWidth">
@@ -260,7 +282,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-BU-XAy" customClass="BottomLineTextField" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="72" width="335" height="52"/>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                 </subviews>
@@ -337,20 +359,24 @@
                             <constraint firstItem="2qw-LT-SdT" firstAttribute="top" secondItem="1HN-t6-ISn" secondAttribute="bottom" constant="20" id="AaK-k6-8pW"/>
                             <constraint firstItem="1HN-t6-ISn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bbx-Rd-bny"/>
                             <constraint firstItem="1HN-t6-ISn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fpv-E2-w5T"/>
-                            <constraint firstItem="6W6-Ew-aol" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="GBb-wY-8ak"/>
+                            <constraint firstItem="6W6-Ew-aol" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GBb-wY-8ak"/>
                             <constraint firstItem="pqZ-oP-ggc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GwG-te-3L7"/>
                             <constraint firstItem="2qw-LT-SdT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="J0P-bf-qf0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pqZ-oP-ggc" secondAttribute="trailing" constant="20" id="J1E-Qd-uCj"/>
+                            <constraint firstItem="oIg-2I-saU" firstAttribute="leading" secondItem="1HN-t6-ISn" secondAttribute="leading" id="Qyr-u6-Uca"/>
                             <constraint firstItem="2qw-LT-SdT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="X7h-lk-yAL"/>
+                            <constraint firstItem="oIg-2I-saU" firstAttribute="trailing" secondItem="1HN-t6-ISn" secondAttribute="trailing" id="Y5c-JI-EXq"/>
+                            <constraint firstItem="oIg-2I-saU" firstAttribute="bottom" secondItem="1HN-t6-ISn" secondAttribute="bottom" id="b4g-7g-LfE"/>
                             <constraint firstItem="1pT-Gh-aUM" firstAttribute="bottom" secondItem="1HN-t6-ISn" secondAttribute="bottom" constant="-20" id="gRC-4d-4lv"/>
-                            <constraint firstItem="6W6-Ew-aol" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kQP-2N-hhb"/>
+                            <constraint firstItem="6W6-Ew-aol" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kQP-2N-hhb"/>
                             <constraint firstItem="1HN-t6-ISn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wWn-LS-Bsx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="agreementLabel" destination="pqZ-oP-ggc" id="iUt-Ga-nlB"/>
-                        <outlet property="backgrounImageHeight" destination="ALk-Zm-5nA" id="egp-N4-kNK"/>
+                        <outlet property="backgroundImageBottomGradientView" destination="oIg-2I-saU" id="uUX-wO-JqP"/>
+                        <outlet property="backgroundImageHeight" destination="ALk-Zm-5nA" id="egp-N4-kNK"/>
                         <outlet property="backgroundImageView" destination="1HN-t6-ISn" id="Ygg-9B-To4"/>
                         <outlet property="instructionLabel" destination="V0D-EZ-MwH" id="Zaa-Vu-3JA"/>
                         <outlet property="passwordField" destination="FYW-BU-XAy" id="1Vb-l0-vpD"/>
@@ -377,11 +403,18 @@
                                     <constraint firstAttribute="height" constant="182" identifier="heightConstraint" id="dRQ-jX-9H8"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ims-Oh-vtV">
-                                <rect key="frame" x="20" y="20" width="30" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eot-Ag-Q5e">
+                                <rect key="frame" x="0.0" y="79" width="375" height="103"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="RGn-fH-tAp"/>
-                                    <constraint firstAttribute="width" constant="30" id="efN-YI-LxS"/>
+                                    <constraint firstAttribute="height" constant="103" id="HCS-3K-FS6"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ims-Oh-vtV">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="RGn-fH-tAp"/>
+                                    <constraint firstAttribute="width" constant="70" id="efN-YI-LxS"/>
                                 </constraints>
                                 <state key="normal" image="back-button"/>
                                 <connections>
@@ -483,21 +516,25 @@
                             <constraint firstItem="BV9-Fl-IKT" firstAttribute="trailing" secondItem="Kfz-2r-Xm6" secondAttribute="trailing" constant="20" id="6dk-Bw-8pb"/>
                             <constraint firstItem="BV9-Fl-IKT" firstAttribute="trailing" secondItem="7w4-Dx-6uz" secondAttribute="trailing" constant="20" id="BYk-BY-76T"/>
                             <constraint firstItem="oMF-Zt-yFi" firstAttribute="trailing" secondItem="BV9-Fl-IKT" secondAttribute="trailing" id="Clt-bl-exD"/>
-                            <constraint firstItem="Ims-Oh-vtV" firstAttribute="top" secondItem="jKQ-sl-H2X" secondAttribute="top" constant="20" id="Ne7-VE-r2m"/>
-                            <constraint firstItem="Ims-Oh-vtV" firstAttribute="leading" secondItem="BV9-Fl-IKT" secondAttribute="leading" constant="20" id="QMG-XV-MTt"/>
+                            <constraint firstItem="Ims-Oh-vtV" firstAttribute="top" secondItem="jKQ-sl-H2X" secondAttribute="top" id="Ne7-VE-r2m"/>
+                            <constraint firstItem="Ims-Oh-vtV" firstAttribute="leading" secondItem="BV9-Fl-IKT" secondAttribute="leading" id="QMG-XV-MTt"/>
                             <constraint firstItem="Kfz-2r-Xm6" firstAttribute="leading" secondItem="BV9-Fl-IKT" secondAttribute="leading" constant="20" id="WrP-4s-DVq"/>
+                            <constraint firstItem="eot-Ag-Q5e" firstAttribute="bottom" secondItem="oMF-Zt-yFi" secondAttribute="bottom" id="alV-gO-VYo"/>
                             <constraint firstItem="trI-KB-ATF" firstAttribute="leading" secondItem="BV9-Fl-IKT" secondAttribute="leading" constant="20" id="cdE-z5-J4M"/>
+                            <constraint firstItem="eot-Ag-Q5e" firstAttribute="leading" secondItem="oMF-Zt-yFi" secondAttribute="leading" id="dyJ-fm-I7M"/>
                             <constraint firstItem="Kfz-2r-Xm6" firstAttribute="bottom" secondItem="oMF-Zt-yFi" secondAttribute="bottom" constant="-20" id="g2R-91-Q8G"/>
                             <constraint firstItem="trI-KB-ATF" firstAttribute="top" secondItem="oMF-Zt-yFi" secondAttribute="bottom" constant="30" id="jtd-JQ-LGu"/>
                             <constraint firstItem="BV9-Fl-IKT" firstAttribute="trailing" secondItem="trI-KB-ATF" secondAttribute="trailing" constant="20" id="ju7-b2-4Qm"/>
                             <constraint firstItem="7w4-Dx-6uz" firstAttribute="leading" secondItem="BV9-Fl-IKT" secondAttribute="leading" constant="20" id="l3s-wY-S29"/>
                             <constraint firstItem="oMF-Zt-yFi" firstAttribute="top" secondItem="jKQ-sl-H2X" secondAttribute="top" id="qma-wa-75z"/>
+                            <constraint firstItem="eot-Ag-Q5e" firstAttribute="trailing" secondItem="oMF-Zt-yFi" secondAttribute="trailing" id="sSt-fD-SgA"/>
                             <constraint firstItem="BV9-Fl-IKT" firstAttribute="bottom" secondItem="7w4-Dx-6uz" secondAttribute="bottom" constant="20" id="tZD-9x-AV9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BV9-Fl-IKT"/>
                     </view>
                     <connections>
                         <outlet property="agreementLabel" destination="7w4-Dx-6uz" id="wx7-Oz-iY6"/>
+                        <outlet property="backgroundImageBottomGradientView" destination="eot-Ag-Q5e" id="Y5b-c4-2mz"/>
                         <outlet property="backgroundImageView" destination="oMF-Zt-yFi" id="dtw-LW-49w"/>
                         <outlet property="confirmField" destination="Iof-lN-Z3K" id="1kH-bd-TAj"/>
                         <outlet property="emailField" destination="qgD-tq-Mg1" id="Pds-z4-6nt"/>
@@ -521,6 +558,6 @@
         <image name="register-backgrond-photo" width="375" height="182"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SNq-hT-Yfm"/>
+        <segue reference="Xrf-ov-Gtq"/>
     </inferredMetricsTieBreakers>
 </document>

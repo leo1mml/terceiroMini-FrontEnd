@@ -142,6 +142,8 @@
 		8A9760691FD87BFF00904EC6 /* SeeAllPastChallengesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9760681FD87BFF00904EC6 /* SeeAllPastChallengesVC.swift */; };
 		8A97606B1FD88FD800904EC6 /* SeeAllPastChallengesPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97606A1FD88FD800904EC6 /* SeeAllPastChallengesPresenterImp.swift */; };
 		8A97606D1FD88FE500904EC6 /* SeeAllPastChallengesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97606C1FD88FE500904EC6 /* SeeAllPastChallengesProtocols.swift */; };
+		8ACC2BCF1FDF7A5700786B52 /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BCE1FDF7A5700786B52 /* Configuration.storyboard */; };
+		8ACC2BD21FDF7D2E00786B52 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2BD11FDF7D2E00786B52 /* ConfigurationViewController.swift */; };
 		8AD61C691FDF12AB0042B86F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BD31FDB253A003C9FFD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -309,6 +311,8 @@
 		8A9760681FD87BFF00904EC6 /* SeeAllPastChallengesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllPastChallengesVC.swift; sourceTree = "<group>"; };
 		8A97606A1FD88FD800904EC6 /* SeeAllPastChallengesPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllPastChallengesPresenterImp.swift; sourceTree = "<group>"; };
 		8A97606C1FD88FE500904EC6 /* SeeAllPastChallengesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllPastChallengesProtocols.swift; sourceTree = "<group>"; };
+		8ACC2BCE1FDF7A5700786B52 /* Configuration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Configuration.storyboard; sourceTree = "<group>"; };
+		8ACC2BD11FDF7D2E00786B52 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		8AD759231FD1CAE000002D56 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		8ADF7C9F1FD743060023BCEF /* NextChallengesCellPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengesCellPresenterImp.swift; sourceTree = "<group>"; };
 		8FF8FB14ED07E9EB07A965E5 /* Pods_TerceiroMini_FrontEndTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEndTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -663,6 +667,7 @@
 		08F06F9B1FBB594A0039EAFE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				8ACC2BCD1FDF7A3500786B52 /* Configuration Screen */,
 				8A9760641FD87B8F00904EC6 /* SeeAllPastChallenges */,
 				8A1CC5A81FBE66F900BC4963 /* Main Screen */,
 				8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */,
@@ -796,6 +801,7 @@
 				081C1FD91FDEF98000CCEE1A /* General */,
 				8A0E82C01FC7443D00218C80 /* Extensions */,
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
+				8ACC2BD01FDF7D0400786B52 /* Configuration VC */,
 				8A9760671FD87BCB00904EC6 /* SeeAllPastChallengesVC */,
 				08276F0E1FC73F8C00A8E605 /* MainScreen */,
 				48C882EC1FC893FA000A57C2 /* Challange */,
@@ -845,6 +851,22 @@
 				8A97606C1FD88FE500904EC6 /* SeeAllPastChallengesProtocols.swift */,
 			);
 			path = SeeAllPastChallengesVC;
+			sourceTree = "<group>";
+		};
+		8ACC2BCD1FDF7A3500786B52 /* Configuration Screen */ = {
+			isa = PBXGroup;
+			children = (
+				8ACC2BCE1FDF7A5700786B52 /* Configuration.storyboard */,
+			);
+			path = "Configuration Screen";
+			sourceTree = "<group>";
+		};
+		8ACC2BD01FDF7D0400786B52 /* Configuration VC */ = {
+			isa = PBXGroup;
+			children = (
+				8ACC2BD11FDF7D2E00786B52 /* ConfigurationViewController.swift */,
+			);
+			path = "Configuration VC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -960,6 +982,7 @@
 				08297B131FC74B2E00701F9B /* Montserrat-Light.otf in Resources */,
 				08297B0F1FC74B2E00701F9B /* MontserratAlternates-Black.otf in Resources */,
 				08297B0C1FC74B2E00701F9B /* Montserrat-MediumItalic.otf in Resources */,
+				8ACC2BCF1FDF7A5700786B52 /* Configuration.storyboard in Resources */,
 				14103C9F1FBE221800726C0B /* Profile.storyboard in Resources */,
 				08297B1D1FC74B2E00701F9B /* Montserrat-Medium.otf in Resources */,
 				08297B291FC74B2E00701F9B /* MontserratAlternates-ExtraLight.otf in Resources */,
@@ -1125,6 +1148,7 @@
 				8A97606D1FD88FE500904EC6 /* SeeAllPastChallengesProtocols.swift in Sources */,
 				086D279A1FCC844B00D9F547 /* LoginPresentationProtocols.swift in Sources */,
 				08276F381FC73F8C00A8E605 /* LastWinnersCell.swift in Sources */,
+				8ACC2BD21FDF7D2E00786B52 /* ConfigurationViewController.swift in Sources */,
 				48C882F51FC893FA000A57C2 /* ChallengeViewController.swift in Sources */,
 				08276F361FC73F8C00A8E605 /* ChallengeCollectionViewPresenter.swift in Sources */,
 				08276F351FC73F8C00A8E605 /* ChallengesFlowLayout.swift in Sources */,

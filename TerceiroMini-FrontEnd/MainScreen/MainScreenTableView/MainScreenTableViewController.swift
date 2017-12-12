@@ -9,6 +9,8 @@
 import UIKit
 
 class MainScreenTableViewController: UITableViewController {
+    
+    var delegateNavigateInApp : NavigateInAppProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +44,8 @@ class MainScreenTableViewController: UITableViewController {
     }
     
     @objc func goToAllPastChallenges() {
-        self.performSegue(withIdentifier: "goToSeeAll", sender: self)
+//        self.performSegue(withIdentifier: "goToSeeAll", sender: self)
+        delegateNavigateInApp?.goToSeeAll()
     }
     
 

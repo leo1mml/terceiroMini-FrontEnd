@@ -144,6 +144,9 @@
 		8A97606D1FD88FE500904EC6 /* SeeAllPastChallengesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A97606C1FD88FE500904EC6 /* SeeAllPastChallengesProtocols.swift */; };
 		8ACC2BCF1FDF7A5700786B52 /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BCE1FDF7A5700786B52 /* Configuration.storyboard */; };
 		8ACC2BD21FDF7D2E00786B52 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2BD11FDF7D2E00786B52 /* ConfigurationViewController.swift */; };
+		8ACC2BD51FE0445900786B52 /* ConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2BD41FE0445900786B52 /* ConfigurationTableViewController.swift */; };
+		8ACC2BD71FE0511000786B52 /* ConfigurationHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BD61FE0511000786B52 /* ConfigurationHeader.xib */; };
+		8ACC2BD91FE051AD00786B52 /* ConfigHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC2BD81FE051AD00786B52 /* ConfigHeader.swift */; };
 		8AD61C691FDF12AB0042B86F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BD31FDB253A003C9FFD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -313,6 +316,9 @@
 		8A97606C1FD88FE500904EC6 /* SeeAllPastChallengesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllPastChallengesProtocols.swift; sourceTree = "<group>"; };
 		8ACC2BCE1FDF7A5700786B52 /* Configuration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Configuration.storyboard; sourceTree = "<group>"; };
 		8ACC2BD11FDF7D2E00786B52 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		8ACC2BD41FE0445900786B52 /* ConfigurationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTableViewController.swift; sourceTree = "<group>"; };
+		8ACC2BD61FE0511000786B52 /* ConfigurationHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationHeader.xib; sourceTree = "<group>"; };
+		8ACC2BD81FE051AD00786B52 /* ConfigHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigHeader.swift; sourceTree = "<group>"; };
 		8AD759231FD1CAE000002D56 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		8ADF7C9F1FD743060023BCEF /* NextChallengesCellPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextChallengesCellPresenterImp.swift; sourceTree = "<group>"; };
 		8FF8FB14ED07E9EB07A965E5 /* Pods_TerceiroMini_FrontEndTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEndTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -857,6 +863,7 @@
 			isa = PBXGroup;
 			children = (
 				8ACC2BCE1FDF7A5700786B52 /* Configuration.storyboard */,
+				8ACC2BD61FE0511000786B52 /* ConfigurationHeader.xib */,
 			);
 			path = "Configuration Screen";
 			sourceTree = "<group>";
@@ -864,9 +871,19 @@
 		8ACC2BD01FDF7D0400786B52 /* Configuration VC */ = {
 			isa = PBXGroup;
 			children = (
+				8ACC2BD31FE0443E00786B52 /* Configuration Table View */,
 				8ACC2BD11FDF7D2E00786B52 /* ConfigurationViewController.swift */,
 			);
 			path = "Configuration VC";
+			sourceTree = "<group>";
+		};
+		8ACC2BD31FE0443E00786B52 /* Configuration Table View */ = {
+			isa = PBXGroup;
+			children = (
+				8ACC2BD41FE0445900786B52 /* ConfigurationTableViewController.swift */,
+				8ACC2BD81FE051AD00786B52 /* ConfigHeader.swift */,
+			);
+			path = "Configuration Table View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1007,6 +1024,7 @@
 				08297B0E1FC74B2E00701F9B /* Montserrat-BlackItalic.otf in Resources */,
 				8A964BCF1FDB0C99003C9FFD /* HeaderCollectionReusableView.xib in Resources */,
 				48EAFFF21FCF3A49007018AC /* imagem1.png in Resources */,
+				8ACC2BD71FE0511000786B52 /* ConfigurationHeader.xib in Resources */,
 				08297B0D1FC74B2E00701F9B /* Montserrat-Bold.otf in Resources */,
 				083982C21FC8B75400E45D10 /* MainScreen.storyboard in Resources */,
 			);
@@ -1159,12 +1177,14 @@
 				08276F391FC73F8C00A8E605 /* WinnerCollectionViewCell.swift in Sources */,
 				48620F1D1FD72AE600A45E3E /* TimeInterval+Extension.swift in Sources */,
 				0899EA011FC74D1400F148DC /* Photo.swift in Sources */,
+				8ACC2BD91FE051AD00786B52 /* ConfigHeader.swift in Sources */,
 				14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */,
 				14C538031FD85B6700154004 /* ProfileCellHolder.swift in Sources */,
 				086D279C1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift in Sources */,
 				48A7C4D31FD1EC3400EB5C1A /* ChallengeViewController+ChallengeHeaderDelegate.swift in Sources */,
 				0899EA051FC74D2900F148DC /* NetHelper.swift in Sources */,
 				088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */,
+				8ACC2BD51FE0445900786B52 /* ConfigurationTableViewController.swift in Sources */,
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,
 				08EF52871FD6D73F00722A2F /* RegisterPresenterImpl.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
@@ -1382,7 +1402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9QUZLTLDFZ;
+				DEVELOPMENT_TEAM = JC4QT73C9E;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1399,7 +1419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9QUZLTLDFZ;
+				DEVELOPMENT_TEAM = JC4QT73C9E;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

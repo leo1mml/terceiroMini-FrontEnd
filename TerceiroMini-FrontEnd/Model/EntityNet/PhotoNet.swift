@@ -209,7 +209,7 @@ class PhotoNet {
      - parameter p: The photos retrieved by the task.
      - parameter e: The error that ocurred.
      */
-    class func getMyClick(byChallengeId id: String, token: String, completion: @escaping (_ p: [Photo]?, _ e: Error?) -> Void) {
+    class func getMyClick(byChallengeId id: String, token: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
         
          //GET MY CLICK ID
         let completeDomain = R.photosDomain + "/getMyClick/\(id)"
@@ -221,10 +221,11 @@ class PhotoNet {
                 return
             }
             
-            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "photos")!
-            let photos = buildPhotos(fromDictionaryArry: arr)
+            let dic = NetHelper.extractDictionary(fromJson: val, key: "photo")!
+            let photo = buildPhoto(fromDictionary: dic)
+
             
-            completion(photos, nil)
+            completion(photo, nil)
         }
         
 
@@ -245,7 +246,13 @@ class PhotoNet {
         let domain = R.photosDomain + "/vote/\(id)"
         let header = ["x-auth": token]
         
-        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { completion($0.error == nil) }
+        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().response { (response) in
+            if(response.error != nil){
+                completion(false)
+                return
+            }
+            completion(true)
+        }
     }
     
     /**
@@ -261,7 +268,13 @@ class PhotoNet {
         let domain = R.photosDomain + "/unvote/\(id)"
         let header = ["x-auth": token]
         
-        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { completion($0.error == nil) }
+        Alamofire.request(domain, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().response { (response) in
+            if(response.error != nil){
+                completion(false)
+                return
+            }
+            completion(true)
+        }
     }
     
     // MARK: - Auxiliar methods

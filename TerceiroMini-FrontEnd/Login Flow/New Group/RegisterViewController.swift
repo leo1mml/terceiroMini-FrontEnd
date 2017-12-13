@@ -11,6 +11,7 @@ import UIKit
 class RegisterViewController: LoginFlowViewController, RegisterView {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundImageBottomGradientView: UIView!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
@@ -34,6 +35,13 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
         
         setupTexts()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupTexts()
+        setupBackgroundImageViewBottomGradient()
+    }
 
     @IBAction func goBackAction(_ sender: UIButton) {
         presenter?.goBack()
@@ -49,9 +57,9 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
     
     func goToApp() {
         
-        dismissInChain(animated: true) {
+        dismissInChain(animated: false) {
             
-            // load main-screen
+            self.present(self.caller!.nextScreen, animated: true)
         }
     }
     
@@ -71,10 +79,15 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
         confirmField.endEditing(false)
     }
     
-    func setupTexts() {
+    private func setupTexts() {
         
         titleLabel.text = "Cadastro"
         instructionLabel.text = "preencha com seus dados\npara realizar o cadastro"
         agreementLabel.text = "Ao entrar no aplicativo, você concorda com nossos\ntemos de serviço e políticas de privacidade."
+    }
+    
+    private func setupBackgroundImageViewBottomGradient() {
+        
+        backgroundImageBottomGradientView.setUpsideDownDarkGradientBackground(colorOne: Colors.gradientBlack, colorTwo: .clear)
     }
 }

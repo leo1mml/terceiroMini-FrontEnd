@@ -12,88 +12,46 @@ private let heightConstraint = "heightConstraint"
 
 class BackgroundImageView: UIImageView {
     
-    private var gradients: [String: CAGradientLayer]!
+    private var gradientTop: CAGradientLayer!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
+        setup()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        setup()
     }
     
     override init(image: UIImage?) {
         super.init(image: image)
-        commonInit()
+        setup()
     }
     
     override init(image: UIImage?, highlightedImage: UIImage?) {
         super.init(image: image, highlightedImage: highlightedImage)
-        commonInit()
+        setup()
     }
     
-    func commonInit() {
+    func setup() {
     
         // Gradient #1
         
-        var startPoint = CGPoint(x: 0, y: 0)
-        var endPoint = CGPoint(x: 1, y: 1)
-        
-        let gradientTop = buildGradient(colors: [Colors.gradientBlack, .clear], locationX: 0, locationY: 0.35, startPoint: startPoint, endPoint: endPoint)
-        
-        // Gradient #2
-        
-        startPoint = CGPoint(x: 0.5, y: 1)
-        endPoint = CGPoint(x: 0.5, y: 0)
-        
-        let gradientBottom = buildGradient(colors: [Colors.gradientBlack, .clear], locationX: 0, locationY: 0.6, startPoint: startPoint, endPoint: endPoint)
-        
-        gradients = ["top": gradientTop, "bottom": gradientBottom]
-        
+        let startPoint = CGPoint(x: 0, y: 0)
+        let endPoint   = CGPoint(x: 1, y: 1)
+
+        gradientTop = buildGradient(colors: [Colors.gradientBlack, .clear], locationX: 0, locationY: 0.35, startPoint: startPoint, endPoint: endPoint)
+
         layer.addSublayer(gradientTop)
-        layer.addSublayer(gradientBottom)
     }
     
-    func set(heightSize: CGFloat, animated: Bool = false) {
+    func changeTopGradient(by newGradient: CAGradientLayer) {
         
-        let c = constraints.filter { return $0.identifier == heightConstraint }
+        gradientTop.removeFromSuperlayer()
         
-        guard c.count == 1 else {
-            return
-        }
-        
-        let height = c.first!
-        height.constant = heightSize
-        gradients.forEach { $1.frame = CGRect(origin: frame.origin, size: CGSize(width: frame.width, height: heightSize)) }
-        
-        guard animated else {
-            layoutIfNeeded()
-            layer.layoutSublayers()
-            return
-        }
-        
-        UIView.animate(withDuration: 0.3) {
-            self.layoutIfNeeded()
-        }
-        
-        UIView.animate(withDuration: 0.3) {
-            self.layer.layoutSublayers()
-        }
-        
-    }
-    
-    func changeGradient(named key: String, by newGradient: CAGradientLayer) {
-        
-        guard let oldGradient = gradients[key] else {
-            return
-        }
-        
-        oldGradient.removeFromSuperlayer()
-        
-        gradients[key] = newGradient
-        layer.addSublayer(newGradient)
+        gradientTop = newGradient
+        layer.addSublayer(gradientTop)
     }
     
     func buildGradient(colors: [UIColor], locationX: Float, locationY: Float, startPoint: CGPoint, endPoint: CGPoint) -> CAGradientLayer {
@@ -108,5 +66,5 @@ class BackgroundImageView: UIImageView {
         
         return gradientLayer
     }
-
+    
 }

@@ -10,6 +10,8 @@ import Foundation
 import Cloudinary
 
 class ChallengePresenterImpl: ChallengePresenter{
+   
+    
     
     
     
@@ -81,6 +83,21 @@ class ChallengePresenterImpl: ChallengePresenter{
             
             
         })
+        
+    }
+    
+    
+    func getChallengeFeaturedClicks(challengeID: String) {
+        
+        if let token = UserDefaults.standard.string(forKey: "token"){
+            NetworkManager.getMyClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
+                
+                if (photo != nil){
+                    
+                }
+                
+            })
+        }
         
     }
     

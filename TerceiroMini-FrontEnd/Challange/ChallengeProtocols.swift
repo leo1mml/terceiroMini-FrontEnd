@@ -33,6 +33,7 @@ protocol ChallengePresenter{
     func getChallengeImages(challengeID: String)
     func presentProfile(challengeID: String)
     func expandPhoto(photos:[String])
+    func getChallengeFeaturedClicks(challengeID: String)
     
     
 }

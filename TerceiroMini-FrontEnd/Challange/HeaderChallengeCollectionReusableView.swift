@@ -21,12 +21,14 @@ protocol ChallengeHeaderDataSource {
     func getFeaturedPhotos() -> [UIImage]
     func getChallengeName() -> String
     func getNumberOfClicks() -> Int
+   // func getMyClick() -> Photo?
+   // func getMyFavoriteClick() -> Photo?
     //func getChallengeWinner() -> String
     
 }
 
 
-class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource {
+class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
     let startingGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
@@ -39,6 +41,8 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
             reviewState()
         }
     }
+    
+    var numberOfFeaturedClicks = 0
     
     @IBOutlet weak var featuredCollectionView: UICollectionView!
     @IBOutlet weak var challengeLabel: UILabel!
@@ -92,10 +96,25 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
     
     
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        let cellCount = collectionView.numberOfItems(inSection: 0)
+        let totalCellWidth = 121 * cellCount
+        let totalSpacingWidth = 10 * (cellCount - 1)
+        
+        let leftInset = (253 - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+        let rightInset = leftInset
+        
+        return UIEdgeInsetsMake(0, leftInset, 0, rightInset)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 2
+        return numberOfFeaturedClicks
     }
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         

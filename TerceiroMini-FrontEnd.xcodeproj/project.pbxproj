@@ -1382,7 +1382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JC4QT73C9E;
+				DEVELOPMENT_TEAM = J8J2K4KEX2;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1399,7 +1399,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JC4QT73C9E;
+				DEVELOPMENT_TEAM = J8J2K4KEX2;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

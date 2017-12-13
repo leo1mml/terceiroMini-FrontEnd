@@ -172,6 +172,15 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         
     }
     
+
+    func setFeaturedCollectionMyClick(myClick: Photo){
+        header.myClick = myClick
+    }
+    
+    func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo){
+        header.myFavoriteClick = myFavoriteClick
+    }
+    
     func timerUpdate(){
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setTimerLabelText), userInfo: nil, repeats: true)
     }

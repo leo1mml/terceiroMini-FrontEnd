@@ -10,8 +10,6 @@ import Foundation
 import Cloudinary
 
 class ChallengePresenterImpl: ChallengePresenter{
-   
-    
     
     
     
@@ -73,6 +71,7 @@ class ChallengePresenterImpl: ChallengePresenter{
                 self.view.setHeader(theme: (challenge?.theme)!, endDate: (challenge?.endDate)!, mainImageURL: (challenge?.imageUrl)!, numPhotos: (challenge?.numPhotos)! )
                 if(challenge?.numPhotos != 0){
                     self.view.showFeaturedCollectionView()
+                    self.getFeaturedCollectionHeader(challengeID: challengeID)
                     
                 }else{
                     self.view.showNoImagesWarning()
@@ -84,7 +83,35 @@ class ChallengePresenterImpl: ChallengePresenter{
             
         })
         
+        
+        
     }
+    
+    func getFeaturedCollectionHeader(challengeID: String) {
+        
+        
+        if let token = UserDefaults.standard.string(forKey: "token"){
+            NetworkManager.getMyFavoriteClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
+                if (photo != nil){
+
+                    self.view.setFeaturedCollectionMyFavoriteClick(myFavoriteClick: photo!)
+                }else{
+                    print(error)
+                }
+            })
+            
+            NetworkManager.getMyClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
+                if (photo != nil){
+                    self.view.setFeaturedCollectionMyClick(myClick: photo!)
+                    
+                }
+            })
+        }
+        
+    
+        
+    }
+    
     
     
     func getChallengeFeaturedClicks(challengeID: String) {

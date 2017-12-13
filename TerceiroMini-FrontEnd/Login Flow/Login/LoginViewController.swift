@@ -90,9 +90,9 @@ class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
     
     func goToApp() {
         
-        dismissInChain(animated: true) {
+        dismissInChain(animated: false) {
             
-            self.present(self.caller!.nextScreen, animated: true)
+            self.caller?.loginFinishedSuccessfully()
         }
     }
     

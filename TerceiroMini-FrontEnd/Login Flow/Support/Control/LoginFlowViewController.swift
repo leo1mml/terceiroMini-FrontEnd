@@ -11,16 +11,13 @@ import UIKit
 protocol LoginCallerPortocol {
     
     var isMainScreen: Bool { get }
-    var nextScreen: UIViewController? { get }
+    func loginFinishedSuccessfully()
 }
 
 extension LoginCallerPortocol {
     
     var isMainScreen: Bool { return false }
-    
-    var nextScreen: UIViewController {
-        return UIViewController()
-    }
+    func loginFinishedSuccessfully() {}
 }
 
 class LoginFlowViewController: UIViewController {

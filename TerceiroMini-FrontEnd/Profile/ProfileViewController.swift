@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         }
     }
     
-    var isGradients: [Bool]?
+    var isGradients = [Bool]()
     
     @IBOutlet weak var collectionProfile: UICollectionView!
 
@@ -31,12 +31,11 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         if((self.user) != nil){
             presenter?.loadData(id: (self.user?.id)!)
         }
-        self.initializeArrayIsGradients()
     }
     
     func initializeArrayIsGradients(){
-        for index in 0..>cells.count {
-            isGradients?.append(false)
+        for _ in 0..<cells.count-(isGradients.count) {
+            isGradients.append(false)
         }
     }
     
@@ -47,6 +46,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     
     func receiveCells(cells: [ProfileCellHolder]) {
         self.cells = cells
+        self.initializeArrayIsGradients()
         collectionProfile.reloadData()
     }
 
@@ -61,9 +61,11 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
         cell.themeLabel.text = cells[indexPath.row].theme
         
-        let startingGradientColor = UIColor(red: 0.15, green: 0.18, blue: 0.19, alpha: 1)
-        
-        cell.backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [.clear, .clear, startingGradientColor])
+        if !isGradients[indexPath.row] {
+            let startingGradientColor = UIColor(red: 0.15, green: 0.18, blue: 0.19, alpha: 1)
+            cell.backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [.clear, .clear, startingGradientColor])
+            isGradients[indexPath.row] = true
+        }
         
         cell.backgroundImage.image = cells[indexPath.row].image
         cell.backgroundImage.contentMode = .scaleAspectFill

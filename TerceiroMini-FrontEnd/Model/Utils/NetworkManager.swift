@@ -84,8 +84,8 @@ class NetworkManager {
         PhotoNet.getMyClick(byChallengeId: id, token: token, completion: completion)
     }
     
-    class func getMyFavoriteClick(byChallengeId id: String, token: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void){
-        PhotoNet.getMyFavoriteClick(byChallengeId: id, token: token, completion: completion)
+    class func getMyFavouriteClick(byChallengeId id: String, token: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void){
+        PhotoNet.getMyFavouriteClick(byChallengeId: id, token: token, completion: completion)
     }
     
     // MARK: - Challenge methods

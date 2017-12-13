@@ -240,10 +240,10 @@ class PhotoNet {
      - parameter p: The photos retrieved by the task.
      - parameter e: The error that ocurred.
      */
-    class func getMyFavoriteClick(byChallengeId id: String, token: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
+    class func getMyFavouriteClick(byChallengeId id: String, token: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
         
         //GET MY CLICK ID
-        let completeDomain = R.photosDomain + "/getMyFavoriteClick/\(id)"
+        let completeDomain = R.photosDomain + "/getMyFavouriteClick/\(id)"
         let header = ["x-auth": token]
         
         Alamofire.request(completeDomain, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { (response) in

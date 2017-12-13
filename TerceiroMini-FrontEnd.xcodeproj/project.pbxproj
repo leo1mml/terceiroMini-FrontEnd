@@ -14,6 +14,7 @@
 		080B8C5C1FE1A7680060D5D6 /* SeeAllPastChallengesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080B8C591FE1A7680060D5D6 /* SeeAllPastChallengesVC.swift */; };
 		080B8C5D1FE1A7680060D5D6 /* SeeAllPastChallengesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080B8C5A1FE1A7680060D5D6 /* SeeAllPastChallengesProtocols.swift */; };
 		080B8C5E1FE1A7680060D5D6 /* SeeAllPastChallengesPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080B8C5B1FE1A7680060D5D6 /* SeeAllPastChallengesPresenterImp.swift */; };
+		080B8C601FE1AEA00060D5D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48620F201FD815F000A45E3E /* Main.storyboard */; };
 		081C1FD81FDEF68800CCEE1A /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C1FD71FDEF68800CCEE1A /* BackgroundImageView.swift */; };
 		081C1FDB1FDEF99300CCEE1A /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C1FDA1FDEF99300CCEE1A /* General.swift */; };
 		08276F2D1FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08276F121FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift */; };
@@ -145,7 +146,6 @@
 		8A964BCF1FDB0C99003C9FFD /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCC1FDB0C98003C9FFD /* HeaderCollectionReusableView.xib */; };
 		8A964BD01FDB0C99003C9FFD /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCD1FDB0C99003C9FFD /* Challenge.storyboard */; };
 		8A964BD11FDB0C99003C9FFD /* ChallengeClosed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCE1FDB0C99003C9FFD /* ChallengeClosed.storyboard */; };
-		8AD61C691FDF12AB0042B86F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BD31FDB253A003C9FFD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -968,13 +968,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				08297B221FC74B2E00701F9B /* MontserratAlternates-SemiBold.otf in Resources */,
-				8AD61C691FDF12AB0042B86F /* Main.storyboard in Resources */,
 				08297B2E1FC74B2E00701F9B /* MontserratAlternates-Italic.otf in Resources */,
 				48D526D71FD5E31900D04DCE /* FeaturedMyClickCollectionViewCell.xib in Resources */,
 				08297B241FC74B2E00701F9B /* MontserratAlternates-ExtraBold.otf in Resources */,
 				48D526D61FD5E26900D04DCE /* FeaturedFavoriteClickCollectionViewCell.xib in Resources */,
 				08297B271FC74B2E00701F9B /* Montserrat-ExtraLightItalic.otf in Resources */,
 				08297B151FC74B2E00701F9B /* Montserrat-Thin.otf in Resources */,
+				080B8C601FE1AEA00060D5D6 /* Main.storyboard in Resources */,
 				08297B161FC74B2E00701F9B /* MontserratAlternates-MediumItalic.otf in Resources */,
 				083982C11FC8B70E00E45D10 /* TableHeader.xib in Resources */,
 				08297B181FC74B2E00701F9B /* MontserratAlternates-BlackItalic.otf in Resources */,

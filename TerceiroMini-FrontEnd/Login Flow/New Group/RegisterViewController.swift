@@ -59,7 +59,7 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
         
         dismissInChain(animated: false) {
             
-            self.present(self.caller!.nextScreen, animated: true)
+            self.caller?.loginFinishedSuccessfully()
         }
     }
     

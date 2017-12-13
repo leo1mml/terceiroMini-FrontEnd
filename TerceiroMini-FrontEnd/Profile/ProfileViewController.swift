@@ -19,6 +19,8 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         }
     }
     
+    var isGradients: [Bool]?
+    
     @IBOutlet weak var collectionProfile: UICollectionView!
 
     override func viewDidLoad() {
@@ -29,7 +31,13 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         if((self.user) != nil){
             presenter?.loadData(id: (self.user?.id)!)
         }
-        
+        self.initializeArrayIsGradients()
+    }
+    
+    func initializeArrayIsGradients(){
+        for index in 0..>cells.count {
+            isGradients?.append(false)
+        }
     }
     
     func receiveDatas(profileUserHolder: ProfileUserHolder) {
@@ -65,8 +73,10 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
         if (cells[indexPath.row].isWinner) {
             cell.trophyImage.isHidden = false
+            cell.themeLabel.isHidden = false
         } else {
             cell.trophyImage.isHidden = true
+            cell.themeLabel.isHidden = false
         }
 
         return cell

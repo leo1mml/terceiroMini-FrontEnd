@@ -177,6 +177,14 @@
             </objects>
             <point key="canvasLocation" x="1251.2" y="699.85007496251876"/>
         </scene>
+        <!--challengeVC-->
+        <scene sceneID="7a5-wT-9d2">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="challengeVC" storyboardName="Challenge" referencedIdentifier="challengeVC" id="KtT-90-ee3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tXd-0g-93F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010" y="622"/>
+        </scene>
         <!--Navigation View Controller-->
         <scene sceneID="3Eh-IP-YJE">
             <objects>

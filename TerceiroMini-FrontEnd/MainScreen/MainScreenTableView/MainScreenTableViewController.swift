@@ -10,6 +10,8 @@ import UIKit
 
 class MainScreenTableViewController: UITableViewController {
     
+    @IBOutlet weak var challengesCell: OpenChallengesTableViewCell!
+    
     var delegateNavigateInApp : NavigateInAppProtocol?
 
     override func viewDidLoad() {

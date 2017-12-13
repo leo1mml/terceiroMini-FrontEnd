@@ -109,6 +109,12 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         self.myClick = true
         
     }
+    
+    func enableMyFavoriteClickChosebuttonLabel(){
+        self.escolherClickButton.setTitle("Meu Click Favorito", for: .normal)
+        self.myClick = true
+        
+    }
     func enableChoseClickButton(){
         self.escolherClickButton.setTitle("Escolher Click", for: .normal)
         self.myClick = false

@@ -42,13 +42,15 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
         }
     }
     
-    var numberOfFeaturedClicks = 0
-    
     @IBOutlet weak var featuredCollectionView: UICollectionView!
     @IBOutlet weak var challengeLabel: UILabel!
     @IBOutlet weak var numberOfPhotos: UILabel!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
+    
+    var myClick : Photo?
+    var myFavoriteClick : Photo?
+    var cellFavoriteClickFilledFlag = false
     
    
     @IBOutlet weak var mainButton: UIButton!
@@ -110,7 +112,14 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return numberOfFeaturedClicks
+        var numberOfItens = 0
+        if myClick != nil{
+            numberOfItens += 1
+        }
+        if myFavoriteClick != nil {
+            numberOfItens += 1
+        }
+        return numberOfItens
     }
     
     
@@ -118,20 +127,62 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if (indexPath.row == 1){
-            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedMyClickCollectionViewCell.identifier, for: indexPath) as! FeaturedMyClickCollectionViewCell
-            cellA.cellImage.layer.cornerRadius =  cellA.cellImage.frame.size.width / 10
-            return cellA
-            
-        }else{
-            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedFavoriteClickCollectionViewCell.identifier, for: indexPath) as! FeaturedFavoriteClickCollectionViewCell
-            
-            cellB.cellImage.layer.cornerRadius =  cellB.cellImage.frame.size.width / 10
-            
-            return cellB
-        }
         
+    
+            if (!cellFavoriteClickFilledFlag){
+                
+                if (myFavoriteClick != nil){
+                    let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedFavoriteClickCollectionViewCell.identifier, for: indexPath) as! FeaturedFavoriteClickCollectionViewCell
+                    
+                    cellA.cellImage.layer.cornerRadius =  cellA.cellImage.frame.size.width / 10
+                    UIImage.fetch(with: (self.myFavoriteClick?.url)!, completion: { (image) in
+                        cellA.cellImage.image = image
+                    })
+                    
+                    
+                    cellFavoriteClickFilledFlag = true
+                    return cellA
+                }else{
+                    let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedMyClickCollectionViewCell.identifier, for: indexPath) as! FeaturedMyClickCollectionViewCell
+                    cellB.cellImage.layer.cornerRadius =  cellB.cellImage.frame.size.width / 10
+                
+                    UIImage.fetch(with: (self.myClick?.url)!, completion: { (image) in
+                        cellB.cellImage.image = image
+                    })
+                    
+                    return cellB
+                }
+            
+            }else{
+                let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedMyClickCollectionViewCell.identifier, for: indexPath) as! FeaturedMyClickCollectionViewCell
+                cellC.cellImage.layer.cornerRadius =  cellC.cellImage.frame.size.width / 10
+                UIImage.fetch(with: (self.myFavoriteClick?.url)!, completion: { (image) in
+                    cellC.cellImage.image = image
+                })
+                return cellC
+                
+            }
+        
+    
     }
+        
+        
+//        if (numberOfItens == 2){
+//            if (indexPath.row == 1){
+//                let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedMyClickCollectionViewCell.identifier, for: indexPath) as! FeaturedMyClickCollectionViewCell
+//                cellA.cellImage.layer.cornerRadius =  cellA.cellImage.frame.size.width / 10
+//                return cellA
+//
+//            }else{
+//                let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedFavoriteClickCollectionViewCell.identifier, for: indexPath) as! FeaturedFavoriteClickCollectionViewCell
+//
+//                cellB.cellImage.layer.cornerRadius =  cellB.cellImage.frame.size.width / 10
+//
+//                return cellB
+//            }
+//        }else if numberOfItens == 1 {
+//            if featuredClick == 1
+//        }
     
     
 }

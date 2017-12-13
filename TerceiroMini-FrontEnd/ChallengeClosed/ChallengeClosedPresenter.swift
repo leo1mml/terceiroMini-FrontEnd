@@ -52,11 +52,11 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
         //se for o click dele
        
         if let token = UserDefaults.standard.string(forKey: "token"){
-            NetworkManager.getMyClick(byChallengeId: currentPhoto.challengeId, token: token, completion: { (photo, error) in
+            NetworkManager.getMyFavoriteClick(byChallengeId: currentPhoto.challengeId, token: token, completion: { (photo, error) in
                 if photo != nil{
                     if(currentPhoto.id == photo?.id){
                         print("igual")
-                        self.view?.enableMyClickChosebuttonLabel()
+                        self.view?.enableMyFavoriteClickChosebuttonLabel()
                     }else{
                         self.view?.enableChoseClickButton()
                     }
@@ -65,7 +65,19 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
                     self.view?.enableChoseClickButton()
                 }
             })
+            NetworkManager.getMyClick(byChallengeId: currentPhoto.challengeId, token: token, completion: { (photo, error) in
+                if photo != nil{
+                    
+                    if currentPhoto.ownerId == photo?.ownerId{
+                        self.view?.enableMyClickChosebuttonLabel()
+                    }
+                    
+                }
+            })
+            
         }
+        
+        
     }
 
 }

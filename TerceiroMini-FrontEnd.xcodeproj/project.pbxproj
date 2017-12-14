@@ -151,6 +151,11 @@
 		8A964BCF1FDB0C99003C9FFD /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCC1FDB0C98003C9FFD /* HeaderCollectionReusableView.xib */; };
 		8A964BD01FDB0C99003C9FFD /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCD1FDB0C99003C9FFD /* Challenge.storyboard */; };
 		8A964BD11FDB0C99003C9FFD /* ChallengeClosed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCE1FDB0C99003C9FFD /* ChallengeClosed.storyboard */; };
+		8ACC2BE51FE2EA9B00786B52 /* ConfigurationFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BE21FE2EA9B00786B52 /* ConfigurationFooter.xib */; };
+		8ACC2BE61FE2EA9B00786B52 /* ConfigurationHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BE31FE2EA9B00786B52 /* ConfigurationHeader.xib */; };
+		8ACC2BE71FE2EA9B00786B52 /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BE41FE2EA9B00786B52 /* Configuration.storyboard */; };
+		8ACC2BEA1FE2EAAC00786B52 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BE91FE2EAAC00786B52 /* EditProfile.storyboard */; };
+		8ACC2BED1FE2EAB800786B52 /* SeeAllPastChallenges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BEC1FE2EAB700786B52 /* SeeAllPastChallenges.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -336,6 +341,11 @@
 		8ACC2BDA1FE07FC300786B52 /* ConfigurationFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationFooter.xib; sourceTree = "<group>"; };
 		8ACC2BDC1FE0801C00786B52 /* ConfigFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigFooter.swift; sourceTree = "<group>"; };
 		8ACC2BDF1FE0845D00786B52 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
+		8ACC2BE21FE2EA9B00786B52 /* ConfigurationFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigurationFooter.xib; sourceTree = "<group>"; };
+		8ACC2BE31FE2EA9B00786B52 /* ConfigurationHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigurationHeader.xib; sourceTree = "<group>"; };
+		8ACC2BE41FE2EA9B00786B52 /* Configuration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Configuration.storyboard; sourceTree = "<group>"; };
+		8ACC2BE91FE2EAAC00786B52 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
+		8ACC2BEC1FE2EAB700786B52 /* SeeAllPastChallenges.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SeeAllPastChallenges.storyboard; sourceTree = "<group>"; };
 		8FF8FB14ED07E9EB07A965E5 /* Pods_TerceiroMini_FrontEndTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEndTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE098DED4C617C7335FB427 /* Pods_TerceiroMini_FrontEnd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEnd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -731,6 +741,7 @@
 				48620F1F1FD815F000A45E3E /* LoginFlow */,
 				8A1CC5A81FBE66F900BC4963 /* Main Screen */,
 				4832D44A1FD9B60700EE18DC /* ChallengeClosed.storyboard */,
+				8ACC2BEB1FE2EAB700786B52 /* SeeAllPastChallenges */,
 				48C882F91FC89412000A57C2 /* Challenge.storyboard */,
 				8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */,
 				14103C9E1FBE221800726C0B /* Profile.storyboard */,
@@ -899,6 +910,32 @@
 			path = "TerceiroMini-FrontEndTests";
 			sourceTree = "<group>";
 		};
+		8ACC2BE11FE2EA9B00786B52 /* Configuration Screen */ = {
+			isa = PBXGroup;
+			children = (
+				8ACC2BE21FE2EA9B00786B52 /* ConfigurationFooter.xib */,
+				8ACC2BE31FE2EA9B00786B52 /* ConfigurationHeader.xib */,
+				8ACC2BE41FE2EA9B00786B52 /* Configuration.storyboard */,
+			);
+			path = "Configuration Screen";
+			sourceTree = "<group>";
+		};
+		8ACC2BE81FE2EAAC00786B52 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				8ACC2BE91FE2EAAC00786B52 /* EditProfile.storyboard */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		8ACC2BEB1FE2EAB700786B52 /* SeeAllPastChallenges */ = {
+			isa = PBXGroup;
+			children = (
+				8ACC2BEC1FE2EAB700786B52 /* SeeAllPastChallenges.storyboard */,
+			);
+			path = SeeAllPastChallenges;
+			sourceTree = "<group>";
+		};
 		C1BEE13A5F49456FB51EEF88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1015,10 +1052,12 @@
 				48D526D61FD5E26900D04DCE /* FeaturedFavoriteClickCollectionViewCell.xib in Resources */,
 				08297B271FC74B2E00701F9B /* Montserrat-ExtraLightItalic.otf in Resources */,
 				08297B151FC74B2E00701F9B /* Montserrat-Thin.otf in Resources */,
+				8ACC2BEA1FE2EAAC00786B52 /* EditProfile.storyboard in Resources */,
 				080B8C601FE1AEA00060D5D6 /* Main.storyboard in Resources */,
 				08297B161FC74B2E00701F9B /* MontserratAlternates-MediumItalic.otf in Resources */,
 				083982C11FC8B70E00E45D10 /* TableHeader.xib in Resources */,
 				08297B181FC74B2E00701F9B /* MontserratAlternates-BlackItalic.otf in Resources */,
+				8ACC2BED1FE2EAB800786B52 /* SeeAllPastChallenges.storyboard in Resources */,
 				08297B2F1FC74B2E00701F9B /* Montserrat-SemiBold.otf in Resources */,
 				08297B171FC74B2E00701F9B /* Montserrat-ExtraLight.otf in Resources */,
 				08297B251FC74B2E00701F9B /* MontserratAlternates-BoldItalic.otf in Resources */,
@@ -1043,6 +1082,7 @@
 				08297B1C1FC74B2E00701F9B /* Montserrat-LightItalic.otf in Resources */,
 				08297B1B1FC74B2E00701F9B /* MontserratAlternates-Thin.otf in Resources */,
 				08297B2A1FC74B2E00701F9B /* MontserratAlternates-Regular.otf in Resources */,
+				8ACC2BE61FE2EA9B00786B52 /* ConfigurationHeader.xib in Resources */,
 				08EC31E71FD866EB00B9C2D3 /* MainCollectionViewCell.xib in Resources */,
 				08297B2B1FC74B2E00701F9B /* MontserratAlternates-ThinItalic.otf in Resources */,
 				1420D5991FE2D83E002CDE5D /* ConfigurationHeader.xib in Resources */,
@@ -1062,6 +1102,8 @@
 				48EAFFF21FCF3A49007018AC /* imagem1.png in Resources */,
 				08297B0D1FC74B2E00701F9B /* Montserrat-Bold.otf in Resources */,
 				083982C21FC8B75400E45D10 /* MainScreen.storyboard in Resources */,
+				8ACC2BE51FE2EA9B00786B52 /* ConfigurationFooter.xib in Resources */,
+				8ACC2BE71FE2EA9B00786B52 /* Configuration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

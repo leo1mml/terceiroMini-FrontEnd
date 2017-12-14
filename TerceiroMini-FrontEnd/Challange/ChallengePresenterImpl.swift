@@ -28,27 +28,35 @@ class ChallengePresenterImpl: ChallengePresenter{
         let config = CLDConfiguration(cloudName: cloudname, apiKey: apiKey)
         let cloudinary = CLDCloudinary(configuration: config)
         let imageData = UIImageJPEGRepresentation(infoImage, 1.0)
-        //        let retorno = cloudinary.createUploader().upload(data: imageData!, uploadPreset: uploadPreset)
-        
-        //view.startWating(msg: "Wait for yout photo to upload!")
-        
+
         let retorno = cloudinary.createUploader().upload(data: imageData!, uploadPreset: uploadPreset, params: nil, progress: nil) {
             (result, error) in
             if (error != nil) {
                 print("deu merda ao subir a foto para o cloudinary")
             }
-            let ownerID = "5a26fcfd47075500141f9250"
             
-            let photo = Photo(nil,result?.url,ownerID,challengeID, 0)
-            NetworkManager.addPhoto(photo, completion: { (photo, error) in
+            if let token = UserDefaults.standard.string(forKey: "token"){
                 
-                if (error != nil){
-                    print("deu merda na hora enviar a foto pro banco")
-                }
+                NetworkManager.getUser(byToken: token, completion: { (user, error) in
+                    if (user != nil){
                 
-                self.getChallengeImages(challengeID: challengeID)
+                        let photo = Photo(nil,result?.url,(user?.id)!,challengeID, 0)
+                        NetworkManager.addPhoto(photo, completion: { (photo, error) in
+                            
+                            if (error != nil){
+                                print("deu merda na hora enviar a foto pro banco")
+                            }
+                            
+                            self.getChallengeImages(challengeID: challengeID)
+                            
+                        })
+                        
+                    }
+                })
                 
-            })
+                
+            }
+            
             
         }
         
@@ -91,18 +99,19 @@ class ChallengePresenterImpl: ChallengePresenter{
         
         
         if let token = UserDefaults.standard.string(forKey: "token"){
-            NetworkManager.getMyFavoriteClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
+            NetworkManager.getMyFavouriteClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
                 if (photo != nil){
 
                     self.view.setFeaturedCollectionMyFavoriteClick(myFavoriteClick: photo!)
                 }else{
-                    print(error)
+                    //print(error)
                 }
             })
             
             NetworkManager.getMyClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
                 if (photo != nil){
                     self.view.setFeaturedCollectionMyClick(myClick: photo!)
+                    self.view.setChallengeState(state: ChallengeState.participating)
                     
                 }
             })

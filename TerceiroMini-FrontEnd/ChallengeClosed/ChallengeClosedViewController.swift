@@ -22,7 +22,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     
     var images = [""]
     var imageIndex = 0
-    var details = false
+    var details = true
     var data: ([Photo], Int)?
     var myClick = false
     
@@ -41,11 +41,9 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         self.images = imagesList
         self.imageIndex = (data?.1)!
         
-        //hiding itens
-        reportButton.isHidden = true
-        photoCount.isHidden = true
-        closeButton.isHidden = true
-        escolherClickButton.isHidden = true
+        backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [colorGradient, .clear, .clear,.clear])
+        
+        showOrHideDetails()
         
         escolherClickButton.layer.cornerRadius = 25
         escolherClickButton.clipsToBounds = true
@@ -159,21 +157,43 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     func showOrHideDetails(){
         
         if(details){
-            reportButton.isHidden = true
-            photoCount.isHidden = true
-            closeButton.isHidden = true
-            escolherClickButton.isHidden = true
             
-            //removing gradient layer
-            backgroundImage.layer.sublayers = nil
+            UIView.animate(withDuration: 0.5, animations: {
+                self.reportButton.alpha = 0
+                self.photoCount.alpha = 0
+                self.closeButton.alpha = 0
+                self.escolherClickButton.alpha = 0
+                //removing gradient layer
+                //self.backgroundImage.layer.sublayers = nil
+            self.backgroundImage.layer.sublayers?.first?.opacity = 0
+            })
+            
+            
+            
+            reportButton.isEnabled = false
+            photoCount.isEnabled = false
+            closeButton.isEnabled = false
+            escolherClickButton.isEnabled = false
+            
+          //  backgroundImage.layer.sublayers = nil
             
             self.details = false
         }else{
-            reportButton.isHidden = false
-            photoCount.isHidden = false
-            closeButton.isHidden = false
-            escolherClickButton.isHidden = false
-            backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [colorGradient, .clear, .clear,.clear])
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.reportButton.alpha = 1
+                self.photoCount.alpha = 1
+                self.closeButton.alpha = 1
+                self.escolherClickButton.alpha = 1
+                self.backgroundImage.layer.sublayers?.first?.opacity = 1
+                
+            })
+            
+            reportButton.isEnabled = true
+            photoCount.isEnabled = true
+            closeButton.isEnabled = true
+            escolherClickButton.isEnabled = true
+            
             
             self.details = true
         }

@@ -44,7 +44,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagem1.png" translatesAutoresizingMaskIntoConstraints="NO" id="2j8-9C-zhg">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2j8-9C-zhg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="428"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escritório" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFj-Ff-eVK">
@@ -98,7 +98,7 @@
                                                 <action selector="mainButtonAction:" destination="5b2-Zy-hfm" eventType="touchUpInside" id="xOH-2S-xKW"/>
                                             </connections>
                                         </button>
-                                        <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-9u-oDN">
+                                        <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-9u-oDN">
                                             <rect key="frame" x="61" y="340" width="253" height="121"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -220,7 +220,6 @@
     </scenes>
     <resources>
         <image name="back-button" width="24" height="15"/>
-        <image name="imagem1.png" width="375" height="400"/>
         <image name="miniClicksCinza" width="35" height="38"/>
     </resources>
 </document>

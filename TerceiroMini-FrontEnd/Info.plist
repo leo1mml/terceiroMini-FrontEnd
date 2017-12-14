@@ -50,6 +50,10 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Challenge</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Para mandar uma foto, precisamos que nos dê acesso a sua câmera!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Para mandar uma foto, precisamos que nos dê acesso a sua galeria!</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

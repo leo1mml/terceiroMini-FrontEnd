@@ -52,7 +52,7 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
         //se for o click dele
        
         if let token = UserDefaults.standard.string(forKey: "token"){
-            NetworkManager.getMyFavoriteClick(byChallengeId: currentPhoto.challengeId, token: token, completion: { (photo, error) in
+            NetworkManager.getMyFavouriteClick(byChallengeId: currentPhoto.challengeId, token: token, completion: { (photo, error) in
                 if photo != nil{
                     if(currentPhoto.id == photo?.id){
                         print("igual")

@@ -103,7 +103,6 @@
 		08EF52891FD6D75F00722A2F /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF52881FD6D75F00722A2F /* RegisterProtocols.swift */; };
 		08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F961FBB544C0039EAFE /* LoginProtocols.swift */; };
 		0AA9D2F13A024885BC29CB34 /* Pods_TerceiroMini_FrontEnd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE098DED4C617C7335FB427 /* Pods_TerceiroMini_FrontEnd.framework */; };
-		14103C9F1FBE221800726C0B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14103C9E1FBE221800726C0B /* Profile.storyboard */; };
 		1420D5931FE2D82D002CDE5D /* SeeAllPastChallenges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1420D5921FE2D82D002CDE5D /* SeeAllPastChallenges.storyboard */; };
 		1420D5981FE2D83E002CDE5D /* ConfigurationFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1420D5951FE2D83E002CDE5D /* ConfigurationFooter.xib */; };
 		1420D5991FE2D83E002CDE5D /* ConfigurationHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1420D5961FE2D83E002CDE5D /* ConfigurationHeader.xib */; };
@@ -112,6 +111,7 @@
 		1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */; };
 		148AE59D1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */; };
 		148AE5A11FD1ACA1005108E7 /* ChallengeClosedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */; };
+		14A87E571FE31D3500247AB9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A87E561FE31D3500247AB9 /* Profile.storyboard */; };
 		14C537FE1FD8575200154004 /* ProfileUserHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C537FD1FD8575200154004 /* ProfileUserHolder.swift */; };
 		14C538031FD85B6700154004 /* ProfileCellHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C538021FD85B6700154004 /* ProfileCellHolder.swift */; };
 		14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */; };
@@ -151,10 +151,6 @@
 		8A964BCF1FDB0C99003C9FFD /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCC1FDB0C98003C9FFD /* HeaderCollectionReusableView.xib */; };
 		8A964BD01FDB0C99003C9FFD /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCD1FDB0C99003C9FFD /* Challenge.storyboard */; };
 		8A964BD11FDB0C99003C9FFD /* ChallengeClosed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCE1FDB0C99003C9FFD /* ChallengeClosed.storyboard */; };
-		8ACC2BE51FE2EA9B00786B52 /* ConfigurationFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BE21FE2EA9B00786B52 /* ConfigurationFooter.xib */; };
-		8ACC2BE61FE2EA9B00786B52 /* ConfigurationHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BE31FE2EA9B00786B52 /* ConfigurationHeader.xib */; };
-		8ACC2BE71FE2EA9B00786B52 /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BE41FE2EA9B00786B52 /* Configuration.storyboard */; };
-		8ACC2BEA1FE2EAAC00786B52 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BE91FE2EAAC00786B52 /* EditProfile.storyboard */; };
 		8ACC2BED1FE2EAB800786B52 /* SeeAllPastChallenges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ACC2BEC1FE2EAB700786B52 /* SeeAllPastChallenges.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -263,7 +259,6 @@
 		08EF52861FD6D73F00722A2F /* RegisterPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenterImpl.swift; sourceTree = "<group>"; };
 		08EF52881FD6D75F00722A2F /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		08F06F961FBB544C0039EAFE /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
-		14103C9E1FBE221800726C0B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1420D5921FE2D82D002CDE5D /* SeeAllPastChallenges.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SeeAllPastChallenges.storyboard; sourceTree = "<group>"; };
 		1420D5951FE2D83E002CDE5D /* ConfigurationFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigurationFooter.xib; sourceTree = "<group>"; };
 		1420D5961FE2D83E002CDE5D /* ConfigurationHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigurationHeader.xib; sourceTree = "<group>"; };
@@ -274,6 +269,7 @@
 		148AE59A1FD1A81B005108E7 /* ChallengeClosed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengeClosed.storyboard; sourceTree = "<group>"; };
 		148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedProtocols.swift; sourceTree = "<group>"; };
 		148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedPresenter.swift; sourceTree = "<group>"; };
+		14A87E561FE31D3500247AB9 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		14C537FD1FD8575200154004 /* ProfileUserHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserHolder.swift; sourceTree = "<group>"; };
 		14C538021FD85B6700154004 /* ProfileCellHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellHolder.swift; sourceTree = "<group>"; };
 		14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -648,6 +644,10 @@
 				8ACC2BD61FE0511000786B52 /* ConfigurationHeader.xib */,
 				8FF8FB14ED07E9EB07A965E5 /* Pods_TerceiroMini_FrontEndTests.framework */,
 				34A6A1E98CB4CDBE0E50EE16 /* Pods-TerceiroMini-FrontEndTests.debug.xcconfig */,
+				8ACC2BE91FE2EAAC00786B52 /* EditProfile.storyboard */,
+				8ACC2BE31FE2EA9B00786B52 /* ConfigurationHeader.xib */,
+				8ACC2BE21FE2EA9B00786B52 /* ConfigurationFooter.xib */,
+				8ACC2BE41FE2EA9B00786B52 /* Configuration.storyboard */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -744,7 +744,7 @@
 				8ACC2BEB1FE2EAB700786B52 /* SeeAllPastChallenges */,
 				48C882F91FC89412000A57C2 /* Challenge.storyboard */,
 				8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */,
-				14103C9E1FBE221800726C0B /* Profile.storyboard */,
+				14A87E561FE31D3500247AB9 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -910,24 +910,6 @@
 			path = "TerceiroMini-FrontEndTests";
 			sourceTree = "<group>";
 		};
-		8ACC2BE11FE2EA9B00786B52 /* Configuration Screen */ = {
-			isa = PBXGroup;
-			children = (
-				8ACC2BE21FE2EA9B00786B52 /* ConfigurationFooter.xib */,
-				8ACC2BE31FE2EA9B00786B52 /* ConfigurationHeader.xib */,
-				8ACC2BE41FE2EA9B00786B52 /* Configuration.storyboard */,
-			);
-			path = "Configuration Screen";
-			sourceTree = "<group>";
-		};
-		8ACC2BE81FE2EAAC00786B52 /* EditProfile */ = {
-			isa = PBXGroup;
-			children = (
-				8ACC2BE91FE2EAAC00786B52 /* EditProfile.storyboard */,
-			);
-			path = EditProfile;
-			sourceTree = "<group>";
-		};
 		8ACC2BEB1FE2EAB700786B52 /* SeeAllPastChallenges */ = {
 			isa = PBXGroup;
 			children = (
@@ -1052,12 +1034,12 @@
 				48D526D61FD5E26900D04DCE /* FeaturedFavoriteClickCollectionViewCell.xib in Resources */,
 				08297B271FC74B2E00701F9B /* Montserrat-ExtraLightItalic.otf in Resources */,
 				08297B151FC74B2E00701F9B /* Montserrat-Thin.otf in Resources */,
-				8ACC2BEA1FE2EAAC00786B52 /* EditProfile.storyboard in Resources */,
 				080B8C601FE1AEA00060D5D6 /* Main.storyboard in Resources */,
 				08297B161FC74B2E00701F9B /* MontserratAlternates-MediumItalic.otf in Resources */,
 				083982C11FC8B70E00E45D10 /* TableHeader.xib in Resources */,
 				08297B181FC74B2E00701F9B /* MontserratAlternates-BlackItalic.otf in Resources */,
 				8ACC2BED1FE2EAB800786B52 /* SeeAllPastChallenges.storyboard in Resources */,
+				14A87E571FE31D3500247AB9 /* Profile.storyboard in Resources */,
 				08297B2F1FC74B2E00701F9B /* Montserrat-SemiBold.otf in Resources */,
 				08297B171FC74B2E00701F9B /* Montserrat-ExtraLight.otf in Resources */,
 				08297B251FC74B2E00701F9B /* MontserratAlternates-BoldItalic.otf in Resources */,
@@ -1071,7 +1053,6 @@
 				08297B131FC74B2E00701F9B /* Montserrat-Light.otf in Resources */,
 				08297B0F1FC74B2E00701F9B /* MontserratAlternates-Black.otf in Resources */,
 				08297B0C1FC74B2E00701F9B /* Montserrat-MediumItalic.otf in Resources */,
-				14103C9F1FBE221800726C0B /* Profile.storyboard in Resources */,
 				08297B1D1FC74B2E00701F9B /* Montserrat-Medium.otf in Resources */,
 				08297B291FC74B2E00701F9B /* MontserratAlternates-ExtraLight.otf in Resources */,
 				08297B101FC74B2E00701F9B /* MontserratAlternates-LightItalic.otf in Resources */,
@@ -1082,7 +1063,6 @@
 				08297B1C1FC74B2E00701F9B /* Montserrat-LightItalic.otf in Resources */,
 				08297B1B1FC74B2E00701F9B /* MontserratAlternates-Thin.otf in Resources */,
 				08297B2A1FC74B2E00701F9B /* MontserratAlternates-Regular.otf in Resources */,
-				8ACC2BE61FE2EA9B00786B52 /* ConfigurationHeader.xib in Resources */,
 				08EC31E71FD866EB00B9C2D3 /* MainCollectionViewCell.xib in Resources */,
 				08297B2B1FC74B2E00701F9B /* MontserratAlternates-ThinItalic.otf in Resources */,
 				1420D5991FE2D83E002CDE5D /* ConfigurationHeader.xib in Resources */,
@@ -1102,8 +1082,6 @@
 				48EAFFF21FCF3A49007018AC /* imagem1.png in Resources */,
 				08297B0D1FC74B2E00701F9B /* Montserrat-Bold.otf in Resources */,
 				083982C21FC8B75400E45D10 /* MainScreen.storyboard in Resources */,
-				8ACC2BE51FE2EA9B00786B52 /* ConfigurationFooter.xib in Resources */,
-				8ACC2BE71FE2EA9B00786B52 /* Configuration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

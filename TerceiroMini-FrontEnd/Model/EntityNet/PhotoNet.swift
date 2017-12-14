@@ -353,6 +353,6 @@ class PhotoNet {
                 "url": photo.url!,
                 "_owner": photo.ownerId,
                 "_challenge": photo.challengeId,
-                "votes": photo.votes]
+                "votes": photo.votes ?? []]
     }
 }

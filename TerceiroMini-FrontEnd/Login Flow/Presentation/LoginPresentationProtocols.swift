@@ -21,4 +21,5 @@ protocol LoginPresentationView {
     func exitLoginPresentation()
     func goToLogin()
     func goToRegister()
+    func goToApp()
 }

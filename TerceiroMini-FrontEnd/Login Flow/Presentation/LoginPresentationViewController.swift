@@ -115,4 +115,14 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
         
         backgroundImageBottomGradientView.setUpsideDownDarkGradientBackground(colorOne: Colors.gradientBlack, colorTwo: .clear)
     }
+    
+    func goToApp() {
+        let caller = self.caller
+        
+        dismissInChain(animated: false) {
+            
+            caller?.loginFinishedSuccessfully()
+        }
+
+    }
 }

@@ -38,6 +38,10 @@ class NetworkManager {
         UserNet.createLogin(username: username, email: email, password: password, completion: completion)
     }
     
+    class func createLoginFacebook(name: String, email: String, token: String, completion: @escaping (_ u: User?, _ t: String?, _ e: Error?) -> Void) {
+        UserNet.createLoginFacebook(name: name, email: email, token: token, completion: completion)
+    }
+    
     class func deleteUser(byId id: String, completion: @escaping (Bool) -> Void) {
         UserNet.delete(byId: id, completion: completion)
     }

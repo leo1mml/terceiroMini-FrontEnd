@@ -43,37 +43,30 @@ class LoginPresentationPresenterImpl: LoginPresentationPresenter {
     }
     
     func showParameters() {
-        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields":"id, name, email"]).start(completionHandler: {
+        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields":"name, email"]).start(completionHandler: {
             (connection, result, err) in
             
             if err != nil {
                 print(err as Any)
                 return
             }
-            print(result)
+
             let itens = result as! NSDictionary
             
-            print("\(itens.value(forKey: "name") as!String)")
-            print("\(itens.value(forKey: "email") as! String)")
+            let name = itens.value(forKey: "name") as! String
+            let email = itens.value(forKey: "email") as! String
+            let token = FBSDKAccessToken.current().tokenString
+            
+            NetworkManager.createLoginFacebook(name: name, email: email, token: token!, completion: { (user, string, err) in
+                guard err == nil else {
+                    
+                    return
+                }
+                
+                UserDefaults.standard.set(token, forKey: "token")
+                self.view.goToApp()
+            })
 
-            //            let url = NetworkConnection.database + "users/"
-            //
-            //
-            //            let user = User()
-            //
-            //            user.name = itens.value(forKey: "name") as!String
-            //            user.email = itens.value(forKey: "email") as! String
-            //            user.gender = itens.value(forKey: "gender") as! String
-            //            user.password = "123456"
-            //            user.pins = ["LEO#2016"]
-            //
-            //
-            //            Singleton.sharedInstance.user = user
-            //
-            //            self.connection.post(URL: "http://localhost:3000/users/", user: user)
-            //            //            self.connection.post(URL: url, user: user)
-            //
-            //            self.performSegue(withIdentifier: "SchoolAuthentication", sender: Any?.self)
         })
     }
     

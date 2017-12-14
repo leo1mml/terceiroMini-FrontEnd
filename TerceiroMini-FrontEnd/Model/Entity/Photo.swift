@@ -14,13 +14,13 @@ class Photo {
     let url: String?
     let ownerId: String
     let challengeId: String
-    let numVotes : Int
+    let votes : [String]?
     
-    init(_ id: String? = nil, _ url: String? = nil, _ ownerId: String, _ challengeId: String, _ numVotes : Int) {
+    init(_ id: String? = nil, _ url: String? = nil, _ ownerId: String, _ challengeId: String, _ votes: [String]?) {
         self.id = id
         self.url = url
         self.ownerId = ownerId
         self.challengeId = challengeId
-        self.numVotes = numVotes
+        self.votes = votes
     }
 }

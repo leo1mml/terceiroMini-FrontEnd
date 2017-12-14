@@ -59,7 +59,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        challengeID = "5a2163e44ab66300147b416d"
+       // challengeID = "5a2163e44ab66300147b416d"
         presenter?.getChallengeHeader(challengeID: challengeID!)
         presenter?.getChallengeImages(challengeID: challengeID!)
         
@@ -119,7 +119,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     }
     
     @IBAction func backButton(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     func changeMainPhoto() {
         

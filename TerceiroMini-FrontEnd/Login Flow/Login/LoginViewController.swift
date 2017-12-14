@@ -15,7 +15,8 @@ class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
     // MARK: - Outlets
     
     @IBOutlet weak var backgroundImageView: BackgroundImageView!
-    @IBOutlet weak var backgrounImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var backgroundImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var backgroundImageBottomGradientView: UIView!
     
     @IBOutlet weak var welcomeMessageLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
@@ -41,8 +42,13 @@ class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
         
         usernameField.listenter = self
         passwordField.listenter = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         setupTexts()
+        setupBackgroundImageViewBottomGradient()
     }
     
     // MARK: - Actions
@@ -84,21 +90,20 @@ class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
     
     func goToApp() {
         
-        dismissInChain(animated: true) {
+        dismissInChain(animated: false) {
             
-            // load main-screen
+            self.caller?.loginFinishedSuccessfully()
         }
     }
     
     // MARK: - EditingListener implementation
     
     func didBeginEditing(_ sender: BottomLineTextField) {
-        
-        backgroundImageView.set(heightSize: 191, animated: true)
+        setBackgroundImageHeight(191)
     }
     
     func didEndEditing(_ sender: BottomLineTextField) {
-        backgroundImageView.set(heightSize: 291, animated: true)
+        setBackgroundImageHeight(291)
     }
     
     // MARK: - Auxiliar
@@ -112,5 +117,19 @@ class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
         welcomeMessageLabel.text = "Seja bem-vindo!"
         instructionLabel.text = "para concluir a ação,\nfaça seu login"
         agreementLabel.text = "Ao entrar no aplicativo, você concorda com os nossos\ntermos de serviço e políticas de privacidade."
+    }
+    
+    private func setBackgroundImageHeight(_ height: CGFloat) {
+        
+        backgroundImageHeight.constant = height
+        
+        UIView.animate(withDuration: 0.3, delay: 0.1, options: [.curveEaseOut], animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    private func setupBackgroundImageViewBottomGradient() {
+        
+        backgroundImageBottomGradientView.setUpsideDownDarkGradientBackground(colorOne: Colors.gradientBlack, colorTwo: .clear)
     }
 }

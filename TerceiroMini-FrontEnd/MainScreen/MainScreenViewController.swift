@@ -11,6 +11,7 @@ import UIKit
 protocol NavigateInAppProtocol {
     func goToSeeAll()
     func instanceProfile()
+    func goToOpenChallenge(with challengeId: String)
 }
 
 class MainScreenViewController: UITableViewController, MainScreenView, NavigationAnimationsDelegate, NavigateInAppProtocol{
@@ -42,6 +43,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.pageViewController.delegateAnimations = self
         let mainScreen = self.pageViewController.viewControllerList[0] as! MainScreenTableViewController
         mainScreen.delegateNavigateInApp = self
+        mainScreen.challengesCell.navigateInAppDelegate = self
         if(self.pageViewController.viewControllerList[1].restorationIdentifier == "Main"){
             self.configButton.isEnabled = false
             self.configButton.isHidden = true
@@ -148,6 +150,12 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     func instanceProfile() {
         self.pageViewController.viewControllerList[1] = (self.storyboard?.instantiateViewController(withIdentifier: "Profile"))!
         self.pageViewController.reloadInputViews()
+    }
+    
+    func goToOpenChallenge(with challengeId: String) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "challengeVC") as! ChallengeViewController
+        vc.challengeID = challengeId
+        self.navigationController?.show(vc, sender: self)
     }
 
 

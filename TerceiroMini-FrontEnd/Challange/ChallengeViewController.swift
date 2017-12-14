@@ -173,12 +173,12 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     }
     
 
-    func setFeaturedCollectionMyClick(myClick: Photo){
+    func setFeaturedCollectionMyClick(myClick: Photo?){
         header.myClick = myClick
         header.featuredCollectionView.reloadData()
     }
     
-    func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo){
+    func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo?){
         header.myFavoriteClick = myFavoriteClick
         header.featuredCollectionView.reloadData()
     }

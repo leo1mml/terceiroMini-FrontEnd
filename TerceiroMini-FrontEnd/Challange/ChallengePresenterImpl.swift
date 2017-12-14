@@ -39,7 +39,7 @@ class ChallengePresenterImpl: ChallengePresenter{
                 
                 NetworkManager.getUser(byToken: token, completion: { (user, error) in
                     if (user != nil){
-                        let photo = Photo(nil,result?.url,(user?.id)!,challengeID, [])
+                        let photo = Photo(nil,result?.url,(user?.id)!,challengeID, nil)
                         NetworkManager.addPhoto(photo, completion: { (photo, error) in
                             
                             if (error != nil){
@@ -47,6 +47,7 @@ class ChallengePresenterImpl: ChallengePresenter{
                             }
                             
                             self.getChallengeImages(challengeID: challengeID)
+                            self.view.setChallengeState(state: ChallengeState.participating)
                             
                         })
                         
@@ -103,6 +104,7 @@ class ChallengePresenterImpl: ChallengePresenter{
 
                     self.view.setFeaturedCollectionMyFavoriteClick(myFavoriteClick: photo!)
                 }else{
+                    self.view.setFeaturedCollectionMyFavoriteClick(myFavoriteClick: nil)
                     //print(error)
                 }
             })

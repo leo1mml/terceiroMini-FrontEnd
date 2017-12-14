@@ -24,8 +24,8 @@ protocol ChallengeView{
     func goToExpandoPhotoView(parameter: ([Photo], Int))
     func showFeaturedCollectionView()
     func showNoImagesWarning()
-    func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo)
-    func setFeaturedCollectionMyClick(myClick: Photo)
+    func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo?)
+    func setFeaturedCollectionMyClick(myClick: Photo?)
 }
 
 protocol ChallengePresenter{

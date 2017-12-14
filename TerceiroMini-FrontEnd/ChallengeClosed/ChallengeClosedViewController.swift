@@ -24,7 +24,8 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     var imageIndex = 0
     var details = true
     var data: ([Photo], Int)?
-    var myClick = false
+    var myFavoriteClick = false
+    var myPhoto = false
     
     let colorGradient = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
     
@@ -81,11 +82,14 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
   
     
     @IBAction func escolherClickAction(_ sender: Any) {
-        if (myClick){
-            presenter?.unvote(photo: (self.data?.0[imageIndex])!)
-        }else{
-            presenter?.vote(photo: (self.data?.0[imageIndex])!)
-        }
+        
+            if (myFavoriteClick){
+                presenter?.unvote(photo: (self.data?.0[imageIndex])!)
+            }else{
+                presenter?.vote(photo: (self.data?.0[imageIndex])!)
+            }
+        
+        
         
         
         
@@ -104,18 +108,18 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     
     func enableMyClickChosebuttonLabel(){
         self.escolherClickButton.setTitle("Meu Click", for: .normal)
-        self.myClick = true
+        self.myFavoriteClick = true
         
     }
     
     func enableMyFavoriteClickChosebuttonLabel(){
         self.escolherClickButton.setTitle("Meu Click Favorito", for: .normal)
-        self.myClick = true
+        self.myFavoriteClick = true
         
     }
     func enableChoseClickButton(){
         self.escolherClickButton.setTitle("Escolher Click", for: .normal)
-        self.myClick = false
+        self.myFavoriteClick = false
     }
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {

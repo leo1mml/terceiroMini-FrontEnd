@@ -202,7 +202,7 @@ class PhotoNet {
     
     /**
 
-     Gets the data of all the photos of a challenge from challenge id and user token.
+     Gets the data of a photo from challenge id (owner) and user token.
      
      - parameter id: The user id and token.
      - parameter completion: A block of code to be executed once the task is complete.
@@ -229,6 +229,37 @@ class PhotoNet {
         }
         
 
+    }
+    
+    /**
+     
+     Gets the data of a photo from challenge id and user token.
+     
+     - parameter id: The user id and token.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter p: The photos retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    class func getMyFavouriteClick(byChallengeId id: String, token: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
+        
+        //GET MY CLICK ID
+        let completeDomain = R.photosDomain + "/getMyFavouriteClick/\(id)"
+        let header = ["x-auth": token]
+        
+        Alamofire.request(completeDomain, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { (response) in
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let dic = NetHelper.extractDictionary(fromJson: val, key: "photo")!
+            let photo = buildPhoto(fromDictionary: dic)
+            
+            
+            completion(photo, nil)
+        }
+        
+        
     }
     
     
@@ -305,8 +336,9 @@ class PhotoNet {
         let url = dic["url"] as! String
         let ownerId = dic["_owner"] as! String
         let challengeId = dic["_challenge"] as! String
+        let numVotes = dic["numVotes"] as! Int
         
-        return Photo(id, url, ownerId, challengeId)
+        return Photo(id, url, ownerId, challengeId, numVotes)
     }
     
     /**

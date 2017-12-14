@@ -6,8 +6,13 @@ target 'TerceiroMini-FrontEnd' do
   use_frameworks!
 
   # Pods for TerceiroMini-FrontEnd
+
    pod 'Cloudinary', '~> 2.0'
    pod 'Alamofire', '~> 4.5'
+   pod 'FacebookCore', '~> 0.2.0'
+   pod 'FacebookLogin', '~> 0.2.0'
+   pod 'FBSDKCoreKit', '~> 4.22.1'
+   pod 'FBSDKLoginKit', '~> 4.22.1'
 
   target 'TerceiroMini-FrontEndTests' do
     inherit! :search_paths

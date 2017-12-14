@@ -29,7 +29,7 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
         if let token = UserDefaults.standard.string(forKey: "token"){
             NetworkManager.voteOnPhoto(byId: photo.id!, token: token, completion: { (complete) in
                 if (complete){
-                    self.view?.enableMyClickChosebuttonLabel()
+                    self.view?.enableMyFavoriteClickChosebuttonLabel()
                 }
             })
         }

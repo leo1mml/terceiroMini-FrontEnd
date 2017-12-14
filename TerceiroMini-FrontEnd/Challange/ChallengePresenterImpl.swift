@@ -69,7 +69,7 @@ class ChallengePresenterImpl: ChallengePresenter{
     
     func getChallengeHeader(challengeID: String) {
         
-       
+        
         NetworkManager.getChallengeById(id: challengeID, completion: { (challenge, error) in
             
             if((error) != nil){

@@ -207,6 +207,10 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         case .finished:
             //get winner and change main button
             break
+        case .participating:
+            header.mainButton.setTitle("Participando", for: .normal)
+            
+            break
         default:
             //get timer
             break

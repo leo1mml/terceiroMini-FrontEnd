@@ -336,7 +336,7 @@ class PhotoNet {
         let challengeId = dic["_challenge"] as! String
       //  let numVotes = dic["numVotes"] as! Int
         
-        return Photo(id, url, ownerId, challengeId, numVotes)
+        return Photo(id, url, ownerId, challengeId, 0)
     }
     
     /**

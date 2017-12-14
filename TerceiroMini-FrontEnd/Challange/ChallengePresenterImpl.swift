@@ -35,7 +35,7 @@ class ChallengePresenterImpl: ChallengePresenter{
             }
             let ownerID = "5a21a303391838001482d1f2"
             
-            let photo = Photo(nil,result?.url,ownerID,challengeID, 0)
+            let photo = Photo(nil,result?.url,ownerID,challengeID, [])
             NetworkManager.addPhoto(photo, completion: { (photo, error) in
                 if (error != nil){
                     print("deu merda na hora enviar a foto pro banco")

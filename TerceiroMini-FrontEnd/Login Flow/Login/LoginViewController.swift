@@ -90,9 +90,11 @@ class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
     
     func goToApp() {
         
+        let caller = self.caller
+        
         dismissInChain(animated: false) {
             
-            self.caller?.loginFinishedSuccessfully()
+            caller?.loginFinishedSuccessfully()
         }
     }
     

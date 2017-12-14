@@ -39,8 +39,7 @@ class ChallengePresenterImpl: ChallengePresenter{
                 
                 NetworkManager.getUser(byToken: token, completion: { (user, error) in
                     if (user != nil){
-                
-                        let photo = Photo(nil,result?.url,(user?.id)!,challengeID, 0)
+                        let photo = Photo(nil,result?.url,(user?.id)!,challengeID, [])
                         NetworkManager.addPhoto(photo, completion: { (photo, error) in
                             
                             if (error != nil){

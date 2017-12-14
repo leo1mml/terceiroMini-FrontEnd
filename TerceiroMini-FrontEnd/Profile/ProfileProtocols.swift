@@ -13,9 +13,12 @@ protocol ProfileView {
     
     func receiveDatas(profileUserHolder: ProfileUserHolder)
     func receiveCells(cells: [ProfileCellHolder])
+    func receivePhotos(photos: [Photo])
 }
 
 protocol ProfilePresenter {
     
     func loadData(id: String)
+    func loadHeader(id: String)
+    func loadPhotos(id: String)
 }

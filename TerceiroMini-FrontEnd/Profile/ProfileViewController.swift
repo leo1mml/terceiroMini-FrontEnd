@@ -11,15 +11,19 @@ import UIKit
 class ProfileViewController: UIViewController, ProfileView, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var presenter: ProfilePresenter?
-    var holder = ProfileUserHolder(image: UIImage(), name: "", username: "", amountPhotos: 0, amountTrophy: 0)
+    var holder = ProfileUserHolder(image: UIImage(), name: "", username: "")
     var cells = [ProfileCellHolder]()
     var user : User? {
         didSet {
             presenter?.loadData(id: (user?.id)!)
+            presenter?.loadHeader(id: (user?.id)!)
         }
     }
     
     var isGradients = [Bool]()
+    var photos = [Photo]()
+    var data: ([Photo], Int)?
+    var amountTrophy = 0
     
     @IBOutlet weak var collectionProfile: UICollectionView!
 
@@ -29,7 +33,9 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         self.collectionProfile.delegate = self
         self.collectionProfile.dataSource = self
         if((self.user) != nil){
-            presenter?.loadData(id: (self.user?.id)!)
+            presenter?.loadData(id: (user?.id)!)
+            presenter?.loadHeader(id: (user?.id)!)
+            presenter?.loadPhotos(id: (user?.id)!)
         }
     }
     
@@ -39,6 +45,10 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         }
     }
     
+    func receivePhotos(photos: [Photo]) {
+        self.photos = photos
+    }
+    
     func receiveDatas(profileUserHolder: ProfileUserHolder) {
         holder = profileUserHolder
         collectionProfile.reloadData()
@@ -46,6 +56,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     
     func receiveCells(cells: [ProfileCellHolder]) {
         self.cells = cells
+        amountTrophy = 0
         self.initializeArrayIsGradients()
         collectionProfile.reloadData()
     }
@@ -76,9 +87,10 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         if (cells[indexPath.row].isWinner) {
             cell.trophyImage.isHidden = false
             cell.themeLabel.isHidden = false
+            amountTrophy += 1
         } else {
             cell.trophyImage.isHidden = true
-            cell.themeLabel.isHidden = false
+            cell.themeLabel.isHidden = true
         }
 
         return cell
@@ -104,8 +116,8 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
 
             headerView.profileNameLabel.text = holder.name
             headerView.profileUserName.text = holder.username
-            headerView.profileTrophyNumberLabel.text = "\(holder.amountTrophy)"
-            headerView.profilePhotoNumberLabel.text = "\(holder.amountPhotos)"
+            headerView.profileTrophyNumberLabel.text = "\(amountTrophy)"
+            headerView.profilePhotoNumberLabel.text = "\(cells.count)"
             
             reusableView = headerView
         }
@@ -114,4 +126,19 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        data = (self.photos, indexPath.row) as ([Photo], Int)
+        performSegue(withIdentifier: "expandMyPhotoSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "expandMyPhotoSegue"{
+            
+            if let dest = segue.destination as? ChallengeClosedViewController{
+                dest.data = data
+            }
+            
+        }
+    }
+ 
 }

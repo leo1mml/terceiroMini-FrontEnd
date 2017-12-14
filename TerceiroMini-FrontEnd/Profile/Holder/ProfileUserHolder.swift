@@ -13,6 +13,4 @@ struct ProfileUserHolder {
     var image: UIImage
     var name: String
     var username: String
-    var amountPhotos: Int
-    var amountTrophy: Int
 }

@@ -256,11 +256,20 @@
                     <size key="freeformSize" width="375" height="600"/>
                     <connections>
                         <outlet property="collectionProfile" destination="bVg-Um-evj" id="Sez-x4-TOd"/>
+                        <segue destination="3zL-4b-YTE" kind="show" identifier="expandMyPhotoSegue" id="mcV-Br-ah7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncu-Wf-ktP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-639.20000000000005" y="55.322338830584712"/>
+        </scene>
+        <!--ChallengeClosed-->
+        <scene sceneID="OJu-DI-lp1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChallengeClosed" id="3zL-4b-YTE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jss-zw-N9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-14" y="-18"/>
         </scene>
     </scenes>
     <resources>

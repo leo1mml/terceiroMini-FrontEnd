@@ -104,6 +104,11 @@
 		08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F961FBB544C0039EAFE /* LoginProtocols.swift */; };
 		0AA9D2F13A024885BC29CB34 /* Pods_TerceiroMini_FrontEnd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE098DED4C617C7335FB427 /* Pods_TerceiroMini_FrontEnd.framework */; };
 		14103C9F1FBE221800726C0B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14103C9E1FBE221800726C0B /* Profile.storyboard */; };
+		1420D5931FE2D82D002CDE5D /* SeeAllPastChallenges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1420D5921FE2D82D002CDE5D /* SeeAllPastChallenges.storyboard */; };
+		1420D5981FE2D83E002CDE5D /* ConfigurationFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1420D5951FE2D83E002CDE5D /* ConfigurationFooter.xib */; };
+		1420D5991FE2D83E002CDE5D /* ConfigurationHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1420D5961FE2D83E002CDE5D /* ConfigurationHeader.xib */; };
+		1420D59A1FE2D83E002CDE5D /* Configuration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1420D5971FE2D83E002CDE5D /* Configuration.storyboard */; };
+		1420D59D1FE2D895002CDE5D /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1420D59C1FE2D895002CDE5D /* EditProfile.storyboard */; };
 		1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */; };
 		148AE59D1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */; };
 		148AE5A11FD1ACA1005108E7 /* ChallengeClosedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */; };
@@ -254,6 +259,11 @@
 		08EF52881FD6D75F00722A2F /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		08F06F961FBB544C0039EAFE /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		14103C9E1FBE221800726C0B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		1420D5921FE2D82D002CDE5D /* SeeAllPastChallenges.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SeeAllPastChallenges.storyboard; sourceTree = "<group>"; };
+		1420D5951FE2D83E002CDE5D /* ConfigurationFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigurationFooter.xib; sourceTree = "<group>"; };
+		1420D5961FE2D83E002CDE5D /* ConfigurationHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigurationHeader.xib; sourceTree = "<group>"; };
+		1420D5971FE2D83E002CDE5D /* Configuration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Configuration.storyboard; sourceTree = "<group>"; };
+		1420D59C1FE2D895002CDE5D /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		148AE5961FD1A79F005108E7 /* ChallengeClosedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedViewController.swift; sourceTree = "<group>"; };
 		148AE59A1FD1A81B005108E7 /* ChallengeClosed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengeClosed.storyboard; sourceTree = "<group>"; };
@@ -714,6 +724,9 @@
 		08F06F9B1FBB594A0039EAFE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				1420D5941FE2D83E002CDE5D /* Configuration Screen */,
+				1420D59B1FE2D895002CDE5D /* EditProfile */,
+				1420D5911FE2D82D002CDE5D /* SeeAllPastChallenges */,
 				48620F1F1FD815F000A45E3E /* LoginFlow */,
 				8A1CC5A81FBE66F900BC4963 /* Main Screen */,
 				4832D44A1FD9B60700EE18DC /* ChallengeClosed.storyboard */,
@@ -722,6 +735,32 @@
 				14103C9E1FBE221800726C0B /* Profile.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1420D5911FE2D82D002CDE5D /* SeeAllPastChallenges */ = {
+			isa = PBXGroup;
+			children = (
+				1420D5921FE2D82D002CDE5D /* SeeAllPastChallenges.storyboard */,
+			);
+			path = SeeAllPastChallenges;
+			sourceTree = "<group>";
+		};
+		1420D5941FE2D83E002CDE5D /* Configuration Screen */ = {
+			isa = PBXGroup;
+			children = (
+				1420D5951FE2D83E002CDE5D /* ConfigurationFooter.xib */,
+				1420D5961FE2D83E002CDE5D /* ConfigurationHeader.xib */,
+				1420D5971FE2D83E002CDE5D /* Configuration.storyboard */,
+			);
+			path = "Configuration Screen";
+			sourceTree = "<group>";
+		};
+		1420D59B1FE2D895002CDE5D /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				1420D59C1FE2D895002CDE5D /* EditProfile.storyboard */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		148AE5951FD1A5BB005108E7 /* ChallengeClosed */ = {
@@ -982,6 +1021,7 @@
 				08297B171FC74B2E00701F9B /* Montserrat-ExtraLight.otf in Resources */,
 				08297B251FC74B2E00701F9B /* MontserratAlternates-BoldItalic.otf in Resources */,
 				08297B1A1FC74B2E00701F9B /* MontserratAlternates-ExtraLightItalic.otf in Resources */,
+				1420D5981FE2D83E002CDE5D /* ConfigurationFooter.xib in Resources */,
 				8A5D5CF21FB0D22C00C24725 /* Assets.xcassets in Resources */,
 				08297B211FC74B2E00701F9B /* Montserrat-Italic.otf in Resources */,
 				08297B141FC74B2E00701F9B /* Montserrat-ThinItalic.otf in Resources */,
@@ -1003,16 +1043,20 @@
 				08297B2A1FC74B2E00701F9B /* MontserratAlternates-Regular.otf in Resources */,
 				08EC31E71FD866EB00B9C2D3 /* MainCollectionViewCell.xib in Resources */,
 				08297B2B1FC74B2E00701F9B /* MontserratAlternates-ThinItalic.otf in Resources */,
+				1420D5991FE2D83E002CDE5D /* ConfigurationHeader.xib in Resources */,
 				08297B1E1FC74B2E00701F9B /* MontserratAlternates-SemiBoldItalic.otf in Resources */,
 				08297B261FC74B2E00701F9B /* Montserrat-ExtraBold.otf in Resources */,
 				08297B121FC74B2E00701F9B /* Montserrat-BoldItalic.otf in Resources */,
 				08297B231FC74B2E00701F9B /* Montserrat-Regular.otf in Resources */,
+				1420D59D1FE2D895002CDE5D /* EditProfile.storyboard in Resources */,
 				08297B2C1FC74B2E00701F9B /* Montserrat-Black.otf in Resources */,
 				8A964BD11FDB0C99003C9FFD /* ChallengeClosed.storyboard in Resources */,
+				1420D59A1FE2D83E002CDE5D /* Configuration.storyboard in Resources */,
 				08297B1F1FC74B2E00701F9B /* Montserrat-SemiBoldItalic.otf in Resources */,
 				083982C31FC8B75800E45D10 /* MainScreenTableView.storyboard in Resources */,
 				08297B0E1FC74B2E00701F9B /* Montserrat-BlackItalic.otf in Resources */,
 				8A964BCF1FDB0C99003C9FFD /* HeaderCollectionReusableView.xib in Resources */,
+				1420D5931FE2D82D002CDE5D /* SeeAllPastChallenges.storyboard in Resources */,
 				48EAFFF21FCF3A49007018AC /* imagem1.png in Resources */,
 				08297B0D1FC74B2E00701F9B /* Montserrat-Bold.otf in Resources */,
 				083982C21FC8B75400E45D10 /* MainScreen.storyboard in Resources */,
@@ -1392,7 +1436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JP3F8DJU56;
+				DEVELOPMENT_TEAM = J8J2K4KEX2;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1409,7 +1453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JP3F8DJU56;
+				DEVELOPMENT_TEAM = J8J2K4KEX2;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

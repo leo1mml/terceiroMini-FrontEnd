@@ -11,11 +11,17 @@ import UIKit
 class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
 
+    
+    
     //var challengeImages : [String]!
-    var challengePhotos : [Photo]!
+    var challengePhotos : [Photo]?
     var presenter : ChallengePresenter?
     var header: HeaderChallengeCollectionReusableView!
     var challengeID : String?
+    //passing data to other view
+    var data: ([Photo], Int)?
+    @IBOutlet weak var clicksLogoImage: UIImageView!
+    @IBOutlet weak var noImagesWarningLabel: UILabel!
     
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
@@ -53,44 +59,34 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        challengeID = "5a2163e44ab66300147b416d"
+       // challengeID = "5a2163e44ab66300147b416d"
         presenter?.getChallengeHeader(challengeID: challengeID!)
         presenter?.getChallengeImages(challengeID: challengeID!)
+        
+        
+        
     }
     
     func resolveState(){
         
-        switch state {
-        case .votation:
-            //mudar label para periodo de votacao
-            //atualizar tempo pegando do banco
-            
-            print("entrei")
-            
-            
-            break
-        case .finished:
-            //get winner and change main button
-            break
-        default:
-            //get timer
-            break
-        }
+        performSegue(withIdentifier: "profileSegue", sender: self)
     }
  
-    @IBAction func mainButtonAction(_ sender: LeftAlignedIconButton) {
+
+    
+    func goToExpandoPhotoView(parameter: ([Photo], Int)) {
         
-        switch state {
-        case .finished:
-            //levar para o perfil do vencedor
-            break
-        case .participating:
-            //colocar label
-            break
-        default:
+        data = parameter
+        performSegue(withIdentifier: "expandPhotoSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "expandPhotoSegue"{
             
-            showPhotoMenu()
-            break
+            if let dest = segue.destination as? ChallengeClosedViewController{
+                dest.data = data
+            }
+            
         }
     }
     
@@ -122,6 +118,9 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         picker.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func backButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     func changeMainPhoto() {
         
     }
@@ -184,6 +183,23 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     func setChallengeState(state: ChallengeState) {
         self.state = state
+        
+        switch state {
+        case .votation:
+            //mudar label para periodo de votacao
+            //atualizar tempo pegando do banco
+            
+            print("entrei")
+            
+            
+            break
+        case .finished:
+            //get winner and change main button
+            break
+        default:
+            //get timer
+            break
+        }
     }
     
     
@@ -194,11 +210,31 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         view.addSubview(statusBarView)
     }
     
+    
     func setChallengePhotos(photos: [Photo]) {
         self.challengePhotos = photos
     }
     
+    func showCollectionPhotos() {
+        self.mainCollectionView.reloadData()
+    }
+    
+    func showChallengeWinner(winner: User) {
+        
+    }
+    
+    func showFeaturedCollectionView(){
+        self.header.featuredCollectionView.isHidden = false
+    }
+    func showNoImagesWarning(){
+            self.noImagesWarningLabel.isHidden = false
+            self.clicksLogoImage.isHidden = false
+    }
+    
+    
 }
+
+
 
 enum ChallengeState {
     case open

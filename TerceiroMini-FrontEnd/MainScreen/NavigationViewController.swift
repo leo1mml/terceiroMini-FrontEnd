@@ -11,20 +11,37 @@ import UIKit
 protocol NavigationAnimationsDelegate {
     func swipeMainToProfile()
     func swipeProfileToMain()
+    func setInitialItemsPosition()
     func moveAndScaleItems(with contentOffset: CGPoint)
     func setFirstOffset(firstOffsetX: CGFloat)
 }
 
-class NavigationViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate {
+class NavigationViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, LoginCallerPortocol {
+    
+    var isMainScreen: Bool {
+        return true
+    }
     
     lazy var viewControllerList:[UIViewController] = {
         let sb = UIStoryboard(name: "MainScreen", bundle: nil)
         let vc1 = sb.instantiateViewController(withIdentifier: "MainStoryboard")
         vc1.restorationIdentifier = "MainScreen"
-        let vc2 = sb.instantiateViewController(withIdentifier: "ProfileStoryboard")
-        vc2.restorationIdentifier = "Profile"
-        
-        return [vc1, vc2]
+        var vc2 : UIViewController?
+        if let token = UserDefaults.standard.string(forKey: "token"){
+            vc2 = sb.instantiateViewController(withIdentifier: "ProfileStoryboard")
+            vc2?.restorationIdentifier = "Profile"
+            NetworkManager.getUser(byToken: token, completion: { (me, err) in
+                if(err == nil){
+                    (vc2 as! ProfileViewController).user = me
+                }
+            })
+        }else {
+            vc2 = sb.instantiateViewController(withIdentifier: "Main")
+            vc2?.restorationIdentifier = "Main"
+            (vc2 as! LoginPresentationViewController).caller = self
+            
+        }
+        return [vc1, vc2!]
     }()
     var pageViewScroll : UIScrollView?
     
@@ -53,9 +70,12 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         
         // Do any additional setup after loading the view.
     }
-    
+    override var canBecomeFirstResponder: Bool {
+        return false
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        self.pageViewScroll?.resignFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -90,6 +110,7 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        self.resignFirstResponder()
         self.nextVCIdentifier = pendingViewControllers[0].restorationIdentifier!
     }
     
@@ -100,9 +121,9 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         //self.currentPageIndex = self.lastPendingViewControllerIndex
         self.previousVCIdentifier = previousViewControllers[0].restorationIdentifier!
         
-        if(self.previousVCIdentifier == "MainScreen" && self.nextVCIdentifier == "Profile"){
+        if(self.previousVCIdentifier == "MainScreen" && self.nextVCIdentifier == "Profile" || self.nextVCIdentifier == "Main"){
             delegateAnimations?.swipeMainToProfile()
-        } else if(self.previousVCIdentifier == "Profile" && self.nextVCIdentifier == "MainScreen"){
+        } else if(self.previousVCIdentifier == "Main" || self.previousVCIdentifier == "Profile" && self.nextVCIdentifier == "MainScreen"){
             delegateAnimations?.swipeProfileToMain()
         }
     }
@@ -144,6 +165,33 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
                  self.delegateAnimations?.swipeProfileToMain()
             }
         }
+    }
+    func loginFinishedSuccessfully() {
+        let sb = UIStoryboard(name: "MainScreen", bundle: nil)
+        let vc1 = sb.instantiateViewController(withIdentifier: "MainStoryboard")
+        vc1.restorationIdentifier = "MainScreen"
+        var vc2 : UIViewController?
+        if let token = UserDefaults.standard.string(forKey: "token"){
+            vc2 = sb.instantiateViewController(withIdentifier: "ProfileStoryboard")
+            vc2?.restorationIdentifier = "Profile"
+            NetworkManager.getUser(byToken: token, completion: { (me, err) in
+                if(err == nil){
+                    (vc2 as! ProfileViewController).user = me
+                }
+            })
+        }else {
+            vc2 = sb.instantiateViewController(withIdentifier: "Main")
+            vc2?.restorationIdentifier = "Main"
+            (vc2 as! LoginPresentationViewController).caller = self
+            
+        }
+        self.viewControllerList = [vc1, vc2!]
+        if let firstViewController = viewControllerList.first {
+            self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: { (completed) in
+                self.delegateAnimations?.setInitialItemsPosition()
+            })
+        }
+        // [vc1, vc2!]
     }
     /*
     // MARK: - Navigation

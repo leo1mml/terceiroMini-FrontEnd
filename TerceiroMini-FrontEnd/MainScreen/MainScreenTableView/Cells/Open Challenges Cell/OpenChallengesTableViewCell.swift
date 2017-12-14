@@ -13,6 +13,7 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     
     
     var presenter : OpenChallengesCellPresenter?
+    var navigateInAppDelegate: NavigateInAppProtocol?
     
     @IBOutlet weak var pageControl : UIPageControl!
     @IBOutlet weak var collectionView : UICollectionView!
@@ -46,6 +47,12 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         cell.layer.cornerRadius = 10
         cell.challenge = challenges?[indexPath.row]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if(challenges != nil){
+            self.navigateInAppDelegate?.goToOpenChallenge(with: (challenges?[indexPath.row].id)!)
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

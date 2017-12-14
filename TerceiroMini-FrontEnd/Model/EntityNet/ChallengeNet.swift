@@ -53,7 +53,9 @@ class ChallengeNet {
      */
     class func getById(id: String, completion: @escaping (_ c: Challenge?, _ e: Error?) -> Void) {
         
-        Alamofire.request(R.challengesDomain + "/getById/"+id).validate().responseJSON { response in
+        let completeDomain = R.challengesDomain+"/getById/"+id
+        
+        Alamofire.request(completeDomain).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
                 completion(nil, response.error)
@@ -76,9 +78,9 @@ class ChallengeNet {
      - parameter e: The error that ocurred.
      */
     
-    class func getLastChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void) {
+    class func getLastChallenges(completion: @escaping (_ c: [Challenge]?, _ e: Error?) -> Void, numOfItems: Int) {
         
-        Alamofire.request(R.challengesDomain + "/lastChallenges").validate().responseJSON { response in
+        Alamofire.request(R.challengesDomain + "/lastChallenges/\(numOfItems)").validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
                 completion(nil, response.error)

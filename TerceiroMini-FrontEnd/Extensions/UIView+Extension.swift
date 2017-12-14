@@ -16,20 +16,19 @@ extension UIView {
         gradientLayer.frame = bounds
         gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
         gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.1)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.9999)
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
         
         layer.insertSublayer(gradientLayer, at: 0)
-        
     }
     
-    func setCustomGradient(colorOne: UIColor, colorTwo: UIColor, locationX: Float, locationY: Float, startPoint: CGPoint, endPoint: CGPoint){
+    func setUpsideDownDarkGradientBackground(colorOne: UIColor, colorTwo: UIColor) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
         gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
-        gradientLayer.locations = [locationX as NSNumber, locationY as NSNumber]
-        gradientLayer.startPoint = startPoint
-        gradientLayer.endPoint = endPoint
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.9999)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0001)
         
         layer.insertSublayer(gradientLayer, at: 0)
     }
@@ -56,6 +55,26 @@ extension UIView {
         
     }
     
+    // Make a complete circle animated
+    func makeCircleBorderAnimate(){
+        
+        let shapeLayer = CAShapeLayer()
+        
+        layer.addSublayer(shapeLayer)
+        
+        let path = UIBezierPath(ovalIn: bounds)
+        shapeLayer.path = path.cgPath
+        shapeLayer.lineWidth = 3
+        shapeLayer.strokeColor = UIColor.black.cgColor
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        
+        let a = CABasicAnimation(keyPath: "strokeEnd")
+        a.fromValue = 0
+        a.toValue = 1
+        a.duration = 1
+        shapeLayer.add(a, forKey: nil)
+        
+    }
     
     
 }

@@ -8,9 +8,13 @@
 
 import UIKit
 
-class RegisterViewController: StatusBarHiddenViewController, RegisterView {
+class RegisterViewController: LoginFlowViewController, RegisterView {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundImageBottomGradientView: UIView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var instructionLabel: UILabel!
     
     @IBOutlet weak var nameField: BottomLineTextField!
     @IBOutlet weak var emailField: BottomLineTextField!
@@ -28,6 +32,15 @@ class RegisterViewController: StatusBarHiddenViewController, RegisterView {
         
         let outTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(outTap)
+        
+        setupTexts()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupTexts()
+        setupBackgroundImageViewBottomGradient()
     }
 
     @IBAction func goBackAction(_ sender: UIButton) {
@@ -44,6 +57,10 @@ class RegisterViewController: StatusBarHiddenViewController, RegisterView {
     
     func goToApp() {
         
+        dismissInChain(animated: false) {
+            
+            self.caller?.loginFinishedSuccessfully()
+        }
     }
     
     func showUpdateError() {
@@ -62,4 +79,15 @@ class RegisterViewController: StatusBarHiddenViewController, RegisterView {
         confirmField.endEditing(false)
     }
     
+    private func setupTexts() {
+        
+        titleLabel.text = "Cadastro"
+        instructionLabel.text = "preencha com seus dados\npara realizar o cadastro"
+        agreementLabel.text = "Ao entrar no aplicativo, você concorda com nossos\ntemos de serviço e políticas de privacidade."
+    }
+    
+    private func setupBackgroundImageViewBottomGradient() {
+        
+        backgroundImageBottomGradientView.setUpsideDownDarkGradientBackground(colorOne: Colors.gradientBlack, colorTwo: .clear)
+    }
 }

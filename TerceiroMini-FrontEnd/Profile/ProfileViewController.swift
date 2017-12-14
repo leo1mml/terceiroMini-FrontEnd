@@ -13,18 +13,30 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     var presenter: ProfilePresenter?
     var holder = ProfileUserHolder(image: UIImage(), name: "", username: "", amountPhotos: 0, amountTrophy: 0)
     var cells = [ProfileCellHolder]()
+    var user : User? {
+        didSet {
+            presenter?.loadData(id: (user?.id)!)
+        }
+    }
+    
+    var isGradients = [Bool]()
     
     @IBOutlet weak var collectionProfile: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         presenter = ProfilePresenterImpl(profileView: self)
-        presenter?.loadData(id: "5a21a303391838001482d1f2")
-        
         self.collectionProfile.delegate = self
         self.collectionProfile.dataSource = self
-        
+        if((self.user) != nil){
+            presenter?.loadData(id: (self.user?.id)!)
+        }
+    }
+    
+    func initializeArrayIsGradients(){
+        for _ in 0..<cells.count-(isGradients.count) {
+            isGradients.append(false)
+        }
     }
     
     func receiveDatas(profileUserHolder: ProfileUserHolder) {
@@ -34,12 +46,13 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     
     func receiveCells(cells: [ProfileCellHolder]) {
         self.cells = cells
+        self.initializeArrayIsGradients()
         collectionProfile.reloadData()
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return (holder.amountPhotos)
+        return (cells.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -48,9 +61,11 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
         cell.themeLabel.text = cells[indexPath.row].theme
         
-        let startingGradientColor = UIColor(red: 0.15, green: 0.18, blue: 0.19, alpha: 1)
-        
-        cell.backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [.clear, .clear, startingGradientColor])
+        if !isGradients[indexPath.row] {
+            let startingGradientColor = UIColor(red: 0.15, green: 0.18, blue: 0.19, alpha: 1)
+            cell.backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [.clear, .clear, startingGradientColor])
+            isGradients[indexPath.row] = true
+        }
         
         cell.backgroundImage.image = cells[indexPath.row].image
         cell.backgroundImage.contentMode = .scaleAspectFill
@@ -60,8 +75,10 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
         if (cells[indexPath.row].isWinner) {
             cell.trophyImage.isHidden = false
+            cell.themeLabel.isHidden = false
         } else {
             cell.trophyImage.isHidden = true
+            cell.themeLabel.isHidden = false
         }
 
         return cell
@@ -83,7 +100,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2
             headerView.profileImage.clipsToBounds = true
 
-            headerView.profileBorderView.makeBorderAnimate()
+            headerView.profileBorderView.makeCircleBorderAnimate()
 
             headerView.profileNameLabel.text = holder.name
             headerView.profileUserName.text = holder.username

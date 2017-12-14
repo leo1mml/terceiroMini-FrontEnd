@@ -9,6 +9,10 @@
 import UIKit
 
 class MainScreenTableViewController: UITableViewController {
+    
+    @IBOutlet weak var challengesCell: OpenChallengesTableViewCell!
+    
+    var delegateNavigateInApp : NavigateInAppProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,7 @@ class MainScreenTableViewController: UITableViewController {
         }else if(section == 1) {
             header.sectionTitle.text = "ÚLTIMOS VENCEDORES"
             header.seeMoreButton.isHidden = false
+            header.seeMoreButton.addTarget(self, action: #selector(goToAllPastChallenges), for: .touchUpInside)
             header.seeMoreButton.setTitle("Ver todos", for: .normal)
         }else if(section == 2) {
             header.sectionTitle.text = "PRÓXIMOS"
@@ -39,6 +44,12 @@ class MainScreenTableViewController: UITableViewController {
         
         return header
     }
+    
+    @objc func goToAllPastChallenges() {
+//        self.performSegue(withIdentifier: "goToSeeAll", sender: self)
+        delegateNavigateInApp?.goToSeeAll()
+    }
+    
 
     // MARK: - Table view data source
 

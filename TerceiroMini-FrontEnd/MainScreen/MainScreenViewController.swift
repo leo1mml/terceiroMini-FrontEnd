@@ -8,8 +8,16 @@
 
 import UIKit
 
-class MainScreenViewController: UITableViewController, MainScreenView, NavigationAnimationsDelegate{
+protocol NavigateInAppProtocol {
+    func goToSeeAll()
+    func instanceProfile()
+    func goToOpenChallenge(with challengeId: String)
+}
+
+class MainScreenViewController: UITableViewController, MainScreenView, NavigationAnimationsDelegate, NavigateInAppProtocol{
     
+   
+    @IBOutlet weak var configButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var rightIcon: UIView!
@@ -17,6 +25,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     @IBOutlet weak var centerIcon: UIView!
     var pageViewController: NavigationViewController!
     var presenter : MainScreenPresenter?
+    var viewControllerList : [UIViewController]?
     
     var lastOffsetX : CGFloat = 0.0
 
@@ -24,18 +33,31 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "PageView") {
-            self.pageViewController = vc as! NavigationViewController
-            self.pageViewContainer.frame = pageViewController.view.frame
-            self.pageViewContainer.addSubview(vc.view)
-            self.pageViewController.delegateAnimations = self
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "PageView") else {
+            return
         }
+        self.pageViewController = vc as! NavigationViewController
+        self.pageViewContainer.frame = pageViewController.view.frame
+        self.pageViewContainer.addSubview(vc.view)
+        self.viewControllerList = self.pageViewController.viewControllerList
+        self.pageViewController.delegateAnimations = self
+        let mainScreen = self.pageViewController.viewControllerList[0] as! MainScreenTableViewController
+        mainScreen.delegateNavigateInApp = self
+        mainScreen.challengesCell.navigateInAppDelegate = self
+        if(self.pageViewController.viewControllerList[1].restorationIdentifier == "Main"){
+            self.configButton.isEnabled = false
+            self.configButton.isHidden = true
+        }
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.profileImage.tintColor = .gray
+        if(self.pageViewController.nextVCIdentifier == ""){
+            self.profileImage.tintColor = .gray
+        }
+        
     }
 
     override func viewDidLayoutSubviews() {
@@ -55,6 +77,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
             self.profileImage.center = self.centerIcon.center
             self.profileImage.tintColor = .black
             self.logoImage.tintColor = .gray
+            self.configButton.center = self.rightIcon.center
         }
     }
     
@@ -67,6 +90,20 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
             self.logoImage.tintColor = .black
         }
         
+    }
+    
+    func setInitialItemsPosition() {
+        self.configButton.isEnabled = true
+        self.configButton.isHidden = false
+        self.configButton.center.x = self.view.frame.width + 125
+        self.profileImage.center = self.rightIcon.center
+        self.logoImage.center = self.centerIcon.center
+
+        UIView.animate(withDuration: 0.001) {
+            self.logoImage.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.profileImage.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.logoImage.tintColor = .black
+        }
     }
     
     func setFirstOffset(firstOffsetX: CGFloat) {
@@ -84,12 +121,13 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         
         if(differenceOffsetX < 370){
             if(lastOffsetX > contentOffset.x){
-                self.logoImage.center.x = (self.logoImage.center.x + differenceOffsetX * 0.4)
-                self.profileImage.center.x = (self.profileImage.center.x + differenceOffsetX * 0.4)
+                self.logoImage.center.x = (self.logoImage.center.x + differenceOffsetX * 0.42)
+                self.profileImage.center.x = (self.profileImage.center.x + differenceOffsetX * 0.42)
+                self.configButton.center.x = (self.configButton.center.x + differenceOffsetX * 0.42)
             }else if (lastOffsetX < contentOffset.x) {
-                
-                self.logoImage.center.x = (self.logoImage.center.x - differenceOffsetX * 0.4)
-                self.profileImage.center.x = (self.profileImage.center.x - differenceOffsetX * 0.4)
+                self.logoImage.center.x = (self.logoImage.center.x - differenceOffsetX * 0.42)
+                self.profileImage.center.x = (self.profileImage.center.x - differenceOffsetX * 0.42)
+                self.configButton.center.x = (self.configButton.center.x - differenceOffsetX * 0.42)
             }
             
         }
@@ -112,9 +150,28 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.pageViewController.goToNextPage()
     }
     
+    @IBAction func goToConfig(_ sender: Any) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "Opcoes") {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    func goToSeeAll() {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SeeAllPastChallenges"){
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
+    func instanceProfile() {
+        self.pageViewController.viewControllerList[1] = (self.storyboard?.instantiateViewController(withIdentifier: "Profile"))!
+        self.pageViewController.reloadInputViews()
+    }
     
-    
+    func goToOpenChallenge(with challengeId: String) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "challengeVC") as! ChallengeViewController
+        vc.challengeID = challengeId
+        self.navigationController?.show(vc, sender: self)
+    }
+
 
     /*
     // MARK: - Navigation

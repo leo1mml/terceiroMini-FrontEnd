@@ -10,12 +10,13 @@ import UIKit
 
 private let segueToRegister = "loginToRegister"
 
-class LoginViewController: StatusBarHiddenViewController, LoginView, EditingListener {
+class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
 
     // MARK: - Outlets
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var backgrounImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var backgroundImageView: BackgroundImageView!
+    @IBOutlet weak var backgroundImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var backgroundImageBottomGradientView: UIView!
     
     @IBOutlet weak var welcomeMessageLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
@@ -41,8 +42,13 @@ class LoginViewController: StatusBarHiddenViewController, LoginView, EditingList
         
         usernameField.listenter = self
         passwordField.listenter = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         setupTexts()
+        setupBackgroundImageViewBottomGradient()
     }
     
     // MARK: - Actions
@@ -84,16 +90,22 @@ class LoginViewController: StatusBarHiddenViewController, LoginView, EditingList
     
     func goToApp() {
         
+        let caller = self.caller
+        
+        dismissInChain(animated: false) {
+            
+            caller?.loginFinishedSuccessfully()
+        }
     }
     
     // MARK: - EditingListener implementation
     
     func didBeginEditing(_ sender: BottomLineTextField) {
-        setBackgroundImageSize(191)
+        setBackgroundImageHeight(191)
     }
     
     func didEndEditing(_ sender: BottomLineTextField) {
-        setBackgroundImageSize(291)
+        setBackgroundImageHeight(291)
     }
     
     // MARK: - Auxiliar
@@ -106,16 +118,20 @@ class LoginViewController: StatusBarHiddenViewController, LoginView, EditingList
     private func setupTexts() {
         welcomeMessageLabel.text = "Seja bem-vindo!"
         instructionLabel.text = "para concluir a ação,\nfaça seu login"
-        agreementLabel.text = "Ao entrar no aplicativo, você concorda com os nossos termos de serviço e políticas de privacidade."
+        agreementLabel.text = "Ao entrar no aplicativo, você concorda com os nossos\ntermos de serviço e políticas de privacidade."
     }
     
-    private func setBackgroundImageSize(_ constant: CGFloat) {
+    private func setBackgroundImageHeight(_ height: CGFloat) {
         
-        backgrounImageHeight.constant = constant
+        backgroundImageHeight.constant = height
         
-        UIView.animate(withDuration: 0.3) {
-            
+        UIView.animate(withDuration: 0.3, delay: 0.1, options: [.curveEaseOut], animations: {
             self.view.layoutIfNeeded()
-        }
+        })
+    }
+    
+    private func setupBackgroundImageViewBottomGradient() {
+        
+        backgroundImageBottomGradientView.setUpsideDownDarkGradientBackground(colorOne: Colors.gradientBlack, colorTwo: .clear)
     }
 }

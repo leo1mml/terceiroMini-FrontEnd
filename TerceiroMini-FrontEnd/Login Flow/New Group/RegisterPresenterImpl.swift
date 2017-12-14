@@ -27,15 +27,15 @@ class RegisterPresenterImpl: RegisterPresenter {
             return
         }
         
-        let user = User(nil, email, name, "", nil)
+        let user = User(nil, email, name, nil, nil)
         
         NetworkManager.addUser(user, password: password) { usr, tkn, err in
-            
+
             guard err == nil else {
                 self.view.showUpdateError()
                 return
             }
-            
+
             UserDefaults.standard.set(tkn, forKey: "token")
             self.view.goToApp()
         }

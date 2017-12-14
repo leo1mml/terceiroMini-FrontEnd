@@ -241,9 +241,10 @@ class UserNet {
      */
     class func createLoginFacebook(name: String, email: String, token: String, completion: @escaping (_ u: User?, _ t: String?, _ e: Error?) -> Void) {
         let completeDomain = R.usersDomain + "/addFacebookUser"
-        let login = ["name": name, "email": email, "token": token]
+        let login = ["name": name, "email": email]
+        let header = ["x-auth": token]
         
-        Alamofire.request(completeDomain, method: .post, parameters: login, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
+        Alamofire.request(completeDomain, method: .post, parameters: login, encoding: JSONEncoding.default, headers: header).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
                 completion(nil, nil, response.error)

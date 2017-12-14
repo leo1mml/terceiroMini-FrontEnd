@@ -55,7 +55,7 @@ class LoginPresentationPresenterImpl: LoginPresentationPresenter {
             
             print("\(itens.value(forKey: "name") as!String)")
             print("\(itens.value(forKey: "email") as! String)")
-            print("\(itens.value(forKey: "gender") as! String)")
+
             //            let url = NetworkConnection.database + "users/"
             //
             //

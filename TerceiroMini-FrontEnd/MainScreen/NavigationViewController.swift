@@ -11,6 +11,7 @@ import UIKit
 protocol NavigationAnimationsDelegate {
     func swipeMainToProfile()
     func swipeProfileToMain()
+    func setInitialItemsPosition()
     func moveAndScaleItems(with contentOffset: CGPoint)
     func setFirstOffset(firstOffsetX: CGFloat)
 }
@@ -164,6 +165,33 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
                  self.delegateAnimations?.swipeProfileToMain()
             }
         }
+    }
+    func loginFinishedSuccessfully() {
+        let sb = UIStoryboard(name: "MainScreen", bundle: nil)
+        let vc1 = sb.instantiateViewController(withIdentifier: "MainStoryboard")
+        vc1.restorationIdentifier = "MainScreen"
+        var vc2 : UIViewController?
+        if let token = UserDefaults.standard.string(forKey: "token"){
+            vc2 = sb.instantiateViewController(withIdentifier: "ProfileStoryboard")
+            vc2?.restorationIdentifier = "Profile"
+            NetworkManager.getUser(byToken: token, completion: { (me, err) in
+                if(err == nil){
+                    (vc2 as! ProfileViewController).user = me
+                }
+            })
+        }else {
+            vc2 = sb.instantiateViewController(withIdentifier: "Main")
+            vc2?.restorationIdentifier = "Main"
+            (vc2 as! LoginPresentationViewController).caller = self
+            
+        }
+        self.viewControllerList = [vc1, vc2!]
+        if let firstViewController = viewControllerList.first {
+            self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: { (completed) in
+                self.delegateAnimations?.setInitialItemsPosition()
+            })
+        }
+        // [vc1, vc2!]
     }
     /*
     // MARK: - Navigation

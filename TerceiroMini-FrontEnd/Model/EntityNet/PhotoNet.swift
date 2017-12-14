@@ -350,6 +350,7 @@ class PhotoNet {
         return ["_id": photo.id ?? "",
                 "url": photo.url!,
                 "_owner": photo.ownerId,
-                "_challenge": photo.challengeId]
+                "_challenge": photo.challengeId,
+                "votes": photo.votes]
     }
 }

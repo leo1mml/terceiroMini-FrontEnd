@@ -11,7 +11,7 @@ import UIKit
 class ProfileViewController: UIViewController, ProfileView, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var presenter: ProfilePresenter?
-    var holder = ProfileUserHolder(image: UIImage(), name: "", username: "")
+    var holder = ProfileUserHolder(image: UIImage(named: "profile-default")!, name: "", username: "")
     var cells = [ProfileCellHolder]()
     var user : User? {
         didSet {

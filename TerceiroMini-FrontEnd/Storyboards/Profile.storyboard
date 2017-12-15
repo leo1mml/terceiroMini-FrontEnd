@@ -11,8 +11,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Helvetica.ttc">
-            <string>Helvetica</string>
+        <array key="Montserrat-ExtraBold.otf">
+            <string>Montserrat-ExtraBold</string>
+        </array>
+        <array key="Montserrat-Medium.otf">
+            <string>Montserrat-Medium</string>
+        </array>
+        <array key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -94,12 +100,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="52d-kP-ObJ">
-                                            <rect key="frame" x="78.5" y="15" width="214" height="239"/>
+                                            <rect key="frame" x="0.0" y="15" width="371" height="239"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBf-m6-L0V">
-                                                    <rect key="frame" x="48" y="0.0" width="118" height="118"/>
+                                                    <rect key="frame" x="126.5" y="0.0" width="118" height="118"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q6q-36-X6c">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-default" translatesAutoresizingMaskIntoConstraints="NO" id="q6q-36-X6c">
                                                             <rect key="frame" x="4.5" y="4.5" width="110" height="110"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="110" id="ZyA-pm-2F3"/>
@@ -116,38 +122,37 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1Ov-sc-dkD">
-                                                    <rect key="frame" x="0.0" y="134" width="214" height="105"/>
+                                                    <rect key="frame" x="0.0" y="134" width="371" height="105"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="duS-fS-w19">
-                                                            <rect key="frame" x="0.0" y="0.0" width="214" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="371" height="44"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hyago Nascimento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IL8-bH-m8Z">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="214" height="27"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="371" height="27"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="214" id="fGg-vI-PTh"/>
                                                                         <constraint firstAttribute="height" constant="27" id="vpM-MT-hP5"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                    <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="22"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@nascimentohyago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhV-Xo-J1L">
-                                                                    <rect key="frame" x="0.0" y="28" width="214" height="16"/>
+                                                                    <rect key="frame" x="0.0" y="28" width="371" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="IXR-73-Q7f"/>
-                                                                        <constraint firstAttribute="width" constant="214" id="b3I-gK-PQy"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                                     <color key="textColor" red="0.59993284940000002" green="0.60003870729999997" blue="0.59992617370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="214" id="6eM-On-zL3"/>
+                                                                <constraint firstItem="IL8-bH-m8Z" firstAttribute="width" secondItem="duS-fS-w19" secondAttribute="width" id="FIj-d2-Vk2"/>
+                                                                <constraint firstItem="ZhV-Xo-J1L" firstAttribute="width" secondItem="duS-fS-w19" secondAttribute="width" id="j95-YP-ovC"/>
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="Ojb-RH-aze">
-                                                            <rect key="frame" x="3" y="64" width="208" height="41"/>
+                                                            <rect key="frame" x="81.5" y="64" width="208" height="41"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="BdK-h9-oK5">
                                                                     <rect key="frame" x="0.0" y="0.0" width="48" height="41"/>
@@ -157,7 +162,7 @@
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="22" id="rIM-FA-cWQ"/>
                                                                             </constraints>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -167,7 +172,7 @@
                                                                                 <constraint firstAttribute="height" constant="18" id="LmB-02-9hQ"/>
                                                                                 <constraint firstAttribute="width" constant="48" id="YOx-Pl-8u7"/>
                                                                             </constraints>
-                                                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                                             <color key="textColor" red="0.59993284940000002" green="0.60003870729999997" blue="0.59992617370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -197,13 +202,13 @@
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TROFÉU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZX-ch-vwd">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TROFÉUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZX-ch-vwd">
                                                                             <rect key="frame" x="0.0" y="23" width="65" height="18"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="18" id="R7Z-al-v0f"/>
                                                                                 <constraint firstAttribute="width" constant="65" id="mjW-wR-Pn0"/>
                                                                             </constraints>
-                                                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                                             <color key="textColor" red="0.59993284940000002" green="0.60003870729999997" blue="0.59992617370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -218,18 +223,19 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="105" id="68x-qW-ij8"/>
-                                                        <constraint firstAttribute="width" constant="214" id="M1q-ef-8GN"/>
+                                                        <constraint firstItem="duS-fS-w19" firstAttribute="width" secondItem="1Ov-sc-dkD" secondAttribute="width" id="DQ5-dH-geU"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="214" id="0JU-iC-9Rv"/>
+                                                <constraint firstItem="1Ov-sc-dkD" firstAttribute="width" secondItem="52d-kP-ObJ" secondAttribute="width" id="0Ex-7c-xVk"/>
                                                 <constraint firstAttribute="height" constant="239" id="TiG-9F-2Od"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="52d-kP-ObJ" firstAttribute="width" secondItem="ZaC-zi-nhA" secondAttribute="width" id="6bO-Fh-pWU"/>
                                         <constraint firstItem="52d-kP-ObJ" firstAttribute="centerX" secondItem="ZaC-zi-nhA" secondAttribute="centerX" id="UMK-Ce-5Bv"/>
                                         <constraint firstItem="52d-kP-ObJ" firstAttribute="top" secondItem="ZaC-zi-nhA" secondAttribute="top" constant="15" id="vBl-Iw-0ec"/>
                                     </constraints>
@@ -274,5 +280,6 @@
     </scenes>
     <resources>
         <image name="Trophy" width="21" height="21"/>
+        <image name="profile-default" width="108" height="108"/>
     </resources>
 </document>

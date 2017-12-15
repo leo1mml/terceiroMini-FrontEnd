@@ -97,7 +97,7 @@ class ProfilePresenterImpl: ProfilePresenter {
                 
             } else {
                 
-                let image = UIImage()
+                let image = UIImage(named: "profile-default")!
                 profileHolder = ProfileUserHolder(image: image, name: (user?.name)!, username: (user?.username)!)
                 self.view?.receiveDatas(profileUserHolder: profileHolder)
             }

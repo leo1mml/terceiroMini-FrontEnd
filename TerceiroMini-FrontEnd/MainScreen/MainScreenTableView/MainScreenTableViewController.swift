@@ -31,18 +31,27 @@ class MainScreenTableViewController: UITableViewController {
         if(section == 0){
             header.sectionTitle.text = ""
             header.seeMoreButton.isHidden = true
+            header.bounds.size.height = 10
         }else if(section == 1) {
             header.sectionTitle.text = "ÚLTIMOS VENCEDORES"
             header.seeMoreButton.isHidden = false
             header.seeMoreButton.addTarget(self, action: #selector(goToAllPastChallenges), for: .touchUpInside)
             header.seeMoreButton.setTitle("Ver todos", for: .normal)
+            header.bounds.size.height = 68
         }else if(section == 2) {
             header.sectionTitle.text = "PRÓXIMOS"
             header.seeMoreButton.isHidden = true
+            header.bounds.size.height = 68
         }
-        header.backgroundColor = .white
+        header.backgroundColor = Colors.darkWhite
         
         return header
+    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if(section == 0){
+            return 0
+        }
+        return 68
     }
     
     @objc func goToAllPastChallenges() {

@@ -21,6 +21,7 @@ class LastWinnersCell: UITableViewCell, UICollectionViewDelegate, UICollectionVi
         super.awakeFromNib()
         self.presenter = LastWinnersPresenterImp(self)
         presenter?.fetchLastChallenges()
+        self.backgroundColor = Colors.darkWhite
         // Initialization code
     }
     

@@ -154,6 +154,13 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
                     cellB.cellImage.image = image
                 })
                 
+                if (myClick?.votes?.count == 0){
+                    cellB.clicks.text = "0"
+                }else{
+                    cellB.clicks.text = String(describing: myClick?.votes?.count)
+                }
+                
+                
                 return cellB
             }
         
@@ -184,24 +191,6 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
 
     
     }
-        
-        
-//        if (numberOfItens == 2){
-//            if (indexPath.row == 1){
-//                let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedMyClickCollectionViewCell.identifier, for: indexPath) as! FeaturedMyClickCollectionViewCell
-//                cellA.cellImage.layer.cornerRadius =  cellA.cellImage.frame.size.width / 10
-//                return cellA
-//
-//            }else{
-//                let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedFavoriteClickCollectionViewCell.identifier, for: indexPath) as! FeaturedFavoriteClickCollectionViewCell
-//
-//                cellB.cellImage.layer.cornerRadius =  cellB.cellImage.frame.size.width / 10
-//
-//                return cellB
-//            }
-//        }else if numberOfItens == 1 {
-//            if featuredClick == 1
-//        }
     
     
 }

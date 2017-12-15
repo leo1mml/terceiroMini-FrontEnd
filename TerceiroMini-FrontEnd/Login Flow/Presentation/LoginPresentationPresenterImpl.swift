@@ -53,11 +53,12 @@ class LoginPresentationPresenterImpl: LoginPresentationPresenter {
 
             let itens = result as! NSDictionary
             
+            let id = itens.value(forKey: "id") as! String
+            var profileImageUrl = "http://graph.facebook.com/\(id)/picture?type=large"
             let name = itens.value(forKey: "name") as! String
             let email = itens.value(forKey: "email") as! String
-            let token = FBSDKAccessToken.current().tokenString
             
-            NetworkManager.createLoginFacebook(name: name, email: email, token: token!, completion: { (user, string, err) in
+            NetworkManager.createLoginFacebook(name: name, email: email, profileImgUrl: profileImageUrl, completion: { (user, token, err) in
                 guard err == nil else {
                     
                     return

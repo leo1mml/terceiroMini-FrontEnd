@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Light.otf">
+            <string>Montserrat-Light</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,34 +28,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="121" height="119"/>
                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="miniClicksBranco" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-7x-BCa">
-                        <rect key="frame" x="84" y="6" width="11" height="11"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartWhiteIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-7x-BCa">
+                        <rect key="frame" x="84" y="7" width="11" height="9"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="11" id="2Bq-sL-V4F"/>
+                            <constraint firstAttribute="height" constant="9" id="2Bq-sL-V4F"/>
                             <constraint firstAttribute="width" constant="11" id="AgA-Ge-vh2"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdR-LA-C1k">
                         <rect key="frame" x="17.5" y="47.5" width="86" height="24"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkPreto" translatesAutoresizingMaskIntoConstraints="NO" id="hcv-N5-Fkn">
-                                <rect key="frame" x="5" y="5" width="14" height="14"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newClickIon" translatesAutoresizingMaskIntoConstraints="NO" id="hcv-N5-Fkn">
+                                <rect key="frame" x="5" y="5" width="15" height="16"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="14" id="bgZ-GK-VkM"/>
-                                    <constraint firstAttribute="height" constant="14" id="cD5-3o-A9a"/>
+                                    <constraint firstAttribute="width" constant="15" id="bgZ-GK-VkM"/>
+                                    <constraint firstAttribute="height" constant="16" id="cD5-3o-A9a"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meu click" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prG-nO-HBV">
                                 <rect key="frame" x="24" y="5" width="52" height="14"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="prG-nO-HBV" firstAttribute="leading" secondItem="hcv-N5-Fkn" secondAttribute="trailing" constant="5" id="ILX-g6-4J7"/>
-                            <constraint firstAttribute="bottom" secondItem="hcv-N5-Fkn" secondAttribute="bottom" constant="5" id="JDP-mT-XcZ"/>
+                            <constraint firstItem="prG-nO-HBV" firstAttribute="leading" secondItem="hcv-N5-Fkn" secondAttribute="trailing" constant="4" id="ILX-g6-4J7"/>
                             <constraint firstAttribute="height" constant="24" id="eML-kj-n1P"/>
                             <constraint firstItem="hcv-N5-Fkn" firstAttribute="top" secondItem="xdR-LA-C1k" secondAttribute="top" constant="5" id="fJV-wo-E5Q"/>
                             <constraint firstAttribute="width" constant="86" id="fR9-f4-DDN"/>
@@ -76,7 +80,7 @@
             <constraints>
                 <constraint firstItem="nA7-Ov-rxe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4oy-mT-hMl"/>
                 <constraint firstItem="nA7-Ov-rxe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8YF-2g-17b"/>
-                <constraint firstItem="bc2-7x-BCa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="Dei-PH-YqA"/>
+                <constraint firstItem="bc2-7x-BCa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="Dei-PH-YqA"/>
                 <constraint firstAttribute="trailing" secondItem="nA7-Ov-rxe" secondAttribute="trailing" id="JPV-tE-O3B"/>
                 <constraint firstItem="9hQ-7c-0Nt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Jeb-qB-vyE"/>
                 <constraint firstAttribute="trailing" secondItem="9hQ-7c-0Nt" secondAttribute="trailing" constant="5" id="VJg-y4-DHC"/>
@@ -95,7 +99,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="checkPreto" width="14" height="14"/>
-        <image name="miniClicksBranco" width="12" height="13"/>
+        <image name="heartWhiteIcon" width="11" height="9"/>
+        <image name="newClickIon" width="89" height="100"/>
     </resources>
 </document>

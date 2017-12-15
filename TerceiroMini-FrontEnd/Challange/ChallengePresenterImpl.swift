@@ -67,6 +67,11 @@ class ChallengePresenterImpl: ChallengePresenter{
     }
     
     
+    func getChallengeWinner(challengeID: String){
+        
+      //  NetworkManager.get
+    }
+    
     func getChallengeHeader(challengeID: String) {
         
         
@@ -75,6 +80,15 @@ class ChallengePresenterImpl: ChallengePresenter{
             if((error) != nil){
                 print("Challenge não encontrado")
             }
+            
+            //Vendo se usuario está logado
+            if UserDefaults.standard.string(forKey: "token") != nil{
+                self.view.setUserLoggedIn(isLogged: true)
+            }else{
+                self.view.setUserLoggedIn(isLogged: false)
+            }
+            
+            
             DispatchQueue.main.async {
                 self.view.setHeader(theme: (challenge?.theme)!, endDate: (challenge?.endDate)!, mainImageURL: (challenge?.imageUrl)!, numPhotos: (challenge?.numPhotos)! )
                 if(challenge?.numPhotos != 0){
@@ -99,9 +113,11 @@ class ChallengePresenterImpl: ChallengePresenter{
         
         
         if let token = UserDefaults.standard.string(forKey: "token"){
+            
+            self.view.setUserLoggedIn(isLogged: true)
+            
             NetworkManager.getMyFavouriteClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
                 if (photo != nil){
-
                     self.view.setFeaturedCollectionMyFavoriteClick(myFavoriteClick: photo!)
                 }else{
                     self.view.setFeaturedCollectionMyFavoriteClick(myFavoriteClick: nil)
@@ -117,6 +133,7 @@ class ChallengePresenterImpl: ChallengePresenter{
                 }
             })
         }
+        
         
     
         
@@ -162,9 +179,9 @@ class ChallengePresenterImpl: ChallengePresenter{
         if challenge.isHappening{
             view.setChallengeState(state: ChallengeState.open)
         }else{
-            view.setChallengeState(state: ChallengeState.finished)
-            let winner = getChallengeWinner(challengeID: challenge.id)
-            view.showChallengeWinner(winner: winner)
+            //view.setChallengeState(state: ChallengeState.finished)
+        //    let winner = getChallengeWinner(challengeID: challenge.id)
+          //  view.showChallengeWinner(winner: winner)
         }
         
     }

@@ -206,9 +206,10 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
             break
         case .finished:
             //get winner and change main button
+            
             break
         case .participating:
-            header.mainButton.setTitle("Participando", for: .normal)
+            header.mainButton.setTitle("PARTICIPANDO", for: .normal)
             
             break
         default:
@@ -228,6 +229,10 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
     func setChallengePhotos(photos: [Photo]) {
         self.challengePhotos = photos
+    }
+    
+    func setUserLoggedIn(isLogged: Bool){
+        header.isUserLoggedIn = isLogged
     }
     
     func showCollectionPhotos() {

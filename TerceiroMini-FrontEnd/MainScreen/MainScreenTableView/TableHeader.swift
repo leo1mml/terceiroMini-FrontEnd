@@ -36,6 +36,7 @@ class TableHeader: UIView {
         addSubview(containerView)
         containerView.frame = self.bounds
         containerView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        containerView.backgroundColor = Colors.darkWhite
     }
 
 }

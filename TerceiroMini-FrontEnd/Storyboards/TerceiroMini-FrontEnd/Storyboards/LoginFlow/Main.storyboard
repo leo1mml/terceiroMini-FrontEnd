@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="presentationBackgroundImage" image="presentation-login-background" translatesAutoresizingMaskIntoConstraints="NO" id="E3X-f9-Gjh" customClass="BackgroundImageView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="398"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="398"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="398" id="DWm-MV-1Hp"/>
                                 </constraints>
@@ -53,7 +53,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="presententionExitButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vd-KB-07d">
-                                <rect key="frame" x="305" y="0.0" width="70" height="70"/>
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="KKb-zc-rPn"/>
                                     <constraint firstAttribute="width" constant="70" id="TJN-3R-JWV"/>
@@ -61,10 +61,10 @@
                                 <state key="normal" image="presentation-login-exit"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NlT-pd-9mE">
-                                <rect key="frame" x="20" y="288" width="335" height="80"/>
+                                <rect key="frame" x="0.0" y="288" width="0.0" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="welcomeLabel" text="Seja bem-vindo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7v6-DM-MWE">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Arw-9b-O0J"/>
                                         </constraints>
@@ -73,7 +73,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="instructionLabel" text="para concluir a ação, faça seu login" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z12-1d-iWB">
-                                        <rect key="frame" x="0.0" y="40" width="335" height="40"/>
+                                        <rect key="frame" x="0.0" y="40" width="0.0" height="40"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -84,16 +84,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="Q2V-JP-7Nh">
-                                <rect key="frame" x="20" y="428" width="335" height="209"/>
+                                <rect key="frame" x="0.0" y="428" width="0.0" height="209"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="E7h-Bz-DLq">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="140"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="140"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="oL3-q7-nDo">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="109"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="109"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="signInEmail" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra6-5I-GUr" customClass="RoundedButton" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
                                                         <color key="backgroundColor" red="0.15219730138778687" green="0.17634564638137817" blue="0.18891513347625732" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="y9B-tf-MwD"/>
@@ -109,7 +109,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="signInFacebook" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-rY-qM2" customClass="RoundedButton" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="59" width="335" height="50"/>
+                                                        <rect key="frame" x="0.0" y="59" width="0.0" height="50"/>
                                                         <color key="backgroundColor" red="0.22537201642990112" green="0.34264656901359558" blue="0.60412263870239258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                                         <state key="normal" title="E N T R A R   C O M   F A C E B O O K">
@@ -127,7 +127,7 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="TopLeft" restorationIdentifier="createAccountButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NO7-xa-iQY">
-                                                <rect key="frame" x="0.0" y="124" width="335" height="16"/>
+                                                <rect key="frame" x="0.0" y="124" width="0.0" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="ZF5-8o-KBo"/>
                                                 </constraints>
@@ -142,7 +142,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="presentationAcceptanceLabel" text="Ao entrar no aplicativo, você concorda com nossos termos de serviço e políticas de privacidade." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdM-jT-lin">
-                                        <rect key="frame" x="0.0" y="181" width="335" height="28"/>
+                                        <rect key="frame" x="0.0" y="181" width="0.0" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="Ny9-ND-PxI"/>
                                         </constraints>

@@ -51,11 +51,14 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
     var myClick : Photo?
     var myFavoriteClick : Photo?
     var cellFavoriteClickFilledFlag = false
-    
+    var isUserLoggedIn = false
    
     @IBOutlet weak var mainButton: UIButton!
     @IBAction func mainButtonAction(_ sender: LeftAlignedIconButton) {
-        delegate?.mainButtonClicked()
+        if(isUserLoggedIn){
+            delegate?.mainButtonClicked()
+        }
+        
     }
     
     override func awakeFromNib() {

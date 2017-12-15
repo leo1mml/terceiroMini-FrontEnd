@@ -26,6 +26,7 @@ protocol ChallengeView{
     func showNoImagesWarning()
     func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo?)
     func setFeaturedCollectionMyClick(myClick: Photo?)
+    func setUserLoggedIn(isLogged: Bool)
 }
 
 protocol ChallengePresenter{

@@ -24,6 +24,8 @@ protocol ChallengeView{
     func goToExpandoPhotoView(parameter: ([Photo], Int))
     func showFeaturedCollectionView()
     func showNoImagesWarning()
+    func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo?)
+    func setFeaturedCollectionMyClick(myClick: Photo?)
 }
 
 protocol ChallengePresenter{
@@ -33,6 +35,8 @@ protocol ChallengePresenter{
     func getChallengeImages(challengeID: String)
     func presentProfile(challengeID: String)
     func expandPhoto(photos:[String])
+    func getChallengeFeaturedClicks(challengeID: String)
+    func getFeaturedCollectionHeader(challengeID: String)
     
     
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
+
     
     
     
@@ -22,27 +23,61 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
         view?.showAlert()
     }
     
-    func chooseClick(photo: Photo) {
+    
+    func vote(photo: Photo) {
         
-        //se não for meu click
+        if let token = UserDefaults.standard.string(forKey: "token"){
+            NetworkManager.voteOnPhoto(byId: photo.id!, token: token, completion: { (complete) in
+                if (complete){
+                    self.view?.enableMyFavoriteClickChosebuttonLabel()
+                }
+            })
+        }
         
-            if let token = UserDefaults.standard.string(forKey: "token"){
-                NetworkManager.voteOnPhoto(byId: photo.id!, token: token, completion: { (complete) in
-                    if (complete){
-                        self.view?.enableMyClickChosebuttonLabel()
-                    }else{
-                        //erro
-                    }
-                })
-            }
     }
     
-    func checkIfChosenClick() {
+    func unvote(photo: Photo) {
+        if let token = UserDefaults.standard.string(forKey: "token"){
+            NetworkManager.unvotePhoto(byId: photo.id!, token: token, completion: { (complete) in
+                if(complete){
+                    self.view?.enableChoseClickButton()
+                }
+            })
+        }
+    }
+    
+    
+    func checkIfChosenClick(currentPhoto: Photo) {
         
         //se for o click dele
-        //self.view?.enableMyClickChosebuttonLabel()
-        //se não for
-        //self.view?.enableChoseClickButton()
+       
+        if let token = UserDefaults.standard.string(forKey: "token"){
+            NetworkManager.getMyFavouriteClick(byChallengeId: currentPhoto.challengeId, token: token, completion: { (photo, error) in
+                if photo != nil{
+                    if(currentPhoto.id == photo?.id){
+                        print("igual")
+                        self.view?.enableMyFavoriteClickChosebuttonLabel()
+                    }else{
+                        self.view?.enableChoseClickButton()
+                    }
+                    
+                }else{
+                    self.view?.enableChoseClickButton()
+                }
+            })
+            NetworkManager.getMyClick(byChallengeId: currentPhoto.challengeId, token: token, completion: { (photo, error) in
+                if photo != nil{
+                    
+                    if currentPhoto.ownerId == photo?.ownerId{
+                        self.view?.enableMyClickChosebuttonLabel()
+                    }
+                    
+                }
+            })
+            
+        }
+        
+        
     }
 
 }

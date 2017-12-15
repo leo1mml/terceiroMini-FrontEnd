@@ -13,11 +13,13 @@ protocol ChallengeClosedView {
     func showAlert()
     func enableMyClickChosebuttonLabel()
     func enableChoseClickButton()
+    func enableMyFavoriteClickChosebuttonLabel()
 }
 
 protocol ChallengeClosedPresenter {
     func showReport()
-    func chooseClick(photo: Photo)
-    func checkIfChosenClick()
+    func checkIfChosenClick(currentPhoto: Photo)
+    func vote(photo: Photo)
+    func unvote(photo: Photo)
 
 }

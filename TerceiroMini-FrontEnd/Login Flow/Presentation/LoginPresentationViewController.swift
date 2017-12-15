@@ -73,9 +73,11 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
             exitButton.isHidden = true
             logoImageView.isHidden = true
             
-            let newGradient = backgroundImageView.buildGradient(colors: [.white, .clear], locationX: 0, locationY: 0.21, startPoint: CGPoint(x: 0.5, y: 0), endPoint: CGPoint(x: 0.5, y: 1))
+            let newGradient = backgroundImageView.buildGradient(colors: [Colors.darkWhite, .clear], locationX: 0, locationY: 0.35, startPoint: CGPoint(x: 0.5, y: 0), endPoint: CGPoint(x: 0.5, y: 1))
             
+            backgroundImageView.image = #imageLiteral(resourceName: "special-presentation-background")
             backgroundImageView.changeTopGradient(by: newGradient)
+            backgroundImageHeight.constant = 325
         }
     }
     

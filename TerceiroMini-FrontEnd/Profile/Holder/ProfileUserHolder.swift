@@ -12,5 +12,5 @@ struct ProfileUserHolder {
     
     var image: UIImage
     var name: String
-    var username: String
+    var username: String?
 }

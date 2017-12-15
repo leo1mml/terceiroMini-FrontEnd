@@ -91,7 +91,7 @@ class ProfilePresenterImpl: ProfilePresenter {
                 UIImage.fetch(with: (user?.profilePhotoUrl)!) { (image) in
                     // ImagemPerfil
                     
-                    profileHolder = ProfileUserHolder(image: image, name: (user?.name)!, username: (user?.username)!)
+                    profileHolder = ProfileUserHolder(image: image, name: (user?.name)!, username: (user?.username) ?? "no user name")
                     self.view?.receiveDatas(profileUserHolder: profileHolder)
                 }
                 

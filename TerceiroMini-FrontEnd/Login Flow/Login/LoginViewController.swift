@@ -42,13 +42,14 @@ class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
         
         usernameField.listenter = self
         passwordField.listenter = self
+        
+        setupBackgroundImageViewBottomGradient()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         setupTexts()
-        setupBackgroundImageViewBottomGradient()
     }
     
     // MARK: - Actions

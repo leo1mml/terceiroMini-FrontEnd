@@ -33,14 +33,13 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
         let outTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(outTap)
         
-        setupTexts()
+        setupBackgroundImageViewBottomGradient()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         setupTexts()
-        setupBackgroundImageViewBottomGradient()
     }
 
     @IBAction func goBackAction(_ sender: UIButton) {

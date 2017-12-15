@@ -44,6 +44,7 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
         exitButton.addTarget(self, action: #selector(exitAction), for: .touchUpInside)
         emailLoginButton.addTarget(self, action: #selector(emailLoginAction), for: .touchUpInside)
         facebookLoginButton.addTarget(self, action: #selector(facebookLoginAction), for: .touchUpInside)
+        setupBackgroundImageViewBottomGradient()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,12 +52,12 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
         
         loadHeader()
         setupTexts()
-        setupBackgroundImageViewBottomGradient()
     }
     
     // MARK: - View settings
     
     private func setupTexts() {
+        
         welcomeTextLabel.text = "Seja bem-vindo!"
         instructionTextLabel.text = "para concluir a ação,\nfaça seu login"
         agreementWarningLabel.text = "Ao entrar no aplicativo, você concorda com os nossos\ntermos de serviço e políticas de privacidade."

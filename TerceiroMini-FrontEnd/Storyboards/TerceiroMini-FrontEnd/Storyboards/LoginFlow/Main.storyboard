@@ -13,8 +13,14 @@
         <array key="Montserrat-Bold.otf">
             <string>Montserrat-Bold</string>
         </array>
+        <array key="Montserrat-ExtraBold.otf">
+            <string>Montserrat-ExtraBold</string>
+        </array>
         <array key="Montserrat-Regular.otf">
             <string>Montserrat-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.otf">
+            <string>Montserrat-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -33,13 +39,13 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNR-1r-MaT">
-                                <rect key="frame" x="0.0" y="258" width="375" height="140"/>
+                                <rect key="frame" x="0.0" y="158" width="375" height="240"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="Ya2-Cu-Itt"/>
+                                    <constraint firstAttribute="height" constant="240" id="Ya2-Cu-Itt"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="appLogo" image="presentation-login-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ycf-RB-5lW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="appLogo" image="new-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ycf-RB-5lW">
                                 <rect key="frame" x="20" y="20" width="54" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="G1g-dR-qZE"/>
@@ -53,9 +59,6 @@
                                     <constraint firstAttribute="width" constant="70" id="TJN-3R-JWV"/>
                                 </constraints>
                                 <state key="normal" image="presentation-login-exit"/>
-                                <connections>
-                                    <action selector="exitAction:" destination="SIc-PL-Cc8" eventType="touchUpInside" id="29R-g7-qdn"/>
-                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NlT-pd-9mE">
                                 <rect key="frame" x="20" y="288" width="335" height="80"/>
@@ -65,7 +68,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Arw-9b-O0J"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -95,8 +98,8 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="y9B-tf-MwD"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
-                                                        <state key="normal" title="ENTRAR COM EMAIL">
+                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
+                                                        <state key="normal" title="E N T R A R   C O M   E M A I L">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -108,8 +111,8 @@
                                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="signInFacebook" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3c-rY-qM2" customClass="RoundedButton" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="59" width="335" height="50"/>
                                                         <color key="backgroundColor" red="0.22537201642990112" green="0.34264656901359558" blue="0.60412263870239258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
-                                                        <state key="normal" title="ENTRAR COM FACEBOOK">
+                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
+                                                        <state key="normal" title="E N T R A R   C O M   F A C E B O O K">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -205,13 +208,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-background-photo" translatesAutoresizingMaskIntoConstraints="NO" id="1HN-t6-ISn" customClass="BackgroundImageView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="291"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="291"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="291" id="ALk-Zm-5nA"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xra-R8-uQx">
-                                <rect key="frame" x="0.0" y="151" width="0.0" height="140"/>
+                                <rect key="frame" x="0.0" y="151" width="375" height="140"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="XOi-0j-TXD"/>
@@ -230,19 +233,19 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1pT-Gh-aUM">
-                                <rect key="frame" x="0.0" y="191" width="0.0" height="80"/>
+                                <rect key="frame" x="20" y="191" width="335" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seja bem-vindo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGW-aY-Ubq">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="azG-6S-f58"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="para concluir a ação, faça seu login" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0D-EZ-MwH">
-                                        <rect key="frame" x="0.0" y="40" width="0.0" height="40"/>
+                                        <rect key="frame" x="0.0" y="40" width="335" height="40"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -253,21 +256,21 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2qw-LT-SdT">
-                                <rect key="frame" x="0.0" y="311" width="0.0" height="281"/>
+                                <rect key="frame" x="20" y="321" width="335" height="316"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YVx-MM-6xM">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="194"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="194"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LiB-Lz-djP">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="124"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="124"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="o8Q-qm-jbH" customClass="BottomLineTextField" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="52"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="52"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="6Jz-Az-ycO"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="username"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="bottomLineBorderWidth">
@@ -279,7 +282,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-BU-XAy" customClass="BottomLineTextField" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="72" width="0.0" height="52"/>
+                                                        <rect key="frame" x="0.0" y="72" width="335" height="52"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
@@ -290,13 +293,13 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJq-oL-fZK" customClass="RoundedButton" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="144" width="0.0" height="50"/>
+                                                <rect key="frame" x="0.0" y="144" width="335" height="50"/>
                                                 <color key="backgroundColor" red="0.15219730140000001" green="0.1763456464" blue="0.1889151335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="rtf-Ey-pIq"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
-                                                <state key="normal" title="ENTRAR">
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
+                                                <state key="normal" title="E N T R A R">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -311,13 +314,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="TzZ-Db-ROl">
-                                        <rect key="frame" x="0.0" y="204" width="0.0" height="77"/>
+                                        <rect key="frame" x="0.0" y="204" width="335" height="112"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qvd-A0-SWr">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-D8-PhU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="XWH-dh-kah"/>
                                                         </constraints>
@@ -330,7 +333,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6g-lL-LCB">
-                                                        <rect key="frame" x="0.0" y="30" width="0.0" height="20"/>
+                                                        <rect key="frame" x="0.0" y="30" width="335" height="20"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                                         <state key="normal" title="Não tem conta? Crie uma aqui.">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -345,7 +348,7 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ao entrar no aplicativo, você concorda com nossos termos de serviço e políticas de privacidade." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4C-Ov-71G">
-                                                <rect key="frame" x="0.0" y="77" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="77" width="335" height="35"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
                                                 <color key="textColor" red="0.60777515169999996" green="0.60788232090000005" blue="0.60776835679999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -359,7 +362,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1pT-Gh-aUM" secondAttribute="trailing" constant="20" id="9QN-yJ-pnA"/>
                             <constraint firstItem="1pT-Gh-aUM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AMz-ec-jl7"/>
-                            <constraint firstItem="2qw-LT-SdT" firstAttribute="top" secondItem="1HN-t6-ISn" secondAttribute="bottom" constant="20" id="AaK-k6-8pW"/>
+                            <constraint firstItem="2qw-LT-SdT" firstAttribute="top" secondItem="1HN-t6-ISn" secondAttribute="bottom" constant="30" id="AaK-k6-8pW"/>
                             <constraint firstItem="1HN-t6-ISn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bbx-Rd-bny"/>
                             <constraint firstItem="1HN-t6-ISn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fpv-E2-w5T"/>
                             <constraint firstItem="6W6-Ew-aol" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GBb-wY-8ak"/>
@@ -431,7 +434,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="slF-Yf-haL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -487,8 +490,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Piq-Ga-Jl5"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
-                                        <state key="normal" title="ENTRAR">
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
+                                        <state key="normal" title="E N V I A R">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -554,9 +557,9 @@
     <resources>
         <image name="back-button" width="24" height="15"/>
         <image name="login-background-photo" width="375" height="291"/>
+        <image name="new-logo" width="53" height="60"/>
         <image name="presentation-login-background" width="375" height="398"/>
         <image name="presentation-login-exit" width="15" height="15"/>
-        <image name="presentation-login-logo" width="53" height="59"/>
         <image name="register-backgrond-photo" width="375" height="182"/>
     </resources>
     <inferredMetricsTieBreakers>

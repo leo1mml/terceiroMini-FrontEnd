@@ -56,7 +56,7 @@ class BottomLineTextField: UITextField, UITextFieldDelegate {
         
         placeholder.text = self.placeholder
         self.placeholder = nil
-        placeholder.font = UIFont(name: "Montserrat-Light", size: 13)
+        placeholder.font = UIFont(name: "Montserrat-Regular", size: 13)
         placeholder.textColor = defaultPlaceholderColor
         
         return placeholder
@@ -75,16 +75,22 @@ class BottomLineTextField: UITextField, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        bottomLine.borderColor = defaultLineColor.cgColor
-        bottomLine.borderWidth = BottomLineTextField.nonFisrtResponderBorder
+        
+        if textField.text!.isEmpty {
+            bottomLine.backgroundColor = defaultLineColor.cgColor
+            bottomLine.frame = CGRect(origin: bottomLine.frame.origin, size: CGSize(width: bottomLine.frame.width, height: 1))
+            bottomLine.cornerRadius = 0.5
+        }
+        
         
         movePlaceholder(y: 0)
         listenter?.didEndEditing(self)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        bottomLine.borderColor = firstResponderLineColor.cgColor
-        bottomLine.borderWidth = BottomLineTextField.firstResponderBorder
+        bottomLine.backgroundColor = firstResponderLineColor.cgColor
+        bottomLine.frame = CGRect(origin: bottomLine.frame.origin, size: CGSize(width: bottomLine.frame.width, height: 2))
+        bottomLine.cornerRadius = 1
         
         movePlaceholder(y: -25)
         listenter?.didBeginEditing(self)

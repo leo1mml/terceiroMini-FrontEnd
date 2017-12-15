@@ -29,7 +29,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
 
     // - mainButton
     
-    var state = ChallengeState.votation
+    var state = ChallengeState.finished
     var endDate : Date?
     
     //status bar
@@ -43,7 +43,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
 
         //init status bar
             initDarkStatusBar()
-
+        
         
         self.mainCollectionView.delegate = self
         self.mainCollectionView.dataSource = self
@@ -172,6 +172,17 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
         
     }
     
+
+    func setFeaturedCollectionMyClick(myClick: Photo?){
+        header.myClick = myClick
+        header.featuredCollectionView.reloadData()
+    }
+    
+    func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo?){
+        header.myFavoriteClick = myFavoriteClick
+        header.featuredCollectionView.reloadData()
+    }
+    
     func timerUpdate(){
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setTimerLabelText), userInfo: nil, repeats: true)
     }
@@ -195,6 +206,10 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
             break
         case .finished:
             //get winner and change main button
+            break
+        case .participating:
+            header.mainButton.setTitle("Participando", for: .normal)
+            
             break
         default:
             //get timer

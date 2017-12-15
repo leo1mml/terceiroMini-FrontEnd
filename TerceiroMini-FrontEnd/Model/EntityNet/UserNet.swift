@@ -227,6 +227,39 @@ class UserNet {
         }
     }
     
+    /**
+     
+     Creates a new login with facebook in the database.
+     
+     - parameter name: The new name.
+     - parameter email: The users email.
+     - parameter token: The users token.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter u: The user retrieved by the task.
+     - parameter t: The token retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    class func createLoginFacebook(name: String, email: String, profileImgUrl: String?, completion: @escaping (_ u: User?, _ t: String?, _ e: Error?) -> Void) {
+        let completeDomain = R.usersDomain + "/addFacebookUser"
+        let loginWithPhoto = ["name": name, "email": email, "profilePhoto": profileImgUrl]
+//        let login = ["name": name, "email": email]
+        
+        Alamofire.request(completeDomain, method: .post, parameters: loginWithPhoto, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, nil, response.error)
+                return
+            }
+            
+            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
+            let usr = buildUser(fromDicitionary: dic)
+            
+            let tkn = response.response?.allHeaderFields["X-Auth"] as? String
+            
+            completion(usr, tkn, nil)
+        }
+    }
+    
     // MARK: - Auxiliar methods
     
     /**
@@ -254,8 +287,8 @@ class UserNet {
         let id = dic["_id"] as! String
         let email = dic["email"] as! String
         let name = dic["name"] as! String
-        let username = dic["userName"] as! String
-        let profileImageUrl = dic["profilePhoto"] as? String ?? nil
+        let username = dic["userName"] as? String
+        let profileImageUrl = dic["profilePhoto"] as? String
         
         return User(id, email, name, username, profileImageUrl)
     }
@@ -271,7 +304,6 @@ class UserNet {
         return ["_id": u.id ?? "",
                 "email": u.email,
                 "name": u.name,
-                "userName": u.username,
                 "profileImageUrl:": u.profilePhotoUrl ?? ""]
     }
 }

@@ -9,7 +9,17 @@
 import UIKit
 
 extension ChallengeViewController: ChallengeHeaderDelegate, ChallengeHeaderDataSource {
-   
+    
+    
+//    func getMyClick() -> Photo? {
+//        presenter.
+//    }
+//    
+//    func getMyFavoriteClick() -> Photo? {
+//        <#code#>
+//    }
+//    
+//   
    
     
     func getChallengeName() -> String {

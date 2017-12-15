@@ -92,6 +92,20 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         
     }
     
+    func setInitialItemsPosition() {
+        self.configButton.isEnabled = true
+        self.configButton.isHidden = false
+        self.configButton.center.x = self.view.frame.width + 125
+        self.profileImage.center = self.rightIcon.center
+        self.logoImage.center = self.centerIcon.center
+
+        UIView.animate(withDuration: 0.001) {
+            self.logoImage.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.profileImage.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.logoImage.tintColor = .black
+        }
+    }
+    
     func setFirstOffset(firstOffsetX: CGFloat) {
         self.lastOffsetX = firstOffsetX
     }

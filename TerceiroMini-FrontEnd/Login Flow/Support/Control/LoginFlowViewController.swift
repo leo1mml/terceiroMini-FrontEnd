@@ -38,20 +38,18 @@ class LoginFlowViewController: UIViewController {
         }
         
         nextViewController.previousPage = self
+        nextViewController.caller = self.caller
     }
     
     func dismissInChain(animated: Bool, completion: @escaping () -> Void) {
         
-        let previousPage = self.previousPage
+        guard let previousPage = self.previousPage else {
+            completion()
+            return
+        }
         
         dismiss(animated: animated) {
-            
-            guard let pp = previousPage else {
-                completion()
-                return
-            }
-            
-            pp.dismissInChain(animated: animated, completion: completion)
+            previousPage.dismissInChain(animated: animated, completion: completion)
         }
     }
 }

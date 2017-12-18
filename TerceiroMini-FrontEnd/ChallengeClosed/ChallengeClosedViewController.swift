@@ -20,6 +20,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var reportButton: UIButton!
     
+    var sender: UIViewController?
     var images = [""]
     var imageIndex = 0
     var details = true
@@ -42,7 +43,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         self.images = imagesList
         self.imageIndex = (data?.1)!
         
-        backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [colorGradient, .clear, .clear,.clear])
+        backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [colorGradient, .clear, .clear, .clear])
         
         showOrHideDetails()
         
@@ -51,11 +52,6 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         updatePhotoCount()
         
         showExpandImages()
-        
-        
-        
-        
-        
 
     }
     
@@ -78,6 +74,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.view.addGestureRecognizer(tap)
+
     }
   
     
@@ -172,12 +169,10 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
             self.backgroundImage.layer.sublayers?.first?.opacity = 0
             })
             
-            
-            
             reportButton.isEnabled = false
+            escolherClickButton.isEnabled = false
             photoCount.isEnabled = false
             closeButton.isEnabled = false
-            escolherClickButton.isEnabled = false
             
           //  backgroundImage.layer.sublayers = nil
             
@@ -185,19 +180,26 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         }else{
             
             UIView.animate(withDuration: 0.5, animations: {
-                self.reportButton.alpha = 1
+                
+                if !(self.sender is ProfileViewController) {
+                    self.reportButton.alpha = 1
+                    self.escolherClickButton.alpha = 1
+                }
+
                 self.photoCount.alpha = 1
                 self.closeButton.alpha = 1
-                self.escolherClickButton.alpha = 1
                 self.backgroundImage.layer.sublayers?.first?.opacity = 1
                 
             })
             
-            reportButton.isEnabled = true
+            if !(self.sender is ProfileViewController) {
+                reportButton.isEnabled = true
+                escolherClickButton.isEnabled = true
+
+            }
+            
             photoCount.isEnabled = true
             closeButton.isEnabled = true
-            escolherClickButton.isEnabled = true
-            
             
             self.details = true
         }
@@ -231,6 +233,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
 
     @IBAction func closeButtonAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

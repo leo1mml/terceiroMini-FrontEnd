@@ -136,6 +136,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             
             if let dest = segue.destination as? ChallengeClosedViewController{
                 dest.data = data
+                dest.sender = self
             }
             
         }

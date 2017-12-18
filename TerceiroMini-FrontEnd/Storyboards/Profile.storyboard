@@ -32,7 +32,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bVg-Um-evj">
                                 <rect key="frame" x="2" y="0.0" width="371" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="eeC-Pg-2Lg">
                                     <size key="itemSize" width="121" height="121"/>
                                     <size key="headerReferenceSize" width="50" height="269"/>
@@ -107,13 +107,14 @@
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-default" translatesAutoresizingMaskIntoConstraints="NO" id="q6q-36-X6c">
                                                             <rect key="frame" x="4.5" y="4.5" width="110" height="110"/>
+                                                            <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="110" id="ZyA-pm-2F3"/>
                                                                 <constraint firstAttribute="height" constant="110" id="dvF-GA-8Um"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="q6q-36-X6c" firstAttribute="centerX" secondItem="cBf-m6-L0V" secondAttribute="centerX" id="3QP-r9-okk"/>
                                                         <constraint firstAttribute="width" constant="118" id="a2B-6p-PRp"/>
@@ -233,7 +234,7 @@
                                             </constraints>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="52d-kP-ObJ" firstAttribute="width" secondItem="ZaC-zi-nhA" secondAttribute="width" id="6bO-Fh-pWU"/>
                                         <constraint firstItem="52d-kP-ObJ" firstAttribute="centerX" secondItem="ZaC-zi-nhA" secondAttribute="centerX" id="UMK-Ce-5Bv"/>

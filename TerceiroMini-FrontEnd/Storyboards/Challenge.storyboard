@@ -37,7 +37,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aBy-Pl-cxj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="kOZ-bZ-cbl">
                                     <size key="itemSize" width="121" height="121"/>
                                     <size key="headerReferenceSize" width="50" height="487"/>
@@ -177,7 +177,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SSa-ke-8RB" firstAttribute="bottom" secondItem="aBy-Pl-cxj" secondAttribute="bottom" id="03e-iG-V1Y"/>
                             <constraint firstItem="aBy-Pl-cxj" firstAttribute="trailing" secondItem="SSa-ke-8RB" secondAttribute="trailing" id="4zQ-tr-98o"/>

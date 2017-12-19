@@ -75,7 +75,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
             self.logoImage.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
             self.profileImage.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             self.profileImage.center = self.centerIcon.center
-            self.profileImage.tintColor = Colors.darkGray
+            self.profileImage.tintColor = .black
             self.logoImage.tintColor = .gray
             self.configButton.center = self.rightIcon.center
         }
@@ -87,7 +87,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
             self.logoImage.center = self.centerIcon.center
             self.profileImage.transform = CGAffineTransform(scaleX: 1, y: 1)
             self.profileImage.tintColor = .gray
-            self.logoImage.tintColor = Colors.darkGray
+            self.logoImage.tintColor = .black
         }
         
     }
@@ -102,7 +102,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         UIView.animate(withDuration: 0.001) {
             self.logoImage.transform = CGAffineTransform(scaleX: 1, y: 1)
             self.profileImage.transform = CGAffineTransform(scaleX: 1, y: 1)
-            self.logoImage.tintColor = Colors.darkGray
+            self.logoImage.tintColor = .black
         }
     }
     

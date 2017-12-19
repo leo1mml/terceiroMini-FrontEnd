@@ -45,31 +45,25 @@ class ProfilePresenterImpl: ProfilePresenter {
         }
     }
     
-    func loadData(id: String) {
+    func loadData(id: String, photos: [Photo]) {
         
         var cells = [ProfileCellHolder]()
         
-        NetworkManager.getUserPhotos(byUserId: id) { (photos, err) in
-            guard err == nil else {
+        for index in 0..<photos.count{
+            NetworkManager.getChallengeById(id: photos[index].challengeId, completion: { (challenge, err) in
+                guard err == nil else {
+                    
+                    return
+                }
                 
-                 return
-            }
-            
-            for index in 0..<photos!.count{
-                NetworkManager.getChallengeById(id: photos![index].challengeId, completion: { (challenge, err) in
-                    guard err == nil else {
-                        
-                        return
-                    }
-                    
-                    UIImage.fetch(with: photos![index].url!, completion: { (image) in
-                        let profileCell = ProfileCellHolder(image: image, theme: (challenge?.theme)!, isWinner: challenge?.winner == photos![index].url)
-                        cells.append(profileCell)
-                        self.view?.receiveCells(cells: cells)
-                    })
-                    
+                UIImage.fetch(with: photos[index].url!, completion: { (image) in
+                    let profileCell = ProfileCellHolder(image: image, theme: (challenge?.theme)!, isWinner: challenge?.winner == photos[index].url)
+                    cells.append(profileCell)
+                    cells[index] = profileCell
+                    self.view?.receiveCells(cells: cells)
                 })
-            }
+                
+            })
         }
     }
 

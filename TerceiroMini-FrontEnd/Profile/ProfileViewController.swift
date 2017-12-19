@@ -15,7 +15,8 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     var cells = [ProfileCellHolder]()
     var user : User? {
         didSet {
-            presenter?.loadData(id: (user?.id)!)
+            presenter?.loadPhotos(id: (user?.id)!)
+            presenter?.loadData(id: (user?.id)!, photos: photos)
             presenter?.loadHeader(id: (user?.id)!)
         }
     }
@@ -33,9 +34,10 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         self.collectionProfile.delegate = self
         self.collectionProfile.dataSource = self
         if((self.user) != nil){
-            presenter?.loadData(id: (user?.id)!)
-            presenter?.loadHeader(id: (user?.id)!)
             presenter?.loadPhotos(id: (user?.id)!)
+            presenter?.loadData(id: (user?.id)!, photos: photos)
+            presenter?.loadHeader(id: (user?.id)!)
+            
         }
     }
     
@@ -46,7 +48,9 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     }
     
     func receivePhotos(photos: [Photo]) {
+
         self.photos = photos
+        presenter?.loadData(id: (user?.id)!, photos: self.photos)
     }
     
     func receiveDatas(profileUserHolder: ProfileUserHolder) {

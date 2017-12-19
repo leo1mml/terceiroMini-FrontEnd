@@ -93,6 +93,7 @@
 		08EF52891FD6D75F00722A2F /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EF52881FD6D75F00722A2F /* RegisterProtocols.swift */; };
 		08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F961FBB544C0039EAFE /* LoginProtocols.swift */; };
 		14103C9F1FBE221800726C0B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14103C9E1FBE221800726C0B /* Profile.storyboard */; };
+		142F874B1FE94521007925A1 /* ChallengeClosedViewController+scrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F874A1FE94521007925A1 /* ChallengeClosedViewController+scrollView.swift */; };
 		1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */; };
 		147D50921FE308B20048A04E /* LoginFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D50911FE308B20048A04E /* LoginFlowViewController.swift */; };
 		147D50941FE309170048A04E /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D50931FE309160048A04E /* General.swift */; };
@@ -245,6 +246,7 @@
 		08EF52881FD6D75F00722A2F /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		08F06F961FBB544C0039EAFE /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		14103C9E1FBE221800726C0B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		142F874A1FE94521007925A1 /* ChallengeClosedViewController+scrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChallengeClosedViewController+scrollView.swift"; sourceTree = "<group>"; };
 		1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		147D50911FE308B20048A04E /* LoginFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFlowViewController.swift; sourceTree = "<group>"; };
 		147D50931FE309160048A04E /* General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
@@ -750,6 +752,7 @@
 				148AE5961FD1A79F005108E7 /* ChallengeClosedViewController.swift */,
 				148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */,
 				148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */,
+				142F874A1FE94521007925A1 /* ChallengeClosedViewController+scrollView.swift */,
 			);
 			path = ChallengeClosed;
 			sourceTree = "<group>";
@@ -1223,6 +1226,7 @@
 				14D106221FBE00CC00AA9F89 /* ProfileProtocols.swift in Sources */,
 				08EF52891FD6D75F00722A2F /* RegisterProtocols.swift in Sources */,
 				08276F371FC73F8C00A8E605 /* ChallengesCollectionViewProtocols.swift in Sources */,
+				142F874B1FE94521007925A1 /* ChallengeClosedViewController+scrollView.swift in Sources */,
 				48EAFFEE1FCF1EF6007018AC /* HeaderChallengeCollectionReusableView.swift in Sources */,
 				0838B5C51FBF7A240051669B /* LoginPresenterImpl.swift in Sources */,
 				08276F311FC73F8C00A8E605 /* ChallengeCollectionViewCellProtocols.swift in Sources */,

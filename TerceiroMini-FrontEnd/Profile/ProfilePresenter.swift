@@ -50,6 +50,7 @@ class ProfilePresenterImpl: ProfilePresenter {
         var cells = [ProfileCellHolder]()
         
         for index in 0..<photos.count{
+            cells.append(ProfileCellHolder(image: UIImage(), theme: "", isWinner: false))
             NetworkManager.getChallengeById(id: photos[index].challengeId, completion: { (challenge, err) in
                 guard err == nil else {
                     
@@ -58,7 +59,6 @@ class ProfilePresenterImpl: ProfilePresenter {
                 
                 UIImage.fetch(with: photos[index].url!, completion: { (image) in
                     let profileCell = ProfileCellHolder(image: image, theme: (challenge?.theme)!, isWinner: challenge?.winner == photos[index].url)
-                    cells.append(profileCell)
                     cells[index] = profileCell
                     self.view?.receiveCells(cells: cells)
                 })

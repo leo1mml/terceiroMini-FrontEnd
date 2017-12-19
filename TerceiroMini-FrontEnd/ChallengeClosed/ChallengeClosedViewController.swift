@@ -10,12 +10,10 @@ import UIKit
 
 class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     
-    
-    
     var presenter: ChallengeClosedPresenter?
     
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var escolherClickButton: CustomButtonClick!
-    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var photoCount: UILabel!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var reportButton: UIButton!
@@ -35,6 +33,8 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         
         self.presenter = ChallengeClosedPresenterImpl(challengeClosedView: self)
         
+        self.scrollView.delegate = self
+        
         var imagesList = [String]()
         for url in (data?.0)!{
             imagesList.append(url.url!)
@@ -43,40 +43,20 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         self.images = imagesList
         self.imageIndex = (data?.1)!
         
-        backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [colorGradient, .clear, .clear, .clear])
-        
-        showOrHideDetails()
+        self.initializeScroll(index: imageIndex)
         
         escolherClickButton.layer.cornerRadius = 25
         escolherClickButton.clipsToBounds = true
         updatePhotoCount()
         
-        showExpandImages()
-
-    }
-    
-    func showExpandImages(){
-        
-        backgroundImage.image = UIImage(named: images[imageIndex])
-        UIImage.fetch(with: images[imageIndex], completion: { (image) in
-            self.backgroundImage.image = image
-        })
+        showOrHideDetails()
         
         presenter?.checkIfChosenClick(currentPhoto: (self.data?.0[imageIndex])!)
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeLeft.direction = .left
-        self.view.addGestureRecognizer(swipeLeft)
-        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeRight.direction = .right
-        self.view.addGestureRecognizer(swipeRight)
-        
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.view.addGestureRecognizer(tap)
-
+        
     }
-  
+    
     
     @IBAction func escolherClickAction(_ sender: Any) {
         if !myClick{
@@ -86,7 +66,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
                 presenter?.vote(photo: (self.data?.0[imageIndex])!)
             }
         }
-              
+        
     }
     
     @IBAction func showReport(_ sender: Any) {
@@ -98,7 +78,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         
         showOrHideDetails()
     }
-
+    
     
     func enableMyClickChosebuttonLabel(){
         self.escolherClickButton.setTitle("Meu Click", for: .normal)
@@ -119,42 +99,6 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         self.myClick = false
     }
     
-    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
-        
-        if gesture.direction == UISwipeGestureRecognizerDirection.right {
-            if (imageIndex > 0){
-                imageIndex -= 1
-                backgroundImage.image = UIImage(named: images[imageIndex])
-                UIImage.fetch(with: images[imageIndex], completion: { (image) in
-                    self.backgroundImage.image = image
-                })
-                presenter?.checkIfChosenClick(currentPhoto: (self.data?.0[imageIndex])!)
-                if(details){
-                    showOrHideDetails()
-                }
-            }
-            
-            
-            
-        } else if gesture.direction == UISwipeGestureRecognizerDirection.left {
-            if (imageIndex < images.count-1){
-                imageIndex += 1
-                backgroundImage.image = UIImage(named: images[imageIndex])
-                UIImage.fetch(with: images[imageIndex], completion: { (image) in
-                    self.backgroundImage.image = image
-                })
-                presenter?.checkIfChosenClick(currentPhoto: (self.data?.0[imageIndex])!)
-            }
-            
-            if(details){
-                showOrHideDetails()
-            }
-            
-        }
-        updatePhotoCount()
-    }
-    
-    
     func showOrHideDetails(){
         
         if(details){
@@ -165,16 +109,15 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
                 self.closeButton.alpha = 0
                 self.escolherClickButton.alpha = 0
                 //removing gradient layer
-                //self.backgroundImage.layer.sublayers = nil
-            self.backgroundImage.layer.sublayers?.first?.opacity = 0
+                if self.scrollView.subviews.count != 0 {
+                    self.scrollView.subviews[self.imageIndex].layer.sublayers?.first?.opacity = 0
+                }
             })
             
             reportButton.isEnabled = false
             escolherClickButton.isEnabled = false
             photoCount.isEnabled = false
             closeButton.isEnabled = false
-            
-          //  backgroundImage.layer.sublayers = nil
             
             self.details = false
         }else{
@@ -185,17 +128,19 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
                     self.reportButton.alpha = 1
                     self.escolherClickButton.alpha = 1
                 }
-
+                
                 self.photoCount.alpha = 1
                 self.closeButton.alpha = 1
-                self.backgroundImage.layer.sublayers?.first?.opacity = 1
+                if self.scrollView.subviews.count != 0 {
+                    self.scrollView.subviews[self.imageIndex].layer.sublayers?.first?.opacity = 1
+                }
                 
             })
             
             if !(self.sender is ProfileViewController) {
                 reportButton.isEnabled = true
                 escolherClickButton.isEnabled = true
-
+                
             }
             
             photoCount.isEnabled = true
@@ -221,16 +166,16 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         alert.addAction(UIAlertAction(title: "DENUNCIAR CLICK", style: .default, handler: { _ in
             
         }))
-
+        
         alert.addAction(UIAlertAction.init(title: "CANCELAR", style: .cancel, handler: nil))
-
+        
         self.present(alert, animated: true, completion: nil)
     }
     
     func updatePhotoCount(){
         photoCount.text = "\(imageIndex+1)/\(images.count)"
     }
-
+    
     @IBAction func closeButtonAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)

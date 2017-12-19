@@ -72,6 +72,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="KUd-TS-qwq"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.14836639165878296" green="0.16832724213600159" blue="0.18916055560112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -85,7 +88,6 @@
                             <constraint firstItem="sXt-hV-3M0" firstAttribute="centerX" secondItem="yvb-qk-yst" secondAttribute="centerX" id="czr-YD-Szc"/>
                             <constraint firstItem="KrX-K7-fYn" firstAttribute="centerX" secondItem="bjV-ZL-fe2" secondAttribute="centerX" id="dIZ-Rc-QnS"/>
                             <constraint firstItem="ap9-Nm-1tQ" firstAttribute="width" secondItem="yvb-qk-yst" secondAttribute="width" multiplier="0.704" id="hnp-9t-jaQ"/>
-                            <constraint firstItem="sXt-hV-3M0" firstAttribute="height" secondItem="yvb-qk-yst" secondAttribute="height" multiplier="0.0516987" id="oaB-iv-wqw"/>
                             <constraint firstItem="bjV-ZL-fe2" firstAttribute="bottom" secondItem="ap9-Nm-1tQ" secondAttribute="bottom" constant="30" id="s4m-Pc-MBD"/>
                             <constraint firstItem="ap9-Nm-1tQ" firstAttribute="centerX" secondItem="yvb-qk-yst" secondAttribute="centerX" id="tUt-6o-0rH"/>
                             <constraint firstItem="sXt-hV-3M0" firstAttribute="top" secondItem="bjV-ZL-fe2" secondAttribute="top" constant="10" id="waq-aV-5Jb"/>

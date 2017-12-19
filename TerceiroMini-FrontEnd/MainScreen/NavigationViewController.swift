@@ -73,10 +73,6 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
     override var canBecomeFirstResponder: Bool {
         return false
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        self.pageViewScroll?.resignFirstResponder()
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -110,7 +106,6 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        self.resignFirstResponder()
         self.nextVCIdentifier = pendingViewControllers[0].restorationIdentifier!
     }
     
@@ -168,7 +163,7 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
     }
     func loginFinishedSuccessfully() {
         let sb = UIStoryboard(name: "MainScreen", bundle: nil)
-        let vc1 = sb.instantiateViewController(withIdentifier: "MainStoryboard")
+        let vc1 = self.viewControllerList[0]
         vc1.restorationIdentifier = "MainScreen"
         var vc2 : UIViewController?
         if let token = UserDefaults.standard.string(forKey: "token"){

@@ -95,7 +95,7 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
     
     func addGradientToChallengeMainImage(){
         mainImage.layer.sublayers = nil
-        mainImage.addChallengeGradientLayer(frame: mainImage.bounds, colors: [startingGradientColor, middleGradientColor,endGradientColor,.white])
+        mainImage.addChallengeGradientLayer(frame: mainImage.bounds, colors: [startingGradientColor, middleGradientColor,endGradientColor,Colors.darkWhite])
     }
     
     
@@ -157,7 +157,7 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
                 if (myClick?.votes?.count == 0){
                     cellB.clicks.text = "0"
                 }else{
-                    cellB.clicks.text = String(describing: myClick?.votes?.count)
+                    cellB.clicks.text = String(describing: myClick!.votes!.count)
                 }
                 
                 

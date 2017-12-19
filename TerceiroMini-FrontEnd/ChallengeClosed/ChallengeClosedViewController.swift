@@ -9,7 +9,7 @@
 import UIKit
 
 class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
-    
+ 
     var presenter: ChallengeClosedPresenter?
     
     @IBOutlet var scrollView: UIScrollView!
@@ -73,12 +73,10 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         presenter?.showReport()
     }
     
-    
     @objc func handleTap(){
         
         showOrHideDetails()
     }
-    
     
     func enableMyClickChosebuttonLabel(){
         self.escolherClickButton.setTitle("Meu Click", for: .normal)
@@ -127,6 +125,8 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
                 if !(self.sender is ProfileViewController) {
                     self.reportButton.alpha = 1
                     self.escolherClickButton.alpha = 1
+                    self.reportButton.isEnabled = true
+                    self.escolherClickButton.isEnabled = true
                 }
                 
                 self.photoCount.alpha = 1
@@ -137,21 +137,11 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
                 
             })
             
-            if !(self.sender is ProfileViewController) {
-                reportButton.isEnabled = true
-                escolherClickButton.isEnabled = true
-                
-            }
-            
             photoCount.isEnabled = true
             closeButton.isEnabled = true
             
             self.details = true
         }
-        
-    }
-    
-    func showCurrentClick() {
         
     }
     

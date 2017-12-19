@@ -9,7 +9,6 @@
 import Foundation
 
 protocol ChallengeClosedView {
-    func showCurrentClick()
     func showAlert()
     func enableMyClickChosebuttonLabel()
     func enableChoseClickButton()

@@ -55,7 +55,6 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
             NetworkManager.getMyFavouriteClick(byChallengeId: currentPhoto.challengeId, token: token, completion: { (photo, error) in
                 if photo != nil{
                     if(currentPhoto.id == photo?.id){
-                        print("igual")
                         self.view?.enableMyFavoriteClickChosebuttonLabel()
                     }else{
                         self.view?.enableChoseClickButton()

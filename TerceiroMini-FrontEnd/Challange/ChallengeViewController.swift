@@ -85,6 +85,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
             
             if let dest = segue.destination as? ChallengeClosedViewController{
                 dest.data = data
+                dest.sender = self
             }
             
         }

@@ -40,14 +40,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.pageViewContainer.frame = pageViewController.view.frame
         self.pageViewContainer.addSubview(vc.view)
         self.viewControllerList = self.pageViewController.viewControllerList
-        self.pageViewController.delegateAnimations = self
-        let mainScreen = self.pageViewController.viewControllerList[0] as! MainScreenTableViewController
-        mainScreen.delegateNavigateInApp = self
-        mainScreen.challengesCell.navigateInAppDelegate = self
-        if(self.pageViewController.viewControllerList[1].restorationIdentifier == "Main"){
-            self.configButton.isEnabled = false
-            self.configButton.isHidden = true
-        }
+
         self.view.backgroundColor = Colors.darkWhite
         // Do any additional setup after loading the view.
     }
@@ -56,6 +49,14 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         super.viewDidAppear(animated)
         if(self.pageViewController.nextVCIdentifier == ""){
             self.profileImage.tintColor = .gray
+        }
+        self.pageViewController.delegateAnimations = self
+        let mainScreen = self.pageViewController.viewControllerList[0] as! MainScreenTableViewController
+        mainScreen.delegateNavigateInApp = self
+        mainScreen.challengesCell.navigateInAppDelegate = self
+        if(self.pageViewController.viewControllerList[1].restorationIdentifier == "Main"){
+            self.configButton.isEnabled = false
+            self.configButton.isHidden = true
         }
         
     }

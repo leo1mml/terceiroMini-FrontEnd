@@ -70,6 +70,9 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
         case "Path `{PATH}` (`{VALUE}`) is shorter than the minimum allowed length (6).":
             print("a senha deve ser maior que 6 digitos")
             break
+        case "Email already in use":
+            print(message)
+            break
         default:
             print(message)
             print("sucesso")

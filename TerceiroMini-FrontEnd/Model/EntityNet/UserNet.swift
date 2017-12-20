@@ -37,6 +37,12 @@ class UserNet {
             
             if(response.response?.statusCode == 400){
                 guard let error = NetHelper.extractDictionary(fromJson: response.value!, key: "error") else {return}
+                if let code = error["code"]{
+                    let codeNumber = code as! Int
+                    if(codeNumber == 11000){
+                        completion(nil, nil, "Email already in use")
+                    }
+                }
                 guard let errors = NetHelper.extractDictionary(fromJson: error, key: "errors") else {return}
                 if let emailError = NetHelper.extractDictionary(fromJson: errors["email"] ?? "", key: "properties"){
                     let message = emailError["message"] as! String

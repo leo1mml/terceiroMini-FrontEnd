@@ -54,6 +54,9 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
         setupTexts()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        loadHeader()
+    }
     // MARK: - View settings
     
     private func setupTexts() {

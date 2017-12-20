@@ -146,6 +146,10 @@
 		8A964BD01FDB0C99003C9FFD /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCD1FDB0C99003C9FFD /* Challenge.storyboard */; };
 		8A964BD11FDB0C99003C9FFD /* ChallengeClosed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A964BCE1FDB0C99003C9FFD /* ChallengeClosed.storyboard */; };
 		8AA5EA081FE9931700DF6ED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5D5CF31FB0D22C00C24725 /* LaunchScreen.storyboard */; };
+		8AA5EA0C1FE9F18E00DF6ED5 /* ConfigFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA091FE9F18D00DF6ED5 /* ConfigFooter.swift */; };
+		8AA5EA0D1FE9F18E00DF6ED5 /* ConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0A1FE9F18D00DF6ED5 /* ConfigurationTableViewController.swift */; };
+		8AA5EA0E1FE9F18E00DF6ED5 /* ConfigHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0B1FE9F18D00DF6ED5 /* ConfigHeader.swift */; };
+		8AA5EA101FE9F21800DF6ED5 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0F1FE9F21800DF6ED5 /* ConfigurationViewController.swift */; };
 		9362939D9630A3B421DAA3DD /* Pods_TerceiroMini_FrontEndTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB25DC3DDFA69325AA572E88 /* Pods_TerceiroMini_FrontEndTests.framework */; };
 		9CC8CE563EF03C478C59D26B /* Pods_TerceiroMini_FrontEnd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1C8142FA7981BBCEFA3222 /* Pods_TerceiroMini_FrontEnd.framework */; };
 /* End PBXBuildFile section */
@@ -319,6 +323,10 @@
 		8A964BCD1FDB0C99003C9FFD /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Challenge.storyboard; path = "TerceiroMini-FrontEnd/Storyboards/Challenge.storyboard"; sourceTree = SOURCE_ROOT; };
 		8A964BCE1FDB0C99003C9FFD /* ChallengeClosed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ChallengeClosed.storyboard; path = "TerceiroMini-FrontEnd/Storyboards/ChallengeClosed.storyboard"; sourceTree = SOURCE_ROOT; };
 		8A964BD41FDB253A003C9FFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8AA5EA091FE9F18D00DF6ED5 /* ConfigFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigFooter.swift; sourceTree = "<group>"; };
+		8AA5EA0A1FE9F18D00DF6ED5 /* ConfigurationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationTableViewController.swift; sourceTree = "<group>"; };
+		8AA5EA0B1FE9F18D00DF6ED5 /* ConfigHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigHeader.swift; sourceTree = "<group>"; };
+		8AA5EA0F1FE9F21800DF6ED5 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		BB25DC3DDFA69325AA572E88 /* Pods_TerceiroMini_FrontEndTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEndTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1C8142FA7981BBCEFA3222 /* Pods_TerceiroMini_FrontEnd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEnd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -356,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				080B8C4F1FE1A7360060D5D6 /* Configuration Table View */,
+				8AA5EA0F1FE9F21800DF6ED5 /* ConfigurationViewController.swift */,
 			);
 			path = "Configuration VC";
 			sourceTree = "<group>";
@@ -363,6 +372,9 @@
 		080B8C4F1FE1A7360060D5D6 /* Configuration Table View */ = {
 			isa = PBXGroup;
 			children = (
+				8AA5EA091FE9F18D00DF6ED5 /* ConfigFooter.swift */,
+				8AA5EA0B1FE9F18D00DF6ED5 /* ConfigHeader.swift */,
+				8AA5EA0A1FE9F18D00DF6ED5 /* ConfigurationTableViewController.swift */,
 			);
 			path = "Configuration Table View";
 			sourceTree = "<group>";
@@ -1180,8 +1192,10 @@
 				08276F3C1FC73F8C00A8E605 /* MainScreenTableViewController.swift in Sources */,
 				086D279A1FCC844B00D9F547 /* LoginPresentationProtocols.swift in Sources */,
 				08276F381FC73F8C00A8E605 /* LastWinnersCell.swift in Sources */,
+				8AA5EA0D1FE9F18E00DF6ED5 /* ConfigurationTableViewController.swift in Sources */,
 				48C882F51FC893FA000A57C2 /* ChallengeViewController.swift in Sources */,
 				08276F361FC73F8C00A8E605 /* ChallengeCollectionViewPresenter.swift in Sources */,
+				8AA5EA0E1FE9F18E00DF6ED5 /* ConfigHeader.swift in Sources */,
 				08276F351FC73F8C00A8E605 /* ChallengesFlowLayout.swift in Sources */,
 				08276F3F1FC73F8C00A8E605 /* MainScreenProtocols.swift in Sources */,
 				088083C31FD1C75D008C9B00 /* UserNet+Validator.swift in Sources */,
@@ -1197,6 +1211,7 @@
 				088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */,
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,
 				08EF52871FD6D73F00722A2F /* RegisterPresenterImpl.swift in Sources */,
+				8AA5EA101FE9F21800DF6ED5 /* ConfigurationViewController.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */,
 				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,
@@ -1231,6 +1246,7 @@
 				142F874B1FE94521007925A1 /* ChallengeClosedViewController+scrollView.swift in Sources */,
 				48EAFFEE1FCF1EF6007018AC /* HeaderChallengeCollectionReusableView.swift in Sources */,
 				0838B5C51FBF7A240051669B /* LoginPresenterImpl.swift in Sources */,
+				8AA5EA0C1FE9F18E00DF6ED5 /* ConfigFooter.swift in Sources */,
 				08276F311FC73F8C00A8E605 /* ChallengeCollectionViewCellProtocols.swift in Sources */,
 				148AE59D1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift in Sources */,
 				08276F2D1FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift in Sources */,

@@ -241,7 +241,7 @@ class UserNet {
      */
     class func createLoginFacebook(name: String, email: String, profileImgUrl: String?, completion: @escaping (_ u: User?, _ t: String?, _ e: Error?) -> Void) {
         let completeDomain = R.usersDomain + "/addFacebookUser"
-        let loginWithPhoto = ["name": name, "email": email, "profilePhoto": profileImgUrl]
+        let loginWithPhoto = ["name": name, "email": email, "profilePhoto": profileImgUrl ?? ""]
 //        let login = ["name": name, "email": email]
         
         Alamofire.request(completeDomain, method: .post, parameters: loginWithPhoto, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in

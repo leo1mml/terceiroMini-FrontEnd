@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class RegisterViewController: LoginFlowViewController, RegisterView {
 
@@ -82,14 +83,22 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
     func showUpdateError(message: String) {
         switch message {
         case "{VALUE} is not a valid email":
-            print("email invalido")
+            let banner = NotificationBanner(title: "Email Inválido", subtitle: "Digite um email valido", style: .danger)
+            banner.show()
             break
         case "Path `{PATH}` (`{VALUE}`) is shorter than the minimum allowed length (6).":
+            let banner = NotificationBanner(title: "Senha Inválida", subtitle: "Digite uma senha de 6 caracteres no mínimo", style: .danger)
+            banner.show()
             print("a senha deve ser maior que 6 digitos")
             break
         case "Email already in use":
+            let banner = NotificationBanner(title: "Email em uso", subtitle: "Este email ja está sendo usado", style: .danger)
+            banner.show()
             print(message)
             break
+        case "Path `{PATH}` is required.":
+            let banner = NotificationBanner(title: "Digite nos campos obrigatórios", subtitle: "", style: .danger)
+            banner.show()
         default:
             print(message)
             print("sucesso")

@@ -13,6 +13,7 @@ target 'TerceiroMini-FrontEnd' do
    pod 'FacebookLogin', '~> 0.2.0'
    pod 'FBSDKCoreKit', '~> 4.22.1'
    pod 'FBSDKLoginKit', '~> 4.22.1'
+   pod 'NotificationBannerSwift'
 
   target 'TerceiroMini-FrontEndTests' do
     inherit! :search_paths

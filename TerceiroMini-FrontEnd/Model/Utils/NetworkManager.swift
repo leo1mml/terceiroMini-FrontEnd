@@ -18,7 +18,7 @@ class NetworkManager {
         UserNet.getAll(completion: completion)
     }
     
-    class func addUser(_ user: User, password: String, completion: @escaping (User?, String?, Error?) -> Void) {
+    class func addUser(_ user: User, password: String, completion: @escaping (User?, String?, String?) -> Void) {
         UserNet.add(user: user, password: password, completion: completion)
     }
     

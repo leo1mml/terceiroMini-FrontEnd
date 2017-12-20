@@ -18,6 +18,6 @@ protocol RegisterView {
     
     func goBack()
     func goToApp()
-    func showUpdateError()
+    func showUpdateError(message: String)
     func showNonMatchingPasswordError()
 }

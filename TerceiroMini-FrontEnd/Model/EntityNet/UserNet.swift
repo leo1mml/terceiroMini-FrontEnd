@@ -29,14 +29,31 @@ class UserNet {
      - parameter t: The server comunication token of the device.
      - parameter e: The erro that ocurred.
      */
-    class func add(user: User, password: String, completion: @escaping (_ u: User?,_ t: String?,_ e: Error?) -> Void) {
+    class func add(user: User, password: String, completion: @escaping (_ u: User?,_ t: String?,_ errorMessage: String?) -> Void) {
         var dic = buildDictionary(fromUser: user)
         dic["password"] = password
         
-        Alamofire.request(R.usersDomain, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
+        Alamofire.request(R.usersDomain, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             
-            guard let val = response.value, response.error == nil else {
-                completion(nil, nil, response.error!)
+            if(response.response?.statusCode == 400){
+                guard let error = NetHelper.extractDictionary(fromJson: response.value!, key: "error") else {return}
+                guard let errors = NetHelper.extractDictionary(fromJson: error, key: "errors") else {return}
+                if let emailError = NetHelper.extractDictionary(fromJson: errors["email"] ?? "", key: "properties"){
+                    let message = emailError["message"] as! String
+                    completion(nil, nil, message)
+                    return
+                }
+                if let passwordError = NetHelper.extractDictionary(fromJson: errors["password"] ?? "", key: "properties"){
+                    let message = passwordError["message"] as! String
+                    completion(nil, nil, message)
+                    return
+                }
+            
+                return
+            }
+            
+            guard let val = response.value else {
+                completion(nil, nil, "Error not identified")
                 return
             }
             

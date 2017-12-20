@@ -62,8 +62,18 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
         }
     }
     
-    func showUpdateError() {
-        
+    func showUpdateError(message: String) {
+        switch message {
+        case "{VALUE} is not a valid email":
+            print("email invalido")
+            break
+        case "Path `{PATH}` (`{VALUE}`) is shorter than the minimum allowed length (6).":
+            print("a senha deve ser maior que 6 digitos")
+            break
+        default:
+            print(message)
+            print("sucesso")
+        }
     }
     
     func showNonMatchingPasswordError() {

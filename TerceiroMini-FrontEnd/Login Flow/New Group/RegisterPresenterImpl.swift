@@ -29,10 +29,11 @@ class RegisterPresenterImpl: RegisterPresenter {
         
         let user = User(nil, email, name, nil, nil)
         
-        NetworkManager.addUser(user, password: password) { usr, tkn, err in
+        NetworkManager.addUser(user, password: password) { usr, tkn, errMsg in
 
-            guard err == nil else {
-                self.view.showUpdateError()
+            guard errMsg == nil else {
+                
+                self.view.showUpdateError(message: errMsg!)
                 return
             }
 

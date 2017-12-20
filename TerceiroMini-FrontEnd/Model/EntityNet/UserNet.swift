@@ -66,7 +66,7 @@ class UserNet {
             let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
             
             let user = self.buildUser(fromDicitionary: dic)
-            let token = response.response!.allHeaderFields["x-auth"] as? String
+            let token = response.response!.allHeaderFields["X-Auth"] as? String
             
             completion(user, token, nil)
         }

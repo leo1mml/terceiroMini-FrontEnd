@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 private let segueToRegister = "loginToRegister"
 
@@ -78,7 +79,8 @@ class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
     }
     
     func showInvalidCredentialsError() {
-        
+        let banner = NotificationBanner(title: "Email ou senha incorretos", subtitle: "", style: .danger)
+        banner.show()
     }
     
     func goToRegister() {

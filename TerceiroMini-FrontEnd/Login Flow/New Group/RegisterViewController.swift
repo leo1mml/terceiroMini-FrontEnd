@@ -34,6 +34,23 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
         view.addGestureRecognizer(outTap)
         
         setupBackgroundImageViewBottomGradient()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+       
+        if self.view.frame.origin.y == 0{
+            self.view.frame.origin.y -= 160
+        }
+        
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0{
+            self.view.frame.origin.y += 160
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

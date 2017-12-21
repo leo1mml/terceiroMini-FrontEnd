@@ -66,7 +66,7 @@
                             <constraint firstAttribute="height" constant="11" id="rDG-KU-PMN"/>
                         </constraints>
                     </imageView>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagem1.png" translatesAutoresizingMaskIntoConstraints="NO" id="4tl-nx-fTZ">
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4tl-nx-fTZ">
                         <rect key="frame" x="5" y="95" width="21" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="2ZM-kz-qW9"/>
@@ -74,7 +74,7 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <integer key="value" value="10"/>
+                                <integer key="value" value="30"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
@@ -114,6 +114,5 @@
     </objects>
     <resources>
         <image name="heartWhiteIcon" width="11" height="9"/>
-        <image name="imagem1.png" width="375" height="400"/>
     </resources>
 </document>

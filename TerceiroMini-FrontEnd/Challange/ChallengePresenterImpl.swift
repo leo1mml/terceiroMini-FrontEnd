@@ -133,10 +133,7 @@ class ChallengePresenterImpl: ChallengePresenter{
                 }
             })
         }
-        
-        
-    
-        
+  
     }
     
     

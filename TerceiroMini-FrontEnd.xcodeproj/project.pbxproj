@@ -122,6 +122,11 @@
 		48620F1D1FD72AE600A45E3E /* TimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48620F1C1FD72AE600A45E3E /* TimeInterval+Extension.swift */; };
 		48620F1E1FD72B1900A45E3E /* LastWinnersPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A543E0A1FD5ED7D002392A3 /* LastWinnersPresenterImp.swift */; };
 		48620F241FD85CBA00A45E3E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48620F231FD85CBA00A45E3E /* UIImageView+Extension.swift */; };
+		487E45D11FEBD99F00F0D47D /* NewChallengePresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E45D01FEBD99F00F0D47D /* NewChallengePresenterImpl.swift */; };
+		487E45D31FEBD9B900F0D47D /* NewChallengeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E45D21FEBD9B900F0D47D /* NewChallengeProtocols.swift */; };
+		487E45D71FEBDA6500F0D47D /* NewHeaderChallengeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E45D61FEBDA6500F0D47D /* NewHeaderChallengeCollectionReusableView.swift */; };
+		487E45D91FEBDB5700F0D47D /* NewChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E45D81FEBDB5700F0D47D /* NewChallengeViewController.swift */; };
+		487E45DB1FEBECE100F0D47D /* ExtensionNewChallgeViewController+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E45DA1FEBECE100F0D47D /* ExtensionNewChallgeViewController+Collection.swift */; };
 		489F1B9A1FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489F1B991FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift */; };
 		48A7C4CF1FD1E00B00EB5C1A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7C4CE1FD1E00B00EB5C1A /* UIImage+Extension.swift */; };
 		48A7C4D11FD1E02A00EB5C1A /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7C4D01FD1E02A00EB5C1A /* NavigationViewController.swift */; };
@@ -284,6 +289,11 @@
 		4832D44A1FD9B60700EE18DC /* ChallengeClosed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChallengeClosed.storyboard; sourceTree = "<group>"; };
 		48620F1C1FD72AE600A45E3E /* TimeInterval+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extension.swift"; sourceTree = "<group>"; };
 		48620F231FD85CBA00A45E3E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		487E45D01FEBD99F00F0D47D /* NewChallengePresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChallengePresenterImpl.swift; sourceTree = "<group>"; };
+		487E45D21FEBD9B900F0D47D /* NewChallengeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChallengeProtocols.swift; sourceTree = "<group>"; };
+		487E45D61FEBDA6500F0D47D /* NewHeaderChallengeCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHeaderChallengeCollectionReusableView.swift; sourceTree = "<group>"; };
+		487E45D81FEBDB5700F0D47D /* NewChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChallengeViewController.swift; sourceTree = "<group>"; };
+		487E45DA1FEBECE100F0D47D /* ExtensionNewChallgeViewController+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExtensionNewChallgeViewController+Collection.swift"; sourceTree = "<group>"; };
 		489F1B8C1FCC9C0200717C26 /* FeaturedMyClickCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedMyClickCollectionViewCell.xib; sourceTree = "<group>"; };
 		489F1B981FCD7E3D00717C26 /* FeaturedFavoriteClickCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedFavoriteClickCollectionViewCell.xib; sourceTree = "<group>"; };
 		489F1B991FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedMyClickCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -794,6 +804,18 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		487E45CF1FEBD94E00F0D47D /* NewChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				487E45D81FEBDB5700F0D47D /* NewChallengeViewController.swift */,
+				487E45D01FEBD99F00F0D47D /* NewChallengePresenterImpl.swift */,
+				487E45D21FEBD9B900F0D47D /* NewChallengeProtocols.swift */,
+				487E45D61FEBDA6500F0D47D /* NewHeaderChallengeCollectionReusableView.swift */,
+				487E45DA1FEBECE100F0D47D /* ExtensionNewChallgeViewController+Collection.swift */,
+			);
+			path = NewChallenge;
+			sourceTree = "<group>";
+		};
 		48C882EC1FC893FA000A57C2 /* Challange */ = {
 			isa = PBXGroup;
 			children = (
@@ -867,6 +889,7 @@
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
 				08276F0E1FC73F8C00A8E605 /* MainScreen */,
 				147D50B41FE314600048A04E /* SeeAllPastChallengesVC */,
+				487E45CF1FEBD94E00F0D47D /* NewChallenge */,
 				48C882EC1FC893FA000A57C2 /* Challange */,
 				080B8C4E1FE1A7360060D5D6 /* Configuration VC */,
 				148AE5951FD1A5BB005108E7 /* ChallengeClosed */,
@@ -1219,6 +1242,7 @@
 				088083C31FD1C75D008C9B00 /* UserNet+Validator.swift in Sources */,
 				08276F341FC73F8C00A8E605 /* GradientView.swift in Sources */,
 				08276F391FC73F8C00A8E605 /* WinnerCollectionViewCell.swift in Sources */,
+				487E45DB1FEBECE100F0D47D /* ExtensionNewChallgeViewController+Collection.swift in Sources */,
 				48620F1D1FD72AE600A45E3E /* TimeInterval+Extension.swift in Sources */,
 				0899EA011FC74D1400F148DC /* Photo.swift in Sources */,
 				14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */,
@@ -1226,7 +1250,9 @@
 				086D279C1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift in Sources */,
 				48A7C4D31FD1EC3400EB5C1A /* ChallengeViewController+ChallengeHeaderDelegate.swift in Sources */,
 				0899EA051FC74D2900F148DC /* NetHelper.swift in Sources */,
+				487E45D91FEBDB5700F0D47D /* NewChallengeViewController.swift in Sources */,
 				088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */,
+				487E45D71FEBDA6500F0D47D /* NewHeaderChallengeCollectionReusableView.swift in Sources */,
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,
 				08EF52871FD6D73F00722A2F /* RegisterPresenterImpl.swift in Sources */,
 				8AA5EA101FE9F21800DF6ED5 /* ConfigurationViewController.swift in Sources */,
@@ -1253,6 +1279,7 @@
 				14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */,
 				0899E9FF1FC74D0900F148DC /* User.swift in Sources */,
 				08276F401FC73F8C00A8E605 /* MainScreenViewController.swift in Sources */,
+				487E45D31FEBD9B900F0D47D /* NewChallengeProtocols.swift in Sources */,
 				48620F1E1FD72B1900A45E3E /* LastWinnersPresenterImp.swift in Sources */,
 				08276F3E1FC73F8C00A8E605 /* MainScreenPresenter.swift in Sources */,
 				48C882F81FC893FA000A57C2 /* MainCollectionViewCell.swift in Sources */,
@@ -1270,6 +1297,7 @@
 				08276F2D1FC73F8C00A8E605 /* OpenChallengesTableViewCell.swift in Sources */,
 				489F1B9A1FCD7FE300717C26 /* FeaturedMyClickCollectionViewCell.swift in Sources */,
 				48A7C4CF1FD1E00B00EB5C1A /* UIImage+Extension.swift in Sources */,
+				487E45D11FEBD99F00F0D47D /* NewChallengePresenterImpl.swift in Sources */,
 				08276F3D1FC73F8C00A8E605 /* TableHeader.swift in Sources */,
 				08EF52851FD6D54B00722A2F /* RegisterViewController.swift in Sources */,
 				0899EA0B1FC74D4100F148DC /* ChallengeNet.swift in Sources */,
@@ -1441,7 +1469,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JC4QT73C9E;
+				DEVELOPMENT_TEAM = 9QUZLTLDFZ;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1458,7 +1486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JC4QT73C9E;
+				DEVELOPMENT_TEAM = 9QUZLTLDFZ;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

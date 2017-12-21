@@ -1,119 +1,59 @@
 //
-//  HeaderChallengeCollectionReusableView.swift
+//  NewHeaderChallengeCollectionReusableView.swift
 //  TerceiroMini-FrontEnd
 //
-//  Created by Pedro Oliveira on 29/11/17.
+//  Created by Pedro Oliveira on 21/12/2017.
 //  Copyright © 2017 BEPID. All rights reserved.
 //
 
 import UIKit
 
-protocol ChallengeHeaderDelegate {
-    
-    func mainButtonClicked()
-}
-
-protocol ChallengeHeaderDataSource {
-    
-    var challengeState: ChallengeState { get }
-    
-    func getBackgroundImage() -> UIImage
-    func getFeaturedPhotos() -> [UIImage]
-    func getChallengeName() -> String
-    func getNumberOfClicks() -> Int
-   // func getMyClick() -> Photo?
-   // func getMyFavoriteClick() -> Photo?
-    //func getChallengeWinner() -> String
-    
-}
 
 
-class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
-    let startingGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
-    let middleGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:0.6)
-    let endGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:0.4)
     
-    
-    var delegate: ChallengeHeaderDelegate?
-    var dataSource: ChallengeHeaderDataSource? {
-        
-        didSet {
-            reviewState()
-        }
-    }
-    
-    @IBOutlet weak var featuredCollectionView: UICollectionView!
-    @IBOutlet weak var challengeLabel: UILabel!
-    @IBOutlet weak var numberOfPhotos: UILabel!
-    @IBOutlet weak var mainImage: UIImageView!
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet var featuredCollectionView: UICollectionView!
+    @IBOutlet var challengeLabel: UILabel!
+    @IBOutlet var numberOfPhotos: UILabel!
+    @IBOutlet var mainImage: UIImageView!
+    @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var statusImage: UIImageView!
+    @IBOutlet var mainButton: LeftAlignedIconButton!
     
     var myClick : Photo?
     var myFavoriteClick : Photo?
     var cellFavoriteClickFilledFlag = false
-    var isUserLoggedIn = false
-   
-    @IBOutlet weak var mainButton: UIButton!
-    @IBAction func mainButtonAction(_ sender: LeftAlignedIconButton) {
-        if(isUserLoggedIn){
-            delegate?.mainButtonClicked()
-        }
-        
-    }
+    
     
     override func awakeFromNib() {
+        initNibs()
+        
+        
         featuredCollectionView.delegate = self
         featuredCollectionView.dataSource = self
-    
-       //initializing nibs
-       self.featuredCollectionView.register(UINib(nibName: FeaturedMyClickCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: FeaturedMyClickCollectionViewCell.identifier)
-       self.featuredCollectionView.register(UINib(nibName: FeaturedFavoriteClickCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: FeaturedFavoriteClickCollectionViewCell.identifier)
+        
+        
     }
     
-    func reviewState() {
-        
-        let state = dataSource?.challengeState
-        
-        switch state {
-        case .votation?:
-            mainButton.setTitle("PERÍODO DE VOTAÇÃO", for: .normal)
-            mainButton.isEnabled = false
-            statusLabel.text = "22h 11m 12s"
-            
-        case .finished?:
-            //set winner name
-            
-            break
-        case .open?:
-            mainButton.setTitle("PARTICIPAR", for: .normal)
-        case .participating?:
-            mainButton.setTitle("PARTICIPANDO", for: .normal)
-        default:
-            challengeLabel.text = "nao tem state"
-        }
+    func initNibs(){
+        self.featuredCollectionView.register(UINib(nibName: FeaturedMyClickCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: FeaturedMyClickCollectionViewCell.identifier)
+        self.featuredCollectionView.register(UINib(nibName: FeaturedFavoriteClickCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: FeaturedFavoriteClickCollectionViewCell.identifier)
     }
     
     func addGradientToChallengeMainImage(){
+
+        let startingGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
+        let middleGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:0.6)
+        let endGradientColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:0.4)
+        
         mainImage.layer.sublayers = nil
         mainImage.addChallengeGradientLayer(frame: mainImage.bounds, colors: [startingGradientColor, middleGradientColor,endGradientColor,Colors.darkWhite])
     }
     
     
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        let cellCount = collectionView.numberOfItems(inSection: 0)
-        let totalCellWidth = 121 * cellCount
-        let totalSpacingWidth = 10 * (cellCount - 1)
-        
-        let leftInset = (253 - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
-        let rightInset = leftInset
-        
-        return UIEdgeInsetsMake(0, leftInset, 0, rightInset)
-    }
+    //MARK - Featured Collection View
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -127,20 +67,12 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
         return numberOfItens
     }
     
-    
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        
         if collectionView.numberOfItems(inSection: 0) ==  1{
             
             if (myFavoriteClick != nil){
                 let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedFavoriteClickCollectionViewCell.identifier, for: indexPath) as! FeaturedFavoriteClickCollectionViewCell
-                
-                cellA.cellImage.layer.cornerRadius = 10
-                cellA.cellImage.clipsToBounds = true
+
                 
                 UIImage.fetch(with: (self.myFavoriteClick?.url)!, completion: { (image) in
                     cellA.cellImage.image = image
@@ -165,7 +97,7 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
                 
                 return cellB
             }
-        
+            
         }else{
             
             if (indexPath.row == 1){
@@ -190,9 +122,18 @@ class HeaderChallengeCollectionReusableView: UICollectionReusableView, UICollect
                 return cellB
             }
         }
-
-    
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        let cellCount = collectionView.numberOfItems(inSection: 0)
+        let totalCellWidth = 121 * cellCount
+        let totalSpacingWidth = 10 * (cellCount - 1)
+        
+        let leftInset = (253 - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+        let rightInset = leftInset
+        
+        return UIEdgeInsetsMake(0, leftInset, 0, rightInset)
+    }
     
 }

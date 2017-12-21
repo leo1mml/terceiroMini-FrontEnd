@@ -17,27 +17,30 @@ class OnboardingViewController: UIPageViewController {
         
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
-                               direction: .Forward,
+                               direction: .forward,
                                animated: true,
                                completion: nil)
         }
     }
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newOnboardViewController("1"),
-                self.newOnboardViewController("2"),
-                self.newOnboardViewController("3"),
-                self.newOnboardViewController("4")]
+        return [self.newOnboardViewController(identifier: "Onboarding1"),
+                self.newOnboardViewController(identifier: "Onboarding2"),
+                self.newOnboardViewController(identifier: "Onboarding3"),
+                self.newOnboardViewController(identifier: "Onboarding4")]
     }()
     
     private func newOnboardViewController(identifier: String) -> UIViewController {
-        return UIStoryboard(name: "Onboarding", bundle: nil) .
-            instantiateViewControllerWithIdentifier("Onboarding\(identifier)")
+        return UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: identifier)
     }
-    
-    func pageViewController(pageViewController: UIPageViewController,
-                            viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = orderedViewControllers.indexOf(viewController) else {
+        
+}
+
+// MARK: UIPageViewControllerDataSource
+
+extension OnboardingViewController: UIPageViewControllerDataSource {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
         }
         
@@ -53,10 +56,9 @@ class OnboardingViewController: UIPageViewController {
         
         return orderedViewControllers[previousIndex]
     }
-
-    func pageViewController(pageViewController: UIPageViewController,
-                            viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = orderedViewControllers.indexOf(viewController) else {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
         }
         
@@ -74,19 +76,28 @@ class OnboardingViewController: UIPageViewController {
         return orderedViewControllers[nextIndex]
     }
     
-}
-
-// MARK: UIPageViewControllerDataSource
-
-extension TutorialPageViewController: UIPageViewControllerDataSource {
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        
+//        for view in self.view.subviews {
+//            if view is UIScrollView {
+//                view.frame = UIScreen.main.bounds
+//            } else if view is UIPageControl {
+//                view.backgroundColor = UIColor.clear
+//            }
+//        }
+//    }
+//    
+//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+//        return orderedViewControllers.count
+//    }
+//    
+//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+//        guard let firstViewController = viewControllers?.first, let firstViewControllerIndex = orderedViewControllers.index(of: firstViewController) else {
+//            return 0
+//        }
+//        
+//        return firstViewControllerIndex
+//    }
     
-    func pageViewController(pageViewController: UIPageViewController,
-                            viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        return nil
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController,
-                            viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        return nil
-    }
 }

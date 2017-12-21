@@ -18,15 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc: UIViewController
         
         if (UserDefaults.standard.value(forKey: "boarded") as? Bool == nil) {
             // show the onboading screen
-            vc = storyboard.instantiateViewController(withIdentifier: "MainScreen")
+            vc = (UIStoryboard(name: "Onboarding", bundle: nil)).instantiateViewController(withIdentifier: "Onboarding")
         } else {
             // show the main screen
-            vc = storyboard.instantiateViewController()!
+            vc = (UIStoryboard(name: "Main", bundle: nil)).instantiateViewController(withIdentifier: "MainScreen")
         }
         
         self.window?.rootViewController = vc

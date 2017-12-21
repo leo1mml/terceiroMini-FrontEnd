@@ -112,6 +112,7 @@
 		14C1FDD11FE3168D00C7ADF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C1FDD01FE3168D00C7ADF9 /* Assets.xcassets */; };
 		14C537FE1FD8575200154004 /* ProfileUserHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C537FD1FD8575200154004 /* ProfileUserHolder.swift */; };
 		14C538031FD85B6700154004 /* ProfileCellHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C538021FD85B6700154004 /* ProfileCellHolder.swift */; };
+		14CFE7B61FEBF458000415B9 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CFE7B51FEBF458000415B9 /* Onboarding.storyboard */; };
 		14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */; };
 		14D106201FBE00B000AA9F89 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */; };
 		14D106221FBE00CC00AA9F89 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */; };
@@ -273,6 +274,7 @@
 		14C1FDD01FE3168D00C7ADF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "TerceiroMini-FrontEnd/Assets.xcassets"; sourceTree = "<group>"; };
 		14C537FD1FD8575200154004 /* ProfileUserHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserHolder.swift; sourceTree = "<group>"; };
 		14C538021FD85B6700154004 /* ProfileCellHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellHolder.swift; sourceTree = "<group>"; };
+		14CFE7B51FEBF458000415B9 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
@@ -703,6 +705,7 @@
 		08F06F9B1FBB594A0039EAFE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				14CFE7B41FEBF437000415B9 /* Onboarding */,
 				147D50BE1FE314CB0048A04E /* EditProfile */,
 				147D50BB1FE314A30048A04E /* SeeAllPastChallenges */,
 				147D50AD1FE313070048A04E /* Configuration Screen */,
@@ -779,6 +782,14 @@
 				14C538021FD85B6700154004 /* ProfileCellHolder.swift */,
 			);
 			path = Holder;
+			sourceTree = "<group>";
+		};
+		14CFE7B41FEBF437000415B9 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				14CFE7B51FEBF458000415B9 /* Onboarding.storyboard */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		14D1061C1FBE004D00AA9F89 /* Profile */ = {
@@ -1053,6 +1064,7 @@
 				147D50B11FE313080048A04E /* ConfigurationFooter.xib in Resources */,
 				8A964BCF1FDB0C99003C9FFD /* HeaderCollectionReusableView.xib in Resources */,
 				48EAFFF21FCF3A49007018AC /* imagem1.png in Resources */,
+				14CFE7B61FEBF458000415B9 /* Onboarding.storyboard in Resources */,
 				08297B0D1FC74B2E00701F9B /* Montserrat-Bold.otf in Resources */,
 				083982C21FC8B75400E45D10 /* MainScreen.storyboard in Resources */,
 			);
@@ -1441,7 +1453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JC4QT73C9E;
+				DEVELOPMENT_TEAM = J8J2K4KEX2;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1458,7 +1470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JC4QT73C9E;
+				DEVELOPMENT_TEAM = J8J2K4KEX2;
 				INFOPLIST_FILE = "TerceiroMini-FrontEnd/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

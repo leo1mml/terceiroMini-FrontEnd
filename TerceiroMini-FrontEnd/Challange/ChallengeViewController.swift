@@ -218,6 +218,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
             break
         }
     }
+
     
     
     func initDarkStatusBar(){

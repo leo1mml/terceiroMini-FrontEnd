@@ -25,12 +25,15 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
         
         switch state {
             
-        case .finished?:
+        case .finished:
             cell.numberOfVotes.isHidden = false
             //cell.statusLabel.isHidden = false
             cell.usernameLabel.isHidden = false
             cell.usernamePhoto.isHidden = false
             cell.clicksLogo.isHidden = false
+            cell.cellImage.layer.sublayers = nil
+            cell.cellImage.addChallengeGradientTopMainCell(frame: cell.cellImage.bounds, colors: [Colors.gradientBlackHalfAlpha,.clear,.clear])
+            cell.cellImage.addChallengeGradientBottonMainCell(frame: cell.cellImage.bounds, colors: [Colors.gradientBlack,.clear,.clear])
             break
         default:
             
@@ -52,7 +55,7 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
 
             }
         }
-        cell.numberOfVotes.text = (String(describing: challengePhotos?[indexPath.row].votes?.count))
+        cell.numberOfVotes.text = (String(describing: challengePhotos![indexPath.row].votes!.count))
         
       
         
@@ -63,6 +66,7 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
         
         return cell
     }
+
     
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -70,11 +74,18 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
         header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderIdentifier", for: indexPath) as! NewHeaderChallengeCollectionReusableView
         
         header.addGradientToChallengeMainImage()
-        
+        header.delegate = self
         
         return header
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        data = (self.challengePhotos, indexPath.row) as? ([Photo], Int)
+        self.goToExpandPhotoView(parameter: data!)
+        
+    }
     
     func getImageFromUrl(imageURL: URL!, newImage: UIImageView ){
         
@@ -94,6 +105,8 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
             
         }
     }
+    
+   
     
     
     

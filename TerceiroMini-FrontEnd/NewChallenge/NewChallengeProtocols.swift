@@ -6,7 +6,7 @@
 //  Copyright © 2017 BEPID. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol NewChallengeView{
     func setHeader(theme: String, mainImageURL: String,numPhotos: Int)
@@ -18,11 +18,14 @@ protocol NewChallengeView{
     func setFeaturedCollectionMyClick(myClick: Photo?)
     func setChallengePhotos(photos: [Photo])
     func showCollectionPhotos()
+    func showFeaturedCollectionView()
+    func goToExpandPhotoView(parameter: ([Photo], Int))
 }
 
 protocol NewChallengePresenter{
     
     func getChallengeHeader(challengeID: String, challengeState: ChallengeState)
     func getChallengeImages(challengeID: String)
+    func sendPhotoToCloudinary(infoImage: UIImage, challengeID: String)
 
 }

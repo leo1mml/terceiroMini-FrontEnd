@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Cloudinary
 class NewChallengePresenterImpl: NewChallengePresenter{
     
 
@@ -19,7 +19,49 @@ class NewChallengePresenterImpl: NewChallengePresenter{
     
     var view : NewChallengeView
     
+    let cloudname = "clicks"
+    let apiKey = "535385847914562"
+    let uploadPreset = "clicksPreset"
+    
+    func sendPhotoToCloudinary(infoImage: UIImage, challengeID: String) {
+        let config = CLDConfiguration(cloudName: cloudname, apiKey: apiKey)
+        let cloudinary = CLDCloudinary(configuration: config)
+        let imageData = UIImageJPEGRepresentation(infoImage, 1.0)
+        
+        _ = cloudinary.createUploader().upload(data: imageData!, uploadPreset: uploadPreset, params: nil, progress: nil) {
+            (result, error) in
+            if (error != nil) {
+                print("deu merda ao subir a foto para o cloudinary")
+            }
+            
+            if let token = UserDefaults.standard.string(forKey: "token"){
+                
+                NetworkManager.getUser(byToken: token, completion: { (user, error) in
+                    if (user != nil){
+                        let photo = Photo(nil,result?.url,(user?.id)!,challengeID, nil)
+                        NetworkManager.addPhoto(photo, completion: { (photo, error) in
+                            
+                            if (error != nil){
+                                print("deu merda na hora enviar a foto pro banco")
+                            }
+                            
+                            self.getChallengeImages(challengeID: challengeID)
+                            self.view.setHeaderButtonAsParticipating()
+                            
+                        })
+                    }
+                })
+            }
+        }
+    }
+    
     func getChallengeHeader(challengeID: String, challengeState: ChallengeState) {
+        
+        if UserDefaults.standard.string(forKey: "token") != nil{
+            self.view.setUserLoggedIn(isLogged: true)
+        }else{
+            self.view.setUserLoggedIn(isLogged: false)
+        }
         
         
         NetworkManager.getChallengeById(id: challengeID) { (challenge, error) in
@@ -31,6 +73,7 @@ class NewChallengePresenterImpl: NewChallengePresenter{
                 
                 if challenge?.numPhotos != 0{
                     self.getFeaturedCollectionHeader(challengeID: challengeID)
+                    self.view.showFeaturedCollectionView()
                 }
                 switch challengeState {
                 case .open:

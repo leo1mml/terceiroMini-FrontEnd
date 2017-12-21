@@ -9,10 +9,13 @@
 import UIKit
 
 
+protocol NewChallengeHeaderDelegate {
+    func mainButtonClicked()
+    func backButtonClicked()
+}
 
-class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    
+class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+
     
     @IBOutlet var featuredCollectionView: UICollectionView!
     @IBOutlet var challengeLabel: UILabel!
@@ -20,20 +23,24 @@ class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UIColl
     @IBOutlet var mainImage: UIImageView!
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var statusImage: UIImageView!
-    @IBOutlet var mainButton: LeftAlignedIconButton!
+    @IBOutlet var mainButton: UIButton!
+    
     
     var myClick : Photo?
     var myFavoriteClick : Photo?
     var cellFavoriteClickFilledFlag = false
+    var state = ChallengeState.open
     
+    var delegate: NewChallengeHeaderDelegate?
     
     override func awakeFromNib() {
         initNibs()
         
+     
         
         featuredCollectionView.delegate = self
         featuredCollectionView.dataSource = self
-        
+    
         
     }
     
@@ -41,6 +48,19 @@ class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UIColl
         self.featuredCollectionView.register(UINib(nibName: FeaturedMyClickCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: FeaturedMyClickCollectionViewCell.identifier)
         self.featuredCollectionView.register(UINib(nibName: FeaturedFavoriteClickCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: FeaturedFavoriteClickCollectionViewCell.identifier)
     }
+    
+   
+    @IBAction func mainButtonAction(sender: UIButton) {
+        
+        self.delegate?.mainButtonClicked()
+
+    }
+    
+ 
+    @IBAction func backButtonAction(sender: UIButton) {
+        self.delegate?.backButtonClicked()
+    }
+    
     
     func addGradientToChallengeMainImage(){
 
@@ -88,11 +108,8 @@ class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UIColl
                     cellB.cellImage.image = image
                 })
                 
-                if (myClick?.votes?.count == 0){
-                    cellB.clicks.text = "0"
-                }else{
                     cellB.clicks.text = String(describing: myClick!.votes!.count)
-                }
+                    cellB.cellImage.addChallengeGradientTopMainCell(frame: cellB.cellImage.bounds, colors: [Colors.gradientBlackHalfAlpha,.clear,.clear])
                 
                 
                 return cellB
@@ -118,7 +135,8 @@ class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UIColl
                 UIImage.fetch(with: (self.myClick?.url)!, completion: { (image) in
                     cellB.cellImage.image = image
                 })
-                
+                cellB.clicks.text = String(describing: myClick!.votes!.count)
+                cellB.cellImage.addChallengeGradientTopMainCell(frame: cellB.cellImage.bounds, colors: [Colors.gradientBlackHalfAlpha,.clear,.clear])
                 return cellB
             }
         }

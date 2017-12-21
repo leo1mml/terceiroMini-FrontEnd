@@ -8,12 +8,12 @@
 
 import UIKit
 
-class NewChallengeViewController: UIViewController, NewChallengeView {
+class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
     
     var challengePhotos : [Photo]?
-    var state : ChallengeState?
+    var state = ChallengeState.open
     var challengeID : String?
     var data: ([Photo], Int)?
     var header: NewHeaderChallengeCollectionReusableView!
@@ -51,13 +51,16 @@ class NewChallengeViewController: UIViewController, NewChallengeView {
         
         
         //apagar depois
-        self.state = ChallengeState.finished
-        self.challengeID = "5a2163e44ab66300147b416d"
-        presenter?.getChallengeHeader(challengeID: challengeID!, challengeState: state!)
+        self.state = ChallengeState.open
+      //  self.challengeID = "5a2163e44ab66300147b416d"
+        presenter?.getChallengeHeader(challengeID: challengeID!, challengeState: state)
         presenter?.getChallengeImages(challengeID: challengeID!)
-        
+        resolveState()
         
     }
+    
+    
+    
     
     func setChallengePhotos(photos: [Photo]) {
         self.challengePhotos = photos
@@ -66,6 +69,22 @@ class NewChallengeViewController: UIViewController, NewChallengeView {
     func showCollectionPhotos() {
         self.mainCollectionView.reloadData()
     }
+    func goToExpandPhotoView(parameter: ([Photo], Int)) {
+        
+        data = parameter
+        performSegue(withIdentifier: "expandPhotoSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "expandPhotoSegue"{
+            
+            if let dest = segue.destination as? ChallengeClosedViewController{
+                dest.data = data
+                dest.sender = self
+            }
+            
+        }
+    }
     
     func setHeader(theme: String, mainImageURL: String,numPhotos: Int){
         header.challengeLabel.text = theme
@@ -73,6 +92,7 @@ class NewChallengeViewController: UIViewController, NewChallengeView {
             self.header.mainImage.image = image
         }
         self.header.numberOfPhotos.text = "\(numPhotos) fotos"
+        self.header.state = self.state
     }
     
     func setHeaderStatusAsFinished(winner: User, photoWinner: Photo){
@@ -107,6 +127,10 @@ class NewChallengeViewController: UIViewController, NewChallengeView {
         header.featuredCollectionView.reloadData()
     }
     
+    func showFeaturedCollectionView(){
+        self.header.featuredCollectionView.isHidden = false
+    }
+    
     func timerUpdate(){
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setTimerLabelText), userInfo: nil, repeats: true)
     }
@@ -116,6 +140,71 @@ class NewChallengeViewController: UIViewController, NewChallengeView {
         header.statusLabel.text = self.endDate?.timeIntervalSince(now).format() ?? "erro"
     }
     
+    func resolveState(){
+        
+        switch state {
+        case .open:
+        //    header.mainButton.setTitle("PARTICIPAR", for: .normal)
+            break
+        case .participating:
+          //  header.mainButton.setTitle("PARTICIPANDO", for: .normal)
+            break
+        case .finished:
+            break
+        default:
+            break
+        }
+    }
+    
+    func showPhotoMenu(){
+        
+        let alert = UIAlertController(title: "Escolha uma opção", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Câmera", style: .default, handler: { _ in
+            self.takePhoto()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Galeria", style: .default, handler: { _ in
+            self.getPhoto()
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let infoImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            presenter?.sendPhotoToCloudinary(infoImage: infoImage, challengeID: challengeID!)
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func getPhoto() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+            
+            
+        }
+    }
+    
+    func takePhoto() {
+        
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            imagePicker.allowsEditing = true
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
     
     func initDarkStatusBar(){
         let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)

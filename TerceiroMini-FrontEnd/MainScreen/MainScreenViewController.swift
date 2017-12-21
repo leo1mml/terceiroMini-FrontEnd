@@ -168,7 +168,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     }
     
     func goToOpenChallenge(with challengeId: String) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "challengeVC") as! ChallengeViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "challengeVC") as! NewChallengeViewController
         vc.challengeID = challengeId
         self.navigationController?.show(vc, sender: self)
     }

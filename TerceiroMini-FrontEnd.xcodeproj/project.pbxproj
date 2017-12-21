@@ -150,6 +150,7 @@
 		8AA5EA0D1FE9F18E00DF6ED5 /* ConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0A1FE9F18D00DF6ED5 /* ConfigurationTableViewController.swift */; };
 		8AA5EA0E1FE9F18E00DF6ED5 /* ConfigHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0B1FE9F18D00DF6ED5 /* ConfigHeader.swift */; };
 		8AA5EA101FE9F21800DF6ED5 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0F1FE9F21800DF6ED5 /* ConfigurationViewController.swift */; };
+		8AB5EF8F1FEB361500DC5E3C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB5EF8E1FEB361500DC5E3C /* EditProfileViewController.swift */; };
 		9362939D9630A3B421DAA3DD /* Pods_TerceiroMini_FrontEndTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB25DC3DDFA69325AA572E88 /* Pods_TerceiroMini_FrontEndTests.framework */; };
 		9CC8CE563EF03C478C59D26B /* Pods_TerceiroMini_FrontEnd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1C8142FA7981BBCEFA3222 /* Pods_TerceiroMini_FrontEnd.framework */; };
 /* End PBXBuildFile section */
@@ -327,6 +328,7 @@
 		8AA5EA0A1FE9F18D00DF6ED5 /* ConfigurationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationTableViewController.swift; sourceTree = "<group>"; };
 		8AA5EA0B1FE9F18D00DF6ED5 /* ConfigHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigHeader.swift; sourceTree = "<group>"; };
 		8AA5EA0F1FE9F21800DF6ED5 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		8AB5EF8E1FEB361500DC5E3C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		BB25DC3DDFA69325AA572E88 /* Pods_TerceiroMini_FrontEndTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEndTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1C8142FA7981BBCEFA3222 /* Pods_TerceiroMini_FrontEnd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEnd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -869,6 +871,7 @@
 				080B8C4E1FE1A7360060D5D6 /* Configuration VC */,
 				148AE5951FD1A5BB005108E7 /* ChallengeClosed */,
 				14D1061C1FBE004D00AA9F89 /* Profile */,
+				8AB5EF8D1FEB35D900DC5E3C /* EditProfile VC */,
 				08F06F9A1FBB58FA0039EAFE /* Login Flow */,
 				0899E9FB1FC74CE400F148DC /* Model */,
 				08297AE71FC74B2E00701F9B /* fonts */,
@@ -886,6 +889,14 @@
 				8A5D5D011FB0D22C00C24725 /* Info.plist */,
 			);
 			path = "TerceiroMini-FrontEndTests";
+			sourceTree = "<group>";
+		};
+		8AB5EF8D1FEB35D900DC5E3C /* EditProfile VC */ = {
+			isa = PBXGroup;
+			children = (
+				8AB5EF8E1FEB361500DC5E3C /* EditProfileViewController.swift */,
+			);
+			path = "EditProfile VC";
 			sourceTree = "<group>";
 		};
 		A7C1C6A6C1B51464836124F2 /* Pods */ = {
@@ -1182,6 +1193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AB5EF8F1FEB361500DC5E3C /* EditProfileViewController.swift in Sources */,
 				48C882F61FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift in Sources */,
 				08276F2F1FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift in Sources */,
 				0899EA031FC74D1A00F148DC /* Challenge.swift in Sources */,

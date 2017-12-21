@@ -208,13 +208,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-background-photo" translatesAutoresizingMaskIntoConstraints="NO" id="1HN-t6-ISn" customClass="BackgroundImageView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="291"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="291"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="291" id="ALk-Zm-5nA"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xra-R8-uQx">
-                                <rect key="frame" x="0.0" y="151" width="375" height="140"/>
+                                <rect key="frame" x="0.0" y="151" width="0.0" height="140"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="XOi-0j-TXD"/>
@@ -233,10 +233,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1pT-Gh-aUM">
-                                <rect key="frame" x="20" y="191" width="335" height="80"/>
+                                <rect key="frame" x="0.0" y="191" width="0.0" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seja bem-vindo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGW-aY-Ubq">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="azG-6S-f58"/>
                                         </constraints>
@@ -245,7 +245,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="para concluir a ação, faça seu login" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0D-EZ-MwH">
-                                        <rect key="frame" x="0.0" y="40" width="335" height="40"/>
+                                        <rect key="frame" x="0.0" y="40" width="0.0" height="40"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -256,16 +256,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2qw-LT-SdT">
-                                <rect key="frame" x="20" y="321" width="335" height="316"/>
+                                <rect key="frame" x="0.0" y="321" width="0.0" height="281"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YVx-MM-6xM">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="194"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="194"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LiB-Lz-djP">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="124"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="124"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="o8Q-qm-jbH" customClass="BottomLineTextField" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="52"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="52"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="6Jz-Az-ycO"/>
                                                         </constraints>
@@ -282,7 +282,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="FYW-BU-XAy" customClass="BottomLineTextField" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="72" width="335" height="52"/>
+                                                        <rect key="frame" x="0.0" y="72" width="0.0" height="52"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
@@ -293,7 +293,7 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJq-oL-fZK" customClass="RoundedButton" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="144" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="144" width="0.0" height="50"/>
                                                 <color key="backgroundColor" red="0.15219730140000001" green="0.1763456464" blue="0.1889151335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="rtf-Ey-pIq"/>
@@ -314,13 +314,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="TzZ-Db-ROl">
-                                        <rect key="frame" x="0.0" y="204" width="335" height="112"/>
+                                        <rect key="frame" x="0.0" y="204" width="0.0" height="77"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qvd-A0-SWr">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-D8-PhU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="XWH-dh-kah"/>
                                                         </constraints>
@@ -333,7 +333,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6g-lL-LCB">
-                                                        <rect key="frame" x="0.0" y="30" width="335" height="20"/>
+                                                        <rect key="frame" x="0.0" y="30" width="0.0" height="20"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                                         <state key="normal" title="Não tem conta? Crie uma aqui.">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -348,7 +348,7 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ao entrar no aplicativo, você concorda com nossos termos de serviço e políticas de privacidade." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4C-Ov-71G">
-                                                <rect key="frame" x="0.0" y="77" width="335" height="35"/>
+                                                <rect key="frame" x="0.0" y="77" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
                                                 <color key="textColor" red="0.60777515169999996" green="0.60788232090000005" blue="0.60776835679999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>

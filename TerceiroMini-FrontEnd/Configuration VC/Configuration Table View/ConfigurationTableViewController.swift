@@ -53,8 +53,6 @@ class ConfigurationTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        print(indexPath.section)
         if(indexPath.row == 1 && indexPath.section == 2){
             if let url = URL(string: "http://photoappchallenge.herokuapp.com/privacy-politic.html") {
                 UIApplication.shared.open(url, options: [:])

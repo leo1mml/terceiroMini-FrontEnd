@@ -17,7 +17,8 @@ class EditProfilePresenterImp : EditProfilePresenter {
     }
     
     func recoverLogedUser() {
-        let logedUser = UserDefaults.standard.object(forKey: "logedUser") as! User
+        let userData = UserDefaults.standard.object(forKey: "logedUser") as! Data
+        let logedUser = NSKeyedUnarchiver.unarchiveObject(with: userData) as! User
         view?.setProfileImage(url: logedUser.profilePhotoUrl!)
         view?.setUserDataHolders(nome: logedUser.name, username: logedUser.username, email: logedUser.email, birthDate: nil, sex: nil)
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User: NSCoding {
+class User: NSObject, NSCoding {
     
     let id: String?
     let email: String
@@ -38,8 +38,8 @@ class User: NSCoding {
         let id = aDecoder.decodeObject(forKey: "id") as! String
         let email = aDecoder.decodeObject(forKey: "email") as! String
         let name = aDecoder.decodeObject(forKey: "name") as! String
-        let username = aDecoder.decodeObject(forKey: "username") as! String
-        let profilePhotoUrl = aDecoder.decodeObject(forKey: "profilePhotoUrl") as! String
+        let username = aDecoder.decodeObject(forKey: "username") as? String ?? "empty"
+        let profilePhotoUrl = aDecoder.decodeObject(forKey: "profilePhotoUrl") as? String ?? ""
         self.init(id, email, name, username, profilePhotoUrl)
         
     }

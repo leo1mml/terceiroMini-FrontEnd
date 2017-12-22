@@ -8,7 +8,7 @@
 
 protocol EditProfileView {
     func setProfileImage(url: String)
-    func setUserDataHolders(nome: String, username: String?, email: String, birthDate: String?, sex: String?)
+    func setUserDataHolders(name: String, username: String?, email: String, birthDate: String?, sex: String?)
 }
 
 protocol EditProfilePresenter {

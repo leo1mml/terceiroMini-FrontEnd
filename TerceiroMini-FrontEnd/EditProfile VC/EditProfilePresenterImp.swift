@@ -20,7 +20,7 @@ class EditProfilePresenterImp : EditProfilePresenter {
         let userData = UserDefaults.standard.object(forKey: "logedUser") as! Data
         let logedUser = NSKeyedUnarchiver.unarchiveObject(with: userData) as! User
         view?.setProfileImage(url: logedUser.profilePhotoUrl!)
-        view?.setUserDataHolders(nome: logedUser.name, username: logedUser.username, email: logedUser.email, birthDate: nil, sex: nil)
+        view?.setUserDataHolders(name: logedUser.name, username: logedUser.username, email: logedUser.email, birthDate: nil, sex: nil)
     }
     
     

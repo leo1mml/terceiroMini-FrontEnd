@@ -10,6 +10,7 @@ import UIKit
 
 class EditProfileViewController: UIViewController, EditProfileView {
 
+    @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var nameTextField: BottomLineTextField!
     @IBOutlet weak var userNameTextField: BottomLineTextField!
     @IBOutlet weak var emailTextField: BottomLineTextField!
@@ -34,14 +35,14 @@ class EditProfileViewController: UIViewController, EditProfileView {
     @objc func keyboardWillShow(notification: NSNotification) {
         
         if self.view.frame.origin.y == 0{
-            self.view.frame.origin.y -= 130
+            self.view.frame.origin.y -= 190
         }
         
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0{
-            self.view.frame.origin.y += 130
+            self.view.frame.origin.y += 190
         }
     }
 
@@ -76,8 +77,12 @@ class EditProfileViewController: UIViewController, EditProfileView {
         self.profileImage.sd_setImage(with: url, completed: nil)
     }
     
-    func setUserDataHolders(nome: String, username: String?, email: String, birthDate: String?, sex: String?) {
-        
+    func setUserDataHolders(name: String, username: String?, email: String, birthDate: String?, sex: String?) {
+        self.nameTextField.placeholderLbl.text = name
+        self.emailTextField.placeholderLbl.text = email
+        if(username != "empty"){
+            self.userNameTextField.placeholderLbl.text = username
+        }
     }
 
     /*

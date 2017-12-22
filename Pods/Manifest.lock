@@ -24,6 +24,9 @@ PODS:
   - NotificationBannerSwift (1.5.2):
     - MarqueeLabel/Swift
     - SnapKit (~> 4.0)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
@@ -34,6 +37,7 @@ DEPENDENCIES:
   - FBSDKCoreKit (~> 4.22.1)
   - FBSDKLoginKit (~> 4.22.1)
   - NotificationBannerSwift
+  - SDWebImage (~> 4.0)
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -45,8 +49,9 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 00cf28916b9f0169763a3d61985d745b579fe304
   MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
   NotificationBannerSwift: 9ae620a32aca7d3bb12a691b0a609489b0067542
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 37ccb370067d4ebd8b4f4dc922043af47698a31b
+PODFILE CHECKSUM: 10b817f17703a0048aa8189c853dea8404988692
 
 COCOAPODS: 1.3.1

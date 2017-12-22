@@ -40,9 +40,6 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageOnboard1" translatesAutoresizingMaskIntoConstraints="NO" id="oiB-R6-aa4">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="420"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="375" id="eWe-P4-ie1"/>
-                                        </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo ao clicks!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oan-hG-CSf">
                                         <rect key="frame" x="0.0" y="450" width="375" height="37"/>
@@ -72,13 +69,14 @@ que vão amar fotografar</string>
                                     <constraint firstItem="oiB-R6-aa4" firstAttribute="height" secondItem="1NP-SX-U6f" secondAttribute="height" multiplier="0.7179" id="4qf-9t-hjA"/>
                                     <constraint firstItem="Oan-hG-CSf" firstAttribute="height" secondItem="1NP-SX-U6f" secondAttribute="height" multiplier="0.0632" id="W5J-wj-JcD"/>
                                     <constraint firstItem="xhl-eO-lYn" firstAttribute="width" secondItem="1NP-SX-U6f" secondAttribute="width" id="YG4-4a-1m5"/>
+                                    <constraint firstItem="oiB-R6-aa4" firstAttribute="width" secondItem="1NP-SX-U6f" secondAttribute="width" id="jWj-eq-tvG"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1NP-SX-U6f" firstAttribute="width" secondItem="HEn-gO-RBf" secondAttribute="width" id="0uD-Ob-KR3"/>
-                            <constraint firstItem="1NP-SX-U6f" firstAttribute="centerX" secondItem="tLO-AJ-IgD" secondAttribute="centerX" id="A0v-L0-hth"/>
+                            <constraint firstItem="1NP-SX-U6f" firstAttribute="centerX" secondItem="tLO-AJ-IgD" secondAttribute="centerX" id="Lej-gl-lCR"/>
                             <constraint firstItem="1NP-SX-U6f" firstAttribute="height" secondItem="HEn-gO-RBf" secondAttribute="height" multiplier="0.877" id="OIV-1S-RlN"/>
                             <constraint firstItem="1NP-SX-U6f" firstAttribute="top" secondItem="HEn-gO-RBf" secondAttribute="top" id="x1u-F0-rja"/>
                         </constraints>
@@ -104,28 +102,24 @@ que vão amar fotografar</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="422"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageOnboard2" translatesAutoresizingMaskIntoConstraints="NO" id="SDI-pV-KIi">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="375" id="cCS-4U-2q4"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="305.5"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participe!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgB-mB-DXm">
-                                                <rect key="frame" x="19" y="385" width="337" height="37"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="337" id="syH-0Y-fjq"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="370.5" width="375" height="51.5"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="pgB-mB-DXm" firstAttribute="width" secondItem="fak-ob-gJF" secondAttribute="width" id="MKV-8J-bP9"/>
+                                            <constraint firstItem="SDI-pV-KIi" firstAttribute="height" secondItem="fak-ob-gJF" secondAttribute="height" multiplier="0.7239" id="avj-fO-ONb"/>
+                                            <constraint firstItem="SDI-pV-KIi" firstAttribute="width" secondItem="fak-ob-gJF" secondAttribute="width" id="dej-Su-jnE"/>
+                                        </constraints>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3e2-tq-aNi">
-                                        <rect key="frame" x="20" y="452" width="335" height="68"/>
+                                        <rect key="frame" x="0.0" y="452" width="375" height="68"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="335" id="bTb-Wo-wrF"/>
-                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Se desafie a fotografar temas variados, participe dos desafios, vote nos clicks favoritos, crie referências e divirta-se">
                                                 <attributes>
@@ -137,13 +131,18 @@ que vão amar fotografar</string>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="fak-ob-gJF" firstAttribute="width" secondItem="Slw-62-iXD" secondAttribute="width" id="AMg-rY-jK5"/>
+                                    <constraint firstItem="fak-ob-gJF" firstAttribute="height" secondItem="Slw-62-iXD" secondAttribute="height" multiplier="0.81153" id="VpL-rH-d7M"/>
+                                    <constraint firstItem="3e2-tq-aNi" firstAttribute="width" secondItem="Slw-62-iXD" secondAttribute="width" id="jkJ-PY-CDv"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Slw-62-iXD" firstAttribute="centerX" secondItem="WUc-l8-MYx" secondAttribute="centerX" id="1Vg-A3-tnb"/>
-                            <constraint firstItem="Slw-62-iXD" firstAttribute="height" secondItem="TPI-4O-fPN" secondAttribute="height" multiplier="0.7796" id="d0T-YU-MS8"/>
-                            <constraint firstItem="Slw-62-iXD" firstAttribute="width" secondItem="TPI-4O-fPN" secondAttribute="width" id="eA6-Ya-x7i"/>
+                            <constraint firstItem="Slw-62-iXD" firstAttribute="height" secondItem="TPI-4O-fPN" secondAttribute="height" multiplier="0.77961" id="d0T-YU-MS8"/>
+                            <constraint firstItem="Slw-62-iXD" firstAttribute="width" secondItem="TPI-4O-fPN" secondAttribute="width" id="hhe-Qn-t6D"/>
                             <constraint firstItem="Slw-62-iXD" firstAttribute="top" secondItem="WUc-l8-MYx" secondAttribute="top" constant="45" id="hlp-Co-AVw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WUc-l8-MYx"/>
@@ -161,37 +160,31 @@ que vão amar fotografar</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="G3U-u4-dz2">
-                                <rect key="frame" x="19" y="88" width="336" height="486"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gH9-OZ-6rJ">
+                                <rect key="frame" x="20" y="88" width="335" height="514"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="88" translatesAutoresizingMaskIntoConstraints="NO" id="C5z-vf-Sep">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="376"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="88" translatesAutoresizingMaskIntoConstraints="NO" id="1Q7-cY-RcK">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="398"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageOnboard3" translatesAutoresizingMaskIntoConstraints="NO" id="Gh6-wg-jeU">
-                                                <rect key="frame" x="14.5" y="0.0" width="306" height="251"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="306" id="m79-IY-1O0"/>
-                                                </constraints>
+                                                <rect key="frame" x="14.5" y="0.0" width="306" height="270"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descubra!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWY-B4-5Lu">
-                                                <rect key="frame" x="0.0" y="339" width="335" height="37"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="37" id="4y6-13-LPp"/>
-                                                    <constraint firstAttribute="width" constant="335" id="98A-4K-PYz"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="358" width="335" height="40"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Gh6-wg-jeU" firstAttribute="width" secondItem="1Q7-cY-RcK" secondAttribute="width" multiplier="0.913432" id="7sx-kX-3gO"/>
+                                            <constraint firstItem="nWY-B4-5Lu" firstAttribute="width" secondItem="1Q7-cY-RcK" secondAttribute="width" id="Lbe-Mb-uDw"/>
+                                            <constraint firstItem="Gh6-wg-jeU" firstAttribute="height" secondItem="1Q7-cY-RcK" secondAttribute="height" multiplier="0.678217" id="uIc-YF-UYI"/>
+                                        </constraints>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zr-EU-7DD">
-                                        <rect key="frame" x="0.0" y="406" width="335" height="80"/>
+                                        <rect key="frame" x="0.0" y="428" width="335" height="86"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="nk6-WF-T2o"/>
-                                            <constraint firstAttribute="width" constant="335" id="zVT-40-7Qb"/>
-                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Explore clicks de diferentes estilos e olhares feitos por fotógrafos do mundo inteiro e nos mostre também a sua visão de mundo">
                                                 <attributes>
@@ -203,14 +196,19 @@ que vão amar fotografar</string>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="7zr-EU-7DD" firstAttribute="width" secondItem="gH9-OZ-6rJ" secondAttribute="width" id="FRA-y4-yQo"/>
+                                    <constraint firstItem="1Q7-cY-RcK" firstAttribute="width" secondItem="gH9-OZ-6rJ" secondAttribute="width" id="PKs-iv-di3"/>
+                                    <constraint firstItem="7zr-EU-7DD" firstAttribute="height" secondItem="gH9-OZ-6rJ" secondAttribute="height" multiplier="0.166666" id="Yt4-i4-4xn"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="G3U-u4-dz2" firstAttribute="centerX" secondItem="Sc4-fF-LvG" secondAttribute="centerX" id="9sa-2x-eqW"/>
-                            <constraint firstItem="G3U-u4-dz2" firstAttribute="height" secondItem="fu0-dc-6uZ" secondAttribute="height" multiplier="0.7286" id="Z2R-CO-med"/>
-                            <constraint firstItem="G3U-u4-dz2" firstAttribute="top" secondItem="Sc4-fF-LvG" secondAttribute="top" constant="68" id="kU3-b7-4cT"/>
-                            <constraint firstItem="G3U-u4-dz2" firstAttribute="width" secondItem="fu0-dc-6uZ" secondAttribute="width" multiplier="0.896" id="reE-de-VAJ"/>
+                            <constraint firstItem="gH9-OZ-6rJ" firstAttribute="width" secondItem="fu0-dc-6uZ" secondAttribute="width" multiplier="0.893333" id="eEZ-1K-Vjl"/>
+                            <constraint firstItem="gH9-OZ-6rJ" firstAttribute="height" secondItem="fu0-dc-6uZ" secondAttribute="height" multiplier="0.770615" id="oX7-sz-RNY"/>
+                            <constraint firstItem="gH9-OZ-6rJ" firstAttribute="centerX" secondItem="Sc4-fF-LvG" secondAttribute="centerX" id="uhj-cC-Uw3"/>
+                            <constraint firstItem="gH9-OZ-6rJ" firstAttribute="top" secondItem="Sc4-fF-LvG" secondAttribute="top" constant="68" id="w5I-9q-ded"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sc4-fF-LvG"/>
                     </view>
@@ -243,13 +241,15 @@ que vão amar fotografar</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="2o7-9N-2KF" firstAttribute="width" secondItem="QY7-ER-NY9" secondAttribute="width" id="0WW-xs-AeV"/>
+                                            <constraint firstItem="2o7-9N-2KF" firstAttribute="height" secondItem="QY7-ER-NY9" secondAttribute="height" multiplier="0.8247" id="FCs-UK-5dP"/>
+                                            <constraint firstItem="4sp-9U-23C" firstAttribute="width" secondItem="QY7-ER-NY9" secondAttribute="width" id="gQz-tL-B81"/>
+                                        </constraints>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHe-El-gXQ">
-                                        <rect key="frame" x="16" y="475" width="335" height="87"/>
+                                        <rect key="frame" x="0.0" y="475" width="367" height="87"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="335" id="Eyq-AK-qsV"/>
-                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Não tenha vergonha, durante a competição todos clicks são enviados anonimamente, somente ao término os autores são revelados">
                                                 <attributes>
@@ -261,6 +261,11 @@ que vão amar fotografar</string>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="EHe-El-gXQ" firstAttribute="width" secondItem="fne-O9-Zle" secondAttribute="width" id="3IY-ba-xLe"/>
+                                    <constraint firstItem="QY7-ER-NY9" firstAttribute="height" secondItem="fne-O9-Zle" secondAttribute="height" multiplier="0.791814" id="Tv0-hc-khS"/>
+                                    <constraint firstItem="QY7-ER-NY9" firstAttribute="width" secondItem="fne-O9-Zle" secondAttribute="width" id="t2b-Cc-oto"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suA-qQ-AI6">
                                 <rect key="frame" x="235" y="587" width="140" height="80"/>

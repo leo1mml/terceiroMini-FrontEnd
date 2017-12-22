@@ -8,16 +8,21 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, EditProfileView {
 
     @IBOutlet weak var nameTextField: BottomLineTextField!
     @IBOutlet weak var userNameTextField: BottomLineTextField!
     @IBOutlet weak var emailTextField: BottomLineTextField!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileImageBorderView: UIView!
+    
+    var presenter : EditProfilePresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialConfigurationProfileImage()
+        self.presenter = EditProfilePresenterImp(self)
+        presenter?.recoverLogedUser()
         
         let outTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(outTap)
@@ -66,6 +71,14 @@ class EditProfileViewController: UIViewController {
         self.profileImage.image = UIImage(named: "profile-default")
     }
     
+    func setProfileImage(url: String) {
+        let url = URL(string: url)
+        self.profileImage.sd_setImage(with: url, completed: nil)
+    }
+    
+    func setUserDataHolders(nome: String, username: String?, email: String, birthDate: String?, sex: String?) {
+        
+    }
 
     /*
     // MARK: - Navigation

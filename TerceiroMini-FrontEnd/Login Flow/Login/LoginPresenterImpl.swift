@@ -26,6 +26,7 @@ class LoginPresenterImpl: LoginPresenter {
             }
             
             UserDefaults.standard.set(tkn, forKey: "token")
+            UserDefaults.standard.set(usr, forKey: "logedUser")
             self.view.goToApp()
         }
     }

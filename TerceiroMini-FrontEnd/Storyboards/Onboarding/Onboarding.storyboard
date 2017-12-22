@@ -14,6 +14,9 @@
         <array key="Montserrat-Bold.otf">
             <string>Montserrat-Bold</string>
         </array>
+        <array key="Montserrat-Medium.otf">
+            <string>Montserrat-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Onboarding View Controller-->
@@ -216,10 +219,10 @@ que vão amar fotografar</string>
             </objects>
             <point key="canvasLocation" x="893.60000000000002" y="938.68065967016503"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding4 View Controller-->
         <scene sceneID="VWC-vS-GTE">
             <objects>
-                <viewController storyboardIdentifier="Onboarding4" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6bs-H6-hUl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding4" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6bs-H6-hUl" customClass="Onboarding4ViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PLc-su-m0C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -259,20 +262,47 @@ que vão amar fotografar</string>
                                     </textView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suA-qQ-AI6">
+                                <rect key="frame" x="271" y="612" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="CNh-Z8-m3m"/>
+                                    <constraint firstAttribute="height" constant="50" id="cSl-5N-FmJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
+                                <state key="normal" title="VAMOS LÁ">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="vamosLaButton:" destination="6bs-H6-hUl" eventType="touchUpInside" id="NOV-O5-Rdg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fne-O9-Zle" firstAttribute="centerX" secondItem="LpJ-Ri-nZw" secondAttribute="centerX" id="6cG-69-q3K"/>
                             <constraint firstItem="fne-O9-Zle" firstAttribute="width" secondItem="PLc-su-m0C" secondAttribute="width" multiplier="0.9786" id="Igc-Eb-aQx"/>
+                            <constraint firstItem="LpJ-Ri-nZw" firstAttribute="bottom" secondItem="suA-qQ-AI6" secondAttribute="bottom" constant="5" id="de4-gI-D8k"/>
                             <constraint firstItem="fne-O9-Zle" firstAttribute="height" secondItem="PLc-su-m0C" secondAttribute="height" multiplier="0.8425" id="ee1-UT-gYN"/>
+                            <constraint firstItem="LpJ-Ri-nZw" firstAttribute="trailing" secondItem="suA-qQ-AI6" secondAttribute="trailing" constant="4" id="oWl-Pb-R0m"/>
                             <constraint firstItem="fne-O9-Zle" firstAttribute="top" secondItem="LpJ-Ri-nZw" secondAttribute="top" constant="22" id="xEZ-FC-fSw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LpJ-Ri-nZw"/>
                     </view>
+                    <connections>
+                        <segue destination="5kW-sa-TQZ" kind="show" identifier="onboardingSegue" id="cDY-28-Rrf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hME-3e-ykZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1652" y="938.68065967016503"/>
+        </scene>
+        <!--MainScreen-->
+        <scene sceneID="aUj-T6-mYU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainScreen" id="5kW-sa-TQZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jEj-MN-xN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2186" y="728"/>
         </scene>
     </scenes>
     <resources>

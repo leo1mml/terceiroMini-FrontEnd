@@ -83,7 +83,11 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
             if view is UIScrollView {
                 view.frame = UIScreen.main.bounds
             } else if view is UIPageControl {
-                view.backgroundColor = UIColor.clear
+                
+                let image = UIImage(named: "Oval")
+                (view as! UIPageControl).backgroundColor = UIColor.clear
+                (view as! UIPageControl).pageIndicatorTintColor = UIColor.init(patternImage: image!)
+                (view as! UIPageControl).currentPageIndicatorTintColor = UIColor.darkGray
             }
         }
     }

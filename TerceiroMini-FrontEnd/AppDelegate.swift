@@ -16,22 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        var vc: UIViewController
-        
+
         if (UserDefaults.standard.value(forKey: "boarded") as? Bool == nil) {
             // show the onboading screen
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            var vc: UIViewController
             vc = (UIStoryboard(name: "Onboarding", bundle: nil)).instantiateViewController(withIdentifier: "Onboarding")
-        } else {
-            // show the main screen
-            vc = (UIStoryboard(name: "Main", bundle: nil)).instantiateViewController(withIdentifier: "MainScreen")
+            
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+            
+            FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         }
-        
-        self.window?.rootViewController = vc
-        self.window?.makeKeyAndVisible()
-        
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
     }

@@ -11,8 +11,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Montserrat-Bold.otf">
-            <string>Montserrat-Bold</string>
+        <array key="Montserrat-ExtraBold.otf">
+            <string>Montserrat-ExtraBold</string>
         </array>
         <array key="Montserrat-Medium.otf">
             <string>Montserrat-Medium</string>
@@ -45,11 +45,8 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo ao clicks!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oan-hG-CSf">
-                                        <rect key="frame" x="20" y="450" width="335" height="37"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="335" id="Gbg-Zx-DzO"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                        <rect key="frame" x="0.0" y="450" width="375" height="37"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -62,7 +59,7 @@
 pessoas que amam e pessoas
 que vão amar fotografar</string>
                                                 <attributes>
-                                                    <font key="NSFont" size="15" name="Montserrat-Light"/>
+                                                    <font key="NSFont" size="15" name="Montserrat-Medium"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -71,6 +68,9 @@ que vão amar fotografar</string>
                                     </textView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Oan-hG-CSf" firstAttribute="width" secondItem="1NP-SX-U6f" secondAttribute="width" id="33N-kv-KDb"/>
+                                    <constraint firstItem="oiB-R6-aa4" firstAttribute="height" secondItem="1NP-SX-U6f" secondAttribute="height" multiplier="0.7179" id="4qf-9t-hjA"/>
+                                    <constraint firstItem="Oan-hG-CSf" firstAttribute="height" secondItem="1NP-SX-U6f" secondAttribute="height" multiplier="0.0632" id="W5J-wj-JcD"/>
                                     <constraint firstItem="xhl-eO-lYn" firstAttribute="width" secondItem="1NP-SX-U6f" secondAttribute="width" id="YG4-4a-1m5"/>
                                 </constraints>
                             </stackView>
@@ -114,7 +114,7 @@ que vão amar fotografar</string>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="337" id="syH-0Y-fjq"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -129,7 +129,7 @@ que vão amar fotografar</string>
                                         <attributedString key="attributedText">
                                             <fragment content="Se desafie a fotografar temas variados, participe dos desafios, vote nos clicks favoritos, crie referências e divirta-se">
                                                 <attributes>
-                                                    <font key="NSFont" size="15" name="Montserrat-Light"/>
+                                                    <font key="NSFont" size="15" name="Montserrat-Medium"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
@@ -165,37 +165,37 @@ que vão amar fotografar</string>
                                 <rect key="frame" x="19" y="88" width="336" height="486"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="88" translatesAutoresizingMaskIntoConstraints="NO" id="C5z-vf-Sep">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="385"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="376"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageOnboard3" translatesAutoresizingMaskIntoConstraints="NO" id="Gh6-wg-jeU">
-                                                <rect key="frame" x="14.5" y="0.0" width="306" height="260"/>
+                                                <rect key="frame" x="14.5" y="0.0" width="306" height="251"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="306" id="m79-IY-1O0"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descubra!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWY-B4-5Lu">
-                                                <rect key="frame" x="0.0" y="348" width="335" height="37"/>
+                                                <rect key="frame" x="0.0" y="339" width="335" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="37" id="4y6-13-LPp"/>
                                                     <constraint firstAttribute="width" constant="335" id="98A-4K-PYz"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zr-EU-7DD">
-                                        <rect key="frame" x="0.0" y="415" width="335" height="71"/>
+                                        <rect key="frame" x="0.0" y="406" width="335" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="71" id="nk6-WF-T2o"/>
+                                            <constraint firstAttribute="height" constant="80" id="nk6-WF-T2o"/>
                                             <constraint firstAttribute="width" constant="335" id="zVT-40-7Qb"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Explore clicks de diferentes estilos e olhares feitos por fotógrafos do mundo inteiro e nos mostre também a sua visão de mundo">
                                                 <attributes>
-                                                    <font key="NSFont" size="15" name="Montserrat-Light"/>
+                                                    <font key="NSFont" size="15" name="Montserrat-Medium"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
@@ -238,7 +238,7 @@ que vão amar fotografar</string>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Começe já!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sp-9U-23C">
                                                 <rect key="frame" x="0.0" y="408" width="367" height="37"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -253,7 +253,7 @@ que vão amar fotografar</string>
                                         <attributedString key="attributedText">
                                             <fragment content="Não tenha vergonha, durante a competição todos clicks são enviados anonimamente, somente ao término os autores são revelados">
                                                 <attributes>
-                                                    <font key="NSFont" size="15" name="Montserrat-Light"/>
+                                                    <font key="NSFont" size="15" name="Montserrat-Medium"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
@@ -263,10 +263,10 @@ que vão amar fotografar</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suA-qQ-AI6">
-                                <rect key="frame" x="271" y="612" width="100" height="50"/>
+                                <rect key="frame" x="235" y="587" width="140" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="CNh-Z8-m3m"/>
-                                    <constraint firstAttribute="height" constant="50" id="cSl-5N-FmJ"/>
+                                    <constraint firstAttribute="width" constant="140" id="CNh-Z8-m3m"/>
+                                    <constraint firstAttribute="height" constant="80" id="cSl-5N-FmJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
                                 <state key="normal" title="VAMOS LÁ">
@@ -281,9 +281,9 @@ que vão amar fotografar</string>
                         <constraints>
                             <constraint firstItem="fne-O9-Zle" firstAttribute="centerX" secondItem="LpJ-Ri-nZw" secondAttribute="centerX" id="6cG-69-q3K"/>
                             <constraint firstItem="fne-O9-Zle" firstAttribute="width" secondItem="PLc-su-m0C" secondAttribute="width" multiplier="0.9786" id="Igc-Eb-aQx"/>
-                            <constraint firstItem="LpJ-Ri-nZw" firstAttribute="bottom" secondItem="suA-qQ-AI6" secondAttribute="bottom" constant="5" id="de4-gI-D8k"/>
+                            <constraint firstItem="LpJ-Ri-nZw" firstAttribute="bottom" secondItem="suA-qQ-AI6" secondAttribute="bottom" id="de4-gI-D8k"/>
                             <constraint firstItem="fne-O9-Zle" firstAttribute="height" secondItem="PLc-su-m0C" secondAttribute="height" multiplier="0.8425" id="ee1-UT-gYN"/>
-                            <constraint firstItem="LpJ-Ri-nZw" firstAttribute="trailing" secondItem="suA-qQ-AI6" secondAttribute="trailing" constant="4" id="oWl-Pb-R0m"/>
+                            <constraint firstItem="LpJ-Ri-nZw" firstAttribute="trailing" secondItem="suA-qQ-AI6" secondAttribute="trailing" id="oWl-Pb-R0m"/>
                             <constraint firstItem="fne-O9-Zle" firstAttribute="top" secondItem="LpJ-Ri-nZw" secondAttribute="top" constant="22" id="xEZ-FC-fSw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LpJ-Ri-nZw"/>

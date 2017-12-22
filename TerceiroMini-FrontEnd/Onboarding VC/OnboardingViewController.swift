@@ -76,28 +76,28 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
         return orderedViewControllers[nextIndex]
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        
-//        for view in self.view.subviews {
-//            if view is UIScrollView {
-//                view.frame = UIScreen.main.bounds
-//            } else if view is UIPageControl {
-//                view.backgroundColor = UIColor.clear
-//            }
-//        }
-//    }
-//    
-//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-//        return orderedViewControllers.count
-//    }
-//    
-//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-//        guard let firstViewController = viewControllers?.first, let firstViewControllerIndex = orderedViewControllers.index(of: firstViewController) else {
-//            return 0
-//        }
-//        
-//        return firstViewControllerIndex
-//    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        for view in self.view.subviews {
+            if view is UIScrollView {
+                view.frame = UIScreen.main.bounds
+            } else if view is UIPageControl {
+                view.backgroundColor = UIColor.clear
+            }
+        }
+    }
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return orderedViewControllers.count
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        guard let firstViewController = viewControllers?.first, let firstViewControllerIndex = orderedViewControllers.index(of: firstViewController) else {
+            return 0
+        }
+        
+        return firstViewControllerIndex
+    }
     
 }

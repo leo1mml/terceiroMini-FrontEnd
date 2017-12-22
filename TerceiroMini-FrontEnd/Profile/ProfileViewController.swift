@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileViewController: UIViewController, ProfileView, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -82,7 +83,8 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             isGradients[indexPath.row] = true
         }
         
-        cell.backgroundImage.image = cells[indexPath.row].image
+        cell.backgroundImage.image = imageUrl(url: photos[indexPath.row].url!)
+        
         cell.backgroundImage.contentMode = .scaleAspectFill
         
         cell.frame.size.width = 121
@@ -99,6 +101,13 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
 
         return cell
         
+    }
+    
+    func imageUrl(url: String) -> UIImage {
+        let data = URL(string: url)
+        let imageView = UIImageView()
+        imageView.sd_setImage(with: data, completed: nil)
+        return imageView.image!
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

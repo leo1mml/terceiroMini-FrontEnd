@@ -73,6 +73,7 @@ extension UIView {
         a.toValue = 1
         a.duration = 1
         shapeLayer.add(a, forKey: nil)
+        shapeLayer.zPosition = -500
         
     }
     

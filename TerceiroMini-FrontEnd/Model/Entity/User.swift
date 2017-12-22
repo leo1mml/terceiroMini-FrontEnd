@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User {
+class User: NSObject, NSCoding {
     
     let id: String?
     let email: String
@@ -22,5 +22,25 @@ class User {
         self.name = name
         self.username = username
         self.profilePhotoUrl = profilePhotoUrl
+    }
+    
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(id, forKey: "id")
+        aCoder.encode(email, forKey: "email")
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(username, forKey: "username")
+        aCoder.encode(profilePhotoUrl, forKey: "profilePhotoUrl")
+        
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let id = aDecoder.decodeObject(forKey: "id") as! String
+        let email = aDecoder.decodeObject(forKey: "email") as! String
+        let name = aDecoder.decodeObject(forKey: "name") as! String
+        let username = aDecoder.decodeObject(forKey: "username") as? String ?? "empty"
+        let profilePhotoUrl = aDecoder.decodeObject(forKey: "profilePhotoUrl") as? String ?? ""
+        self.init(id, email, name, username, profilePhotoUrl)
+        
     }
 }

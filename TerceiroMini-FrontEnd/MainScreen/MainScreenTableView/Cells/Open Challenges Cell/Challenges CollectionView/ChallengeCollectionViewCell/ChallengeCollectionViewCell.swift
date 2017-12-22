@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ChallengeCollectionViewCell: UICollectionViewCell, ChallengesCellView {
     @IBOutlet weak var themeImage: UIImageView!
@@ -33,17 +34,8 @@ class ChallengeCollectionViewCell: UICollectionViewCell, ChallengesCellView {
     }
     
     func setupChallengeImage() {
-        if let image = imageCache.object(forKey: NSString(string: (challenge?.imageUrl)!)) {
-            self.themeImage.image = image
-        } else {
-            DispatchQueue.main.async(execute: {
-                UIImage.fetch(with: self.challenge!.imageUrl) { (image) in
-                    
-                    self.themeImage.image = image
-                    self.imageCache.setObject(image, forKey: NSString(string: (self.challenge?.imageUrl)!))
-                }
-            })
-        }
+        let url = URL(string: (self.challenge?.imageUrl)!)
+        self.themeImage.sd_setImage(with: url, completed: nil)
         
     }
     

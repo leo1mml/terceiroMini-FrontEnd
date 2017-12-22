@@ -65,6 +65,10 @@ class LoginPresentationPresenterImpl: LoginPresentationPresenter {
                 }
                 
                 UserDefaults.standard.set(token, forKey: "token")
+                
+                let encodedUser = NSKeyedArchiver.archivedData(withRootObject: user!)
+                UserDefaults.standard.set(encodedUser, forKey: "logedUser")
+                UserDefaults.standard.synchronize()
                 self.view.goToApp()
             })
 

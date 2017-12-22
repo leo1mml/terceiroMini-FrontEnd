@@ -25,19 +25,9 @@ class NextChallengesCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    var imageCache = NSCache<NSString, UIImage>()
-    
     func setupChallengeImage() {
-        if let image = imageCache.object(forKey: NSString(string: (challenge?.imageUrl)!)) {
-            self.themeImage.image = image
-        } else {
-            DispatchQueue.main.async(execute: {
-                UIImage.fetch(with: self.challenge!.imageUrl) { (image) in
-                    self.themeImage.image = image
-                    self.imageCache.setObject(image, forKey: NSString(string: (self.challenge?.imageUrl)!))
-                }
-            })
-        }
+        let url = URL(string: (self.challenge?.imageUrl)!)
+        self.themeImage.sd_setImage(with: url, completed: nil)
     }
     
     func setupChallengeDate() {

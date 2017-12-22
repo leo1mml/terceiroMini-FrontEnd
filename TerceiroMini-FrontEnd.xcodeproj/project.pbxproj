@@ -142,6 +142,8 @@
 		48EAFFF31FCF3A49007018AC /* imagem1.png in Resources */ = {isa = PBXBuildFile; fileRef = 48EAFFEF1FCF2F21007018AC /* imagem1.png */; };
 		4B4C4C2061589D586431BC87 /* Pods_TerceiroMini_FrontEndTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71EF7F0DF85A03511994506A /* Pods_TerceiroMini_FrontEndTests.framework */; };
 		8A0E82C21FC744B800218C80 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E82C11FC744B800218C80 /* UIView+Extension.swift */; };
+		8A3B2D031FECC4A8006D5658 /* EditProfileVCProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B2D021FECC4A8006D5658 /* EditProfileVCProtocols.swift */; };
+		8A3B2D051FECC548006D5658 /* EditProfilePresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B2D041FECC548006D5658 /* EditProfilePresenterImp.swift */; };
 		8A543E091FD5EC0A002392A3 /* LastWinnersProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A543E081FD5EC0A002392A3 /* LastWinnersProtocols.swift */; };
 		8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */; };
 		8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D5CEC1FB0D22C00C24725 /* LoginViewController.swift */; };
@@ -311,6 +313,8 @@
 		8A0E82F51FC74A1B00218C80 /* MainScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
 		8A0E82F61FC74A1B00218C80 /* MainScreenTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScreenTableView.storyboard; sourceTree = "<group>"; };
 		8A0E82F71FC74A1B00218C80 /* TableHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeader.xib; sourceTree = "<group>"; };
+		8A3B2D021FECC4A8006D5658 /* EditProfileVCProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVCProtocols.swift; sourceTree = "<group>"; };
+		8A3B2D041FECC548006D5658 /* EditProfilePresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenterImp.swift; sourceTree = "<group>"; };
 		8A3DFC071FE393F200378F30 /* ConfigFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigFooter.swift; sourceTree = "<group>"; };
 		8A3DFC081FE393F200378F30 /* ConfigurationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationTableViewController.swift; sourceTree = "<group>"; };
 		8A3DFC091FE393F200378F30 /* ConfigHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigHeader.swift; sourceTree = "<group>"; };
@@ -922,6 +926,8 @@
 			isa = PBXGroup;
 			children = (
 				8AB5EF8E1FEB361500DC5E3C /* EditProfileViewController.swift */,
+				8A3B2D021FECC4A8006D5658 /* EditProfileVCProtocols.swift */,
+				8A3B2D041FECC548006D5658 /* EditProfilePresenterImp.swift */,
 			);
 			path = "EditProfile VC";
 			sourceTree = "<group>";
@@ -1129,6 +1135,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1142,6 +1149,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1227,6 +1235,7 @@
 				1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */,
 				481B81D01FD8632E000955E8 /* NextChallengesProtocols.swift in Sources */,
 				08276F331FC73F8C00A8E605 /* ChallengeCollectionViewCell.swift in Sources */,
+				8A3B2D031FECC4A8006D5658 /* EditProfileVCProtocols.swift in Sources */,
 				48C882F31FC893FA000A57C2 /* ChallengePresenterImpl.swift in Sources */,
 				48C882F71FC893FA000A57C2 /* FeaturedFavoriteClickCollectionViewCell.swift in Sources */,
 				147D50BA1FE314610048A04E /* SeeAllPastChallengesPresenterImp.swift in Sources */,
@@ -1255,6 +1264,7 @@
 				088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */,
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,
 				08EF52871FD6D73F00722A2F /* RegisterPresenterImpl.swift in Sources */,
+				8A3B2D051FECC548006D5658 /* EditProfilePresenterImp.swift in Sources */,
 				8AA5EA101FE9F21800DF6ED5 /* ConfigurationViewController.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */,

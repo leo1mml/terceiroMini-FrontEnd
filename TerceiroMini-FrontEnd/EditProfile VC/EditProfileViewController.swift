@@ -8,16 +8,22 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, EditProfileView {
 
+    @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var nameTextField: BottomLineTextField!
     @IBOutlet weak var userNameTextField: BottomLineTextField!
     @IBOutlet weak var emailTextField: BottomLineTextField!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileImageBorderView: UIView!
+    
+    var presenter : EditProfilePresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialConfigurationProfileImage()
+        self.presenter = EditProfilePresenterImp(self)
+        presenter?.recoverLogedUser()
         
         let outTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(outTap)
@@ -29,14 +35,14 @@ class EditProfileViewController: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         
         if self.view.frame.origin.y == 0{
-            self.view.frame.origin.y -= 130
+            self.view.frame.origin.y -= 190
         }
         
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0{
-            self.view.frame.origin.y += 130
+            self.view.frame.origin.y += 190
         }
     }
 
@@ -66,6 +72,18 @@ class EditProfileViewController: UIViewController {
         self.profileImage.image = UIImage(named: "profile-default")
     }
     
+    func setProfileImage(url: String) {
+        let url = URL(string: url)
+        self.profileImage.sd_setImage(with: url, completed: nil)
+    }
+    
+    func setUserDataHolders(name: String, username: String?, email: String, birthDate: String?, sex: String?) {
+        self.nameTextField.placeholderLbl.text = name
+        self.emailTextField.placeholderLbl.text = email
+        if(username != "empty"){
+            self.userNameTextField.placeholderLbl.text = username
+        }
+    }
 
     /*
     // MARK: - Navigation

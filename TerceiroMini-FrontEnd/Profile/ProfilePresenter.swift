@@ -66,8 +66,8 @@ class ProfilePresenterImpl: ProfilePresenter {
     }
 
     func loadHeader(id: String) {
-
-        var profileHolder = ProfileUserHolder(image: UIImage(), name: "", username: "")
+        
+        var profileHolder = ProfileUserHolder(imageUrl: "", name: "", username: "")
         
         NetworkManager.getUser(byId: id) { (user, error) in
             
@@ -78,21 +78,9 @@ class ProfilePresenterImpl: ProfilePresenter {
             
             // Usuario
             
-            if user?.profilePhotoUrl != nil {
-                
-                UIImage.fetch(with: (user?.profilePhotoUrl)!) { (image) in
-                    // ImagemPerfil
-                    
-                    profileHolder = ProfileUserHolder(image: image, name: (user?.name)!, username: (user?.username) ?? "no user name")
-                    self.view?.receiveDatas(profileUserHolder: profileHolder)
-                }
-                
-            } else {
-                
-                let image = UIImage(named: "profile-default")!
-                profileHolder = ProfileUserHolder(image: image, name: (user?.name)!, username: (user?.username) ?? "no username")
-                self.view?.receiveDatas(profileUserHolder: profileHolder)
-            }
+            profileHolder = ProfileUserHolder(imageUrl: (user?.profilePhotoUrl)!, name: (user?.name)!, username: (user?.username) ?? "no user name")
+            self.view?.receiveDatas(profileUserHolder: profileHolder)
+            
         }
     }
 }

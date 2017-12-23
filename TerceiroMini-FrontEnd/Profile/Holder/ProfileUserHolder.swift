@@ -10,7 +10,7 @@ import UIKit
 
 struct ProfileUserHolder {
     
-    var image: UIImage
+    var imageUrl: String
     var name: String
     var username: String?
 }

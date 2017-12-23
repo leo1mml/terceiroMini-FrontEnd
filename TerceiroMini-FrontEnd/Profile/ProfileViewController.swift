@@ -12,7 +12,7 @@ import SDWebImage
 class ProfileViewController: UIViewController, ProfileView, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var presenter: ProfilePresenter?
-    var holder = ProfileUserHolder(image: UIImage(named: "profile-default")!, name: "", username: "")
+    var holder = ProfileUserHolder(imageUrl: "", name: "", username: "")
     var cells = [ProfileCellHolder]()
     var user : User? {
         didSet {
@@ -83,7 +83,8 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             isGradients[indexPath.row] = true
         }
         
-        cell.backgroundImage.image = imageUrl(url: photos[indexPath.row].url!)
+        let url = URL(string: photos[indexPath.row].url!)
+        cell.backgroundImage.sd_setImage(with: url, completed: nil)
         
         cell.backgroundImage.contentMode = .scaleAspectFill
         
@@ -103,13 +104,6 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
     }
     
-    func imageUrl(url: String) -> UIImage {
-        let data = URL(string: url)
-        let imageView = UIImageView()
-        imageView.sd_setImage(with: data, completed: nil)
-        return imageView.image!
-    }
-    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     
         var reusableView: UICollectionReusableView? = nil
@@ -118,8 +112,8 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             
             let headerView: HeaderCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "profileHeader", for: indexPath) as! HeaderCollectionReusableView
             
-            // valor temporario
-            headerView.profileImage.image = holder.image
+            let url = URL(string: holder.imageUrl)
+            headerView.profileImage.sd_setImage(with:url, completed: nil)
             headerView.profileImage.contentMode = .scaleAspectFill
             
             headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2

@@ -38,7 +38,9 @@ class RegisterPresenterImpl: RegisterPresenter {
             }
 
             UserDefaults.standard.set(tkn, forKey: "token")
-            UserDefaults.standard.set(usr, forKey: "logedUser")
+            let encodedUser = NSKeyedArchiver.archivedData(withRootObject: usr!)
+            UserDefaults.standard.set(encodedUser, forKey: "logedUser")
+            UserDefaults.standard.synchronize()
             self.view.goToApp()
         }
     }

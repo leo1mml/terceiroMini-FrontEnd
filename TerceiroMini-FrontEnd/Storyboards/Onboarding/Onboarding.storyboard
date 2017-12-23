@@ -294,6 +294,9 @@ que vão amar fotografar</string>
                         <viewLayoutGuide key="safeArea" id="LpJ-Ri-nZw"/>
                     </view>
                     <connections>
+                        <outlet property="descText" destination="EHe-El-gXQ" id="buP-3Q-ao7"/>
+                        <outlet property="image" destination="2o7-9N-2KF" id="kc1-gx-a06"/>
+                        <outlet property="titleText" destination="4sp-9U-23C" id="9Lq-at-mm3"/>
                         <segue destination="5kW-sa-TQZ" kind="show" identifier="onboardingSegue" id="cDY-28-Rrf"/>
                     </connections>
                 </viewController>

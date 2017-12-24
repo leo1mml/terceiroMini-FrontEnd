@@ -46,6 +46,10 @@ class NetworkManager {
         UserNet.delete(byId: id, completion: completion)
     }
     
+    class func getChallengeWinner(by id: String, completion: @escaping (_ u: User?, _ e: Error?) -> Void){
+        UserNet.getChallengeWinner(by: id, completion: completion)
+    }
+    
     // MARK: - Photo methods
     
     class func getAllPhotos(completion: @escaping ([Photo]?, Error?) -> Void) {

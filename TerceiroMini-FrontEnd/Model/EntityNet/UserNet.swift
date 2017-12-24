@@ -283,6 +283,33 @@ class UserNet {
         }
     }
     
+    /**
+     
+     Creates a new login with facebook in the database.
+     
+     - parameter id: The id of the challenge.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter u: The user retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    
+    class func getChallengeWinner(by id: String, completion: @escaping (_ u: User?, _ e: Error?) -> Void){
+        let completeDomain = R.usersDomain + "/getWinnerByChallenge/" + id
+        
+        Alamofire.request(completeDomain).validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let dic = NetHelper.extractDictionary(fromJson: val, key: "userToFind")!
+            let usr = self.buildUser(fromDicitionary: dic)
+            
+            completion(usr, nil)
+        }
+    }
+    
     // MARK: - Auxiliar methods
     
     /**

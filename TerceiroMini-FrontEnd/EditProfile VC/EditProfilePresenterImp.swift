@@ -11,6 +11,7 @@ import Foundation
 class EditProfilePresenterImp : EditProfilePresenter {
     
     var view : EditProfileView?
+    var birthDate : String?
     
     init(_ view: EditProfileView) {
         self.view = view
@@ -22,6 +23,12 @@ class EditProfilePresenterImp : EditProfilePresenter {
         view?.setProfileImage(url: logedUser.profilePhotoUrl!)
         view?.setUserDataHolders(name: logedUser.name, username: logedUser.userName, email: logedUser.email, birthDate: nil, sex: nil)
     }
+    
+    func sendChangesToServer(name: String?, username: String?, sex: String?, birthDate: String?) {
+        
+    }
+    
+    
     
     
 }

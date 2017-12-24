@@ -13,4 +13,5 @@ protocol EditProfileView {
 
 protocol EditProfilePresenter {
     func recoverLogedUser()
+    func sendChangesToServer(name: String?, username: String?, sex: String?, birthDate: String?)
 }

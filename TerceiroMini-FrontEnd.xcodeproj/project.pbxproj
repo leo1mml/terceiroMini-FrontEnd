@@ -118,6 +118,11 @@
 		14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */; };
 		14D106201FBE00B000AA9F89 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */; };
 		14D106221FBE00CC00AA9F89 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */; };
+		14D4BCB11FEED26B001D721E /* Onboarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4BCB01FEED26B001D721E /* Onboarding1ViewController.swift */; };
+		14D4BCB31FEED27F001D721E /* Onboarding2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4BCB21FEED27F001D721E /* Onboarding2ViewController.swift */; };
+		14D4BCB51FEED28C001D721E /* Onboarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4BCB41FEED28C001D721E /* Onboarding3ViewController.swift */; };
+		14D4BCB71FEF1539001D721E /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4BCB61FEF1539001D721E /* OnboardingPresenter.swift */; };
+		14D4BCB91FEF155A001D721E /* OnboardingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4BCB81FEF155A001D721E /* OnboardingProtocols.swift */; };
 		14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */; };
 		46B70078A558A051391CBEB4 /* Pods_TerceiroMini_FrontEnd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95244B145A1038114AFF3E1 /* Pods_TerceiroMini_FrontEnd.framework */; };
 		481B81D01FD8632E000955E8 /* NextChallengesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B81CF1FD8632E000955E8 /* NextChallengesProtocols.swift */; };
@@ -284,6 +289,11 @@
 		14D1061D1FBE006E00AA9F89 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		14D1061F1FBE00B000AA9F89 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		14D106211FBE00CC00AA9F89 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
+		14D4BCB01FEED26B001D721E /* Onboarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1ViewController.swift; sourceTree = "<group>"; };
+		14D4BCB21FEED27F001D721E /* Onboarding2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2ViewController.swift; sourceTree = "<group>"; };
+		14D4BCB41FEED28C001D721E /* Onboarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3ViewController.swift; sourceTree = "<group>"; };
+		14D4BCB61FEF1539001D721E /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
+		14D4BCB81FEF155A001D721E /* OnboardingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocols.swift; sourceTree = "<group>"; };
 		14F410711FBF619900F940FF /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D4B01E5E418B8D664AB07B2 /* Pods-TerceiroMini-FrontEndTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEndTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEndTests/Pods-TerceiroMini-FrontEndTests.debug.xcconfig"; sourceTree = "<group>"; };
 		431FBB6EE6FE5217D03BB2FD /* Pods-TerceiroMini-FrontEnd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.debug.xcconfig"; sourceTree = "<group>"; };
@@ -722,7 +732,12 @@
 			isa = PBXGroup;
 			children = (
 				143F39651FEC0025007D8ECD /* OnboardingViewController.swift */,
+				14D4BCB01FEED26B001D721E /* Onboarding1ViewController.swift */,
+				14D4BCB21FEED27F001D721E /* Onboarding2ViewController.swift */,
+				14D4BCB41FEED28C001D721E /* Onboarding3ViewController.swift */,
 				142372471FEC9A7C002DD513 /* Onboarding4ViewController.swift */,
+				14D4BCB61FEF1539001D721E /* OnboardingPresenter.swift */,
+				14D4BCB81FEF155A001D721E /* OnboardingProtocols.swift */,
 			);
 			path = "Onboarding VC";
 			sourceTree = "<group>";
@@ -1231,6 +1246,7 @@
 				48C882F61FC893FA000A57C2 /* ExtensionChallgeViewController+Collection.swift in Sources */,
 				08276F2F1FC73F8C00A8E605 /* OpenChallengesCellPresenter.swift in Sources */,
 				0899EA031FC74D1A00F148DC /* Challenge.swift in Sources */,
+				14D4BCB91FEF155A001D721E /* OnboardingProtocols.swift in Sources */,
 				083E551B1FC84F41004E4EC0 /* R.swift in Sources */,
 				1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */,
 				481B81D01FD8632E000955E8 /* NextChallengesProtocols.swift in Sources */,
@@ -1246,6 +1262,7 @@
 				086D279A1FCC844B00D9F547 /* LoginPresentationProtocols.swift in Sources */,
 				08276F381FC73F8C00A8E605 /* LastWinnersCell.swift in Sources */,
 				8AA5EA0D1FE9F18E00DF6ED5 /* ConfigurationTableViewController.swift in Sources */,
+				14D4BCB51FEED28C001D721E /* Onboarding3ViewController.swift in Sources */,
 				48C882F51FC893FA000A57C2 /* ChallengeViewController.swift in Sources */,
 				08276F361FC73F8C00A8E605 /* ChallengeCollectionViewPresenter.swift in Sources */,
 				8AA5EA0E1FE9F18E00DF6ED5 /* ConfigHeader.swift in Sources */,
@@ -1256,10 +1273,12 @@
 				08276F391FC73F8C00A8E605 /* WinnerCollectionViewCell.swift in Sources */,
 				48620F1D1FD72AE600A45E3E /* TimeInterval+Extension.swift in Sources */,
 				0899EA011FC74D1400F148DC /* Photo.swift in Sources */,
+				14D4BCB11FEED26B001D721E /* Onboarding1ViewController.swift in Sources */,
 				14F410721FBF619900F940FF /* ProfileCollectionViewCell.swift in Sources */,
 				14C538031FD85B6700154004 /* ProfileCellHolder.swift in Sources */,
 				086D279C1FCC846000D9F547 /* LoginPresentationPresenterImpl.swift in Sources */,
 				48A7C4D31FD1EC3400EB5C1A /* ChallengeViewController+ChallengeHeaderDelegate.swift in Sources */,
+				14D4BCB31FEED27F001D721E /* Onboarding2ViewController.swift in Sources */,
 				0899EA051FC74D2900F148DC /* NetHelper.swift in Sources */,
 				088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */,
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,
@@ -1270,6 +1289,7 @@
 				481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */,
 				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,
 				4832D44C1FD9BECF00EE18DC /* ChallengeClosedViewController.swift in Sources */,
+				14D4BCB71FEF1539001D721E /* OnboardingPresenter.swift in Sources */,
 				8A5D5CEB1FB0D22C00C24725 /* AppDelegate.swift in Sources */,
 				086D27981FCC841600D9F547 /* LoginPresentationViewController.swift in Sources */,
 				0899EA091FC74D3900F148DC /* PhotoNet.swift in Sources */,

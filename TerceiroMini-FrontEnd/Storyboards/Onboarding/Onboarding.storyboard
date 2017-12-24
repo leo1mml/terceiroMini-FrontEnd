@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="494" y="196"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding1 View Controller-->
         <scene sceneID="m8C-tf-5j5">
             <objects>
-                <viewController storyboardIdentifier="Onboarding1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PPT-FO-YGu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PPT-FO-YGu" customClass="Onboarding1ViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HEn-gO-RBf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,15 +82,20 @@ que vão amar fotografar</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tLO-AJ-IgD"/>
                     </view>
+                    <connections>
+                        <outlet property="descText" destination="xhl-eO-lYn" id="tzK-MI-6j8"/>
+                        <outlet property="image" destination="oiB-R6-aa4" id="vVO-zk-702"/>
+                        <outlet property="titleText" destination="Oan-hG-CSf" id="W34-oX-61p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaG-Kd-yeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-681" y="939"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding2 View Controller-->
         <scene sceneID="u1v-m4-omu">
             <objects>
-                <viewController storyboardIdentifier="Onboarding2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="66B-Eq-mbX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="66B-Eq-mbX" customClass="Onboarding2ViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TPI-4O-fPN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,15 +152,20 @@ que vão amar fotografar</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WUc-l8-MYx"/>
                     </view>
+                    <connections>
+                        <outlet property="descText" destination="3e2-tq-aNi" id="Tlt-Gv-UoM"/>
+                        <outlet property="image" destination="SDI-pV-KIi" id="Vm4-it-KYh"/>
+                        <outlet property="titleText" destination="pgB-mB-DXm" id="Uan-d6-1rh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOd-NI-69w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="86" y="939"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding3 View Controller-->
         <scene sceneID="KQx-Og-Faj">
             <objects>
-                <viewController storyboardIdentifier="Onboarding3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Col-75-SXj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Col-75-SXj" customClass="Onboarding3ViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fu0-dc-6uZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,6 +222,11 @@ que vão amar fotografar</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sc4-fF-LvG"/>
                     </view>
+                    <connections>
+                        <outlet property="descText" destination="7zr-EU-7DD" id="gtA-CD-Wwi"/>
+                        <outlet property="image" destination="Gh6-wg-jeU" id="G53-Gh-WNx"/>
+                        <outlet property="titleText" destination="nWY-B4-5Lu" id="vLt-Ux-ZCh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxg-PS-Ucz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -278,7 +293,7 @@ que vão amar fotografar</string>
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="vamosLaButton:" destination="6bs-H6-hUl" eventType="touchUpInside" id="NOV-O5-Rdg"/>
+                                    <action selector="goAction:" destination="6bs-H6-hUl" eventType="touchUpInside" id="xau-fh-vCg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -310,7 +325,7 @@ que vão amar fotografar</string>
                 <viewControllerPlaceholder storyboardName="MainScreen" id="5kW-sa-TQZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEj-MN-xN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186" y="728"/>
+            <point key="canvasLocation" x="2285" y="728"/>
         </scene>
     </scenes>
     <resources>

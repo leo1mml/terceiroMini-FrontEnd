@@ -293,8 +293,8 @@ class UserNet {
      - parameter e: The error that ocurred.
      */
     
-    class func getChallengeWinner(by id: String, completion: @escaping (_ u: User?, _ e: Error?) -> Void){
-        let completeDomain = R.usersDomain + "/getWinnerByChallenge/" + id
+    class func getChallengeWinner(by challengeId: String, completion: @escaping (_ u: User?, _ e: Error?) -> Void){
+        let completeDomain = R.usersDomain + "/getWinnerByChallenge/" + challengeId
         
         Alamofire.request(completeDomain).validate().responseJSON { response in
             

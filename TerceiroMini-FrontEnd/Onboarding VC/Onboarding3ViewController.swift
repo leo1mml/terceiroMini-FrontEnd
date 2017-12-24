@@ -1,15 +1,15 @@
 //
-//  Onboarding4ViewController.swift
+//  Onboarding3ViewController.swift
 //  TerceiroMini-FrontEnd
 //
-//  Created by Augusto on 21/12/2017.
+//  Created by Augusto on 23/12/2017.
 //  Copyright © 2017 BEPID. All rights reserved.
 //
 
 import UIKit
 
-class Onboarding4ViewController: UIViewController, OnboardingView  {
-    
+class Onboarding3ViewController: UIViewController, OnboardingView  {
+
     var isRigth: Bool? = true
     
     var presenter: OnboardingPresenter?
@@ -32,12 +32,5 @@ class Onboarding4ViewController: UIViewController, OnboardingView  {
             presenter?.animateRigth()
         }
     }
-    
-    @IBAction func goAction(_ sender: Any) {
-        
-        UserDefaults.standard.set(true, forKey: "boarded")
-        performSegue(withIdentifier: "onboardingSegue", sender: self)
-        
-    }
-    
+
 }

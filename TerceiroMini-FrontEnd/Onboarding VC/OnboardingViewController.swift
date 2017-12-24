@@ -39,6 +39,7 @@ class OnboardingViewController: UIPageViewController {
 // MARK: UIPageViewControllerDataSource
 
 extension OnboardingViewController: UIPageViewControllerDataSource {
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
@@ -52,6 +53,23 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
         
         guard orderedViewControllers.count > previousIndex else {
             return nil
+        }
+        
+        switch viewControllerIndex {
+        case 1:
+            (orderedViewControllers[0] as! Onboarding1ViewController).isRigth = false
+            (orderedViewControllers[1] as! Onboarding2ViewController).isRigth = true
+            (orderedViewControllers[2] as! Onboarding3ViewController).isRigth = true
+            (orderedViewControllers[3] as! Onboarding4ViewController).isRigth = true
+            break
+        case 2:
+            (orderedViewControllers[0] as! Onboarding1ViewController).isRigth = false
+            (orderedViewControllers[1] as! Onboarding2ViewController).isRigth = false
+            (orderedViewControllers[2] as! Onboarding3ViewController).isRigth = false
+            (orderedViewControllers[3] as! Onboarding4ViewController).isRigth = true
+            break
+        default:
+            break
         }
         
         return orderedViewControllers[previousIndex]
@@ -73,6 +91,23 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
             return nil
         }
         
+        switch viewControllerIndex {
+        case 1:
+            (orderedViewControllers[0] as! Onboarding1ViewController).isRigth = false
+            (orderedViewControllers[1] as! Onboarding2ViewController).isRigth = true
+            (orderedViewControllers[2] as! Onboarding3ViewController).isRigth = true
+            (orderedViewControllers[3] as! Onboarding4ViewController).isRigth = true
+            break
+        case 2:
+            (orderedViewControllers[0] as! Onboarding1ViewController).isRigth = false
+            (orderedViewControllers[1] as! Onboarding2ViewController).isRigth = false
+            (orderedViewControllers[2] as! Onboarding3ViewController).isRigth = false
+            (orderedViewControllers[3] as! Onboarding4ViewController).isRigth = true
+            break
+        default:
+            break
+        }
+
         return orderedViewControllers[nextIndex]
     }
     
@@ -83,7 +118,7 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
             if view is UIScrollView {
                 view.frame = UIScreen.main.bounds
             } else if view is UIPageControl {
-                
+
                 let image = UIImage(named: "Oval")
                 (view as! UIPageControl).backgroundColor = UIColor.clear
                 (view as! UIPageControl).pageIndicatorTintColor = UIColor.init(patternImage: image!)

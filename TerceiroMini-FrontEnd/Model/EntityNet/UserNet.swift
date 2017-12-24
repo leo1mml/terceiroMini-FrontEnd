@@ -41,6 +41,7 @@ class UserNet {
                     let codeNumber = code as! Int
                     if(codeNumber == 11000){
                         completion(nil, nil, "Email already in use")
+                        return
                     }
                 }
                 guard let errors = NetHelper.extractDictionary(fromJson: error, key: "errors") else {return}
@@ -280,6 +281,33 @@ class UserNet {
             let tkn = response.response?.allHeaderFields["X-Auth"] as? String
             
             completion(usr, tkn, nil)
+        }
+    }
+    
+    /**
+     
+     Creates a new login with facebook in the database.
+     
+     - parameter id: The id of the challenge.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter u: The user retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    
+    class func getChallengeWinner(by challengeId: String, completion: @escaping (_ u: User?, _ e: Error?) -> Void){
+        let completeDomain = R.usersDomain + "/getWinnerByChallenge/" + challengeId
+        
+        Alamofire.request(completeDomain).validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            let dic = NetHelper.extractDictionary(fromJson: val, key: "userToFind")!
+            let usr = self.buildUser(fromDicitionary: dic)
+            
+            completion(usr, nil)
         }
     }
     

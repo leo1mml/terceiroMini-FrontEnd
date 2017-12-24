@@ -13,14 +13,14 @@ class User: NSObject, NSCoding {
     let id: String?
     let email: String
     let name: String
-    let username: String?
+    let userName: String?
     let profilePhotoUrl: String?
     
     init(_ id: String? = nil, _ email: String, _ name: String, _ username: String?, _ profilePhotoUrl: String?) {
         self.id = id
         self.email = email
         self.name = name
-        self.username = username
+        self.userName = username
         self.profilePhotoUrl = profilePhotoUrl
     }
     
@@ -29,7 +29,7 @@ class User: NSObject, NSCoding {
         aCoder.encode(id, forKey: "id")
         aCoder.encode(email, forKey: "email")
         aCoder.encode(name, forKey: "name")
-        aCoder.encode(username, forKey: "username")
+        aCoder.encode(userName, forKey: "username")
         aCoder.encode(profilePhotoUrl, forKey: "profilePhotoUrl")
         
     }

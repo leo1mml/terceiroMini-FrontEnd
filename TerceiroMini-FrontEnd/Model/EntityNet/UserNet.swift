@@ -41,6 +41,7 @@ class UserNet {
                     let codeNumber = code as! Int
                     if(codeNumber == 11000){
                         completion(nil, nil, "Email already in use")
+                        return
                     }
                 }
                 guard let errors = NetHelper.extractDictionary(fromJson: error, key: "errors") else {return}

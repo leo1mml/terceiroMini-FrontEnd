@@ -78,7 +78,7 @@ class ProfilePresenterImpl: ProfilePresenter {
             
             // Usuario
             
-            profileHolder = ProfileUserHolder(imageUrl: (user?.profilePhotoUrl)!, name: (user?.name)!, username: (user?.username) ?? "no user name")
+            profileHolder = ProfileUserHolder(imageUrl: (user?.profilePhotoUrl)!, name: (user?.name)!, username: (user?.userName) ?? "no user name")
             self.view?.receiveDatas(profileUserHolder: profileHolder)
             
         }

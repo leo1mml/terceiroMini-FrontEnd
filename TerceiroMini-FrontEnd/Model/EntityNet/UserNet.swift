@@ -64,7 +64,7 @@ class UserNet {
                 return
             }
             
-            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
+            guard let dic = NetHelper.extractDictionary(fromJson: val, key: "user") else {return}
             
             let user = self.buildUser(fromDicitionary: dic)
             let token = response.response!.allHeaderFields["X-Auth"] as? String
@@ -90,7 +90,7 @@ class UserNet {
                 return
             }
             
-            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "users")!
+            guard let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "users") else {return}
             let ret = self.buildUserArray(fromDictionaryArray: arr)
             
             completion(ret, nil)
@@ -114,7 +114,7 @@ class UserNet {
                 return
             }
             
-            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "users")!
+            guard let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "users") else {return}
             let ret = self.buildUserArray(fromDictionaryArray: arr)
             
             completion(ret, nil)
@@ -141,7 +141,7 @@ class UserNet {
                 return
             }
             
-            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
+            guard let dic = NetHelper.extractDictionary(fromJson: val, key: "user") else {return}
             let user = self.buildUser(fromDicitionary: dic)
             
             completion(user, nil)
@@ -190,10 +190,10 @@ class UserNet {
                 return
             }
             
-            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
-            let usr = self.buildUser(fromDicitionary: dic)
-            
-            completion(usr, nil)
+            if let dic = NetHelper.extractDictionary(fromJson: val, key: "user"){
+                let usr = self.buildUser(fromDicitionary: dic)
+                completion(usr, nil)
+            }
         }
     }
     
@@ -242,12 +242,13 @@ class UserNet {
                 return
             }
             
-            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
-            let usr = buildUser(fromDicitionary: dic)
-            
-            let tkn = response.response?.allHeaderFields["X-Auth"] as? String
-            
-            completion(usr, tkn, nil)
+            if let dic = NetHelper.extractDictionary(fromJson: val, key: "user"){
+                let usr = buildUser(fromDicitionary: dic)
+                
+                let tkn = response.response?.allHeaderFields["X-Auth"] as? String
+                
+                completion(usr, tkn, nil)
+            }
         }
     }
     
@@ -275,12 +276,13 @@ class UserNet {
                 return
             }
             
-            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
-            let usr = buildUser(fromDicitionary: dic)
-            
-            let tkn = response.response?.allHeaderFields["X-Auth"] as? String
-            
-            completion(usr, tkn, nil)
+            if let dic = NetHelper.extractDictionary(fromJson: val, key: "user"){
+                let usr = buildUser(fromDicitionary: dic)
+                
+                let tkn = response.response?.allHeaderFields["X-Auth"] as? String
+                
+                completion(usr, tkn, nil)
+            }
         }
     }
     
@@ -304,10 +306,11 @@ class UserNet {
                 return
             }
             
-            let dic = NetHelper.extractDictionary(fromJson: val, key: "userToFind")!
-            let usr = self.buildUser(fromDicitionary: dic)
-            
-            completion(usr, nil)
+            if let dic = NetHelper.extractDictionary(fromJson: val, key: "userToFind"){
+                let usr = self.buildUser(fromDicitionary: dic)
+                
+                completion(usr, nil)
+            }
         }
     }
     

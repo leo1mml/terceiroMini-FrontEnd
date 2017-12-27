@@ -67,7 +67,7 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
             }
         }
         delegateAnimations?.setFirstOffset(firstOffsetX: (pageViewScroll?.contentOffset.x)!)
-        
+        self.view.backgroundColor = Colors.darkWhite
         // Do any additional setup after loading the view.
     }
     override var canBecomeFirstResponder: Bool {

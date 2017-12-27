@@ -47,6 +47,8 @@ class ChallengeCollectionViewCell: UICollectionViewCell, ChallengesCellView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.presenter = ChallengesCellPresenterImp(challengeCellView: self)
+        self.themeLabel.adjustsFontSizeToFitWidth = true
+        self.themeLabel.minimumScaleFactor = 0.2
     }
     
 }

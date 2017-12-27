@@ -314,6 +314,61 @@ class UserNet {
         }
     }
     
+    
+    /**
+     
+     Patch user authenticated.
+     
+     - parameter token: token for authentication.
+     - parameter user: User to be updated with.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter u: The user retrieved by the task.
+     - parameter e: The error that ocurred.
+     - parameter msg: the error message to be displayed
+     */
+    
+    class func patchMe(token: String, user: User, completion: @escaping (_ u: User?, _ e: Error?,_ msg: String?) -> Void){
+        let completeDomain = R.usersDomain + "patchMe"
+        let header = ["x-auth": token]
+        let dic = buildDictionary(fromUser: user)
+        
+        Alamofire.request(completeDomain, method: .patch, parameters: dic, encoding: JSONEncoding.default, headers: header).responseJSON { response in
+            
+            if(response.response?.statusCode == 400){
+                guard let error = NetHelper.extractDictionary(fromJson: response.value!, key: "error") else {return}
+                if let code = error["code"]{
+                    let codeNumber = code as! Int
+                    if(codeNumber == 11000){
+                        completion(nil, nil, "User Name already in use")
+                        return
+                    }
+                }
+                
+                guard let errors = NetHelper.extractDictionary(fromJson: error, key: "errors") else {return}
+                if let nameError = NetHelper.extractDictionary(fromJson: errors["name"] ?? "", key: "properties"){
+                    let message = nameError["message"] as! String
+                    completion(nil, nil, message)
+                    return
+                }
+            }
+            
+            guard let val = response.value else {
+                completion(nil, nil, "Error not identified")
+                return
+            }
+            
+            guard let dic = NetHelper.extractDictionary(fromJson: val, key: "user") else {return}
+            
+            let user = self.buildUser(fromDicitionary: dic)
+            
+            completion(user, nil, nil)
+            
+        }
+        
+        
+    }
+    
+    
     // MARK: - Auxiliar methods
     
     /**

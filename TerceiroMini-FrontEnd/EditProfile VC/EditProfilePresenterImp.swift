@@ -12,6 +12,11 @@ class EditProfilePresenterImp : EditProfilePresenter {
     
     var view : EditProfileView?
     var birthDate : String?
+    var profilePhotoUrlChanged : String? {
+        didSet {
+            
+        }
+    }
     
     init(_ view: EditProfileView) {
         self.view = view

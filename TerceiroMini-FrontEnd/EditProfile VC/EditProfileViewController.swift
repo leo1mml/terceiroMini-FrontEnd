@@ -13,7 +13,6 @@ class EditProfileViewController: UIViewController, EditProfileView {
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var nameTextField: BottomLineTextField!
     @IBOutlet weak var userNameTextField: BottomLineTextField!
-    @IBOutlet weak var emailTextField: BottomLineTextField!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileImageBorderView: UIView!
     let sexInputs = ["Masculino", "Feminino", "Não especificado"]
@@ -42,14 +41,14 @@ class EditProfileViewController: UIViewController, EditProfileView {
     @objc func keyboardWillShow(notification: NSNotification) {
         
         if self.view.frame.origin.y == 0{
-            self.view.frame.origin.y -= 190
+            self.view.frame.origin.y -= 120
         }
         
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0{
-            self.view.frame.origin.y += 190
+            self.view.frame.origin.y += 120
         }
     }
 
@@ -65,7 +64,6 @@ class EditProfileViewController: UIViewController, EditProfileView {
 
     @objc func dismissKeyboard() {
         self.nameTextField.endEditing(false)
-        self.emailTextField.endEditing(false)
         self.userNameTextField.endEditing(false)
         self.birthDateTextField.endEditing(false)
         self.sexTextField.endEditing(false)
@@ -123,14 +121,37 @@ class EditProfileViewController: UIViewController, EditProfileView {
     
     func setUserDataHolders(name: String, username: String?, email: String, birthDate: String?, sex: String?) {
         self.nameTextField.placeholderLbl.text = name
-        self.emailTextField.placeholderLbl.text = email
         if(username != "empty"){
             self.userNameTextField.placeholderLbl.text = username
         }
     }
     
     @IBAction func saveChanges(_ sender: Any) {
-        presenter?.sendChangesToServer(name: self.nameTextField.text, username: self.userNameTextField.text, sex: self.sexTextField.text, birthDate: self.birthDateTextField.text)
+        var sex : Int?
+        if(sexTextField.text == "Masculino"){
+            sex = 1
+        }else if(sexTextField.text == "Feminino"){
+            sex = 2
+        }else if(sexTextField.text == "Não especificado"){
+            sex = 9
+        }else {
+            sex = 0
+        }
+        var birthDate : String?
+        if(birthDateTextField.placeholderLbl.text != "Data de Nascimento"){
+            birthDate = DateHelper.shared.getString(fromDate: self.birthDatePicker.date)
+        }
+        
+        var name : String?
+        if(nameTextField.text != ""){
+            name = nameTextField.text
+        }
+        var userName : String?
+        if(userNameTextField.text != ""){
+            userName = userNameTextField.text
+        }
+        
+        presenter?.sendChangesToServer(name: name, username: userName, sex: sex, birthDate: birthDate)
     }
 
     /*

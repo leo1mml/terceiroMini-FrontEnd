@@ -84,34 +84,28 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Scc-iU-TmG">
-                                <rect key="frame" x="20" y="235.5" width="335" height="360.5"/>
+                                <rect key="frame" x="20" y="235.5" width="335" height="292"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2B-nt-ucS" customClass="BottomLineTextField" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="56"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="58"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome de Usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rMl-tw-bVS" customClass="BottomLineTextField" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="76" width="335" height="56"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2X-VG-RYE" customClass="BottomLineTextField" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="152" width="335" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="78" width="335" height="58"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Data de Nascimento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhQ-hJ-N7q" customClass="BottomLineTextField" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="228.5" width="335" height="56"/>
+                                        <rect key="frame" x="0.0" y="156" width="335" height="58"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sexo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o0t-cv-mZh" customClass="BottomLineTextField" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="304.5" width="335" height="56"/>
+                                        <rect key="frame" x="0.0" y="234" width="335" height="58"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -120,6 +114,7 @@
                                 <constraints>
                                     <constraint firstItem="E2B-nt-ucS" firstAttribute="top" secondItem="Scc-iU-TmG" secondAttribute="top" id="3iH-Yn-Hc0"/>
                                     <constraint firstItem="E2B-nt-ucS" firstAttribute="leading" secondItem="Scc-iU-TmG" secondAttribute="leading" id="484-aS-3ao"/>
+                                    <constraint firstAttribute="height" constant="292" id="Gvu-Lr-zEs"/>
                                     <constraint firstAttribute="trailing" secondItem="E2B-nt-ucS" secondAttribute="trailing" id="RuY-lR-yAA"/>
                                 </constraints>
                             </stackView>
@@ -129,7 +124,6 @@
                             <constraint firstItem="Scc-iU-TmG" firstAttribute="leading" secondItem="P2f-wg-p9m" secondAttribute="leading" constant="20" id="2f0-gN-0Td"/>
                             <constraint firstItem="Scc-iU-TmG" firstAttribute="top" secondItem="vJe-jP-wsW" secondAttribute="bottom" constant="30" id="601-8i-kCC"/>
                             <constraint firstItem="n0f-bV-tgx" firstAttribute="leading" secondItem="P2f-wg-p9m" secondAttribute="leading" constant="25" id="7t6-xB-apF"/>
-                            <constraint firstItem="P2f-wg-p9m" firstAttribute="bottom" secondItem="Scc-iU-TmG" secondAttribute="bottom" constant="71" id="FWM-Tg-kaM"/>
                             <constraint firstItem="P2f-wg-p9m" firstAttribute="trailing" secondItem="Scc-iU-TmG" secondAttribute="trailing" constant="20" id="FzI-um-cZO"/>
                             <constraint firstItem="hO5-wB-mGj" firstAttribute="top" secondItem="cnn-sL-Eah" secondAttribute="top" constant="35" id="K2X-XX-yfs"/>
                             <constraint firstItem="Q3w-8E-gCr" firstAttribute="top" secondItem="cnn-sL-Eah" secondAttribute="top" constant="33" id="Suh-fc-lxq"/>
@@ -145,7 +139,6 @@
                     <connections>
                         <outlet property="birthDateTextField" destination="bhQ-hJ-N7q" id="ibY-r1-Xsp"/>
                         <outlet property="cameraButton" destination="KHw-F1-pqe" id="zWE-HB-opU"/>
-                        <outlet property="emailTextField" destination="J2X-VG-RYE" id="wLA-79-irn"/>
                         <outlet property="nameTextField" destination="E2B-nt-ucS" id="jQb-uB-qYl"/>
                         <outlet property="profileImage" destination="agM-ck-5CM" id="Opr-5X-qcg"/>
                         <outlet property="profileImageBorderView" destination="vJe-jP-wsW" id="WjH-xR-rcN"/>

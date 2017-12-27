@@ -24,11 +24,8 @@ class EditProfilePresenterImp : EditProfilePresenter {
         view?.setUserDataHolders(name: logedUser.name, username: logedUser.userName, email: logedUser.email, birthDate: nil, sex: nil)
     }
     
-    func sendChangesToServer(name: String?, username: String?, sex: String?, birthDate: String?) {
+    func sendChangesToServer(name: String?, username: String?, sex: Int?, birthDate: String?) {
+        
         
     }
-    
-    
-    
-    
 }

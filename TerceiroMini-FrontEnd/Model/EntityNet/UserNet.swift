@@ -306,7 +306,7 @@ class UserNet {
                 return
             }
             
-            if let dic = NetHelper.extractDictionary(fromJson: val, key: "userToFind"){
+            if let dic = NetHelper.extractDictionary(fromJson: val, key: "foundUser"){
                 let usr = self.buildUser(fromDicitionary: dic)
                 
                 completion(usr, nil)

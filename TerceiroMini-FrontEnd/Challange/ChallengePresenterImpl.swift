@@ -197,7 +197,7 @@ class ChallengePresenterImpl: ChallengePresenter{
     func getChallengeWinner(challengeID: String) -> User{
         //pegar challenge winner
         
-        return User("aaa", "", "","", "")
+        return User("aaa", "", "","", "", nil, nil)
     }
     
     //MAIN BUTTON HANDLE CLICK

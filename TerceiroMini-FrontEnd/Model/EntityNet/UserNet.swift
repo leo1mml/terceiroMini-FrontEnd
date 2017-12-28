@@ -398,8 +398,11 @@ class UserNet {
         let name = dic["name"] as! String
         let username = dic["userName"] as? String
         let profileImageUrl = dic["profilePhoto"] as? String
+        let birthDate = DateHelper.shared.getDate(fromString: (dic["birthDate"] as? String ?? ""))
+        let sex = dic["sex"] as? Int
         
-        return User(id, email, name, username, profileImageUrl)
+        
+        return User(id, email, name, username, profileImageUrl, birthDate, sex)
     }
     
     /**

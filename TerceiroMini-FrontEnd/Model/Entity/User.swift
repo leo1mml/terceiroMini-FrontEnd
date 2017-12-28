@@ -12,11 +12,11 @@ class User: NSObject, NSCoding {
     
     let id: String?
     let email: String?
-    let name: String?
-    let userName: String?
-    let profilePhotoUrl: String?
-    let birthDate : Date?
-    let sex : Int?
+    var name: String?
+    var userName: String?
+    var profilePhotoUrl: String?
+    var birthDate : Date?
+    var sex : Int?
     
     init(_ id: String? = nil, _ email: String?, _ name: String?, _ username: String?, _ profilePhotoUrl: String? , _ birthDate: Date?, _ sex : Int?) {
         self.id = id

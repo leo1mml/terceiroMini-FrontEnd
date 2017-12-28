@@ -50,6 +50,10 @@ class NetworkManager {
         UserNet.getChallengeWinner(by: challengeId, completion: completion)
     }
     
+    class func patchMe(token: String, user: User, completion: @escaping (_ u: User?, _ e: Error?,_ msg: String?) -> Void){
+        UserNet.patchMe(token: token, user: user, completion: completion)
+    }
+    
     // MARK: - Photo methods
     
     class func getAllPhotos(completion: @escaping ([Photo]?, Error?) -> Void) {

@@ -328,7 +328,7 @@ class UserNet {
      */
     
     class func patchMe(token: String, user: User, completion: @escaping (_ u: User?, _ e: Error?,_ msg: String?) -> Void){
-        let completeDomain = R.usersDomain + "patchMe"
+        let completeDomain = R.usersDomain + "/patchMe"
         let header = ["x-auth": token]
         let dic = buildDictionary(fromUser: user)
         

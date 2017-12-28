@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class EditProfileViewController: UIViewController, EditProfileView {
+    
+    
 
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var nameTextField: BottomLineTextField!
@@ -119,11 +122,42 @@ class EditProfileViewController: UIViewController, EditProfileView {
         birthDateTextField.inputAccessoryView = toolbar
     }
     
-    func setUserDataHolders(name: String, username: String?, email: String, birthDate: String?, sex: String?) {
-        self.nameTextField.placeholderLbl.text = name
+    func setUserDataHolders(name: String?, username: String?, birthDate: String?, sex: String?) {
+        if(name !=  nil){
+            self.nameTextField.placeholderLbl.text = name
+        }
+        if(sex !=  nil){
+            self.sexTextField.placeholderLbl.text = sex
+        }
+        if(birthDate !=  nil){
+            self.birthDateTextField.placeholderLbl.text = name
+        }
         if(username != "empty"){
             self.userNameTextField.placeholderLbl.text = username
         }
+    }
+    
+    func sendErrorMessage(message: String) {
+        let msg : String
+        switch message {
+        case "User Name already in use":
+            msg = "Nome de usuário não disponível"
+        default:
+            msg = message
+        }
+        
+        let banner = NotificationBanner(title: msg, subtitle: "", style: .danger)
+        banner.show()
+    }
+    
+    func sendUknownErrorBanner() {
+        let banner = NotificationBanner(title: "Erro Interno", subtitle: "", style: .danger)
+        banner.show()
+    }
+    
+    func sendSuccessBanner() {
+        let banner = NotificationBanner(title: "Dados alterados!", subtitle: "", style: .success)
+        banner.show()
     }
     
     @IBAction func saveChanges(_ sender: Any) {

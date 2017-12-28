@@ -123,18 +123,39 @@ class EditProfileViewController: UIViewController, EditProfileView {
     }
     
     func setUserDataHolders(name: String?, username: String?, birthDate: String?, sex: String?) {
+        let userData = UserDefaults.standard.object(forKey: "logedUser") as! Data
+        let logedUser = NSKeyedUnarchiver.unarchiveObject(with: userData) as! User
         if(name !=  nil){
             self.nameTextField.placeholderLbl.text = name
+            logedUser.name = name
         }
         if(sex !=  nil){
             self.sexTextField.placeholderLbl.text = sex
+            switch sex {
+            case "Masculino"?:
+                logedUser.sex = 1
+                break
+            case "Feminino"?:
+                logedUser.sex = 2
+                break
+            case "Não especificado"?:
+                logedUser.sex = 9
+                break
+            default:
+                logedUser.sex = 0
+            }
         }
         if(birthDate !=  nil){
             self.birthDateTextField.placeholderLbl.text = name
         }
         if(username != "empty"){
             self.userNameTextField.placeholderLbl.text = username
+            logedUser.userName = username
         }
+        
+        let encodedUser = NSKeyedArchiver.archivedData(withRootObject: logedUser)
+        UserDefaults.standard.set(encodedUser, forKey: "logedUser")
+        UserDefaults.standard.synchronize()
     }
     
     func sendErrorMessage(message: String) {

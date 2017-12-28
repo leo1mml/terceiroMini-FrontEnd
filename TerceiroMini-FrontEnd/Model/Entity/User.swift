@@ -11,14 +11,14 @@ import Foundation
 class User: NSObject, NSCoding {
     
     let id: String?
-    let email: String
-    let name: String
+    let email: String?
+    let name: String?
     let userName: String?
     let profilePhotoUrl: String?
     let birthDate : Date?
     let sex : Int?
     
-    init(_ id: String? = nil, _ email: String, _ name: String, _ username: String?, _ profilePhotoUrl: String? , _ birthDate: Date?, _ sex : Int?) {
+    init(_ id: String? = nil, _ email: String?, _ name: String?, _ username: String?, _ profilePhotoUrl: String? , _ birthDate: Date?, _ sex : Int?) {
         self.id = id
         self.email = email
         self.name = name
@@ -41,13 +41,13 @@ class User: NSObject, NSCoding {
     
     required convenience init?(coder aDecoder: NSCoder) {
         let id = aDecoder.decodeObject(forKey: "id") as! String
-        let email = aDecoder.decodeObject(forKey: "email") as! String
-        let name = aDecoder.decodeObject(forKey: "name") as! String
+        let email = aDecoder.decodeObject(forKey: "email") as? String?
+        let name = aDecoder.decodeObject(forKey: "name") as? String?
         let username = aDecoder.decodeObject(forKey: "username") as? String ?? "empty"
         let profilePhotoUrl = aDecoder.decodeObject(forKey: "profilePhotoUrl") as? String ?? ""
         let birthDate = aDecoder.decodeObject(forKey: "birthDate") as? Date?
         let sex = aDecoder.decodeObject(forKey: "sex") as? Int?
-        self.init(id, email, name, username, profilePhotoUrl, birthDate!, sex!)
+        self.init(id, email!, name!, username, profilePhotoUrl, birthDate!, sex!)
         
     }
 }

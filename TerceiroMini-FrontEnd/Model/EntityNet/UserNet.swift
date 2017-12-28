@@ -413,9 +413,30 @@ class UserNet {
      */
     private class func buildDictionary(fromUser u: User) -> [String: Any] {
         
-        return ["_id": u.id ?? "",
-                "email": u.email,
-                "name": u.name,
-                "profileImageUrl:": u.profilePhotoUrl ?? ""]
+        var dic = [String: Any]()
+        
+        if(u.email != nil){
+            dic["email"] = u.email
+        }
+        if(u.id != nil){
+            dic["_id"] = u.id
+        }
+        if(u.name != nil){
+            dic["name"] = u.name
+        }
+        if(u.profilePhotoUrl != nil){
+            dic["profileUrl"] = u.profilePhotoUrl
+        }
+        if(u.birthDate != nil){
+            dic["birthDate"] = DateHelper.shared.getString(fromDate: u.birthDate!)
+        }
+        if(u.sex != nil){
+            dic["sex"] = u.sex
+        }
+        if(u.userName != nil){
+            dic["userName"] = u.userName
+        }
+        
+        return dic
     }
 }

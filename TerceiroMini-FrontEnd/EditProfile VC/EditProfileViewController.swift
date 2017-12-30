@@ -20,6 +20,7 @@ class EditProfileViewController: UIViewController, EditProfileView {
     @IBOutlet weak var profileImageBorderView: UIView!
     let sexInputs = ["Masculino", "Feminino", "Não especificado"]
     let birthDatePicker = UIDatePicker()
+    let sexPicker = UIPickerView()
     
     @IBOutlet weak var sexTextField: BottomLineTextField!
     @IBOutlet weak var birthDateTextField: BottomLineTextField!
@@ -62,7 +63,7 @@ class EditProfileViewController: UIViewController, EditProfileView {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.profileImageBorderView.makeCircleBorderAnimate()
+        self.profileImageBorderView.makeBorderAnimate()
     }
 
     @objc func dismissKeyboard() {
@@ -96,9 +97,9 @@ class EditProfileViewController: UIViewController, EditProfileView {
     }
     
     func createSexPicker() {
-        let sexPicker = UIPickerView()
         sexPicker.delegate = self
         self.sexTextField.inputView = sexPicker
+        sexPicker.selectRow(0, inComponent: 0, animated: false)
     }
     
     func createToolBar() {
@@ -113,6 +114,7 @@ class EditProfileViewController: UIViewController, EditProfileView {
     func configureBithDatePicker() {
         birthDatePicker.datePickerMode = .date
         birthDatePicker.locale = Locale(identifier: "pt-BR")
+        birthDatePicker.maximumDate = Date(timeIntervalSinceNow: (60*60*24*30*12*10*(-1)))
         self.birthDateTextField.inputView = birthDatePicker
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -120,6 +122,22 @@ class EditProfileViewController: UIViewController, EditProfileView {
         toolbar.setItems([doneButon], animated: false)
         toolbar.isUserInteractionEnabled = true
         birthDateTextField.inputAccessoryView = toolbar
+    }
+    
+    func getSexNumber(sex: String) -> Int {
+        var sexNumber : Int?
+        switch sex {
+        case "Masculino":
+            sexNumber = 1
+            break
+        case "Feminino":
+            sexNumber = 2
+            break
+        default:
+            sexNumber = 9
+            break
+        }
+        return sexNumber!
     }
     
     func setUserDataHolders(name: String?, username: String?, birthDate: String?, sex: String?) {
@@ -131,22 +149,16 @@ class EditProfileViewController: UIViewController, EditProfileView {
         }
         if(sex !=  nil){
             self.sexTextField.placeholderLbl.text = sex
-            switch sex {
-            case "Masculino"?:
-                logedUser.sex = 1
-                break
-            case "Feminino"?:
-                logedUser.sex = 2
-                break
-            case "Não especificado"?:
-                logedUser.sex = 9
-                break
-            default:
-                logedUser.sex = 0
-            }
+            logedUser.sex = getSexNumber(sex: sex!)
         }
         if(birthDate !=  nil){
-            self.birthDateTextField.placeholderLbl.text = name
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            let dateFormat = DateHelper.shared.getDate(fromString: birthDate!)
+            let dateString = formatter.string(from: dateFormat!)
+            self.birthDateTextField.placeholderLbl.text = dateString
+            logedUser.birthDate = dateFormat
         }
         if(username != "empty"){
             self.userNameTextField.placeholderLbl.text = username
@@ -183,18 +195,15 @@ class EditProfileViewController: UIViewController, EditProfileView {
     
     @IBAction func saveChanges(_ sender: Any) {
         var sex : Int?
-        if(sexTextField.text == "Masculino"){
-            sex = 1
-        }else if(sexTextField.text == "Feminino"){
-            sex = 2
-        }else if(sexTextField.text == "Não especificado"){
-            sex = 9
+        if(sexTextField.text?.isEmpty)!{
+            sex = getSexNumber(sex: sexTextField.placeholderLbl.text!)
         }else {
-            sex = 0
+            sex = getSexNumber(sex: sexTextField.text!)
         }
-        var birthDate : String?
-        if(birthDateTextField.placeholderLbl.text != "Data de Nascimento"){
-            birthDate = DateHelper.shared.getString(fromDate: self.birthDatePicker.date)
+        
+        var birthDate : Date?
+        if(birthDatePicker.date.timeIntervalSinceNow > (60*60*24*30*12*10)){
+            birthDate = self.birthDatePicker.date
         }
         
         var name : String?

@@ -5,6 +5,7 @@
 //  Created by Leonel Menezes on 22/12/2017.
 //  Copyright © 2017 BEPID. All rights reserved.
 //
+import UIKit
 
 protocol EditProfileView {
     func setProfileImage(url: String)
@@ -16,5 +17,5 @@ protocol EditProfileView {
 
 protocol EditProfilePresenter {
     func recoverLogedUser()
-    func sendChangesToServer(name: String?, username: String?, sex: Int?, birthDate: String?)
+    func sendChangesToServer(name: String?, username: String?, sex: Int?, birthDate: Date?)
 }

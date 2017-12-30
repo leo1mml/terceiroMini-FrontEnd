@@ -33,7 +33,7 @@ class WinnerCollectionViewCell: UICollectionViewCell {
     }
     
     func setupUserImage() {
-        let url = URL(string: (self.user?.profilePhotoUrl)!)
+        let url = URL(string: self.user?.profilePhotoUrl ?? "")
         self.profilePhoto.sd_setImage(with: url, completed: nil)
     }
     

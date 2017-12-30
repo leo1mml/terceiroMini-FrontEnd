@@ -162,6 +162,8 @@
 		8AA5EA0E1FE9F18E00DF6ED5 /* ConfigHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0B1FE9F18D00DF6ED5 /* ConfigHeader.swift */; };
 		8AA5EA101FE9F21800DF6ED5 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0F1FE9F21800DF6ED5 /* ConfigurationViewController.swift */; };
 		8AB5EF8F1FEB361500DC5E3C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB5EF8E1FEB361500DC5E3C /* EditProfileViewController.swift */; };
+		8AC08E3B1FF848EA00C99A3A /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC08E3A1FF848EA00C99A3A /* ChangePassword.storyboard */; };
+		8AC08E3E1FF851F100C99A3A /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08E3D1FF851F100C99A3A /* ChangePasswordViewController.swift */; };
 		C87B3931903CC41B445596E6 /* Pods_TerceiroMini_FrontEndTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBAD5641C9F32E95E0FB6951 /* Pods_TerceiroMini_FrontEndTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -347,6 +349,8 @@
 		8AA5EA0B1FE9F18D00DF6ED5 /* ConfigHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigHeader.swift; sourceTree = "<group>"; };
 		8AA5EA0F1FE9F21800DF6ED5 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		8AB5EF8E1FEB361500DC5E3C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		8AC08E3A1FF848EA00C99A3A /* ChangePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
+		8AC08E3D1FF851F100C99A3A /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		8D43BBE3F175821DCA81CC71 /* Pods-TerceiroMini-FrontEnd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.release.xcconfig"; sourceTree = "<group>"; };
 		B95244B145A1038114AFF3E1 /* Pods_TerceiroMini_FrontEnd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEnd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96B92415F7A4776249411C5 /* Pods-TerceiroMini-FrontEndTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEndTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEndTests/Pods-TerceiroMini-FrontEndTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -714,6 +718,7 @@
 		08F06F9B1FBB594A0039EAFE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				8AC08E391FF8484800C99A3A /* Change Password */,
 				14CFE7B41FEBF437000415B9 /* Onboarding */,
 				147D50BE1FE314CB0048A04E /* EditProfile */,
 				147D50BB1FE314A30048A04E /* SeeAllPastChallenges */,
@@ -904,6 +909,7 @@
 		8A5D5CE91FB0D22C00C24725 /* TerceiroMini-FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				8AC08E3C1FF851D500C99A3A /* ChangePasswordVC */,
 				143F39621FEBFFB7007D8ECD /* Onboarding VC */,
 				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
 				081C1FD91FDEF98000CCEE1A /* General */,
@@ -943,6 +949,22 @@
 				8A3B2D041FECC548006D5658 /* EditProfilePresenterImp.swift */,
 			);
 			path = "EditProfile VC";
+			sourceTree = "<group>";
+		};
+		8AC08E391FF8484800C99A3A /* Change Password */ = {
+			isa = PBXGroup;
+			children = (
+				8AC08E3A1FF848EA00C99A3A /* ChangePassword.storyboard */,
+			);
+			path = "Change Password";
+			sourceTree = "<group>";
+		};
+		8AC08E3C1FF851D500C99A3A /* ChangePasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				8AC08E3D1FF851F100C99A3A /* ChangePasswordViewController.swift */,
+			);
+			path = ChangePasswordVC;
 			sourceTree = "<group>";
 		};
 		F0CEC915DEFEEAF6F49F189C /* Pods */ = {
@@ -1074,6 +1096,7 @@
 				14103C9F1FBE221800726C0B /* Profile.storyboard in Resources */,
 				08297B1D1FC74B2E00701F9B /* Montserrat-Medium.otf in Resources */,
 				08297B291FC74B2E00701F9B /* MontserratAlternates-ExtraLight.otf in Resources */,
+				8AC08E3B1FF848EA00C99A3A /* ChangePassword.storyboard in Resources */,
 				08297B101FC74B2E00701F9B /* MontserratAlternates-LightItalic.otf in Resources */,
 				147D50B21FE313080048A04E /* ConfigurationHeader.xib in Resources */,
 				8A964BD01FDB0C99003C9FFD /* Challenge.storyboard in Resources */,
@@ -1254,6 +1277,7 @@
 				8A3B2D031FECC4A8006D5658 /* EditProfileVCProtocols.swift in Sources */,
 				48C882F31FC893FA000A57C2 /* ChallengePresenterImpl.swift in Sources */,
 				48C882F71FC893FA000A57C2 /* FeaturedFavoriteClickCollectionViewCell.swift in Sources */,
+				8AC08E3E1FF851F100C99A3A /* ChangePasswordViewController.swift in Sources */,
 				147D50BA1FE314610048A04E /* SeeAllPastChallengesPresenterImp.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,
 				08276F2E1FC73F8C00A8E605 /* OpenChallengesCellProtocols.swift in Sources */,

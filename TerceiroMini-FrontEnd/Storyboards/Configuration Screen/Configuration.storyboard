@@ -68,6 +68,14 @@
             </objects>
             <point key="canvasLocation" x="36" y="50.824587706146929"/>
         </scene>
+        <!--ChangePassword-->
+        <scene sceneID="6oc-rN-ZBe">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ChangePassword" storyboardName="ChangePassword" referencedIdentifier="ChangePassword" id="bC0-vh-ABu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c6B-ob-JTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="548"/>
+        </scene>
         <!--EditProfile-->
         <scene sceneID="MXA-dw-iIX">
             <objects>
@@ -129,6 +137,9 @@
                                                 <constraint firstItem="uPc-b1-8Jx" firstAttribute="leading" secondItem="JcG-TA-aF1" secondAttribute="leading" constant="20" id="Rd4-Wx-SWX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="bC0-vh-ABu" kind="show" id="fZU-i3-t9I"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

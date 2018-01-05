@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingCustomView: UIView {
+@IBDesignable class OnboardingCustomView: UIView {
 
     var view: UIView!
     

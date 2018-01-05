@@ -19,10 +19,10 @@ class OnboardingViewController: UIViewController {
                   "Descubra!",
                   "Comece já!"]
     
-    let descriptions = ["Somos uma rede social feita para pessoas que amam e pessoas que vão amar fotografar",
-                        "Se desafie a fotografar temas variados, participe dos desafios, vote nos clicks favoritos, crie referências e divirta-se",
-                        "Explore clicks de diferentes estilos e olhares feitos por fotógrafos do mundo inteiro e nos mostre também a sua visão de mundo",
-                        "Não tenha vergonha, durante a competição todos clicks são enviados anonimamente, somente ao término os autores são revelados"]
+    let descriptions = ["Somos uma rede social feita para \n pessoas que amam e pessoas \n que vão amar fotografar",
+                        "Se desafie a fotografar temas variados, \n participe dos desafios, vote nos clicks \n favoritos, crie referências e divirta-se",
+                        "Explore clicks de diferentes estilos e olhares \n feitos por fotógrafos do mundo inteiro e nos \n mostre também a sua visão de mundo",
+                        "Não tenha vergonha, durante a competição \n todos clicks são enviados anonimamente, \n somente ao término os autores são revelados"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class ChangePasswordViewController: UIViewController, ChangePasswordView {
     
@@ -28,7 +29,10 @@ class ChangePasswordViewController: UIViewController, ChangePasswordView {
     
     
     @IBAction func saveNewPassword(_ sender: Any) {
-        
+        if(newPassword.text != newPasswordVerify.text){
+            let banner = NotificationBanner(title: "Preencha os campos corretamente", subtitle: "A senha não foi verificada corretamente", style: .danger)
+            banner.show()
+        }
     }
     
     @IBAction func dismissVC(_ sender: Any) {

@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ChangePasswordViewController: UIViewController {
+class ChangePasswordViewController: UIViewController, ChangePasswordView {
+    
+    var presenter : ChangePasswordPresenter?
 
+    @IBOutlet weak var oldPassword: BottomLineTextField!
+    @IBOutlet weak var newPassword: BottomLineTextField!
+    @IBOutlet weak var newPasswordVerify: BottomLineTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.presenter = ChangePasswordPresenterImp(self)
         // Do any additional setup after loading the view.
     }
 

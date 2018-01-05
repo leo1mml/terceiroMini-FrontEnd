@@ -164,6 +164,8 @@
 		8AB5EF8F1FEB361500DC5E3C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB5EF8E1FEB361500DC5E3C /* EditProfileViewController.swift */; };
 		8AC08E3B1FF848EA00C99A3A /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC08E3A1FF848EA00C99A3A /* ChangePassword.storyboard */; };
 		8AC08E3E1FF851F100C99A3A /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08E3D1FF851F100C99A3A /* ChangePasswordViewController.swift */; };
+		8AC08E401FFD7C4B00C99A3A /* ChangePasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08E3F1FFD7C4B00C99A3A /* ChangePasswordProtocols.swift */; };
+		8AC08E421FFD7C7F00C99A3A /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08E411FFD7C7F00C99A3A /* ChangePasswordPresenter.swift */; };
 		C87B3931903CC41B445596E6 /* Pods_TerceiroMini_FrontEndTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBAD5641C9F32E95E0FB6951 /* Pods_TerceiroMini_FrontEndTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -351,6 +353,8 @@
 		8AB5EF8E1FEB361500DC5E3C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		8AC08E3A1FF848EA00C99A3A /* ChangePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
 		8AC08E3D1FF851F100C99A3A /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		8AC08E3F1FFD7C4B00C99A3A /* ChangePasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordProtocols.swift; sourceTree = "<group>"; };
+		8AC08E411FFD7C7F00C99A3A /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
 		8D43BBE3F175821DCA81CC71 /* Pods-TerceiroMini-FrontEnd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.release.xcconfig"; sourceTree = "<group>"; };
 		B95244B145A1038114AFF3E1 /* Pods_TerceiroMini_FrontEnd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEnd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96B92415F7A4776249411C5 /* Pods-TerceiroMini-FrontEndTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEndTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEndTests/Pods-TerceiroMini-FrontEndTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -909,13 +913,13 @@
 		8A5D5CE91FB0D22C00C24725 /* TerceiroMini-FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
-				8AC08E3C1FF851D500C99A3A /* ChangePasswordVC */,
 				143F39621FEBFFB7007D8ECD /* Onboarding VC */,
 				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
 				081C1FD91FDEF98000CCEE1A /* General */,
 				8A0E82C01FC7443D00218C80 /* Extensions */,
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
 				08276F0E1FC73F8C00A8E605 /* MainScreen */,
+				8AC08E3C1FF851D500C99A3A /* ChangePasswordVC */,
 				147D50B41FE314600048A04E /* SeeAllPastChallengesVC */,
 				48C882EC1FC893FA000A57C2 /* Challange */,
 				080B8C4E1FE1A7360060D5D6 /* Configuration VC */,
@@ -963,6 +967,8 @@
 			isa = PBXGroup;
 			children = (
 				8AC08E3D1FF851F100C99A3A /* ChangePasswordViewController.swift */,
+				8AC08E3F1FFD7C4B00C99A3A /* ChangePasswordProtocols.swift */,
+				8AC08E411FFD7C7F00C99A3A /* ChangePasswordPresenter.swift */,
 			);
 			path = ChangePasswordVC;
 			sourceTree = "<group>";
@@ -1281,6 +1287,7 @@
 				147D50BA1FE314610048A04E /* SeeAllPastChallengesPresenterImp.swift in Sources */,
 				08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */,
 				08276F2E1FC73F8C00A8E605 /* OpenChallengesCellProtocols.swift in Sources */,
+				8AC08E421FFD7C7F00C99A3A /* ChangePasswordPresenter.swift in Sources */,
 				08276F3B1FC73F8C00A8E605 /* NextChallengesCollectionViewCell.swift in Sources */,
 				08276F3C1FC73F8C00A8E605 /* MainScreenTableViewController.swift in Sources */,
 				086D279A1FCC844B00D9F547 /* LoginPresentationProtocols.swift in Sources */,
@@ -1323,6 +1330,7 @@
 				08276F321FC73F8C00A8E605 /* ChallengeCellPresenter.swift in Sources */,
 				147D50941FE309170048A04E /* General.swift in Sources */,
 				48C882F41FC893FA000A57C2 /* ChallengeProtocols.swift in Sources */,
+				8AC08E401FFD7C4B00C99A3A /* ChangePasswordProtocols.swift in Sources */,
 				8A0E82C21FC744B800218C80 /* UIView+Extension.swift in Sources */,
 				0899EA071FC74D3100F148DC /* UserNet.swift in Sources */,
 				147D50B81FE314610048A04E /* SeeAllPastChallengesVC.swift in Sources */,

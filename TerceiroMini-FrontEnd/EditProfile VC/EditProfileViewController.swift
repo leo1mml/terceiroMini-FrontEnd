@@ -114,7 +114,7 @@ class EditProfileViewController: UIViewController, EditProfileView {
     func configureBithDatePicker() {
         birthDatePicker.datePickerMode = .date
         birthDatePicker.locale = Locale(identifier: "pt-BR")
-        birthDatePicker.maximumDate = Date(timeIntervalSinceNow: (60*60*24*30*12*10*(-1)))
+        birthDatePicker.maximumDate = Date(timeIntervalSinceNow: (60*60*24*365*10*(-1)))
         self.birthDateTextField.inputView = birthDatePicker
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -202,7 +202,7 @@ class EditProfileViewController: UIViewController, EditProfileView {
         }
         
         var birthDate : Date?
-        if(birthDatePicker.date.timeIntervalSinceNow > (60*60*24*30*12*10)){
+        if((birthDatePicker.date.timeIntervalSinceNow * -1) > (60*60*24*365*10)){
             birthDate = self.birthDatePicker.date
         }
         

@@ -16,7 +16,6 @@ import UIKit
     
     @IBOutlet weak var descriptionText: UITextView!
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()

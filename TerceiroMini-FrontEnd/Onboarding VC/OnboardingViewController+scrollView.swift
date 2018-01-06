@@ -25,15 +25,12 @@ extension OnboardingViewController: UIScrollViewDelegate {
             textView.descriptionText.text = self.descriptions[i]
             
             self.scrollView.contentSize.width = self.scrollView.frame.width * CGFloat(i + 1)
+            
             self.scrollView.addSubview(textView)
             self.scrollView.contentOffset.x = self.scrollView.frame.size.width * CGFloat(index)
 
         }
         
     }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let imageIndex = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
-    }
-    
+
 }

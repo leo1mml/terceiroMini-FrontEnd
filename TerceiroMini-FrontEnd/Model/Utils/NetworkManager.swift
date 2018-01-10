@@ -54,6 +54,10 @@ class NetworkManager {
         UserNet.patchMe(token: token, user: user, completion: completion)
     }
     
+    class func changePasswordWithAuth(token: String, oldPassword: String, newPassword: String, completion: @escaping (_ msg: String) -> Void){
+        UserNet.changePasswordWithAuth(token: token, oldPassword: oldPassword, newPassword: newPassword, completion: completion)
+    }
+    
     // MARK: - Photo methods
     
     class func getAllPhotos(completion: @escaping ([Photo]?, Error?) -> Void) {

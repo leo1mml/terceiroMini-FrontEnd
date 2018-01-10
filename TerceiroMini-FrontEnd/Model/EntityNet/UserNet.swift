@@ -369,6 +369,26 @@ class UserNet {
     }
     
     
+    class func changePasswordWithAuth(token: String, oldPassword: String, newPassword: String, completion: @escaping (_ msg: String) -> Void){
+        var dic = [String: Any]()
+        dic["oldPassword"] = oldPassword
+        dic["newPassword"] = newPassword
+        let header = ["x-auth": token]
+        let completeDomain = R.usersDomain + "/changePasswordAuth"
+        
+        Alamofire.request(completeDomain, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: header).validate().responseJSON { (response) in
+            
+            guard response.error == nil else {
+                completion("Usuário não autenticado, refaça o login e tente novamente.")
+                return
+            }
+            
+            completion("Senha alterada!")
+            
+        }
+    }
+    
+    
     // MARK: - Auxiliar methods
     
     /**

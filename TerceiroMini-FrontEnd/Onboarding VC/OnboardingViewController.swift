@@ -2,141 +2,99 @@
 //  OnboardingViewController.swift
 //  TerceiroMini-FrontEnd
 //
-//  Created by Augusto on 21/12/2017.
-//  Copyright © 2017 BEPID. All rights reserved.
+//  Created by Augusto on 04/01/2018.
+//  Copyright © 2018 BEPID. All rights reserved.
 //
 
 import UIKit
 
-class OnboardingViewController: UIPageViewController {
+class OnboardingViewController: UIViewController {
+    
+    @IBOutlet weak var image: UIImageView!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var finishButton: UIButton!
+    
+    let images = ["imageOnboard1", "imageOnboard2", "imageOnboard3", "imageOnboard4"]
+    
+    let titles = ["Bem-vindo ao Clicks!",
+                  "Participe!",
+                  "Descubra!",
+                  "Comece já!"]
+    
+    let descriptions = ["Somos uma rede social feita para \n pessoas que amam e pessoas \n que vão amar fotografar",
+                        "Se desafie a fotografar temas variados, \n participe dos desafios, vote nos clicks \n favoritos, crie referências e divirta-se",
+                        "Explore clicks de diferentes estilos e olhares \n feitos por fotógrafos do mundo inteiro e nos \n mostre também a sua visão de mundo",
+                        "Não tenha vergonha, durante a competição \n todos clicks são enviados anonimamente, \n somente ao término os autores são revelados"]
+    
+    var page = 0
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        dataSource = self
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
         
-        if let firstViewController = orderedViewControllers.first {
-            setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
-        }
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        finishButton.isHidden = true
+        self.scrollView.delegate = self
+        image.image = UIImage(named: images[page])
+        self.initializeScroll(index: page)
     }
     
-    private(set) lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newOnboardViewController(identifier: "Onboarding1"),
-                self.newOnboardViewController(identifier: "Onboarding2"),
-                self.newOnboardViewController(identifier: "Onboarding3"),
-                self.newOnboardViewController(identifier: "Onboarding4")]
-    }()
-    
-    private func newOnboardViewController(identifier: String) -> UIViewController {
-        return UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: identifier)
-    }
+    @IBAction func finishOnboarding(_ sender: Any) {
         
-}
-
-// MARK: UIPageViewControllerDataSource
-
-extension OnboardingViewController: UIPageViewControllerDataSource {
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
-            return nil
-        }
+        UserDefaults.standard.set(true, forKey: "boarded")
+        performSegue(withIdentifier: "onboardingSegue", sender: self)
         
-        let previousIndex = viewControllerIndex - 1
-        
-        guard previousIndex >= 0 else {
-            return nil
-        }
-        
-        guard orderedViewControllers.count > previousIndex else {
-            return nil
-        }
-        
-        switch viewControllerIndex {
-        case 1:
-            (orderedViewControllers[0] as! Onboarding1ViewController).isRigth = false
-            (orderedViewControllers[1] as! Onboarding2ViewController).isRigth = true
-            (orderedViewControllers[2] as! Onboarding3ViewController).isRigth = true
-            (orderedViewControllers[3] as! Onboarding4ViewController).isRigth = true
-            break
-        case 2:
-            (orderedViewControllers[0] as! Onboarding1ViewController).isRigth = false
-            (orderedViewControllers[1] as! Onboarding2ViewController).isRigth = false
-            (orderedViewControllers[2] as! Onboarding3ViewController).isRigth = false
-            (orderedViewControllers[3] as! Onboarding4ViewController).isRigth = true
-            break
-        default:
-            break
-        }
-        
-        return orderedViewControllers[previousIndex]
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
-            return nil
-        }
-        
-        let nextIndex = viewControllerIndex + 1
-        let orderedViewControllersCount = orderedViewControllers.count
-        
-        guard orderedViewControllersCount != nextIndex else {
-            return nil
-        }
-        
-        guard orderedViewControllersCount > nextIndex else {
-            return nil
-        }
-        
-        switch viewControllerIndex {
-        case 1:
-            (orderedViewControllers[0] as! Onboarding1ViewController).isRigth = false
-            (orderedViewControllers[1] as! Onboarding2ViewController).isRigth = true
-            (orderedViewControllers[2] as! Onboarding3ViewController).isRigth = true
-            (orderedViewControllers[3] as! Onboarding4ViewController).isRigth = true
-            break
-        case 2:
-            (orderedViewControllers[0] as! Onboarding1ViewController).isRigth = false
-            (orderedViewControllers[1] as! Onboarding2ViewController).isRigth = false
-            (orderedViewControllers[2] as! Onboarding3ViewController).isRigth = false
-            (orderedViewControllers[3] as! Onboarding4ViewController).isRigth = true
-            break
-        default:
-            break
-        }
-
-        return orderedViewControllers[nextIndex]
+    func animate() {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
+            self.image.alpha = 0
+        }, completion: { finished in
+            
+            self.image.image = UIImage(named: self.images[self.page])
+            
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
+                self.image.alpha = 1
+            }, completion: { finished in })
+        })
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         
-        for view in self.view.subviews {
-            if view is UIScrollView {
-                view.frame = UIScreen.main.bounds
-            } else if view is UIPageControl {
-
-                let image = UIImage(named: "Oval")
-                (view as! UIPageControl).backgroundColor = UIColor.clear
-                (view as! UIPageControl).pageIndicatorTintColor = UIColor.init(patternImage: image!)
-                (view as! UIPageControl).currentPageIndicatorTintColor = UIColor.darkGray
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                if (page - 1) >= 0 {
+                    page = page - 1
+                    scrollView.setContentOffset(CGPoint(x: self.scrollView.contentOffset.x - self.scrollView.frame.size.width, y: 0), animated: true)
+                    self.animate()
+                }
+                break
+            case UISwipeGestureRecognizerDirection.left:
+                if (page + 1) < 4 {
+                    page = page + 1
+                    scrollView.setContentOffset(CGPoint(x: self.scrollView.contentOffset.x + self.scrollView.frame.size.width, y: 0), animated: true)
+                    self.animate()
+                }
+                break
+            default:
+                break
             }
+            
+             finishButton.isHidden = !(page == 3)
+
         }
-    }
-    
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return orderedViewControllers.count
-    }
-    
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        guard let firstViewController = viewControllers?.first, let firstViewControllerIndex = orderedViewControllers.index(of: firstViewController) else {
-            return 0
-        }
-        
-        return firstViewControllerIndex
+
     }
     
 }

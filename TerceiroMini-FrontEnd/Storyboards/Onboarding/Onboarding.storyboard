@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gtM-Qv-bHv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rsO-fK-Fgz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,327 +11,77 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Montserrat-ExtraBold.otf">
-            <string>Montserrat-ExtraBold</string>
-        </array>
         <array key="Montserrat-Medium.otf">
             <string>Montserrat-Medium</string>
         </array>
     </customFonts>
     <scenes>
         <!--Onboarding View Controller-->
-        <scene sceneID="oIe-e1-aP0">
+        <scene sceneID="rmp-pU-kMO">
             <objects>
-                <pageViewController storyboardIdentifier="Onboarding" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gtM-Qv-bHv" customClass="OnboardingViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wdH-YL-irQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="494" y="196"/>
-        </scene>
-        <!--Onboarding1 View Controller-->
-        <scene sceneID="m8C-tf-5j5">
-            <objects>
-                <viewController storyboardIdentifier="Onboarding1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PPT-FO-YGu" customClass="Onboarding1ViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HEn-gO-RBf">
+                <viewController storyboardIdentifier="Onboarding" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rsO-fK-Fgz" customClass="OnboardingViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KpA-KV-cgb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="1NP-SX-U6f">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="585"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="v5X-cP-CeE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageOnboard1" translatesAutoresizingMaskIntoConstraints="NO" id="oiB-R6-aa4">
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5xs-YW-jfJ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="420"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo ao clicks!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oan-hG-CSf">
-                                        <rect key="frame" x="0.0" y="450" width="375" height="37"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhl-eO-lYn">
-                                        <rect key="frame" x="0.0" y="517" width="375" height="68"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">Somos uma rede social feita para
-pessoas que amam e pessoas
-que vão amar fotografar</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="15" name="Montserrat-Medium"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKY-yJ-bzH">
+                                        <rect key="frame" x="0.0" y="450" width="375" height="124"/>
+                                    </scrollView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Oan-hG-CSf" firstAttribute="width" secondItem="1NP-SX-U6f" secondAttribute="width" id="33N-kv-KDb"/>
-                                    <constraint firstItem="oiB-R6-aa4" firstAttribute="height" secondItem="1NP-SX-U6f" secondAttribute="height" multiplier="0.7179" id="4qf-9t-hjA"/>
-                                    <constraint firstItem="Oan-hG-CSf" firstAttribute="height" secondItem="1NP-SX-U6f" secondAttribute="height" multiplier="0.0632" id="W5J-wj-JcD"/>
-                                    <constraint firstItem="xhl-eO-lYn" firstAttribute="width" secondItem="1NP-SX-U6f" secondAttribute="width" id="YG4-4a-1m5"/>
-                                    <constraint firstItem="oiB-R6-aa4" firstAttribute="width" secondItem="1NP-SX-U6f" secondAttribute="width" id="jWj-eq-tvG"/>
+                                    <constraint firstItem="5xs-YW-jfJ" firstAttribute="width" secondItem="v5X-cP-CeE" secondAttribute="width" id="3rc-dm-nP9"/>
+                                    <constraint firstItem="NKY-yJ-bzH" firstAttribute="width" secondItem="v5X-cP-CeE" secondAttribute="width" id="WKe-fx-uon"/>
+                                    <constraint firstItem="NKY-yJ-bzH" firstAttribute="height" secondItem="v5X-cP-CeE" secondAttribute="height" multiplier="0.216027" id="aQ4-rI-y0u"/>
                                 </constraints>
                             </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="1NP-SX-U6f" firstAttribute="width" secondItem="HEn-gO-RBf" secondAttribute="width" id="0uD-Ob-KR3"/>
-                            <constraint firstItem="1NP-SX-U6f" firstAttribute="centerX" secondItem="tLO-AJ-IgD" secondAttribute="centerX" id="Lej-gl-lCR"/>
-                            <constraint firstItem="1NP-SX-U6f" firstAttribute="height" secondItem="HEn-gO-RBf" secondAttribute="height" multiplier="0.877" id="OIV-1S-RlN"/>
-                            <constraint firstItem="1NP-SX-U6f" firstAttribute="top" secondItem="HEn-gO-RBf" secondAttribute="top" id="x1u-F0-rja"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="tLO-AJ-IgD"/>
-                    </view>
-                    <connections>
-                        <outlet property="descText" destination="xhl-eO-lYn" id="tzK-MI-6j8"/>
-                        <outlet property="image" destination="oiB-R6-aa4" id="vVO-zk-702"/>
-                        <outlet property="titleText" destination="Oan-hG-CSf" id="W34-oX-61p"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qaG-Kd-yeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-681" y="939"/>
-        </scene>
-        <!--Onboarding2 View Controller-->
-        <scene sceneID="u1v-m4-omu">
-            <objects>
-                <viewController storyboardIdentifier="Onboarding2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="66B-Eq-mbX" customClass="Onboarding2ViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TPI-4O-fPN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Slw-62-iXD">
-                                <rect key="frame" x="0.0" y="65" width="375" height="520"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="fak-ob-gJF">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="422"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageOnboard2" translatesAutoresizingMaskIntoConstraints="NO" id="SDI-pV-KIi">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="305.5"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participe!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgB-mB-DXm">
-                                                <rect key="frame" x="0.0" y="370.5" width="375" height="51.5"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="pgB-mB-DXm" firstAttribute="width" secondItem="fak-ob-gJF" secondAttribute="width" id="MKV-8J-bP9"/>
-                                            <constraint firstItem="SDI-pV-KIi" firstAttribute="height" secondItem="fak-ob-gJF" secondAttribute="height" multiplier="0.7239" id="avj-fO-ONb"/>
-                                            <constraint firstItem="SDI-pV-KIi" firstAttribute="width" secondItem="fak-ob-gJF" secondAttribute="width" id="dej-Su-jnE"/>
-                                        </constraints>
-                                    </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3e2-tq-aNi">
-                                        <rect key="frame" x="0.0" y="452" width="375" height="68"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Se desafie a fotografar temas variados, participe dos desafios, vote nos clicks favoritos, crie referências e divirta-se">
-                                                <attributes>
-                                                    <font key="NSFont" size="15" name="Montserrat-Medium"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="fak-ob-gJF" firstAttribute="width" secondItem="Slw-62-iXD" secondAttribute="width" id="AMg-rY-jK5"/>
-                                    <constraint firstItem="fak-ob-gJF" firstAttribute="height" secondItem="Slw-62-iXD" secondAttribute="height" multiplier="0.81153" id="VpL-rH-d7M"/>
-                                    <constraint firstItem="3e2-tq-aNi" firstAttribute="width" secondItem="Slw-62-iXD" secondAttribute="width" id="jkJ-PY-CDv"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="Slw-62-iXD" firstAttribute="centerX" secondItem="WUc-l8-MYx" secondAttribute="centerX" id="1Vg-A3-tnb"/>
-                            <constraint firstItem="Slw-62-iXD" firstAttribute="height" secondItem="TPI-4O-fPN" secondAttribute="height" multiplier="0.77961" id="d0T-YU-MS8"/>
-                            <constraint firstItem="Slw-62-iXD" firstAttribute="width" secondItem="TPI-4O-fPN" secondAttribute="width" id="hhe-Qn-t6D"/>
-                            <constraint firstItem="Slw-62-iXD" firstAttribute="top" secondItem="WUc-l8-MYx" secondAttribute="top" constant="45" id="hlp-Co-AVw"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="WUc-l8-MYx"/>
-                    </view>
-                    <connections>
-                        <outlet property="descText" destination="3e2-tq-aNi" id="Tlt-Gv-UoM"/>
-                        <outlet property="image" destination="SDI-pV-KIi" id="Vm4-it-KYh"/>
-                        <outlet property="titleText" destination="pgB-mB-DXm" id="Uan-d6-1rh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qOd-NI-69w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="86" y="939"/>
-        </scene>
-        <!--Onboarding3 View Controller-->
-        <scene sceneID="KQx-Og-Faj">
-            <objects>
-                <viewController storyboardIdentifier="Onboarding3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Col-75-SXj" customClass="Onboarding3ViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fu0-dc-6uZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gH9-OZ-6rJ">
-                                <rect key="frame" x="20" y="88" width="335" height="514"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="88" translatesAutoresizingMaskIntoConstraints="NO" id="1Q7-cY-RcK">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="398"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageOnboard3" translatesAutoresizingMaskIntoConstraints="NO" id="Gh6-wg-jeU">
-                                                <rect key="frame" x="14.5" y="0.0" width="306" height="270"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descubra!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWY-B4-5Lu">
-                                                <rect key="frame" x="0.0" y="358" width="335" height="40"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Gh6-wg-jeU" firstAttribute="width" secondItem="1Q7-cY-RcK" secondAttribute="width" multiplier="0.913432" id="7sx-kX-3gO"/>
-                                            <constraint firstItem="nWY-B4-5Lu" firstAttribute="width" secondItem="1Q7-cY-RcK" secondAttribute="width" id="Lbe-Mb-uDw"/>
-                                            <constraint firstItem="Gh6-wg-jeU" firstAttribute="height" secondItem="1Q7-cY-RcK" secondAttribute="height" multiplier="0.678217" id="uIc-YF-UYI"/>
-                                        </constraints>
-                                    </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zr-EU-7DD">
-                                        <rect key="frame" x="0.0" y="428" width="335" height="86"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Explore clicks de diferentes estilos e olhares feitos por fotógrafos do mundo inteiro e nos mostre também a sua visão de mundo">
-                                                <attributes>
-                                                    <font key="NSFont" size="15" name="Montserrat-Medium"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="7zr-EU-7DD" firstAttribute="width" secondItem="gH9-OZ-6rJ" secondAttribute="width" id="FRA-y4-yQo"/>
-                                    <constraint firstItem="1Q7-cY-RcK" firstAttribute="width" secondItem="gH9-OZ-6rJ" secondAttribute="width" id="PKs-iv-di3"/>
-                                    <constraint firstItem="7zr-EU-7DD" firstAttribute="height" secondItem="gH9-OZ-6rJ" secondAttribute="height" multiplier="0.166666" id="Yt4-i4-4xn"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="gH9-OZ-6rJ" firstAttribute="width" secondItem="fu0-dc-6uZ" secondAttribute="width" multiplier="0.893333" id="eEZ-1K-Vjl"/>
-                            <constraint firstItem="gH9-OZ-6rJ" firstAttribute="height" secondItem="fu0-dc-6uZ" secondAttribute="height" multiplier="0.770615" id="oX7-sz-RNY"/>
-                            <constraint firstItem="gH9-OZ-6rJ" firstAttribute="centerX" secondItem="Sc4-fF-LvG" secondAttribute="centerX" id="uhj-cC-Uw3"/>
-                            <constraint firstItem="gH9-OZ-6rJ" firstAttribute="top" secondItem="Sc4-fF-LvG" secondAttribute="top" constant="68" id="w5I-9q-ded"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Sc4-fF-LvG"/>
-                    </view>
-                    <connections>
-                        <outlet property="descText" destination="7zr-EU-7DD" id="gtA-CD-Wwi"/>
-                        <outlet property="image" destination="Gh6-wg-jeU" id="G53-Gh-WNx"/>
-                        <outlet property="titleText" destination="nWY-B4-5Lu" id="vLt-Ux-ZCh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fxg-PS-Ucz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="893.60000000000002" y="938.68065967016503"/>
-        </scene>
-        <!--Onboarding4 View Controller-->
-        <scene sceneID="VWC-vS-GTE">
-            <objects>
-                <viewController storyboardIdentifier="Onboarding4" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6bs-H6-hUl" customClass="Onboarding4ViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PLc-su-m0C">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="fne-O9-Zle">
-                                <rect key="frame" x="4" y="42" width="367" height="562"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="QY7-ER-NY9">
-                                        <rect key="frame" x="0.0" y="0.0" width="367" height="445"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageOnboard4" translatesAutoresizingMaskIntoConstraints="NO" id="2o7-9N-2KF">
-                                                <rect key="frame" x="0.0" y="0.0" width="367" height="367"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Começe já!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sp-9U-23C">
-                                                <rect key="frame" x="0.0" y="408" width="367" height="37"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="30"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="2o7-9N-2KF" firstAttribute="width" secondItem="QY7-ER-NY9" secondAttribute="width" id="0WW-xs-AeV"/>
-                                            <constraint firstItem="2o7-9N-2KF" firstAttribute="height" secondItem="QY7-ER-NY9" secondAttribute="height" multiplier="0.8247" id="FCs-UK-5dP"/>
-                                            <constraint firstItem="4sp-9U-23C" firstAttribute="width" secondItem="QY7-ER-NY9" secondAttribute="width" id="gQz-tL-B81"/>
-                                        </constraints>
-                                    </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHe-El-gXQ">
-                                        <rect key="frame" x="0.0" y="475" width="367" height="87"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Não tenha vergonha, durante a competição todos clicks são enviados anonimamente, somente ao término os autores são revelados">
-                                                <attributes>
-                                                    <font key="NSFont" size="15" name="Montserrat-Medium"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="EHe-El-gXQ" firstAttribute="width" secondItem="fne-O9-Zle" secondAttribute="width" id="3IY-ba-xLe"/>
-                                    <constraint firstItem="QY7-ER-NY9" firstAttribute="height" secondItem="fne-O9-Zle" secondAttribute="height" multiplier="0.791814" id="Tv0-hc-khS"/>
-                                    <constraint firstItem="QY7-ER-NY9" firstAttribute="width" secondItem="fne-O9-Zle" secondAttribute="width" id="t2b-Cc-oto"/>
-                                </constraints>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suA-qQ-AI6">
-                                <rect key="frame" x="235" y="587" width="140" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="CNh-Z8-m3m"/>
-                                    <constraint firstAttribute="height" constant="80" id="cSl-5N-FmJ"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2f-sk-U4t">
+                                <rect key="frame" x="255" y="592" width="120" height="75"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
                                 <state key="normal" title="VAMOS LÁ">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="goAction:" destination="6bs-H6-hUl" eventType="touchUpInside" id="xau-fh-vCg"/>
+                                    <action selector="finishOnboarding:" destination="rsO-fK-Fgz" eventType="touchUpInside" id="9XI-gO-7ec"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fne-O9-Zle" firstAttribute="centerX" secondItem="LpJ-Ri-nZw" secondAttribute="centerX" id="6cG-69-q3K"/>
-                            <constraint firstItem="fne-O9-Zle" firstAttribute="width" secondItem="PLc-su-m0C" secondAttribute="width" multiplier="0.9786" id="Igc-Eb-aQx"/>
-                            <constraint firstItem="LpJ-Ri-nZw" firstAttribute="bottom" secondItem="suA-qQ-AI6" secondAttribute="bottom" id="de4-gI-D8k"/>
-                            <constraint firstItem="fne-O9-Zle" firstAttribute="height" secondItem="PLc-su-m0C" secondAttribute="height" multiplier="0.8425" id="ee1-UT-gYN"/>
-                            <constraint firstItem="LpJ-Ri-nZw" firstAttribute="trailing" secondItem="suA-qQ-AI6" secondAttribute="trailing" id="oWl-Pb-R0m"/>
-                            <constraint firstItem="fne-O9-Zle" firstAttribute="top" secondItem="LpJ-Ri-nZw" secondAttribute="top" constant="22" id="xEZ-FC-fSw"/>
+                            <constraint firstItem="v5X-cP-CeE" firstAttribute="centerX" secondItem="afG-WD-Xwz" secondAttribute="centerX" id="61Z-ST-kp5"/>
+                            <constraint firstItem="Z2f-sk-U4t" firstAttribute="bottom" secondItem="afG-WD-Xwz" secondAttribute="bottom" id="J6Q-8Q-fya"/>
+                            <constraint firstItem="v5X-cP-CeE" firstAttribute="height" secondItem="KpA-KV-cgb" secondAttribute="height" multiplier="0.860569" id="dLP-P8-wvM"/>
+                            <constraint firstItem="v5X-cP-CeE" firstAttribute="top" secondItem="KpA-KV-cgb" secondAttribute="top" id="fNa-5T-YDn"/>
+                            <constraint firstItem="Z2f-sk-U4t" firstAttribute="height" secondItem="KpA-KV-cgb" secondAttribute="height" multiplier="0.112443" id="ipf-yM-NvM"/>
+                            <constraint firstItem="Z2f-sk-U4t" firstAttribute="trailing" secondItem="afG-WD-Xwz" secondAttribute="trailing" id="ise-mv-9yI"/>
+                            <constraint firstItem="Z2f-sk-U4t" firstAttribute="width" secondItem="KpA-KV-cgb" secondAttribute="width" multiplier="0.32" id="jTy-z1-rGh"/>
+                            <constraint firstItem="v5X-cP-CeE" firstAttribute="width" secondItem="KpA-KV-cgb" secondAttribute="width" id="mBv-8x-hGy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="LpJ-Ri-nZw"/>
+                        <viewLayoutGuide key="safeArea" id="afG-WD-Xwz"/>
                     </view>
                     <connections>
-                        <outlet property="descText" destination="EHe-El-gXQ" id="buP-3Q-ao7"/>
-                        <outlet property="image" destination="2o7-9N-2KF" id="kc1-gx-a06"/>
-                        <outlet property="titleText" destination="4sp-9U-23C" id="9Lq-at-mm3"/>
-                        <segue destination="5kW-sa-TQZ" kind="show" identifier="onboardingSegue" id="cDY-28-Rrf"/>
+                        <outlet property="finishButton" destination="Z2f-sk-U4t" id="2sa-vu-oKa"/>
+                        <outlet property="image" destination="5xs-YW-jfJ" id="IJQ-qe-LkL"/>
+                        <outlet property="scrollView" destination="NKY-yJ-bzH" id="fAi-sg-HOB"/>
+                        <segue destination="OA1-ad-FLk" kind="show" identifier="onboardingSegue" id="qCz-Rl-a0U"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hME-3e-ykZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jsn-k6-MbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="938.68065967016503"/>
+            <point key="canvasLocation" x="928.79999999999995" y="753.37331334332839"/>
         </scene>
         <!--MainScreen-->
-        <scene sceneID="aUj-T6-mYU">
+        <scene sceneID="s0A-hk-SeD">
             <objects>
-                <viewControllerPlaceholder storyboardName="MainScreen" id="5kW-sa-TQZ" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jEj-MN-xN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="MainScreen" storyboardName="MainScreen" id="OA1-ad-FLk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M8e-Rs-71D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2285" y="728"/>
+            <point key="canvasLocation" x="1642" y="753"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="imageOnboard1" width="375" height="420"/>
-        <image name="imageOnboard2" width="375" height="320"/>
-        <image name="imageOnboard3" width="306" height="279"/>
-        <image name="imageOnboard4" width="367" height="367"/>
-    </resources>
 </document>

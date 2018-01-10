@@ -10,16 +10,9 @@ import Foundation
 import UIKit
 
 protocol OnboardingView {
-    
-    weak var image: UIImageView! { get set }
-    
-    weak var titleText: UILabel! { get set }
-    
-    weak var descText: UITextView! { get set }
 
 }
 
 protocol OnboardingPresenter {
-    func animateLeft()
-    func animateRigth()
+
 }

@@ -93,20 +93,16 @@ class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UIColl
             if (myFavoriteClick != nil){
                 let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedFavoriteClickCollectionViewCell.identifier, for: indexPath) as! FeaturedFavoriteClickCollectionViewCell
 
-                
-                UIImage.fetch(with: (self.myFavoriteClick?.url)!, completion: { (image) in
-                    cellA.cellImage.image = image
-                })
-                
+                let url = URL(string: (self.myFavoriteClick?.url)!)
+                cellA.cellImage.sd_setImage(with: url, completed: nil)
                 return cellA
             }else{
                 
                 let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedMyClickCollectionViewCell.identifier, for: indexPath) as! FeaturedMyClickCollectionViewCell
                 cellB.cellImage.layer.cornerRadius =  cellB.cellImage.frame.size.width / 10
+                let url = URL(string: (self.myClick?.url)!)
+                cellB.cellImage.sd_setImage(with: url, completed: nil)
                 
-                UIImage.fetch(with: (self.myClick?.url)!, completion: { (image) in
-                    cellB.cellImage.image = image
-                })
                 
                     cellB.clicks.text = String(describing: myClick!.votes!.count)
                     cellB.cellImage.addChallengeGradientTopMainCell(frame: cellB.cellImage.bounds, colors: [Colors.gradientBlackHalfAlpha,.clear,.clear])
@@ -123,18 +119,16 @@ class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UIColl
                 cellA.cellImage.layer.cornerRadius = 10
                 cellA.cellImage.clipsToBounds = true
                 
-                UIImage.fetch(with: (self.myFavoriteClick?.url)!, completion: { (image) in
-                    cellA.cellImage.image = image
-                })
+                let url = URL(string: (self.myFavoriteClick?.url)!)
+                cellA.cellImage.sd_setImage(with: url, completed: nil)
                 
                 return cellA
             }else{
                 let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedMyClickCollectionViewCell.identifier, for: indexPath) as! FeaturedMyClickCollectionViewCell
                 cellB.cellImage.layer.cornerRadius =  cellB.cellImage.frame.size.width / 10
                 
-                UIImage.fetch(with: (self.myClick?.url)!, completion: { (image) in
-                    cellB.cellImage.image = image
-                })
+                let url = URL(string: (self.myClick?.url)!)
+                cellB.cellImage.sd_setImage(with: url, completed: nil)
                 cellB.clicks.text = String(describing: myClick!.votes!.count)
                 cellB.cellImage.addChallengeGradientTopMainCell(frame: cellB.cellImage.bounds, colors: [Colors.gradientBlackHalfAlpha,.clear,.clear])
                 return cellB

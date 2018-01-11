@@ -88,9 +88,8 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     
     func setHeader(theme: String, mainImageURL: String,numPhotos: Int){
         header.challengeLabel.text = theme
-        UIImage.fetch(with: mainImageURL) { (image) in
-            self.header.mainImage.image = image
-        }
+        let url = URL(string: mainImageURL)
+        self.header.mainImage.sd_setImage(with: url, completed: nil)
         self.header.numberOfPhotos.text = "\(numPhotos) fotos"
         self.header.state = self.state
     }

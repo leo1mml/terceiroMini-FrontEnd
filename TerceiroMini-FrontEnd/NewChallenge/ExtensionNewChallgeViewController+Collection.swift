@@ -39,9 +39,10 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
             
             break
         }
-        
-        let url = URL(string: (challengePhotos?[indexPath.row].url!)!)
-        getImageFromUrl(imageURL: url, newImage: cell.cellImage)
+        if(challengePhotos?[indexPath.row].url! != ""){
+            let url = URL(string: (challengePhotos?[indexPath.row].url!)!)
+            cell.cellImage.sd_setImage(with: url, completed: nil)
+        }
         //quebrei o MVP, depois vou arrumar.
         NetworkManager.getUser(byId: (challengePhotos?[indexPath.row].ownerId)!) { (user, error) in
             if error != nil{
@@ -50,7 +51,7 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
                 cell.usernameLabel.text = user?.name
                 if(user?.profilePhotoUrl != nil){
                     let userPhotoUrl = URL(string: (user?.profilePhotoUrl)!)
-                    self.getImageFromUrl(imageURL: userPhotoUrl, newImage: cell.usernamePhoto)
+                    cell.usernamePhoto.sd_setImage(with: userPhotoUrl, completed: nil)
                 }
 
             }

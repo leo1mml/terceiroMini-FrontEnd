@@ -50,26 +50,24 @@ class ProfilePresenterImpl: ProfilePresenter {
         var cells = [ProfileCellHolder]()
         
         for index in 0..<photos.count{
-            cells.append(ProfileCellHolder(image: UIImage(), theme: "", isWinner: false))
+            cells.append(ProfileCellHolder(theme: "", isWinner: false))
             NetworkManager.getChallengeById(id: photos[index].challengeId, completion: { (challenge, err) in
                 guard err == nil else {
                     
                     return
                 }
                 
-                UIImage.fetch(with: photos[index].url!, completion: { (image) in
-                    let profileCell = ProfileCellHolder(image: image, theme: (challenge?.theme)!, isWinner: challenge?.winner == photos[index].url)
+                    let profileCell = ProfileCellHolder(theme: (challenge?.theme)!, isWinner: challenge?.winner == photos[index].url)
                     cells[index] = profileCell
                     self.view?.receiveCells(cells: cells)
-                })
-                
+ 
             })
         }
     }
 
     func loadHeader(id: String) {
-
-        var profileHolder = ProfileUserHolder(image: UIImage(), name: "", username: "")
+        
+        var profileHolder = ProfileUserHolder(imageUrl: "", name: "", username: "")
         
         NetworkManager.getUser(byId: id) { (user, error) in
             
@@ -80,21 +78,9 @@ class ProfilePresenterImpl: ProfilePresenter {
             
             // Usuario
             
-            if user?.profilePhotoUrl != nil {
-                
-                UIImage.fetch(with: (user?.profilePhotoUrl)!) { (image) in
-                    // ImagemPerfil
-                    
-                    profileHolder = ProfileUserHolder(image: image, name: (user?.name)!, username: (user?.username) ?? "no user name")
-                    self.view?.receiveDatas(profileUserHolder: profileHolder)
-                }
-                
-            } else {
-                
-                let image = UIImage(named: "profile-default")!
-                profileHolder = ProfileUserHolder(image: image, name: (user?.name)!, username: (user?.username) ?? "no username")
-                self.view?.receiveDatas(profileUserHolder: profileHolder)
-            }
+            profileHolder = ProfileUserHolder(imageUrl: (user?.profilePhotoUrl) ?? "", name: (user?.name)!, username: (user?.userName) ?? "no user name")
+            self.view?.receiveDatas(profileUserHolder: profileHolder)
+            
         }
     }
 }

@@ -41,6 +41,7 @@ class UserNet {
                     let codeNumber = code as! Int
                     if(codeNumber == 11000){
                         completion(nil, nil, "Email already in use")
+                        return
                     }
                 }
                 guard let errors = NetHelper.extractDictionary(fromJson: error, key: "errors") else {return}
@@ -63,7 +64,7 @@ class UserNet {
                 return
             }
             
-            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
+            guard let dic = NetHelper.extractDictionary(fromJson: val, key: "user") else {return}
             
             let user = self.buildUser(fromDicitionary: dic)
             let token = response.response!.allHeaderFields["X-Auth"] as? String
@@ -89,7 +90,7 @@ class UserNet {
                 return
             }
             
-            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "users")!
+            guard let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "users") else {return}
             let ret = self.buildUserArray(fromDictionaryArray: arr)
             
             completion(ret, nil)
@@ -113,7 +114,7 @@ class UserNet {
                 return
             }
             
-            let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "users")!
+            guard let arr = NetHelper.extractDictionaryArray(fromJson: val, key: "users") else {return}
             let ret = self.buildUserArray(fromDictionaryArray: arr)
             
             completion(ret, nil)
@@ -140,7 +141,7 @@ class UserNet {
                 return
             }
             
-            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
+            guard let dic = NetHelper.extractDictionary(fromJson: val, key: "user") else {return}
             let user = self.buildUser(fromDicitionary: dic)
             
             completion(user, nil)
@@ -189,10 +190,10 @@ class UserNet {
                 return
             }
             
-            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
-            let usr = self.buildUser(fromDicitionary: dic)
-            
-            completion(usr, nil)
+            if let dic = NetHelper.extractDictionary(fromJson: val, key: "user"){
+                let usr = self.buildUser(fromDicitionary: dic)
+                completion(usr, nil)
+            }
         }
     }
     
@@ -241,12 +242,13 @@ class UserNet {
                 return
             }
             
-            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
-            let usr = buildUser(fromDicitionary: dic)
-            
-            let tkn = response.response?.allHeaderFields["X-Auth"] as? String
-            
-            completion(usr, tkn, nil)
+            if let dic = NetHelper.extractDictionary(fromJson: val, key: "user"){
+                let usr = buildUser(fromDicitionary: dic)
+                
+                let tkn = response.response?.allHeaderFields["X-Auth"] as? String
+                
+                completion(usr, tkn, nil)
+            }
         }
     }
     
@@ -274,14 +276,118 @@ class UserNet {
                 return
             }
             
-            let dic = NetHelper.extractDictionary(fromJson: val, key: "user")!
-            let usr = buildUser(fromDicitionary: dic)
-            
-            let tkn = response.response?.allHeaderFields["X-Auth"] as? String
-            
-            completion(usr, tkn, nil)
+            if let dic = NetHelper.extractDictionary(fromJson: val, key: "user"){
+                let usr = buildUser(fromDicitionary: dic)
+                
+                let tkn = response.response?.allHeaderFields["X-Auth"] as? String
+                
+                completion(usr, tkn, nil)
+            }
         }
     }
+    
+    /**
+     
+     Creates a new login with facebook in the database.
+     
+     - parameter id: The id of the challenge.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter u: The user retrieved by the task.
+     - parameter e: The error that ocurred.
+     */
+    
+    class func getChallengeWinner(by challengeId: String, completion: @escaping (_ u: User?, _ e: Error?) -> Void){
+        let completeDomain = R.usersDomain + "/getWinnerByChallenge/" + challengeId
+        
+        Alamofire.request(completeDomain).validate().responseJSON { response in
+            
+            guard let val = response.value, response.error == nil else {
+                completion(nil, response.error)
+                return
+            }
+            
+            if let dic = NetHelper.extractDictionary(fromJson: val, key: "foundUser"){
+                let usr = self.buildUser(fromDicitionary: dic)
+                
+                completion(usr, nil)
+            }
+        }
+    }
+    
+    
+    /**
+     
+     Patch user authenticated.
+     
+     - parameter token: token for authentication.
+     - parameter user: User to be updated with.
+     - parameter completion: A block of code to be executed once the task is complete.
+     - parameter u: The user retrieved by the task.
+     - parameter e: The error that ocurred.
+     - parameter msg: the error message to be displayed
+     */
+    
+    class func patchMe(token: String, user: User, completion: @escaping (_ u: User?, _ e: Error?,_ msg: String?) -> Void){
+        let completeDomain = R.usersDomain + "/patchMe"
+        let header = ["x-auth": token]
+        let dic = buildDictionary(fromUser: user)
+        
+        Alamofire.request(completeDomain, method: .patch, parameters: dic, encoding: JSONEncoding.default, headers: header).responseJSON { response in
+            
+            if(response.response?.statusCode == 400){
+                guard let error = NetHelper.extractDictionary(fromJson: response.value!, key: "error") else {return}
+                if let code = error["code"]{
+                    let codeNumber = code as! Int
+                    if(codeNumber == 11000){
+                        completion(nil, nil, "User Name already in use")
+                        return
+                    }
+                }
+                
+                guard let errors = NetHelper.extractDictionary(fromJson: error, key: "errors") else {return}
+                if let nameError = NetHelper.extractDictionary(fromJson: errors["name"] ?? "", key: "properties"){
+                    let message = nameError["message"] as! String
+                    completion(nil, nil, message)
+                    return
+                }
+            }
+            
+            guard let val = response.value else {
+                completion(nil, nil, "Error not identified")
+                return
+            }
+            
+            guard let dic = NetHelper.extractDictionary(fromJson: val, key: "user") else {return}
+            
+            let user = self.buildUser(fromDicitionary: dic)
+            
+            completion(user, nil, nil)
+            
+        }
+        
+        
+    }
+    
+    
+    class func changePasswordWithAuth(token: String, oldPassword: String, newPassword: String, completion: @escaping (_ msg: String) -> Void){
+        var dic = [String: Any]()
+        dic["oldPassword"] = oldPassword
+        dic["newPassword"] = newPassword
+        let header = ["x-auth": token]
+        let completeDomain = R.usersDomain + "/changePasswordAuth"
+        
+        Alamofire.request(completeDomain, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: header).validate().responseJSON { (response) in
+            
+            guard response.error == nil else {
+                completion("Usuário não autenticado, refaça o login e tente novamente.")
+                return
+            }
+            
+            completion("Senha alterada!")
+            
+        }
+    }
+    
     
     // MARK: - Auxiliar methods
     
@@ -312,8 +418,11 @@ class UserNet {
         let name = dic["name"] as! String
         let username = dic["userName"] as? String
         let profileImageUrl = dic["profilePhoto"] as? String
+        let birthDate = DateHelper.shared.getDate(fromString: (dic["birthDate"] as? String ?? ""))
+        let sex = dic["sex"] as? Int
         
-        return User(id, email, name, username, profileImageUrl)
+        
+        return User(id, email, name, username, profileImageUrl, birthDate, sex)
     }
     
     /**
@@ -324,9 +433,30 @@ class UserNet {
      */
     private class func buildDictionary(fromUser u: User) -> [String: Any] {
         
-        return ["_id": u.id ?? "",
-                "email": u.email,
-                "name": u.name,
-                "profileImageUrl:": u.profilePhotoUrl ?? ""]
+        var dic = [String: Any]()
+        
+        if(u.email != nil){
+            dic["email"] = u.email
+        }
+        if(u.id != nil){
+            dic["_id"] = u.id
+        }
+        if(u.name != nil){
+            dic["name"] = u.name
+        }
+        if(u.profilePhotoUrl != nil){
+            dic["profileUrl"] = u.profilePhotoUrl
+        }
+        if(u.birthDate != nil){
+            dic["birthDate"] = DateHelper.shared.getString(fromDate: u.birthDate!)
+        }
+        if(u.sex != nil){
+            dic["sex"] = u.sex
+        }
+        if(u.userName != nil){
+            dic["userName"] = u.userName
+        }
+        
+        return dic
     }
 }

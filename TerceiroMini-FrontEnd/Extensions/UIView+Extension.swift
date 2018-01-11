@@ -50,8 +50,9 @@ extension UIView {
         let a = CABasicAnimation(keyPath: "strokeEnd")
         a.fromValue = 0.10
         a.toValue = 0.90
-        a.duration = 3
+        a.duration = 0.5
         shapeLayer.add(a, forKey: nil)
+        shapeLayer.zPosition = -500
         
     }
     
@@ -73,6 +74,7 @@ extension UIView {
         a.toValue = 1
         a.duration = 1
         shapeLayer.add(a, forKey: nil)
+        shapeLayer.zPosition = -500
         
     }
     

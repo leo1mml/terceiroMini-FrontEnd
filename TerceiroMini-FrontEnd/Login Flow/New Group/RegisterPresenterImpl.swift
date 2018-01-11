@@ -27,7 +27,7 @@ class RegisterPresenterImpl: RegisterPresenter {
             return
         }
         
-        let user = User(nil, email, name, nil, nil)
+        let user = User(nil, email, name, nil, nil, nil, nil)
         
         NetworkManager.addUser(user, password: password) { usr, tkn, errMsg in
 
@@ -38,6 +38,9 @@ class RegisterPresenterImpl: RegisterPresenter {
             }
 
             UserDefaults.standard.set(tkn, forKey: "token")
+            let encodedUser = NSKeyedArchiver.archivedData(withRootObject: usr!)
+            UserDefaults.standard.set(encodedUser, forKey: "logedUser")
+            UserDefaults.standard.synchronize()
             self.view.goToApp()
         }
     }

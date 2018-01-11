@@ -46,6 +46,18 @@ class NetworkManager {
         UserNet.delete(byId: id, completion: completion)
     }
     
+    class func getChallengeWinner(by challengeId: String, completion: @escaping (_ u: User?, _ e: Error?) -> Void){
+        UserNet.getChallengeWinner(by: challengeId, completion: completion)
+    }
+    
+    class func patchMe(token: String, user: User, completion: @escaping (_ u: User?, _ e: Error?,_ msg: String?) -> Void){
+        UserNet.patchMe(token: token, user: user, completion: completion)
+    }
+    
+    class func changePasswordWithAuth(token: String, oldPassword: String, newPassword: String, completion: @escaping (_ msg: String) -> Void){
+        UserNet.changePasswordWithAuth(token: token, oldPassword: oldPassword, newPassword: newPassword, completion: completion)
+    }
+    
     // MARK: - Photo methods
     
     class func getAllPhotos(completion: @escaping ([Photo]?, Error?) -> Void) {

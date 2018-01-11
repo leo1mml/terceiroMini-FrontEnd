@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rsO-fK-Fgz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.otf">
+            <string>Montserrat-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="rmp-pU-kMO">
+            <objects>
+                <viewController storyboardIdentifier="Onboarding" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rsO-fK-Fgz" customClass="OnboardingViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KpA-KV-cgb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="v5X-cP-CeE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5xs-YW-jfJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="420"/>
+                                    </imageView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKY-yJ-bzH">
+                                        <rect key="frame" x="0.0" y="450" width="375" height="124"/>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5xs-YW-jfJ" firstAttribute="width" secondItem="v5X-cP-CeE" secondAttribute="width" id="3rc-dm-nP9"/>
+                                    <constraint firstItem="NKY-yJ-bzH" firstAttribute="width" secondItem="v5X-cP-CeE" secondAttribute="width" id="WKe-fx-uon"/>
+                                    <constraint firstItem="NKY-yJ-bzH" firstAttribute="height" secondItem="v5X-cP-CeE" secondAttribute="height" multiplier="0.216027" id="aQ4-rI-y0u"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2f-sk-U4t">
+                                <rect key="frame" x="255" y="592" width="120" height="75"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="13"/>
+                                <state key="normal" title="VAMOS LÁ">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishOnboarding:" destination="rsO-fK-Fgz" eventType="touchUpInside" id="9XI-gO-7ec"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v5X-cP-CeE" firstAttribute="centerX" secondItem="afG-WD-Xwz" secondAttribute="centerX" id="61Z-ST-kp5"/>
+                            <constraint firstItem="Z2f-sk-U4t" firstAttribute="bottom" secondItem="afG-WD-Xwz" secondAttribute="bottom" id="J6Q-8Q-fya"/>
+                            <constraint firstItem="v5X-cP-CeE" firstAttribute="height" secondItem="KpA-KV-cgb" secondAttribute="height" multiplier="0.860569" id="dLP-P8-wvM"/>
+                            <constraint firstItem="v5X-cP-CeE" firstAttribute="top" secondItem="KpA-KV-cgb" secondAttribute="top" id="fNa-5T-YDn"/>
+                            <constraint firstItem="Z2f-sk-U4t" firstAttribute="height" secondItem="KpA-KV-cgb" secondAttribute="height" multiplier="0.112443" id="ipf-yM-NvM"/>
+                            <constraint firstItem="Z2f-sk-U4t" firstAttribute="trailing" secondItem="afG-WD-Xwz" secondAttribute="trailing" id="ise-mv-9yI"/>
+                            <constraint firstItem="Z2f-sk-U4t" firstAttribute="width" secondItem="KpA-KV-cgb" secondAttribute="width" multiplier="0.32" id="jTy-z1-rGh"/>
+                            <constraint firstItem="v5X-cP-CeE" firstAttribute="width" secondItem="KpA-KV-cgb" secondAttribute="width" id="mBv-8x-hGy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="afG-WD-Xwz"/>
+                    </view>
+                    <connections>
+                        <outlet property="finishButton" destination="Z2f-sk-U4t" id="2sa-vu-oKa"/>
+                        <outlet property="image" destination="5xs-YW-jfJ" id="IJQ-qe-LkL"/>
+                        <outlet property="scrollView" destination="NKY-yJ-bzH" id="fAi-sg-HOB"/>
+                        <segue destination="OA1-ad-FLk" kind="show" identifier="onboardingSegue" id="qCz-Rl-a0U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jsn-k6-MbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.79999999999995" y="753.37331334332839"/>
+        </scene>
+        <!--MainScreen-->
+        <scene sceneID="s0A-hk-SeD">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MainScreen" storyboardName="MainScreen" id="OA1-ad-FLk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M8e-Rs-71D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1642" y="753"/>
+        </scene>
+    </scenes>
+</document>

@@ -12,7 +12,7 @@
         <!--Main Screen View Controller-->
         <scene sceneID="Tan-j9-Pla">
             <objects>
-                <tableViewController storyboardIdentifier="MainScreen" id="Gtz-CT-cZD" customClass="MainScreenViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gtz-CT-cZD" customClass="MainScreenViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tZ1-Mu-L0y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,7 +210,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69j-wo-wfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-540" y="987"/>
+            <point key="canvasLocation" x="-545" y="967"/>
         </scene>
         <!--SeeAllPastChallenges-->
         <scene sceneID="I2H-aK-edH">

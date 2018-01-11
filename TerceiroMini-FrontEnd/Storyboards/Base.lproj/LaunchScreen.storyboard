@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-icon-definitivo" translatesAutoresizingMaskIntoConstraints="NO" id="89B-sS-lHx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-definitive" translatesAutoresizingMaskIntoConstraints="NO" id="89B-sS-lHx">
                                 <rect key="frame" x="147.5" y="289" width="80" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="2vA-u1-68l"/>
@@ -52,6 +53,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo-icon-definitivo" width="35" height="40"/>
+        <image name="logo-definitive" width="89" height="100"/>
     </resources>
 </document>

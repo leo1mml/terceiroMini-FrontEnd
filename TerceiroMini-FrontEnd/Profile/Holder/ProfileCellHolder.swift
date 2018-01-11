@@ -11,7 +11,6 @@ import UIKit
 
 struct ProfileCellHolder {
     
-    var image: UIImage
     var theme: String
     var isWinner: Bool = false
 }

@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileViewController: UIViewController, ProfileView, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var presenter: ProfilePresenter?
-    var holder = ProfileUserHolder(image: UIImage(named: "profile-default")!, name: "", username: "")
+    var holder = ProfileUserHolder(imageUrl: "", name: "", username: "")
     var cells = [ProfileCellHolder]()
     var user : User? {
         didSet {
@@ -82,7 +83,9 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             isGradients[indexPath.row] = true
         }
         
-        cell.backgroundImage.image = cells[indexPath.row].image
+        let url = URL(string: photos[indexPath.row].url!)
+        cell.backgroundImage.sd_setImage(with: url, completed: nil)
+        
         cell.backgroundImage.contentMode = .scaleAspectFill
         
         cell.frame.size.width = 121
@@ -108,10 +111,14 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         if kind == UICollectionElementKindSectionHeader {
             
             let headerView: HeaderCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "profileHeader", for: indexPath) as! HeaderCollectionReusableView
+            if(holder.imageUrl != ""){
+                let url = URL(string: holder.imageUrl)
+                headerView.profileImage.sd_setImage(with:url, completed: nil)
+                headerView.profileImage.contentMode = .scaleAspectFill
+            }else {
+                headerView.profileImage.image = UIImage(named: "profile-default")
+            }
             
-            // valor temporario
-            headerView.profileImage.image = holder.image
-            headerView.profileImage.contentMode = .scaleAspectFill
             
             headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2
             headerView.profileImage.clipsToBounds = true

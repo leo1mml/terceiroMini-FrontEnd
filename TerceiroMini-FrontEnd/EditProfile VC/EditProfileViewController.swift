@@ -92,8 +92,13 @@ class EditProfileViewController: UIViewController, EditProfileView {
     }
     
     func setProfileImage(url: String) {
-        let url = URL(string: url)
-        self.profileImage.sd_setImage(with: url, completed: nil)
+        if(url != ""){
+            let url = URL(string: url)
+            self.profileImage.sd_setImage(with: url, completed: nil)
+        }else{
+            self.profileImage.image = UIImage(named: "profile-default")
+        }
+        
     }
     
     func createSexPicker() {

@@ -111,10 +111,14 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         if kind == UICollectionElementKindSectionHeader {
             
             let headerView: HeaderCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "profileHeader", for: indexPath) as! HeaderCollectionReusableView
+            if(holder.imageUrl != ""){
+                let url = URL(string: holder.imageUrl)
+                headerView.profileImage.sd_setImage(with:url, completed: nil)
+                headerView.profileImage.contentMode = .scaleAspectFill
+            }else {
+                headerView.profileImage.image = UIImage(named: "profile-default")
+            }
             
-            let url = URL(string: holder.imageUrl)
-            headerView.profileImage.sd_setImage(with:url, completed: nil)
-            headerView.profileImage.contentMode = .scaleAspectFill
             
             headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2
             headerView.profileImage.clipsToBounds = true

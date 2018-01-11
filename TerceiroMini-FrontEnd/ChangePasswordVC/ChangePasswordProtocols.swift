@@ -13,5 +13,5 @@ protocol ChangePasswordView {
 }
 
 protocol ChangePasswordPresenter {
-    
+    func sendChangesToServer(oldPassword: String, newPassword: String, completion: @escaping (_ token: String) -> Void)
 }

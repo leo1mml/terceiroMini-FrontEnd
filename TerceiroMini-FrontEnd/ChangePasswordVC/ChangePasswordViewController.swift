@@ -32,7 +32,16 @@ class ChangePasswordViewController: UIViewController, ChangePasswordView {
         if(newPassword.text != newPasswordVerify.text){
             let banner = NotificationBanner(title: "Preencha os campos corretamente", subtitle: "A senha não foi verificada corretamente", style: .danger)
             banner.show()
+            return
         }
+        
+        presenter?.sendChangesToServer(oldPassword: oldPassword.text!, newPassword: newPassword.text!, completion: { (resultMessage) in
+            let banner = NotificationBanner(title: "Clicks informa:", subtitle: resultMessage, style: .success)
+            banner.show()
+            return
+        })
+        
+        
     }
     
     @IBAction func dismissVC(_ sender: Any) {

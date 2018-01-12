@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, OpenChallengesCellView{
     
@@ -50,8 +51,11 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! ChallengeCollectionViewCell
         if(challenges != nil){
-            self.navigateInAppDelegate?.goToOpenChallenge(with: (challenges?[indexPath.row].id)!)
+            cell.themeImage.heroID = challenges?[indexPath.row].id
+            cell.clockView.heroID = "clock" + (challenges?[indexPath.row].id)!
+            self.navigateInAppDelegate?.goToOpenChallenge(with: (challenges?[indexPath.row].id)!, coverImage: cell.themeImage.image!, challengeTitle: cell.themeLabel.text!)
         }
     }
     

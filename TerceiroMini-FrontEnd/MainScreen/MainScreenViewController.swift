@@ -11,7 +11,7 @@ import UIKit
 protocol NavigateInAppProtocol {
     func goToSeeAll()
     func instanceProfile()
-    func goToOpenChallenge(with challengeId: String)
+    func goToOpenChallenge(with challengeId: String, coverImage: UIImage, challengeTitle: String)
 }
 
 class MainScreenViewController: UITableViewController, MainScreenView, NavigationAnimationsDelegate, NavigateInAppProtocol{
@@ -152,6 +152,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     }
     
     @IBAction func goToConfig(_ sender: Any) {
+        self.navigationController?.isHeroEnabled = false
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "Opcoes") {
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -167,9 +168,13 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.pageViewController.reloadInputViews()
     }
     
-    func goToOpenChallenge(with challengeId: String) {
+    func goToOpenChallenge(with challengeId: String, coverImage: UIImage, challengeTitle: String) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "challengeVC") as! NewChallengeViewController
         vc.challengeID = challengeId
+        vc.challengeTheme = challengeTitle
+        vc.challengeCover = coverImage
+        self.navigationController?.isHeroEnabled = true
+        self.navigationController?.heroNavigationAnimationType = .fade
         self.navigationController?.show(vc, sender: self)
     }
 

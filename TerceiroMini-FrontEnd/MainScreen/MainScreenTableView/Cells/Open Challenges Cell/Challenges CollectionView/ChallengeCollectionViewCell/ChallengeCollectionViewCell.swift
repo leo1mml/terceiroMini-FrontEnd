@@ -17,6 +17,7 @@ class ChallengeCollectionViewCell: UICollectionViewCell, ChallengesCellView {
     
     @IBOutlet weak var gradientLayer: UIView!
     
+    @IBOutlet weak var clockView: UIView!
     @IBOutlet weak var timerLabel: UILabel!
     
     var imageCache = NSCache<NSString, UIImage>()

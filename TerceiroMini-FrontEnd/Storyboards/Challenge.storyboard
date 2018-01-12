@@ -52,20 +52,20 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2j8-9C-zhg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFj-Ff-eVK">
-                                            <rect key="frame" x="28" y="76" width="0.0" height="0.0"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFj-Ff-eVK">
+                                            <rect key="frame" x="28" y="76" width="223" height="51.5"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="42"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTc-aZ-i9V">
-                                            <rect key="frame" x="28" y="88" width="0.0" height="0.0"/>
+                                            <rect key="frame" x="28" y="139.5" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7D-rR-SD7">
-                                            <rect key="frame" x="70" y="179" width="235" height="50"/>
+                                            <rect key="frame" x="70" y="230.5" width="235" height="50"/>
                                             <color key="backgroundColor" red="0.14825960993766785" green="0.1723443865776062" blue="0.18905740976333618" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="235" id="iLo-se-sQq"/>
@@ -112,7 +112,7 @@
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7P-9D-bYm">
-                                            <rect key="frame" x="126" y="145" width="124" height="24"/>
+                                            <rect key="frame" x="126" y="196.5" width="124" height="24"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bod-yo-Nhh">
                                                     <rect key="frame" x="28" y="0.0" width="86" height="24"/>
@@ -175,6 +175,7 @@
                                     </constraints>
                                     <connections>
                                         <outlet property="challengeLabel" destination="sFj-Ff-eVK" id="LEn-34-b82"/>
+                                        <outlet property="clockView" destination="s7P-9D-bYm" id="nZT-UB-ogj"/>
                                         <outlet property="featuredCollectionView" destination="xeq-9u-oDN" id="eR8-Yt-IT7"/>
                                         <outlet property="mainButton" destination="v7D-rR-SD7" id="heN-h0-Ui7"/>
                                         <outlet property="mainImage" destination="2j8-9C-zhg" id="x4f-Xe-ypj"/>

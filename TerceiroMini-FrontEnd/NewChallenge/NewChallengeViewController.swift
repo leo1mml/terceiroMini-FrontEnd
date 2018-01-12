@@ -15,6 +15,8 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     var challengePhotos : [Photo]?
     var state = ChallengeState.open
     var challengeID : String?
+    var challengeCover : UIImage?
+    var challengeTheme : String?
     var data: ([Photo], Int)?
     var header: NewHeaderChallengeCollectionReusableView!
     @IBOutlet var mainCollectionView: UICollectionView!

@@ -73,7 +73,10 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderIdentifier", for: indexPath) as! NewHeaderChallengeCollectionReusableView
-        
+        header.mainImage.image = self.challengeCover!
+        header.mainImage.heroID = self.challengeID
+        header.clockView.heroID = "clock" + self.challengeID!
+        header.challengeLabel.text = self.challengeTheme!
         header.addGradientToChallengeMainImage()
         header.delegate = self
         

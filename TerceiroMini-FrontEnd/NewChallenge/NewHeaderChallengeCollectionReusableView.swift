@@ -23,6 +23,7 @@ class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UIColl
     @IBOutlet var mainImage: UIImageView!
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var statusImage: UIImageView!
+    @IBOutlet var clockView: UIView!
     @IBOutlet var mainButton: UIButton!
     
     

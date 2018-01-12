@@ -15,6 +15,7 @@ target 'TerceiroMini-FrontEnd' do
    pod 'FBSDKLoginKit', '~> 4.22.1'
    pod 'NotificationBannerSwift'
    pod 'SDWebImage', '~> 4.0'
+   pod 'Hero'
 
   target 'TerceiroMini-FrontEndTests' do
     inherit! :search_paths

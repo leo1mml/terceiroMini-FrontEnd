@@ -141,6 +141,7 @@
                                                                 <constraint firstAttribute="trailing" secondItem="ANe-2W-7A3" secondAttribute="trailing" id="voL-Fc-UyB"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="clockView" destination="t3D-Qx-RM3" id="QLf-jY-3S9"/>
                                                                 <outlet property="gradientLayer" destination="ANe-2W-7A3" id="l57-nd-dMa"/>
                                                                 <outlet property="numPhotosLabel" destination="sFG-aj-DJc" id="31b-jw-ZRb"/>
                                                                 <outlet property="themeImage" destination="zkY-vC-jfD" id="5F6-rf-FgH"/>

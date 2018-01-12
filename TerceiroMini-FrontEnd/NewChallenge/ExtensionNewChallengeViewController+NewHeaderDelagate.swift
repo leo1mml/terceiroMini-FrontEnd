@@ -27,6 +27,7 @@ extension NewChallengeViewController : NewChallengeHeaderDelegate{
     }
     
     func backButtonClicked() {
+        defaultStatusBar()
         self.navigationController?.popViewController(animated: true)
     }
  

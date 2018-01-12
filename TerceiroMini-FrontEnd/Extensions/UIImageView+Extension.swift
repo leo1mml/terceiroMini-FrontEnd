@@ -13,6 +13,11 @@ extension UIImageView{
         let gradient = CAGradientLayer()
         gradient.frame = self.frame
         gradient.colors = colors.map{$0.cgColor}
+        let animation = CABasicAnimation(keyPath: "opacity")
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.duration = 0.5
+        gradient.add(animation, forKey: "opacity")
         self.layer.addSublayer(gradient)
     }
     

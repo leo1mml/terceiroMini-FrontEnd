@@ -208,10 +208,18 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     }
     
     func initDarkStatusBar(){
-        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
-        let statusBarColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
-        statusBarView.backgroundColor = statusBarColor
-        view.addSubview(statusBarView)
+        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
+            UIView.animate(withDuration: 0.8, animations: {
+                statusBar.backgroundColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
+            })
+        }
+    }
+    func defaultStatusBar() {
+        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
+            statusBar.backgroundColor = Colors.darkWhite
+        }
     }
     
     func initNibs(){

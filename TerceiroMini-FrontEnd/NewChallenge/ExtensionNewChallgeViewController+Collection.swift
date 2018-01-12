@@ -8,8 +8,9 @@
 
 import UIKit
 
-extension NewChallengeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+extension NewChallengeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -91,23 +92,15 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
         
     }
     
-    func getImageFromUrl(imageURL: URL!, newImage: UIImageView ){
-        
-        
-        var imageFromURL = UIImage()
-        if let url = imageURL {
-            DispatchQueue.global(qos: .userInitiated).async {
-                let imageData = NSData(contentsOf: url)
-                DispatchQueue.main.async {
-                    if imageData != nil {
-                        imageFromURL = UIImage(data: imageData! as Data)!
-                        newImage.image = imageFromURL
-                        
-                    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if(header != nil && self.showCompleteHeader){
+            if(header.featuredCollectionView != nil){
+                if(header.featuredCollectionView.numberOfItems(inSection: 0) > 0){
+                    return CGSize(width: collectionView.bounds.width, height: self.defaultHeaderSize )
                 }
             }
-            
         }
+        return CGSize(width: collectionView.bounds.width, height: 380)
     }
     
    

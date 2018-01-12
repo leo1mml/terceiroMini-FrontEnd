@@ -25,6 +25,15 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     var endDate : Date?
     var isLogged = false
     
+    var showCompleteHeader: Bool = false {
+        didSet {
+            self.mainCollectionView?.collectionViewLayout.invalidateLayout()
+        }
+    }
+    
+    let defaultHeaderSize: CGFloat = 440
+
+    
     var presenter : NewChallengePresenter?
     
     override func viewDidLoad() {
@@ -120,10 +129,12 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     
     func setFeaturedCollectionMyClick(myClick: Photo?){
         header.myClick = myClick
+        self.showCompleteHeader = true
         header.featuredCollectionView.reloadData()
     }
     
     func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo?){
+        self.showCompleteHeader = true
         header.myFavoriteClick = myFavoriteClick
         header.featuredCollectionView.reloadData()
     }

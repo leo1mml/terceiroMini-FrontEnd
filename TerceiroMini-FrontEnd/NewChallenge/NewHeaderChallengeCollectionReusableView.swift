@@ -31,12 +31,10 @@ class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UIColl
     var myFavoriteClick : Photo?
     var cellFavoriteClickFilledFlag = false
     var state = ChallengeState.open
-    
     var delegate: NewChallengeHeaderDelegate?
     
     override func awakeFromNib() {
         initNibs()
-        
      
         
         featuredCollectionView.delegate = self
@@ -49,7 +47,6 @@ class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UIColl
         self.featuredCollectionView.register(UINib(nibName: FeaturedMyClickCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: FeaturedMyClickCollectionViewCell.identifier)
         self.featuredCollectionView.register(UINib(nibName: FeaturedFavoriteClickCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: FeaturedFavoriteClickCollectionViewCell.identifier)
     }
-    
    
     @IBAction func mainButtonAction(sender: UIButton) {
         

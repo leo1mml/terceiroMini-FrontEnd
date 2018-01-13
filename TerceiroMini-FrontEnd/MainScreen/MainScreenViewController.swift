@@ -26,6 +26,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     var pageViewController: NavigationViewController!
     var presenter : MainScreenPresenter?
     var viewControllerList : [UIViewController]?
+    var loginDelegate : LoginCallerPortocol?
     
     var lastOffsetX : CGFloat = 0.0
 
@@ -132,16 +133,9 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
             }
             
         }
-        
         self.lastOffsetX = contentOffset.x
-        
-        
-        
     }
     
-    func resizeItemForLess(view: UIView, offsetScroll: CGPoint) {
-        
-    }
     @IBAction func goToMainScreen(_ sender: Any) {
         self.pageViewController.goToPreviousPage()
     }
@@ -153,9 +147,9 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     
     @IBAction func goToConfig(_ sender: Any) {
         self.navigationController?.isHeroEnabled = false
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "Opcoes") {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Opcoes") as! ConfigurationTableViewController
+        vc.loginProtocol = self.pageViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     func goToSeeAll() {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SeeAllPastChallenges"){

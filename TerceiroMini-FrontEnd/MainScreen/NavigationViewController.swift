@@ -161,6 +161,7 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
             }
         }
     }
+    
     func loginFinishedSuccessfully() {
         let sb = UIStoryboard(name: "MainScreen", bundle: nil)
         let vc1 = self.viewControllerList[0]

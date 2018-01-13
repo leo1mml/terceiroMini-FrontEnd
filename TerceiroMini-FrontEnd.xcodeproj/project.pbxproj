@@ -165,7 +165,6 @@
 		8AA5EA0C1FE9F18E00DF6ED5 /* ConfigFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA091FE9F18D00DF6ED5 /* ConfigFooter.swift */; };
 		8AA5EA0D1FE9F18E00DF6ED5 /* ConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0A1FE9F18D00DF6ED5 /* ConfigurationTableViewController.swift */; };
 		8AA5EA0E1FE9F18E00DF6ED5 /* ConfigHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0B1FE9F18D00DF6ED5 /* ConfigHeader.swift */; };
-		8AA5EA101FE9F21800DF6ED5 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0F1FE9F21800DF6ED5 /* ConfigurationViewController.swift */; };
 		8AB5EF8F1FEB361500DC5E3C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB5EF8E1FEB361500DC5E3C /* EditProfileViewController.swift */; };
 		8AC08E3B1FF848EA00C99A3A /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC08E3A1FF848EA00C99A3A /* ChangePassword.storyboard */; };
 		8AC08E3E1FF851F100C99A3A /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08E3D1FF851F100C99A3A /* ChangePasswordViewController.swift */; };
@@ -359,7 +358,6 @@
 		8AA5EA091FE9F18D00DF6ED5 /* ConfigFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigFooter.swift; sourceTree = "<group>"; };
 		8AA5EA0A1FE9F18D00DF6ED5 /* ConfigurationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationTableViewController.swift; sourceTree = "<group>"; };
 		8AA5EA0B1FE9F18D00DF6ED5 /* ConfigHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigHeader.swift; sourceTree = "<group>"; };
-		8AA5EA0F1FE9F21800DF6ED5 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		8AB5EF8E1FEB361500DC5E3C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		8AC08E3A1FF848EA00C99A3A /* ChangePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
 		8AC08E3D1FF851F100C99A3A /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -395,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				080B8C4F1FE1A7360060D5D6 /* Configuration Table View */,
-				8AA5EA0F1FE9F21800DF6ED5 /* ConfigurationViewController.swift */,
 			);
 			path = "Configuration VC";
 			sourceTree = "<group>";
@@ -1344,7 +1341,6 @@
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,
 				08EF52871FD6D73F00722A2F /* RegisterPresenterImpl.swift in Sources */,
 				8A3B2D051FECC548006D5658 /* EditProfilePresenterImp.swift in Sources */,
-				8AA5EA101FE9F21800DF6ED5 /* ConfigurationViewController.swift in Sources */,
 				8A5D5CED1FB0D22C00C24725 /* LoginViewController.swift in Sources */,
 				481B81D21FD86340000955E8 /* NextChallengesCellPresenterImp.swift in Sources */,
 				08407C401FD2551600B7A003 /* BottomLineTextField.swift in Sources */,

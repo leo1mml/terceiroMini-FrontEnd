@@ -9,6 +9,8 @@
 import UIKit
 
 class ConfigurationTableViewController: UITableViewController {
+    
+    var loginProtocol : LoginCallerPortocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +30,13 @@ class ConfigurationTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = ConfigHeader()
         switch section {
-        case 0:
+        case 1:
             header.titleLabel.text = "CONTA"
             break
-        case 1:
+        case 2:
             header.titleLabel.text = "SUPORTE"
             break
-        case 2:
+        case 3:
             header.titleLabel.text = "SOBRE"
             break
         default:
@@ -46,18 +48,38 @@ class ConfigurationTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = ConfigFooter()
-        if(section == 2){
+        if(section == 3){
             footer.backgroundColor = .white
         }
         return footer
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(indexPath.row == 1 && indexPath.section == 2){
+        if(indexPath.row == 1 && indexPath.section == 3){
             if let url = URL(string: "http://photoappchallenge.herokuapp.com/privacy-politic.html") {
                 UIApplication.shared.open(url, options: [:])
             }
         }
+        if(indexPath.row == 0 && indexPath.section == 4){
+            //mostra alerta para sair
+            createLogOutAlert(title: "Logout", message: "Deseja sair desta conta?")
+        }
+    }
+    
+    func createLogOutAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Sair", style: .default, handler: { (action) in
+                UserDefaults.standard.set(nil, forKey: "token")
+                self.loginProtocol?.loginFinishedSuccessfully()
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+        self.present(alert, animated: false, completion: nil)
     }
 
+    @IBAction func dismiss(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

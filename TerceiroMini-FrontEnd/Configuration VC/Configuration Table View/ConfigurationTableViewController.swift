@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ConfigurationTableViewController: UITableViewController {
+class ConfigurationTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     var loginProtocol : LoginCallerPortocol?
 
@@ -60,6 +61,9 @@ class ConfigurationTableViewController: UITableViewController {
                 UIApplication.shared.open(url, options: [:])
             }
         }
+        if(indexPath.row == 1 && indexPath.section == 2){
+            composeMail()
+        }
         if(indexPath.row == 0 && indexPath.section == 4){
             //mostra alerta para sair
             createLogOutAlert(title: "Logout", message: "Deseja sair desta conta?")
@@ -77,6 +81,35 @@ class ConfigurationTableViewController: UITableViewController {
             self.navigationController?.popToRootViewController(animated: true)
         }))
         self.present(alert, animated: false, completion: nil)
+    }
+    
+    func composeMail() {
+        let mailCompose = self.configuredMailCompose()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailCompose, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    func configuredMailCompose() -> MFMailComposeViewController{
+        let mailCompose = MFMailComposeViewController()
+        mailCompose.mailComposeDelegate = self
+        mailCompose.setToRecipients(["Clicksmail.contact@gmail.com"])
+        mailCompose.setSubject("Clicks! - Contact Us")
+        
+        return mailCompose
+    }
+    
+    func showSendMailErrorAlert(){
+        let alert = UIAlertController(title: "Erro de e-mail", message: "Não foi possivel enviar o e-mail", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func dismiss(_ sender: Any) {

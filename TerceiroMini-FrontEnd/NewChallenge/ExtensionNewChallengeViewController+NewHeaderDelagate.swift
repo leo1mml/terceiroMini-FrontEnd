@@ -12,13 +12,13 @@ extension NewChallengeViewController : NewChallengeHeaderDelegate{
     func mainButtonClicked() {
         
         switch state {
-        case .open:
+        case .open?:
             self.showPhotoMenu()
             
             break
-        case .participating:
+        case .participating?:
             break
-        case .finished:
+        case .finished?:
             //ir parao  ganhador
             break
         default:

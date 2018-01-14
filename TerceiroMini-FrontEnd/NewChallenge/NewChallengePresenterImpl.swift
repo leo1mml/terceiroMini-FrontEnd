@@ -83,8 +83,12 @@ class NewChallengePresenterImpl: NewChallengePresenter{
                     
                     break
                 case .finished:
-                    
-                  //  self.view.setHeaderStatusAsFinished(winner: <#T##User#>, photoWinner: <#T##Photo#>)
+                    NetworkManager.getChallengeWinner(by: challengeID, completion: { (user, error) in
+                        if(error != nil){
+                            return
+                        }
+                        self.view.setHeaderStatusAsFinished(winner: user!, photoWinner: Photo("", "", "", "", [""]))
+                    })
                     break
                 default:
                     break
@@ -98,7 +102,11 @@ class NewChallengePresenterImpl: NewChallengePresenter{
         if let token = UserDefaults.standard.string(forKey: "token"){
             NetworkManager.getMyClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
                 if error == nil{
-                    self.view.setHeaderButtonAsParticipating()
+                    if(photo == nil){
+                        self.view.setHeaderButtonAsParticipate()
+                    }else {
+                        self.view.setHeaderButtonAsParticipating()
+                    }
                 }
             })
         }

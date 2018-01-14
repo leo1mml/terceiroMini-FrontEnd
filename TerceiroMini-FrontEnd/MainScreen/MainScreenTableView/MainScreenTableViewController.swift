@@ -12,6 +12,7 @@ class MainScreenTableViewController: UITableViewController {
     
     @IBOutlet weak var challengesCell: OpenChallengesTableViewCell!
     
+    @IBOutlet weak var lastWinnersCell: LastWinnersCell!
     var delegateNavigateInApp : NavigateInAppProtocol?
 
     override func viewDidLoad() {

@@ -13,6 +13,7 @@ protocol NewChallengeView{
     func setHeaderStatusAsFinished(winner: User, photoWinner: Photo)
     func setHeaderStatusAsTimer(endDate: Date)
     func setHeaderButtonAsParticipating()
+    func setHeaderButtonAsParticipate()
     func setUserLoggedIn(isLogged: Bool)
     func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo?)
     func setFeaturedCollectionMyClick(myClick: Photo?)

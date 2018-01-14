@@ -431,6 +431,7 @@
                     <size key="freeformSize" width="375" height="1120"/>
                     <connections>
                         <outlet property="challengesCell" destination="pLu-0A-7Yi" id="Q4b-kW-Gso"/>
+                        <outlet property="lastWinnersCell" destination="7vP-OZ-Ckh" id="0yW-nI-ifY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7b-g7-hWP" userLabel="First Responder" sceneMemberID="firstResponder"/>

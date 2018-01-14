@@ -223,7 +223,9 @@ class PhotoNet {
             if let dic = NetHelper.extractDictionary(fromJson: val, key: "photo") {
                 let photo = buildPhoto(fromDictionary: dic)
                 completion(photo, nil)
+                return
             }
+            completion(nil, nil)
         }
         
 

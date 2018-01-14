@@ -26,19 +26,20 @@ class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UIColl
     @IBOutlet var clockView: UIView!
     @IBOutlet var mainButton: UIButton!
     
+    @IBOutlet var statusLabelLeadingToImage: NSLayoutConstraint!
     
+    @IBOutlet var winnerPhotoBtn: UIImageView!
     var myClick : Photo?
     var myFavoriteClick : Photo?
     var cellFavoriteClickFilledFlag = false
-    var state = ChallengeState.open
+    var state : ChallengeState?
     var delegate: NewChallengeHeaderDelegate?
     
     override func awakeFromNib() {
         initNibs()
-     
-        
         featuredCollectionView.delegate = self
         featuredCollectionView.dataSource = self
+        self.mainButton.setTitle("", for: .normal)
     
         
     }

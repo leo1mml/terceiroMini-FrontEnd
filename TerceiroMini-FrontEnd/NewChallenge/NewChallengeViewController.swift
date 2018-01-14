@@ -13,7 +13,7 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     
     
     var challengePhotos : [Photo]?
-    var state = ChallengeState.open
+    var state : ChallengeState?
     var challengeID : String?
     var challengeCover : UIImage?
     var challengeTheme : String?
@@ -60,11 +60,7 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
-        //apagar depois
-        self.state = ChallengeState.open
-      //  self.challengeID = "5a2163e44ab66300147b416d"
-        presenter?.getChallengeHeader(challengeID: challengeID!, challengeState: state)
+        presenter?.getChallengeHeader(challengeID: challengeID!, challengeState: state!)
         presenter?.getChallengeImages(challengeID: challengeID!)
         resolveState()
         
@@ -102,12 +98,20 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
         let url = URL(string: mainImageURL)
         self.header.mainImage.sd_setImage(with: url, completed: nil)
         self.header.numberOfPhotos.text = "\(numPhotos) fotos"
-        self.header.state = self.state
+        self.header.state = self.state!
     }
+    
     
     func setHeaderStatusAsFinished(winner: User, photoWinner: Photo){
         header.statusImage.image = UIImage(named: "trophyBlackIcon")
+        header.statusLabelLeadingToImage.isActive = false
         header.statusLabel.text = "Vencedor"
+        header.mainButton.setTitle(winner.name, for: .normal)
+        header.mainButton.isEnabled = true
+        let profilePhotoUrl = URL(string: winner.profilePhotoUrl!)
+        header.winnerPhotoBtn.clipsToBounds = true
+        header.winnerPhotoBtn.layer.cornerRadius = header.winnerPhotoBtn.frame.height/2
+        header.winnerPhotoBtn.sd_setImage(with: profilePhotoUrl, completed: nil)
         self.challengeWinner = winner
         
     }
@@ -117,9 +121,16 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     }
     
     func setHeaderButtonAsParticipating(){
+        header.mainButton.isEnabled = true
         header.mainButton.setTitle("PARTICIPANDO", for: .normal)
         self.state = ChallengeState.participating
     }
+    func setHeaderButtonAsParticipate() {
+        header.mainButton.isEnabled = true
+        header.mainButton.setTitle("PARTICIPAR", for: .normal)
+        self.state = ChallengeState.open
+    }
+    
     
     func setHeaderStatusAsTimer(endDate: Date){
         header.statusImage.image = UIImage(named: "clockBlackIcon")
@@ -155,13 +166,13 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     func resolveState(){
         
         switch state {
-        case .open:
+        case .open?:
         //    header.mainButton.setTitle("PARTICIPAR", for: .normal)
             break
-        case .participating:
+        case .participating?:
           //  header.mainButton.setTitle("PARTICIPANDO", for: .normal)
             break
-        case .finished:
+        case .finished?:
             break
         default:
             break

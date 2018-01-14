@@ -11,6 +11,7 @@ import UIKit
 class LastWinnersCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, LastWinnersView {
 
     var presenter : LastWinnersPresenter?
+    var navigationProtocol: NavigateInAppProtocol?
     
     @IBOutlet weak var lastWinnersCollectionView : UICollectionView!
     
@@ -41,6 +42,14 @@ class LastWinnersCell: UITableViewCell, UICollectionViewDelegate, UICollectionVi
         styleProfilePhotoImage(winnerProfilePhoto: cell.profilePhoto)
         styleWinnerImage(winnerPhoto: cell.photoImage)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let challenge = challenges?[indexPath.row]
+        let cell = collectionView.cellForItem(at: indexPath) as! WinnerCollectionViewCell
+        cell.photoImage.heroID = challenge?.id
+        cell.profilePhoto.heroID = "profilePhoto" + (challenge?.id)!
+        navigationProtocol?.goToChallenge(with: (challenge?.id)!, coverImage: cell.photoImage.image!, challengeTitle: (challenge?.theme)!, state: .finished)
     }
     
     

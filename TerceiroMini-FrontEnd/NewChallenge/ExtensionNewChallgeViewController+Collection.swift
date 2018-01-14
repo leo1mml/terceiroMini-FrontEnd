@@ -23,6 +23,7 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as! MainCollectionViewCell
         cell.cellImage.layer.cornerRadius =  (cell.cellImage.frame.size.width / 10)/2
+        cell.usernamePhoto.clipsToBounds = true
         cell.usernamePhoto.layer.cornerRadius = cell.usernamePhoto.frame.height/2
         
         switch state {

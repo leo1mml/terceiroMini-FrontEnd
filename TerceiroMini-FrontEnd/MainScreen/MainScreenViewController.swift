@@ -12,6 +12,7 @@ protocol NavigateInAppProtocol {
     func goToSeeAll()
     func instanceProfile()
     func goToChallenge(with challengeId: String, coverImage: UIImage, challengeTitle: String, state: ChallengeState)
+    func goToAlertView()
 }
 
 class MainScreenViewController: UITableViewController, MainScreenView, NavigationAnimationsDelegate, NavigateInAppProtocol{
@@ -56,6 +57,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         mainScreen.delegateNavigateInApp = self
         mainScreen.challengesCell.navigateInAppDelegate = self
         mainScreen.lastWinnersCell.navigationProtocol = self
+        mainScreen.nextChallengesCell.navigationProtocol = self
         if(self.pageViewController.viewControllerList[1].restorationIdentifier == "Main"){
             self.configButton.isEnabled = false
             self.configButton.isHidden = true
@@ -176,6 +178,13 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.navigationController?.show(vc, sender: self)
     }
 
+    func goToAlertView() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChallengeClosedAlert") as! ChallengeClosedAlertViewController
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.isHeroEnabled = false
+        self.present(vc, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

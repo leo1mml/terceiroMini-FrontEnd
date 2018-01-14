@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="guJ-pw-O2I">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Light.otf">
+            <string>Montserrat-Light</string>
+        </array>
+        <array key="Montserrat-Medium.otf">
+            <string>Montserrat-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Challenge Closed Alert View Controller-->
+        <scene sceneID="Jdr-T6-VIi">
+            <objects>
+                <viewController storyboardIdentifier="ChallengeClosedAlert" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yNZ-z4-AHs" customClass="ChallengeClosedAlertViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="86j-0l-6j4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aB7-fj-18f">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tco-EN-sKN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <connections>
+                                        <action selector="dismiss:" destination="yNZ-z4-AHs" eventType="touchUpInside" id="ecT-tn-Lsh"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXk-4T-8xP" customClass="DesignableView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
+                                    <rect key="frame" x="35" y="239" width="304" height="189"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPS... TEMA FECHADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2R-y2-hXZ">
+                                            <rect key="frame" x="59" y="50" width="186" height="20"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Este tema será aberto em breve, mas você já pode ir preparando o seu melhor click!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnP-YW-FVI">
+                                            <rect key="frame" x="33" y="104" width="238" height="55"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="238" id="aZE-HO-rNW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="gnP-YW-FVI" secondAttribute="bottom" constant="30" id="13y-eF-8ur"/>
+                                        <constraint firstAttribute="width" constant="304" id="PbY-W0-yqj"/>
+                                        <constraint firstAttribute="height" constant="189" id="Wc8-b9-p5i"/>
+                                        <constraint firstItem="B2R-y2-hXZ" firstAttribute="centerX" secondItem="MXk-4T-8xP" secondAttribute="centerX" id="waJ-y5-CBh"/>
+                                        <constraint firstItem="gnP-YW-FVI" firstAttribute="centerX" secondItem="MXk-4T-8xP" secondAttribute="centerX" id="xdk-ZH-pGU"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSO-BQ-tey" customClass="DesignableView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
+                                    <rect key="frame" x="155" y="214" width="65" height="65"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock-alert-icon" translatesAutoresizingMaskIntoConstraints="NO" id="znh-pT-mWb">
+                                            <rect key="frame" x="9.5" y="9.5" width="45" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="45" id="c1y-Nq-mVE"/>
+                                                <constraint firstAttribute="height" constant="45" id="xvD-2i-iLJ"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="65" id="GOf-hX-Blg"/>
+                                        <constraint firstItem="znh-pT-mWb" firstAttribute="centerX" secondItem="RSO-BQ-tey" secondAttribute="centerX" id="Mrv-gu-NRI"/>
+                                        <constraint firstAttribute="width" constant="65" id="NP6-PE-1Yw"/>
+                                        <constraint firstItem="znh-pT-mWb" firstAttribute="centerY" secondItem="RSO-BQ-tey" secondAttribute="centerY" id="mo1-YE-gzL"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="32.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="RSO-BQ-tey" firstAttribute="centerX" secondItem="MXk-4T-8xP" secondAttribute="centerX" id="06O-1K-deb"/>
+                                <constraint firstItem="Tco-EN-sKN" firstAttribute="leading" secondItem="aB7-fj-18f" secondAttribute="leading" id="4fH-AZ-uv4"/>
+                                <constraint firstItem="MXk-4T-8xP" firstAttribute="centerY" secondItem="aB7-fj-18f" secondAttribute="centerY" id="Kmd-XF-41t"/>
+                                <constraint firstItem="MXk-4T-8xP" firstAttribute="centerX" secondItem="aB7-fj-18f" secondAttribute="centerX" id="OrA-bl-2i3"/>
+                                <constraint firstAttribute="bottom" secondItem="Tco-EN-sKN" secondAttribute="bottom" id="W2M-EG-E4q"/>
+                                <constraint firstItem="Tco-EN-sKN" firstAttribute="top" secondItem="aB7-fj-18f" secondAttribute="top" id="bIa-2v-BjX"/>
+                                <constraint firstItem="B2R-y2-hXZ" firstAttribute="top" secondItem="RSO-BQ-tey" secondAttribute="bottom" constant="10" id="j2P-LX-W96"/>
+                                <constraint firstAttribute="trailing" secondItem="Tco-EN-sKN" secondAttribute="trailing" id="k7F-K4-Qr8"/>
+                                <constraint firstItem="MXk-4T-8xP" firstAttribute="top" secondItem="RSO-BQ-tey" secondAttribute="bottom" constant="-40" id="wLg-8P-svY"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ipe-Qs-qOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152.80000000000001" y="176.76161919040482"/>
+        </scene>
+        <!--Challenge Closed Alert View Controller-->
+        <scene sceneID="DeH-Lt-g82">
+            <objects>
+                <viewController id="guJ-pw-O2I" customClass="ChallengeClosedAlertViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5yC-fa-TIl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJZ-Lw-DEP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="guJ-pw-O2I" eventType="touchUpInside" id="4BV-Bn-oT1"/>
+                                    <action selector="dismiss:" destination="yNZ-z4-AHs" eventType="touchUpInside" id="8aF-NT-Qce"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNF-yx-W5T" customClass="DesignableView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
+                                <rect key="frame" x="35" y="239" width="304" height="189"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPS... TEMA FECHADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uc-Q9-84B">
+                                        <rect key="frame" x="59" y="50" width="186" height="20"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Este tema será aberto em breve, mas você já pode ir preparando o seu melhor click!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awq-H4-Tdk">
+                                        <rect key="frame" x="33" y="104" width="238" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="238" id="brS-0U-rHO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Awq-H4-Tdk" secondAttribute="bottom" constant="30" id="5g3-z7-0Sv"/>
+                                    <constraint firstAttribute="height" constant="189" id="ILp-ii-gPb"/>
+                                    <constraint firstItem="Awq-H4-Tdk" firstAttribute="centerX" secondItem="rNF-yx-W5T" secondAttribute="centerX" id="Kv4-wh-jrw"/>
+                                    <constraint firstItem="3uc-Q9-84B" firstAttribute="top" secondItem="fKu-IG-Lh6" secondAttribute="top" constant="50" id="hfE-aA-yqe"/>
+                                    <constraint firstAttribute="width" constant="304" id="t3V-hi-XVa"/>
+                                    <constraint firstItem="3uc-Q9-84B" firstAttribute="centerX" secondItem="rNF-yx-W5T" secondAttribute="centerX" id="ulP-Z7-KhC"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="fKu-IG-Lh6"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nOO-Am-N3h" customClass="DesignableView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
+                                <rect key="frame" x="155" y="214" width="65" height="65"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock-alert-icon" translatesAutoresizingMaskIntoConstraints="NO" id="7HU-nY-3gk">
+                                        <rect key="frame" x="9.5" y="9.5" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="bhG-Tv-0AB"/>
+                                            <constraint firstAttribute="height" constant="45" id="y2O-zY-PKA"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="7HU-nY-3gk" firstAttribute="centerX" secondItem="nOO-Am-N3h" secondAttribute="centerX" id="3Om-qI-6yG"/>
+                                    <constraint firstItem="7HU-nY-3gk" firstAttribute="centerY" secondItem="nOO-Am-N3h" secondAttribute="centerY" id="NYb-5E-I1d"/>
+                                    <constraint firstAttribute="height" constant="65" id="OsX-Ge-bSL"/>
+                                    <constraint firstAttribute="width" constant="65" id="gg8-G4-Qa1"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="lB2-RK-WAB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="32.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="nOO-Am-N3h" firstAttribute="centerX" secondItem="rNF-yx-W5T" secondAttribute="centerX" id="699-m8-ZBs"/>
+                            <constraint firstItem="nOO-Am-N3h" firstAttribute="top" secondItem="rNF-yx-W5T" secondAttribute="top" constant="-25" id="jum-fj-Qha"/>
+                            <constraint firstItem="rNF-yx-W5T" firstAttribute="centerX" secondItem="5yC-fa-TIl" secondAttribute="centerX" id="koE-DM-PWz"/>
+                            <constraint firstItem="rNF-yx-W5T" firstAttribute="centerY" secondItem="5yC-fa-TIl" secondAttribute="centerY" id="lNr-mL-DF8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tum-mR-ey1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rwk-up-n9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014" y="220"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clock-alert-icon" width="45" height="45"/>
+    </resources>
+</document>

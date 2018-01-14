@@ -432,6 +432,7 @@
                     <connections>
                         <outlet property="challengesCell" destination="pLu-0A-7Yi" id="Q4b-kW-Gso"/>
                         <outlet property="lastWinnersCell" destination="7vP-OZ-Ckh" id="0yW-nI-ifY"/>
+                        <outlet property="nextChallengesCell" destination="Cw6-N8-W3n" id="VAF-RI-8HK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7b-g7-hWP" userLabel="First Responder" sceneMemberID="firstResponder"/>

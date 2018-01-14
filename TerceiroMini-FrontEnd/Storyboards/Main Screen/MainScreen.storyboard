@@ -145,6 +145,14 @@
             </objects>
             <point key="canvasLocation" x="359.19999999999999" y="966.56671664167925"/>
         </scene>
+        <!--ClosedChallengeAlertView-->
+        <scene sceneID="JDa-lN-gJa">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ChallengeClosedAlert" storyboardName="ClosedChallengeAlertView" id="Hzk-Ip-ZIO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbO-lY-ar0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="473"/>
+        </scene>
         <!--Opcoes-->
         <scene sceneID="kjN-hE-IxA">
             <objects>

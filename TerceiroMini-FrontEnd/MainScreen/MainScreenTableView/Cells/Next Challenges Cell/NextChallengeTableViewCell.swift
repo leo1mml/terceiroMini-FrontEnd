@@ -11,6 +11,7 @@ import UIKit
 class NextChallengeTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NextChallengesCellView {
     
     var presenter : NextChallengesCellPresenter?
+    var navigationProtocol: NavigateInAppProtocol?
     
     var challenges : [Challenge]?
     
@@ -38,6 +39,10 @@ class NextChallengeTableViewCell: UITableViewCell, UICollectionViewDataSource, U
         styleNextChallengeView(view: cell.containerView)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigationProtocol?.goToAlertView()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

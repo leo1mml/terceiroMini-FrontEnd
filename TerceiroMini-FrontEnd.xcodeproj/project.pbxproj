@@ -165,6 +165,9 @@
 		8AA5EA0C1FE9F18E00DF6ED5 /* ConfigFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA091FE9F18D00DF6ED5 /* ConfigFooter.swift */; };
 		8AA5EA0D1FE9F18E00DF6ED5 /* ConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0A1FE9F18D00DF6ED5 /* ConfigurationTableViewController.swift */; };
 		8AA5EA0E1FE9F18E00DF6ED5 /* ConfigHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA5EA0B1FE9F18D00DF6ED5 /* ConfigHeader.swift */; };
+		8AA6B974200B078A0052E82B /* ClosedChallengeAlertView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA6B973200B078A0052E82B /* ClosedChallengeAlertView.storyboard */; };
+		8AA6B977200BC21A0052E82B /* ChallengeClosedAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6B976200BC21A0052E82B /* ChallengeClosedAlertViewController.swift */; };
+		8AA6B97A200BCDBE0052E82B /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6B979200BCDBE0052E82B /* DesignableView.swift */; };
 		8AB5EF8F1FEB361500DC5E3C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB5EF8E1FEB361500DC5E3C /* EditProfileViewController.swift */; };
 		8AC08E3B1FF848EA00C99A3A /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC08E3A1FF848EA00C99A3A /* ChangePassword.storyboard */; };
 		8AC08E3E1FF851F100C99A3A /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08E3D1FF851F100C99A3A /* ChangePasswordViewController.swift */; };
@@ -358,6 +361,9 @@
 		8AA5EA091FE9F18D00DF6ED5 /* ConfigFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigFooter.swift; sourceTree = "<group>"; };
 		8AA5EA0A1FE9F18D00DF6ED5 /* ConfigurationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationTableViewController.swift; sourceTree = "<group>"; };
 		8AA5EA0B1FE9F18D00DF6ED5 /* ConfigHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigHeader.swift; sourceTree = "<group>"; };
+		8AA6B973200B078A0052E82B /* ClosedChallengeAlertView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClosedChallengeAlertView.storyboard; sourceTree = "<group>"; };
+		8AA6B976200BC21A0052E82B /* ChallengeClosedAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedAlertViewController.swift; sourceTree = "<group>"; };
+		8AA6B979200BCDBE0052E82B /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		8AB5EF8E1FEB361500DC5E3C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		8AC08E3A1FF848EA00C99A3A /* ChangePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
 		8AC08E3D1FF851F100C99A3A /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -729,6 +735,7 @@
 		08F06F9B1FBB594A0039EAFE /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				8AA6B972200B07650052E82B /* ClosedChallengeAlertView */,
 				8AC08E391FF8484800C99A3A /* Change Password */,
 				14CFE7B41FEBF437000415B9 /* Onboarding */,
 				147D50BE1FE314CB0048A04E /* EditProfile */,
@@ -932,6 +939,7 @@
 		8A5D5CE91FB0D22C00C24725 /* TerceiroMini-FrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				8AA6B978200BCD770052E82B /* DesignableClasses */,
 				143F39621FEBFFB7007D8ECD /* Onboarding VC */,
 				8A5D5CEA1FB0D22C00C24725 /* AppDelegate.swift */,
 				081C1FD91FDEF98000CCEE1A /* General */,
@@ -939,6 +947,7 @@
 				08F06F9B1FBB594A0039EAFE /* Storyboards */,
 				08276F0E1FC73F8C00A8E605 /* MainScreen */,
 				8AC08E3C1FF851D500C99A3A /* ChangePasswordVC */,
+				8AA6B975200BC1F60052E82B /* ChallengeClosedAlertVC */,
 				147D50B41FE314600048A04E /* SeeAllPastChallengesVC */,
 				487E45CF1FEBD94E00F0D47D /* NewChallenge */,
 				48C882EC1FC893FA000A57C2 /* Challange */,
@@ -963,6 +972,30 @@
 				8A5D5D011FB0D22C00C24725 /* Info.plist */,
 			);
 			path = "TerceiroMini-FrontEndTests";
+			sourceTree = "<group>";
+		};
+		8AA6B972200B07650052E82B /* ClosedChallengeAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6B973200B078A0052E82B /* ClosedChallengeAlertView.storyboard */,
+			);
+			path = ClosedChallengeAlertView;
+			sourceTree = "<group>";
+		};
+		8AA6B975200BC1F60052E82B /* ChallengeClosedAlertVC */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6B976200BC21A0052E82B /* ChallengeClosedAlertViewController.swift */,
+			);
+			path = ChallengeClosedAlertVC;
+			sourceTree = "<group>";
+		};
+		8AA6B978200BCD770052E82B /* DesignableClasses */ = {
+			isa = PBXGroup;
+			children = (
+				8AA6B979200BCDBE0052E82B /* DesignableView.swift */,
+			);
+			path = DesignableClasses;
 			sourceTree = "<group>";
 		};
 		8AB5EF8D1FEB35D900DC5E3C /* EditProfile VC */ = {
@@ -1107,6 +1140,7 @@
 				147F33351FFEDEF200B8DA79 /* OnboardingCustomView.xib in Resources */,
 				147D50BD1FE314A40048A04E /* SeeAllPastChallenges.storyboard in Resources */,
 				08297B2F1FC74B2E00701F9B /* Montserrat-SemiBold.otf in Resources */,
+				8AA6B974200B078A0052E82B /* ClosedChallengeAlertView.storyboard in Resources */,
 				08297B171FC74B2E00701F9B /* Montserrat-ExtraLight.otf in Resources */,
 				08297B251FC74B2E00701F9B /* MontserratAlternates-BoldItalic.otf in Resources */,
 				08297B1A1FC74B2E00701F9B /* MontserratAlternates-ExtraLightItalic.otf in Resources */,
@@ -1322,6 +1356,7 @@
 				08276F361FC73F8C00A8E605 /* ChallengeCollectionViewPresenter.swift in Sources */,
 				8AA5EA0E1FE9F18E00DF6ED5 /* ConfigHeader.swift in Sources */,
 				487E45EB1FEC47FE00F0D47D /* ExtensionNewChallengeViewController+NewHeaderDelagate.swift in Sources */,
+				8AA6B97A200BCDBE0052E82B /* DesignableView.swift in Sources */,
 				08276F351FC73F8C00A8E605 /* ChallengesFlowLayout.swift in Sources */,
 				08276F3F1FC73F8C00A8E605 /* MainScreenProtocols.swift in Sources */,
 				088083C31FD1C75D008C9B00 /* UserNet+Validator.swift in Sources */,
@@ -1373,6 +1408,7 @@
 				48A7C4D11FD1E02A00EB5C1A /* NavigationViewController.swift in Sources */,
 				147D50921FE308B20048A04E /* LoginFlowViewController.swift in Sources */,
 				14D106221FBE00CC00AA9F89 /* ProfileProtocols.swift in Sources */,
+				8AA6B977200BC21A0052E82B /* ChallengeClosedAlertViewController.swift in Sources */,
 				08EF52891FD6D75F00722A2F /* RegisterProtocols.swift in Sources */,
 				08276F371FC73F8C00A8E605 /* ChallengesCollectionViewProtocols.swift in Sources */,
 				142F874B1FE94521007925A1 /* ChallengeClosedViewController+scrollView.swift in Sources */,

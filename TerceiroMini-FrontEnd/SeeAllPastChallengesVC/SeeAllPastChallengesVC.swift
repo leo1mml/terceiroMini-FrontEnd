@@ -10,6 +10,7 @@ import UIKit
 
 class SeeAllPastChallengesVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, SeeAllPastChallengesView {
     
+    var navigationDelegate: NavigateInAppProtocol?
 
     @IBOutlet weak var allWinnersCollectionView: UICollectionView!
     
@@ -44,6 +45,12 @@ class SeeAllPastChallengesVC: UIViewController, UICollectionViewDelegate, UIColl
         styleProfilePhotoImage(winnerProfilePhoto: cell.profilePhoto)
         styleWinnerImage(winnerPhoto: cell.photoImage)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! WinnerCollectionViewCell
+        cell.photoImage.heroID = cell.challenge?.id
+        navigationDelegate?.goToChallenge(with: (cell.challenge?.id)!, coverImage: cell.photoImage.image!, challengeTitle: (cell.challenge?.theme)!, state: ChallengeState.finished)
     }
     
     

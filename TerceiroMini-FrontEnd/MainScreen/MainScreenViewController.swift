@@ -153,9 +153,11 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func goToSeeAll() {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SeeAllPastChallenges"){
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SeeAllPastChallenges") as! SeeAllPastChallengesVC
+        vc.navigationDelegate = self
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     func instanceProfile() {

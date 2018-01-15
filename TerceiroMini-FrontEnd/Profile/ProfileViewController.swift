@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class ProfileViewController: UIViewController, ProfileView, UICollectionViewDelegate, UICollectionViewDataSource {
+class ProfileViewController: UIViewController, ProfileView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     var presenter: ProfilePresenter?
     var holder = ProfileUserHolder(imageUrl: "", name: "", username: "")
@@ -22,13 +22,17 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         }
     }
     
+    var showCompleteHeader: Bool = false
+    
     var isGradients = [Bool]()
     var photos = [Photo]()
     var data: ([Photo], Int)?
     var amountTrophy = 0
     
     @IBOutlet weak var collectionProfile: UICollectionView!
-
+    @IBOutlet weak var backButton: UIButton!
+    
+    @IBOutlet weak var CVtopSpaceSmall: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = ProfilePresenterImpl(profileView: self)
@@ -39,6 +43,22 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             presenter?.loadData(id: (user?.id)!, photos: photos)
             presenter?.loadHeader(id: (user?.id)!)
             
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if(showCompleteHeader){
+            self.CVtopSpaceSmall.isActive = false
+            self.backButton.isEnabled = true
+            self.backButton.isHidden = false
+        }
+    }
+    
+    func initDarkStatusBar(){
+        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
+            statusBar.backgroundColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
         }
     }
     
@@ -140,6 +160,19 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         data = (self.photos, indexPath.row) as ([Photo], Int)
         performSegue(withIdentifier: "expandMyPhotoSegue", sender: self)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if(!showCompleteHeader){
+            return CGSize(width: collectionView.bounds.width, height: 270)
+        }
+        
+        return CGSize(width: collectionView.bounds.width, height: 320)
+    }
+    
+    @IBAction func dismiss(_ sender: Any) {
+        initDarkStatusBar()
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

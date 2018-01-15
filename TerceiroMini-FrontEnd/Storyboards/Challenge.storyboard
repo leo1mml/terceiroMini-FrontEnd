@@ -245,7 +245,7 @@
         <!--Profile-->
         <scene sceneID="Pwb-Hr-I7C">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="CaJ-Jg-CHa" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Profile" storyboardName="Profile" id="CaJ-Jg-CHa" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4U-s4-2G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="930" y="40"/>

@@ -196,6 +196,14 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
         
     }
     
+    func goToProfileFromChallenge(){
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
+        vc.user = self.challengeWinner!
+        vc.showCompleteHeader = true
+        defaultStatusBar()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let infoImage = info[UIImagePickerControllerOriginalImage] as? UIImage{

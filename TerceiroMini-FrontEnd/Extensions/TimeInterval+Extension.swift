@@ -12,7 +12,7 @@ extension TimeInterval {
     
     func format() -> String? {
         let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.day, .hour, .minute, .second, .nanosecond]
+        formatter.allowedUnits = [.day, .hour, .minute, .second]
         formatter.unitsStyle = .abbreviated
         formatter.maximumUnitCount = 4
         return formatter.string(from: self)

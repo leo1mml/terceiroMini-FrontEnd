@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,13 +24,13 @@
         <!--Profile View Controller-->
         <scene sceneID="Xe5-UC-vlA">
             <objects>
-                <viewController storyboardIdentifier="ProfileStoryboard" id="JUZ-H1-IjI" customClass="ProfileViewController" customModule="TerceiroMini_FrontEnd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileStoryboard" id="JUZ-H1-IjI" customClass="ProfileViewController" customModule="TerceiroMini_FrontEnd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BPx-NR-vax">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bVg-Um-evj">
-                                <rect key="frame" x="2" y="0.0" width="371" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="eeC-Pg-2Lg">
                                     <size key="itemSize" width="121" height="121"/>
@@ -96,14 +95,14 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="profileHeader" id="ZaC-zi-nhA" customClass="HeaderCollectionReusableView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="371" height="269"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="269"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="52d-kP-ObJ">
-                                            <rect key="frame" x="0.0" y="15" width="371" height="239"/>
+                                            <rect key="frame" x="0.0" y="15" width="375" height="239"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBf-m6-L0V">
-                                                    <rect key="frame" x="126.5" y="0.0" width="118" height="118"/>
+                                                    <rect key="frame" x="128.5" y="0.0" width="118" height="118"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-default" translatesAutoresizingMaskIntoConstraints="NO" id="q6q-36-X6c">
                                                             <rect key="frame" x="4.5" y="4.5" width="110" height="110"/>
@@ -123,13 +122,13 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1Ov-sc-dkD">
-                                                    <rect key="frame" x="0.0" y="134" width="371" height="105"/>
+                                                    <rect key="frame" x="0.0" y="134" width="375" height="105"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="duS-fS-w19">
-                                                            <rect key="frame" x="0.0" y="0.0" width="371" height="44"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hyago Nascimento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IL8-bH-m8Z">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="371" height="27"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="27"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="27" id="vpM-MT-hP5"/>
                                                                     </constraints>
@@ -138,7 +137,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@nascimentohyago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhV-Xo-J1L">
-                                                                    <rect key="frame" x="0.0" y="28" width="371" height="16"/>
+                                                                    <rect key="frame" x="0.0" y="28" width="375" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="IXR-73-Q7f"/>
                                                                     </constraints>
@@ -153,7 +152,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="Ojb-RH-aze">
-                                                            <rect key="frame" x="81.5" y="64" width="208" height="41"/>
+                                                            <rect key="frame" x="83.5" y="64" width="208" height="41"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="BdK-h9-oK5">
                                                                     <rect key="frame" x="0.0" y="0.0" width="48" height="41"/>
@@ -247,21 +246,38 @@
                                         <outlet property="profilePhotoNumberLabel" destination="oEH-E4-O7D" id="edI-4s-iPM"/>
                                         <outlet property="profileTrophyNumberLabel" destination="6va-XR-dFw" id="h29-Za-9Rn"/>
                                         <outlet property="profileUserName" destination="ZhV-Xo-J1L" id="qcZ-DN-NXG"/>
+                                        <outlet property="topHeaderSpacingSmall" destination="vBl-Iw-0ec" id="33A-hP-Mrb"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCF-Yy-Amr">
+                                <rect key="frame" x="20" y="35" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="Njd-ft-YoF"/>
+                                    <constraint firstAttribute="width" constant="16" id="kbh-mr-0Yz"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button" image="close-icon"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="JUZ-H1-IjI" eventType="touchUpInside" id="jvZ-Bp-oHJ"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="bVg-Um-evj" firstAttribute="centerX" secondItem="BPx-NR-vax" secondAttribute="centerX" id="HRn-En-Zuj"/>
-                            <constraint firstItem="bVg-Um-evj" firstAttribute="height" secondItem="BPx-NR-vax" secondAttribute="height" id="Xaw-ya-jKN"/>
-                            <constraint firstItem="bVg-Um-evj" firstAttribute="width" secondItem="BPx-NR-vax" secondAttribute="width" multiplier="0.989333" id="gVj-l2-CPw"/>
-                            <constraint firstItem="bVg-Um-evj" firstAttribute="bottom" secondItem="wVx-W1-ttd" secondAttribute="bottom" id="hae-Mp-2BF"/>
+                            <constraint firstItem="SCF-Yy-Amr" firstAttribute="top" secondItem="wVx-W1-ttd" secondAttribute="top" constant="15" id="03M-RU-QXn"/>
+                            <constraint firstItem="bVg-Um-evj" firstAttribute="top" secondItem="BPx-NR-vax" secondAttribute="top" priority="750" constant="50" id="6ko-fC-hOH"/>
+                            <constraint firstItem="bVg-Um-evj" firstAttribute="top" secondItem="BPx-NR-vax" secondAttribute="top" id="HGO-qg-3hH"/>
+                            <constraint firstItem="bVg-Um-evj" firstAttribute="leading" secondItem="wVx-W1-ttd" secondAttribute="leading" id="HVk-79-5XU"/>
+                            <constraint firstItem="wVx-W1-ttd" firstAttribute="trailing" secondItem="bVg-Um-evj" secondAttribute="trailing" id="Ltm-Wr-eFe"/>
+                            <constraint firstItem="bVg-Um-evj" firstAttribute="bottom" secondItem="wVx-W1-ttd" secondAttribute="bottom" id="XY3-WQ-DeI"/>
+                            <constraint firstItem="SCF-Yy-Amr" firstAttribute="leading" secondItem="wVx-W1-ttd" secondAttribute="leading" constant="20" id="sXt-ok-J86"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wVx-W1-ttd"/>
                     </view>
-                    <size key="freeformSize" width="375" height="600"/>
                     <connections>
+                        <outlet property="CVtopSpaceSmall" destination="HGO-qg-3hH" id="FKK-B4-DcZ"/>
+                        <outlet property="backButton" destination="SCF-Yy-Amr" id="4ER-3p-dHB"/>
                         <outlet property="collectionProfile" destination="bVg-Um-evj" id="Sez-x4-TOd"/>
                         <segue destination="3zL-4b-YTE" kind="show" identifier="expandMyPhotoSegue" id="mcV-Br-ah7"/>
                     </connections>
@@ -281,6 +297,7 @@
     </scenes>
     <resources>
         <image name="Trophy" width="21" height="21"/>
+        <image name="close-icon" width="16" height="16"/>
         <image name="profile-default" width="108" height="108"/>
     </resources>
 </document>

@@ -20,6 +20,7 @@ extension NewChallengeViewController : NewChallengeHeaderDelegate{
             break
         case .finished?:
             //ir parao  ganhador
+            goToProfileFromChallenge()
             break
         default:
             break

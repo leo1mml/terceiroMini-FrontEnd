@@ -101,7 +101,9 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     func setHeader(theme: String, mainImageURL: String,numPhotos: Int){
         header.challengeLabel.text = theme
         let url = URL(string: mainImageURL)
-        self.header.mainButton.isEnabled = true
+        if(self.state == ChallengeState.notLogged){
+            self.header.mainButton.isEnabled = true
+        }
         self.header.mainImage.sd_setImage(with: url, completed: nil)
         self.header.numberOfPhotos.text = "\(numPhotos) fotos"
         self.header.state = self.state!

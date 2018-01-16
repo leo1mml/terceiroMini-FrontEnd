@@ -36,6 +36,7 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
             vc2 = sb.instantiateViewController(withIdentifier: "Main")
             vc2?.restorationIdentifier = "Main"
             (vc2 as! LoginPresentationViewController).loginProtocol = self
+            (vc2 as! LoginPresentationViewController).loginProtocol?.isMainScreen = true
             
         }
         return [vc1, vc2!]
@@ -177,6 +178,7 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
             vc2 = sb.instantiateViewController(withIdentifier: "Main")
             vc2?.restorationIdentifier = "Main"
             (vc2 as! LoginPresentationViewController).loginProtocol = self
+            (vc2 as! LoginPresentationViewController).loginProtocol?.isMainScreen = true
             
         }
         self.viewControllerList = [vc1, vc2!]

@@ -90,6 +90,9 @@ class NewChallengePresenterImpl: NewChallengePresenter{
                         self.view.setHeaderStatusAsFinished(winner: user!, photoWinner: Photo("", "", "", "", [""]))
                     })
                     break
+                case .notLogged:
+                    self.view.setHeaderStatusAsTimer(endDate: (challenge?.endDate)!)
+                    break
                 default:
                     break
                 }

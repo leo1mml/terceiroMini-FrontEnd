@@ -54,6 +54,10 @@ class LoginViewController: UIViewController, LoginView, EditingListener {
         setupTexts()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     // MARK: - Actions
 
     @IBAction func login(_ sender: UIButton) {

@@ -67,6 +67,10 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
         agreementWarningLabel.text = "Ao entrar no aplicativo, você concorda com os nossos\ntermos de serviço e políticas de privacidade."
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     private func loadHeader() {
         
         guard let caller = self.loginProtocol else {

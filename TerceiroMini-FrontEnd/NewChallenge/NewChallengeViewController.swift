@@ -140,6 +140,9 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     
     func setHeaderStatusAsTimer(endDate: Date){
         header.statusImage.image = UIImage(named: "clockBlackIcon")
+        if(self.state == ChallengeState.notLogged){
+            self.header.mainButton.setTitle("CADASTRE-SE", for: .normal)
+        }
         self.endDate = endDate
         timerUpdate()
     }

@@ -41,6 +41,10 @@ class RegisterViewController: UIViewController, RegisterView {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     @objc func keyboardWillShow(notification: NSNotification) {
        
         if self.view.frame.origin.y == 0{

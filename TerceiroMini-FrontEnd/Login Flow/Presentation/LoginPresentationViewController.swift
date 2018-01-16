@@ -17,6 +17,8 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
     
     var presenter: LoginPresentationPresenter?
     var loginProtocol : LoginCallerPortocol?
+    var navigationProtocol: NavigateInAppProtocol?
+    var isChallengeFlow: Bool?
     
     // MARK: - Outlets
     
@@ -55,6 +57,10 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
         setupTexts()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.loginProtocol?.isMainScreen = true
+    }
     override func viewDidAppear(_ animated: Bool) {
         loadHeader()
     }
@@ -76,18 +82,20 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
         guard let caller = self.loginProtocol else {
             return
         }
-        
-        if caller.isMainScreen {
-            
-            exitButton.isHidden = true
-            logoImageView.isHidden = true
-            
-            let newGradient = backgroundImageView.buildGradient(colors: [Colors.darkWhite, .clear], locationX: 0, locationY: 0.35, startPoint: CGPoint(x: 0.5, y: 0), endPoint: CGPoint(x: 0.5, y: 1))
-            
-            backgroundImageView.image = #imageLiteral(resourceName: "special-presentation-login-background")
-            backgroundImageView.changeTopGradient(by: newGradient)
-            backgroundImageHeight.constant = 325
+        if !self.isChallengeFlow!{
+            if caller.isMainScreen {
+                
+                exitButton.isHidden = true
+                logoImageView.isHidden = true
+                
+                let newGradient = backgroundImageView.buildGradient(colors: [Colors.darkWhite, .clear], locationX: 0, locationY: 0.35, startPoint: CGPoint(x: 0.5, y: 0), endPoint: CGPoint(x: 0.5, y: 1))
+                
+                backgroundImageView.image = #imageLiteral(resourceName: "special-presentation-login-background")
+                backgroundImageView.changeTopGradient(by: newGradient)
+                backgroundImageHeight.constant = 325
+            }
         }
+        
     }
     
     // MARK: - Actions
@@ -117,13 +125,22 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
     func goToLogin() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginViewController
         vc.loginProtocol = self.loginProtocol
-        self.navigationController?.pushViewController(vc, animated: true)
+        if(self.loginProtocol?.isMainScreen)!{
+            self.navigationProtocol?.goToLogin(vc: vc)
+        }else {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
     func goToRegister() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Register") as! RegisterViewController
         vc.loginProtocol = self.loginProtocol
-        self.navigationController?.pushViewController(vc, animated: true)
+        if(self.loginProtocol?.isMainScreen)!{
+            self.navigationProtocol?.goToRegister(vc: vc)
+        }else {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func setupBackgroundImageViewBottomGradient() {

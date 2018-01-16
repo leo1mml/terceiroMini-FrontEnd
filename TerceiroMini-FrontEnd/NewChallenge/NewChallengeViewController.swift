@@ -217,6 +217,7 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "registerScreen") as! LoginPresentationViewController
         vc.loginProtocol = self.caller
         vc.loginProtocol?.isMainScreen = false
+        vc.isChallengeFlow = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

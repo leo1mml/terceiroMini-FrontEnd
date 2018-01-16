@@ -13,6 +13,8 @@ protocol NavigateInAppProtocol {
     func instanceProfile()
     func goToChallenge(with challengeId: String, coverImage: UIImage, challengeTitle: String, state: ChallengeState)
     func goToAlertView()
+    func goToLogin(vc: LoginViewController)
+    func goToRegister(vc: RegisterViewController)
 }
 
 class MainScreenViewController: UITableViewController, MainScreenView, NavigationAnimationsDelegate, NavigateInAppProtocol{
@@ -61,6 +63,9 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         if(self.pageViewController.viewControllerList[1].restorationIdentifier == "Main"){
             self.configButton.isEnabled = false
             self.configButton.isHidden = true
+            (self.pageViewController.viewControllerList[1] as! LoginPresentationViewController).navigationProtocol = self
+            (self.pageViewController.viewControllerList[1] as! LoginPresentationViewController).loginProtocol?.isMainScreen = true
+            (self.pageViewController.viewControllerList[1] as! LoginPresentationViewController).isChallengeFlow = false
         }
         defaultStatusBar()
         
@@ -194,6 +199,13 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         vc.modalPresentationStyle = .overCurrentContext
         self.navigationController?.isHeroEnabled = false
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    func goToLogin(vc: LoginViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func goToRegister(vc: RegisterViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     /*

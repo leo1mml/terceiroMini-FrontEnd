@@ -121,7 +121,7 @@ class LoginPresentationViewController: UIViewController, LoginPresentationView {
     }
     
     func goToRegister() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! RegisterViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Register") as! RegisterViewController
         vc.loginProtocol = self.loginProtocol
         self.navigationController?.pushViewController(vc, animated: true)
     }

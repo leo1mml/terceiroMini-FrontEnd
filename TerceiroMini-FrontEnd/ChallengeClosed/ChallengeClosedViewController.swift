@@ -57,6 +57,23 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        initDarkStatusBar()
+//    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    func initDarkStatusBar(){
+        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
+            UIView.animate(withDuration: 0.8, animations: {
+                statusBar.backgroundColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
+            })
+        }
+    }
+    
     
     @IBAction func escolherClickAction(_ sender: Any) {
         if !myClick{
@@ -79,20 +96,20 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     }
     
     func enableMyClickChosebuttonLabel(){
-        self.escolherClickButton.setTitle("Meu Click", for: .normal)
+        self.escolherClickButton.setTitle("MEU CLICK", for: .normal)
         self.myFavoriteClick = false
         self.myClick = true
         
     }
     
     func enableMyFavoriteClickChosebuttonLabel(){
-        self.escolherClickButton.setTitle("Meu Click Favorito", for: .normal)
+        self.escolherClickButton.setTitle("MEU CLICK FAVORITO", for: .normal)
         self.myFavoriteClick = true
         self.myClick = false
         
     }
     func enableChoseClickButton(){
-        self.escolherClickButton.setTitle("Escolher Click", for: .normal)
+        self.escolherClickButton.setTitle("ESCOLHER CLICK", for: .normal)
         self.myFavoriteClick = false
         self.myClick = false
     }
@@ -101,7 +118,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         
         if(details){
             
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.reportButton.alpha = 0
                 self.photoCount.alpha = 0
                 self.closeButton.alpha = 0
@@ -167,9 +184,14 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     }
     
     @IBAction func closeButtonAction(_ sender: UIButton) {
+        if (self.isMovingFromParentViewController) {
+            UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
+        }
         self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
+    
+//    @objc func canRotate() -> Void {}
     
 }
 

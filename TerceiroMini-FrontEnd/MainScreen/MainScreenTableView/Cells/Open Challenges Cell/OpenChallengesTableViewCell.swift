@@ -29,7 +29,9 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         layout.minimumInteritemSpacing = 0
         self.presenter = OpenChallengesCellPresenterImp(openChallengesCellView: self)
         presenter?.fetchChallenges()
+        self.collectionView.decelerationRate = UIScrollViewDecelerationRateNormal
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -55,14 +57,15 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         if(challenges != nil){
             cell.themeImage.heroID = challenges?[indexPath.row].id
             cell.clockView.heroID = "clock" + (challenges?[indexPath.row].id)!
-            self.navigateInAppDelegate?.goToChallenge(with: (challenges?[indexPath.row].id)!, coverImage: cell.themeImage.image!, challengeTitle: cell.themeLabel.text!, state: .open)
+            let state = (UserDefaults.standard.string(forKey: "token") != nil) ? ChallengeState.open : ChallengeState.notLogged
+            self.navigateInAppDelegate?.goToChallenge(with: (challenges?[indexPath.row].id)!, coverImage: cell.themeImage.image!, challengeTitle: cell.themeLabel.text!, state: state)
         }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollCenter = scrollView.contentOffset.x / (collectionView.frame.width * 0.89333)
         pageControl.currentPage = Int(round(scrollCenter))
-        scrollView.decelerationRate = 0.8
+        
         
     }
 

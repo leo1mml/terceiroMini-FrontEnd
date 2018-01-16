@@ -16,10 +16,9 @@ extension ChallengeClosedViewController: UIScrollViewDelegate {
         for i in 0..<images.count {
 
             let imageView = UIImageView()
-            
-            UIImage.fetch(with: images[i], completion: { (image) in
-                
-                imageView.image = image
+            imageView.heroID = images[i]
+            let url = URL(string: images[i])
+            imageView.sd_setImage(with: url, completed: { (image, error, chacheType, url) in
                 imageView.addChallengeGradientLayer(frame: self.view.bounds, colors: [self.colorGradient, .clear, .clear, .clear])
                 imageView.contentMode = .scaleAspectFit
                 let xPosition = self.view.frame.width * CGFloat(i)
@@ -34,17 +33,20 @@ extension ChallengeClosedViewController: UIScrollViewDelegate {
         
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if details {
             self.showOrHideDetails()
         }
         
         imageIndex = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
-
+        
         presenter?.checkIfChosenClick(currentPhoto: (self.data?.0[imageIndex])!)
         
         updatePhotoCount()
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        
     }
     
 }

@@ -11,7 +11,7 @@ import NotificationBannerSwift
 
 private let segueToRegister = "loginToRegister"
 
-class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
+class LoginViewController: UIViewController, LoginView, EditingListener {
 
     // MARK: - Outlets
     
@@ -30,6 +30,7 @@ class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
     // MARK: - Attributes
     
     var presenter: LoginPresenter?
+    var loginProtocol : LoginCallerPortocol?
     
     // MARK: - Lifecycle
     
@@ -84,21 +85,19 @@ class LoginViewController: LoginFlowViewController, LoginView, EditingListener {
     }
     
     func goToRegister() {
-        performSegue(withIdentifier: segueToRegister, sender: self)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Register") as! RegisterViewController
+        vc.loginProtocol = self.loginProtocol
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func goBack() {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func goToApp() {
+        self.loginProtocol?.loginFinishedSuccessfully()
+        self.navigationController?.popToRootViewController(animated: true)
         
-        let caller = self.caller
-        
-        dismissInChain(animated: false) {
-            
-            caller?.loginFinishedSuccessfully()
-        }
     }
     
     // MARK: - EditingListener implementation

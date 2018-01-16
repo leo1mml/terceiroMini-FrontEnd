@@ -22,6 +22,10 @@ extension NewChallengeViewController : NewChallengeHeaderDelegate{
             //ir parao  ganhador
             goToProfileFromChallenge()
             break
+        case ChallengeState.notLogged?:
+            goToRegisterScreen()
+            break
+            
         default:
             break
         }

@@ -10,7 +10,7 @@ import UIKit
 
 protocol LoginCallerPortocol {
     
-    var isMainScreen: Bool { get }
+    var isMainScreen: Bool { get set }
     func loginFinishedSuccessfully()
 }
 

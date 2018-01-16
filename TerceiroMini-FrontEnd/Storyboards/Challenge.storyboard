@@ -242,6 +242,14 @@
             </objects>
             <point key="canvasLocation" x="109.59999999999999" y="53.523238380809602"/>
         </scene>
+        <!--Main-->
+        <scene sceneID="WMB-29-bVg">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="registerScreen" storyboardName="Main" id="poj-Si-dNt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IfU-ok-8g0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812" y="-147"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="Pwb-Hr-I7C">
             <objects>

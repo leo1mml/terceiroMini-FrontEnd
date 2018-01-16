@@ -62,8 +62,17 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
             self.configButton.isEnabled = false
             self.configButton.isHidden = true
         }
+        defaultStatusBar()
         
     }
+    
+    func defaultStatusBar() {
+        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
+            statusBar.backgroundColor = Colors.darkWhite
+        }
+    }
+
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -173,6 +182,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         vc.challengeTheme = challengeTitle
         vc.challengeCover = coverImage
         vc.state = state
+        vc.caller = self.pageViewController
         self.navigationController?.isHeroEnabled = true
         self.navigationController?.heroNavigationAnimationType = .fade
         self.navigationController?.show(vc, sender: self)

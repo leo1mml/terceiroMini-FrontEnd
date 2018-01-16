@@ -17,10 +17,7 @@ protocol NavigationAnimationsDelegate {
 }
 
 class NavigationViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, LoginCallerPortocol {
-    
-    var isMainScreen: Bool {
-        return true
-    }
+    var isMainScreen: Bool = false
     
     lazy var viewControllerList:[UIViewController] = {
         let sb = UIStoryboard(name: "MainScreen", bundle: nil)
@@ -38,7 +35,7 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
         }else {
             vc2 = sb.instantiateViewController(withIdentifier: "Main")
             vc2?.restorationIdentifier = "Main"
-            (vc2 as! LoginPresentationViewController).caller = self
+            (vc2 as! LoginPresentationViewController).loginProtocol = self
             
         }
         return [vc1, vc2!]
@@ -175,15 +172,16 @@ class NavigationViewController: UIPageViewController, UIPageViewControllerDataSo
                     (vc2 as! ProfileViewController).user = me
                 }
             })
+            self.delegateAnimations?.setInitialItemsPosition()
         }else {
             vc2 = sb.instantiateViewController(withIdentifier: "Main")
             vc2?.restorationIdentifier = "Main"
-            (vc2 as! LoginPresentationViewController).caller = self
+            (vc2 as! LoginPresentationViewController).loginProtocol = self
             
         }
         self.viewControllerList = [vc1, vc2!]
         if let firstViewController = viewControllerList.first {
-            self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: { (completed) in
+            self.setViewControllers([firstViewController], direction: .forward, animated: false, completion: { (completed) in
                 self.delegateAnimations?.setInitialItemsPosition()
             })
         }

@@ -8,7 +8,11 @@
 
 import UIKit
 
-class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LoginCallerPortocol {
+    
+    
+    var isMainScreen: Bool = false
+    
 
     
     
@@ -24,6 +28,7 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     var challengeWinner : User?
     var endDate : Date?
     var isLogged = false
+    var caller : LoginCallerPortocol?
     
     var showCompleteHeader: Bool = false {
         didSet {
@@ -96,6 +101,7 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     func setHeader(theme: String, mainImageURL: String,numPhotos: Int){
         header.challengeLabel.text = theme
         let url = URL(string: mainImageURL)
+        self.header.mainButton.isEnabled = true
         self.header.mainImage.sd_setImage(with: url, completed: nil)
         self.header.numberOfPhotos.text = "\(numPhotos) fotos"
         self.header.state = self.state!
@@ -204,10 +210,22 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func goToRegisterScreen() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "registerScreen") as! LoginPresentationViewController
+        vc.loginProtocol = self.caller
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        if let infoImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            presenter?.sendPhotoToCloudinary(infoImage: infoImage, challengeID: challengeID!)
+       
+        if let img = info[UIImagePickerControllerEditedImage] as? UIImage
+        {
+            presenter?.sendPhotoToCloudinary(infoImage: img, challengeID: challengeID!)
+            
+        }
+        else if let img = info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            presenter?.sendPhotoToCloudinary(infoImage: img, challengeID: challengeID!)
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -232,10 +250,11 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             imagePicker.allowsEditing = true
-            
+            imagePicker.cameraCaptureMode = .photo
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    
     
     func initDarkStatusBar(){
         let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView

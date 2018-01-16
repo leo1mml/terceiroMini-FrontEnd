@@ -16,6 +16,9 @@
         <array key="Montserrat-Medium.otf">
             <string>Montserrat-Medium</string>
         </array>
+        <array key="Montserrat-SemiBold.otf">
+            <string>Montserrat-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Challenge Closed Alert View Controller-->
@@ -39,8 +42,8 @@
                                     <rect key="frame" x="35" y="239" width="304" height="189"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPS... TEMA FECHADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2R-y2-hXZ">
-                                            <rect key="frame" x="59" y="50" width="186" height="20"/>
-                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                            <rect key="frame" x="58.5" y="50" width="188" height="20"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -134,8 +137,8 @@
                                 <rect key="frame" x="35" y="239" width="304" height="189"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPS... TEMA FECHADO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uc-Q9-84B">
-                                        <rect key="frame" x="59" y="50" width="186" height="20"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                        <rect key="frame" x="58.5" y="50" width="188" height="20"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -144,8 +147,8 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="238" id="brS-0U-rHO"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="15"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
+                                        <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

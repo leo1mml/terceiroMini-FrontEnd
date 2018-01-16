@@ -9,7 +9,7 @@
 import UIKit
 import NotificationBannerSwift
 
-class RegisterViewController: LoginFlowViewController, RegisterView {
+class RegisterViewController: UIViewController, RegisterView {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var backgroundImageBottomGradientView: UIView!
@@ -25,6 +25,7 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
     @IBOutlet weak var agreementLabel: UILabel!
     
     var presenter: RegisterPresenter?
+    var loginProtocol : LoginCallerPortocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,15 +70,13 @@ class RegisterViewController: LoginFlowViewController, RegisterView {
     }
     
     func goBack() {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func goToApp() {
         
-        dismissInChain(animated: false) {
-            
-            self.caller?.loginFinishedSuccessfully()
-        }
+        self.loginProtocol?.loginFinishedSuccessfully()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func showUpdateError(message: String) {

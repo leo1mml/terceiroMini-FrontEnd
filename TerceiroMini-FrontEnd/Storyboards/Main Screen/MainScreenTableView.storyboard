@@ -16,6 +16,9 @@
         <array key="Montserrat-ExtraBold.otf">
             <string>Montserrat-ExtraBold</string>
         </array>
+        <array key="Montserrat-Medium.otf">
+            <string>Montserrat-Medium</string>
+        </array>
         <array key="Montserrat-Regular.otf">
             <string>Montserrat-Regular</string>
         </array>
@@ -43,7 +46,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="390"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R2M-OJ-EOT" customClass="ChallengesCollectionView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" canCancelContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R2M-OJ-EOT" customClass="ChallengesCollectionView" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="3" width="375" height="355"/>
                                                     <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -53,11 +56,11 @@
                                                         <size key="itemSize" width="335" height="355"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChallengeCell" id="xJg-Xg-8Mx" customClass="ChallengeCollectionViewCell" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="0.0" width="335" height="355"/>
+                                                            <rect key="frame" x="20" y="0.0" width="335" height="355"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="355"/>
@@ -73,13 +76,13 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Num Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFG-aj-DJc">
-                                                                        <rect key="frame" x="38" y="257.5" width="95.5" height="18.5"/>
-                                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                                                        <rect key="frame" x="30" y="257.5" width="96" height="18.5"/>
+                                                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
                                                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-jV-pUi">
-                                                                        <rect key="frame" x="38" y="206" width="270" height="51.5"/>
+                                                                        <rect key="frame" x="30" y="206" width="270" height="51.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="270" id="9Df-Aj-GRD"/>
                                                                         </constraints>
@@ -90,7 +93,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3D-Qx-RM3">
                                                                         <rect key="frame" x="105.5" y="303" width="124" height="24"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock-icon" translatesAutoresizingMaskIntoConstraints="NO" id="35j-ki-hXe">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clockBlackIcon" translatesAutoresizingMaskIntoConstraints="NO" id="35j-ki-hXe">
                                                                                 <rect key="frame" x="5" y="5" width="14" height="14"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="14" id="5zx-oO-v6a"/>
@@ -131,11 +134,11 @@
                                                                 <constraint firstAttribute="trailing" secondItem="zkY-vC-jfD" secondAttribute="trailing" id="FJY-Mp-koq"/>
                                                                 <constraint firstAttribute="bottom" secondItem="ANe-2W-7A3" secondAttribute="bottom" id="Lcs-bX-uQn"/>
                                                                 <constraint firstItem="zkY-vC-jfD" firstAttribute="top" secondItem="xJg-Xg-8Mx" secondAttribute="top" id="LgF-L7-wJ5"/>
-                                                                <constraint firstItem="sFG-aj-DJc" firstAttribute="leading" secondItem="xJg-Xg-8Mx" secondAttribute="leadingMargin" constant="30" id="PBF-m3-giB"/>
+                                                                <constraint firstItem="sFG-aj-DJc" firstAttribute="leading" secondItem="xJg-Xg-8Mx" secondAttribute="leading" constant="30" id="PBF-m3-giB"/>
                                                                 <constraint firstItem="sFG-aj-DJc" firstAttribute="top" secondItem="xLa-jV-pUi" secondAttribute="bottom" id="XK9-ID-Qw7"/>
                                                                 <constraint firstAttribute="bottom" secondItem="zkY-vC-jfD" secondAttribute="bottom" id="bBZ-uQ-UQf"/>
                                                                 <constraint firstItem="ANe-2W-7A3" firstAttribute="leading" secondItem="xJg-Xg-8Mx" secondAttribute="leading" id="oQX-bK-oVc"/>
-                                                                <constraint firstItem="xLa-jV-pUi" firstAttribute="leading" secondItem="xJg-Xg-8Mx" secondAttribute="leadingMargin" constant="30" id="sCp-HD-RIB"/>
+                                                                <constraint firstItem="xLa-jV-pUi" firstAttribute="leading" secondItem="xJg-Xg-8Mx" secondAttribute="leading" constant="30" id="sCp-HD-RIB"/>
                                                                 <constraint firstAttribute="bottomMargin" secondItem="sFG-aj-DJc" secondAttribute="bottom" constant="71" id="tRq-Hq-32u"/>
                                                                 <constraint firstItem="t3D-Qx-RM3" firstAttribute="centerX" secondItem="xJg-Xg-8Mx" secondAttribute="centerX" id="viI-yK-f96"/>
                                                                 <constraint firstAttribute="trailing" secondItem="ANe-2W-7A3" secondAttribute="trailing" id="voL-Fc-UyB"/>
@@ -442,7 +445,7 @@
     </scenes>
     <resources>
         <image name="calendar" width="14" height="14"/>
-        <image name="clock-icon" width="14" height="14"/>
+        <image name="clockBlackIcon" width="14" height="14"/>
         <image name="pombo" width="825" height="510"/>
     </resources>
 </document>

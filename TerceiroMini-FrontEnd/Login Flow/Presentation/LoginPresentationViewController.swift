@@ -11,11 +11,12 @@ import UIKit
 private let segueToLogin = "presentationToLogin"
 private let segueToRegister = "presentationToRegister"
 
-class LoginPresentationViewController: LoginFlowViewController, LoginPresentationView {
+class LoginPresentationViewController: UIViewController, LoginPresentationView {
 
     // MARK: - Attributes
     
     var presenter: LoginPresentationPresenter?
+    var loginProtocol : LoginCallerPortocol?
     
     // MARK: - Outlets
     
@@ -68,7 +69,7 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
     
     private func loadHeader() {
         
-        guard let caller = self.caller else {
+        guard let caller = self.loginProtocol else {
             return
         }
         
@@ -106,15 +107,19 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
     // MARK: - View implementation
     
     func exitLoginPresentation() {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func goToLogin() {
-        performSegue(withIdentifier: segueToLogin, sender: self)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+        vc.loginProtocol = self.loginProtocol
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func goToRegister() {
-        performSegue(withIdentifier: segueToRegister, sender: self)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! RegisterViewController
+        vc.loginProtocol = self.loginProtocol
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func setupBackgroundImageViewBottomGradient() {
@@ -123,12 +128,8 @@ class LoginPresentationViewController: LoginFlowViewController, LoginPresentatio
     }
     
     func goToApp() {
-        let caller = self.caller
-        
-        dismissInChain(animated: false) {
-            
-            caller?.loginFinishedSuccessfully()
-        }
+        self.loginProtocol?.loginFinishedSuccessfully()
+        self.navigationController?.popToRootViewController(animated: true)
 
     }
 }

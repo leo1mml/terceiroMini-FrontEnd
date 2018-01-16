@@ -263,6 +263,7 @@ enum ChallengeState {
     case votation
     case finished
     case participating
+    case notLogged
 }
 
 @IBDesignable

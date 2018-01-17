@@ -13,9 +13,6 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
     
     var view: ChallengeClosedView?
     var id: String?
-    let cloudname = "clicks"
-    let apiKey = "535385847914562"
-    let uploadPreset = "clicksPreset"
     
     init(challengeClosedView: ChallengeClosedView) {
         self.view = challengeClosedView
@@ -26,17 +23,10 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
     }
     
     func excludePhoto() {
-        
-        
         NetworkManager.deletePhoto(byId: id!) { (photo, error) in
             guard photo != nil else {
                 return
             }
-            let config = CLDConfiguration(cloudName: self.cloudname, apiKey: self.apiKey)
-            let cloudinary = CLDCloudinary(configuration: config)
-            print(self.separateIdFromUrl(url: (photo?.url)!))
-            _ = cloudinary.createManagementApi().destroy(self.separateIdFromUrl(url: (photo?.url)!))
-            
             self.view?.dissmissAndReloadParent()
         }
         

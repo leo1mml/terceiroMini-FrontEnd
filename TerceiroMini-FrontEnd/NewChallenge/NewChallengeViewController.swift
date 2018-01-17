@@ -17,10 +17,9 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
     
 
     
-    
+    var challenge : Challenge?
     var challengePhotos : [Photo]?
     var state : ChallengeState?
-    var challengeID : String?
     var challengeCover : UIImage?
     var challengeTheme : String?
     var data: ([Photo], Int)?
@@ -66,11 +65,13 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        presenter?.getChallengeHeader(challengeID: challengeID!, challengeState: state!)
-        presenter?.getChallengeImages(challengeID: challengeID!)
-        resolveState()
-        
+        if(UserDefaults.standard.string(forKey: "token") == nil){
+            self.state = .notLogged
+        }
+        if(self.state == nil || self.state != .publishingPhoto || self.state == .notLogged){
+            presenter?.getChallengeHeader(challenge: challenge!)
+            presenter?.getChallengeImages(challengeID: (challenge?.id)!)
+        }
     }
     
     
@@ -108,7 +109,10 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
         }
         self.header.mainImage.sd_setImage(with: url, completed: nil)
         self.header.numberOfPhotos.text = "\(numPhotos) fotos"
-        self.header.state = self.state!
+        if(self.state != nil){
+            self.header.state = self.state!
+            resolveState()
+        }
     }
     
     
@@ -133,6 +137,7 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
     func setHeaderButtonAsParticipating(){
         header.mainButton.isEnabled = true
         header.mainButton.setTitle("PARTICIPANDO", for: .normal)
+        self.header.featuredCollectionView.reloadData()
         self.state = ChallengeState.participating
     }
     func setHeaderButtonAsParticipate() {
@@ -141,25 +146,30 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
         self.state = ChallengeState.open
     }
     
+    func setHeaderButtonAsNotLogged(){
+        header.mainButton.isEnabled = true
+        header.mainButton.setTitle("CADASTRE-SE", for: .normal)
+    }
+    
     
     func setHeaderStatusAsTimer(endDate: Date){
         header.statusImage.image = UIImage(named: "clockBlackIcon")
-        if(self.state == ChallengeState.notLogged){
-            self.header.mainButton.setTitle("CADASTRE-SE", for: .normal)
-        }
         self.endDate = endDate
         timerUpdate()
+        header.featuredCollectionView.reloadData()
     }
     
     func setFeaturedCollectionMyClick(myClick: Photo?){
         header.myClick = myClick
         self.showCompleteHeader = true
+        self.header.featuredCollectionView.isHidden = false
         header.featuredCollectionView.reloadData()
     }
     
     func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo?){
         self.showCompleteHeader = true
         header.myFavoriteClick = myFavoriteClick
+        self.header.featuredCollectionView.isHidden = false
         header.featuredCollectionView.reloadData()
     }
     
@@ -180,16 +190,27 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
         
         switch state {
         case .open?:
-        //    header.mainButton.setTitle("PARTICIPAR", for: .normal)
+            setHeaderButtonAsParticipate()
             break
         case .participating?:
-          //  header.mainButton.setTitle("PARTICIPANDO", for: .normal)
+            setHeaderButtonAsParticipating()
             break
         case .finished?:
             break
+        case .notLogged?:
+            setHeaderButtonAsNotLogged()
+            break
+        case .publishingPhoto?:
+            break
+            
         default:
             break
         }
+    }
+    
+    func setState(state: ChallengeState) {
+        self.state = state
+        resolveState()
     }
     
     func showPhotoMenu(){
@@ -228,8 +249,8 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
         self.header.mainButton.setTitle("PUBLICANDO...", for: .normal)
         self.header.mainButton.isEnabled = false
-        self.state = .participating
-        presenter?.sendPhotoToCloudinary(infoImage: image, challengeID: self.challengeID!)
+        self.state = .publishingPhoto
+        presenter?.sendPhotoToCloudinary(infoImage: image, challengeID: (self.challenge?.id)!)
     }
     
     func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
@@ -266,5 +287,10 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
     func initNibs(){
         self.mainCollectionView.register(UINib(nibName:MainCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
         
+    }
+    
+    func reloadData() {
+        self.header.featuredCollectionView.reloadData()
+        self.mainCollectionView.reloadData()
     }
 }

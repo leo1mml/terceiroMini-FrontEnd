@@ -24,7 +24,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     var details = true
     var data: ([Photo], Int)?
     var myFavoriteClick = false
-    var myClick : Bool?
+    var myClick : Bool? = false
     
     let colorGradient = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
     

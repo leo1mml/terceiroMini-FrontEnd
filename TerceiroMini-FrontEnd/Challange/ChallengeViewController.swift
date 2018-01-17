@@ -264,6 +264,7 @@ enum ChallengeState {
     case finished
     case participating
     case notLogged
+    case publishingPhoto
 }
 
 @IBDesignable

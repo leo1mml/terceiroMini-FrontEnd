@@ -44,10 +44,9 @@ class NewChallengePresenterImpl: NewChallengePresenter{
                             if (error != nil){
                                 print("deu merda na hora enviar a foto pro banco")
                             }
-                            
+                            self.view.setState(state: .participating)
                             self.getChallengeImages(challengeID: challengeID)
-                            self.view.setHeaderButtonAsParticipating()
-                            
+                            self.getFeaturedCollectionHeader(challengeID: challengeID)
                         })
                     }
                 })
@@ -55,66 +54,15 @@ class NewChallengePresenterImpl: NewChallengePresenter{
         }
     }
     
-    func getChallengeHeader(challengeID: String, challengeState: ChallengeState) {
+    func getChallengeHeader(challenge: Challenge) {
         
-        if UserDefaults.standard.string(forKey: "token") != nil{
-            self.view.setUserLoggedIn(isLogged: true)
-        }else{
-            self.view.setUserLoggedIn(isLogged: false)
+        getChallengeImages(challengeID: challenge.id)
+        
+        if(UserDefaults.standard.string(forKey: "token") == nil){
+            self.view.setState(state: .notLogged)
+            return
         }
-        
-        
-        NetworkManager.getChallengeById(id: challengeID) { (challenge, error) in
-            if(error != nil){
-                print("Cant find challenge")
-            }else{
-         
-                self.view.setHeader(theme: (challenge?.theme)!, mainImageURL: (challenge?.imageUrl)!, numPhotos: (challenge?.numPhotos)!)
-                
-                if challenge?.numPhotos != 0{
-                    self.getFeaturedCollectionHeader(challengeID: challengeID)
-                    self.view.showFeaturedCollectionView()
-                }
-                switch challengeState {
-                case .open:
-                    //timer
-                    self.view.setHeaderStatusAsTimer(endDate: (challenge?.endDate)!)
-                    self.verifyIfUserHasPhoto(challengeID: challengeID)
-                    
-                    break
-                case .finished:
-                    NetworkManager.getChallengeWinner(by: challengeID, completion: { (user, error) in
-                        if(error != nil){
-                            return
-                        }
-                        self.view.setHeaderStatusAsFinished(winner: user!, photoWinner: Photo("", "", "", "", [""]))
-                    })
-                    break
-                case .notLogged:
-                    self.view.setHeaderStatusAsTimer(endDate: (challenge?.endDate)!)
-                    break
-                default:
-                    break
-                }
-
-            }
-        }
-    }
-    
-    func verifyIfUserHasPhoto(challengeID: String){
-        if let token = UserDefaults.standard.string(forKey: "token"){
-            NetworkManager.getMyClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
-                if error == nil{
-                    if(photo == nil){
-                        self.view.setHeaderButtonAsParticipate()
-                    }else {
-                        self.view.setHeaderButtonAsParticipating()
-                    }
-                }
-            })
-        }
-        
-        
+        getFeaturedCollectionHeader(challengeID: challenge.id)
     }
     
     func getFeaturedCollectionHeader(challengeID: String) {
@@ -125,22 +73,30 @@ class NewChallengePresenterImpl: NewChallengePresenter{
             self.view.setUserLoggedIn(isLogged: true)
 
             NetworkManager.getMyFavouriteClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
-                if (photo != nil){
+                if(error == nil && photo != nil){
                     self.view.setFeaturedCollectionMyFavoriteClick(myFavoriteClick: photo)
-                }else{
-                    self.view.setFeaturedCollectionMyFavoriteClick(myFavoriteClick: nil)
-                    //print(error)
+                    self.view.reloadData()
+                    return
                 }
+                self.view.setFeaturedCollectionMyFavoriteClick(myFavoriteClick: nil)
+                self.view.reloadData()
             })
 
             NetworkManager.getMyClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
-                if (photo != nil){
+                if(error == nil && photo != nil){
                     self.view.setFeaturedCollectionMyClick(myClick: photo!)
-                }else{
-                    self.view.setFeaturedCollectionMyClick(myClick: nil)
+                    self.view.setState(state: .participating)
+                    self.view.reloadData()
+                    return
                 }
+                self.view.setFeaturedCollectionMyClick(myClick: nil)
+                self.getChallengeImages(challengeID: challengeID)
+                self.view.setState(state: .open)
+                self.view.reloadData()
+                return
             })
         }
+        self.view.setUserLoggedIn(isLogged: false)
 
     }
     

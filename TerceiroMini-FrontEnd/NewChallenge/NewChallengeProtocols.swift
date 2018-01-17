@@ -14,6 +14,7 @@ protocol NewChallengeView{
     func setHeaderStatusAsTimer(endDate: Date)
     func setHeaderButtonAsParticipating()
     func setHeaderButtonAsParticipate()
+    func resolveState()
     func setUserLoggedIn(isLogged: Bool)
     func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo?)
     func setFeaturedCollectionMyClick(myClick: Photo?)
@@ -21,11 +22,13 @@ protocol NewChallengeView{
     func showCollectionPhotos()
     func showFeaturedCollectionView()
     func goToExpandPhotoView(parameter: ([Photo], Int))
+    func setState(state: ChallengeState)
+    func reloadData()
 }
 
 protocol NewChallengePresenter{
     
-    func getChallengeHeader(challengeID: String, challengeState: ChallengeState)
+    func getChallengeHeader(challenge: Challenge)
     func getChallengeImages(challengeID: String)
     func sendPhotoToCloudinary(infoImage: UIImage, challengeID: String)
 

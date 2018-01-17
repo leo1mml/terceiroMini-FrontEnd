@@ -24,7 +24,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     var details = true
     var data: ([Photo], Int)?
     var myFavoriteClick = false
-    var myClick = false
+    var myClick : Bool?
     
     let colorGradient = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
     
@@ -76,7 +76,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     
     
     @IBAction func escolherClickAction(_ sender: Any) {
-        if !myClick{
+        if !myClick!{
             if (myFavoriteClick){
                 presenter?.unvote(photo: (self.data?.0[imageIndex])!)
             }else{
@@ -87,7 +87,11 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     }
     
     @IBAction func showReport(_ sender: Any) {
-        presenter?.showReport()
+        if(myClick)!{
+            presenter?.excludePhoto()
+        }else{
+            presenter?.showReport()
+        }
     }
     
     @objc func handleTap(){
@@ -98,8 +102,8 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     func enableMyClickChosebuttonLabel(){
         self.escolherClickButton.setTitle("MEU CLICK", for: .normal)
         self.myFavoriteClick = false
+        self.reportButton.setImage(UIImage(named: "lixo"), for: .normal)
         self.myClick = true
-        
     }
     
     func enableMyFavoriteClickChosebuttonLabel(){
@@ -112,6 +116,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         self.escolherClickButton.setTitle("ESCOLHER CLICK", for: .normal)
         self.myFavoriteClick = false
         self.myClick = false
+        self.reportButton.setImage(UIImage(named: "flag-icon"), for: .normal)
     }
     
     func showOrHideDetails(){
@@ -119,17 +124,16 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         if(details){
             
             UIView.animate(withDuration: 0.3, animations: {
-                self.reportButton.alpha = 0
                 self.photoCount.alpha = 0
                 self.closeButton.alpha = 0
                 self.escolherClickButton.alpha = 0
+                self.reportButton.alpha = 0
                 //removing gradient layer
                 if self.scrollView.subviews.count != 0 {
                     self.scrollView.subviews[self.imageIndex].layer.sublayers?.first?.opacity = 0
                 }
             })
             
-            reportButton.isEnabled = false
             escolherClickButton.isEnabled = false
             photoCount.isEnabled = false
             closeButton.isEnabled = false
@@ -140,12 +144,12 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
             UIView.animate(withDuration: 0.5, animations: {
                 
                 if !(self.sender is ProfileViewController) {
-                    self.reportButton.alpha = 1
                     self.escolherClickButton.alpha = 1
-                    self.reportButton.isEnabled = true
                     self.escolherClickButton.isEnabled = true
+                }else {
+                    self.myClick = true
                 }
-                
+                self.reportButton.alpha = 1
                 self.photoCount.alpha = 1
                 self.closeButton.alpha = 1
                 if self.scrollView.subviews.count != 0 {
@@ -181,6 +185,13 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     
     func updatePhotoCount(){
         photoCount.text = "\(imageIndex+1)/\(images.count)"
+    }
+    
+    func dissmissAndReloadParent() {
+        self.navigationController?.popViewController(animated: true)
+        if(sender?.isKind(of: NewChallengeViewController.self))!{
+            (sender as! NewChallengeViewController).state = ChallengeState.open
+        }
     }
     
     @IBAction func closeButtonAction(_ sender: UIButton) {

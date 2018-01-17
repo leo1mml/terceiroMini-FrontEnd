@@ -185,6 +185,7 @@ class PhotoNet {
     class func delete(byId id: String, completion: @escaping (_ p: Photo?, _ e: Error?) -> Void) {
         let completeDomain = R.photosDomain + "/deleteById/\(id)"
         
+        
         Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             
             guard let val = response.value, response.error == nil else {

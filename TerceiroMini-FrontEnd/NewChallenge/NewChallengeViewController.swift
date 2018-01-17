@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Fusuma
+import NotificationBannerSwift
 
-class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LoginCallerPortocol {
+class NewChallengeViewController: UIViewController, NewChallengeView, UINavigationControllerDelegate, LoginCallerPortocol, FusumaDelegate {
     
     
     var isMainScreen: Bool = false
@@ -192,18 +194,17 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
     
     func showPhotoMenu(){
         
-        let alert = UIAlertController(title: "Escolha uma opção", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Câmera", style: .default, handler: { _ in
-            self.takePhoto()
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Galeria", style: .default, handler: { _ in
-            self.getPhoto()
-        }))
-        
-        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
+        let fusuma = FusumaViewController()
+        fusuma.delegate = self
+        fusuma.cropHeightRatio = 1 // Height-to-width ratio. The default value is 1, which means a squared-size photo.
+        fusuma.allowMultipleSelection = false // You can select multiple photos from the camera roll. The default value is false.
+        fusumaCropImage = true
+        fusumaCameraTitle = "Câmera"
+        fusumaCameraRollTitle = "Biblioteca"
+        fusumaBackgroundColor = Colors.gradientBlack
+        fusumaTintColor = Colors.darkWhite
+        fusumaTitleFont = UIFont(name: "Montserrat-semibold", size: 20)
+        self.present(fusuma, animated: true, completion: nil)
         
     }
     
@@ -223,44 +224,28 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UIImagePic
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-       
-        if let img = info[UIImagePickerControllerEditedImage] as? UIImage
-        {
-            presenter?.sendPhotoToCloudinary(infoImage: img, challengeID: challengeID!)
-            
-        }
-        else if let img = info[UIImagePickerControllerOriginalImage] as? UIImage
-        {
-            presenter?.sendPhotoToCloudinary(infoImage: img, challengeID: challengeID!)
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-    func getPhoto() {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary){
-            let imagePicker = UIImagePickerController()
-            
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-            
-            
-        }
+    
+    func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
+        self.header.mainButton.setTitle("PUBLICANDO...", for: .normal)
+        self.header.mainButton.isEnabled = false
+        self.state = .participating
+        presenter?.sendPhotoToCloudinary(infoImage: image, challengeID: self.challengeID!)
     }
     
-    func takePhoto() {
+    func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
         
-        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
-            let imagePicker = UIImagePickerController()
-            
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
-            imagePicker.allowsEditing = true
-            imagePicker.cameraCaptureMode = .photo
-            self.present(imagePicker, animated: true, completion: nil)
-        }
     }
+    
+    func fusumaVideoCompleted(withFileURL fileURL: URL) {
+        
+    }
+    
+    func fusumaCameraRollUnauthorized() {
+        let banner = NotificationBanner(title: "Biblioteca não autorizada", subtitle: "", style: .info)
+        banner.show()
+        
+    }
+    
     
     
     func initDarkStatusBar(){

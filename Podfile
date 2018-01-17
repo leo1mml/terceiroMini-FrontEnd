@@ -16,6 +16,7 @@ target 'TerceiroMini-FrontEnd' do
    pod 'NotificationBannerSwift'
    pod 'SDWebImage', '~> 4.0'
    pod 'Hero'
+   pod 'Fusuma'
 
   target 'TerceiroMini-FrontEndTests' do
     inherit! :search_paths

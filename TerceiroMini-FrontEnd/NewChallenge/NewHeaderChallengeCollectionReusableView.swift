@@ -39,9 +39,12 @@ class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UIColl
         initNibs()
         featuredCollectionView.delegate = self
         featuredCollectionView.dataSource = self
-        self.mainButton.setTitle("", for: .normal)
-    
-        
+        if(UserDefaults.standard.string(forKey: "token") == nil){
+            self.mainButton.setTitle("CADASTRE-SE", for: .normal)
+            self.mainButton.isEnabled = true
+        }else{
+            self.mainButton.setTitle("", for: .normal)
+        }
     }
     
     func initNibs(){

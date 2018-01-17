@@ -131,7 +131,7 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
     }
     
     func setUserLoggedIn(isLogged: Bool){
-      self.isLogged = true
+      self.isLogged = isLogged
     }
     
     func setHeaderButtonAsParticipating(){

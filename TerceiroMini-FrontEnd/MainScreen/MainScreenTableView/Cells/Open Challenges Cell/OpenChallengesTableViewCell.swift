@@ -57,6 +57,8 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         if(challenges != nil){
             cell.themeImage.heroID = challenges?[indexPath.row].id
             cell.clockView.heroID = "clock" + (challenges?[indexPath.row].id)!
+            cell.numPhotosLabel.heroID = "numPhotos" + (challenges?[indexPath.row].id)!
+            cell.themeLabel.heroID = "theme" + (challenges?[indexPath.row].id)!
             self.navigateInAppDelegate?.goToChallenge(with: (challenges?[indexPath.row])!, coverImage: cell.themeImage.image!)
         }
     }

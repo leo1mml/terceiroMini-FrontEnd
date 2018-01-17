@@ -57,11 +57,6 @@ class NewChallengePresenterImpl: NewChallengePresenter{
     func getChallengeHeader(challenge: Challenge) {
         
         getChallengeImages(challengeID: challenge.id)
-        
-        if(UserDefaults.standard.string(forKey: "token") == nil){
-            self.view.setState(state: .notLogged)
-            return
-        }
         getFeaturedCollectionHeader(challengeID: challenge.id)
     }
     
@@ -96,7 +91,6 @@ class NewChallengePresenterImpl: NewChallengePresenter{
                 return
             })
         }
-        self.view.setUserLoggedIn(isLogged: false)
 
     }
     

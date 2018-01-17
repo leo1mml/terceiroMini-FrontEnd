@@ -80,6 +80,9 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
         header.mainImage.heroID = self.challenge?.id
         header.clockView.heroID = "clock" + (self.challenge?.id)!
         header.challengeLabel.text = self.challenge?.theme
+        header.challengeLabel.heroID = "theme" + (self.challenge?.id)!
+        header.numberOfPhotos.text = "\(self.challenge?.numPhotos ?? 0) fotos"
+        header.numberOfPhotos.heroID = "numPhotos" + (self.challenge?.id)!
         header.addGradientToChallengeMainImage()
         setHeaderStatusAsTimer(endDate: (challenge?.endDate)!)
         header.delegate = self

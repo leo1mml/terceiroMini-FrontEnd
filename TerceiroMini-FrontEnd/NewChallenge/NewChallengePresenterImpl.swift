@@ -18,6 +18,7 @@ class NewChallengePresenterImpl: NewChallengePresenter{
     }
     
     var view : NewChallengeView
+    var isOver : Bool = false
     
     let cloudname = "clicks"
     let apiKey = "535385847914562"
@@ -55,7 +56,15 @@ class NewChallengePresenterImpl: NewChallengePresenter{
     }
     
     func getChallengeHeader(challenge: Challenge) {
-        
+        if(challenge.endDate < Date()){
+            self.isOver = true
+            NetworkManager.getChallengeWinner(by: challenge.id, completion: { (user, error) in
+                guard error == nil else {
+                    return
+                }
+                self.view.setHeaderStatusAsFinished(winner: user!)
+            })
+        }
         getChallengeImages(challengeID: challenge.id)
         getFeaturedCollectionHeader(challengeID: challenge.id)
     }
@@ -80,13 +89,19 @@ class NewChallengePresenterImpl: NewChallengePresenter{
             NetworkManager.getMyClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
                 if(error == nil && photo != nil){
                     self.view.setFeaturedCollectionMyClick(myClick: photo!)
-                    self.view.setState(state: .participating)
-                    self.view.reloadData()
-                    return
+                    if(self.isOver){
+                        self.view.setState(state: .finished)
+                    }else {
+                        self.view.setState(state: .participating)
+                        self.view.reloadData()
+                        return
+                    }
                 }
                 self.view.setFeaturedCollectionMyClick(myClick: nil)
                 self.getChallengeImages(challengeID: challengeID)
-                self.view.setState(state: .open)
+                if(!self.isOver){
+                    self.view.setState(state: .open)
+                }
                 self.view.reloadData()
                 return
             })

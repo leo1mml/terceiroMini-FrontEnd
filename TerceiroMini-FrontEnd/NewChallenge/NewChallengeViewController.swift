@@ -68,7 +68,10 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
         if(UserDefaults.standard.string(forKey: "token") == nil){
             self.state = .notLogged
         }
-        if(self.state == nil || self.state != .publishingPhoto || self.state == .notLogged){
+        if((challenge?.endDate)! < Date()){
+            self.state = .finished
+        }
+        if(self.state == nil || self.state != .publishingPhoto || self.state == .notLogged || self.state == .finished){
             presenter?.getChallengeHeader(challenge: challenge!)
             presenter?.getChallengeImages(challengeID: (challenge?.id)!)
         }
@@ -116,7 +119,7 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
     }
     
     
-    func setHeaderStatusAsFinished(winner: User, photoWinner: Photo){
+    func setHeaderStatusAsFinished(winner: User){
         header.statusImage.image = UIImage(named: "trophyBlackIcon")
         header.statusLabelLeadingToImage.isActive = false
         header.statusLabel.text = "Vencedor"
@@ -272,9 +275,7 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
     func initDarkStatusBar(){
         let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
         if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
-            UIView.animate(withDuration: 0.8, animations: {
-                statusBar.backgroundColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
-            })
+            statusBar.backgroundColor = UIColor(red:0.15, green:0.18, blue:0.19, alpha:1.0)
         }
     }
     func defaultStatusBar() {

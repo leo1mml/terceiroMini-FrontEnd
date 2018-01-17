@@ -10,7 +10,7 @@ import UIKit
 
 protocol NewChallengeView{
     func setHeader(theme: String, mainImageURL: String,numPhotos: Int)
-    func setHeaderStatusAsFinished(winner: User, photoWinner: Photo)
+    func setHeaderStatusAsFinished(winner: User)
     func setHeaderStatusAsTimer(endDate: Date)
     func setHeaderButtonAsParticipating()
     func setHeaderButtonAsParticipate()

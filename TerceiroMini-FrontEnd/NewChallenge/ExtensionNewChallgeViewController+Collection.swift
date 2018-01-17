@@ -84,7 +84,9 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
         header.numberOfPhotos.text = "\(self.challenge?.numPhotos ?? 0) fotos"
         header.numberOfPhotos.heroID = "numPhotos" + (self.challenge?.id)!
         header.addGradientToChallengeMainImage()
-        setHeaderStatusAsTimer(endDate: (challenge?.endDate)!)
+        if(self.state != .finished){
+            setHeaderStatusAsTimer(endDate: (challenge?.endDate)!)
+        }
         header.delegate = self
         
         return header

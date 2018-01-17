@@ -186,7 +186,7 @@ class PhotoNet {
         let completeDomain = R.photosDomain + "/deleteById/\(id)"
         
         
-        Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
+        Alamofire.request(completeDomain, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             
             guard let val = response.value, response.error == nil else {
                 completion(nil, response.error)

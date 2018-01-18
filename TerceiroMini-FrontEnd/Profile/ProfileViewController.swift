@@ -38,6 +38,10 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         presenter = ProfilePresenterImpl(profileView: self)
         self.collectionProfile.delegate = self
         self.collectionProfile.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if((self.user) != nil){
             presenter?.loadPhotos(id: (user?.id)!)
             presenter?.loadData(id: (user?.id)!, photos: photos)
@@ -177,7 +181,6 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "expandMyPhotoSegue"{
-            
             if let dest = segue.destination as? ChallengeClosedViewController{
                 dest.data = data
                 dest.sender = self

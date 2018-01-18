@@ -85,7 +85,6 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
                         self.view?.enableMyClickChosebuttonLabel()
                         self.id = currentPhoto.id
                     }
-                    
                 }
             })
             

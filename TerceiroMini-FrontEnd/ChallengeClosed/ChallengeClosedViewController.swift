@@ -11,6 +11,7 @@ import UIKit
 class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
  
     var presenter: ChallengeClosedPresenter?
+    var navigationProtocol : NavigateInAppProtocol?
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var escolherClickButton: CustomButtonClick!
@@ -88,10 +89,23 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     
     @IBAction func showReport(_ sender: Any) {
         if(myClick)!{
-            presenter?.excludePhoto()
+            createExcludeAlert()
         }else{
             presenter?.showReport()
         }
+    }
+    
+    func createExcludeAlert(){
+        let title = "Excluir foto?"
+        let message = "Você tem certeza que deseja excluir esta foto?"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            self.presenter?.excludePhoto()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func handleTap(){
@@ -188,9 +202,13 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     }
     
     func dissmissAndReloadParent() {
-        self.navigationController?.popViewController(animated: true)
-        if(sender?.isKind(of: NewChallengeViewController.self))!{
-            (sender as! NewChallengeViewController).state = ChallengeState.open
+        if(self.navigationController == nil){
+            self.dismiss(animated: true, completion: nil)
+        }else {
+            self.navigationController?.popViewController(animated: true)
+            if(sender?.isKind(of: NewChallengeViewController.self))!{
+                (sender as! NewChallengeViewController).state = ChallengeState.open
+            }
         }
     }
     

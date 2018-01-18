@@ -9,12 +9,14 @@
 import UIKit
 import MessageUI
 
-class ConfigurationTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+class ConfigurationTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, ConfigurationView {
     
     var loginProtocol : LoginCallerPortocol?
+    var presenter: ConfigurationPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter = ConfigurationPresenterImp(view: self)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -81,11 +83,14 @@ class ConfigurationTableViewController: UITableViewController, MFMailComposeView
             alert.dismiss(animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "Sair", style: .default, handler: { (action) in
-                UserDefaults.standard.set(nil, forKey: "token")
-                self.loginProtocol?.loginFinishedSuccessfully()
-            self.navigationController?.popToRootViewController(animated: true)
+            self.presenter?.deleteToken()
         }))
         self.present(alert, animated: false, completion: nil)
+    }
+    
+    func dismissScreen(){
+        self.loginProtocol?.loginFinishedSuccessfully()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func composeMail() {

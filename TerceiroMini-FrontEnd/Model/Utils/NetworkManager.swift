@@ -58,6 +58,10 @@ class NetworkManager {
         UserNet.changePasswordWithAuth(token: token, oldPassword: oldPassword, newPassword: newPassword, completion: completion)
     }
     
+    class func logout(token: String, completion: @escaping (_ s: Bool) -> Void){
+        UserNet.logout(token: token, completion: completion)
+    }
+    
     // MARK: - Photo methods
     
     class func getAllPhotos(completion: @escaping ([Photo]?, Error?) -> Void) {

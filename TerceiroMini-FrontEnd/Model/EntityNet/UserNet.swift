@@ -166,7 +166,7 @@ class UserNet {
                 completion(false)
                 return
             }
-            
+            UserDefaults.standard.set(nil, forKey: "token")
             completion(code == 200)
         }
     }

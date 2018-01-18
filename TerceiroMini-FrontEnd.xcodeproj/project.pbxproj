@@ -175,6 +175,8 @@
 		8AC08E421FFD7C7F00C99A3A /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC08E411FFD7C7F00C99A3A /* ChangePasswordPresenter.swift */; };
 		8AD20943200D920C00B1F2F7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD20942200D920C00B1F2F7 /* Login.storyboard */; };
 		8AD20945200D922700B1F2F7 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD20944200D922700B1F2F7 /* Register.storyboard */; };
+		8AFACDDC2011266800F6FE59 /* ConfigurationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFACDDB2011266800F6FE59 /* ConfigurationProtocols.swift */; };
+		8AFACDDE2011268100F6FE59 /* ConfigurationPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFACDDD2011268100F6FE59 /* ConfigurationPresenterImp.swift */; };
 		C87B3931903CC41B445596E6 /* Pods_TerceiroMini_FrontEndTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBAD5641C9F32E95E0FB6951 /* Pods_TerceiroMini_FrontEndTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -373,6 +375,8 @@
 		8AC08E411FFD7C7F00C99A3A /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
 		8AD20942200D920C00B1F2F7 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		8AD20944200D922700B1F2F7 /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		8AFACDDB2011266800F6FE59 /* ConfigurationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProtocols.swift; sourceTree = "<group>"; };
+		8AFACDDD2011268100F6FE59 /* ConfigurationPresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationPresenterImp.swift; sourceTree = "<group>"; };
 		8D43BBE3F175821DCA81CC71 /* Pods-TerceiroMini-FrontEnd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEnd.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEnd/Pods-TerceiroMini-FrontEnd.release.xcconfig"; sourceTree = "<group>"; };
 		B95244B145A1038114AFF3E1 /* Pods_TerceiroMini_FrontEnd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TerceiroMini_FrontEnd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96B92415F7A4776249411C5 /* Pods-TerceiroMini-FrontEndTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TerceiroMini-FrontEndTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TerceiroMini-FrontEndTests/Pods-TerceiroMini-FrontEndTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -413,6 +417,8 @@
 				8AA5EA091FE9F18D00DF6ED5 /* ConfigFooter.swift */,
 				8AA5EA0B1FE9F18D00DF6ED5 /* ConfigHeader.swift */,
 				8AA5EA0A1FE9F18D00DF6ED5 /* ConfigurationTableViewController.swift */,
+				8AFACDDB2011266800F6FE59 /* ConfigurationProtocols.swift */,
+				8AFACDDD2011268100F6FE59 /* ConfigurationPresenterImp.swift */,
 			);
 			path = "Configuration Table View";
 			sourceTree = "<group>";
@@ -1372,6 +1378,7 @@
 				088083C31FD1C75D008C9B00 /* UserNet+Validator.swift in Sources */,
 				08276F341FC73F8C00A8E605 /* GradientView.swift in Sources */,
 				08276F391FC73F8C00A8E605 /* WinnerCollectionViewCell.swift in Sources */,
+				8AFACDDE2011268100F6FE59 /* ConfigurationPresenterImp.swift in Sources */,
 				487E45DB1FEBECE100F0D47D /* ExtensionNewChallgeViewController+Collection.swift in Sources */,
 				48620F1D1FD72AE600A45E3E /* TimeInterval+Extension.swift in Sources */,
 				0899EA011FC74D1400F148DC /* Photo.swift in Sources */,
@@ -1410,6 +1417,7 @@
 				08276F3A1FC73F8C00A8E605 /* NextChallengeTableViewCell.swift in Sources */,
 				14D1061E1FBE006E00AA9F89 /* ProfileViewController.swift in Sources */,
 				0899E9FF1FC74D0900F148DC /* User.swift in Sources */,
+				8AFACDDC2011266800F6FE59 /* ConfigurationProtocols.swift in Sources */,
 				08276F401FC73F8C00A8E605 /* MainScreenViewController.swift in Sources */,
 				487E45D31FEBD9B900F0D47D /* NewChallengeProtocols.swift in Sources */,
 				48620F1E1FD72B1900A45E3E /* LastWinnersPresenterImp.swift in Sources */,

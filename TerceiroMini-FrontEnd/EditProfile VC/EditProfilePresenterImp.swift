@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cloudinary
 
 class EditProfilePresenterImp : EditProfilePresenter {
     
@@ -21,6 +22,37 @@ class EditProfilePresenterImp : EditProfilePresenter {
     
     init(_ view: EditProfileView) {
         self.view = view
+    }
+    
+    let cloudname = "clicks"
+    let apiKey = "535385847914562"
+    let uploadPreset = "clicksPreset"
+    
+    func sendPhotoToCloudinary(infoImage: UIImage) {
+        let config = CLDConfiguration(cloudName: cloudname, apiKey: apiKey)
+        let cloudinary = CLDCloudinary(configuration: config)
+        let imageData = UIImageJPEGRepresentation(infoImage, 1.0)
+        
+        _ = cloudinary.createUploader().upload(data: imageData!, uploadPreset: uploadPreset, params: nil, progress: nil) {
+            (result, error) in
+            if (error != nil) {
+                print("deu merda ao subir a foto para o cloudinary")
+            }
+            let userData = UserDefaults.standard.object(forKey: "logedUser") as! Data
+            let logedUser = NSKeyedUnarchiver.unarchiveObject(with: userData) as! User
+            let user = User(logedUser.id, nil, nil, nil, result?.url, nil, nil)
+            NetworkManager.patchMe(token: UserDefaults.standard.string(forKey: "token")!, user: user, completion: { (user, error, string) in
+                guard error == nil else {
+                    self.view?.sendErrorMessage(message: "Não foi possivel enviar a foto")
+                    return
+                }
+                logedUser.profilePhotoUrl = user?.profilePhotoUrl
+                let encodedUser = NSKeyedArchiver.archivedData(withRootObject: logedUser)
+                UserDefaults.standard.set(encodedUser, forKey: "logedUser")
+                UserDefaults.standard.synchronize()
+                self.view?.setProfileImage(url: (user?.profilePhotoUrl)!)
+            })
+        }
     }
     
     func recoverLogedUser() {

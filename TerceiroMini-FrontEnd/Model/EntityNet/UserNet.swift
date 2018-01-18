@@ -445,7 +445,7 @@ class UserNet {
             dic["name"] = u.name
         }
         if(u.profilePhotoUrl != nil){
-            dic["profileUrl"] = u.profilePhotoUrl
+            dic["profilePhoto"] = u.profilePhotoUrl
         }
         if(u.birthDate != nil){
             dic["birthDate"] = DateHelper.shared.getString(fromDate: u.birthDate!)

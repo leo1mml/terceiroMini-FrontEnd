@@ -18,4 +18,5 @@ protocol EditProfileView {
 protocol EditProfilePresenter {
     func recoverLogedUser()
     func sendChangesToServer(name: String?, username: String?, sex: Int?, birthDate: Date?)
+    func sendPhotoToCloudinary(infoImage: UIImage)
 }

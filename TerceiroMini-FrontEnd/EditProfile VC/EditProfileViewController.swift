@@ -8,11 +8,11 @@
 
 import UIKit
 import NotificationBannerSwift
+import Fusuma
 
-class EditProfileViewController: UIViewController, EditProfileView {
+class EditProfileViewController: UIViewController, EditProfileView, FusumaDelegate{
     
     
-
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var nameTextField: BottomLineTextField!
     @IBOutlet weak var userNameTextField: BottomLineTextField!
@@ -99,6 +99,20 @@ class EditProfileViewController: UIViewController, EditProfileView {
             self.profileImage.image = UIImage(named: "profile-default")
         }
         
+    }
+    
+    @IBAction func changeProfilePic(_ sender: Any) {
+        let fusuma = FusumaViewController()
+        fusuma.delegate = self
+        fusuma.cropHeightRatio = 1 // Height-to-width ratio. The default value is 1, which means a squared-size photo.
+        fusuma.allowMultipleSelection = false // You can select multiple photos from the camera roll. The default value is false.
+        fusumaCropImage = true
+        fusumaCameraTitle = "Câmera"
+        fusumaCameraRollTitle = "Biblioteca"
+        fusumaBackgroundColor = Colors.gradientBlack
+        fusumaTintColor = Colors.darkWhite
+        fusumaTitleFont = UIFont(name: "Montserrat-semibold", size: 20)
+        self.present(fusuma, animated: true, completion: nil)
     }
     
     func createSexPicker() {
@@ -221,6 +235,23 @@ class EditProfileViewController: UIViewController, EditProfileView {
         }
         
         presenter?.sendChangesToServer(name: name, username: userName, sex: sex, birthDate: birthDate)
+    }
+    
+    
+    func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
+        presenter?.sendPhotoToCloudinary(infoImage: image)
+    }
+    
+    func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
+        
+    }
+    
+    func fusumaVideoCompleted(withFileURL fileURL: URL) {
+    
+    }
+    
+    func fusumaCameraRollUnauthorized() {
+        sendErrorMessage(message: "Camera não autorizada")
     }
 
     /*

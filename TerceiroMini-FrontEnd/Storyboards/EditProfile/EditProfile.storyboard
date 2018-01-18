@@ -72,6 +72,9 @@
                                             <constraint firstAttribute="height" constant="27" id="r0z-cP-YUj"/>
                                         </constraints>
                                         <state key="normal" image="camera-icon"/>
+                                        <connections>
+                                            <action selector="changeProfilePic:" destination="h51-BY-enb" eventType="touchUpInside" id="PI2-FS-ubl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

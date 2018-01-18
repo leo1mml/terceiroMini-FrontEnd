@@ -42,7 +42,7 @@ class OnboardingViewController: UIViewController {
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
         
-        finishButton.isHidden = true
+        finishButton.setTitle("PULAR!", for: .normal)
         self.scrollView.delegate = self
         image.image = UIImage(named: images[page])
         self.initializeScroll(index: page)
@@ -53,6 +53,10 @@ class OnboardingViewController: UIViewController {
         UserDefaults.standard.set(true, forKey: "boarded")
         performSegue(withIdentifier: "onboardingSegue", sender: self)
         
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func animate() {
@@ -90,8 +94,13 @@ class OnboardingViewController: UIViewController {
             default:
                 break
             }
+            if(page != 3){
+                finishButton.setTitle("PULAR!", for: .normal)
+            }else{
+                finishButton.setTitle("VAMOS LÁ!", for: .normal)
+            }
             
-             finishButton.isHidden = !(page == 3)
+//             finishButton.isHidden = !(page == 3)
 
         }
 

@@ -56,8 +56,13 @@ class ConfigurationTableViewController: UITableViewController, MFMailComposeView
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(indexPath.row == 1 && indexPath.section == 3){
+        if(indexPath.row == 0 && indexPath.section == 3){
             if let url = URL(string: "http://photoappchallenge.herokuapp.com/privacy-politic.html") {
+                UIApplication.shared.open(url, options: [:])
+            }
+        }
+        if(indexPath.row == 1 && indexPath.section == 3){
+            if let url = URL(string: "http://photoappchallenge.herokuapp.com/terms-of-use.html") {
                 UIApplication.shared.open(url, options: [:])
             }
         }
@@ -114,5 +119,20 @@ class ConfigurationTableViewController: UITableViewController, MFMailComposeView
 
     @IBAction func dismiss(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if(section == 0 || section == 4){
+            return CGFloat(0)
+        }
+        return CGFloat(53)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if(section == 4 || section == 0){
+            return CGFloat(0)
+        }
+        return CGFloat(1)
     }
 }

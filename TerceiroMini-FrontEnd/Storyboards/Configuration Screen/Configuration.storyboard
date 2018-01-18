@@ -9,9 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Montserrat-Light.otf">
-            <string>Montserrat-Light</string>
-        </array>
         <array key="Montserrat-Medium.otf">
             <string>Montserrat-Medium</string>
         </array>
@@ -51,63 +48,62 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N7X-rb-hH6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="FaV-mJ-eFf">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="CGw-2J-H1A">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="56" id="CGw-2J-H1A">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CGw-2J-H1A" id="ux7-Ik-BRz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eK-NI-Etw">
-                                                    <rect key="frame" x="10" y="7" width="48" height="30"/>
+                                                    <rect key="frame" x="20" y="15" width="25" height="16"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="48" id="fAh-Wo-QZa"/>
-                                                        <constraint firstAttribute="height" constant="30" id="gZ5-Ah-N93"/>
+                                                        <constraint firstAttribute="width" constant="25" id="fAh-Wo-QZa"/>
+                                                        <constraint firstAttribute="height" constant="16" id="gZ5-Ah-N93"/>
                                                     </constraints>
-                                                    <state key="normal" image="left-arrow"/>
+                                                    <state key="normal" image="back-button-strong"/>
                                                     <connections>
                                                         <action selector="dismiss:" destination="bCA-Zu-EgT" eventType="touchUpInside" id="mfd-o3-D3K"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPÇÕES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2su-Tk-TI4">
-                                                    <rect key="frame" x="152" y="13" width="70.5" height="18"/>
+                                                    <rect key="frame" x="152" y="13" width="70.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                                     <color key="textColor" red="0.1529411765" green="0.1764705882" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6eK-NI-Etw" firstAttribute="leading" secondItem="ux7-Ik-BRz" secondAttribute="leading" constant="10" id="MIE-X5-DtK"/>
+                                                <constraint firstItem="6eK-NI-Etw" firstAttribute="leading" secondItem="ux7-Ik-BRz" secondAttribute="leading" constant="20" id="MIE-X5-DtK"/>
                                                 <constraint firstItem="2su-Tk-TI4" firstAttribute="centerX" secondItem="ux7-Ik-BRz" secondAttribute="centerX" id="OVS-fH-nHy"/>
-                                                <constraint firstItem="6eK-NI-Etw" firstAttribute="centerY" secondItem="ux7-Ik-BRz" secondAttribute="centerY" id="XMn-5a-T1s"/>
-                                                <constraint firstItem="2su-Tk-TI4" firstAttribute="centerY" secondItem="ux7-Ik-BRz" secondAttribute="centerY" id="i6G-22-O0B"/>
                                                 <constraint firstItem="2su-Tk-TI4" firstAttribute="top" secondItem="ux7-Ik-BRz" secondAttribute="top" constant="13" id="iDe-y2-Xob"/>
-                                                <constraint firstItem="2su-Tk-TI4" firstAttribute="centerX" secondItem="ux7-Ik-BRz" secondAttribute="centerX" id="lBr-hf-r7R"/>
+                                                <constraint firstItem="6eK-NI-Etw" firstAttribute="top" secondItem="ux7-Ik-BRz" secondAttribute="top" constant="15" id="rzW-nR-Ix1"/>
                                             </constraints>
                                             <connections>
                                                 <action selector="logout:" destination="czx-NI-QcK" eventType="valueChanged" id="7LF-QH-bqI"/>
                                             </connections>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="CONTA" id="LSH-LM-qlj">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="5Ik-nk-UZI">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="84" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Ik-nk-UZI" id="OCp-S9-Zjp">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editar Perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awd-J2-VEF">
-                                                    <rect key="frame" x="20" y="11" width="100" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="11.5" width="97" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                                    <color key="textColor" red="0.15294117647058825" green="0.1764705882352941" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -116,21 +112,22 @@
                                                 <constraint firstItem="awd-J2-VEF" firstAttribute="centerY" secondItem="OCp-S9-Zjp" secondAttribute="centerY" id="LSN-s6-P0b"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="G2C-pH-wsJ" kind="show" id="Xyx-i2-sXx"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="f38-LK-eOW">
-                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f38-LK-eOW" id="JcG-TA-aF1">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alterar Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPc-b1-8Jx">
-                                                    <rect key="frame" x="20" y="11" width="114" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="11.5" width="110.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                                    <color key="textColor" red="0.15294117647058825" green="0.1764705882352941" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -139,6 +136,7 @@
                                                 <constraint firstItem="uPc-b1-8Jx" firstAttribute="leading" secondItem="JcG-TA-aF1" secondAttribute="leading" constant="20" id="Rd4-Wx-SWX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="bC0-vh-ABu" kind="show" id="fZU-i3-t9I"/>
                                         </connections>
@@ -148,16 +146,16 @@
                             <tableViewSection headerTitle="SUPORTE" id="Ndr-da-n3h">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="v3h-J1-l0w">
-                                        <rect key="frame" x="0.0" y="188" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="200" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v3h-J1-l0w" id="ihN-Y2-iha">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JM-hF-iHJ">
-                                                    <rect key="frame" x="20" y="11" width="64" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="11.5" width="61.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                                    <color key="textColor" red="0.15294117647058825" green="0.1764705882352941" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -166,21 +164,22 @@
                                                 <constraint firstItem="7JM-hF-iHJ" firstAttribute="leading" secondItem="ihN-Y2-iha" secondAttribute="leading" constant="20" id="y8i-fU-DoC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="3Lk-tR-poB" kind="show" id="3f5-Op-YhV"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="0OC-08-Sif">
-                                        <rect key="frame" x="0.0" y="232" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="244" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0OC-08-Sif" id="Gwu-7v-FYT">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relatar um problema" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mso-bo-UIL">
-                                                    <rect key="frame" x="20" y="11" width="181" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="11.5" width="174" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                                    <color key="textColor" red="0.15294117647058825" green="0.1764705882352941" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -189,42 +188,23 @@
                                                 <constraint firstItem="mso-bo-UIL" firstAttribute="leading" secondItem="Gwu-7v-FYT" secondAttribute="leading" constant="20" id="wnq-92-ym9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="SOBRE" id="W9w-fT-j8o">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="scy-SH-yvV">
-                                        <rect key="frame" x="0.0" y="304" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="scy-SH-yvV" id="11Q-2y-z5t">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Créditos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4z-7D-7wD">
-                                                    <rect key="frame" x="20" y="11" width="70" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="i4z-7D-7wD" firstAttribute="centerY" secondItem="11Q-2y-z5t" secondAttribute="centerY" id="6Xs-WT-yLv"/>
-                                                <constraint firstItem="i4z-7D-7wD" firstAttribute="leading" secondItem="11Q-2y-z5t" secondAttribute="leading" constant="20" id="nQv-pG-9ym"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="HPB-EW-wgy">
-                                        <rect key="frame" x="0.0" y="348" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="316" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HPB-EW-wgy" id="CWj-4j-d6e">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Política de privacidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmo-Hs-C7S">
-                                                    <rect key="frame" x="20" y="11" width="191" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="11.5" width="184.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                                    <color key="textColor" red="0.15294117647058825" green="0.1764705882352941" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -233,18 +213,19 @@
                                                 <constraint firstItem="rmo-Hs-C7S" firstAttribute="centerY" secondItem="CWj-4j-d6e" secondAttribute="centerY" id="zfv-Kr-LOU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="k6M-i6-2BY">
-                                        <rect key="frame" x="0.0" y="392" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="360" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k6M-i6-2BY" id="J1m-IE-uvs">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Termos de uso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCD-ma-nmc">
-                                                    <rect key="frame" x="20" y="11" width="123" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="11.5" width="118.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                                    <color key="textColor" red="0.15294117647058825" green="0.1764705882352941" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -253,33 +234,14 @@
                                                 <constraint firstItem="MCD-ma-nmc" firstAttribute="centerY" secondItem="J1m-IE-uvs" secondAttribute="centerY" id="n1D-tU-MtY"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="J7y-Kk-9Zu">
-                                        <rect key="frame" x="0.0" y="436" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J7y-Kk-9Zu" id="5Hx-DG-RCl">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xi-Pu-7gD">
-                                                    <rect key="frame" x="20" y="11" width="49" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="7xi-Pu-7gD" firstAttribute="leading" secondItem="5Hx-DG-RCl" secondAttribute="leading" constant="20" id="Fg4-Nn-zqv"/>
-                                                <constraint firstItem="7xi-Pu-7gD" firstAttribute="centerY" secondItem="5Hx-DG-RCl" secondAttribute="centerY" id="i4T-8X-x5N"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle=" " id="stS-Pf-tBg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Rer-li-5jG">
-                                        <rect key="frame" x="0.0" y="508" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="432" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rer-li-5jG" id="PJW-OD-drr">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -300,6 +262,7 @@
                                                 <action selector="logout:" destination="czx-NI-QcK" eventType="valueChanged" id="5h9-ix-hNU"/>
                                             </connections>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -319,6 +282,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="left-arrow" width="24" height="15"/>
+        <image name="back-button-strong" width="25" height="16"/>
     </resources>
 </document>

@@ -55,7 +55,7 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! ChallengeCollectionViewCell
         if(challenges != nil){
-            cell.themeImage.heroID = challenges?[indexPath.row].id
+            cell.heroID = challenges?[indexPath.row].id
             cell.clockView.heroID = "clock" + (challenges?[indexPath.row].id)!
             cell.numPhotosLabel.heroID = "numPhotos" + (challenges?[indexPath.row].id)!
             cell.themeLabel.heroID = "theme" + (challenges?[indexPath.row].id)!

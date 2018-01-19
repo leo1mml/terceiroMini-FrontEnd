@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -30,18 +25,10 @@
                                     <constraint firstAttribute="width" constant="80" id="Bny-xA-F7u"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLICKS INC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="848-l8-ugh">
-                                <rect key="frame" x="140.5" y="627" width="94.5" height="20"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="89B-sS-lHx" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0VJ-Kq-Isl"/>
-                            <constraint firstItem="848-l8-ugh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BjH-FN-iqn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="848-l8-ugh" secondAttribute="bottom" constant="20" id="XzY-tI-Enl"/>
                             <constraint firstItem="89B-sS-lHx" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="g7p-zJ-LS1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

@@ -11,7 +11,7 @@ import UIKit
 protocol NavigateInAppProtocol {
     func goToSeeAll()
     func instanceProfile()
-    func goToChallenge(with challenge: Challenge, coverImage: UIImage)
+    func goToChallenge(with challenge: Challenge, coverImage: UIImage?)
     func goToAlertView()
     func goToLogin(vc: LoginViewController)
     func goToRegister(vc: RegisterViewController)
@@ -181,7 +181,7 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.pageViewController.reloadInputViews()
     }
     
-    func goToChallenge(with challenge: Challenge, coverImage: UIImage) {
+    func goToChallenge(with challenge: Challenge, coverImage: UIImage?) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "challengeVC") as! NewChallengeViewController
         vc.challenge = challenge
         vc.challengeCover = coverImage

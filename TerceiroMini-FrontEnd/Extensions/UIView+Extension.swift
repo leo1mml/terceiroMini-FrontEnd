@@ -78,6 +78,20 @@ extension UIView {
         
     }
     
+    // Make a simple circle border
+    func makeSimpleCircleBorder(){
+        
+        let shapeLayer = CAShapeLayer()
+        
+        layer.addSublayer(shapeLayer)
+        
+        let path = UIBezierPath(ovalIn: bounds)
+        shapeLayer.path = path.cgPath
+        shapeLayer.lineWidth = 3
+        shapeLayer.strokeColor = UIColor.black.cgColor
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        
+    }
     
 }
 

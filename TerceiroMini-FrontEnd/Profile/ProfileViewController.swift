@@ -147,7 +147,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2
             headerView.profileImage.clipsToBounds = true
 
-            headerView.profileBorderView.makeCircleBorderAnimate()
+            headerView.profileBorderView.makeSimpleCircleBorder()
 
             headerView.profileNameLabel.text = holder.name
             headerView.profileUserName.text = holder.username

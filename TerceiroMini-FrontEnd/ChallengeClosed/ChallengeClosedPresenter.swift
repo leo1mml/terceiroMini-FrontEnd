@@ -1,4 +1,4 @@
-//
+ //
 //  ChallengeClosedPresenter.swift
 //  TerceiroMini-FrontEnd
 //

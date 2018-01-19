@@ -12,12 +12,13 @@ import SDWebImage
 class ProfileViewController: UIViewController, ProfileView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     var presenter: ProfilePresenter?
-    var holder = ProfileUserHolder(imageUrl: "", name: "", username: "")
+    
+    var photos = [Photo]()
     var cells = [ProfileCellHolder]()
+    var holder = ProfileUserHolder(imageUrl: "", name: "", username: "")
+    
     var user : User? {
         didSet {
-            presenter?.loadPhotos(id: (user?.id)!)
-            presenter?.loadData(id: (user?.id)!, photos: photos)
             presenter?.loadHeader(id: (user?.id)!)
         }
     }
@@ -25,7 +26,6 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     var showCompleteHeader: Bool = false
     
     var isGradients = [Bool]()
-    var photos = [Photo]()
     var data: ([Photo], Int)?
     var amountTrophy = 0
     
@@ -43,8 +43,6 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if((self.user) != nil){
-            presenter?.loadPhotos(id: (user?.id)!)
-            presenter?.loadData(id: (user?.id)!, photos: photos)
             presenter?.loadHeader(id: (user?.id)!)
             
         }
@@ -67,32 +65,34 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     }
     
     func initializeArrayIsGradients(){
-        for _ in 0..<cells.count-(isGradients.count) {
+        self.isGradients = [Bool]()
+        for _ in 0..<photos.count {
             isGradients.append(false)
         }
     }
     
     func receivePhotos(photos: [Photo]) {
-
         self.photos = photos
-        presenter?.loadData(id: (user?.id)!, photos: self.photos)
+        self.initializeArrayIsGradients()
+        presenter?.loadData(id: (user?.id)!, photos: photos)
     }
     
     func receiveDatas(profileUserHolder: ProfileUserHolder) {
         holder = profileUserHolder
+        self.cells = [ProfileCellHolder]()
         collectionProfile.reloadData()
+        presenter?.loadPhotos(id: (user?.id)!)
     }
     
     func receiveCells(cells: [ProfileCellHolder]) {
         self.cells = cells
         amountTrophy = 0
-        self.initializeArrayIsGradients()
         collectionProfile.reloadData()
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return photos.count
+        return cells.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

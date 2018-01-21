@@ -24,8 +24,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
     }
     
     var showCompleteHeader: Bool = false
-    
-    var isGradients = [Bool]()
+
     var data: ([Photo], Int)?
     var amountTrophy = 0
     
@@ -44,7 +43,6 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         super.viewWillAppear(animated)
         if((self.user) != nil){
             presenter?.loadHeader(id: (user?.id)!)
-            
         }
     }
     
@@ -64,16 +62,8 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         }
     }
     
-    func initializeArrayIsGradients(){
-        self.isGradients = [Bool]()
-        for _ in 0..<photos.count {
-            isGradients.append(false)
-        }
-    }
-    
     func receivePhotos(photos: [Photo]) {
         self.photos = photos
-        self.initializeArrayIsGradients()
         presenter?.loadData(id: (user?.id)!, photos: photos)
     }
     
@@ -101,11 +91,9 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
         
         cell.themeLabel.text = cells[indexPath.row].theme
         
-        if !isGradients[indexPath.row] {
-            let startingGradientColor = UIColor(red: 0.15, green: 0.18, blue: 0.19, alpha: 1)
-            cell.backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [.clear, .clear, startingGradientColor])
-            isGradients[indexPath.row] = true
-        }
+        cell.backgroundImage.removeChallengeGradientLayer()
+        let startingGradientColor = UIColor(red: 0.15, green: 0.18, blue: 0.19, alpha: 1)
+        cell.backgroundImage.addChallengeGradientLayer(frame: view.bounds, colors: [.clear, .clear, startingGradientColor])
         
         let url = URL(string: photos[indexPath.row].url!)
         cell.backgroundImage.sd_setImage(with: url, completed: nil)

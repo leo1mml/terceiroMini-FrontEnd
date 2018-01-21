@@ -13,12 +13,23 @@ extension UIImageView{
         let gradient = CAGradientLayer()
         gradient.frame = self.frame
         gradient.colors = colors.map{$0.cgColor}
+        gradient.name = "gradient"
 //        let animation = CABasicAnimation(keyPath: "opacity")
 //        animation.fromValue = 0
 //        animation.toValue = 1
 //        animation.duration = 0.5
 //        gradient.add(animation, forKey: "opacity")
         self.layer.addSublayer(gradient)
+    }
+    
+    func removeChallengeGradientLayer(){
+        if self.layer.sublayers != nil {
+            for layer in self.layer.sublayers! {
+                if layer.name == "gradient" {
+                    layer.removeFromSuperlayer()
+                }
+            }
+        }
     }
     
     func addChallengeGradientBottonMainCell(frame: CGRect, colors: [UIColor]){

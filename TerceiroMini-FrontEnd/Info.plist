@@ -46,9 +46,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Clicks deseja usar sua camera, pode?</string>
+	<string>Enviar fotos tiradas para a nuvem do clicks.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Clicks deseja acessar suas fotos pela galeria, pode?</string>
+	<string>Enviar fotos tiradas para a nuvem do clicks.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Black.otf</string>

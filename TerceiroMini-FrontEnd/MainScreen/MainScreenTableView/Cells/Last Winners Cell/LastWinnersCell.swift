@@ -36,7 +36,7 @@ class LastWinnersCell: UITableViewCell, UICollectionViewDelegate, UICollectionVi
         cell.profilePhoto.image = nil
         cell.nameLabel.text = ""
         cell.challenge = challenges?[indexPath.row]
-        if indexPath.row <= ((users?.count) ?? 0 - 1){
+        if indexPath.row <= (((users?.count)! - 1)){
          cell.user = users?[indexPath.row]
         }
         styleProfilePhotoImage(winnerProfilePhoto: cell.profilePhoto)

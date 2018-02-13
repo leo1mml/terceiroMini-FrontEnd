@@ -32,13 +32,11 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
         
     }
     
-    
     func separateIdFromUrl(url: String) -> String{
         let sufix = url.suffix(24)
         let prefixSufix = sufix.prefix(20)
         return String(prefixSufix)
     }
-    
     
     func vote(photo: Photo) {
         
@@ -61,7 +59,6 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
             })
         }
     }
-    
     
     func checkIfChosenClick(currentPhoto: Photo) {
         
@@ -89,7 +86,6 @@ class ChallengeClosedPresenterImpl: ChallengeClosedPresenter {
             })
             
         }
-        
         
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xbh-H7-akZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JJR-J3-QJ1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,6 +18,14 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Challenge Closed Page View Controller-->
+        <scene sceneID="FJO-Gw-XB5">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="JJR-J3-QJ1" customClass="ChallengeClosedPageViewController" customModule="TerceiroMini_FrontEnd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XfW-Wc-EC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1119" y="159"/>
+        </scene>
         <!--Challenge Closed View Controller-->
         <scene sceneID="Ah3-N5-7or">
             <objects>
@@ -28,7 +36,20 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeM-xa-mdR">
                                 <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="esx-Zw-Hcg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.15294117647058825" green="0.1764705882352941" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="esx-Zw-Hcg" secondAttribute="trailing" id="5qD-Wy-409"/>
+                                    <constraint firstItem="esx-Zw-Hcg" firstAttribute="centerX" secondItem="ZeM-xa-mdR" secondAttribute="centerX" id="7bE-XR-chv"/>
+                                    <constraint firstItem="esx-Zw-Hcg" firstAttribute="leading" secondItem="ZeM-xa-mdR" secondAttribute="leading" id="PDL-pP-ZDL"/>
+                                    <constraint firstAttribute="bottom" secondItem="esx-Zw-Hcg" secondAttribute="bottom" id="SR3-2P-LiA"/>
+                                    <constraint firstItem="esx-Zw-Hcg" firstAttribute="centerY" secondItem="ZeM-xa-mdR" secondAttribute="centerY" id="XbY-Wj-Gir"/>
+                                    <constraint firstItem="esx-Zw-Hcg" firstAttribute="top" secondItem="ZeM-xa-mdR" secondAttribute="top" id="fDW-Qb-Mbp"/>
+                                </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ap9-Nm-1tQ" customClass="CustomButtonClick" customModule="TerceiroMini_FrontEnd" customModuleProvider="target">
                                 <rect key="frame" x="55.5" y="587" width="264" height="50"/>
@@ -109,6 +130,7 @@
                     <connections>
                         <outlet property="closeButton" destination="AUR-7h-wyO" id="VLL-tN-dn4"/>
                         <outlet property="escolherClickButton" destination="ap9-Nm-1tQ" id="aEG-EV-bLe"/>
+                        <outlet property="imageView" destination="esx-Zw-Hcg" id="jst-7r-EsN"/>
                         <outlet property="photoCount" destination="FOw-Qr-fh3" id="nr4-aD-pii"/>
                         <outlet property="reportButton" destination="Z9X-qg-axK" id="zdM-6k-ZJo"/>
                         <outlet property="scrollView" destination="ZeM-xa-mdR" id="9cH-xG-lfr"/>

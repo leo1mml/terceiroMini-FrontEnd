@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
  
     var presenter: ChallengeClosedPresenter?
     var navigationProtocol : NavigateInAppProtocol?
     
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var escolherClickButton: CustomButtonClick!
     @IBOutlet weak var photoCount: UILabel!
@@ -20,10 +22,11 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     @IBOutlet weak var reportButton: UIButton!
     
     var sender: UIViewController?
-    var images = [""]
+    var data: Photo?
     var imageIndex = 0
+    var imagesCount = 0
+    
     var details = true
-    var data: ([Photo], Int)?
     var myFavoriteClick = false
     var myClick : Bool? = false
     
@@ -35,16 +38,11 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         self.presenter = ChallengeClosedPresenterImpl(challengeClosedView: self)
         
         self.scrollView.delegate = self
+        self.scrollView.minimumZoomScale = 1.0
+        self.scrollView.maximumZoomScale = 6.0
         
-        var imagesList = [String]()
-        for url in (data?.0)!{
-            imagesList.append(url.url!)
-        }
-        
-        self.images = imagesList
-        self.imageIndex = (data?.1)!
-        
-        self.initializeScroll(index: imageIndex)
+        let url = URL(string: (data?.url)!)
+        imageView.sd_setImage(with: url, completed: nil)
         
         escolherClickButton.layer.cornerRadius = 25
         escolherClickButton.clipsToBounds = true
@@ -52,15 +50,11 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         
         showOrHideDetails()
         
-        presenter?.checkIfChosenClick(currentPhoto: (self.data?.0[imageIndex])!)
+        presenter?.checkIfChosenClick(currentPhoto: (self.data)!)
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.view.addGestureRecognizer(tap)
         
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        initDarkStatusBar()
-//    }
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -79,9 +73,9 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     @IBAction func escolherClickAction(_ sender: Any) {
         if !myClick!{
             if (myFavoriteClick){
-                presenter?.unvote(photo: (self.data?.0[imageIndex])!)
+                presenter?.unvote(photo: (self.data)!)
             }else{
-                presenter?.vote(photo: (self.data?.0[imageIndex])!)
+                presenter?.vote(photo: (self.data)!)
             }
         }
         
@@ -198,7 +192,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     }
     
     func updatePhotoCount(){
-        photoCount.text = "\(imageIndex+1)/\(images.count)"
+        photoCount.text = "\(imageIndex+1)/\(imagesCount)"
     }
     
     func dissmissAndReloadParent() {

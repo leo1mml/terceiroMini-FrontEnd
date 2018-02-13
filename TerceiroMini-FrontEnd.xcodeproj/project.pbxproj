@@ -94,6 +94,8 @@
 		08F06F971FBB544C0039EAFE /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F06F961FBB544C0039EAFE /* LoginProtocols.swift */; };
 		14103C9F1FBE221800726C0B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14103C9E1FBE221800726C0B /* Profile.storyboard */; };
 		142F874B1FE94521007925A1 /* ChallengeClosedViewController+scrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F874A1FE94521007925A1 /* ChallengeClosedViewController+scrollView.swift */; };
+		144A2DF720333EC70019DFE6 /* ChallengeClosedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A2DF620333EC70019DFE6 /* ChallengeClosedPageViewController.swift */; };
+		144A2DF9203346200019DFE6 /* ChallengeClosedPageView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A2DF8203346200019DFE6 /* ChallengeClosedPageView+DataSource.swift */; };
 		1455B1F61FBF65EA00372EDA /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */; };
 		147D50921FE308B20048A04E /* LoginFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D50911FE308B20048A04E /* LoginFlowViewController.swift */; };
 		147D50941FE309170048A04E /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D50931FE309160048A04E /* General.swift */; };
@@ -279,6 +281,8 @@
 		08F06F961FBB544C0039EAFE /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		14103C9E1FBE221800726C0B /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		142F874A1FE94521007925A1 /* ChallengeClosedViewController+scrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChallengeClosedViewController+scrollView.swift"; sourceTree = "<group>"; };
+		144A2DF620333EC70019DFE6 /* ChallengeClosedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeClosedPageViewController.swift; sourceTree = "<group>"; };
+		144A2DF8203346200019DFE6 /* ChallengeClosedPageView+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChallengeClosedPageView+DataSource.swift"; sourceTree = "<group>"; };
 		1455B1F51FBF65EA00372EDA /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		147D50911FE308B20048A04E /* LoginFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFlowViewController.swift; sourceTree = "<group>"; };
 		147D50931FE309160048A04E /* General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
@@ -827,6 +831,8 @@
 				148AE59C1FD1ABF1005108E7 /* ChallengeClosedProtocols.swift */,
 				148AE5A01FD1ACA1005108E7 /* ChallengeClosedPresenter.swift */,
 				142F874A1FE94521007925A1 /* ChallengeClosedViewController+scrollView.swift */,
+				144A2DF620333EC70019DFE6 /* ChallengeClosedPageViewController.swift */,
+				144A2DF8203346200019DFE6 /* ChallengeClosedPageView+DataSource.swift */,
 			);
 			path = ChallengeClosed;
 			sourceTree = "<group>";
@@ -1390,6 +1396,7 @@
 				487E45D91FEBDB5700F0D47D /* NewChallengeViewController.swift in Sources */,
 				088083BE1FD1BF76008C9B00 /* DateHelper.swift in Sources */,
 				487E45D71FEBDA6500F0D47D /* NewHeaderChallengeCollectionReusableView.swift in Sources */,
+				144A2DF9203346200019DFE6 /* ChallengeClosedPageView+DataSource.swift in Sources */,
 				08276F301FC73F8C00A8E605 /* ChallengesCollectionView.swift in Sources */,
 				08EF52871FD6D73F00722A2F /* RegisterPresenterImpl.swift in Sources */,
 				8A3B2D051FECC548006D5658 /* EditProfilePresenterImp.swift in Sources */,
@@ -1403,6 +1410,7 @@
 				0899EA091FC74D3900F148DC /* PhotoNet.swift in Sources */,
 				147D50B91FE314610048A04E /* SeeAllPastChallengesProtocols.swift in Sources */,
 				148AE5A11FD1ACA1005108E7 /* ChallengeClosedPresenter.swift in Sources */,
+				144A2DF720333EC70019DFE6 /* ChallengeClosedPageViewController.swift in Sources */,
 				0894ED8B1FC89BA800F87C2A /* NetworkManager.swift in Sources */,
 				08276F321FC73F8C00A8E605 /* ChallengeCellPresenter.swift in Sources */,
 				147D50941FE309170048A04E /* General.swift in Sources */,

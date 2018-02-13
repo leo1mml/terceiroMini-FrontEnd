@@ -83,7 +83,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "expandPhotoSegue"{
             
-            if let dest = segue.destination as? ChallengeClosedViewController{
+            if let dest = segue.destination as? ChallengeClosedPageViewController{
                 dest.data = data
                 dest.sender = self
             }

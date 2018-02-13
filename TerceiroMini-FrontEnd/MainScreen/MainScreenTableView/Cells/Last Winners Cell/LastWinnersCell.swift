@@ -49,7 +49,7 @@ class LastWinnersCell: UITableViewCell, UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.cellForItem(at: indexPath) as! WinnerCollectionViewCell
         cell.photoImage.heroID = challenge?.id
         cell.profilePhoto.heroID = "profilePhoto" + (challenge?.id)!
-        navigationProtocol?.goToChallenge(with: challenge!, coverImage: cell.photoImage.image!)
+        navigationProtocol?.goToChallenge(with: challenge!, coverImage: cell.photoImage.image)
     }
     
     

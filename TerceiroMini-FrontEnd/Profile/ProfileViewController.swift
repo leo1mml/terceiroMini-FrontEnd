@@ -131,7 +131,6 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
                 headerView.profileImage.image = UIImage(named: "profile-default")
             }
             
-            
             headerView.profileImage.layer.cornerRadius = headerView.profileImage.frame.size.width/2
             headerView.profileImage.clipsToBounds = true
 

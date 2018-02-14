@@ -16,15 +16,18 @@ class ChallengeClosedPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dataSource = self as? UIPageViewControllerDataSource
+        self.dataSource = self
+
+        let index = (data?.1)!
+
+        let views = orderedViewControllers
         
-        if let firstViewController = orderedViewControllers.first {
-            setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
-        }
+        setViewControllers([views[index]],
+                                   direction: .forward,
+                                   animated: true,
+                                   completion: nil)
         
+ 
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,7 +50,7 @@ class ChallengeClosedPageViewController: UIPageViewController {
     }()
     
     private func newViewController(photo: Photo, imageIndex: Int) -> ChallengeClosedViewController {
-        let view =  UIStoryboard(name: "Main", bundle: nil) .
+        let view =  UIStoryboard(name: "ChallengeClosed", bundle: nil) .
             instantiateViewController(withIdentifier: "ChallengeClosed") as! ChallengeClosedViewController
         
         view.sender = self.sender

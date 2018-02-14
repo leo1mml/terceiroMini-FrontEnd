@@ -21,10 +21,10 @@
         <!--Challenge Closed Page View Controller-->
         <scene sceneID="FJO-Gw-XB5">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="JJR-J3-QJ1" customClass="ChallengeClosedPageViewController" customModule="TerceiroMini_FrontEnd" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="8" navigationOrientation="horizontal" spineLocation="none" id="JJR-J3-QJ1" customClass="ChallengeClosedPageViewController" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfW-Wc-EC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1119" y="159"/>
+            <point key="canvasLocation" x="-1060" y="159"/>
         </scene>
         <!--Challenge Closed View Controller-->
         <scene sceneID="Ah3-N5-7or">
@@ -34,10 +34,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeM-xa-mdR">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeM-xa-mdR">
                                 <rect key="frame" x="0.0" y="10" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="esx-Zw-Hcg">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="esx-Zw-Hcg">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                 </subviews>
@@ -140,7 +140,7 @@
                 <swipeGestureRecognizer direction="right" id="10I-7Y-7Et"/>
                 <tapGestureRecognizer id="FGY-CZ-rFX"/>
             </objects>
-            <point key="canvasLocation" x="-167.19999999999999" y="158.77061469265368"/>
+            <point key="canvasLocation" x="-327" y="159"/>
         </scene>
     </scenes>
     <resources>

@@ -56,6 +56,12 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.scrollView.zoomScale = 1.0
+        self.details = true
+        showOrHideDetails()
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -137,9 +143,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
                 self.escolherClickButton.alpha = 0
                 self.reportButton.alpha = 0
                 //removing gradient layer
-                if self.scrollView.subviews.count != 0 {
-                    self.scrollView.subviews[self.imageIndex].layer.sublayers?.first?.opacity = 0
-                }
+                self.imageView.removeChallengeGradientLayer()
             })
             
             escolherClickButton.isEnabled = false
@@ -160,9 +164,8 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
                 self.reportButton.alpha = 1
                 self.photoCount.alpha = 1
                 self.closeButton.alpha = 1
-                if self.scrollView.subviews.count != 0 {
-                    self.scrollView.subviews[self.imageIndex].layer.sublayers?.first?.opacity = 1
-                }
+                //adding gradient layer
+                self.imageView.addChallengeGradientLayer(frame: self.view.bounds, colors: [self.colorGradient, .clear, .clear, .clear, .clear])
                 
             })
             

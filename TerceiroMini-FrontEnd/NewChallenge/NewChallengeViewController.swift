@@ -125,7 +125,7 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
         header.statusLabel.text = "Vencedor"
         header.mainButton.setTitle(winner.name, for: .normal)
         header.mainButton.isEnabled = true
-        let profilePhotoUrl = URL(string: winner.profilePhotoUrl!)
+        let profilePhotoUrl = URL(string: winner.profilePhotoUrl ?? "")
         header.winnerPhotoBtn.clipsToBounds = true
         header.winnerPhotoBtn.layer.cornerRadius = header.winnerPhotoBtn.frame.height/2
         header.winnerPhotoBtn.sd_setImage(with: profilePhotoUrl, completed: nil)

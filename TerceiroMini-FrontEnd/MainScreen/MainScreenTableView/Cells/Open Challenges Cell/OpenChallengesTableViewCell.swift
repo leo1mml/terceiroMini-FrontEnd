@@ -39,7 +39,7 @@ class OpenChallengesTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pageControl.numberOfPages = 8
+        pageControl.numberOfPages = self.challenges?.count ?? 0
         return self.challenges?.count ?? 0
     }
     

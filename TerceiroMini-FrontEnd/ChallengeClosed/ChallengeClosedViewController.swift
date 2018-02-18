@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Hero
 
 class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
  
@@ -43,6 +44,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         
         let url = URL(string: (data?.url)!)
         imageView.sd_setImage(with: url, completed: nil)
+        imageView.heroID = (data?.url)!
         
         escolherClickButton.layer.cornerRadius = 25
         escolherClickButton.clipsToBounds = true
@@ -57,7 +59,7 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.scrollView.zoomScale = 1.0
+        self.scrollView.zoomScale = self.scrollView.minimumZoomScale
         self.details = true
         showOrHideDetails()
     }
@@ -215,6 +217,32 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         }
         self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func handlePan(_ sender: UIPanGestureRecognizer) {
+        
+        let translation = sender.translation(in: nil)
+        let progress = translation.y / 2 / self.view.bounds.height
+        
+        switch sender.state {
+        case .began:
+            hero_dismissViewController()
+            break
+        case .changed:
+            Hero.shared.update(progress)
+            
+            let currentPos = CGPoint(x: translation.x + imageView.center.x, y: translation.y + imageView.center.y)
+            Hero.shared.apply(modifiers: [.position(currentPos)], to: imageView)
+            break
+        default:
+            if progress + sender.velocity(in: nil).y / view.bounds.height > 0.2 {
+                Hero.shared.finish()
+            } else {
+                Hero.shared.cancel()
+            }
+            break
+        }
+        
     }
     
 //    @objc func canRotate() -> Void {}

@@ -232,6 +232,9 @@
                         <viewLayoutGuide key="safeArea" id="SSa-ke-8RB"/>
                     </view>
                     <navigationItem key="navigationItem" id="0en-2n-7Jl"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="mainCollectionView" destination="aBy-Pl-cxj" id="KW1-c1-4B8"/>
                         <segue destination="CaJ-Jg-CHa" kind="show" identifier="profileSegue" id="lcf-df-aEt"/>

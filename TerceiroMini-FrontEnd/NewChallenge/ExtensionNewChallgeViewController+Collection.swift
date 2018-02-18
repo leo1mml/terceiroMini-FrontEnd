@@ -68,6 +68,9 @@ extension NewChallengeViewController: UICollectionViewDataSource, UICollectionVi
         //        cell.usernameLabel.text = "aaa.aaa"
         //  cell.usernamePhoto.image = UIImage(named: "imagem1")
         
+        
+        cell.cellImage.heroID = challengePhotos?[indexPath.row].url!
+        
         return cell
     }
 

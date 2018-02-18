@@ -37,7 +37,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeM-xa-mdR">
                                 <rect key="frame" x="0.0" y="10" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="esx-Zw-Hcg">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="esx-Zw-Hcg">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                 </subviews>
@@ -124,9 +124,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bjV-ZL-fe2"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="10I-7Y-7Et" appends="YES" id="nAc-MO-v5q"/>
+                            <outletCollection property="gestureRecognizers" destination="rn9-YK-jJ2" appends="YES" id="BXF-TA-dqh"/>
                         </connections>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="closeButton" destination="AUR-7h-wyO" id="VLL-tN-dn4"/>
                         <outlet property="escolherClickButton" destination="ap9-Nm-1tQ" id="aEG-EV-bLe"/>
@@ -137,8 +140,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0eI-Dy-xQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="10I-7Y-7Et"/>
                 <tapGestureRecognizer id="FGY-CZ-rFX"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="rn9-YK-jJ2">
+                    <connections>
+                        <action selector="handlePan:" destination="Xbh-H7-akZ" id="b96-Ji-MF2"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-327" y="159"/>
         </scene>

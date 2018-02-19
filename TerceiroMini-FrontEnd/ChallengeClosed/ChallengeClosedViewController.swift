@@ -10,11 +10,12 @@ import UIKit
 import SDWebImage
 import Hero
 
-class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
- 
+class ChallengeClosedViewController: UIViewController, ChallengeClosedView, UIGestureRecognizerDelegate {
+    
     var presenter: ChallengeClosedPresenter?
     var navigationProtocol : NavigateInAppProtocol?
     
+    @IBOutlet var panGesture: UIPanGestureRecognizer!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var escolherClickButton: CustomButtonClick!
@@ -35,6 +36,8 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.panGesture.delegate = self
         
         self.presenter = ChallengeClosedPresenterImpl(challengeClosedView: self)
         
@@ -245,9 +248,20 @@ class ChallengeClosedViewController: UIViewController, ChallengeClosedView {
         
     }
     
-//    @objc func canRotate() -> Void {}
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        guard let gesture = gestureRecognizer as? UIPanGestureRecognizer else { return false }
+        
+        let translation = gesture.translation(in: gesture.view!)
+        if translation.x != 0 || translation.y != 0 {
+            let angle = atan2(abs(translation.x), translation.y)
+            return angle < .pi / 8
+        }
+        return false
+    }
     
 }
+
+//    @objc func canRotate() -> Void {}
 
 @IBDesignable
 class CustomButtonClick: UIButton {

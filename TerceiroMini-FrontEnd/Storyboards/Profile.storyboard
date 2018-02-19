@@ -275,6 +275,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wVx-W1-ttd"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="CVtopSpaceSmall" destination="HGO-qg-3hH" id="FKK-B4-DcZ"/>
                         <outlet property="backButton" destination="SCF-Yy-Amr" id="4ER-3p-dHB"/>

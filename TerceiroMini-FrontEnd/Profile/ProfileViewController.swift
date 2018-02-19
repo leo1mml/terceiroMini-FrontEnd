@@ -112,6 +112,8 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             cell.themeLabel.isHidden = true
         }
 
+        cell.backgroundImage.heroID = photos[indexPath.row].url!
+        
         return cell
         
     }

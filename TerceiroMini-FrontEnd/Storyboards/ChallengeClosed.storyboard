@@ -134,6 +134,7 @@
                         <outlet property="closeButton" destination="AUR-7h-wyO" id="VLL-tN-dn4"/>
                         <outlet property="escolherClickButton" destination="ap9-Nm-1tQ" id="aEG-EV-bLe"/>
                         <outlet property="imageView" destination="esx-Zw-Hcg" id="jst-7r-EsN"/>
+                        <outlet property="panGesture" destination="rn9-YK-jJ2" id="GDn-p0-222"/>
                         <outlet property="photoCount" destination="FOw-Qr-fh3" id="nr4-aD-pii"/>
                         <outlet property="reportButton" destination="Z9X-qg-axK" id="zdM-6k-ZJo"/>
                         <outlet property="scrollView" destination="ZeM-xa-mdR" id="9cH-xG-lfr"/>

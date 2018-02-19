@@ -11,12 +11,9 @@ import Fusuma
 import NotificationBannerSwift
 
 class NewChallengeViewController: UIViewController, NewChallengeView, UINavigationControllerDelegate, LoginCallerPortocol, FusumaDelegate {
-    
-    
+  
     var isMainScreen: Bool = false
-    
-
-    
+  
     var challenge : Challenge?
     var challengePhotos : [Photo]?
     var state : ChallengeState?
@@ -269,9 +266,7 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
         banner.show()
         
     }
-    
-    
-    
+
     func initDarkStatusBar(){
         let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
         if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {

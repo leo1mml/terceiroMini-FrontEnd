@@ -256,8 +256,6 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     
 }
 
-
-
 enum ChallengeState {
     case open
     case votation

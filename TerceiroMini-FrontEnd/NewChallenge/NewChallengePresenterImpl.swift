@@ -65,8 +65,8 @@ class NewChallengePresenterImpl: NewChallengePresenter{
                 self.view.setHeaderStatusAsFinished(winner: user!)
             })
         }
-        getChallengeImages(challengeID: challenge.id)
-        getFeaturedCollectionHeader(challengeID: challenge.id)
+//        getChallengeImages(challengeID: challenge.id)
+//        getFeaturedCollectionHeader(challengeID: challenge.id)
     }
     
     func getFeaturedCollectionHeader(challengeID: String) {
@@ -120,14 +120,8 @@ class NewChallengePresenterImpl: NewChallengePresenter{
             }
             
             self.view.setChallengePhotos(photos: photos!)
-            DispatchQueue.main.async {
-                self.view.showCollectionPhotos()
-            }
+
         }
-        
     }
     
-    
-
 }
-

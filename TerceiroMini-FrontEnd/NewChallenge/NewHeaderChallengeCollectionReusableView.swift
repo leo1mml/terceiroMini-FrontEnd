@@ -16,7 +16,6 @@ protocol NewChallengeHeaderDelegate {
 
 class NewHeaderChallengeCollectionReusableView: UICollectionReusableView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
-    
     @IBOutlet var featuredCollectionView: UICollectionView!
     @IBOutlet var challengeLabel: UILabel!
     @IBOutlet var numberOfPhotos: UILabel!

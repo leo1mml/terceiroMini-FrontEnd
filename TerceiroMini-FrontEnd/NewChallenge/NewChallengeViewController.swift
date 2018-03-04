@@ -51,6 +51,20 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
         
         presenter = NewChallengePresenterImpl(challengeView: self)
         
+        if(UserDefaults.standard.string(forKey: "token") == nil){
+            self.state = .notLogged
+        }
+        if((challenge?.endDate)! < Date()){
+            self.state = .finished
+        }
+        if(self.state == nil || self.state != .publishingPhoto || self.state == .notLogged || self.state == .finished){
+            
+            // Carrega a Header
+            presenter?.getChallengeHeader(challenge: challenge!)
+            
+            // Carrega as imagens do desafio
+            presenter?.getChallengeImages(challengeID: (challenge?.id)!)
+        }
         
     }
 
@@ -62,28 +76,20 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if(UserDefaults.standard.string(forKey: "token") == nil){
-            self.state = .notLogged
-        }
-        if((challenge?.endDate)! < Date()){
-            self.state = .finished
-        }
-        if(self.state == nil || self.state != .publishingPhoto || self.state == .notLogged || self.state == .finished){
-            presenter?.getChallengeHeader(challenge: challenge!)
-            presenter?.getChallengeImages(challengeID: (challenge?.id)!)
-        }
+        
+        // Verificar se houve alterações.
+        
     }
-    
-    
-    
-    
+
     func setChallengePhotos(photos: [Photo]) {
         self.challengePhotos = photos
         self.mainCollectionView.reloadData()
     }
+    
     func showCollectionPhotos() {
         self.mainCollectionView.reloadData()
     }
+    
     func goToExpandPhotoView(parameter: ([Photo], Int)) {
         
         data = parameter

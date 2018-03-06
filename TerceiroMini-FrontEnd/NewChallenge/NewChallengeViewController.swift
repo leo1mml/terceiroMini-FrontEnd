@@ -169,14 +169,14 @@ class NewChallengeViewController: UIViewController, NewChallengeView, UINavigati
         header.myClick = myClick
         self.showCompleteHeader = true
         self.header.featuredCollectionView.isHidden = false
-        header.featuredCollectionView.reloadData()
+//        header.featuredCollectionView.reloadData()
     }
     
     func setFeaturedCollectionMyFavoriteClick(myFavoriteClick: Photo?){
         self.showCompleteHeader = true
         header.myFavoriteClick = myFavoriteClick
         self.header.featuredCollectionView.isHidden = false
-        header.featuredCollectionView.reloadData()
+//        header.featuredCollectionView.reloadData()
     }
     
     func showFeaturedCollectionView(){

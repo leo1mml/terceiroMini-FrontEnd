@@ -248,6 +248,7 @@ class ChallengeViewController: UIViewController, ChallengeView, UIImagePickerCon
     func showFeaturedCollectionView(){
         self.header.featuredCollectionView.isHidden = false
     }
+    
     func showNoImagesWarning(){
             self.noImagesWarningLabel.isHidden = false
             self.clicksLogoImage.isHidden = false

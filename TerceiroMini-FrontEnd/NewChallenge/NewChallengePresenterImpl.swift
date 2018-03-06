@@ -66,7 +66,7 @@ class NewChallengePresenterImpl: NewChallengePresenter{
             })
         }
 //        getChallengeImages(challengeID: challenge.id)
-//        getFeaturedCollectionHeader(challengeID: challenge.id)
+        getFeaturedCollectionHeader(challengeID: challenge.id)
     }
     
     func getFeaturedCollectionHeader(challengeID: String) {
@@ -79,11 +79,9 @@ class NewChallengePresenterImpl: NewChallengePresenter{
             NetworkManager.getMyFavouriteClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
                 if(error == nil && photo != nil){
                     self.view.setFeaturedCollectionMyFavoriteClick(myFavoriteClick: photo)
-                    self.view.reloadData()
                     return
                 }
                 self.view.setFeaturedCollectionMyFavoriteClick(myFavoriteClick: nil)
-                self.view.reloadData()
             })
 
             NetworkManager.getMyClick(byChallengeId: challengeID, token: token, completion: { (photo, error) in
@@ -93,16 +91,14 @@ class NewChallengePresenterImpl: NewChallengePresenter{
                         self.view.setState(state: .finished)
                     }else {
                         self.view.setState(state: .participating)
-                        self.view.reloadData()
                         return
                     }
                 }
                 self.view.setFeaturedCollectionMyClick(myClick: nil)
-                self.getChallengeImages(challengeID: challengeID)
+//                self.getChallengeImages(challengeID: challengeID)
                 if(!self.isOver){
                     self.view.setState(state: .open)
                 }
-                self.view.reloadData()
                 return
             })
         }

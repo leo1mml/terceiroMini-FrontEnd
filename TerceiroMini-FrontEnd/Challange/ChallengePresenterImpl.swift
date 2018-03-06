@@ -92,7 +92,7 @@ class ChallengePresenterImpl: ChallengePresenter{
             DispatchQueue.main.async {
                 self.view.setHeader(theme: (challenge?.theme)!, endDate: (challenge?.endDate)!, mainImageURL: (challenge?.imageUrl)!, numPhotos: (challenge?.numPhotos)! )
                 if(challenge?.numPhotos != 0){
-                    self.view.showFeaturedCollectionView()
+//                    self.view.showFeaturedCollectionView()
                     self.getFeaturedCollectionHeader(challengeID: challengeID)
                     
                 }else{
@@ -164,9 +164,9 @@ class ChallengePresenterImpl: ChallengePresenter{
             }
             
             self.view.setChallengePhotos(photos: photos!)
-            DispatchQueue.main.async {
-                self.view.showCollectionPhotos()
-            }
+//            DispatchQueue.main.async {
+//                self.view.showCollectionPhotos()
+//            }
         }
         
     }

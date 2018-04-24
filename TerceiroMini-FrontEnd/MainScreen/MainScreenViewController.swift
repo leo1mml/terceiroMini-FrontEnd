@@ -26,15 +26,15 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     @IBOutlet weak var rightIcon: UIView!
     @IBOutlet weak var leftIcon: UIView!
     @IBOutlet weak var centerIcon: UIView!
-    var pageViewController: NavigationViewController!
-    var presenter : MainScreenPresenter?
-    var viewControllerList : [UIViewController]?
-    var loginDelegate : LoginCallerPortocol?
-    
-    var lastOffsetX : CGFloat = 0.0
-
     @IBOutlet weak var pageViewContainer: UIView!
     
+    var pageViewController: NavigationViewController! //Reference to the pageViewController to manage some animations
+    var presenter : MainScreenPresenter? // Presenter protocol instantiated in the viewDidLoad
+    var viewControllerList : [UIViewController]? //viewController list to be managed by some methods
+    var loginDelegate : LoginCallerPortocol? // Login delegate to show some log in pages
+    
+    var lastOffsetX : CGFloat = 0.0 // register of the last offset in the horizontal
+
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "PageView") else {
@@ -89,6 +89,9 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
     
     // MARK: - Animations methods
     
+    /**
+      Handles the movement to the Profile Screen when the button is clicked
+     */
     func swipeMainToProfile() {
         UIView.animate(withDuration: 0.4) {
             self.logoImage.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
@@ -100,6 +103,9 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         }
     }
     
+    /**
+     Handles the movement to the mainscreen when the button is clicked
+     */
     func swipeProfileToMain() {
         UIView.animate(withDuration: 0.4) {
             self.logoImage.transform = CGAffineTransform(scaleX: 1, y: 1)
@@ -111,6 +117,9 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         
     }
     
+    /**
+     Sets the initial position of items.
+     */
     func setInitialItemsPosition() {
         self.configButton.isEnabled = true
         self.configButton.isHidden = false
@@ -125,10 +134,20 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         }
     }
     
+    /**
+     Sets the first offset to use it later in calculations.
+     */
     func setFirstOffset(firstOffsetX: CGFloat) {
         self.lastOffsetX = firstOffsetX
     }
     
+    
+    /**
+     Function to move items and scale them while they're scrolled.
+     
+     - parameters:
+        - contentOffset: content offset to resize the items acording to it.
+     */
     func moveAndScaleItems(with contentOffset: CGPoint) {
         if(contentOffset.x == 0.0){
             return
@@ -153,21 +172,49 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.lastOffsetX = contentOffset.x
     }
     
+    // MARK: - Actions
+    
+    
+    /**
+     Function in Navigation protocol to return to mainScreen.
+     
+     - parameters:
+        - sender: The button or any other trigger which should activate this protocol function.
+     */
     @IBAction func goToMainScreen(_ sender: Any) {
         self.pageViewController.goToPreviousPage()
     }
     
+    /**
+     Navigate to the profile page.
+     
+     - parameters:
+        - sender: The button or any other trigger which should activate this protocol function.
+     */
     @IBAction func goToProfile(_ sender: Any) {
         print(self.centerIcon.center.x)
         self.pageViewController.goToNextPage()
     }
     
+    
+    /**
+     Navigate to the configuration page.
+     
+     - parameters:
+        - sender: The button or any other trigger which should activate this protocol function.
+     */
     @IBAction func goToConfig(_ sender: Any) {
         self.navigationController?.isHeroEnabled = false
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Opcoes") as! ConfigurationTableViewController
         vc.loginProtocol = self.pageViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    // MARK: - Navigation Methods
+    
+    /**
+     Navigate to the see all past challenges page.
+     */
     func goToSeeAll() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SeeAllPastChallenges") as! SeeAllPastChallengesVC
         vc.navigationDelegate = self
@@ -176,11 +223,21 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         
     }
     
+    /**
+     Instantiate a profile view controller.
+     */
     func instanceProfile() {
         self.pageViewController.viewControllerList[1] = (self.storyboard?.instantiateViewController(withIdentifier: "Profile"))!
         self.pageViewController.reloadInputViews()
     }
     
+    /**
+     Navigate to an specific challenge with the image preloaded.
+     
+     - parameters:
+        - challenge: The challenge which should be displayed.
+        - coverImage: The image of the challenge.
+     */
     func goToChallenge(with challenge: Challenge, coverImage: UIImage?) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "challengeVC") as! NewChallengeViewController
         vc.challenge = challenge
@@ -191,6 +248,10 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.navigationController?.show(vc, sender: self)
     }
 
+    
+    /**
+     Navigate to an alert view when the challenge is closed already
+     */
     func goToAlertView() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChallengeClosedAlert") as! ChallengeClosedAlertViewController
         vc.modalTransitionStyle = .crossDissolve
@@ -199,9 +260,22 @@ class MainScreenViewController: UITableViewController, MainScreenView, Navigatio
         self.present(vc, animated: true, completion: nil)
     }
     
+    /**
+     Navigate to the login page.
+     
+     - parameters:
+        - vc: The LoginViewController instance.
+     */
     func goToLogin(vc: LoginViewController) {
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    /**
+     Navigate to the registration screen.
+     
+     - parameters:
+        - vc: The RegisterViewController instance.
+     */
     func goToRegister(vc: RegisterViewController) {
         self.navigationController?.pushViewController(vc, animated: true)
     }

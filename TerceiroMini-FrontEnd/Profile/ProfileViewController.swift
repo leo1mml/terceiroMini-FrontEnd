@@ -139,7 +139,7 @@ class ProfileViewController: UIViewController, ProfileView, UICollectionViewDele
             headerView.profileBorderView.makeSimpleCircleBorder()
 
             headerView.profileNameLabel.text = holder.name
-            headerView.profileUserName.text = holder.username
+            headerView.profileUserName.text = "@"+holder.username!
             headerView.profileTrophyNumberLabel.text = "\(amountTrophy)"
             headerView.profilePhotoNumberLabel.text = "\(cells.count)"
             

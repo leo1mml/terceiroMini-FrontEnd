@@ -10,7 +10,7 @@ import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
         
-    @IBOutlet weak var profileBorderView: UIView!
+    @IBOutlet weak var profileBorderView: UIImageView!
     
     @IBOutlet weak var profileImage: UIImageView!
     
